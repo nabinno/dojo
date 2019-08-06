@@ -5,7 +5,6 @@ import (
 )
 
 func main() {
-
 }
 
 // Points a game in CodeWar
