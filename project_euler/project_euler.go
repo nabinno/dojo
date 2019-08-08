@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math"
 )
 
 func main() {
@@ -10,34 +9,25 @@ func main() {
 }
 
 // GetLargestPrimeFactorOf (problem 3)
-// @todo 2019-08-08
-func GetLargestPrimeFactorOf(i int64) int64 {
-	var rc int64
-	for j := sqrt(i); j >= 1; j-- {
-		if i%j == 0 && isPrime(j) {
-			rc = j
-			break
-		}
-	}
-	return rc
-}
+// @example `fmt.Println(GetLargestPrimeFactorOf(600851475143))`
+func GetLargestPrimeFactorOf(n int64) int64 {
+	var pfs []int64
+	var i int64
 
-func isPrime(i int64) bool {
-	var rc bool
-	if i <= 1 {
-		return false
+	// Get the number of 2s that divide n
+	for n%2 == 0 {
+		pfs = append(pfs, 2)
+		n = n / 2
 	}
-	for j := sqrt(i); j >= 1; j-- {
-		if j == 1 {
-			rc = true
-		}
-		if i%j == 0 {
-			rc = false
+	for i = 3; i*i <= n; i = i + 2 {
+		for n%i == 0 {
+			pfs = append(pfs, i)
+			n = n / i
 		}
 	}
-	return rc
-}
+	if n > 2 {
+		pfs = append(pfs, n)
+	}
 
-func sqrt(i int64) int64 {
-	return int64(math.Sqrt(float64(i)))
+	return pfs[len(pfs)-1]
 }
