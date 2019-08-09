@@ -3,12 +3,39 @@ package main
 import (
 	"fmt"
 	"strings"
-
-	"golang.org/x/tour/wc"
 )
 
 func main() {
-	wc.Test(WordCount)
+	f := Fibonacci()
+	for i := 0; i < 10; i++ {
+		fmt.Println(f())
+	}
+}
+
+// Fibonacci (moretypes 26)
+// @example
+//   ```
+//   f := Fibonacci()
+//   for i := 0; i < 10; i++ {
+//       fmt.Println(f(i))
+//   }
+//   ```
+func Fibonacci() func() int {
+	var i, a, b, c int
+	b = 1
+	c = 0
+	return func() int {
+		switch i {
+		case 0:
+			i++
+		default:
+			a = b
+			b = c
+			c = a + b
+			i++
+		}
+		return c
+	}
 }
 
 // WordCount (moretypes 23)
