@@ -2,14 +2,41 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"strings"
 )
 
+// Vertex struct
+type Vertex struct {
+	X, Y float64
+}
+
 func main() {
-	f := Fibonacci()
-	for i := 0; i < 10; i++ {
-		fmt.Println(f())
-	}
+	v := Vertex{3, 4}
+	v.Scale(10)
+	fmt.Println(v.Abs())
+}
+
+// Scale (methods 4)
+// @example
+//   ```
+//   v := Vertex{3, 4}
+//   v.Scale(10)
+//   fmt.Println(v.Abs())
+//   ```
+func (v *Vertex) Scale(f float64) {
+	v.X = v.X * f
+	v.Y = v.Y * f
+}
+
+// Abs (methods 1)
+// @example
+//   ```
+//   v := Vertex{3, 4}
+//   fmt.Println(v.abs())
+//   ```
+func (v Vertex) Abs() float64 {
+	return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 
 // Fibonacci (moretypes 26)
