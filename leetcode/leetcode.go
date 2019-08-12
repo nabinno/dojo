@@ -13,13 +13,6 @@ func DefangIPaddr(address string) string {
 }
 
 // NumJewelsInStones (771)
-// @example
-//    ```
-//    j := "aA"
-//    s := "aAAbbbb"
-//    rc := NumJewelsInStones(j, s)
-//    fmt.Println(rc)
-//    ```
 func NumJewelsInStones(J string, S string) int {
 	var gems []string
 

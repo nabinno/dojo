@@ -13,7 +13,7 @@ func TestATourOfGo(t *testing.T) {
 	RunSpecs(t, "ATourOfGo Suite")
 }
 
-var _ = Describe("moretypes", func() {
+var _ = Describe("More Types: structs, slices, and maps", func() {
 	var _ = Describe("PrintSlice (moretype 11)", func() {
 		testPrintSlice := func(s []int, exp string) {
 			rc := PrintSlice(s)
@@ -49,7 +49,7 @@ var _ = Describe("moretypes", func() {
 	})
 })
 
-var _ = Describe("methods", func() {
+var _ = Describe("Methods and interfaces", func() {
 	var _ = Describe("Abs (methods 1)", func() {
 		testAbs := func(x int, y int, exp float64) {
 			v := vertex{3, 4}
