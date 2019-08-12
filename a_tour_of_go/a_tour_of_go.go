@@ -6,47 +6,33 @@ import (
 	"strings"
 )
 
-// Vertex struct
-type Vertex struct {
+func main() {
+	return
+}
+
+type ipaddr [4]byte
+
+// fmt.Stringer (methods 18)
+func (is ipaddr) String() string {
+	return fmt.Sprintf("%v.%v.%v.%v", is[0], is[1], is[2], is[3])
+}
+
+type vertex struct {
 	X, Y float64
 }
 
-func main() {
-	v := Vertex{3, 4}
-	v.Scale(10)
-	fmt.Println(v.Abs())
-}
-
 // Scale (methods 4)
-// @example
-//   ```
-//   v := Vertex{3, 4}
-//   v.Scale(10)
-//   fmt.Println(v.Abs())
-//   ```
-func (v *Vertex) Scale(f float64) {
+func (v *vertex) Scale(f float64) {
 	v.X = v.X * f
 	v.Y = v.Y * f
 }
 
 // Abs (methods 1)
-// @example
-//   ```
-//   v := Vertex{3, 4}
-//   fmt.Println(v.abs())
-//   ```
-func (v Vertex) Abs() float64 {
+func (v vertex) Abs() float64 {
 	return math.Sqrt(v.X*v.X + v.Y*v.Y)
 }
 
 // Fibonacci (moretypes 26)
-// @example
-//   ```
-//   f := Fibonacci()
-//   for i := 0; i < 10; i++ {
-//       fmt.Println(f(i))
-//   }
-//   ```
 func Fibonacci() func() int {
 	var i, a, b, c int
 	b = 1
@@ -66,10 +52,6 @@ func Fibonacci() func() int {
 }
 
 // WordCount (moretypes 23)
-// @example
-//   ```
-//   wc.Test(WordCount)
-//   ```
 func WordCount(s string) map[string]int {
 	rc := make(map[string]int)
 	for _, w := range strings.Fields(s) {
@@ -96,11 +78,6 @@ func Pic(dx, dy int) [][]uint8 {
 }
 
 // PrintSlice (moretypes 11)
-// @example
-//   ```
-//   s := []int{2, 3, 5, 7, 11, 13}
-//   printSlice(s)
-//   ```
-func PrintSlice(s []int) {
-	fmt.Printf("len=%d cap=%d %v\n", len(s), cap(s), s)
+func PrintSlice(s []int) string {
+	return fmt.Sprintf("len=%d cap=%d %v\n", len(s), cap(s), s)
 }
