@@ -1,15 +1,10 @@
 package main
 
-import (
-	"fmt"
-)
-
 func main() {
-	fmt.Println(GetLargestPrimeFactorOf(600851475143))
+	return
 }
 
 // GetLargestPrimeFactorOf (problem 3)
-// @example `fmt.Println(GetLargestPrimeFactorOf(600851475143))`
 func GetLargestPrimeFactorOf(n int64) int64 {
 	var pfs []int64
 	var i int64
