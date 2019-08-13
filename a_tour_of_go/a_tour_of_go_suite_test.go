@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"testing"
 
 	. "github.com/onsi/ginkgo"
@@ -77,6 +78,20 @@ var _ = Describe("Methods and interfaces", func() {
 		}
 		It("should handle the following cases", func() {
 			testIPAddr(ipaddr{127, 0, 0, 1}, "127.0.0.1\n")
+		})
+	})
+
+	var _ = Describe("Sqrt (methods 20)", func() {
+		testSqrtErr := func(x float64, exp interface{}) {
+			if f, err := Sqrt(x); err == nil {
+				Expect(f).To(Equal(exp))
+			} else {
+				Expect(err.Error()).To(Equal(exp))
+			}
+		}
+		It("should handle the following cases", func() {
+			testSqrtErr(float64(2), math.Sqrt(2))
+			testSqrtErr(float64(-2), "cannot Sqrt negative number: -2")
 		})
 	})
 })
