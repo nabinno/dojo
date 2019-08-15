@@ -4,16 +4,26 @@ import (
 	"fmt"
 	"math"
 	"strings"
+
+	"golang.org/x/tour/reader"
 )
 
 func main() {
 	return
 }
 
-type errNegativeSqrt float64
+// Validate (methods 22)
+func Validate() {
+	reader.Validate(myReader{})
+}
 
-func (e errNegativeSqrt) Error() string {
-	return fmt.Sprintf("cannot Sqrt negative number: %v", float64(e))
+type myReader struct{}
+
+func (r myReader) Read(b []byte) (i int, e error) {
+	for i, e = 0, nil; i < len(b); i++ {
+		b[i] = 'A'
+	}
+	return
 }
 
 // Sqrt (methods 20)
@@ -29,21 +39,27 @@ func Sqrt(x float64) (float64, error) {
 	return f, err
 }
 
-type ipaddr [4]byte
+type errNegativeSqrt float64
+
+func (e errNegativeSqrt) Error() string {
+	return fmt.Sprintf("cannot Sqrt negative number: %v", float64(e))
+}
 
 // fmt.Stringer (methods 18)
 func (is ipaddr) String() string {
 	return fmt.Sprintf("%v.%v.%v.%v", is[0], is[1], is[2], is[3])
 }
 
-type vertex struct {
-	X, Y float64
-}
+type ipaddr [4]byte
 
 // Scale (methods 4)
 func (v *vertex) Scale(f float64) {
 	v.X = v.X * f
 	v.Y = v.Y * f
+}
+
+type vertex struct {
+	X, Y float64
 }
 
 // Abs (methods 1)
