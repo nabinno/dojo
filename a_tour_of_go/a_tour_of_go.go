@@ -2,13 +2,48 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"math"
+	"os"
 	"strings"
 
 	"golang.org/x/tour/reader"
 )
 
 func main() {
+	Rot13("Lbh penpxrq gur pbqr!")
+}
+
+type rot13Reader struct {
+	r io.Reader
+}
+
+func (rot rot13Reader) Read(b []byte) (n int, err error) {
+	n, err = rot.r.Read(b)
+	for i := 0; i < len(b); i++ {
+		char := b[i]
+		if (char >= 'A' && char < 'N') || (char >= 'a' && char < 'n') {
+			b[i] += 13
+		} else if (char > 'N' && char <= 'Z') || (char > 'm' && char <= 'z') {
+			b[i] -= 13
+		}
+	}
+	return
+}
+
+// Rot13 (methods 23)
+func Rot13(s string) {
+	sr := strings.NewReader(s)
+	rot := rot13Reader{sr}
+	_, _ = io.Copy(os.Stdout, &rot)
+}
+
+type myReader struct{}
+
+func (r myReader) Read(b []byte) (n int, err error) {
+	for n, err = 0, nil; n < len(b); n++ {
+		b[n] = 'A'
+	}
 	return
 }
 
@@ -17,13 +52,10 @@ func Validate() {
 	reader.Validate(myReader{})
 }
 
-type myReader struct{}
+type errNegativeSqrt float64
 
-func (r myReader) Read(b []byte) (i int, e error) {
-	for i, e = 0, nil; i < len(b); i++ {
-		b[i] = 'A'
-	}
-	return
+func (e errNegativeSqrt) Error() string {
+	return fmt.Sprintf("cannot Sqrt negative number: %v", float64(e))
 }
 
 // Sqrt (methods 20)
@@ -37,12 +69,6 @@ func Sqrt(x float64) (float64, error) {
 		err = errNegativeSqrt(x)
 	}
 	return f, err
-}
-
-type errNegativeSqrt float64
-
-func (e errNegativeSqrt) Error() string {
-	return fmt.Sprintf("cannot Sqrt negative number: %v", float64(e))
 }
 
 // fmt.Stringer (methods 18)
