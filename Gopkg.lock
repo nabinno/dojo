@@ -113,9 +113,12 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:5cb6922bfc031a142f4c73b0e91e29bab7793211e43651f4c8c478ce49929fe9"
+  digest = "1:b0c541f99a974c46d01b832cb08b061be123c35b8ff205cef1a46fcf29a9d90b"
   name = "golang.org/x/tour"
-  packages = ["reader"]
+  packages = [
+    "pic",
+    "reader",
+  ]
   pruneopts = "UT"
   revision = "1f1f3d2b450bb9b46a281dc119148605afd67c6d"
 
@@ -148,6 +151,7 @@
   input-imports = [
     "github.com/onsi/ginkgo",
     "github.com/onsi/gomega",
+    "golang.org/x/tour/pic",
     "golang.org/x/tour/reader",
   ]
   solver-name = "gps-cdcl"
