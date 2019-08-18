@@ -6,7 +6,10 @@ import (
 
 // CheckEquivalentTrees ...
 func CheckEquivalentTrees(i1, i2 int) bool {
-	t1, t2 := tree.New(i1), tree.New(i2)
+	return doCheckEquivalentTrees(tree.New(i1), tree.New(i2))
+}
+
+func doCheckEquivalentTrees(t1, t2 *tree.Tree) bool {
 	ch1, ch2 := make(chan int), make(chan int)
 	go walkTree(t1, ch1)
 	go walkTree(t2, ch2)
