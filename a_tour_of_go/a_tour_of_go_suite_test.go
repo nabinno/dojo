@@ -95,3 +95,15 @@ var _ = Describe("Methods and interfaces", func() {
 		})
 	})
 })
+
+var _ = Describe("Concurrency", func() {
+	var _ = Describe("Equivalent Binary Trees (concurrency 7)", func() {
+		test := func(i1, i2 int, exp bool) {
+			Expect(CheckEquivalentTrees(i1, i2)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test(1, 1, true)
+			test(1, 2, false)
+		})
+	})
+})

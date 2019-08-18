@@ -113,11 +113,12 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:b0c541f99a974c46d01b832cb08b061be123c35b8ff205cef1a46fcf29a9d90b"
+  digest = "1:770c1f7462ddc10b68f9e8b55927b67984b9e43067ede5752d3a54f53e8fc13f"
   name = "golang.org/x/tour"
   packages = [
     "pic",
     "reader",
+    "tree",
   ]
   pruneopts = "UT"
   revision = "1f1f3d2b450bb9b46a281dc119148605afd67c6d"
@@ -153,6 +154,7 @@
     "github.com/onsi/gomega",
     "golang.org/x/tour/pic",
     "golang.org/x/tour/reader",
+    "golang.org/x/tour/tree",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
