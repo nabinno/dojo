@@ -96,6 +96,21 @@ var _ = Describe("Methods and interfaces", func() {
 	})
 })
 
+// fakeFetcher is myFetcher that returns canned results.
+type fakeFetcher map[string]*fakeResult
+
+type fakeResult struct {
+	body string
+	urls []string
+}
+
+func (f fakeFetcher) Fetch(url string) (string, []string, error) {
+	if res, ok := f[url]; ok {
+		return res.body, res.urls, nil
+	}
+	return "", nil, fmt.Errorf("not found: %s", url)
+}
+
 var _ = Describe("Concurrency", func() {
 	var _ = Describe("Equivalent Binary Trees (concurrency 7)", func() {
 		test := func(i1, i2 int, exp bool) {
@@ -104,6 +119,54 @@ var _ = Describe("Concurrency", func() {
 		It("should handle the following cases", func() {
 			test(1, 1, true)
 			test(1, 2, false)
+		})
+	})
+
+	var _ = Describe("Web Crawler (concurrency 10)", func() {
+		ff := fakeFetcher{
+			"https://golang.org/": &fakeResult{
+				"The Go Programming Language",
+				[]string{
+					"https://golang.org/pkg/",
+					"https://golang.org/cmd/",
+				},
+			},
+			"https://golang.org/pkg/": &fakeResult{
+				"Packages",
+				[]string{
+					"https://golang.org/",
+					"https://golang.org/cmd/",
+					"https://golang.org/pkg/fmt/",
+					"https://golang.org/pkg/os/",
+				},
+			},
+			"https://golang.org/pkg/fmt/": &fakeResult{
+				"Package fmt",
+				[]string{
+					"https://golang.org/",
+					"https://golang.org/pkg/",
+				},
+			},
+			"https://golang.org/pkg/os/": &fakeResult{
+				"Package os",
+				[]string{
+					"https://golang.org/",
+					"https://golang.org/pkg/",
+				},
+			},
+		}
+		test := func(url string, depth int, f fetcher, exp []string) {
+			if urls, err := Crawl(url, depth, f); err == nil {
+				Expect(urls).To(Equal(exp))
+			}
+		}
+		It("should handle the following cases", func() {
+			test("https://golang.org/", 4, ff, []string{
+				"https://golang.org/",
+				"https://golang.org/pkg/",
+				"https://golang.org/pkg/fmt/",
+				"https://golang.org/pkg/os/",
+			})
 		})
 	})
 })
