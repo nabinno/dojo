@@ -39,3 +39,14 @@ var _ = Describe("NumJewelsInStones (771)", func() {
 		test("aA", "aAAbbbb", 3)
 	})
 })
+
+var _ = Describe("To Lower Case (709)", func() {
+	test := func(s string, exp string) {
+		Expect(ToLowerCase(s)).To(Equal(exp))
+	}
+	It("should handle the following cases", func() {
+		test("Hello", "hello")
+		test("here", "here")
+		test("LOVELY", "lovely")
+	})
+})
