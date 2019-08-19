@@ -33,3 +33,19 @@ var _ = Describe("7kyu", func() {
 		})
 	})
 })
+
+var _ = Describe("6kyu", func() {
+	var _ = Describe("MaxBall", func() {
+		test := func(v0 int, exp int) {
+			var ans = MaxBall(v0)
+			Expect(ans).To(Equal(exp))
+		}
+		It("should handle basic cases", func() {
+			test(37, 10)
+			test(45, 13)
+			test(99, 28)
+			test(85, 24)
+			test(136, 39)
+		})
+	})
+})
