@@ -50,3 +50,14 @@ var _ = Describe("To Lower Case (709)", func() {
 		test("LOVELY", "lovely")
 	})
 })
+
+var _ = Describe("Remove Outermost Parentheses (1021)", func() {
+	test := func(S string, exp string) {
+		Expect(RemoveOuterParentheses(S)).To(Equal(exp))
+	}
+	It("should handle the following cases", func() {
+		test("(()())(())", "()()()")
+		test("(()())(())(()(()))", "()()()()(())")
+		test("()()", "")
+	})
+})
