@@ -22,17 +22,17 @@ var _ = Describe("Practice", func() {
 })
 
 var _ = Describe("AtCoder Beginner's Contest", func() {
-	//	var _ = Describe("DetectHaikuLength (ABC042A)", func() {
-	//		test := func(is []int, exp string) {
-	//			Expect(DetectHaikuLength(is)).To(Equal(exp))
-	//		}
-	//		It("should handle the following cases", func() {
-	//			test([]int{5, 5, 7}, "Yes")
-	//			test([]int{7, 7, 5}, "No")
-	//		})
-	//	})
-
 	var _ = Describe("DetectHaikuLength (ABC042A)", func() {
+		test := func(is [3]int, exp string) {
+			Expect(DetectHaikuLength(is)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test([3]int{5, 5, 7}, "YES")
+			test([3]int{7, 7, 5}, "NO")
+		})
+	})
+
+	var _ = Describe("DetectHaikuLength (ABC043A)", func() {
 		test := func(n int, exp int) {
 			Expect(SumCandies(n)).To(Equal(exp))
 		}
