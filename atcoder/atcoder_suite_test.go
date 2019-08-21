@@ -42,4 +42,14 @@ var _ = Describe("AtCoder Beginner's Contest", func() {
 			test(1, 1)
 		})
 	})
+
+	var _ = Describe("DetectEvenOrOdd (ABC086A)", func() {
+		test := func(a, b int, exp string) {
+			Expect(DetectEvenOrOdd(a, b)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test(3, 4, "Even")
+			test(1, 21, "Odd")
+		})
+	})
 })
