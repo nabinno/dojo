@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"math"
-	"sort"
+
+	"github.com/thoas/go-funk"
+	"github.com/wesovilabs/koazee"
 )
 
 // GetLargestPalindromeProduct ...
@@ -21,7 +23,16 @@ func GetLargestPalindromeProduct(digitNumber int) string {
 		}
 	}
 
-	key := getMaxInit(getKeys(rc))
+	key := koazee.
+		StreamOf(funk.Keys(rc)).
+		Sort(func(x, y int) int {
+			if x <= y {
+				return -1
+			}
+			return 1
+		}).
+		Last().
+		Int()
 
 	return fmt.Sprintf("%v = %v x %v", key, rc[key][0], rc[key][1])
 }
@@ -37,18 +48,4 @@ func isPalindrome(n int) bool {
 		n = n / 10
 	}
 	return n == revertedNum || n == revertedNum/10
-}
-
-// @see https://stackoverflow.com/questions/21362950/getting-a-slice-of-keys-from-a-map
-func getKeys(m map[int][2]int) (keys []int) {
-	keys = make([]int, 0, len(m))
-	for k := range m {
-		keys = append(keys, k)
-	}
-	return
-}
-
-func getMaxInit(is []int) int {
-	sort.Ints(is)
-	return is[len(is)-1]
 }

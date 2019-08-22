@@ -64,6 +64,49 @@
   version = "v1.5.0"
 
 [[projects]]
+  digest = "1:68a7cb5028bb8bd8efa388a7eaee577f2535c99209df851afb4b49c102316cf2"
+  name = "github.com/thoas/go-funk"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "c43409e2d5def27be9b081e316441108def35c8d"
+  version = "v0.4.0"
+
+[[projects]]
+  digest = "1:d6c0fc96bbce7b5775dccd2b4e6c351d440e6878e37ff524433ad7e0c13b3ddd"
+  name = "github.com/wesovilabs/koazee"
+  packages = [
+    ".",
+    "errors",
+    "internal/add",
+    "internal/at",
+    "internal/concat",
+    "internal/contains",
+    "internal/deleteat",
+    "internal/drop",
+    "internal/dropWhile",
+    "internal/duplicates",
+    "internal/filter",
+    "internal/first",
+    "internal/foreach",
+    "internal/groupby",
+    "internal/indexesof",
+    "internal/indexof",
+    "internal/last",
+    "internal/lastindexof",
+    "internal/maps",
+    "internal/pop",
+    "internal/reduce",
+    "internal/reverse",
+    "internal/set",
+    "internal/sort",
+    "internal/take",
+    "stream",
+  ]
+  pruneopts = "UT"
+  revision = "03761cdffd85797c83449c9a29115403fbeff62b"
+  version = "v0.0.4"
+
+[[projects]]
   branch = "master"
   digest = "1:a167b5c532f3245f5a147ade26185f16d6ee8f8d3f6c9846f447e9d8b9705505"
   name = "golang.org/x/net"
@@ -152,6 +195,8 @@
   input-imports = [
     "github.com/onsi/ginkgo",
     "github.com/onsi/gomega",
+    "github.com/thoas/go-funk",
+    "github.com/wesovilabs/koazee",
     "golang.org/x/tour/pic",
     "golang.org/x/tour/reader",
     "golang.org/x/tour/tree",

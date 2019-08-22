@@ -40,3 +40,11 @@
 [prune]
   go-tests = true
   unused-packages = true
+
+[[constraint]]
+  name = "github.com/wesovilabs/koazee"
+  version = "0.0.4"
+
+[[constraint]]
+  name = "github.com/thoas/go-funk"
+  version = "0.4.0"
