@@ -13,8 +13,7 @@ require (
 	github.com/magefile/mage v1.8.0
 	github.com/mattn/go-isatty v0.0.9 // indirect
 	github.com/mattn/go-shellwords v1.0.6
-	github.com/onsi/ginkgo v1.8.0 // indirect
-	github.com/onsi/gomega v1.5.0 // indirect
+	github.com/nabinno/dojo/atcoder v0.0.0-20190823065239-9f852ef0cae4 // indirect
 	github.com/thoas/go-funk v0.4.0 // indirect
 	github.com/ugorji/go v1.1.7 // indirect
 	// github.com/wesovilabs/koazee v0.0.4 // indirect
