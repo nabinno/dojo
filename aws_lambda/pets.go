@@ -11,6 +11,7 @@ import (
 var breeds = []string{"Afghan Hound", "Beagle", "Bernese Mountain Dog", "Bloodhound", "Dalmatian", "Jack Russell Terrier", "Norwegian Elkhound"}
 var names = []string{"Bailey", "Bella", "Max", "Lucy", "Charlie", "Molly", "Buddy", "Daisy", "Rocky", "Maggie", "Jake", "Sophie", "Jack", "Sadie", "Toby", "Chloe", "Cody", "Bailey", "Buster", "Lola", "Duke", "Zoe", "Cooper", "Abby", "Riley", "Ginger", "Harley", "Roxy", "Bear", "Gracie", "Tucker", "Coco", "Murphy", "Sasha", "Lucky", "Lily", "Oliver", "Angel", "Sam", "Princess", "Oscar", "Emma", "Teddy", "Annie", "Winston", "Rosie"}
 
+// Pet ....
 type Pet struct {
 	ID          string    `json:"id"`
 	Breed       string    `json:"breed"`

@@ -9,14 +9,15 @@ import (
 
 // Cmd ....
 func Cmd(cmdstr string) {
-	if out, err := doCmd(cmdstr); err == nil {
+	if out, err := OutCmd(cmdstr); err == nil {
 		fmt.Println(string(out))
 	} else {
 		fmt.Println(err)
 	}
 }
 
-func doCmd(cmdstr string) (out []byte, err error) {
+// OutCmd ....
+func OutCmd(cmdstr string) (out []byte, err error) {
 	args, err := shellwords.Parse(cmdstr)
 	if err != nil {
 		return

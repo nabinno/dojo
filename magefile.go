@@ -4,24 +4,27 @@ package main
 
 import (
 	"github.com/magefile/mage/mg"
-	lambda "github.com/nabinno/dojo/magefiles/aws_lambda"
+	lbd "github.com/nabinno/dojo/magefiles/aws_lambda"
 )
 
 // Default target to run when none is specified
 // If not set, running mage will list available targets
 // var Default = Build
 
-// Lambda ________________________________________
-type Lambda mg.Namespace
+// Lbd ________________________________________
+type Lbd mg.Namespace
 
-// Pack ....
-func (Lambda) Pack() { lambda.Pack() }
+// Dispatch ....
+func (Lbd) Dispatch() { lbd.DispatchOnLocal() }
+
+// Test ....
+func (Lbd) Test() { lbd.TestOnLocal() }
 
 // Build ....
-func (Lambda) Build() { lambda.Build() }
+func (Lbd) Build() { lbd.Build() }
 
-// InstallDeps ....
-func (Lambda) InstallDeps() { lambda.InstallDeps() }
+// Deploy ....
+func (Lbd) Deploy() { lbd.Deploy() }
 
 // Clean ....
-func (Lambda) Clean() { lambda.Clean() }
+func (Lbd) Clean() { lbd.Clean() }
