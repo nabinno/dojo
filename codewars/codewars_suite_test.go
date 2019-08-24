@@ -48,4 +48,17 @@ var _ = Describe("6kyu", func() {
 			test(136, 39)
 		})
 	})
+
+	var _ = Describe("ValidBraces", func() {
+		test := func(str string, exp bool) {
+			Expect(ValidBraces(str)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test("(){}[]", true)
+			test("([{}])", true)
+			test("(}", false)
+			test("[(])", false)
+			test("[({})](]", false)
+		})
+	})
 })
