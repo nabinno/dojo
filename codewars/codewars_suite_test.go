@@ -71,3 +71,17 @@ var _ = Describe("6kyu", func() {
 		})
 	})
 })
+
+var _ = Describe("5kyu", func() {
+	var _ = Describe("ProductFib", func() {
+		test := func(prod uint64, exp [3]uint64) {
+			Expect(ProductFib(prod)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test(4895, [3]uint64{55, 89, 1})
+			test(5895, [3]uint64{89, 144, 0})
+			test(74049690, [3]uint64{6765, 10946, 1})
+			test(84049690, [3]uint64{10946, 17711, 0})
+		})
+	})
+})
