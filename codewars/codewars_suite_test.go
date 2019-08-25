@@ -70,6 +70,41 @@ var _ = Describe("6kyu", func() {
 			test(2, 2, [][]int{[]int{1, 1}, []int{1, 2}, []int{1, 3}, []int{2, 1}, []int{2, 3}, []int{3, 1}, []int{3, 2}, []int{3, 3}})
 		})
 	})
+
+	var _ = Describe("Comp", func() {
+		test := func(s1, s2 []int, exp bool) {
+			Expect(Comp(s1, s2)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test(
+				[]int{121, 144, 19, 161, 19, 144, 19, 11},
+				[]int{11 * 11, 121 * 121, 144 * 144, 19 * 19, 161 * 161, 19 * 19, 144 * 144, 19 * 19},
+				true,
+			)
+		})
+		It("should handle the following cases", func() {
+			test(
+				[]int{121, 144, 19, 161, 19, 144, 19, 11},
+				[]int{11 * 21, 121 * 121, 144 * 144, 19 * 19, 161 * 161, 19 * 19, 144 * 144, 19 * 19},
+				false,
+			)
+		})
+		It("should handle the following cases", func() {
+			test(
+				nil,
+				[]int{11 * 11, 121 * 121, 144 * 144, 19 * 19, 161 * 161, 19 * 19, 144 * 144, 19 * 19},
+				false,
+			)
+			test(nil, nil, true)
+		})
+		It("should handle the following cases", func() {
+			test(
+				[]int{121, 144, 19, 161, 19, 144, 19, 11},
+				[]int{132, 14641, 20736, 361, 25921, 361, 20736, 361},
+				false,
+			)
+		})
+	})
 })
 
 var _ = Describe("5kyu", func() {
