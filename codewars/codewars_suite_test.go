@@ -61,4 +61,13 @@ var _ = Describe("6kyu", func() {
 			test("[({})](]", false)
 		})
 	})
+
+	var _ = Describe("CartesianNeighbor", func() {
+		test := func(x, y int, exp [][]int) {
+			Expect(CartesianNeighbor(x, y)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test(2, 2, [][]int{[]int{1, 1}, []int{1, 2}, []int{1, 3}, []int{2, 1}, []int{2, 3}, []int{3, 1}, []int{3, 2}, []int{3, 3}})
+		})
+	})
 })

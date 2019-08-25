@@ -18,30 +18,30 @@ const (
 	CLOSEPAREN = ")}]"
 )
 
-// Stack ________________________________________
-type Stack struct {
-	top  *element
+// ValidBracesStack ________________________________________
+type ValidBracesStack struct {
+	top  *validBracesElement
 	size int
 }
 
-type element struct {
+type validBracesElement struct {
 	value interface{}
-	next  *element
+	next  *validBracesElement
 }
 
 // Len ....
-func (stack *Stack) Len() int {
+func (stack *ValidBracesStack) Len() int {
 	return stack.size
 }
 
 // Push ....
-func (stack *Stack) Push(value interface{}) {
-	stack.top = &element{value, stack.top}
+func (stack *ValidBracesStack) Push(value interface{}) {
+	stack.top = &validBracesElement{value, stack.top}
 	stack.size++
 }
 
 // Pop ....
-func (stack *Stack) Pop() (value interface{}) {
+func (stack *ValidBracesStack) Pop() (value interface{}) {
 	if stack.size > 0 {
 		value, stack.top = stack.top.value, stack.top.next
 		stack.size--
@@ -52,7 +52,7 @@ func (stack *Stack) Pop() (value interface{}) {
 
 // ValidBraces ________________________________________
 func ValidBraces(paren string) (rc bool) {
-	stack := new(Stack)
+	stack := new(ValidBracesStack)
 	if len(paren) > 0 {
 		rc = true
 		for _, p := range strings.Split(paren, "") {
