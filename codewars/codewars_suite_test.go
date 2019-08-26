@@ -105,6 +105,24 @@ var _ = Describe("6kyu", func() {
 			)
 		})
 	})
+
+	var _ = Describe("InArray", func() {
+		test := func(array1, array2 []string, exp []string) {
+			Expect(InArray(array1, array2)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test(
+				[]string{"arp", "live", "strong"},
+				[]string{"lively", "alive", "harp", "sharp", "armstrong"},
+				[]string{"arp", "live", "strong"},
+			)
+			test(
+				[]string{"tarp", "mice", "bull"},
+				[]string{"lively", "alive", "harp", "sharp", "armstrong"},
+				[]string{},
+			)
+		})
+	})
 })
 
 var _ = Describe("5kyu", func() {
