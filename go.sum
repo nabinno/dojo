@@ -59,6 +59,8 @@ github.com/nabinno/dojo/aws_lambda v0.0.0-20190823090509-71ae50d6eca9 h1:gXc6+pD
 github.com/nabinno/dojo/aws_lambda v0.0.0-20190823090509-71ae50d6eca9/go.mod h1:uVA0dwa6g9fiyLgYMSGMpajq++CqOU18uZx3MdwTkfA=
 github.com/nabinno/dojo/codewars v0.0.0-20190824020309-b9f9ff88d9ab h1:xqErV+mmwFyUTug+xYJjyhhBhaD8YwO23QslGZcoC78=
 github.com/nabinno/dojo/codewars v0.0.0-20190824020309-b9f9ff88d9ab/go.mod h1:15g99CP4T99IvBETyo0i4eWHEVeoYY69kzUl3RnXRbo=
+github.com/nabinno/dojo/leetcode v0.0.0-20190827044719-ce0130aaaca9 h1:gpjRgMTY92ZuMMHA++RYagk1VnxbNLw4hhHHiwkkxzw=
+github.com/nabinno/dojo/leetcode v0.0.0-20190827044719-ce0130aaaca9/go.mod h1:KjxpQ+LeiSJViWXkck2sEGs4A5uGWsvLuKk6ZskP5AM=
 github.com/onsi/ginkgo v0.0.0-20180119174237-747514b53ddd/go.mod h1:lLunBs/Ym6LB5Z9jYTR76FiuTmxDTDusOGeTQH+WWjE=
 github.com/onsi/ginkgo v1.6.0/go.mod h1:lLunBs/Ym6LB5Z9jYTR76FiuTmxDTDusOGeTQH+WWjE=
 github.com/onsi/ginkgo v1.8.0/go.mod h1:lLunBs/Ym6LB5Z9jYTR76FiuTmxDTDusOGeTQH+WWjE=

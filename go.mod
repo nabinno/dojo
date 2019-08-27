@@ -13,6 +13,7 @@ require (
 	github.com/nabinno/dojo/atcoder v0.0.0-20190823065239-9f852ef0cae4 // indirect
 	github.com/nabinno/dojo/aws_lambda v0.0.0-20190823090509-71ae50d6eca9 // indirect
 	github.com/nabinno/dojo/codewars v0.0.0-20190824020309-b9f9ff88d9ab // indirect
+	github.com/nabinno/dojo/leetcode v0.0.0-20190827044719-ce0130aaaca9 // indirect
 	github.com/thoas/go-funk v0.4.0 // indirect
 	github.com/ugorji/go v1.1.7 // indirect
 	// github.com/wesovilabs/koazee v0.0.4 // indirect
