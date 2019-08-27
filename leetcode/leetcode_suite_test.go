@@ -61,3 +61,12 @@ var _ = Describe("Remove Outermost Parentheses (1021)", func() {
 		test("()()", "")
 	})
 })
+
+var _ = Describe("Unique Morse Code Words (804)", func() {
+	test := func(words []string, exp int) {
+		Expect(UniqueMorseRepresentations(words)).To(Equal(exp))
+	}
+	It("should handle the following cases", func() {
+		test([]string{"gin", "zen", "gig", "msg"}, 2)
+	})
+})
