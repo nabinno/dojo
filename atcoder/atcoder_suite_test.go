@@ -53,6 +53,16 @@ var _ = Describe("AtCoder Beginner's Contest", func() {
 		})
 	})
 
+	var _ = Describe("Trapezoids (ABC045A)", func() {
+		test := func(a, b, h, exp int) {
+			Expect(Trapezoids(a, b, h)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test(3, 4, 2, 7)
+			test(4, 4, 4, 16)
+		})
+	})
+
 	var _ = Describe("DetectEvenOrOdd (ABC086A)", func() {
 		test := func(a, b int, exp string) {
 			Expect(DetectEvenOrOdd(a, b)).To(Equal(exp))
