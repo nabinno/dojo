@@ -30,3 +30,13 @@ var _ = Describe("GetLargestPalindromeProduct (problem 4)", func() {
 		test(3, "906609 = 913 x 993")
 	})
 })
+
+var _ = Describe("GetSmalletsMultiple (problem 5)", func() {
+	test := func(n int, exp int) {
+		Expect(GetSmalletsMultiple(n)).To(Equal(exp))
+	}
+	It("should handle the follwoing cases", func() {
+		test(10, 2520)
+		test(20, 232792560)
+	})
+})

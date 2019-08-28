@@ -61,6 +61,8 @@ github.com/nabinno/dojo/codewars v0.0.0-20190824020309-b9f9ff88d9ab h1:xqErV+mmw
 github.com/nabinno/dojo/codewars v0.0.0-20190824020309-b9f9ff88d9ab/go.mod h1:15g99CP4T99IvBETyo0i4eWHEVeoYY69kzUl3RnXRbo=
 github.com/nabinno/dojo/leetcode v0.0.0-20190827044719-ce0130aaaca9 h1:gpjRgMTY92ZuMMHA++RYagk1VnxbNLw4hhHHiwkkxzw=
 github.com/nabinno/dojo/leetcode v0.0.0-20190827044719-ce0130aaaca9/go.mod h1:KjxpQ+LeiSJViWXkck2sEGs4A5uGWsvLuKk6ZskP5AM=
+github.com/nabinno/dojo/project_euler v0.0.0-20190828214422-8aa689701f8c h1:u6u/Lj8asjYgWym6eecoW4U5kJz0/cibClpL/AliFto=
+github.com/nabinno/dojo/project_euler v0.0.0-20190828214422-8aa689701f8c/go.mod h1:wHrZHk5h3iugDEvDnqRSfQypPdPzee6Iqw9odBe5P7Q=
 github.com/onsi/ginkgo v0.0.0-20180119174237-747514b53ddd/go.mod h1:lLunBs/Ym6LB5Z9jYTR76FiuTmxDTDusOGeTQH+WWjE=
 github.com/onsi/ginkgo v1.6.0/go.mod h1:lLunBs/Ym6LB5Z9jYTR76FiuTmxDTDusOGeTQH+WWjE=
 github.com/onsi/ginkgo v1.8.0/go.mod h1:lLunBs/Ym6LB5Z9jYTR76FiuTmxDTDusOGeTQH+WWjE=
@@ -75,6 +77,7 @@ github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZN
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=
 github.com/stretchr/testify v1.3.0/go.mod h1:M5WIy9Dh21IEIfnGCwXGc5bZfKNJtfHm1UVUgZn+9EI=
 github.com/stretchr/testify v1.4.0/go.mod h1:j7eGeouHqKxXV5pUuKE4zz7dFj8WfuZ+81PSLYec5m4=
+github.com/thoas/go-funk v0.4.0 h1:KBaa5NL7NMtsFlQaD8nQMbDt1wuM+OOaNQyYNYQFhVo=
 github.com/thoas/go-funk v0.4.0/go.mod h1:mlR+dHGb+4YgXkf13rkQTuzrneeHANxOm6+ZnEV9HsA=
 github.com/ugorji/go v0.0.0-20180129160544-d2b24cf3d3b4/go.mod h1:hnLbHMwcvSihnDhEfx2/BzKp2xb0Y+ErdfYcrs9tkJQ=
 github.com/ugorji/go v1.1.4/go.mod h1:uQMGLiO92mf5W77hV/PUCpI3pbzQx3CRekS0kk+RGrc=
@@ -86,6 +89,7 @@ github.com/urfave/cli v1.21.0/go.mod h1:lxDj6qX9Q6lWQxIrbrT0nwecwUtRnhVZAJjJZrVU
 github.com/urfave/negroni v0.0.0-20180130044549-22c5532ea862/go.mod h1:Meg73S6kFm/4PpbYdq35yYWoCZ9mS/YSx+lKnmiohz4=
 github.com/valyala/bytebufferpool v1.0.0/go.mod h1:6bBcMArwyJ5K/AmCkWv1jt77kVWyCJ6HpOuEn7z0Csc=
 github.com/valyala/fasttemplate v1.0.1/go.mod h1:UQGH1tvbgY+Nz5t2n7tXsz52dQxojPUpymEIMZ47gx8=
+github.com/wesovilabs/koazee v0.0.5-0.20190827115340-09f8332ebc16 h1:gu9v8KRVwICxAVz/CNP+d9RM8G/H8rF09RRUnjlDbTw=
 github.com/wesovilabs/koazee v0.0.5-0.20190827115340-09f8332ebc16/go.mod h1:zOiNptItsBnXdjv4MxjAjYvqn1m/t3sVfT5JTaC593M=
 golang.org/x/crypto v0.0.0-20190308221718-c2843e01d9a2/go.mod h1:djNgcEr1/C05ACkg1iLfiJU5Ep61QUkGW8qpdssI0+w=
 golang.org/x/net v0.0.0-20180906233101-161cd47e91fd/go.mod h1:mL1N/T3taQHkDXs73rZJwtUhF3w3ftmwwsq0BUmARs4=
