@@ -16,7 +16,7 @@ require (
 	github.com/nabinno/dojo/leetcode v0.0.0-20190827044719-ce0130aaaca9 // indirect
 	github.com/thoas/go-funk v0.4.0 // indirect
 	github.com/ugorji/go v1.1.7 // indirect
-	// github.com/wesovilabs/koazee v0.0.4 // indirect
+	github.com/wesovilabs/koazee v0.0.5-0.20190827115340-09f8332ebc16 // indirect
 	golang.org/x/net v0.0.0-20190813141303-74dc4d7220e7 // indirect
 	golang.org/x/text v0.3.2 // indirect
 	gopkg.in/fsnotify/fsnotify.v1 v1.4.7 // indirect
