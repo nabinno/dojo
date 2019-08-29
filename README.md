@@ -8,6 +8,41 @@
 - [AtCoder](https://atcoder.jp)
 - [AWS Lambda](https://aws.amazon.com/lambda/)
 
+# Testing
+```sh
+(cd {{field_directory}} && ginkgo)
+```
+
+# AWS Lambda
+## Install dependencies
+```sh
+go mod why
+```
+
+## Dispatch on local
+```sh
+mage lbd:dispatch
+```
+
+## Testing
+```bash
+mage lbd:test
+```
+or
+```sh
+(cd aws_lambda && ginkgo)
+```
+
+## Deploy
+```sh
+mage lbd:deploy
+```
+
+## Clean
+```sh
+mage lbd:clean
+```
+
 ---
 
 ## LISENCE
