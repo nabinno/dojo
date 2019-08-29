@@ -40,3 +40,13 @@ var _ = Describe("GetSmalletsMultiple (problem 5)", func() {
 		test(20, 232792560)
 	})
 })
+
+var _ = Describe("SumSquareDifference (problem 6)", func() {
+	test := func(n int, exp int) {
+		Expect(SumSquareDifference(n)).To(Equal(exp))
+	}
+	It("should handle the following cases", func() {
+		test(10, 2640)
+		test(100, 25164150)
+	})
+})
