@@ -14,17 +14,17 @@ import (
 // Lbd ________________________________________
 type Lbd mg.Namespace
 
-// Dispatch ....
+// Dispatch is command that dispatch on local
 func (Lbd) Dispatch() { lbd.DispatchOnLocal() }
 
-// Test ....
+// Test is command that test
 func (Lbd) Test() { lbd.TestOnLocal() }
 
-// Build ....
+// Build is command that build
 func (Lbd) Build() { lbd.Build() }
 
-// Deploy ....
+// Deploy is command that deploy
 func (Lbd) Deploy() { lbd.Deploy() }
 
-// Clean ....
+// Clean is command that clean
 func (Lbd) Clean() { lbd.Clean() }
