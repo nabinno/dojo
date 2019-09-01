@@ -123,6 +123,15 @@ var _ = Describe("6kyu", func() {
 			)
 		})
 	})
+
+	var _ = Describe("Wave", func() {
+		test := func(words string, exp []string) {
+			Expect(Wave(words)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test(" x yz", []string{" X yz", " x Yz", " x yZ"})
+		})
+	})
 })
 
 var _ = Describe("5kyu", func() {
@@ -135,19 +144,6 @@ var _ = Describe("5kyu", func() {
 			test(5895, [3]uint64{89, 144, 0})
 			test(74049690, [3]uint64{6765, 10946, 1})
 			test(84049690, [3]uint64{10946, 17711, 0})
-		})
-	})
-
-	var _ = Describe("Gap", func() {
-		test := func(g, m, n int, exp []int) {
-			Expect(Gap(g, m, n)).To(Equal(exp))
-		}
-		It("should handle the following cases", func() {
-			test(2, 100, 110, []int{101, 103})
-			test(4, 100, 110, []int{103, 107})
-			test(6, 100, 110, nil)
-			test(8, 300, 400, []int{359, 367})
-			test(10, 300, 400, []int{337, 347})
 		})
 	})
 })
