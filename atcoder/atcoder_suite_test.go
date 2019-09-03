@@ -63,6 +63,16 @@ var _ = Describe("AtCoder Beginner's Contest", func() {
 		})
 	})
 
+	var _ = Describe("AtCoDeerAndPaintCans (ABC046A)", func() {
+		test := func(a, b, c, exp int) {
+			Expect(AtCoDeerAndPaintCans(a, b, c)).To(Equal(exp))
+		}
+		It("sould handle the following cases", func() {
+			test(3, 1, 4, 3)
+			test(3, 3, 33, 2)
+		})
+	})
+
 	var _ = Describe("DetectEvenOrOdd (ABC086A)", func() {
 		test := func(a, b int, exp string) {
 			Expect(DetectEvenOrOdd(a, b)).To(Equal(exp))
