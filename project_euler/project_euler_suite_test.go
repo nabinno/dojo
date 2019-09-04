@@ -50,3 +50,12 @@ var _ = Describe("SumSquareDifference (problem 6)", func() {
 		test(100, 25164150)
 	})
 })
+
+var _ = Describe("Get10001stPrime (problem 7)", func() {
+	test := func(nth, exp int) {
+		Expect(GetNthPrime(nth)).To(Equal(exp))
+	}
+	It("should handle the following cases", func() {
+		test(10001, 104743)
+	})
+})
