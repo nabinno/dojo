@@ -11,7 +11,7 @@ url: https://amazon.qwiklabs.com/focuses/6431?parent=catalog
 - Monitor AWS Lambda S3 functions through Amazon CloudWatch Log
 
 # Task
-- [ ] Create the Amazon S3 Buckets
-- [ ] Create an AWS Lambda Function
-- [ ] Test Your Function
-- [ ] Monitoring and Logging
+- [x] Create the Amazon S3 Buckets
+- [x] Create an AWS Lambda Function
+- [x] Test Your Function
+- [x] Monitoring and Logging
