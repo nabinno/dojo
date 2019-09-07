@@ -10,5 +10,8 @@ url: https://amazon.qwiklabs.com/focuses/269?parent=catalog
 - Debug API Gateway and Lambda with Amazon CloudWatch
 
 # Task
-- [ ] Create a Lambda Function
-- [ ] Test the Lambda function
+- [x] Create a Lambda Function
+- [x] Test the Lambda function
+
+# Supplement
+- [Microservices Guide](https://martinfowler.com/microservices/) - Enables scalability, elasticity, availability, and maintainability
