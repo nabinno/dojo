@@ -7,6 +7,7 @@
 - [LeetCode](https://leetcode.com)
 - [AtCoder](https://atcoder.jp)
 - [Qwiklabs](https://amazon-run.qwiklabs.com)
+- [Microsoft Learn](https://docs.microsoft.com/learn/)
 - [AWS Lambda](https://aws.amazon.com/lambda/)
 
 # Testing
