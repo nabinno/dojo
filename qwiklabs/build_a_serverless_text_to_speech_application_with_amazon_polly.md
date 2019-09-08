@@ -25,6 +25,59 @@ url: https://amazon.qwiklabs.com/focuses/3540?parent=catalog
 # Supplement
 ## Sequence diagram
 ![](build_a_serverless_text_to_speech_application_with_amazon_polly.png)
+```uml
+skinparam monochrome true
+skinparam backgroundColor #EEEEFF
+
+actor App as A
+actor "API Gateway" as G
+actor Lambda as L
+actor SNS as N
+participant Polly as P
+participant DynamoDB as D
+participant S3 as S
+
+activate A
+A -> G: request
+deactivate A
+activate G
+G -> L: |NewPost|\ncall
+deactivate G
+
+activate L
+L -> D: create
+activate D
+L -> N: dispatch
+deactivate L
+activate N
+N -> L: |ConvertToAudio|\npublish (call)
+deactivate N
+
+activate L
+L <-> P: convert text to audio
+activate P
+deactivate P
+L -> S: upload audio
+activate S
+L -> D: update
+deactivate L
+
+A -> G: request
+activate A
+activate G
+G -> L: |GetPost|\n call
+activate L
+L <-> D: get post data (S3 URL)
+deactivate D
+L -> G
+deactivate L
+G -> A: response
+deactivate G
+
+A <-> S: get audio
+deactivate S
+deactivate A
+```
 
 ## Lambda
 **IAM**
