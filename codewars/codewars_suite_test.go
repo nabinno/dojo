@@ -132,6 +132,20 @@ var _ = Describe("6kyu", func() {
 			test(" x yz", []string{" X yz", " x Yz", " x yZ"})
 		})
 	})
+
+	var _ = Describe("Diagonal", func() {
+		test := func(n, p, exp int) {
+			Expect(Diagonal(n, p)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test(20, 3, 5985)
+			test(20, 4, 20349)
+			test(20, 5, 54264)
+			test(20, 15, 20349)
+			test(100, 0, 101)
+			test(100, 10, 158940114100040)
+		})
+	})
 })
 
 var _ = Describe("5kyu", func() {
