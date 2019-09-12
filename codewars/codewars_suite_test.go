@@ -146,6 +146,21 @@ var _ = Describe("6kyu", func() {
 			test(100, 10, 158940114100040)
 		})
 	})
+
+	var _ = Describe("CheckChoose", func() {
+		test := func(m, n, exp int) {
+			Expect(CheckChoose(m, n)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test(6, 4, 2)
+			test(6, 4, 2)
+			test(4, 4, 1)
+			test(4, 2, -1)
+			test(35, 7, 3)
+			test(36, 7, -1)
+			test(184756, 20, 10)
+		})
+	})
 })
 
 var _ = Describe("5kyu", func() {
