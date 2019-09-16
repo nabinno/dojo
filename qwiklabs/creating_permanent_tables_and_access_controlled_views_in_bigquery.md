@@ -8,3 +8,6 @@ url: https://www.qwiklabs.com/focuses/3690
 
 
 # Task
+- [ ] Create a new dataset to store the tables
+- [ ] Troubleshooting CREATE TABLE statements
+- [ ] Creating views
