@@ -54,33 +54,35 @@ var _ = Describe("800 ~ 899", func() {
 	})
 })
 
-var _ = Describe("SortArrayByParity (905)", func() {
-	test := func(A, exp []int) {
-		Expect(SortArrayByParity(A)).To(Equal(exp))
-	}
-	It("should handle the following cases", func() {
-		test([]int{3, 1, 2, 4}, []int{4, 2, 3, 1})
+var _ = Describe("900 ~ 999", func() {
+	var _ = Describe("SortArrayByParity (905)", func() {
+		test := func(A, exp []int) {
+			Expect(SortArrayByParity(A)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test([]int{3, 1, 2, 4}, []int{4, 2, 3, 1})
+		})
 	})
-})
 
-var _ = Describe("RangeSumBST (938)", func() {
-	test := func(root *treeNode, L int, R int, exp int) {
-		Expect(RangeSumBST(root, L, R)).To(Equal(exp))
-	}
-	It("should handle the following cases", func() {
-		test(convertIntsToTreeNode([]int{10, 5, 15, 3, 7, null, 18}), 7, 15, 32)
-		test(convertIntsToTreeNode([]int{10, 5, 15, 3, 7, 13, 18, 1, null, 6}), 6, 10, 23)
+	var _ = Describe("RangeSumBST (938)", func() {
+		test := func(root *treeNode, L int, R int, exp int) {
+			Expect(RangeSumBST(root, L, R)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test(convertIntsToTreeNode([]int{10, 5, 15, 3, 7, null, 18}), 7, 15, 32)
+			test(convertIntsToTreeNode([]int{10, 5, 15, 3, 7, 13, 18, 1, null, 6}), 6, 10, 23)
+		})
 	})
-})
 
-var _ = Describe("RepeatNTimes (961)", func() {
-	test := func(A []int, exp int) {
-		Expect(RepeatNTimes(A)).To(Equal(exp))
-	}
-	It("should handle the following cases", func() {
-		test([]int{1, 2, 3, 3}, 3)
-		test([]int{2, 1, 2, 5, 3, 2}, 2)
-		test([]int{5, 1, 5, 2, 5, 3, 5, 4}, 5)
+	var _ = Describe("RepeatNTimes (961)", func() {
+		test := func(A []int, exp int) {
+			Expect(RepeatNTimes(A)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test([]int{1, 2, 3, 3}, 3)
+			test([]int{2, 1, 2, 5, 3, 2}, 2)
+			test([]int{5, 1, 5, 2, 5, 3, 5, 4}, 5)
+		})
 	})
 })
 
