@@ -12,6 +12,16 @@ func TestLeetcode(t *testing.T) {
 	RunSpecs(t, "Leetcode Suite")
 }
 
+var _ = Describe("JudgeCircle (657)", func() {
+	test := func(moves string, exp bool) {
+		Expect(JudgeCircle(moves)).To(Equal(exp))
+	}
+	It("should handle the following cases", func() {
+		test("UD", true)
+		test("LL", false)
+	})
+})
+
 var _ = Describe("700 ~ 799", func() {
 	var _ = Describe("To Lower Case (709)", func() {
 		test := func(s string, exp string) {
