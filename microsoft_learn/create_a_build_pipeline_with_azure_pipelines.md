@@ -11,7 +11,7 @@ url: https://docs.microsoft.com/learn/modules/create-a-build-pipeline/index
 - Use templates to build multiple configurations
 
 # Task
-- [ ] What is Azure Pipelines?
+- [x] What is Azure Pipelines?
 - [ ] Exercise - Get the sample application
 - [ ] Plan your build tasks
 - [ ] Exercise - Set up your Azure DevOps environment
