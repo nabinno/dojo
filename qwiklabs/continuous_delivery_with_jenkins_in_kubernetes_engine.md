@@ -11,18 +11,18 @@ url: https://www.qwiklabs.com/focuses/1104
 - Create and exercise a Jenkins pipeline
 
 # Task
-- [ ] Clone the repository
-- [ ] Provisioning Jenkins
-- [ ] Install Helm
-- [ ] Configure and Install Jenkins
-- [ ] Connect to Jenkins
-- [ ] Understanding the Application
-- [ ] Deploying the Application
-- [ ] Creating the Jenkins Pipeline
-- [ ] Creating the Development Environment
-- [ ] Kick off Deployment
-- [ ] Deploying a Canary Release
-- [ ] Deploying to production
+- [x] Clone the repository
+- [x] Provisioning Jenkins
+- [x] Install Helm
+- [x] Configure and Install Jenkins
+- [x] Connect to Jenkins
+- [x] Understanding the Application
+- [x] Deploying the Application
+- [x] Creating the Jenkins Pipeline
+- [x] Creating the Development Environment
+- [x] Kick off Deployment
+- [x] Deploying a Canary Release
+- [x] Deploying to production
 
 # Supplement
 ![](continuous_delivery_with_jenkins_in_kubernetes_engine.png)
@@ -32,9 +32,13 @@ skinparam monochrome true
 skinparam backgroundColor #EEEEFF
 
 actor User as U
-agent "Service(ui-ingress,LoadBalancer)" as S1
-agent "Service(jenkins-ui,ClusterIP)" as S2
-agent "Service(jenkins-discovery,ClusterIP)" as S3
+agent "Srv(ui-ingress,LB)" as S1
+agent "Srv(jenkins-ui)" as S2
+agent "Srv(jenkins-discovery)" as S3
+
+artifact "NS(default)" as NS1
+artifact "NS(kube-system)" as NS2
+artifact "NS(production)" as NS3
 
 node Node(jenkins) {
   frame Pod(app=jenkins-master) as P11 {
@@ -54,11 +58,16 @@ S2 --> P11
 S3 -- P11
 S3 -- P12
 P11 -- D
+NS3 --- S2
+NS3 --- S3
+NS3 --- P11
+NS3 --- P12
 ```
 
 ## Clone the repository
 ```sh
 gcloud config set compute/zone us-east1-d
+gcloud config set project qwiklabs-gcp-34a6a525ce8f1092
 git clone https://github.com/GoogleCloudPlatform/continuous-deployment-on-kubernetes.git
 cd continuous-deployment-on-kubernetes
 ```
@@ -98,8 +107,6 @@ kubectl get svc
 ```sh
 printf $(kubectl get secret cd-jenkins -o jsonpath="{.data.jenkins-admin-password}" | base64 --decode);echo
 ```
-
-## Understanding the Application
 
 ## Deploying the Application
 ```sh
