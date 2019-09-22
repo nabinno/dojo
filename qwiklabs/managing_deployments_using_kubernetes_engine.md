@@ -11,16 +11,79 @@ url: https://www.qwiklabs.com/focuses/639
 - Practice with updating deployments and deployment styles
 
 # Task
-- [ ] Introduction to deployments
-- [ ] Setup
-- [ ] Learn about the deployment object
-- [ ] Create a deployment
-- [ ] Rolling update
-- [ ] Canary deployments
-- [ ] Blue-green deployments
+- [x] Introduction to deployments
+- [x] Setup
+- [x] Learn about the deployment object
+- [x] Create a deployment
+- [x] Rolling update
+- [x] Canary deployments
+- [x] Blue-green deployments
 
 # Supplement
+![](managing_deployments_using_kubernetes_engine.png)
+
+```uml
+skinparam monochrome true
+skinparam backgroundColor #EEEEFF
+
+actor kubectl as C
+actor kubernetes as K
+participant "Service(frontend,LoadBalancer)" as SF
+participant "Service(auth)" as SA
+participant "Service(hello)" as SH
+participant "Pod(frontend)" as PF
+participant "Pod(auth)" as PA
+participant "Pod(hello)" as PH
+
+activate K
+C -> K: create deployments/auth
+activate C
+K -> PA: replica 1
+activate PA
+C -> K: create services/auth
+K -> SA
+activate SA
+C -> K: create deployments/hello
+K -> PH: replica 3, version 1.0
+activate PH
+C -> K: create services/hello
+K -> SH
+activate SH
+C -> K: create deployments/frontend
+K -> PF: replica 1
+activate PF
+C -> K: create services/frontend
+K -> SF
+activate SF
+
+alt Rolling update
+  C -> K: edit deployment hello
+  K --> PH
+  C -> K: rollout pause deployment/hello
+  C -> K: rollout resume deployment/hello
+  K --> PH
+end
+
+alt Canary deployments
+  C -> K: create deployments/hello-canary
+  K -> PH: replica 1, version 2.0
+end
+
+alt Blue-green deployments
+  C -> K: apply services/hello-blue
+  K -> SH: version 1.0
+  C -> K: create deployments/hello-green
+  K -> PH: replica 3, version: 2.0
+  C -> K: apply services/hello-green
+  K -> SH: version 2.0
+  C -> K: apply services/hello-blue
+  K -> SH: version 1.0
+end
+```
+
+## Setup
 ```sh
+gcloud config set project qwiklabs-gcp-813ad75ef8dcf494
 gcloud config set compute/zone us-central1-a
 git clone https://github.com/googlecodelabs/orchestrate-with-kubernetes.git
 cd orchestrate-with-kubernetes/kubernetes
@@ -49,7 +112,7 @@ kubectl create configmap nginx-frontend-conf --from-file=nginx/frontend.conf
 kubectl create -f deployments/frontend.yaml
 kubectl create -f services/frontend.yaml
 kubectl get services frontend
-curl -ks https://<EXTERNAL-IP>
+curl -ks https://34.69.169.81
 curl -ks https://`kubectl get svc frontend -o=jsonpath="{.status.loadBalancer.ingress[0].ip}"`
 
 kubectl explain deployment.spec.replicas
