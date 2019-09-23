@@ -83,7 +83,7 @@ end
 
 ## Setup
 ```sh
-gcloud config set project qwiklabs-gcp-813ad75ef8dcf494
+gcloud config set project qwiklabs-gcp-6772f7d5da199b9a
 gcloud config set compute/zone us-central1-a
 git clone https://github.com/googlecodelabs/orchestrate-with-kubernetes.git
 cd orchestrate-with-kubernetes/kubernetes
@@ -99,11 +99,14 @@ kubectl explain deployment.metadata.name
 
 ## Create a deployment
 ```sh
+emacs deployments/auth.yaml
+
 cat deployments/auth.yaml
 kubectl create -f deployments/auth.yaml
 kubectl get deployments
 kubectl get replicasets
 kubectl get pods
+
 kubectl create -f services/auth.yaml
 kubectl create -f deployments/hello.yaml
 kubectl create -f services/hello.yaml
@@ -112,7 +115,7 @@ kubectl create configmap nginx-frontend-conf --from-file=nginx/frontend.conf
 kubectl create -f deployments/frontend.yaml
 kubectl create -f services/frontend.yaml
 kubectl get services frontend
-curl -ks https://34.69.169.81
+
 curl -ks https://`kubectl get svc frontend -o=jsonpath="{.status.loadBalancer.ingress[0].ip}"`
 
 kubectl explain deployment.spec.replicas
@@ -153,8 +156,10 @@ curl -ks https://`kubectl get svc frontend -o=jsonpath="{.status.loadBalancer.in
 kubectl apply -f services/hello-blue.yaml
 kubectl create -f deployments/hello-green.yaml
 curl -ks https://`kubectl get svc frontend -o=jsonpath="{.status.loadBalancer.ingress[0].ip}"`/version
+
 kubectl apply -f services/hello-green.yaml
 curl -ks https://`kubectl get svc frontend -o=jsonpath="{.status.loadBalancer.ingress[0].ip}"`/version
+
 kubectl apply -f services/hello-blue.yaml
 curl -ks https://`kubectl get svc frontend -o=jsonpath="{.status.loadBalancer.ingress[0].ip}"`/version
 ```
