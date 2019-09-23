@@ -17,3 +17,12 @@ url: https://www.qwiklabs.com/focuses/611
 - [ ] Verifying that the Node.js script is running
 - [ ] Configure autoscaling for the instance group
 - [ ] Watching the instance group perform autoscaling
+
+# Supplement
+## Creating the application
+## Creating an instance template
+## Create the instance group
+## Verifying that the instance group has been created
+## Verifying that the Node.js script is running
+## Configure autoscaling for the instance group
+## Watching the instance group perform autoscaling
