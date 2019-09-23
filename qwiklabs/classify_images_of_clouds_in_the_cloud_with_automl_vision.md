@@ -17,3 +17,12 @@ url: https://www.qwiklabs.com/focuses/1779
 - [ ] Train your model
 - [ ] Evaluate your model
 - [ ] Generate predictions
+
+# Supplement
+## Set up AutoML Vision
+## Upload traning images to Google Cloud Storage
+## Create a dataset
+## Inspect images
+## Train your model
+## Evaluate your model
+## Generate predictions
