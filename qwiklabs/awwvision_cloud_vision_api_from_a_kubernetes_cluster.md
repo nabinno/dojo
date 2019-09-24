@@ -18,7 +18,26 @@ url: https://www.qwiklabs.com/focuses/1241
 
 # Supplement
 ## Create a Kubernetes Engine cluster
+```sh
+gcloud config set compute/zone us-central1-a
+gcloud config set project xxxxxxxxxxxxxxxxxxxx
+gcloud container clusters create awwvision --num-nodes 2 --scopes cloud-platform
+gcloud container clusters get-credentials awwvision
+kubectl cluster-info
+```
+
 ## Get the Sample
+```sh
+cd cloud-vision/python/awwvision
+make all
+```
+
 ## Deploy the sample
-## Check the Kubernetes resources on the cluster
-## Visit your new web app and start its crawler
+```sh
+kubectl get pods
+kubectl get deployments -o wide
+kubectl get svc awwvision-webapp
+```
+
+## Reference
+- https://github.com/GoogleCloudPlatform/cloud-vision/tree/master/python/awwvision
