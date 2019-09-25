@@ -10,14 +10,14 @@ url: https://www.qwiklabs.com/focuses/1241
 - A worker that handles scraping Reddit for images and classifying them using the Vision API. Cloud Pub/Sub is used to coordinate tasks between multiple worker instances
 
 # Task
-- [ ] Create a Kubernetes Engine cluster
-- [ ] Get the Sample
-- [ ] Deploy the sample
-- [ ] Check the Kubernetes resources on the cluster
-- [ ] Visit your new web app and start its crawler
+- [x] Create a Kubernetes Engine cluster
+- [x] Get the Sample
+- [x] Deploy the sample
+- [x] Check the Kubernetes resources on the cluster
+- [x] Visit your new web app and start its crawler
 
 # Supplement
-![]()
+![](awwvision_cloud_vision_api_from_a_kubernetes_cluster.png)
 
 ```uml
 skinparam monochrome true
@@ -76,7 +76,7 @@ deactivate AS
 ## Create a Kubernetes Engine cluster
 ```sh
 gcloud config set compute/zone us-central1-a
-gcloud config set project xxxxxxxxxxxxxxxxxxxx
+gcloud config set project qwiklabs-gcp-42bba603eba66a4a
 gcloud container clusters create awwvision --num-nodes 2 --scopes cloud-platform
 gcloud container clusters get-credentials awwvision
 kubectl cluster-info
@@ -84,12 +84,14 @@ kubectl cluster-info
 
 ## Get the Sample
 ```sh
-cd cloud-vision/python/awwvision
-make all
+git clone https://github.com/GoogleCloudPlatform/cloud-vision
 ```
 
 ## Deploy the sample
 ```sh
+cd cloud-vision/python/awwvision
+make all
+
 kubectl get pods
 kubectl get deployments -o wide
 kubectl get svc awwvision-webapp
