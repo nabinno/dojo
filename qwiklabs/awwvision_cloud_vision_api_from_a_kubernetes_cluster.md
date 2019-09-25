@@ -17,6 +17,62 @@ url: https://www.qwiklabs.com/focuses/1241
 - [ ] Visit your new web app and start its crawler
 
 # Supplement
+![]()
+
+```uml
+skinparam monochrome true
+skinparam backgroundColor #EEEEFF
+
+box webapp
+    control "Srv(webapp,LB)" as AS
+    actor "Pod(webapp,1)" as AP
+end box
+
+box worker
+    actor "Pod(worker,3)" as W
+end box
+
+box redis
+    control "Srv(redis)" as RS
+    participant "Pod(redis,1)" as RP
+end box
+
+alt Web scraping
+    activate AS
+    AS -> AP
+    deactivate AS
+    activate AP
+    AP -> W: |enque|\nscrape_reddit_task
+    deactivate AP
+    activate W
+    W -> W: |enque|\nlabel_image_task
+    W -> RS
+    activate RS
+    RS -> RP
+    activate RP
+    RP -> RS
+    deactivate RP
+    RS -> W
+    deactivate RS
+    deactivate W
+end
+
+activate AS
+AS -> AP
+activate AP
+AP -> RS
+activate RS
+RS -> RP
+activate RP
+RP -> RS
+deactivate RP
+RS -> AP
+deactivate RS
+AP -> AS
+deactivate AP
+deactivate AS
+```
+
 ## Create a Kubernetes Engine cluster
 ```sh
 gcloud config set compute/zone us-central1-a
