@@ -27,21 +27,65 @@ url: https://www.qwiklabs.com/focuses/581
 - [x] Test your Understanding
 
 # Supplement
-![]()
+![](cloud_ml_engine_qwik_start.png)
 
 ```uml
 skinparam monochrome true
 skinparam backgroundColor #EEEEFF
 
 actor User as U
+actor "AI" as E
+actor "AI (job)" as W
+actor gsutil as G
+participant "Local Storage" as LS
+participant "Cloud Storage" as CS
+participant model as CM
 
-box "AI Platform (Local)"
-  actor executor as LE
-end box
+activate U
+U -> E: |train|
+activate E
+E <-> LS: files
+E -> LS: model
+deactivate E
+activate LS
 
-box "AI Platform (Cloud)"
-  actor job as CJ
-end box
+U -> E: |predict|
+activate E
+E <-> LS: model, target
+E -> U
+deactivate E
+
+U -> G: |put files|
+activate G
+G <-> LS: files
+G -> CS
+deactivate G
+
+U -> W: |submit training|
+activate W
+W <-> CS: files
+W -> CS: model
+deactivate W
+
+U -> E: |create model|
+activate E
+E -> CM
+deactivate E
+activate CM
+
+U -> E: |deploy model|
+activate E
+E <-> CS: model
+E -> CM: create v1
+deactivate E
+
+U -> E: |predict|
+activate E
+E <-> CM: model v1
+E <-> LS: target
+E -> U: output result
+deactivate E
+deactivate U
 ```
 
 ## Install TensorFlow
@@ -84,7 +128,9 @@ gcloud ai-platform local train \
     --eval-steps 100
 tensorboard --logdir=$MODEL_DIR --port=8080
 ls output/export/census/
-gcloud ai-platform local predict --model-dir output/export/census/$(ls output/export/census/) --json-instances ../test.json
+gcloud ai-platform local predict \
+    --model-dir output/export/census/$(ls output/export/census/) \
+    --json-instances ../test.json
 ```
 
 ## Run your training job in the cloud
