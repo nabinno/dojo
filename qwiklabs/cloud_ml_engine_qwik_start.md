@@ -30,6 +30,18 @@ url: https://www.qwiklabs.com/focuses/581
 ![]()
 
 ```uml
+skinparam monochrome true
+skinparam backgroundColor #EEEEFF
+
+actor User as U
+
+box "AI Platform (Local)"
+  actor executor as LE
+end box
+
+box "AI Platform (Cloud)"
+  actor job as CJ
+end box
 ```
 
 ## Install TensorFlow
