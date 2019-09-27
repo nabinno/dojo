@@ -16,7 +16,7 @@ url: https://www.qwiklabs.com/focuses/1841
 - [x] Web Detection
 - [x] Face and Landmark Detection
 - [x] Calling the Vision API and parsing the response
-- [] Explore other Vision API methods
+- [x] Explore other Vision API methods
 
 # Supplement
 ## Create an API Key
