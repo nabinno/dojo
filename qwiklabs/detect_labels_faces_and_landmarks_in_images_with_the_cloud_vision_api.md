@@ -9,19 +9,19 @@ url: https://www.qwiklabs.com/focuses/1841
 - Using the label, face, and landmark detection methods of the vision API
 
 # Task
-- [ ] Create an API Key
-- [ ] Upload an Image to a Cloud Storage bucket
-- [ ] Create your Vision API request
-- [ ] Label Detection
-- [ ] Web Detection
-- [ ] Face and Landmark Detection
-- [ ] Calling the Vision API and parsing the response
-- [ ] Explore other Vision API methods
+- [x] Create an API Key
+- [x] Upload an Image to a Cloud Storage bucket
+- [x] Create your Vision API request
+- [x] Label Detection
+- [x] Web Detection
+- [x] Face and Landmark Detection
+- [x] Calling the Vision API and parsing the response
+- [] Explore other Vision API methods
 
 # Supplement
 ## Create an API Key
 ```sh
-export API_KEY=<YOUR_API_KEY>
+export API_KEY=AIzaSyAYQvlt6deoICU9KRwh-pGdZ6a-pJlFn6Q
 ```
 
 ## Create your Vision API request
@@ -32,7 +32,7 @@ nano> {
       {
         "image": {
           "source": {
-              "gcsImageUri": "gs://my-bucket-name/donuts.png"
+              "gcsImageUri": "gs://my-bucket-name/donuts.jpg"
           }
         },
         "features": [
@@ -59,7 +59,7 @@ nano> {
       {
         "image": {
           "source": {
-              "gcsImageUri": "gs://my-bucket-name/donuts.png"
+              "gcsImageUri": "gs://my-bucket-name/donuts.jpg"
           }
         },
         "features": [
@@ -83,7 +83,7 @@ nano> {
       {
         "image": {
           "source": {
-              "gcsImageUri": "gs://my-bucket-name/selfie.png"
+              "gcsImageUri": "gs://my-bucket-name/selfie.jpg"
           }
         },
         "features": [
@@ -103,3 +103,8 @@ nano> {
 ```sh
 curl -s -X POST -H "Content-Type: application/json" --data-binary @request.json  https://vision.googleapis.com/v1/images:annotate?key=${API_KEY}
 ```
+
+## Reference
+- https://cloud.google.com/vision/docs/label-detection-tutorial
+- https://cloud.google.com/vision/docs/internet-detection
+- https://cloud.google.com/vision/docs/face-tutorial
