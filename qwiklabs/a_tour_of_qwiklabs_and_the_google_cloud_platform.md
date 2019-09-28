@@ -22,3 +22,11 @@ url: https://www.qwiklabs.com/focuses/2794
 - [ ] Roles and Permissions
 - [ ] APIs and Services
 - [ ] Cloud Shell
+
+# Supplement
+## Accessing the GCP Console
+## Projects in the GCP Console
+## Navigation Menu and Services
+## Roles and Permissions
+## APIs and Services
+## Cloud Shell

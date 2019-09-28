@@ -13,3 +13,8 @@ url: https://www.qwiklabs.com/focuses/3563
 - [ ] Create a new instance from the Cloud Console
 - [ ] Create a new instance with gcloud
 - [ ] Test your knowledge
+
+# Supplement
+## Create a new instance from the Cloud Console
+## Create a new instance with gcloud
+## Test your knowledge

@@ -14,3 +14,9 @@ url: https://www.qwiklabs.com/focuses/558
 - [ ] Create a Network Load Balancer
 - [ ] Create a HTTP(s) Load Balancer
 - [ ] Test your knowledge
+
+# Supplement
+## Create multiple web server instances
+## Create a Network Load Balancer
+## Create a HTTP(s) Load Balancer
+## Test your knowledge

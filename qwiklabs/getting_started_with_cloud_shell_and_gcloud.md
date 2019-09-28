@@ -19,3 +19,15 @@ url: https://www.qwiklabs.com/focuses/563
 - [ ] SSH into your vm instance
 - [ ] Use the Home directory
 - [ ] Test your knowledge
+
+# Supplement
+## Start Cloud Shell
+## Understanding Regions and Zones
+## Initializing Cloud SDK
+## Setting environment variables
+## Create a virtual machine with gcloud
+## Using gcloud commands
+## Auto-completion
+## SSH into your vm instance
+## Use the Home directory
+## Test your knowledge
