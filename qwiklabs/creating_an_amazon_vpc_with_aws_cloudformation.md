@@ -12,15 +12,25 @@ url: https://amazon.qwiklabs.com/focuses/363?parent=catalog
 - Delete a CloudFormation stack
 
 # Task
-- [ ] Deploy a Stack using AWS CloudFormation
-- [ ] Examine the VPC
-- [ ] Updating a Stack
-- [ ] Viewing a Stack in CloudFormation Designer
-- [ ] Delete the Stack
+- [x] Deploy a Stack using AWS CloudFormation
+- [x] Examine the VPC
+- [x] Updating a Stack
+- [x] Viewing a Stack in CloudFormation Designer
+- [x] Delete the Stack
 
 # Supplement
+
 ## Deploy a Stack using AWS CloudFormation
-## Examine the VPC
+![](creating_an_amazon_vpc_with_aws_cloudformation___1.png)
+[CloudFormation file](creating_an_amazon_vpc_with_aws_cloudformation___1.yaml)
+
 ## Updating a Stack
-## Viewing a Stack in CloudFormation Designer
-## Delete the Stack
+![](creating_an_amazon_vpc_with_aws_cloudformation___2.png)
+[CloudFormation file](creating_an_amazon_vpc_with_aws_cloudformation___2.yaml)
+
+## Reference
+- https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html
+- https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing
+- https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html
+- https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html
+- https://en.wikipedia.org/wiki/Network_address_translation
