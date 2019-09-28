@@ -17,3 +17,10 @@ url: https://amazon.qwiklabs.com/focuses/363?parent=catalog
 - [ ] Updating a Stack
 - [ ] Viewing a Stack in CloudFormation Designer
 - [ ] Delete the Stack
+
+# Supplement
+## Deploy a Stack using AWS CloudFormation
+## Examine the VPC
+## Updating a Stack
+## Viewing a Stack in CloudFormation Designer
+## Delete the Stack
