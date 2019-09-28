@@ -143,5 +143,7 @@ aws autoscaling describe-scaling-activities \
 ```
 
 ## Reference
-- https://docs.aws.amazon.com/ja_jp/autoscaling/index.html
+- https://docs.aws.amazon.com/autoscaling/index.html
 - http://awsdocs.s3.amazonaws.com/AutoScaling/latest/as-qrc.pdf
+- https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-target-tracking.html
+- https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-monitoring.html#enable-as-instance-metrics
