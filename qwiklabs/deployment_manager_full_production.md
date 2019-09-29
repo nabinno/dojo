@@ -40,7 +40,7 @@ participant "HealthCheck" as HC
 TP -> IG: |Load|\nab -n 10000 -c 100
 IG -> IG: start event
 activate IG
-AS -> IG: listen event
+AS -> IG: |polling (60s)|\nlisten event
 activate AS
 AS -> IG: |invoke|\nnew instance
 deactivate AS
