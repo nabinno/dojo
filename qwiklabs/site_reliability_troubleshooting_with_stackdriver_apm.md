@@ -11,25 +11,25 @@ url: https://google.qwiklabs.com/focuses/4186
 - How to use Stackdriver Trace, Profiler, and Debugger to identify software issues
 
 # Task
-- [ ] Environment Setup
-- [ ] Infrastructure setup
-- [ ] Create Stackdriver workspace
-- [ ] Deploy application
-- [ ] Develop Sample SLOs and SLIs
-- [ ] Configure Latency SLI
-- [ ] Configure Availability SLI
-- [ ] Deploy new release
-- [ ] Send some data
-- [ ] Latency SLO Violation - Find the Problem
-- [ ] Deploy Change to Address Latency
-- [ ] Error Rate SLO Violation - Find the Problem
-- [ ] Deploy Change to Address Error Rate
-- [ ] Application optimization with Stackdriver APM
+- [x] Environment Setup
+- [x] Infrastructure setup
+- [x] Create Stackdriver workspace
+- [x] Deploy application
+- [x] Develop Sample SLOs and SLIs
+- [x] Configure Latency SLI
+- [x] Configure Availability SLI
+- [x] Deploy new release
+- [x] Send some data
+- [x] Latency SLO Violation - Find the Problem
+- [x] Deploy Change to Address Latency
+- [x] Error Rate SLO Violation - Find the Problem
+- [x] Deploy Change to Address Error Rate
+- [x] Application optimization with Stackdriver APM
 
 # Supplement
 https://github.com/GoogleCloudPlatform/microservices-demo
 
-![]()
+![](site_reliability_troubleshooting_with_stackdriver_apm.png)
 
 ```uml
 skinparam monochrome true
@@ -85,7 +85,6 @@ gcloud container clusters list
 ```sh
 gcloud container clusters list
 gcloud container clusters get-credentials shop-cluster --zone us-west1-b
-
 kubectl get nodes
 ```
 
@@ -108,6 +107,10 @@ curl -o /dev/null -s -w "%{http_code}\n"  http://$EXTERNAL_IP
 
 ## Develop Sample SLOs and SLIs
 ## Configure Latency SLI
+```
+custom.googleapis.com/opencensus/grpc.io/client/roundtrip_latency
+```
+
 ## Configure Availability SLI
 ## Deploy new release
 ```sh
