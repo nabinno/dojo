@@ -16,17 +16,33 @@ url: https://www.qwiklabs.com/focuses/2794
 - Use tools that are pre-installed in Cloud Shell and run commands like touch, nano, and cat to create, edit, and output the content of files.
 
 # Task
-- [ ] Accessing the GCP Console
-- [ ] Projects in the GCP Console
-- [ ] Navigation Menu and Services
-- [ ] Roles and Permissions
-- [ ] APIs and Services
-- [ ] Cloud Shell
+- [x] Accessing the GCP Console
+- [x] Projects in the GCP Console
+- [x] Navigation Menu and Services
+- [x] Roles and Permissions
+- [x] APIs and Services
+- [x] Cloud Shell
 
 # Supplement
-## Accessing the GCP Console
-## Projects in the GCP Console
-## Navigation Menu and Services
 ## Roles and Permissions
+- https://cloud.google.com/iam/
+- https://cloud.google.com/iam/docs/understanding-roles
+
 ## APIs and Services
+- https://cloud.google.com/apis/design/
+- https://developers.google.com/apis-explorer/#p/
+
 ## Cloud Shell
+- https://cloud.google.com/shell/docs/features
+
+```sh
+gcloud auth list
+touch test.txt
+ls
+
+cat >>EOF >test.txt
+GCP and Qwiklabs are the best!
+EOF
+
+cat test.txt
+```
