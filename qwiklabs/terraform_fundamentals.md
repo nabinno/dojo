@@ -10,19 +10,49 @@ url: https://www.qwiklabs.com/focuses/1208
 - Create a VM instance infrastructure using Terraform
 
 # Task
-- [ ] Introduction
-- [ ] Objectives
-- [ ] Setup and Requirements
-- [ ] What is Terraform?
-- [ ] Verifying Terraform Installation
-- [ ] Build Infrastructure
-- [ ] Test your Understanding
+- [x] Introduction
+- [x] Objectives
+- [x] Setup and Requirements
+- [x] What is Terraform?
+- [x] Verifying Terraform Installation
+- [x] Build Infrastructure
+- [x] Test your Understanding
 
 # Supplement
-## Introduction
-## Objectives
-## Setup and Requirements
-## What is Terraform?
 ## Verifying Terraform Installation
+```sh
+export PROJECT=$(gcloud config list --format "value(core.project)")
+
+terraform
+```
+
 ## Build Infrastructure
-## Test your Understanding
+```sh
+cat <<EOF >instance.tf
+resource "google_compute_instance" "default" {
+  project      = "${PROJECT}"
+  name         = "terraform"
+  machine_type = "n1-standard-1"
+  zone         = "us-central1-a"
+
+  boot_disk {
+    initialize_params {
+      image = "debian-cloud/debian-9"
+    }
+  }
+
+  network_interface {
+    network = "default"
+    access_config {
+    }
+  }
+}
+EOF
+
+ls
+terraform init
+terraform plan
+terraform apply
+terraform show
+terraform plan
+```
