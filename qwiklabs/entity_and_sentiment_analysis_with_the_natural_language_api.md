@@ -28,7 +28,7 @@ export API_KEY=AIzaSyAn2pjtkOpZiWWY4elB2Z5zUpbtukIVr5E
 
 ## Make an Entity Analysis Request
 ```sh
-cat >>EOF >request.json
+cat <<EOF >request.json
 {
   "document":{
     "type":"PLAIN_TEXT",
@@ -47,7 +47,7 @@ cat result.json
 
 ## Sentiment analysis with the Natural Language API
 ```sh
-cat >>EOF >request.json
+cat <<EOF >request.json
  {
   "document":{
     "type":"PLAIN_TEXT",
@@ -62,7 +62,7 @@ curl "https://language.googleapis.com/v1/documents:analyzeSentiment?key=${API_KE
 
 ## Analyzing entity sentiment
 ```sh
-cat >>EOF >request.json
+cat <<EOF >request.json
  {
   "document":{
     "type":"PLAIN_TEXT",
@@ -77,7 +77,7 @@ curl "https://language.googleapis.com/v1/documents:analyzeEntitySentiment?key=${
 
 ## Analyzing syntax and parts of speech
 ```sh
-cat >>EOF >>request.json
+cat <<EOF >request.json
 {
   "document":{
     "type":"PLAIN_TEXT",
@@ -92,7 +92,7 @@ curl "https://language.googleapis.com/v1/documents:analyzeSyntax?key=${API_KEY}"
 
 ## Multilingual natural language processing
 ```sh
-cat >>EOF >request.json
+cat <<EOF >request.json
 {
   "document":{
     "type":"PLAIN_TEXT",

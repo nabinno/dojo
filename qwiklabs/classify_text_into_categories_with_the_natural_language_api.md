@@ -47,7 +47,7 @@ export API_KEY=AIzaSyCTiFA2egBfi54ljKWkaUD2F9_67rklf0s
 
 ## Classify a news article
 ```sh
-cat >>EOF >request.json
+cat <<EOF >request.json
 {
   "document":{
     "type":"PLAIN_TEXT",
@@ -72,7 +72,7 @@ gcloud projects add-iam-policy-binding $PROJECT --member=serviceAccount:my-accou
 gcloud iam service-accounts keys create key.json --iam-account=my-account@$PROJECT.iam.gserviceaccount.com
 export GOOGLE_APPLICATION_CREDENTIALS=key.json
 
-cat >>EOF >classify-text.py
+cat <<EOF >classify-text.py
 from google.cloud import storage, language, bigquery
 
 # Set up our GCS, NL, and BigQuery clients

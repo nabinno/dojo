@@ -40,7 +40,7 @@ gcloud auth list
 touch test.txt
 ls
 
-cat >>EOF >test.txt
+cat <<EOF >test.txt
 GCP and Qwiklabs are the best!
 EOF
 
