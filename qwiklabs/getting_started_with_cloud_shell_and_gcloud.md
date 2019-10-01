@@ -9,19 +9,18 @@ url: https://www.qwiklabs.com/focuses/563
 - Connect to compute services hosted on the Google Cloud Platform
 
 # Task
-- [ ] Start Cloud Shell
-- [ ] Understanding Regions and Zones
-- [ ] Initializing Cloud SDK
-- [ ] Setting environment variables
-- [ ] Create a virtual machine with gcloud
-- [ ] Using gcloud commands
-- [ ] Auto-completion
-- [ ] SSH into your vm instance
-- [ ] Use the Home directory
-- [ ] Test your knowledge
+- [x] Start Cloud Shell
+- [x] Understanding Regions and Zones
+- [x] Initializing Cloud SDK
+- [x] Setting environment variables
+- [x] Create a virtual machine with gcloud
+- [x] Using gcloud commands
+- [x] Auto-completion
+- [x] SSH into your vm instance
+- [x] Use the Home directory
+- [x] Test your knowledge
 
 # Supplement
-## Start Cloud Shell
 ## Understanding Regions and Zones
 ```sh
 gcloud compute project-info describe --project $(gcloud config list --format "value(core.project)")
@@ -31,7 +30,7 @@ gcloud compute project-info describe --project $(gcloud config list --format "va
 ## Setting environment variables
 ```sh
 export PROJECT_ID=$(gcloud config list --format "value(core.project)")
-export ZONE=<your_zone>
+export ZONE=$(gcloud compute project-info describe --format "value(commonInstanceMetadata.items['google-compute-default-zone'])" --project $(gcloud config list --format "value(core.project)"))
 echo $PROJECT_ID
 echo $ZONE
 ```
@@ -56,7 +55,7 @@ gcloud components list
 ```sh
 gcloud components install beta
 gcloud beta interactive
-gcloud compute instances describe <your_vm>
+interactive> gcloud compute instances describe <your_vm>
 ```
 
 ## SSH into your vm instance
