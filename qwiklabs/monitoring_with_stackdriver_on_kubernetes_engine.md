@@ -21,7 +21,6 @@ url: https://www.qwiklabs.com/focuses/5157
 ```sh
 gcloud config set compute/region us-central1
 gcloud config set compute/zone us-central1-a
-gcloud config set project qwiklabs-gcp-fece287c4002a81e
 ```
 
 ## Clone demo
@@ -33,7 +32,7 @@ gcloud auth application-default login
 
 ## Create Stackdriver workspace
 ```sh
-emacs ~/gke-monitoring-tutorial/terraform/provider.tf
+nano ~/gke-monitoring-tutorial/terraform/provider.tf
 
 make create
 ```
