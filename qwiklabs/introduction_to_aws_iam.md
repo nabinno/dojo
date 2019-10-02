@@ -1,7 +1,7 @@
 ---
 title: "Introduction to AWS IAM"
 tags: aws, aws-iam
-url: https://amazon.qwiklabs.com/focuses/281?parent=catalog
+url: https://amazon.qwiklabs.com/focuses/281
 ---
 
 # Goal
@@ -12,6 +12,10 @@ url: https://amazon.qwiklabs.com/focuses/281?parent=catalog
 - Experimenting with the effects of policies on service access
 
 # Task
-- [ ] Explore the Users and Groups
-- [ ] Add Users to Groups
-- [ ] Sign-In and Test Users
+- [x] Explore the Users and Groups
+- [x] Add Users to Groups
+- [x] Sign-In and Test Users
+
+# Supplement
+## Reference
+- http://aws.amazon.com/iam/
