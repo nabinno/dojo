@@ -50,3 +50,8 @@ url: https://github.com/aws-samples/aws-cdk-examples
 ## stepfunctions-job-poller
 ## ecs-service-with-logging
 ## fargate-service-with-logging
+
+## Reference
+- https://docs.aws.amazon.com/cdk/api/latest/
+- https://docs.aws.amazon.com/cdk/latest/guide/home.html
+- https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html

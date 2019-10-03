@@ -25,3 +25,6 @@ url: https://cdkworkshop.com/20-typescript.html
 - http://bit.ly/cdkworkshopjp
 - https://github.com/aws/aws-cdkworkshop
 - https://github.com/aws/aws-cdk
+- https://docs.aws.amazon.com/cdk/api/latest/
+- https://docs.aws.amazon.com/cdk/latest/guide/home.html
+- https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html
