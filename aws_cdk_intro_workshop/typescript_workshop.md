@@ -315,9 +315,9 @@ EOF
 $ cdk deploy
 ...
 Outputs:
-CdkWorkshopStack.Endpoint8024A810 = https://d9mq4rw3cd.execute-api.ap-northeast-1.amazonaws.com/prod/
+CdkWorkshopStack.Endpoint8024A810 = https://5pihly81z5.execute-api.ap-northeast-1.amazonaws.com/prod/
 
-$ curl -i https://d9mq4rw3cd.execute-api.ap-northeast-1.amazonaws.com/prod/
+$ curl -i https://5pihly81z5.execute-api.ap-northeast-1.amazonaws.com/prod/
 HTTP/2 500
 content-type: application/json
 content-length: 36
@@ -330,16 +330,51 @@ x-amz-cf-pop: NRT20
 x-amz-cf-id: 7RenbMEmCU3lT5qQRGa-FRoUrVarEzgPqcQAA7BdFWLJi5maa5ZG7Q==
 ```
 
-**CloudWatch Logs**
-```sh
-```
-
 **Granting permissions**
 ```sh
-```
+cat <<EOF >lib/hicounter.ts
+import cdk = require('@aws-cdk/core');
+import lambda = require('@aws-cdk/aws-lambda');
+import dynamodb = require('@aws-cdk/aws-dynamodb');
 
-**Test the hit counter**
-```sh
+export interface HitCounterProps {
+  /** the function for which we want to count url hits **/
+  downstream: lambda.Function;
+}
+
+export class HitCounter extends cdk.Construct {
+  /** allows accessing the counter function */
+  public readonly handler: lambda.Function;
+
+  constructor(scope: cdk.Construct, id: string, props: HitCounterProps) {
+    super(scope, id);
+
+    const table = new dynamodb.Table(this, 'Hits', {
+      partitionKey: { name: 'path', type: dynamodb.AttributeType.STRING }
+    });
+
+    this.handler = new lambda.Function(this, 'HitCounterHandler', {
+      runtime: lambda.Runtime.NODEJS_8_10,
+      handler: 'hitcounter.handler',
+      code: lambda.Code.asset('lambda'),
+      environment: {
+        DOWNSTREAM_FUNCTION_NAME: props.downstream.functionName,
+        HITS_TABLE_NAME: table.tableName
+      }
+    });
+
+    // grant the lambda role read/write permissions to our table
+    table.grantReadWriteData(this.handler);
+
+    // grant the lambda role invoke permissions to the downstream function
+    props.downstream.grantInvoke(this.handler);
+  }
+}
+EOF
+
+$ curl -i https://5pihly81z5.execute-api.ap-northeast-1.amazonaws.com/prod/
+$ curl -i https://5pihly81z5.execute-api.ap-northeast-1.amazonaws.com/prod/hello
+$ curl -i https://5pihly81z5.execute-api.ap-northeast-1.amazonaws.com/prod/hello/world
 ```
 
 ## Using construct libraries
