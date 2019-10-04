@@ -182,10 +182,146 @@ Outputs:
 CdkWorkshopStack.Endpoint8024A810 = https://d9mq4rw3cd.execute-api.ap-northeast-1.amazonaws.com/prod/
 ```
 
-
 ## Writing constructs
+**Define the HitCounter API**
+```sh
+cat <<EOF >lib/hitcounter.ts
+import cdk = require('@aws-cdk/core')
+import lambda = require('@aws-cdk/aws-lambda')
+
+export interface HitCounterProps {
+  // the function for which we want to count url hits
+  downstream: lambda.IFunction
+}
+
+export class HitCounter extends cdk.Construct{
+  constructor(scope: cdk.Construct, id: string, props: HitCounterProps){
+    super(scope, id)
+
+    // TODO
+  }
+}
+EOF
+```
+
+**Hit counter handler**
+```sh
+cat <<EOF >lambda/hicounter.js
+const { DynamoDB, Lambda } = require('aws-sdk');
+
+exports.handler = async function(event) {
+  console.log("request:", JSON.stringify(event, undefined, 2));
+
+  // create AWS SDK clients
+  const dynamo = new DynamoDB();
+  const lambda = new Lambda();
+
+  // update dynamo entry for "path" with hits++
+  await dynamo.updateItem({
+    TableName: process.env.HITS_TABLE_NAME,
+    Key: { path: { S: event.path } },
+    UpdateExpression: 'ADD hits :incr',
+    ExpressionAttributeValues: { ':incr': { N: '1' } }
+  }).promise();
+
+  // call downstream function and capture response
+  const resp = await lambda.invoke({
+    FunctionName: process.env.DOWNSTREAM_FUNCTION_NAME,
+    Payload: JSON.stringify(event)
+  }).promise();
+
+  console.log('downstream response:', JSON.stringify(resp, undefined, 2));
+
+  // return response back to upstream caller
+  return JSON.parse(resp.Payload);
+};
+EOF
+```
+
+**Define resources**
+```sh
+npm i @aws-cdk/aws-dynamodb
+
+cat <<EOF >lib/hicounter.ts
+import cdk = require('@aws-cdk/core')
+import lambda = require('@aws-cdk/aws-lambda')
+import dynamodb = require('@aws-cdk/aws-dynamodb')
+
+export interface HitCounterProps {
+  /**
+   * the function for which we want to count url hits
+   */
+  downstream: lambda.IFunction
+}
+
+export class HitCounter extends cdk.Construct{
+  /**
+   * allows accesing the counter function
+   */
+  public readonly handler: lambda.Function
+
+  constructor(scope: cdk.Construct, id: string, props: HitCounterProps){
+    super(scope, id)
+
+    const table = new dynamodb.Table(this, 'Hits', {
+      partitionKey: {name: 'path', type: dynamodb.AttributeType.STRING}
+    })
+
+    this.handler = new lambda.Function(this, 'HitCounterHandler', {
+      runtime: lambda.Runtime.NODEJS_8_10,
+      handler: 'hitcounter.handler',
+      code: lambda.Code.asset('lambda'),
+      environment: {
+        DOWNSTREAM_FUNCTION_NAME: props.downstream.functionName,
+        HITS_TABLE_NAME: table.tableName
+      }
+    })
+  }
+}
+EOF
+```
+
+**Use the hit counter**
+```sh
+```
+
+**CloudWatch Logs**
+```sh
+```
+
+**Granting permissions**
+```sh
+```
+
+**Test the hit counter**
+```sh
+```
 
 ## Using construct libraries
+**Learning about the Table viewer construct**
+```sh
+```
+
+**Installing the library**
+```sh
+```
+
+**Add the table viewer to your app**
+```sh
+```
+
+**Exposing our hit counter table**
+```sh
+```
+
+**Deploying our app**
+```sh
+```
+
+**Extra credit**
+```sh
+```
+
 ## Clean up
 
 ## Reference
