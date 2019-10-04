@@ -9,7 +9,7 @@ url: https://cdkworkshop.com/20-typescript.html
 
 # Task
 - [x] Prerequistites
-- [ ] New Project
+- [x] New Project
 - [ ] Hello, CDK!
 - [ ] Writing constructs
 - [ ] Using construct libraries
@@ -21,9 +21,12 @@ url: https://cdkworkshop.com/20-typescript.html
 $ npm i -g aws-cdk
 $ cdk --version
 1.11.0 (build 4ed4d96)
+
+$ aws configure
 ```
 
 ## New Project
+**Initialize project**
 ```sh
 $ mkdir cdk-workshop && cd $_
 $ cdk init sample-app --language typescript
@@ -36,6 +39,27 @@ $ cdk init sample-app --language typescript
  * `cdk deploy`      deploy this stack to your default AWS account/region
  * `cdk diff`        compare deployed stack with current state
  * `cdk synth`       emits the synthesized CloudFormation template
+```
+
+**Show CloudFormation configuration**
+```sh
+$ cdk synth
+Resources:
+  CdkWorkshopQueue50D9D426:
+    Type: AWS::SQS::Queue
+    Properties:
+      VisibilityTimeout: 300
+...
+```
+
+**Deploy bootstrap stack**
+```sh
+$ cdk bootstrap
+```
+
+**Deploy current stack**
+```sh
+$ cdk deploy
 ```
 
 ## Hello, CDK!
