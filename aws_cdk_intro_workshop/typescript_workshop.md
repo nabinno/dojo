@@ -93,6 +93,41 @@ There were no differences
 ```
 
 ## Writing constructs
+```sh
+$ npm i @aws-cdk/aws-lambda
+
+$ cat >>EOF >cdk-workshop-stack.ts
+import cdk = require('@aws-cdk/core');
+import lambda = require('@aws-cdk/aws-lambda');
+
+export class CdkWorkshopStack extends cdk.Stack {
+  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+    super(scope, id, props);
+
+    // defines an AWS Lambda resource
+    const hello = new lambda.Function(this, 'HelloHandler', {
+      runtime: lambda.Runtime.NODEJS_8_10, // execution environment
+      code: lambda.Code.asset('lambda'), // code loaded from the "lambda" directory
+      handler: 'hello.handler' // file is "hello", function is "handler"
+    })
+  }
+}
+EOF
+
+$ cdk diff
+...
+Parameters
+[+] Parameter HelloHandler/Code/S3Bucket HelloHandlerCodeS3Bucket4359A483: {"Type":"String","Description":"S3 bucket for asset \"CdkWorkshopStack/HelloHandler/Code\""}
+[+] Parameter HelloHandler/Code/S3VersionKey HelloHandlerCodeS3VersionKey07D12610: {"Type":"String","Description":"S3 key for asset version \"CdkWorkshopStack/HelloHandler/Code\""}
+[+] Parameter HelloHandler/Code/ArtifactHash HelloHandlerCodeArtifactHash5DF4E4B6: {"Type":"String","Description":"Artifact hash for asset \"CdkWorkshopStack/HelloHandler/Code\""}
+
+Resources
+[+] AWS::IAM::Role HelloHandler/ServiceRole HelloHandlerServiceRole11EF7C63
+[+] AWS::Lambda::Function HelloHandler HelloHandler2E4FBA4D
+
+$ cdk deploy
+```
+
 ## Using construct libraries
 ## Clean up
 
