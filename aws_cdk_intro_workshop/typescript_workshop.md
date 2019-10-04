@@ -283,6 +283,51 @@ EOF
 
 **Use the hit counter**
 ```sh
+cat <<EOF >lib/cdk-workshop-stack.ts
+import cdk = require('@aws-cdk/core')
+import lambda = require('@aws-cdk/aws-lambda')
+import apigw = require('@aws-cdk/aws-apigateway')
+import { HitCounter } from './hitcounter'
+
+export class CdkWorkshopStack extends cdk.Stack {
+  constructor(scope: cdk.App, id: string, props?: cdk.StackProps) {
+    super(scope, id, props)
+
+    // defines an AWS Lambda resource
+    const hello = new lambda.Function(this, 'HelloHandler', {
+      runtime: lambda.Runtime.NODEJS_8_10, // execution environment
+      code: lambda.Code.asset('lambda'), // code loaded from the "lambda" directory
+      handler: 'hello.handler' // file is "hello", function is "handler"
+    })
+
+    const helloWithCounter = new HitCounter(this, 'HelloHitCounter', {
+      downstream: hello
+    })
+
+    // defines an API Gateway REST API resource backed by our "hello" function.
+    new apigw.LambdaRestApi(this, 'Endpoint', {
+      handler: helloWithCounter.handler
+    })
+  }
+}
+EOF
+
+$ cdk deploy
+...
+Outputs:
+CdkWorkshopStack.Endpoint8024A810 = https://d9mq4rw3cd.execute-api.ap-northeast-1.amazonaws.com/prod/
+
+$ curl -i https://d9mq4rw3cd.execute-api.ap-northeast-1.amazonaws.com/prod/
+HTTP/2 500
+content-type: application/json
+content-length: 36
+date: Fri, 04 Oct 2019 16:21:40 GMT
+x-amzn-requestid: e5f38db9-510e-4b0f-a86b-c2d3d443f093
+x-amz-apigw-id: BC6vSHHPtjMFdmw=
+x-cache: Error from cloudfront
+via: 1.1 f7c05f05bc07c08d4e67479d59852143.cloudfront.net (CloudFront)
+x-amz-cf-pop: NRT20
+x-amz-cf-id: 7RenbMEmCU3lT5qQRGa-FRoUrVarEzgPqcQAA7BdFWLJi5maa5ZG7Q==
 ```
 
 **CloudWatch Logs**
