@@ -15,3 +15,8 @@ url: https://www.qwiklabs.com/focuses/851?parent=catalog
 
 
 # Supplement
+## Reference
+- https://aws.amazon.com/documentation/dms/
+- https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.html
+- https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html
+- https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html
