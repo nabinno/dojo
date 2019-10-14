@@ -1,6 +1,6 @@
 package awslambda
 
-import "github.com/nabinno/dojo/magefiles/utilities"
+import "github.com/nabinno/dojo/aws_lambda/magefiles/utilities"
 
 // CoreBinaryName ....
 const CoreBinaryName = "aws-lambda-go-api-proxy-core"

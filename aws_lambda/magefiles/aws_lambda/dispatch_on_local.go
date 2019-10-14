@@ -31,10 +31,12 @@ func doDispatchOnLocal() (out []byte, err error) {
 
 // @todo 2019-08-24
 func createDispatchYaml() ([]byte, error) {
-	if pwd, err := os.Getwd(); err != nil {
+	pwd, err := os.Getwd()
+	if err != nil {
 		return nil, err
-	} else {
-		return outcmd(fmt.Sprintf(`
+	}
+
+	return outcmd(fmt.Sprintf(`
 cat <<EOF >docker-compose.yml
 version: "2"
 services:
@@ -49,5 +51,4 @@ services:
 	  - /var/run/docker.sock:/var/run/docker.sock
 EOF
 `, pwd))
-	}
 }

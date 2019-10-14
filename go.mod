@@ -6,9 +6,9 @@ require (
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/golang/protobuf v1.3.2 // indirect
 	github.com/json-iterator/go v1.1.7 // indirect
-	github.com/magefile/mage v1.8.0
+	github.com/magefile/mage v1.8.0 // indirect
 	github.com/mattn/go-isatty v0.0.9 // indirect
-	github.com/mattn/go-shellwords v1.0.6
+	github.com/mattn/go-shellwords v1.0.6 // indirect
 	github.com/nabinno/dojo/a_tour_of_go v0.0.0-20190823090509-71ae50d6eca9 // indirect
 	github.com/nabinno/dojo/atcoder v0.0.0-20190823065239-9f852ef0cae4 // indirect
 	github.com/nabinno/dojo/aws_lambda v0.0.0-20190823090509-71ae50d6eca9 // indirect

@@ -4,7 +4,7 @@ package main
 
 import (
 	"github.com/magefile/mage/mg"
-	lbd "github.com/nabinno/dojo/magefiles/aws_lambda"
+	lbd "github.com/nabinno/dojo/aws_lambda/magefiles/aws_lambda"
 )
 
 // Default target to run when none is specified
