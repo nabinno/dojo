@@ -2,7 +2,10 @@ module github.com/nabinno/dojo
 
 go 1.12
 
+<<<<<<< Updated upstream
 require (
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
 	github.com/gin-contrib/sse v0.1.0 // indirect
 	github.com/golang/protobuf v1.3.2 // indirect
 	github.com/json-iterator/go v1.1.7 // indirect
@@ -21,4 +24,17 @@ require (
 	golang.org/x/net v0.0.0-20190813141303-74dc4d7220e7 // indirect
 	golang.org/x/text v0.3.2 // indirect
 	gopkg.in/fsnotify/fsnotify.v1 v1.4.7 // indirect
+=======
+	github.com/magefile/mage v1.9.0
+	github.com/mattn/go-shellwords v1.0.6
+	github.com/nabinno/dojo/aws_lambda v0.0.0-20191014063953-d91277bbff73 // indirect
+>>>>>>> Stashed changes
+=======
+	github.com/magefile/mage v1.9.0
+	github.com/mattn/go-shellwords v1.0.6
+	github.com/nabinno/dojo/aws_lambda v0.0.0-20191014063953-d91277bbff73 // indirect
+>>>>>>> Stashed changes
 )
+=======
+require github.com/nabinno/dojo/aws_lambda v0.0.0-20191014063953-d91277bbff73 // indirect
+>>>>>>> Stashed changes
