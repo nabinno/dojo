@@ -1,25 +1,38 @@
 import cdk = require("@aws-cdk/core");
 // import * as iam from "@aws-cdk/aws-iam";
 import lambda = require("@aws-cdk/aws-lambda");
+import apigw = require("@aws-cdk/aws-apigateway");
+import s3 = require("@aws-cdk/aws-s3");
+import s3deploy = require("@aws-cdk/aws-s3-deployment");
 
 export class AwsLambdaStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    let stageName: string = "prod";
-    if (this.node.tryGetContext("stage") !== undefined) {
-      stageName = this.node.tryGetContext("stage");
-    }
-    const projectName: string = this.node.tryGetContext("project");
+    const bucket = new s3.Bucket(this, "lambda");
 
-    new lambda.Function(this, "SampleIncomingWebhookApp", {
-      functionName: `${projectName}-${this.stackName}-${stageName}`,
-      runtime: lambda.Runtime.GO_1_X,
-      code: lambda.Code.asset("./lambda"),
-      handler: "main",
-      memorySize: 256,
-      timeout: cdk.Duration.seconds(10),
-      environment: {}
+    // @todo 2019-10-15
+    new s3deploy.BucketDeployment(this, "DeployToLambdaBucket", {
+      sources: [s3deploy.Source.asset("lambda/pets")],
+      destinationBucket: bucket
+    });
+
+    // GET  /pets
+    // GET  /pets/:id
+    // POST /pets
+    new apigw.LambdaRestApi(this, "apigw-pets", {
+      handler: new lambda.Function(this, "lambda-pets", {
+        runtime: lambda.Runtime.GO_1_X,
+        code: lambda.Code.fromBucket(
+          bucket,
+          // s3.Bucket.fromBucketName(this, "lambda", "lambda"),
+          this.stackName
+        ),
+        handler: "main",
+        memorySize: 256,
+        timeout: cdk.Duration.seconds(300),
+        environment: {}
+      })
     });
   }
 }

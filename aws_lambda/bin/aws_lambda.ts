@@ -11,13 +11,13 @@ async function execute() {
     `GOOS=linux
 GOARCH=amd64
 go get -v -t -d ./lambda/...
-go build -o ./lambda/main ./lambda/**.go`
+go build -o ./lambda/pets/main ./lambda/pets/**.go`
   );
 
   const app = new cdk.App();
   new AwsLambdaStack(app, "AwsLambdaStack");
 
-  await exec("rm ./lambda/main");
+  await exec("rm ./lambda/pets/main");
 }
 
 execute();
