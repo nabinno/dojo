@@ -20,7 +20,7 @@ schema:
   path: ./lambda/pets
   commands:
     install:
-      method: GOOS=linux GOARCH=amd64 go build -o main
+      method: go build -o pets
       status: true
   watcher:
     extensions:
@@ -31,3 +31,8 @@ schema:
     - .git
     - .realize
     - vendor
+    scripts:
+      - type: before
+        command: GOOS=linux GOARCH=amd64
+      - type: after
+        command: zip pets.zip pets
