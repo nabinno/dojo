@@ -1,13 +1,19 @@
-import { expect as expectCDK, matchTemplate, MatchStyle } from '@aws-cdk/assert';
-import cdk = require('@aws-cdk/core');
-import AwsLambda = require('../lib/aws_lambda-stack');
+import { expect as expectCDK, matchTemplate, MatchStyle } from "@aws-cdk/assert";
+import cdk = require("@aws-cdk/core");
+import { AwsLambdaApigatewayStack } from "../lib/apigateway-stack";
 
-test('Empty Stack', () => {
-    const app = new cdk.App();
-    // WHEN
-    const stack = new AwsLambda.AwsLambdaStack(app, 'MyTestStack');
-    // THEN
-    expectCDK(stack).to(matchTemplate({
-      "Resources": {}
-    }, MatchStyle.EXACT))
+describe("AwsLambdaApigatewayStack", () => {
+  const app = new cdk.App();
+  const stack = new AwsLambdaApigatewayStack(app, "MyTestStack");
+
+  it("should match template", () => {
+    expectCDK(stack).to(
+      matchTemplate(
+        {
+          Resources: {}
+        },
+        MatchStyle.EXACT
+      )
+    );
+  });
 });
