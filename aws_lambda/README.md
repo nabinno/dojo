@@ -1,5 +1,12 @@
 # AWS Lambda
 
+## Dependencies installation
+
+```sh
+npm clean-install
+go mod why
+```
+
 ## Useful commands for CDK
 
 - `npm run build` compile typescript to js
@@ -11,7 +18,6 @@
 
 ## Useful commands for Go
 
-- `go mod why` install dependencies
 - `mage lbd:dispatch` dispatch on local
 - `mage lbd:test` or `ginkgo` testing
 - `mage lbd:deploy` deploy
