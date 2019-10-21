@@ -17,6 +17,13 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
     const region = this.region;
 
     const api = new apigw.RestApi(this, "gateway", { restApiName: stackName });
+    const requestValidator = new apigw.RequestValidator(this, "requestvalidator", {
+      restApi: api,
+      requestValidatorName: `validateRequestBodyAndParameters`,
+      validateRequestBody: true,
+      validateRequestParameters: false
+    });
+
     const petsFn = new lambda.Function(this, "petsLambda", {
       functionName: `${stackName}-Pets`,
       runtime: lambda.Runtime.GO_1_X,
@@ -76,6 +83,7 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
       }),
       {
         authorizationType: apigw.AuthorizationType.NONE,
+        requestValidator: requestValidator,
         requestModels: {
           "application/json": new apigw.Model(this, "petModel", {
             restApi: api,
