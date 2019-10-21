@@ -12,7 +12,6 @@ require (
 	github.com/google/uuid v1.1.1
 	github.com/magefile/mage v1.9.0
 	github.com/mattn/go-shellwords v1.0.6
-	github.com/nabinno/dojo v0.0.0-20191014061300-5f4c6a32aa76 // indirect
 	github.com/oxequa/interact v0.0.0-20171114182912-f8fb5795b5d7 // indirect
 	github.com/oxequa/realize v2.0.2+incompatible // indirect
 	github.com/satori/go.uuid v1.2.0 // indirect

@@ -8,7 +8,7 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    let stageName: string = "Prod";
+    let stageName: string = "prod";
     if (this.node.tryGetContext("stage") !== undefined) {
       stageName = this.node.tryGetContext("stage");
     }
@@ -17,7 +17,7 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
     const region = this.region;
 
     const api = new apigw.RestApi(this, "gateway", { restApiName: stackName });
-    const petsFn = new lambda.Function(this, "lambda", {
+    const petsFn = new lambda.Function(this, "petsLambda", {
       functionName: `${stackName}-Pets`,
       runtime: lambda.Runtime.GO_1_X,
       code: lambda.Code.fromBucket(
@@ -62,10 +62,7 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
         integrationHttpMethod: "POST",
         options: {}
       }),
-      {
-        authorizationType: apigw.AuthorizationType.NONE,
-        requestParameters: { "method.request.path.id": true }
-      }
+      { authorizationType: apigw.AuthorizationType.NONE }
     );
 
     // POST /pets
@@ -79,10 +76,21 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
       }),
       {
         authorizationType: apigw.AuthorizationType.NONE,
-        requestParameters: {
-          "method.request.body.breed": true,
-          "method.request.body.name": true,
-          "method.request.body.dateOfBirth": true
+        requestModels: {
+          "application/json": new apigw.Model(this, "petModel", {
+            restApi: api,
+            modelName: "petModel",
+            contentType: "application/json",
+            schema: {
+              type: apigw.JsonSchemaType.OBJECT,
+              properties: {
+                breed: { type: apigw.JsonSchemaType.STRING },
+                name: { type: apigw.JsonSchemaType.STRING },
+                dateOfBirth: { type: apigw.JsonSchemaType.STRING }
+              },
+              required: ["breed", "name", "dateOfBirth"]
+            }
+          })
         }
       }
     );
