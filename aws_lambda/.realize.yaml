@@ -36,3 +36,23 @@ schema:
         command: GOOS=linux GOARCH=amd64
       - type: after
         command: zip pets.zip pets
+- name: lambda/authorizer
+  path: ./lambda/authorizer
+  commands:
+    install:
+      method: go build -o authorizer
+      status: true
+  watcher:
+    extensions:
+    - go
+    paths:
+    - /
+    ignored_paths:
+    - .git
+    - .realize
+    - vendor
+    scripts:
+      - type: before
+        command: GOOS=linux GOARCH=amd64
+      - type: after
+        command: zip authorizer.zip authorizer

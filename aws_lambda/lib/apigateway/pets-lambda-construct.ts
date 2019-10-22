@@ -1,50 +1,27 @@
 import cdk = require("@aws-cdk/core");
 import apigw = require("@aws-cdk/aws-apigateway");
 import lambda = require("@aws-cdk/aws-lambda");
-import s3 = require("@aws-cdk/aws-s3");
-import iam = require("@aws-cdk/aws-iam");
-
-export interface PetsLambdaProps {
-  stageName: string;
-  stackName: string;
-  account: string;
-  region: string;
-  api: apigw.RestApi;
-  requestValidator: apigw.RequestValidator;
-}
+import { AwsLambdaApigatewayStack } from "./apigateway-stack";
 
 export class PetsLambdaConstruct extends cdk.Construct {
   private readonly uri: string;
 
-  constructor(scope: cdk.Construct, id: string, props: PetsLambdaProps) {
+  constructor(scope: AwsLambdaApigatewayStack, id: string) {
     super(scope, id);
 
-    const stageName = props.stageName;
-    const stackName = props.stackName;
-    const account = props.account;
-    const region = props.region;
-    const api = props.api;
-    const requestValidator = props.requestValidator;
-
     const petsFn = new lambda.Function(scope, "petsLambda", {
-      functionName: `${stackName}-Pets`,
+      functionName: `${scope.stackName}-Pets`,
       runtime: lambda.Runtime.GO_1_X,
-      code: lambda.Code.fromBucket(
-        s3.Bucket.fromBucketName(scope, "s3bucket", `${stageName}-awslambdas3deploystack`),
-        "pets/pets.zip"
-      ),
+      code: lambda.Code.fromBucket(scope.lambdaBucket, "pets/pets.zip"),
       handler: "pets",
       memorySize: 256,
       timeout: cdk.Duration.seconds(300),
       environment: {}
     });
-    petsFn.addPermission(`${stackName}-Pets`, {
-      principal: new iam.ServicePrincipal("apigateway.amazonaws.com"),
-      sourceArn: `arn:aws:execute-api:${region}:${account}:${api.restApiId}/*`
-    });
+    petsFn.addPermission(`${scope.stackName}-Pets`, scope.lambdaPermission);
 
-    this.uri = `arn:aws:apigateway:${region}:lambda:path/2015-03-31/functions/${petsFn.functionArn}/invocations`;
-    const pets = api.root.addResource("pets");
+    this.uri = `arn:aws:apigateway:${scope.region}:lambda:path/2015-03-31/functions/${petsFn.functionArn}/invocations`;
+    const pets = scope.api.root.addResource("pets");
     const pet = pets.addResource("{id}");
 
     // GET /pets
@@ -55,13 +32,13 @@ export class PetsLambdaConstruct extends cdk.Construct {
 
     // POST /pets
     this.addMethod(pets, "POST", {
-      // authorizationType: apigw.AuthorizationType.CUSTOM,
-      // authorizer: { authorizerId: "1" },
       authorizationType: apigw.AuthorizationType.NONE,
-      requestValidator: requestValidator,
+      // authorizationType: apigw.AuthorizationType.CUSTOM,
+      // authorizer: { authorizerId: scope.apiLambdaAuthorizer.id },
+      requestValidator: scope.apiRequestValidator,
       requestModels: {
         "application/json": new apigw.Model(scope, "petModel", {
-          restApi: api,
+          restApi: scope.api,
           modelName: "petModel",
           contentType: "application/json",
           schema: {
@@ -78,7 +55,11 @@ export class PetsLambdaConstruct extends cdk.Construct {
     });
   }
 
-  private addMethod(resource: apigw.Resource, method: string, options?: apigw.MethodOptions) {
+  private addMethod(
+    resource: apigw.Resource,
+    method: string,
+    methodOptions?: apigw.MethodOptions
+  ) {
     resource.addMethod(
       method,
       new apigw.Integration({
@@ -86,7 +67,7 @@ export class PetsLambdaConstruct extends cdk.Construct {
         uri: this.uri,
         integrationHttpMethod: "POST"
       }),
-      options
+      methodOptions
     );
   }
 }
