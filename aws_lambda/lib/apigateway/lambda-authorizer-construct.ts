@@ -12,19 +12,21 @@ export class LambdaAuthorizerConstruct extends cdk.Construct {
     const fn = new lambda.Function(scope, "authorizerLambda", {
       functionName: `${scope.stackName}-Authorizer`,
       runtime: lambda.Runtime.GO_1_X,
-      code: lambda.Code.fromBucket(scope.lambdaBucket, "authorizer/authorizer.zip"),
-      handler: "authorizer",
+      code: lambda.Code.fromBucket(scope.lambdaBucket, "authorizer/_build/authorizer.zip"),
+      handler: "_build/authorizer",
       memorySize: 256,
       timeout: cdk.Duration.seconds(300),
       environment: {}
     });
+    fn.addPermission(`${scope.stackName}-Authorizer`, scope.lambdaPermission);
 
-    const authorizer = new apigw.CfnAuthorizerV2(scope, "authorizer", {
-      apiId: scope.api.restApiId,
+    const authorizer = new apigw.CfnAuthorizer(scope, "lambdaAuthorizer", {
       name: "lambdaAuthorizer",
-      authorizerType: "REQUEST",
+      restApiId: scope.api.restApiId,
+      type: "REQUEST",
       authorizerUri: `arn:aws:apigateway:${scope.region}:lambda:path/2015-03-31/functions/${fn.functionArn}/invocations`,
-      identitySource: ["method.request.header.Auth"]
+      authorizerResultTtlInSeconds: 300,
+      identitySource: "method.request.header.authorizationToken"
     });
 
     this.id = authorizer.logicalId;

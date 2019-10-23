@@ -27,4 +27,5 @@ cdk.out
 # vendor/
 
 *.zip
-pets
+lambda
+!lambda/**/*.go

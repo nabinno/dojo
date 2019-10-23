@@ -38,7 +38,7 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
       "s3bucket",
       `${this.stageName}-awslambdas3deploystack`
     );
-    // this.apiLambdaAuthorizer = new LambdaAuthorizerConstruct(this, "lambdaAuthorizerConstruct");
+    this.apiLambdaAuthorizer = new LambdaAuthorizerConstruct(this, "lambdaAuthorizerConstruct");
 
     new PetsLambdaConstruct(this, "petsLambdaConstruct");
   }
