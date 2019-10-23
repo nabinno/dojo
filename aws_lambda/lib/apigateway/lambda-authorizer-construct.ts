@@ -29,6 +29,6 @@ export class LambdaAuthorizerConstruct extends cdk.Construct {
       identitySource: "method.request.header.authorizationToken"
     });
 
-    this.id = authorizer.logicalId;
+    this.id = authorizer.ref;
   }
 }

@@ -25,16 +25,18 @@ export class PetsLambdaConstruct extends cdk.Construct {
     const pet = pets.addResource("{id}");
 
     // GET /pets
-    this.addMethod(pets, "GET", { authorizationType: apigw.AuthorizationType.NONE });
+    this.addMethod(pets, "GET", {
+      authorizationType: apigw.AuthorizationType.CUSTOM,
+      authorizer: { authorizerId: scope.apiLambdaAuthorizer.id }
+    });
 
     // GET /pets/:id
     this.addMethod(pet, "GET", { authorizationType: apigw.AuthorizationType.NONE });
 
     // POST /pets
     this.addMethod(pets, "POST", {
-      authorizationType: apigw.AuthorizationType.NONE,
-      // authorizationType: apigw.AuthorizationType.CUSTOM,
-      // authorizer: { authorizerId: scope.apiLambdaAuthorizer.id },
+      authorizationType: apigw.AuthorizationType.CUSTOM,
+      authorizer: { authorizerId: scope.apiLambdaAuthorizer.id },
       requestValidator: scope.apiRequestValidator,
       requestModels: {
         "application/json": new apigw.Model(scope, "petModel", {

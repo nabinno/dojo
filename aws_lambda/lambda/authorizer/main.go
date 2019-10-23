@@ -12,8 +12,9 @@ import (
 	"github.com/aws/aws-lambda-go/lambda"
 )
 
-func handleRequest(ctx context.Context, event events.APIGatewayCustomAuthorizerRequest) (events.APIGatewayCustomAuthorizerResponse, error) {
-	log.Println("Client token: " + event.AuthorizationToken)
+func handleRequest(ctx context.Context, event events.APIGatewayCustomAuthorizerRequestTypeRequest) (events.APIGatewayCustomAuthorizerResponse, error) {
+	// @todo 2019-10-24
+	log.Println("Client token: " + event.Headers["authorizationToken"])
 	log.Println("Method ARN: " + event.MethodArn)
 
 	methodArnTmp := strings.Split(event.MethodArn, ":")
@@ -26,7 +27,7 @@ func handleRequest(ctx context.Context, event events.APIGatewayCustomAuthorizerR
 	resp.Region = methodArnTmp[3]
 	resp.APIID = apiGatewayArnTmp[0]
 	resp.Stage = apiGatewayArnTmp[1]
-	resp.DenyAllMethods()
+	// resp.DenyAllMethods()
 	resp.AllowMethod(All, "/pets/*")
 
 	// @note
