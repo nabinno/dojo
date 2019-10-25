@@ -21,6 +21,13 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
     if (this.node.tryGetContext("stage") !== undefined) {
       this.stageName = this.node.tryGetContext("stage");
     }
+    const uid = process.env.CDK_UID;
+    // const uid: string = cdk.SecretValue.secretsManager(
+    //   `awslambdas3deploystack-${this.stageName}`,
+    //   {
+    //     jsonField: "uid"
+    //   }
+    // ).toString();
 
     this.api = new apigw.RestApi(this, "gateway", { restApiName: this.stackName });
     this.apiRequestValidator = new apigw.RequestValidator(this, "requestvalidator", {
@@ -36,7 +43,8 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
     this.lambdaBucket = s3.Bucket.fromBucketName(
       this,
       "s3bucket",
-      `${this.stageName}-awslambdas3deploystack`
+      `awslambdas3deploystack-${this.stageName}`
+      // `awslambdas3deploystack-${this.stageName}-${uid}`
     );
     this.apiLambdaAuthorizer = new LambdaAuthorizerConstruct(this, "lambdaAuthorizerConstruct");
 

@@ -9,11 +9,13 @@ export class PetsLambdaConstruct extends cdk.Construct {
   constructor(scope: AwsLambdaApigatewayStack, id: string) {
     super(scope, id);
 
+    const uid = process.env.CDK_UID;
+
     const petsFn = new lambda.Function(scope, "petsLambda", {
       functionName: `${scope.stackName}-Pets`,
       runtime: lambda.Runtime.GO_1_X,
       code: lambda.Code.fromBucket(scope.lambdaBucket, "pets/_build/pets.zip"),
-      handler: "_build/pets",
+      handler: `_build/pets-${uid}`,
       memorySize: 256,
       timeout: cdk.Duration.seconds(300),
       environment: {}
