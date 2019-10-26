@@ -7,6 +7,12 @@ npm clean-install
 go mod why
 ```
 
+## Deployment commands
+
+```sh
+npm run deploy
+```
+
 ## Useful commands for CDK
 
 - `npm run build` compile typescript to js

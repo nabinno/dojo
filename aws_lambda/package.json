@@ -5,16 +5,24 @@
     "aws_lambda": "bin/aws_lambda.js"
   },
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
+    "build:go": "npx ts-node bin/build-go.ts",
+    "build:ts": "tsc",
+    "build": "npm run build:go && npm run build:ts",
+    "watch:ts": "tsc -w",
+    "watch:go": "realize start",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "deploy:s3": "cdk deploy AwsLambdaS3deployStack --require-approval=never",
+    "deploy:apigateway": "cdk deploy AwsLambdaApigatewayStack --require-approval=never",
+    "deploy:all": "npm run deploy:s3 && npm run deploy:apigateway",
+    "deploy": "npm run build && npm run deploy:all"
   },
   "devDependencies": {
     "@aws-cdk/assert": "^1.14.0",
     "@types/jest": "^24.0.19",
     "aws-cdk": "^1.14.0",
     "jest": "^24.9.0",
+    "nanoid-cli": "^1.1.0",
     "prettier": "1.18.2",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.1.0",
@@ -27,8 +35,6 @@
     "@aws-cdk/aws-s3-deployment": "^1.14.0",
     "@aws-cdk/aws-secretsmanager": "^1.14.0",
     "@types/node": "^12.11.7",
-    "@types/uuid": "^3.4.5",
-    "source-map-support": "^0.5.9",
-    "uuid": "^3.3.3"
+    "source-map-support": "^0.5.9"
   }
 }
