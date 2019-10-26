@@ -13,15 +13,35 @@ import (
 )
 
 func handleRequest(ctx context.Context, event events.APIGatewayCustomAuthorizerRequestTypeRequest) (events.APIGatewayCustomAuthorizerResponse, error) {
-	// @todo 2019-10-24
-	log.Println("Client token: " + event.Headers["authorizationToken"])
+	log.Println("Client token: " + event.Headers["authorizationtoken"])
 	log.Println("Method ARN: " + event.MethodArn)
+	log.Println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+
+	// @todo 2019-10-24
+	//   - 着信トークンを検証しトークンに関連付けられたプリンシパルユーザー識別子を下記のいずれかの方法で生成します
+	//     1. OAuthプロバイダーを呼び出す
+	//     2. JWTトークンをインラインでデコードします
+	//     3. 自己管理DBのルックアップ
+	//   - トークンの状態におけるながれ
+	//     - トークンが有効な場合
+	//       - クライアントへのアクセスを許可または拒否するポリシーを生成する必要があります
+	//         - アクセスが許可され、API Gatewayは呼び出されたメソッドで設定されたバックエンド統合を続行します
+	//       - 失敗すると、401 Unauthorized応答をクライアントに送信できます。
+	//         events.APIGatewayCustomAuthorizerResponse {}、errors.New（ "Unauthorized"）を返します
+	//     - トークンが無効な場合
+	//       - アクセスが拒否され、クライアントは403 Access Denied応答を受け取ります
+	//   - 備考
+	//     - この関数は、認識されたプリンシパルユーザー識別子に関連付けられたポリシーを生成する必要があります。ユー
+	//       スケースに応じて、ポリシーをDBに保存するか、その場で生成します
+	//     - ポリシーはデフォルトで5分間キャッシュされることに注意してください（承認者でTTLを構成可能）。そして、同
+	//       じトークンで作成されたRestApi内の任意のメソッド/リソースへの後続の呼び出しに適用されます。
+	principalID := "user|a1b2c3d4"
 
 	methodArnTmp := strings.Split(event.MethodArn, ":")
 	apiGatewayArnTmp := strings.Split(methodArnTmp[5], "/")
 
 	resp := NewAuthorizerResponse(
-		"user|a1b2c3d4", // principalID
+		principalID,     // principalID
 		methodArnTmp[4], // awsAccountID
 	)
 	resp.Region = methodArnTmp[3]

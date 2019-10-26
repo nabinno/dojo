@@ -1,3 +1,4 @@
+import fs = require("fs");
 import cdk = require("@aws-cdk/core");
 import apigw = require("@aws-cdk/aws-apigateway");
 import lambda = require("@aws-cdk/aws-lambda");
@@ -9,12 +10,15 @@ export class PetsLambdaConstruct extends cdk.Construct {
   constructor(scope: AwsLambdaApigatewayStack, id: string) {
     super(scope, id);
 
-    const uid = process.env.CDK_UID;
+    const uid: string = fs
+      .readFileSync("tmp/cache/uid")
+      .toString()
+      .replace("\n", "");
 
     const petsFn = new lambda.Function(scope, "petsLambda", {
       functionName: `${scope.stackName}-Pets`,
       runtime: lambda.Runtime.GO_1_X,
-      code: lambda.Code.fromBucket(scope.lambdaBucket, "pets/_build/pets.zip"),
+      code: lambda.Code.fromBucket(scope.lambdaBucket, `pets/_build/pets-${uid}.zip`),
       handler: `_build/pets-${uid}`,
       memorySize: 256,
       timeout: cdk.Duration.seconds(300),

@@ -1,4 +1,5 @@
 import cdk = require("@aws-cdk/core");
+import fs = require("fs");
 import apigw = require("@aws-cdk/aws-apigateway");
 import lambda = require("@aws-cdk/aws-lambda");
 import { AwsLambdaApigatewayStack } from "./apigateway-stack";
@@ -9,12 +10,15 @@ export class LambdaAuthorizerConstruct extends cdk.Construct {
   constructor(scope: AwsLambdaApigatewayStack, id: string) {
     super(scope, id);
 
-    const uid = process.env.CDK_UID;
+    const uid: string = fs
+      .readFileSync("tmp/cache/uid")
+      .toString()
+      .replace("\n", "");
 
     const fn = new lambda.Function(scope, "authorizerLambda", {
       functionName: `${scope.stackName}-Authorizer`,
       runtime: lambda.Runtime.GO_1_X,
-      code: lambda.Code.fromBucket(scope.lambdaBucket, "authorizer/_build/authorizer.zip"),
+      code: lambda.Code.fromBucket(scope.lambdaBucket, `authorizer/_build/authorizer-${uid}.zip`),
       handler: `_build/authorizer-${uid}`,
       memorySize: 256,
       timeout: cdk.Duration.seconds(300),
