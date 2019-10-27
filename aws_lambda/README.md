@@ -5,6 +5,7 @@
 ```sh
 npm clean-install
 go mod why
+npm run install:sam
 ```
 
 ## Deployment commands

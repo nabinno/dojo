@@ -29,3 +29,5 @@ cdk.out
 *.zip
 lambda
 !lambda/**/*.go
+
+template.yaml

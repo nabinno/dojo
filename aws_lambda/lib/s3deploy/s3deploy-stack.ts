@@ -19,8 +19,4 @@ export class AwsLambdaS3deployStack extends cdk.Stack {
       })
     });
   }
-
-  public capitalize(s: string) {
-    return s.charAt(0) + s.slice(1).toLowerCase;
-  }
 }
