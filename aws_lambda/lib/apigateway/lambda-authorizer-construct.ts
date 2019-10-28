@@ -10,10 +10,13 @@ export class LambdaAuthorizerConstruct extends cdk.Construct {
   constructor(scope: AwsLambdaApigatewayStack, id: string) {
     super(scope, id);
 
-    const uid: string = fs
-      .readFileSync("tmp/cache/uid")
-      .toString()
-      .replace("\n", "");
+    let uid: string = "";
+    if (fs.existsSync("tmp/cache/uid-authorizer")) {
+      uid = fs
+        .readFileSync("tmp/cache/uid-authorizer")
+        .toString()
+        .replace(/^.+?:(.+?)\n$/, "$1");
+    }
 
     const fn = new lambda.Function(scope, "authorizerLambda", {
       functionName: `${scope.stackName}-Authorizer`,

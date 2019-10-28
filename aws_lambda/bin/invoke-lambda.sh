@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 if (($# != 2)); then
   echo "$0 lambda_resource lambda_action"
   exit 1
@@ -45,6 +47,7 @@ case ${lambda_resource} in
           --path ${lambda_resource}/1 | invoke
         ;;
       create)
+        # @todo 2019-10-28
         sam local generate-event apigateway aws-proxy \
           --body {"authorizationToken":"test123"} \
           --method POST \

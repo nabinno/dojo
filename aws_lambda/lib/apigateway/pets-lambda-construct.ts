@@ -10,10 +10,13 @@ export class PetsLambdaConstruct extends cdk.Construct {
   constructor(scope: AwsLambdaApigatewayStack, id: string) {
     super(scope, id);
 
-    const uid: string = fs
-      .readFileSync("tmp/cache/uid")
-      .toString()
-      .replace("\n", "");
+    let uid: string = "";
+    if (fs.existsSync("tmp/cache/uid-pets")) {
+      uid = fs
+        .readFileSync("tmp/cache/uid-pets")
+        .toString()
+        .replace(/^.+?:(.+?)\n$/, "$1");
+    }
 
     const petsFn = new lambda.Function(scope, "petsLambda", {
       functionName: `${scope.stackName}-Pets`,

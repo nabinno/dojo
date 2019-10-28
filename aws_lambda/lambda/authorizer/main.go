@@ -15,7 +15,7 @@ import (
 func handleRequest(ctx context.Context, event events.APIGatewayCustomAuthorizerRequestTypeRequest) (events.APIGatewayCustomAuthorizerResponse, error) {
 	log.Println("Client token: " + event.Headers["authorizationtoken"])
 	log.Println("Method ARN: " + event.MethodArn)
-	log.Println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+	log.Println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaac")
 
 	// @todo 2019-10-24
 	//   - 着信トークンを検証しトークンに関連付けられたプリンシパルユーザー識別子を下記のいずれかの方法で生成します
