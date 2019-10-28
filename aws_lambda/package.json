@@ -23,7 +23,7 @@
       "AWS SAM local invocations"
     ],
     "invoke:before-apigateway": "cdk synth AwsLambdaApigatewayStack --no-staging >template.yaml",
-    "invoke:before": "npm run build && npm run deploy:s3 && npm run invoke:before-apigateway",
+    "invoke:before": "npm run build && npm run invoke:before-apigateway",
     "invoke:authorizer": "npm run invoke:before && bin/invoke-lambda.sh authorizer",
     "invoke:pets": "npm run invoke:before && bin/invoke-lambda.sh pets",
     "//": [
