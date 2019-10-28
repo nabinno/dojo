@@ -5,30 +5,30 @@
     "aws_lambda": "bin/aws_lambda.js"
   },
   "scripts": {
-    "build:go": "npx ts-node bin/build-go.ts",
+    "build:go": "bin/build-go.sh",
     "build:ts": "tsc",
     "build": "npm run build:go && npm run build:ts",
     "watch:ts": "tsc -w",
     "watch:go": "realize start",
     "test": "jest",
-    "//": [
-      "CDK scripts"
-    ],
+    "// CDK scripts": [],
     "cdk": "cdk",
     "deploy:s3": "cdk deploy AwsLambdaS3deployStack --require-approval=never",
     "deploy:apigateway": "cdk deploy AwsLambdaApigatewayStack --require-approval=never",
     "deploy:all": "npm run deploy:s3 && npm run deploy:apigateway",
     "deploy": "npm run build && npm run deploy:all",
-    "//": [
-      "AWS SAM local invocations"
+    "// AWS SAM local invocations": [
+      "@example",
+      "  npm run invoke -- authorizer 0",
+      "  npm run invoke -- pets list",
+      "  npm run invoke -- pets read",
+      "  npm run invoke -- pets create"
     ],
     "invoke:before-apigateway": "cdk synth AwsLambdaApigatewayStack --no-staging >template.yaml",
     "invoke:before": "npm run build && npm run invoke:before-apigateway",
-    "invoke:authorizer": "npm run invoke:before && bin/invoke-lambda.sh authorizer",
-    "invoke:pets": "npm run invoke:before && bin/invoke-lambda.sh pets",
-    "//": [
-      "Tools Installation"
-    ],
+    "invoke:lambda": "bin/invoke-lambda.sh",
+    "invoke": "npm run invoke:before && bin/invoke-lambda.sh",
+    "// Tools Installation": [],
     "install:sam": "bin/install-sam.sh"
   },
   "devDependencies": {
@@ -36,6 +36,7 @@
     "@types/jest": "^24.0.19",
     "aws-cdk": "^1.14.0",
     "jest": "^24.9.0",
+    "nanoid-cli": "^1.1.0",
     "prettier": "1.18.2",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.1.0",
@@ -47,9 +48,7 @@
     "@aws-cdk/aws-lambda": "^1.14.0",
     "@aws-cdk/aws-s3-deployment": "^1.14.0",
     "@aws-cdk/aws-secretsmanager": "^1.14.0",
-    "@types/nanoid": "^2.1.0",
     "@types/node": "^12.11.7",
-    "nanoid": "^2.1.6",
     "source-map-support": "^0.5.9"
   }
 }
