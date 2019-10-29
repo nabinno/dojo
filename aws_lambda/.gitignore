@@ -27,7 +27,6 @@ cdk.out
 # vendor/
 
 *.zip
-lambda
-!lambda/**/*.go
+_build
 
 template.yaml

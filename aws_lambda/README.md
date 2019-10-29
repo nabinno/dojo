@@ -9,11 +9,20 @@ npm run install:sam
 ## Local invocation
 ```sh
 npm run invoke -- {{lambda_resource}} {{lambda_action}}
-``
+```
 
 ## Deployment commands
 ```sh
 npm run deploy
+```
+
+## Operation check
+```sh
+curl https://foo.execute-api.ap-northeast-1.amazonaws.com/prod/pets \
+  -X GET \
+  -H 'Cache-Control: private' \
+  -H 'authorizationToken: test1'
+  -v
 ```
 
 ## Useful commands for CDK
