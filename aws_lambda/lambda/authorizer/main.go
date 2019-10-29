@@ -20,8 +20,12 @@ func handleRequest(ctx context.Context, event events.APIGatewayCustomAuthorizerR
 	resp.APIID = apiGatewayArn.APIID
 	resp.Stage = apiGatewayArn.Stage
 
-	// resp.DenyAllMethods()
-	resp.AllowMethod(Get, "/pets")
+	switch apiGatewayArn.Method {
+	case "GET":
+		resp.AllowMethod(Get, apiGatewayArn.Resource)
+	case "POST":
+		resp.AllowMethod(Post, apiGatewayArn.Resource)
+	}
 
 	// @note
 	//   Add additional key-value pairs associated with the authenticated principal these are made available by APIGW
