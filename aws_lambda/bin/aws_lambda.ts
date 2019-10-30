@@ -9,5 +9,8 @@ import { AwsLambdaApigatewayStack } from "../lib/apigateway/apigateway-stack";
  * Init CDK Apps
  */
 const app = new cdk.App();
+
 new AwsLambdaS3deployStack(app, "AwsLambdaS3deployStack");
-new AwsLambdaApigatewayStack(app, "AwsLambdaApigatewayStack");
+
+const samStack = new AwsLambdaApigatewayStack(app, "AwsLambdaApigatewayStack");
+samStack.templateOptions.transforms = ["AWS::Serverless-2016-10-31"];

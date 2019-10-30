@@ -23,11 +23,11 @@ export class LambdaAuthorizerConstruct extends cdk.Construct {
       runtime: lambda.Runtime.GO_1_X,
       code: lambda.Code.fromBucket(scope.lambdaBucket, `authorizer/_build/authorizer-${uid}.zip`),
       handler: `_build/authorizer-${uid}`,
-      memorySize: 256,
-      timeout: cdk.Duration.seconds(300),
+      memorySize: 128,
+      timeout: cdk.Duration.seconds(30),
       environment: {}
     });
-    fn.addPermission(`${scope.stackName}-Authorizer`, scope.lambdaPermission);
+    fn.addPermission(`${scope.stackName}-Authorizer`, scope.apiLambdaPermission);
 
     const authorizer = new apigw.CfnAuthorizer(scope, "lambdaAuthorizer", {
       name: "lambdaAuthorizer",
