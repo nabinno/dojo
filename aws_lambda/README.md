@@ -2,7 +2,7 @@
 ## Dependencies installation
 ```sh
 npm clean-install
-go mod why
+go mod build
 npm run install:sam
 ```
 
