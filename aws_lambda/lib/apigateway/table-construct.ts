@@ -20,6 +20,7 @@ export class TableConstruct extends cdk.Construct {
       stream: dynamodb.StreamViewType.NEW_AND_OLD_IMAGES,
       partitionKey: { name: "id", type: dynamodb.AttributeType.STRING }
     });
+
     this.users = new dynamodb.Table(scope, "usersTable", {
       tableName: `${scope.stackName}-Users`,
       billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,

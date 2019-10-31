@@ -34,5 +34,6 @@ buildGo() {
 
 if [ ! -f tmp/cache ]; then mkdir -p tmp/cache; fi
 
+buildGo "pretokengen"
 buildGo "authorizer"
 buildGo "pets"

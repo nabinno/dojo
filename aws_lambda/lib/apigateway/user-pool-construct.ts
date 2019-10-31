@@ -1,3 +1,4 @@
+import fs = require("fs");
 import cdk = require("@aws-cdk/core");
 import cognito = require("@aws-cdk/aws-cognito");
 import lambda = require("@aws-cdk/aws-lambda");
@@ -14,9 +15,16 @@ export class UserPoolConstruct extends cdk.Construct {
   constructor(scope: AwsLambdaApigatewayStack, id: string) {
     super(scope, id);
 
+    let uid: string = "";
+    if (fs.existsSync("tmp/cache/uid-pets")) {
+      uid = fs
+        .readFileSync("tmp/cache/uid-pets")
+        .toString()
+        .replace(/^.+?:(.+?)\n$/, "$1");
+    }
     const supportedIdPs = ["COGNITO"];
 
-    this.setUserPool(scope);
+    this.setUserPool(scope, uid);
 
     this.setUserPoolClient(
       scope,
@@ -32,7 +40,7 @@ export class UserPoolConstruct extends cdk.Construct {
    * @desc Purpose: creates a user directory and allows federation from external IdPs
    * @see https://docs.aws.amazon.com/cdk/api/latest/docs/@aws-cdk_aws-cognito.CfnIdentityPool.html
    */
-  private setUserPool(scope: AwsLambdaApigatewayStack) {
+  private setUserPool(scope: AwsLambdaApigatewayStack, uid: string) {
     const userPool = new cognito.UserPool(scope, `userPool`, {
       userPoolName: `${scope.stackName}-UserPool`,
       signInType: cognito.SignInType.EMAIL,
@@ -45,9 +53,12 @@ export class UserPoolConstruct extends cdk.Construct {
         // @see https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-lambda-pre-token-generation.html
         preTokenGeneration: new lambda.Function(scope, "preTokenGenerationLambda", {
           functionName: `${scope.stackName}-PreTokenGeneration`,
-          runtime: scope.envNodeRuntime,
-          handler: "index.handler",
-          code: lambda.Code.fromAsset("lambda/pretokengeneration/dist/src"),
+          runtime: lambda.Runtime.GO_1_X,
+          code: lambda.Code.fromBucket(
+            scope.lambdaBucket,
+            `pretokengen/_build/pretokengen-${uid}.zip`
+          ),
+          handler: `_build/pretokengen-${uid}`,
           environment: {
             GROUPS_ATTRIBUTE_CLAIM_NAME: scope.envGroupsAttributeClaimName
           }
@@ -85,9 +96,9 @@ export class UserPoolConstruct extends cdk.Construct {
   ): cognito.CfnUserPoolIdentityProvider | undefined {
     let rc: cognito.CfnUserPoolIdentityProvider | undefined = undefined;
 
-    if (scope.envIdentityProviderMetadataURLOrFile && scope.envIdentityProviderName) {
-      rc = new cognito.CfnUserPoolIdentityProvider(scope, "CognitoIdP", {
-        providerName: scope.envIdentityProviderName,
+    if (scope.envIdentityProviderMetadataURLOrFile) {
+      rc = new cognito.CfnUserPoolIdentityProvider(scope, "userPoolIdentityProvider", {
+        providerName: "userPoolIdentityProvider",
         providerDetails: Utils.isURL(scope.envIdentityProviderMetadataURLOrFile)
           ? {
               MetadataURL: scope.envIdentityProviderMetadataURLOrFile
@@ -106,7 +117,7 @@ export class UserPoolConstruct extends cdk.Construct {
         userPoolId: this.id
       });
 
-      supportedIdPs.push(scope.envIdentityProviderName);
+      supportedIdPs.push(rc.providerName);
     }
 
     return rc;
@@ -122,9 +133,9 @@ export class UserPoolConstruct extends cdk.Construct {
     idP: cognito.CfnUserPoolIdentityProvider | undefined,
     supportedIdPs: string[]
   ) {
-    const client = new cognito.CfnUserPoolClient(scope, "CognitoAppClient", {
+    const client = new cognito.CfnUserPoolClient(scope, "userPoolClient", {
+      clientName: "userPoolClient",
       supportedIdentityProviders: supportedIdPs,
-      clientName: "Web",
       allowedOAuthFlowsUserPoolClient: true,
       allowedOAuthFlows: ["code"],
       allowedOAuthScopes: ["phone", "email", "openid", "profile"],

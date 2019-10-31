@@ -23,7 +23,6 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
   public readonly lambdaBucket: s3.IBucket;
   public readonly petsLambda: PetsLambdaConstruct;
   public envDomain: string;
-  public envIdentityProviderName: string;
   public envIdentityProviderMetadataURLOrFile: string;
   public envAppUrl: string;
   public envCallbackURL: string;
@@ -37,11 +36,11 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    this.getEnvironmentVariables();
     this.stageName = "prod";
     if (this.node.tryGetContext("stage") !== undefined) {
       this.stageName = this.node.tryGetContext("stage");
     }
+    this.loadEnvironmentVariables(this);
 
     this.api = new apigw.RestApi(this, "gateway", { restApiName: this.stackName });
     this.apiRequestValidator = new apigw.RequestValidator(this, "requestvalidator", {
@@ -74,13 +73,16 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
     this.outputStack();
   }
 
-  private getEnvironmentVariables() {
-    this.envDomain = Utils.getEnv("COGNITO_DOMAIN_NAME");
-    this.envIdentityProviderName = Utils.getEnv("IDENTITY_PROVIDER_NAME", "");
+  // @todo 2019-10-30
+  private loadEnvironmentVariables(scope: cdk.Stack) {
+    this.envDomain = Utils.getEnv(
+      "COGNITO_DOMAIN_NAME",
+      `${scope.stackName.toLowerCase()}-${this.stageName}`
+    );
     this.envIdentityProviderMetadataURLOrFile = Utils.getEnv("IDENTITY_PROVIDER_METADATA", "");
-    this.envAppUrl = Utils.getEnv("APP_URL");
+    this.envAppUrl = Utils.getEnv("APP_URL", "http://localhost:3000");
     new URL(this.envAppUrl); // validate URL (throws if invalid URL
-    this.envCallbackURL = `${this.envAppUrl}/`;
+    this.envCallbackURL = `${this.envAppUrl}/idpcallback`;
     this.envGroupsAttributeName = Utils.getEnv("GROUPS_ATTRIBUTE_NAME", "groups");
     this.envAdminsGroupName = Utils.getEnv("ADMINS_GROUP_NAME", "pet-app-admins");
     this.envUsersGroupName = Utils.getEnv("USERS_GROUP_NAME", "pet-app-users");

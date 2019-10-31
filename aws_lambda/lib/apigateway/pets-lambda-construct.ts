@@ -28,6 +28,7 @@ export class PetsLambdaConstruct extends cdk.Construct {
       memorySize: 128,
       timeout: cdk.Duration.seconds(30),
       environment: {
+        REGION: scope.region,
         ITEMS_TABLE_NAME: scope.table.items.tableName,
         USERS_TABLE_NAME: scope.table.users.tableName,
         ALLOWED_ORIGIN: scope.envAppUrl,
