@@ -1,3 +1,4 @@
+// @see https://github.com/yoskeoka/gognito
 package main
 
 import (
@@ -39,9 +40,9 @@ type JWKKey struct {
 }
 
 // CognitoAuthorizationMiddleware validates Amazon Cognito User Pool JWT or Google JWT
-func CognitoAuthorizationMiddleware(userPoolID string) gin.HandlerFunc {
+func CognitoAuthorizationMiddleware() gin.HandlerFunc {
 	// @note 1. Download and store the JSON Web Key (JWK) for your User Pool.
-	jwkURL := fmt.Sprintf("https://cognito-idp.%v.amazonaws.com/%v/.well-known/jwks.json", region, userPoolID)
+	jwkURL := fmt.Sprintf("https://cognito-idp.%v.amazonaws.com/%v/.well-known/jwks.json", envRegion, envUserPoolID)
 	log.Println(jwkURL)
 	jwkMap := getJWKMap(jwkURL)
 
@@ -52,13 +53,13 @@ func CognitoAuthorizationMiddleware(userPoolID string) gin.HandlerFunc {
 	log.Println(jwkMap)
 
 	return func(c *gin.Context) {
-		tokenString, ok := getBearer(c.Request.Header[authorizationHeaderName])
+		tokenString, ok := getBearer(c.Request.Header[envAuthorizationHeaderName])
 		if !ok {
 			c.AbortWithStatusJSON(401, ErrorMessage{Text: "Authorization Bearer Header is missing"})
 			return
 		}
 
-		token, err := ValidateToken(tokenString, userPoolID, jwkMap)
+		token, err := ValidateToken(tokenString, jwkMap)
 		if err != nil || !token.Valid {
 			fmt.Printf("token is not valid\n%v", err)
 			c.AbortWithStatusJSON(401, ErrorMessage{Text: fmt.Sprintf("token is not valid%v", err)})
@@ -116,7 +117,7 @@ func getBearer(auth []string) (jwt string, ok bool) {
 }
 
 // ValidateToken validates Amazon Cognito User Pool JWT or Google JWT
-func ValidateToken(tokenStr, userPoolID string, jwk map[string]JWKKey) (*jwt.Token, error) {
+func ValidateToken(tokenStr string, jwk map[string]JWKKey) (*jwt.Token, error) {
 	// @note 2. Decode the token string into JWT format.
 	token, err := jwt.Parse(tokenStr, func(token *jwt.Token) (interface{}, error) {
 		// Methods both of Cognito User Pools and Google are RS256
@@ -147,7 +148,7 @@ func ValidateToken(tokenStr, userPoolID string, jwk map[string]JWKKey) (*jwt.Tok
 
 	issStr := iss.(string)
 	if strings.Contains(issStr, "cognito-idp") {
-		err = validateAWSJWTClaims(claims, userPoolID)
+		err = validateAWSJWTClaims(claims)
 		if err != nil {
 			return token, err
 		}
@@ -166,10 +167,10 @@ func ValidateToken(tokenStr, userPoolID string, jwk map[string]JWKKey) (*jwt.Tok
 }
 
 // @see https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-tokens-with-identity-providers.html#amazon-cognito-identity-user-pools-using-id-and-access-tokens-in-web-api
-func validateAWSJWTClaims(claims jwt.MapClaims, userPoolID string) error {
+func validateAWSJWTClaims(claims jwt.MapClaims) error {
 	var err error
 	// @note 3. Check the iss claim. It should match your User Pool.
-	issShoudBe := fmt.Sprintf("https://cognito-idp.%v.amazonaws.com/%v", region, userPoolID)
+	issShoudBe := fmt.Sprintf("https://cognito-idp.%v.amazonaws.com/%v", envRegion, envUserPoolID)
 	err = validateClaimItem("iss", []string{issShoudBe}, claims)
 	if err != nil {
 		return err
