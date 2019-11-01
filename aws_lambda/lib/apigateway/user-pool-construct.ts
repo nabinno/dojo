@@ -76,9 +76,7 @@ export class UserPoolConstruct extends cdk.Construct {
         attributeDataType: "String",
         mutable: true,
         required: false,
-        stringAttributeConstraints: {
-          maxLength: "2000"
-        }
+        stringAttributeConstraints: { maxLength: "2000" }
       }
     ];
     this.defaultChildId = defaultChild.ref;

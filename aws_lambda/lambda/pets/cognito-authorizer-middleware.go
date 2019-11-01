@@ -19,11 +19,6 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-// ErrorMessage is error message struct
-type ErrorMessage struct {
-	Text string `json:"text"`
-}
-
 // JWK is JSON data struct for JSON Web Key
 type JWK struct {
 	Keys []JWKKey
@@ -55,14 +50,14 @@ func CognitoAuthorizationMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
 		tokenString, ok := getBearer(c.Request.Header[envAuthorizationHeaderName])
 		if !ok {
-			c.AbortWithStatusJSON(401, ErrorMessage{Text: "Authorization Bearer Header is missing"})
+			c.AbortWithStatusJSON(http.StatusUnauthorized, SimpleResponse{Message: "Authorization Bearer Header is missing"})
 			return
 		}
 
 		token, err := ValidateToken(tokenString, jwkMap)
 		if err != nil || !token.Valid {
 			fmt.Printf("token is not valid\n%v", err)
-			c.AbortWithStatusJSON(401, ErrorMessage{Text: fmt.Sprintf("token is not valid%v", err)})
+			c.AbortWithStatusJSON(http.StatusUnauthorized, SimpleResponse{Message: fmt.Sprintf("token is not valid%v", err)})
 		} else {
 			// Setting authenticated token, then resource paths can use the user information
 			c.Set("token", token)

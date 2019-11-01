@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -19,18 +20,22 @@ import (
 var (
 	envRegion                  string = os.Getenv("REGION")
 	envAllowedOrigin           string = os.Getenv("ALLOWED_ORIGIN")
-	envAdminsGroupName         string = os.Getenv("ADMINS_GROUP_NAME") // @todo 2019-10-31
-	envUsersGroupName          string = os.Getenv("USERS_GROUP_NAME")  // @todo 2019-10-31
-	envUserPoolID              string = os.Getenv("USER_POOL_ID")
 	envAuthorizationHeaderName string = os.Getenv("AUTHORIZATION_HEADER_NAME")
+	envUserPoolID              string = os.Getenv("USER_POOL_ID")
+	envRoleNameOfAdmins        string = os.Getenv("ROLE_NAME_OF_ADMINS")
+	envRoleNameOfUsers         string = os.Getenv("ROLE_NAME_OF_USERS")
 
 	ginLambda  *ginadapter.GinLambda
 	dynamodb   = dynamo.New(session.New(&aws.Config{Region: aws.String(envRegion)}))
 	itemsTable = dynamodb.Table(os.Getenv("ITEMS_TABLE_NAME"))
 	usersTable = dynamodb.Table(os.Getenv("USERS_TABLE_NAME")) // @todo 2019-10-31
-	// cognito = aws.CognitoIdentityServiceProvider.New()
-	// forceSignOutHandler ForceSignOutHandler // ?
 )
+
+// SimpleResponse is simple response struct
+type SimpleResponse struct {
+	Status  string `json:"status"`
+	Message string `json:"message"`
+}
 
 // Handler is the main entry point for Lambda. Receives a proxy request and returns a proxy response
 func Handler(ctx context.Context, req events.APIGatewayProxyRequest) (events.APIGatewayProxyResponse, error) {
@@ -61,13 +66,13 @@ func main() {
 
 // GET /pets
 func getPets(c *gin.Context) {
-	limit := 10
+	var limit int64 = 10
 	if c.Query("limit") != "" {
 		newLimit, err := strconv.Atoi(c.Query("limit"))
 		if err != nil {
 			limit = 10
 		} else {
-			limit = newLimit
+			limit = int64(newLimit)
 		}
 	}
 	if limit > 50 {
@@ -75,36 +80,42 @@ func getPets(c *gin.Context) {
 	}
 	var pets = make([]Pet, limit)
 
-	for i := 0; i < limit; i++ {
-		pets[i] = getRandomPet()
+	// for i := 0; i < int(limit); i++ {
+	//	pets[i] = getRandomPet()
+	// }
+
+	username, ok := getCurrentUserName(c)
+	if !ok {
+		c.AbortWithStatusJSON(http.StatusUnauthorized, SimpleResponse{Message: "Unauthorized"})
+		return
 	}
 
-	c.JSON(200, pets)
+	err := itemsTable.Get("Owner", username).Limit(limit).All(&pets)
+	if err != nil {
+		c.AbortWithStatusJSON(http.StatusNotFound, SimpleResponse{Message: "Pets were not found"})
+		return
+	}
+
+	c.JSON(http.StatusAccepted, pets)
 }
 
 // GET /pets/:id
 func getPet(c *gin.Context) {
-	// token := c.MustGet("token")
-	// claims := token.(*jwt.Token).Claims.(jwt.MapClaims)
-	// user := make([]string, 0)
-	// if email, ok := claims["email"]; ok {
-	//	log.Println(email)
-	//	user = append(user, email.(string))
-	// }
-	// if username, ok := claims["cognito:username"]; ok {
-	//	log.Println(username)
-	//	user = append(user, username.(string))
-	// }
-
 	var petID = c.Param("id")
 	var pet Pet
 
 	err := itemsTable.Get("ID", petID).One(&pet)
 	if err != nil {
-		panic(err)
+		c.AbortWithStatusJSON(http.StatusNotFound, SimpleResponse{Message: fmt.Sprintf("Pet with id %v was not found", petID)})
+		return
 	}
 
-	c.JSON(200, pet)
+	if username, ok := getCurrentUserName(c); ok && pet.Owner == username {
+		// if the pet is owned by the user or they are an admin, return it.
+		c.JSON(http.StatusAccepted, pet)
+	} else {
+		c.AbortWithStatusJSON(http.StatusUnauthorized, SimpleResponse{Message: "Unauthorized"})
+	}
 }
 
 // POST /pets
@@ -113,13 +124,18 @@ func createPet(c *gin.Context) {
 
 	err := c.BindJSON(&newPet)
 	if err != nil {
+		c.AbortWithStatusJSON(http.StatusBadRequest, SimpleResponse{Message: fmt.Sprint("Params are not valid: %v", err)})
 		return
 	}
-	// newPet.ID = getUUID()
+
+	newPet.ID = getUUID()
+	newPet.Owner = c.Query("username")
+	newPet.OwnerDisplayName = getCurrentUserDisplayNames(c)
 
 	err = itemsTable.Put(newPet).Run()
 	if err != nil {
-		panic(err)
+		c.AbortWithStatusJSON(http.StatusBadRequest, SimpleResponse{Message: fmt.Sprint("Does not save pet: %v", err)})
+		return
 	}
 
 	c.JSON(http.StatusAccepted, newPet)

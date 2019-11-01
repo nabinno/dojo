@@ -32,10 +32,10 @@ export class PetsLambdaConstruct extends cdk.Construct {
         ITEMS_TABLE_NAME: scope.table.items.tableName,
         USERS_TABLE_NAME: scope.table.users.tableName,
         ALLOWED_ORIGIN: scope.envAppUrl,
-        ADMINS_GROUP_NAME: scope.envAdminsGroupName,
-        USERS_GROUP_NAME: scope.envUsersGroupName,
+        AUTHORIZATION_HEADER_NAME: scope.envAuthorizationHeaderName,
         USER_POOL_ID: scope.userPool.defaultChildId,
-        AUTHORIZATION_HEADER_NAME: scope.envAuthorizationHeaderName
+        ROLE_NAME_OF_ADMINS: scope.envRoleNameOfAdmins,
+        ROLE_NAME_OF_USERS: scope.envRoleNameOfUsers
       }
     });
     // grant apigateway access to lambda

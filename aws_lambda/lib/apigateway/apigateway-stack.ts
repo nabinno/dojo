@@ -26,12 +26,12 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
   public envIdentityProviderMetadataURLOrFile: string;
   public envAppUrl: string;
   public envCallbackURL: string;
-  public envGroupsAttributeName: string;
-  public envAdminsGroupName: string;
-  public envUsersGroupName: string;
-  public envNodeRuntime: lambda.Runtime;
   public envAuthorizationHeaderName: string;
+  public envGroupsAttributeName: string;
   public envGroupsAttributeClaimName: string;
+  public envRoleNameOfAdmins: string;
+  public envRoleNameOfUsers: string;
+  public envNodeRuntime: lambda.Runtime;
 
   constructor(scope: cdk.Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
@@ -83,12 +83,12 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
     this.envAppUrl = Utils.getEnv("APP_URL", "http://localhost:3000");
     new URL(this.envAppUrl); // validate URL (throws if invalid URL
     this.envCallbackURL = `${this.envAppUrl}/idpcallback`;
-    this.envGroupsAttributeName = Utils.getEnv("GROUPS_ATTRIBUTE_NAME", "groups");
-    this.envAdminsGroupName = Utils.getEnv("ADMINS_GROUP_NAME", "pet-app-admins");
-    this.envUsersGroupName = Utils.getEnv("USERS_GROUP_NAME", "pet-app-users");
-    this.envNodeRuntime = lambda.Runtime.NODEJS_10_X;
     this.envAuthorizationHeaderName = "authorizationToken";
+    this.envGroupsAttributeName = Utils.getEnv("GROUPS_ATTRIBUTE_NAME", "groups");
     this.envGroupsAttributeClaimName = `custom:${this.envGroupsAttributeName}`;
+    this.envRoleNameOfAdmins = Utils.getEnv("ROLE_NAME_OF_ADMINS", "pet-app-admins");
+    this.envRoleNameOfUsers = Utils.getEnv("ROLE_NAME_OF_USERS", "pet-app-users");
+    this.envNodeRuntime = lambda.Runtime.NODEJS_10_X;
   }
 
   /**
