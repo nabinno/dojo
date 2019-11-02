@@ -40,7 +40,7 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
     if (this.node.tryGetContext("stage") !== undefined) {
       this.stageName = this.node.tryGetContext("stage");
     }
-    this.loadEnvironmentVariables(this);
+    this.loadEnvironmentVariables();
 
     this.api = new apigw.RestApi(this, "gateway", { restApiName: this.stackName });
     this.apiRequestValidator = new apigw.RequestValidator(this, "requestvalidator", {
@@ -73,12 +73,8 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
     this.outputStack();
   }
 
-  // @todo 2019-10-30
-  private loadEnvironmentVariables(scope: cdk.Stack) {
-    this.envDomain = Utils.getEnv(
-      "COGNITO_DOMAIN_NAME",
-      `${scope.stackName.toLowerCase()}-${this.stageName}`
-    );
+  private loadEnvironmentVariables() {
+    this.envDomain = Utils.getEnv("COGNITO_DOMAIN_NAME", `2019-10-31-${this.stageName}`);
     this.envIdentityProviderMetadataURLOrFile = Utils.getEnv("IDENTITY_PROVIDER_METADATA", "");
     this.envAppUrl = Utils.getEnv("APP_URL", "http://localhost:3000");
     new URL(this.envAppUrl); // validate URL (throws if invalid URL
@@ -95,7 +91,7 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
    * @desc Publish the custom resource output
    */
   private outputStack() {
-    new cdk.CfnOutput(this, "APIUrlOutput", {
+    new cdk.CfnOutput(this, "apiUrlOutput", {
       description: "API URL",
       value: this.api.url
     });
@@ -107,7 +103,7 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
       description: "UserPool Client ID (App Client ID)",
       value: this.userPool.clientId
     });
-    new cdk.CfnOutput(this, "RegionOutput", {
+    new cdk.CfnOutput(this, "regionOutput", {
       description: "Region",
       value: this.region
     });

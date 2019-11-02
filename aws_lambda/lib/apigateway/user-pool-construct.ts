@@ -16,9 +16,9 @@ export class UserPoolConstruct extends cdk.Construct {
     super(scope, id);
 
     let uid: string = "";
-    if (fs.existsSync("tmp/cache/uid-pets")) {
+    if (fs.existsSync("tmp/cache/uid-pretokengen")) {
       uid = fs
-        .readFileSync("tmp/cache/uid-pets")
+        .readFileSync("tmp/cache/uid-pretokengen")
         .toString()
         .replace(/^.+?:(.+?)\n$/, "$1");
     }
@@ -59,9 +59,9 @@ export class UserPoolConstruct extends cdk.Construct {
             `pretokengen/_build/pretokengen-${uid}.zip`
           ),
           handler: `_build/pretokengen-${uid}`,
-          environment: {
-            GROUPS_ATTRIBUTE_CLAIM_NAME: scope.envGroupsAttributeClaimName
-          }
+          memorySize: 128,
+          timeout: cdk.Duration.seconds(30),
+          environment: { GROUPS_ATTRIBUTE_CLAIM_NAME: scope.envGroupsAttributeClaimName }
         })
       }
     });
@@ -110,7 +110,7 @@ export class UserPoolConstruct extends cdk.Construct {
           family_name: "lastName",
           given_name: "firstName",
           name: "firstName", // alias to given_name
-          [scope.envGroupsAttributeClaimName]: "groups" //syntax for a dynamic key
+          [scope.envGroupsAttributeClaimName]: "groups" // syntax for a dynamic key
         },
         userPoolId: this.id
       });
@@ -158,7 +158,7 @@ export class UserPoolConstruct extends cdk.Construct {
    * @see https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-assign-domain.html
    */
   private setUserPoolDomain(scope: AwsLambdaApigatewayStack) {
-    const domain = new cognito.CfnUserPoolDomain(scope, "CognitoDomain", {
+    const domain = new cognito.CfnUserPoolDomain(scope, "userPoolDomain", {
       domain: scope.envDomain,
       userPoolId: this.id
     });
