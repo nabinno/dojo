@@ -137,6 +137,7 @@ export class UserPoolConstruct extends cdk.Construct {
       allowedOAuthFlowsUserPoolClient: true,
       allowedOAuthFlows: ["code"],
       allowedOAuthScopes: ["phone", "email", "openid", "profile"],
+      explicitAuthFlows: ["ADMIN_NO_SRP_AUTH"],
       generateSecret: false,
       refreshTokenValidity: 1,
       callbackUrLs: [scope.envCallbackURL], // @todo add your app's prod URLs here
