@@ -6,14 +6,12 @@ CURL_OPTIONS="$@"
 USER_POOL_ID=$(
   aws cognito-idp list-user-pools \
     --max-results 20 |
-    jq '.UserPools[] | select(.Name=="AwsLambdaApigatewayStack-UserPool") | .Id' |
-    sed -E 's/"//g'
+    jq -r '.UserPools[] | select(.Name=="AwsLambdaApigatewayStack-UserPool") | .Id'
 )
 CLIENT_ID=$(
   aws cognito-idp list-user-pool-clients \
     --user-pool-id ${USER_POOL_ID} |
-    jq '.UserPoolClients[] | select(.ClientName=="userPoolClient") | .ClientId' |
-    sed -E 's/"//g'
+    jq -r '.UserPoolClients[] | select(.ClientName=="userPoolClient") | .ClientId'
 )
 USER_NAME="test-$(date +%s)@example.com"
 PASSWORD="P@ssw0rd"
@@ -30,7 +28,8 @@ beforeCreateUser() {
 
 beforeChangePassword() {
   echo "EXECUTE: ${FUNCNAME[0]}"
-  local session=$(getSession ${PASSWORD})
+  local session=$(initiateAuth ${PASSWORD} | jq -r .Session)
+
   aws cognito-idp admin-respond-to-auth-challenge \
     --user-pool-id ${USER_POOL_ID} \
     --client-id ${CLIENT_ID} \
@@ -57,20 +56,27 @@ cognitoCurl() {
   echo "END: ${FUNCNAME[0]}"
 }
 
+# @todo 2019-11-03
 doCognitoCurl() {
-  local session=$(getSession ${NEW_PASSWORD})
+  # local session=$(initiateAuth ${NEW_PASSWORD} | jq -r '.AuthenticationResult.AccessToken')
+  local session=$(initiateAuth ${NEW_PASSWORD} | jq -r '.AuthenticationResult.IdToken')
+
+  echo "--------------------"
+  echo $session
+  echo "--------------------"
+
   eval "curl ${CURL_OPTIONS} -H 'Authorization: ${session}'"
+  # eval "curl ${CURL_OPTIONS} -H 'Authorization: Bearer ${session}'"
 }
 
-getSession() {
+initiateAuth() {
   local pass=$1
   local rc=$(
     aws cognito-idp admin-initiate-auth \
       --user-pool-id ${USER_POOL_ID} \
       --client-id ${CLIENT_ID} \
       --auth-flow ADMIN_NO_SRP_AUTH \
-      --auth-parameters USERNAME=${USER_NAME},PASSWORD=${pass} |
-      jq -r .Session
+      --auth-parameters USERNAME=${USER_NAME},PASSWORD=${pass}
   )
   echo $rc
 }
