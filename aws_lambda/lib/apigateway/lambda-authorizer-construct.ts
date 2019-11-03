@@ -35,7 +35,7 @@ export class LambdaAuthorizerConstruct extends cdk.Construct {
       type: "REQUEST",
       authorizerUri: `arn:aws:apigateway:${scope.region}:lambda:path/2015-03-31/functions/${fn.functionArn}/invocations`,
       authorizerResultTtlInSeconds: 300,
-      identitySource: "method.request.header.authorizationToken"
+      identitySource: `method.request.header.${scope.envAuthorizationHeaderName}`
     });
 
     this.id = authorizer.ref;

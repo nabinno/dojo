@@ -79,7 +79,7 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
     this.envAppUrl = Utils.getEnv("APP_URL", "http://localhost:3000");
     new URL(this.envAppUrl); // validate URL (throws if invalid URL
     this.envCallbackURL = `${this.envAppUrl}/idpcallback`;
-    this.envAuthorizationHeaderName = "authorizationToken";
+    this.envAuthorizationHeaderName = "Authorization";
     this.envGroupsAttributeName = Utils.getEnv("GROUPS_ATTRIBUTE_NAME", "groups");
     this.envGroupsAttributeClaimName = `custom:${this.envGroupsAttributeName}`;
     this.envRoleNameOfAdmins = Utils.getEnv("ROLE_NAME_OF_ADMINS", "pet-app-admins");
