@@ -32,7 +32,10 @@
     "invoke:before": "npm run build && npm run invoke:before-apigateway",
     "invoke:lambda": "bin/invoke-lambda.sh",
     "invoke": "npm run invoke:before && bin/invoke-lambda.sh",
-    "// Cognito scripts": [],
+    "// Cognito scripts": [
+      "@example",
+      "  npm run cognito:curl -- -v -X GET https://foo.execute-api.ap-northeast-1.amazonaws.com/prod/pets"
+    ],
     "cognito:curl": "bin/cognito-curl.sh",
     "// Tools Installation": [],
     "install:sam": "bin/install-sam.sh"
