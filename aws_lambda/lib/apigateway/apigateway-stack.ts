@@ -42,7 +42,14 @@ export class AwsLambdaApigatewayStack extends cdk.Stack {
     }
     this.loadEnvironmentVariables();
 
-    this.api = new apigw.RestApi(this, "gateway", { restApiName: this.stackName });
+    this.api = new apigw.RestApi(this, "gateway", {
+      restApiName: this.stackName,
+      // @todo 2019-11-03
+      deployOptions: {
+        stageName: "prod",
+        tracingEnabled: true
+      }
+    });
     this.apiRequestValidator = new apigw.RequestValidator(this, "requestvalidator", {
       restApi: this.api,
       requestValidatorName: "validateRequestBodyAndParameters",

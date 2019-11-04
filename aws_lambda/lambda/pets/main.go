@@ -46,6 +46,7 @@ func Handler(ctx context.Context, req events.APIGatewayProxyRequest) (events.API
 		r := gin.Default()
 		r.Use(CORSMiddleware())
 
+		// @todo 2019-11-03
 		auth := r.Group("/", CognitoAuthorizationMiddleware())
 		auth.GET("/pets", getPets)
 		auth.GET("/pets/:id", getPet)
@@ -53,6 +54,9 @@ func Handler(ctx context.Context, req events.APIGatewayProxyRequest) (events.API
 		// r.GET("/pets", getPets)
 		// r.GET("/pets/:id", getPet)
 		// r.POST("/pets", createPet)
+		//
+		// r.GET("/pets-lambda", getPets)
+		// r.GET("/pets-none", getPets)
 
 		ginLambda = ginadapter.New(r)
 	}
@@ -84,9 +88,11 @@ func getPets(c *gin.Context) {
 	//	pets[i] = getRandomPet()
 	// }
 
+	log.Printf("--------------------")
+
 	username, ok := getCurrentUserName(c)
 	if !ok {
-		c.AbortWithStatusJSON(http.StatusUnauthorized, SimpleResponse{Message: "Unauthorized"})
+		c.AbortWithStatusJSON(http.StatusUnauthorized, SimpleResponse{Message: "Unauthorized!!!!"})
 		return
 	}
 
