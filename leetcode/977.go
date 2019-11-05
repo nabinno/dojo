@@ -1,5 +1,7 @@
 package main
 
+import "sort"
+
 // SortedSquares ...
 func SortedSquares(A []int) []int {
 	for k, v := range A {

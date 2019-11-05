@@ -96,22 +96,24 @@ var _ = Describe("900 ~ 999", func() {
 	})
 })
 
-var _ = Describe("Remove Outermost Parentheses (1021)", func() {
-	test := func(S string, exp string) {
-		Expect(RemoveOuterParentheses(S)).To(Equal(exp))
-	}
-	It("should handle the following cases", func() {
-		test("(()())(())", "()()()")
-		test("(()())(())(()(()))", "()()()()(())")
-		test("()()", "")
+var _ = Describe("1000 ~ 1999", func() {
+	var _ = Describe("Remove Outermost Parentheses (1021)", func() {
+		test := func(S string, exp string) {
+			Expect(RemoveOuterParentheses(S)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test("(()())(())", "()()()")
+			test("(()())(())(()(()))", "()()()()(())")
+			test("()()", "")
+		})
 	})
-})
 
-var _ = Describe("DefangIPaddr (1108)", func() {
-	test := func(a string, exp string) {
-		Expect(DefangIPaddr(a)).To(Equal(exp))
-	}
-	It("should handle the following cases", func() {
-		test("0.0.0.0", "0[.]0[.]0[.]0")
+	var _ = Describe("DefangIPaddr (1108)", func() {
+		test := func(a string, exp string) {
+			Expect(DefangIPaddr(a)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test("0.0.0.0", "0[.]0[.]0[.]0")
+		})
 	})
 })
