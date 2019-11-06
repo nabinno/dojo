@@ -54,6 +54,15 @@ var _ = Describe("800 ~ 899", func() {
 		})
 	})
 
+	var _ = Describe("Max Increase to Keep City Skyline (807)", func() {
+		test := func(grid [][]int, exp int) {
+			Expect(MaxIncreaseKeepingSkyline(grid)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test([][]int{[]int{3, 0, 8, 4}, []int{2, 4, 5, 7}, []int{9, 2, 6, 3}, []int{0, 3, 1, 0}}, 35)
+		})
+	})
+
 	var _ = Describe("Flipping an Image (832)", func() {
 		test := func(A [][]int, exp [][]int) {
 			Expect(FlipAndInvertImage(A)).To(Equal(exp))
