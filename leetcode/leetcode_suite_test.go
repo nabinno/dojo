@@ -116,4 +116,15 @@ var _ = Describe("1000 ~ 1999", func() {
 			test("0.0.0.0", "0[.]0[.]0[.]0")
 		})
 	})
+
+	var _ = Describe("Split a String in Balanced Strings (1221)", func() {
+		test := func(s string, exp int) {
+			Expect(BalancedStringSplit(s)).To(Equal(exp))
+		}
+		It("should handle the following cases", func() {
+			test("RLRRLLRLRL", 4)
+			test("RLLLLRRRLR", 3)
+			test("LLLLRRRR", 1)
+		})
+	})
 })
