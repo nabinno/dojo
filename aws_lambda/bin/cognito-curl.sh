@@ -13,7 +13,9 @@ CLIENT_ID=$(
     --user-pool-id ${USER_POOL_ID} |
     jq -r '.UserPoolClients[] | select(.ClientName=="userPoolClient") | .ClientId'
 )
-USER_NAME="test-$(date +%s)@example.com"
+ISO8601_TIME=$(date --iso-8601=seconds)
+UNIX_TIME=$(date -d ${ISO8601_TIME} +%s)
+USER_NAME="test-${UNIX_TIME}@example.com"
 PASSWORD="P@ssw0rd"
 NEW_PASSWORD="P@ssw0rD"
 
@@ -38,9 +40,40 @@ beforeChangePassword() {
     --session ${session}
 }
 
+beforePutItem() {
+  echo "EXECUTE: ${FUNCNAME[0]}"
+  local username=$(getUsername)
+  local item=$(
+    cat <<JSON
+{
+  "id": {
+    "S": "${UNIX_TIME}"
+  },
+  "breed": {
+    "S": "Breed-${UNIX_TIME}"
+  },
+  "name": {
+    "S": "Name-${UNIX_TIME}"
+  },
+  "dateOfBirth": {
+    "S": "${ISO8601_TIME}"
+  },
+  "owner": {
+    "S": "${username}"
+  },
+  "ownerDisplayName": {
+    "S": "${username}"
+  }
+}
+JSON
+  )
+
+  aws dynamodb put-item \
+    --table-name AwsLambdaApigatewayStack-Items \
+    --item "${item}"
+}
+
 afterDeleteUser() {
-  echo ""
-  echo ""
   echo "EXECUTE: ${FUNCNAME[0]}"
   aws cognito-idp admin-delete-user \
     --user-pool-id ${USER_POOL_ID} \
@@ -51,15 +84,18 @@ cognitoCurl() {
   echo "START: ${FUNCNAME[0]}"
   beforeCreateUser
   beforeChangePassword
+  beforePutItem
   doCognitoCurl
-  afterDeleteUser
+  # afterDeleteUser
   echo "END: ${FUNCNAME[0]}"
 }
 
 # @todo 2019-11-03
 doCognitoCurl() {
   local session=$(initiateAuth ${NEW_PASSWORD} | jq -r '.AuthenticationResult.IdToken')
-  eval "curl ${CURL_OPTIONS} -H 'Authorization:Bearer ${session}'"
+  eval "curl -H 'Authorization:Bearer ${session}' ${CURL_OPTIONS}"
+  echo ""
+  echo ""
 }
 
 initiateAuth() {
@@ -70,6 +106,16 @@ initiateAuth() {
       --client-id ${CLIENT_ID} \
       --auth-flow ADMIN_NO_SRP_AUTH \
       --auth-parameters USERNAME=${USER_NAME},PASSWORD=${pass}
+  )
+  echo $rc
+}
+
+getUsername() {
+  local rc=$(
+    aws cognito-idp admin-get-user \
+      --user-pool-id ${USER_POOL_ID} \
+      --username ${USER_NAME} |
+      jq -r '.Username'
   )
   echo $rc
 }
