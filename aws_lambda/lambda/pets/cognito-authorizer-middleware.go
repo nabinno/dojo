@@ -56,8 +56,8 @@ func CognitoAuthorizationMiddleware() gin.HandlerFunc {
 
 		token, err := ValidateToken(tokenString, jwkMap)
 		if err != nil || !token.Valid {
-			fmt.Printf("token is not valid\n%v", err)
-			c.AbortWithStatusJSON(http.StatusUnauthorized, SimpleResponse{Message: fmt.Sprintf("token is not valid%v", err)})
+			fmt.Printf("token is not valid: %v", err)
+			c.AbortWithStatusJSON(http.StatusUnauthorized, SimpleResponse{Message: fmt.Sprintf("token is not valid: %v", err)})
 		} else {
 			// Setting authenticated token, then resource paths can use the user information
 			c.Set("token", token)

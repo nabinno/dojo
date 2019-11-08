@@ -58,15 +58,8 @@ cognitoCurl() {
 
 # @todo 2019-11-03
 doCognitoCurl() {
-  # local session=$(initiateAuth ${NEW_PASSWORD} | jq -r '.AuthenticationResult.AccessToken')
   local session=$(initiateAuth ${NEW_PASSWORD} | jq -r '.AuthenticationResult.IdToken')
-
-  echo "--------------------"
-  echo $session
-  echo "--------------------"
-
-  eval "curl ${CURL_OPTIONS} -H 'Authorization: ${session}'"
-  # eval "curl ${CURL_OPTIONS} -H 'Authorization: Bearer ${session}'"
+  eval "curl ${CURL_OPTIONS} -H 'Authorization:Bearer ${session}'"
 }
 
 initiateAuth() {

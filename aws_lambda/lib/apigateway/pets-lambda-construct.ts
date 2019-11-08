@@ -103,7 +103,7 @@ export class PetsLambdaConstruct extends cdk.Construct {
     method: string,
     methodOptions?: apigw.MethodOptions
   ) {
-    const apigwMethod = resource.addMethod(
+    resource.addMethod(
       method,
       new apigw.Integration({
         type: apigw.IntegrationType.AWS_PROXY,
@@ -113,14 +113,12 @@ export class PetsLambdaConstruct extends cdk.Construct {
       {
         authorizationType: apigw.AuthorizationType.COGNITO,
         authorizer: { authorizerId: this.cognitoAuthorizerId },
-        // authorizationType: apigw.AuthorizationType.CUSTOM,
-        // authorizer: { authorizerId: this.lambdaAuthorizerId },
         ...methodOptions
       }
     );
 
-    // API Gateway now expects an access token instead of an ID token
-    (apigwMethod.node.defaultChild as apigw.CfnMethod).authorizationScopes = ["openid"];
+    // // API Gateway now expects an access token instead of an ID token
+    // (apigwMethod.node.defaultChild as apigw.CfnMethod).authorizationScopes = ["openid"];
   }
 
   private addMethodWithLambdaAuthorizer(

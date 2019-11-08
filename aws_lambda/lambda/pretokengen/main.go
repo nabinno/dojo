@@ -12,7 +12,7 @@ func handleRequest(ctx context.Context, event events.CognitoEventUserPoolsPreTok
 	log.Printf("PreTokenGen of user: %s\n", event.UserName)
 
 	// @todo 2019-11-03
-	// event.Response.ClaimsOverrideDetails.ClaimsToSuppress = []string{"family_name"}
+	event.Response.ClaimsOverrideDetails.ClaimsToSuppress = []string{"family_name"}
 
 	return event, nil
 }
