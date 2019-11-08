@@ -70,6 +70,7 @@ func main() {
 
 // GET /pets
 func getPets(c *gin.Context) {
+	var pets = []Pet{}
 	var limit int64 = 10
 	if c.Query("limit") != "" {
 		newLimit, err := strconv.Atoi(c.Query("limit"))
@@ -82,13 +83,6 @@ func getPets(c *gin.Context) {
 	if limit > 50 {
 		limit = 50
 	}
-	var pets = make([]Pet, limit)
-
-	// for i := 0; i < int(limit); i++ {
-	//	pets[i] = getRandomPet()
-	// }
-
-	log.Printf("--------------------")
 
 	username, ok := getCurrentUserName(c)
 	if !ok {
@@ -96,9 +90,16 @@ func getPets(c *gin.Context) {
 		return
 	}
 
-	err := itemsTable.Get("Owner", username).Limit(limit).All(&pets)
+	err := itemsTable.
+		Get("owner", username).
+		Index("owner-index").
+		Limit(limit).
+		All(&pets)
 	if err != nil {
-		c.AbortWithStatusJSON(http.StatusNotFound, SimpleResponse{Message: "Pets were not found"})
+		c.AbortWithStatusJSON(
+			http.StatusNotFound,
+			SimpleResponse{Message: fmt.Sprintf("Pets were not found by username (%v): %v", username, err)},
+		)
 		return
 	}
 
@@ -110,7 +111,9 @@ func getPet(c *gin.Context) {
 	var petID = c.Param("id")
 	var pet Pet
 
-	err := itemsTable.Get("ID", petID).One(&pet)
+	err := itemsTable.
+		Get("id", petID).
+		One(&pet)
 	if err != nil {
 		c.AbortWithStatusJSON(http.StatusNotFound, SimpleResponse{Message: fmt.Sprintf("Pet with id %v was not found", petID)})
 		return
@@ -138,7 +141,9 @@ func createPet(c *gin.Context) {
 	newPet.Owner = c.Query("username")
 	newPet.OwnerDisplayName = getCurrentUserDisplayNames(c)
 
-	err = itemsTable.Put(newPet).Run()
+	err = itemsTable.
+		Put(newPet).
+		Run()
 	if err != nil {
 		c.AbortWithStatusJSON(http.StatusBadRequest, SimpleResponse{Message: fmt.Sprint("Does not save pet: %v", err)})
 		return

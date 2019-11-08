@@ -18,7 +18,12 @@ export class TableConstruct extends cdk.Construct {
       billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
       serverSideEncryption: true,
       stream: dynamodb.StreamViewType.NEW_AND_OLD_IMAGES,
-      partitionKey: { name: "id", type: dynamodb.AttributeType.STRING }
+      partitionKey: { name: "id", type: dynamodb.AttributeType.STRING },
+      pointInTimeRecovery: true
+    });
+    this.items.addGlobalSecondaryIndex({
+      indexName: "owner-index",
+      partitionKey: { name: "owner", type: dynamodb.AttributeType.STRING }
     });
 
     this.users = new dynamodb.Table(scope, "usersTable", {
