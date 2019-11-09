@@ -10,11 +10,7 @@
 - [AWS CDK Intro Workshop](https://cdkworkshop.com)
 - [Microsoft Learn](https://docs.microsoft.com/learn/)
 - [AWS Lambda](https://aws.amazon.com/lambda/)
-
-# Testing
-```sh
-(cd {{field_directory}} && ginkgo)
-```
+- [DataCamp](https://www.datacamp.com/)
 
 ---
 
