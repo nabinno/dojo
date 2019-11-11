@@ -18,11 +18,10 @@ npm run deploy
 
 ## Operation check
 ```sh
-curl https://foo.execute-api.ap-northeast-1.amazonaws.com/prod/pets \
+npm run cognito:curl -- \
+  -v \
   -X GET \
-  -H 'Cache-Control: private' \
-  -H 'authorizationToken: test1'
-  -v
+  https://foo.execute-api.ap-northeast-1.amazonaws.com/prod/pets
 ```
 
 ## Useful commands for CDK
@@ -32,9 +31,3 @@ curl https://foo.execute-api.ap-northeast-1.amazonaws.com/prod/pets \
 - `cdk deploy` deploy this stack to your default AWS account/region
 - `cdk diff` compare deployed stack with current state
 - `cdk synth` emits the synthesized CloudFormation template
-
-## Useful commands for Go
-- `mage lbd:dispatch` dispatch on local
-- `mage lbd:test` or `ginkgo` testing
-- `mage lbd:deploy` deploy
-- `mage lbd:clean` clean
