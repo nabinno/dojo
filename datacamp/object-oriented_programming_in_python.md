@@ -18,7 +18,7 @@ my_avg = average_numbers([1,2,3,4,5,6])
 print(my_avg)
 ```
 
-**NumPy array**
+## NumPy array
 ```python
 # Import numpy as np
 import numpy as np
@@ -36,7 +36,7 @@ print(return_array(my_matrix))
 ```
 
 # 2. Deep dive into classes and objects
-**Introduction to Objects/Classes**
+## Introduction to Objects/Classes
 ```python
 
 # Create empty class: DataShell
@@ -52,7 +52,7 @@ my_data_shell = DataShell()
 print(my_data_shell)
 ```
 
-**Initializing a Class and Self**
+## Initializing a Class and Self
 ```python
 # Create class: DataShell
 class DataShell:
@@ -115,7 +115,7 @@ print(my_data_shell.identifier)
 print(my_data_shell.data)
 ```
 
-**More on Self and Passing in Variables**
+## More on Self and Passing in Variables
 ```python
 # Create class: DataShell
 class DataShell:
@@ -139,7 +139,7 @@ my_data_shell = DataShell(x)
 print(my_data_shell.family)
 ```
 
-**Methods in Classes**
+## Methods in Classes
 ```python
 # Create class: DataShell
 class DataShell:
@@ -184,7 +184,9 @@ my_data_shell = DataShell(integer_list)
 my_data_shell.show()
 ```
 
-**Working with a DataSet to Create DataFrames**
+# 3. Fancy classes, fancy objects
+
+## Working with a DataSet to Create DataFrames
 ```python
 # Load numpy as np and pandas as pd
 import numpy as np
@@ -212,7 +214,7 @@ df = data_shell.generate_csv()
 print(df)
 ```
 
-**Renaming Columns and the Five-Figure Summary**
+## Renaming Columns and the Five-Figure Summary
 ```python
 # Import numpy as np, pandas as pd
 import numpy as np
@@ -264,9 +266,5 @@ print(us_data_shell.data_as_csv.dtypes)
 ```python
 
 ```
-
-
-
-# 3. Fancy classes, fancy objects
 
 # 4. Inheritance, polymorphism and composition
