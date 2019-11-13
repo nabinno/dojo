@@ -1,12 +1,13 @@
----
+﻿---
 title: Introduction to Python
 tags: python
 url: https://campus.datacamp.com/courses/intro-to-python-for-data-science/
 ---
 
-# Excercise
-## Chapter 2.
-**Create a list**
+# Chapter 1. Python Basics
+
+# Chapter 2. Python List
+## Create a list
 ```python
 # area variables (in square meters)
 hall = 11.25
@@ -37,7 +38,7 @@ areas = ["hallway", hall, "kitchen", kit, "living room", liv, "bedroom", bed, "b
 print(areas)
 ```
 
-**Select the valid list**
+## Select the valid list
 ```python
 # area variables (in square meters)
 hall = 11.25
@@ -60,7 +61,7 @@ print(house)
 print(type(house))
 ```
 
-**Subset and conquer**
+## Subset and conquer
 ```python
 # Create the areas list
 areas = ["hallway", 11.25, "kitchen", 18.0, "living room", 20.0, "bedroom", 10.75, "bathroom", 9.50]
@@ -127,8 +128,8 @@ areas_copy[0] = 5.0
 print(areas)
 ```
 
-## Chapter 3.
-**Built-in Functions**
+# Chapter 3. Functions and Packages
+## Built-in Functions
 - `round()`
 - `help()`
 - `max()`
@@ -145,10 +146,10 @@ print(areas)
 - `list reverse()`
 - `list append()`
 
-**Packages**
+## Packages
 - `numpy array()`
 
-**Familiar functions**
+## Familiar functions
 ```python
 # Create variables var1 and var2
 var1 = [1, 2, 3, 4]
@@ -207,7 +208,7 @@ areas.reverse()
 print(areas)
 ```
 
-**Import package math**
+## Import package math
 ```python
 # Definition of radius
 r = 0.43
@@ -240,8 +241,8 @@ dist = r * radians(12)
 print(dist)
 ```
 
-## Chapter 4.
-** Numpy**
+# Chapter 4. Numpy
+## Numpy
 ```python
 # height is available as a regular list
 
@@ -280,7 +281,7 @@ bmi = np_weight_kg / np_height_m**2
 print(bmi)
 ```
 
-**Boolean array indexing**
+## Boolean array indexing
 ```python
 # height and weight are available as a regular lists
 
@@ -302,3 +303,127 @@ print(light)
 print(bmi[light])
 ```
 
+## ND Numpy Arrays
+```python
+# baseball is available as a regular list of lists
+
+# Import numpy package
+import numpy as np
+
+# Create a 2D numpy array from baseball: np_baseball
+np_baseball = np.array(baseball)
+
+# Print out the shape of np_baseball
+print(np_baseball.shape)
+```
+
+```python
+# baseball is available as a regular list of lists
+
+# Import numpy package
+import numpy as np
+
+# Create np_baseball (2 cols)
+np_baseball = np.array(baseball)
+
+# Print out the 50th row of np_baseball
+print(np_baseball[49])
+
+# Select the entire second column of np_baseball: np_weight_lb
+np_weight_lb = np_baseball[:,1]
+
+# Print out height of 124th player
+print(np_baseball[123,0])
+```
+
+```python
+# baseball is available as a regular list of lists
+# updated is available as 2D numpy array
+
+# Import numpy package
+import numpy as np
+
+# Create np_baseball (3 cols)
+np_baseball = np.array(baseball)
+
+# Print out addition of np_baseball and updated
+print(np_baseball + updated)
+
+# Create numpy array: conversion
+conversion = np.array([0.0254, 0.453592, 1])
+
+# Print out product of np_baseball and conversion
+print(np_baseball * conversion)
+```
+
+## Numpy: Basic Statics
+- `np.mean`
+- `np.median`
+- `np.corrcoef`
+- `np.std`
+- `np.sum`
+- `np.sort`
+- `np.random.normal`
+- `np.column_stack`
+
+```python
+# np_baseball is available
+
+# Import numpy
+import numpy as np
+
+# Create np_height_in from np_baseball
+np_height_in = np_baseball[:,0]
+
+# Print out the mean of np_height_in
+print(np.mean(np_height_in))
+
+# Print out the median of np_height_in
+print(np.median(np_height_in))
+```
+
+```python
+# np_baseball is available
+
+# Import numpy
+import numpy as np
+
+# Print mean height (first column)
+avg = np.mean(np_baseball[:,0])
+print("Average: " + str(avg))
+
+# Print median height. Replace 'None'
+med = np.median(np_baseball[:,0])
+print("Median: " + str(med))
+
+# Print out the standard deviation on height. Replace 'None'
+stddev = np.std(np_baseball[:,0])
+print("Standard Deviation: " + str(stddev))
+
+# Print out correlation between first and second column. Replace 'None'
+corr = np.corrcoef(np_baseball[:,0],np_baseball[:,1])
+print("Correlation: " + str(corr))
+```
+
+```python
+# heights and positions are available as lists
+
+# Import numpy
+import numpy as np
+
+# Convert positions and heights to numpy arrays: np_positions, np_heights
+np_positions = np.array(positions)
+np_heights = np.array(heights)
+
+# Heights of the goalkeepers: gk_heights
+gk_heights = np_heights[np_positions == "GK"]
+
+# Heights of the other players: other_heights
+other_heights = np_heights[np_positions != "GK"]
+
+# Print out the median height of goalkeepers. Replace 'None'
+print("Median height of goalkeepers: " + str(np.median(gk_heights)))
+
+# Print out the median height of other players. Replace 'None'
+print("Median height of other players: " + str(np.median(other_heights)))
+```
