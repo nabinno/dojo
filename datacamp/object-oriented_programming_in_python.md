@@ -264,7 +264,115 @@ print(us_data_shell.data_as_csv.dtypes)
 ```
 
 ```python
+# Create class DataShell
+class DataShell:
 
+    # Define initialization method
+    def __init__(self, filepath):
+        self.filepath = filepath
+        self.data_as_csv = pd.read_csv(filepath)
+
+    # Define method rename_column, with arguments self, column_name, and new_column_name
+    def rename_column(self, column_name, new_column_name):
+        self.data_as_csv.columns = self.data_as_csv.columns.str.replace(column_name, new_column_name)
+        
+    # Define get_stats method, with argument self
+    def get_stats(self):
+        # Return a description data_as_csv
+        return self.data_as_csv.describe()
+    
+# Instantiate DataShell as us_data_shell
+us_data_shell = DataShell(us_life_expectancy)
+
+# Print the output of your objects get_stats method
+print(us_data_shell.get_stats())
 ```
 
 # 4. Inheritance, polymorphism and composition
+## Inheritance
+```python
+# Create a class Animal
+class Animal:
+	def __init__(self, name):
+		self.name = name
+
+# Create a class Mammal, which inherits from Animal
+class Mammal(Animal):
+	def __init__(self, name, animal_type):
+		self.animal_type = animal_type
+
+# Create a class Reptile, which also inherits from Animal
+class Reptile(Animal):
+	def __init__(self, name, animal_type):
+		self.animal_type = animal_type
+
+# Instantiate a mammal with name 'Daisy' and animal_type 'dog': daisy
+daisy = Mammal("Daisy", "dog")
+
+# Instantiate a reptile with name 'Stella' and animal_type 'alligator': stella
+stella = Reptile("Stella", "alligator")
+
+# Print both objects
+print(daisy)
+print(stella)
+```
+
+```python
+# Create a class Vertebrate
+class Vertebrate:
+    spinal_cord = True
+    def __init__(self, name):
+        self.name = name
+
+# Create a class Mammal, which inherits from Vertebrate
+class Mammal(Vertebrate):
+    def __init__(self, name, animal_type):
+        self.animal_type = animal_type
+        self.temperature_regulation = True
+
+# Create a class Reptile, which also inherits from Vertebrate
+class Reptile(Vertebrate):
+    def __init__(self, name, animal_type):
+        self.animal_type = animal_type
+        self.temperature_regulation = False
+
+# Instantiate a mammal with name 'Daisy' and animal_type 'dog': daisy
+daisy = Mammal('Daisy', 'dog')
+
+# Instantiate a reptile with name 'Stella' and animal_type 'alligator': stella
+stella = Reptile('Stella', 'alligator')
+
+# Print stella's attributes spinal_cord and temperature_regulation
+print("Stella Spinal cord: " + str(stella.spinal_cord))
+print("Stella temperature regulation: " + str(stella.temperature_regulation))
+
+# Print daisy's attributes spinal_cord and temperature_regulation
+print("Daisy Spinal cord: " + str(daisy.spinal_cord))
+print("Daisy temperature regulation: " + str(daisy.temperature_regulation))
+```
+
+```python
+# Define abstract class DataShell
+class DataShell:
+    # Class variable family
+    family = 'DataShell'
+    # Initialization method with arguments, and instance variables
+    def __init__(self, name, filepath): 
+        self.name = name
+        self.filepath = filepath
+
+# Define class CsvDataShell      
+class CsvDataShell(DataShell):
+    # Initialization method with arguments self, name, filepath
+    def __init__(self, name, filepath):
+        # Instance variable data
+        self.data = pd.read_csv(filepath)
+        # Instance variable stats
+        self.stats = self.data.describe()
+
+# Instantiate CsvDataShell as us_data_shell
+us_data_shell = CsvDataShell("US", us_life_expectancy)
+
+# Print us_data_shell.stats
+print(us_data_shell.stats)
+```
