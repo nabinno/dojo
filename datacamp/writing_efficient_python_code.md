@@ -109,9 +109,220 @@ print(*guest_welcomes, sep='\n')
 # 2. Timing and profiling code
 ## Using %timeit: your turn!
 ```python
+In [1]: %timeit nums_list_comp = [num for num in range(51)]
+3.05 us +- 436 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)
 
+In [3]: %timeit nums_unpack = [*range(51)]
+488 ns +- 29.6 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)
+```
+
+## Using %timeit: specifying number of runs and loops
+```python
+%%timeit -r5 -n25 set(heroes)
+10.1 us +- 1.45 us per loop (mean +- std. dev. of 5 runs, 25 loops each)
+```
+
+## Using %timeit: formal name or literal syntax
+```python
+In [2]: %timeit literal_list = []
+20.7 ns +- 1.52 ns per loop (mean +- std. dev. of 7 runs, 10000000 loops each)
+
+In [3]: %timeit formal_list = list()
+84.1 ns +- 6.77 ns per loop (mean +- std. dev. of 7 runs, 10000000 loops each)
+```
+
+## Using cell magic mode (%%timeit)
+```python
+In [2]: %%timeit hero_wts_lbs = []
+... for wt in wts:
+...     hero_wts_lbs.append(wt * 2.20462)
+1.23 ms +- 212 us per loop (mean +- std. dev. of 7 runs, 1000 loops each)
+
+In [3]: %%timeit wts_np = np.array(wts)
+... hero_wts_lbs_np = wts_np * 2.20462
+1.12 us +- 26.8 ns per loop (mean +- std. dev. of 7 runs, 1000000 loops each)
+```
+
+## Using %lprun: spot bottlenecks
+```python
+In [1]: %load_ext line_profiler
+In [3]: %lprun -f convert_units convert_units(heroes, hts, wts)
+Timer unit: 1e-06 s
+
+Total time: 0.000916 s
+File: <ipython-input-1-2ae8c0194a47>
+Function: convert_units at line 1
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     1                                           def convert_units(heroes, heights, weights):
+     2                                           
+     3         1        128.0    128.0     14.0      new_hts = [ht * 0.39370  for ht in heights]
+     4         1        109.0    109.0     11.9      new_wts = [wt * 2.20462  for wt in weights]
+     5                                           
+     6         1          1.0      1.0      0.1      hero_data = {}
+     7                                           
+     8       481        330.0      0.7     36.0      for i,hero in enumerate(heroes):
+     9       480        347.0      0.7     37.9          hero_data[hero] = (new_hts[i], new_wts[i])
+    10                                                   
+    11         1          1.0      1.0      0.1      return hero_data
+```
+
+## Using %lprun: fix the bottleneck
+```python
+In [2]: %lprun -f convert_units_broadcast convert_units_broadcast(heroes, hts, wts)
+Timer unit: 1e-06 s
+
+Total time: 0.000585 s
+File: <ipython-input-3-84e44a6b12f5>
+Function: convert_units_broadcast at line 1
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     1                                           def convert_units_broadcast(heroes, heights, weights):
+     2                                           
+     3                                               # Array broadcasting instead of list comprehension
+     4         1         30.0     30.0      5.1      new_hts = heights * 0.39370
+     5         1          3.0      3.0      0.5      new_wts = weights * 2.20462
+     6                                           
+     7         1          1.0      1.0      0.2      hero_data = {}
+     8                                           
+     9       481        231.0      0.5     39.5      for i,hero in enumerate(heroes):
+    10       480        319.0      0.7     54.5          hero_data[hero] = (new_hts[i], new_wts[i])
+    11                                                   
+    12         1          1.0      1.0      0.2      return hero_data
+```
+
+## Code profiling for memory usage
+```python
+In [1]: %load_ext memory_profiler
+In [2]: from bmi_lists import calc_bmi_lists
+In [3]: %mprun -f calc_bmi_lists calc_bmi_lists(sample_indices, hts, wts)
+Filename: /tmp/tmp00h_xy37/bmi_lists.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+     1     79.3 MiB     79.3 MiB   def calc_bmi_lists(sample_indices, hts, wts):
+     2                             
+     3                                 # Gather sample heights and weights as lists
+     4     79.9 MiB      0.3 MiB       s_hts = [hts[i] for i in sample_indices]
+     5     80.8 MiB      0.3 MiB       s_wts = [wts[i] for i in sample_indices]
+     6                             
+     7                                 # Convert heights from cm to m and square with list comprehension
+     8     81.7 MiB      0.4 MiB       s_hts_m_sqr = [(ht / 100) ** 2 for ht in s_hts]
+     9                             
+    10                                 # Calculate BMIs as a list with list comprehension
+    11     82.3 MiB      0.3 MiB       bmis = [s_wts[i] / s_hts_m_sqr[i] for i in range(len(sample_indices))]
+    12                             
+    13     82.3 MiB      0.0 MiB       return bmis
+```
+
+## Using %mprun: Hero BMI 2.0
+```python
+In [1]: %load_ext memory_profiler
+The memory_profiler extension is already loaded. To reload it, use:
+  %reload_ext memory_profiler
+
+In [2]: from bmi_arrays import calc_bmi_arrays
+
+In [3]: %mprun -f calc_bmi_arrays calc_bmi_arrays(sample_indices, hts, wts)
+Filename: /tmp/tmpu3bg1r51/bmi_arrays.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+     1     78.7 MiB     78.7 MiB   def calc_bmi_arrays(sample_indices, hts, wts):
+     2                             
+     3                                 # Gather sample heights and weights as arrays
+     4     78.7 MiB      0.1 MiB       s_hts = hts[sample_indices]
+     5     79.0 MiB      0.3 MiB       s_wts = wts[sample_indices]
+     6                             
+     7                                 # Convert heights from cm to m and square with broadcasting
+     8     79.3 MiB      0.3 MiB       s_hts_m_sqr = (s_hts / 100) ** 2
+     9                             
+    10                                 # Calculate BMIs as an array using broadcasting
+    11     79.3 MiB      0.0 MiB       bmis = s_wts / s_hts_m_sqr
+    12                             
+    13     79.3 MiB      0.0 MiB       return bmis
+```
+
+## Bringing it all together: Star Wars profiling
+```python
+In [1]: %load_ext line_profiler
+
+In [2]: %lprun -f get_publisher_heroes get_publisher_heroes(heroes, publishers, "George Lucas")
+Timer unit: 1e-06 s
+
+Total time: 0.000301 s
+File: <ipython-input-2-5a6bc05c1c55>
+Function: get_publisher_heroes at line 1
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+     1                                           def get_publisher_heroes(heroes, publishers, desired_publisher):
+     2                                           
+     3         1          2.0      2.0      0.7      desired_heroes = []
+     4                                           
+     5       481        147.0      0.3     48.8      for i,pub in enumerate(publishers):
+     6       480        140.0      0.3     46.5          if pub == desired_publisher:
+     7         4         12.0      3.0      4.0              desired_heroes.append(heroes[i])
+     8                                           
+     9         1          0.0      0.0      0.0      return desired_heroes
+	 
+In [3]: %lprun -f get_publisher_heroes_np get_publisher_heroes_np(heroes, publishers, "George Lucas")
+Timer unit: 1e-06 s
+
+Total time: 0.000215 s
+File: <ipython-input-2-5a6bc05c1c55>
+Function: get_publisher_heroes_np at line 12
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    12                                           def get_publisher_heroes_np(heroes, publishers, desired_publisher):
+    13                                           
+    14         1        143.0    143.0     66.5      heroes_np = np.array(heroes)
+    15         1         42.0     42.0     19.5      pubs_np = np.array(publishers)
+    16                                           
+    17         1         29.0     29.0     13.5      desired_heroes = heroes_np[pubs_np == desired_publisher]
+    18                                           
+    19         1          1.0      1.0      0.5      return desired_heroes
+
+In [7]: from hero_funcs import get_publisher_heroes
+In [8]: from hero_funcs import get_publisher_heroes_np
+In [9]: %mprun -f get_publisher_heroes get_publisher_heroes(heroes, publishers, "George Lucas")
+Filename: /tmp/tmpjjwz8b32/hero_funcs.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+     4    110.4 MiB    110.4 MiB   def get_publisher_heroes(heroes, publishers, desired_publisher):
+     5                             
+     6    110.4 MiB      0.0 MiB       desired_heroes = []
+     7                             
+     8    110.4 MiB      0.0 MiB       for i,pub in enumerate(publishers):
+     9    110.4 MiB      0.0 MiB           if pub == desired_publisher:
+    10    110.4 MiB      0.0 MiB               desired_heroes.append(heroes[i])
+    11                             
+    12    110.4 MiB      0.0 MiB       return desired_heroes
+
+In [1]: %mprun -f get_publisher_heroes_np get_publisher_heroes_np(heroes, publishers, "George Lucas")
+Filename: /tmp/tmpjjwz8b32/hero_funcs.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    15    110.4 MiB    110.4 MiB   def get_publisher_heroes_np(heroes, publishers, desired_publisher):
+    16                             
+    17    110.4 MiB      0.0 MiB       heroes_np = np.array(heroes)
+    18    110.4 MiB      0.0 MiB       pubs_np = np.array(publishers)
+    19                             
+    20    110.4 MiB      0.0 MiB       desired_heroes = heroes_np[pubs_np == desired_publisher]
+    21                             
+    22    110.4 MiB      0.0 MiB       return desired_heroes
 ```
 
 # 3. Gaining efficiencies
+## Efficiently combining, counting, and iterating
+```python
+
+```
+
 
 # 4. Basic pandas optimizations
