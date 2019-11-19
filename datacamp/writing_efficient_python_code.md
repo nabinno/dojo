@@ -566,6 +566,55 @@ print(yankees_df)
 
 ## Analyzing baseball stats with .apply()
 ```python
-
+# Convert numeric playoffs to text
+textual_playoffs = rays_df.apply(lambda row: text_playoffs(row["Playoffs"]), axis=1)
+print(textual_playoffs)
 ```
 
+## Settle a debate with .apply()
+```python
+# Display the first five rows of the DataFrame
+print(dbacks_df.head())
+
+# Create a win percentage Series 
+win_percs = dbacks_df.apply(lambda row: calc_win_perc(row['W'], row['G']), axis=1)
+print(win_percs, '\n')
+
+# Append a new column to dbacks_df
+dbacks_df["WP"] = win_percs
+print(dbacks_df, '\n')
+
+# Display dbacks_df where WP is greater than 0.50
+print(dbacks_df[dbacks_df['WP'] >= 0.50])
+```
+
+## Replacing .iloc with underlying arrays
+```python
+# Use the W array and G array to calculate win percentages
+win_percs_np = calc_win_perc(baseball_df['W'].values, baseball_df['G'].values)
+
+# Append a new column to baseball_df that stores all win percentages
+baseball_df["WP"] = win_percs_np
+
+print(baseball_df.head())
+```
+
+## Bringing it all together: Predict win percentage
+```python
+win_perc_preds_loop = []
+
+# Use a loop and .itertuples() to collect each row's predicted win percentage
+for row in baseball_df.itertuples():
+    runs_scored = row.RS
+    runs_allowed = row.RA
+    win_perc_pred = predict_win_perc(runs_scored, runs_allowed)
+    win_perc_preds_loop.append(win_perc_pred)
+
+# Apply predict_win_perc to each row of the DataFrame
+win_perc_preds_apply = baseball_df.apply(lambda row: predict_win_perc(row['RS'], row['RA']), axis=1)
+
+# Calculate the win percentage predictions using NumPy arrays
+win_perc_preds_np = predict_win_perc(baseball_df["RS"].values, baseball_df["RA"].values)
+baseball_df['WP_preds'] = win_perc_preds_np
+print(baseball_df.head())
+```
