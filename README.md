@@ -11,6 +11,7 @@
 - [Microsoft Learn](https://docs.microsoft.com/learn/)
 - [AWS Lambda](https://aws.amazon.com/lambda/)
 - [DataCamp](https://www.datacamp.com/)
+- [HackerRank](https://www.hackerrank.com/)
 
 ---
 
