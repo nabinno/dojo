@@ -6,12 +6,12 @@
 - [Project Euler](https://projecteuler.net)
 - [LeetCode](https://leetcode.com)
 - [AtCoder](https://atcoder.jp)
+- [HackerRank](https://www.hackerrank.com/)
+- [DataCamp](https://www.datacamp.com/)
 - [Qwiklabs](https://amazon-run.qwiklabs.com)
 - [AWS CDK Intro Workshop](https://cdkworkshop.com)
 - [Microsoft Learn](https://docs.microsoft.com/learn/)
 - [AWS Lambda](https://aws.amazon.com/lambda/)
-- [DataCamp](https://www.datacamp.com/)
-- [HackerRank](https://www.hackerrank.com/)
 
 ---
 
