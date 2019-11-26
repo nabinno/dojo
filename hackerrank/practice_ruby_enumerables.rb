@@ -82,3 +82,11 @@ end
 def group_by_marks(marks, pass_marks)
   marks.group_by {|k,v| v >= pass_marks ? "Passed" : "Failed"}
 end
+
+##
+# Introduction
+def iterate_colors(colors)
+  rc = []
+  colors.each {|c| rc << c}
+  rc
+end

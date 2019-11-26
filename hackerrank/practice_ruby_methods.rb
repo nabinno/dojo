@@ -132,3 +132,13 @@ raise_to_power = power_function.curry.(base)
 
 power = gets.to_i
 puts raise_to_power.(power)
+
+##
+# Introduction
+class Object
+  require 'prime'
+
+  def prime?(num)
+    Prime.prime?(num)
+  end
+end
