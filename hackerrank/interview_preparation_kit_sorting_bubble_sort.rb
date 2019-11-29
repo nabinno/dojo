@@ -46,15 +46,15 @@ require 'stringio'
 def maximumToys(prices, k)
   result = []
 
-  buyable_prices = prices.select { |price| k >= price }
+  buyable_prices = prices.select { |price| k >= price }.sort
   1.upto(buyable_prices.size) do |i|
     result += buyable_prices
-      .each_cons(i)
-      .to_a
-      .select { |c| k >= c.sum }
+                .each_cons(i)
+                .to_a
+                .select { |c| k >= c.sum }
   end
 
-  result.sort_by { |r| r.size }.last.size
+  result.last.size
 end
 
 fptr = File.open(ENV['OUTPUT_PATH'], 'w')
