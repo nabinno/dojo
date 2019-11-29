@@ -42,7 +42,7 @@ require 'stringio'
 
 # Complete the twoStrings function below.
 def twoStrings(s1, s2)
-  
+  s1.split("") & s2.split("") != [] ? 'YES' : 'NO'
 end
 
 fptr = File.open(ENV['OUTPUT_PATH'], 'w')
@@ -55,6 +55,44 @@ q.times do |q_itr|
   s2 = gets.to_s.rstrip
 
   result = twoStrings(s1, s2)
+
+  fptr.write(result)
+  fptr.write("\n")
+end
+
+fptr.close()
+
+##
+# Sherlock and Anagrams
+#
+#!/bin/ruby
+
+require 'json'
+require 'stringio'
+
+# Complete the sherlockAndAnagrams function below.
+def sherlockAndAnagrams(s)
+  chk = lambda { |a,b| a.sort == b.sort }
+  result = []
+
+  1.upto(s.size-1) do |i|
+    cmb = s.chars.each_cons(i).combination(2).to_a
+    result += cmb.select do |c|
+      chk.call(c[0], c[1])
+    end
+  end
+
+  result.size
+end
+
+fptr = File.open(ENV['OUTPUT_PATH'], 'w')
+
+q = gets.to_i
+
+q.times do |q_itr|
+  s = gets.to_s.rstrip
+
+  result = sherlockAndAnagrams(s)
 
   fptr.write(result)
   fptr.write("\n")
