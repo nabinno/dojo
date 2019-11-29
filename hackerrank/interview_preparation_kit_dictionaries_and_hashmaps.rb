@@ -42,7 +42,7 @@ require 'stringio'
 
 # Complete the twoStrings function below.
 def twoStrings(s1, s2)
-
+  
 end
 
 fptr = File.open(ENV['OUTPUT_PATH'], 'w')
@@ -54,10 +54,10 @@ q.times do |q_itr|
 
   s2 = gets.to_s.rstrip
 
-  result = twoStrings s1, s2
+  result = twoStrings(s1, s2)
 
-  fptr.write result
-  fptr.write "\n"
+  fptr.write(result)
+  fptr.write("\n")
 end
 
 fptr.close()
