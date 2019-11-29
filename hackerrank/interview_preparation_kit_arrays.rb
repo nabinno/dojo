@@ -92,30 +92,27 @@ require 'stringio'
 
 # Complete the minimumBribes function below.
 def minimumBribes(q)
-  bribes_cnt = 0;
-  min = q.size;
+  moves = 0
+  r = (0..q.size-1).to_a
 
-  q.size.times do |i|
-    if (q[i] - i > 3)
-      puts 'Too chaotic'
-      break
-    end
-
-    if (q[i] > i+1)
-      bribes_cnt += (q[i]-(i+1))
-      # puts "[#{i}] #{bribes_cnt}, #{min}" if min < q.size
-      puts bribes_cnt if min < q.size
-    else 
-      if (min > q[i])
-        min = q[i]
-      elsif (q[i] != min)
-        bribes_cnt += 1
+  until q == (1..q.size).to_a do
+    q.map { |a| a - 1 }
+      .reverse_each.with_index do |person, i|
+      i = q.size - i - 1
+      if person - i > 2
+        puts "Too chaotic"
+        return
       end
 
-      # puts "#{bribes_cnt}, #{min}"
-      # break
+      if person > r[i] && person > q[person] -1
+        moves += person - r[i]
+        q = q - [person + 1]
+        q.insert(person, person + 1)
+      end
     end
   end
+
+  puts moves
 end
 
 t = gets.to_i
