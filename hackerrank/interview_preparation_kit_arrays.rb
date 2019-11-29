@@ -124,3 +124,44 @@ t.times do |t_itr|
 
   minimumBribes(q)
 end
+
+##
+# Minimum Swaps 2
+#
+#!/bin/ruby
+
+require 'json'
+require 'stringio'
+
+# Complete the minimumSwaps function below.
+def minimumSwaps(arr)
+  swap_cnt = 0
+  valid_arr = (1..arr.size).to_a
+
+  until arr == valid_arr do
+    arr.each_with_index do |elem, i|
+      if elem > valid_arr[i]
+        target = arr.index(i+1)
+
+        arr[i] = valid_arr[i]
+        arr[target] = elem
+        swap_cnt += 1
+      end
+    end
+  end
+
+  puts swap_cnt
+end
+
+fptr = File.open(ENV['OUTPUT_PATH'], 'w')
+
+n = gets.to_i
+
+arr = gets.rstrip.split(' ').map(&:to_i)
+
+res = minimumSwaps(arr)
+
+fptr.write(res)
+fptr.write("\n")
+
+fptr.close()
