@@ -150,7 +150,7 @@ def minimumSwaps(arr)
     end
   end
 
-  puts swap_cnt
+  swap_cnt
 end
 
 fptr = File.open(ENV['OUTPUT_PATH'], 'w')
@@ -162,6 +162,50 @@ arr = gets.rstrip.split(' ').map(&:to_i)
 res = minimumSwaps(arr)
 
 fptr.write(res)
+fptr.write("\n")
+
+fptr.close()
+
+##
+# Array Manipulation
+#
+#!/bin/ruby
+
+require 'json'
+require 'stringio'
+
+# Complete the arrayManipulation function below.
+def arrayManipulation(n, queries)
+  arr = Array.new(n, 0)
+
+  queries.each do |query|
+    left = query[0] - 1
+    right = query[1] - 1
+    summand = query[2]
+
+    arr[(left..right)] = arr[(left..right)].map { |a| a + summand }
+  end
+
+  arr.max
+end
+
+fptr = File.open(ENV['OUTPUT_PATH'], 'w')
+
+nm = gets.rstrip.split
+
+n = nm[0].to_i
+
+m = nm[1].to_i
+
+queries = Array.new(m)
+
+m.times do |i|
+  queries[i] = gets.rstrip.split(' ').map(&:to_i)
+end
+
+result = arrayManipulation(n, queries)
+
+fptr.write(result)
 fptr.write("\n")
 
 fptr.close()
