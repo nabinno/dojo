@@ -234,23 +234,157 @@ print(flights_with_airports.show())
 ```
 
 # 3. Getting started with machine learning pipelines
-##
+## Join the DataFrame
 ```python
+# Rename year column
+planes = planes.withColumnRenamed('year', 'plane_year')
 
+# Join the DataFrames
+model_data = flights.join(planes, on='tailnum', how="leftouter")
 ```
 
-##
+## String to integer
 ```python
-
+# Cast the columns to integers
+model_data = model_data.withColumn("arr_delay", model_data.arr_delay.cast('integer'))
+model_data = model_data.withColumn("air_time", model_data.air_time.cast('integer'))
+model_data = model_data.withColumn("month", model_data.month.cast('integer'))
+model_data = model_data.withColumn("plane_year", model_data.plane_year.cast('integer'))
 ```
 
-##
+## Create a new column
 ```python
-
+# Create the column plane_age
+model_data = model_data.withColumn("plane_age", model_data.year - model_data.plane_year)
 ```
 
+## Making a Boolean
+```python
+# Create is_late
+model_data = model_data.withColumn("is_late", model_data.arr_delay > 0)
 
+# Convert to an integer
+model_data = model_data.withColumn("label", model_data.is_late.cast('integer'))
+
+# Remove missing values
+model_data = model_data.filter("\
+arr_delay IS NOT NULL AND \
+dep_delay IS NOT NULL AND \
+air_time IS NOT NULL AND \
+plane_year IS NOT NULL\
+")
+```
+
+## Carrier
+```python
+# Create a StringIndexer
+carr_indexer = StringIndexer(inputCol='carrier', outputCol='carrier_index')
+
+# Create a OneHotEncoder
+carr_encoder = OneHotEncoder(inputCol='carrier_index', outputCol='carrier_fact')
+```
+
+## Destination
+```python
+# Create a StringIndexer
+dest_indexer = StringIndexer(inputCol='dest', outputCol='dest_index')
+
+# Create a OneHotEncoder
+dest_encoder = OneHotEncoder(inputCol='dest_index', outputCol='dest_fact')
+```
+
+## Assemble a vector
+```python
+# Make a VectorAssembler
+vec_assembler = VectorAssembler(inputCols=["month", "air_time", "carrier_fact", "dest_fact", "plane_age"], outputCol='features')
+```
+
+## Create the pipeline
+```python
+# Import Pipeline
+from pyspark.ml import Pipeline
+
+# Make the pipeline
+flights_pipe = Pipeline(stages=[
+    dest_indexer,
+    dest_encoder,
+    carr_indexer,
+    carr_encoder,
+    vec_assembler
+])
+```
+
+## Transform the data
+```python
+# Fit and transform the data
+piped_data = flights_pipe.fit(model_data).transform(model_data)
+```
+
+## Split the data
+```python
+# Split the data into training and test sets
+training, test = piped_data.randomSplit([.6, .4])
+```
 
 # 4. Model tuning and selection
+## Create the modeler
+```python
+# Import LogisticRegression
+from pyspark.ml.classification import LogisticRegression
 
+# Create a LogisticRegression Estimator
+lr = LogisticRegression()
+```
 
+## Create the evaluator
+```python
+# Import the evaluation submodule
+import pyspark.ml.evaluation as evals
+
+# Create a BinaryClassificationEvaluator
+evaluator = evals.BinaryClassificationEvaluator(metricName='areaUnderROC')
+```
+
+## Make a grid
+```python
+# Import the tuning submodule
+import pyspark.ml.tuning as tune
+
+# Create the parameter grid
+grid = tune.ParamGridBuilder()
+
+# Add the hyperparameter
+grid = grid.addGrid(lr.regParam, np.arange(0, .1, .01))
+grid = grid.addGrid(lr.elasticNetParam, [0, 1])
+
+# Build the grid
+grid = grid.build()
+```
+
+## Make the validator
+```python
+# Create the CrossValidator
+cv = tune.CrossValidator(
+    estimator=lr,
+    estimatorParamMaps=grid,
+    evaluator=evaluator
+)
+```
+
+## Fit the model(s)
+```python
+# Call lr.fit()
+best_lr = lr.fit(training)
+
+# Print best_lr
+print(best_lr)
+```
+
+## Evaluate the model
+```python
+# Use the model to predict the test set
+test_results = best_lr.transform(test)
+
+# Evaluate the predictions
+print(evaluator.evaluate(test_results))
+```
