@@ -403,7 +403,7 @@ MSE = rates_and_preds.map(lambda r: (r[1][0] - r[1][1])**2).mean()
 print("Mean Squared Error of the model for the test data = {:.2f}".format(MSE))
 ```
 
-## Classification
+## Loading spam and non-spam data
 ```python
 # Load the datasets into RDDs
 spam_rdd = sc.textFile(file_path_spam)
@@ -418,7 +418,7 @@ print("The first element in spam_words is", spam_words.first())
 print("The first element in non_spam_words is", non_spam_words.first())
 ```
 
-## Loading spam and non-spam data
+## Feature hashing and LabelPoint
 ```python
 # Create a HashingTf instance with 200 features
 tf = HashingTF(numFeatures=200)
@@ -435,32 +435,68 @@ non_spam_samples = non_spam_features.map(lambda features: LabeledPoint(0, featur
 samples = spam_samples.join(non_spam_samples)
 ```
 
-## Feature hashing and LabelPoint
-```python
-
-```
-
 ## Logistic Regression model training
 ```python
+# Split the data into training and testing
+train_samples,test_samples = samples.randomSplit([0.8, 0.2])
 
-```
+# Train the model
+model = LogisticRegressionWithLBFGS.train(train_samples)
 
-## Clustering
-```python
+# Create a prediction label from the test data
+predictions = model.predict(test_samples.map(lambda x: x.features))
 
+# Combine original labels with the predicted labels
+labels_and_preds = test_samples.map(lambda x: x.label).zip(predictions)
+
+# Check the accuracy of the model on the test data
+accuracy = labels_and_preds.filter(lambda x: x[0] == x[1]).count() / float(test_samples.count())
+print("Model accuracy : {:.2f}".format(accuracy))
 ```
 
 ## Loading and parsing the 5000 points data
 ```python
+# Load the dataset into a RDD
+clusterRDD = sc.textFile(file_path)
 
+# Split the RDD based on tab
+rdd_split = clusterRDD.map(lambda x: x.split("\t"))
+
+# Transform the split RDD by creating a list of integers
+rdd_split_int = rdd_split.map(lambda x: [int(x[0]), int(x[1])])
+
+# Count the number of rows in RDD 
+print("There are {} rows in the rdd_split_int dataset".format(rdd_split_int.count()))
 ```
 
 ## K-means training
 ```python
+# Train the model with clusters from 13 to 16 and compute WSSSE 
+for clst in range(13, 17):
+    model = KMeans.train(rdd_split_int, clst, seed=1)
+    WSSSE = rdd_split_int.map(lambda point: error(point)).reduce(lambda x, y: x + y)
+    print("The cluster {} has Within Set Sum of Squared Error {}".format(clst, WSSSE))
 
+# Train the model again with the best k 
+model = KMeans.train(rdd_split_int, k=15, seed=1)
+
+# Get cluster centers
+cluster_centers = model.clusterCenters
 ```
 
 ## Visualizing clusters
 ```python
+# Convert rdd_split_int RDD into Spark DataFrame
+rdd_split_int_df = spark.createDataFrame(rdd_split_int, schema=["col1", "col2"])
 
+# Convert Spark DataFrame into Pandas DataFrame
+rdd_split_int_df_pandas = rdd_split_int_df.toPandas()
+
+# Convert "cluster_centers" that you generated earlier into Pandas DataFrame
+cluster_centers_pandas = pd.DataFrame(cluster_centers, columns=["col1", "col2"])
+
+# Create an overlaid scatter plot
+plt.scatter(rdd_split_int_df_pandas["col1"], rdd_split_int_df_pandas["col2"])
+plt.scatter(cluster_centers_pandas["col1"], cluster_centers_pandas["col2"], color="red", marker="x")
+plt.show()
 ```
