@@ -28,7 +28,7 @@ url: https://www.qwiklabs.com/focuses/274?catalog_rank=%7B%22rank%22%3A1%2C%22nu
 
 # Supplement
 ## Overview
-![]()
+![](introduction_to_amazon_kinesis_firehose.png)
 
 ## Task 1: Create your AWS Lambda Transformation Function
 **AWS Lambda**
