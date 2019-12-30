@@ -26,7 +26,7 @@ url: https://www.qwiklabs.com/focuses/8517?catalog_rank=%7B%22rank%22%3A1%2C%22n
 - [x] Additional resources
 
 # Supplement
-![](visualizing_security_groups_with_amazon_elasticsearch_service.md)
+![](visualizing_security_groups_with_amazon_elasticsearch_service.png)
 
 ## Task 3: Connect to the EC2 instance
 ```
