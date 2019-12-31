@@ -9,6 +9,7 @@
 - [HackerRank](https://www.hackerrank.com/)
 - [DataCamp](https://www.datacamp.com/)
 - [Qwiklabs](https://amazon-run.qwiklabs.com)
+- [Coursera](https://www.coursera.org/)
 - [AWS CDK Intro Workshop](https://cdkworkshop.com)
 - [Microsoft Learn](https://docs.microsoft.com/learn/)
 - [AWS Lambda](https://aws.amazon.com/lambda/)
