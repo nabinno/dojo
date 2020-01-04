@@ -8,30 +8,34 @@ url: https://www.qwiklabs.com/focuses/585?parent=catalog
 - Google Cloud Dataproc
 
 # Task
-- [ ] Overview
-- [ ] Setup and Requirements
-- [ ] Create a cluster
-- [ ] Submit a job
-- [ ] Update a cluster
-- [ ] Test your Understanding
-- [ ] Congratulations!
+- [x] Overview
+- [x] Setup and Requirements
+- [x] Create a cluster
+- [x] Submit a job
+- [x] Update a cluster
+- [x] Test your Understanding
+- [x] Congratulations!
 
 # Supplement
-## Overview
-
-
-## Setup and Requirements
-
-
 ## Create a cluster
-
+```sh
+gcloud dataproc clusters create example-cluster
+```
 
 ## Submit a job
-
+```sh
+gcloud dataproc jobs submit spark \
+  --cluster example-cluster \
+  --class org.apache.spark.examples.SparkPi \
+  --jars file:///usr/lib/spark/examples/jars/spark-examples.jar \
+  -- 1000
+```
 
 ## Update a cluster
+```sh
+gcloud dataproc clusters update example-cluster --num-workers 4
+gcloud dataproc clusters update example-cluster --num-workers 2
+```
 
-
-## Test your Understanding
-
-
+# References
+- https://cloud.google.com/sdk/gcloud/reference/dataproc/jobs/submit/spark
