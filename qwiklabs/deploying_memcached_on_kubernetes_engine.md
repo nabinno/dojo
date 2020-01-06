@@ -19,8 +19,20 @@ url: https://www.qwiklabs.com/focuses/615
 
 # Supplement
 ## Overview
+
+
 ## Setup and Requirements
+
+
 ## Deploying a Memcached service
+
+
 ## Implementing the service discovery logic
+
+
 ## Enabling connection pooling
+
+
 ## Reducing latency
+
+
