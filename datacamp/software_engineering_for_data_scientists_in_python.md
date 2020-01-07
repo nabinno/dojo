@@ -320,34 +320,76 @@ my_tweets.retweets.plot_counts('hashtag_counts')
 ```
 
 # 4. Maintainability
-## Documentation
-```python
-
-```
-
 ## Identifying good comments
 ```python
+import re
 
+def extract_0(text):
+    # match and extract dollar amounts from the text
+    return re.findall(r'\$\d+\.\d\d', text)
+
+def extract_1(text):
+    # return all matches to regex pattern
+    return re.findall(r'\$\d+\.\d\d', text)
+
+# Print the text
+print(text)
+
+# Print the results of the function with better commenting
+print(extract_0(text))
 ```
 
 ## Identifying proper docstrings
 ```python
+# Run the help on all 4 functions
+help(goldilocks)
+help(rapunzel)
+help(mary)
+help(sleeping_beauty)
 
+# Execute the function with most complete docstring
+result = rapunzel()
+
+# Print the result
+print(result)
 ```
 
 ## Writing docstrings
 ```python
+# Complete the function's docstring
+def tokenize(text, regex=r'[a-zA-z]+'):
+  """Split text into tokens using a regular expression
 
-```
+  :param text: text to be tokenized
+  :param regex: regular expression used to match tokens using re.findall 
+  :return: a list of resulting tokens
 
-## Readability counts
-```python
+  >>> tokenize('the rain in spain')
+  ['the', 'rain', 'in', 'spain']
+  """
+  return re.findall(regex, text, flags=re.IGNORECASE)
 
+# Print the docstring
+help(tokenize)
 ```
 
 ## Using good function names
 ```python
+def hypotenuse_length(leg_a, leg_b):
+    """Find the length of a right triangle's hypotenuse
 
+    :param leg_a: length of one leg of triangle
+    :param leg_b: length of other leg of triangle
+    :return: length of hypotenuse
+    
+    >>> hypotenuse_length(3, 4)
+    5
+    """
+    return math.sqrt(leg_a**2 + leg_b**2)
+
+
+# Print the length of the hypotenuse with legs 6 & 8
+print(hypotenuse_length(6, 8))
 ```
 
 ## Using good variable names
