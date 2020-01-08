@@ -394,17 +394,34 @@ print(hypotenuse_length(6, 8))
 
 ## Using good variable names
 ```python
+from statistics import mean
 
+# Sample measurements of pupil diameter in mm
+pupil_diameter = [3.3, 6.8, 7.0, 5.4, 2.7]
+
+# Average pupil diameter from sample
+mean_diameter = mean(pupil_diameter)
+
+print(mean_diameter)
 ```
 
 ## Refactoring for readability
 ```python
+def polygon_perimeter(n_sides, side_len):
+    return n_sides * side_len
 
-```
+def polygon_apothem(n_sides, side_len):
+    denominator = 2 * math.tan(math.pi / n_sides)
+    return side_len / denominator
 
-## Unit testing
-```python
+def polygon_area(n_sides, side_len):
+    perimeter = polygon_perimeter(n_sides, side_len)
+    apothem = polygon_apothem(n_sides, side_len)
 
+    return perimeter * apothem / 2
+
+# Print the area of a hexagon with legs of size 10
+print(polygon_area(n_sides=6, side_len=10))
 ```
 
 ## Using doctest
