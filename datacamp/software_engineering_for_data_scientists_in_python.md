@@ -474,13 +474,3 @@ class SocialMedia(Document):
         self.hashtag_counts = self._count_hashtags()
         self.mention_counts = self._count_mentions()
 ```
-
-## Identifying tools
-```python
-
-```
-
-## Final Thoughts
-```python
-
-```
