@@ -5,7 +5,7 @@ url: https://www.qwiklabs.com/focuses/2789?parent=catalog
 ---
 
 # Goal
-	- How to create a new Rails application using the Cloud Shell
+- How to create a new Rails application using the Cloud Shell
 - How to test a Rails application using Web Preview in the Cloud Shell before deployment
 - How to add a Welcome page to the Rails application
 - How to prepare your deployment configuration
