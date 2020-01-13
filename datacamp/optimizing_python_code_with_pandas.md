@@ -119,24 +119,33 @@ print("Time using panda's .sample(): {} sec".format(time.time() - pd_start_time)
 ```
 
 # 2. Replacing values in a DataFrame
-## Replace scalar values using .replace()
-```python
-
-```
-
 ## Replacing scalar values I
 ```python
+# Replace Class 1 to -2 
+poker_hands['Class'].replace(1, -2, inplace=True)
+# Replace Class 2 to -3
+poker_hands['Class'].replace(2, -3, inplace=True)
 
+print(poker_hands[['Class', 'Explanation']])
 ```
 
 ## Replace scalar values II
 ```python
+##
+start_time = time.time()
 
-```
+# Replace all the entries that has 'FEMALE' as a gender with 'GIRL'
+names['Gender'].loc[names['Gender'] == 'FEMALE'] = 'GIRL'
 
-## Replace values using lists
-```python
+print("Time using .loc[]: {} sec".format(time.time() - start_time))
 
+##
+start_time = time.time()
+
+# Replace all the entries that has 'FEMALE' as a gender with 'GIRL'
+names['Gender'].replace('FEMALE', 'GIRL', inplace=True)
+
+print("Time using .replace(): {} sec".format(time.time() - start_time))
 ```
 
 ## Replace multiple values I
