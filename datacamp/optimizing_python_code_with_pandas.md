@@ -47,22 +47,59 @@ print('Time using for loop: {} sec'.format(total_time_fl))
 
 ## Row selection: loc[] vs iloc[]
 ```python
+# Define the range of rows to select: row_nums
+row_nums = range(0, 1000)
 
+# Select the rows using .loc[] and row_nums and record the time before and after
+loc_start_time = time.time()
+rows = poker_hands.loc[row_nums]
+loc_end_time = time.time()
+
+# Print the time it took to select the rows using .loc
+print("Time using .loc[]: {} sec".format(loc_end_time - loc_start_time))
+
+# Select the rows using .iloc[] and row_nums and record the time before and after
+iloc_start_time = time.time()
+rows = poker_hands.iloc[row_nums]
+iloc_end_time = time.time()
+
+# Print the time it took to select the rows using .iloc
+print("Time using .iloc[]: {} sec".format(iloc_end_time - iloc_start_time))
 ```
 
 ## Column selection: .iloc[] vs by name
 ```python
+# Use .iloc to select the first 6 columns and record the times before and after
+iloc_start_time = time.time()
+cols = poker_hands.iloc[:,0:6]
+iloc_end_time = time.time()
 
-```
+# Print the time it took
+print("Time using .iloc[] : {} sec".format(iloc_end_time - iloc_start_time))
 
-## Select random rows
-```python
+# Use simple column selection to select the first 6 columns 
+names_start_time = time.time()
+cols = poker_hands[['S1', 'R1', 'S2', 'R2', 'S3', 'R3']]
+names_end_time = time.time()
 
+# Print the time it took
+print("Time using selection by name : {} sec".format(names_end_time - names_start_time))
 ```
 
 ## Random row selection
 ```python
+# Extract number of rows in dataset
+N=poker_hands.shape[0]
 
+# Select and time the selection of the 75% of the dataset's rows
+rand_start_time = time.time()
+poker_hands.iloc[np.random.randint(low=0, high=N, size=int(0.75 * N))]
+print("Time using Numpy: {} sec".format(time.time() - rand_start_time))
+
+# Select and time the selection of the 75% of the dataset's rows using sample()
+samp_start_time = time.time()
+poker_hands.sample(int(0.75 * N), axis=0, replace = True)
+print("Time using .sample: {} sec".format(time.time() - samp_start_time))
 ```
 
 ## Random column selection
