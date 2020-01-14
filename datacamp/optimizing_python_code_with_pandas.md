@@ -150,27 +150,48 @@ print("Time using .replace(): {} sec".format(time.time() - start_time))
 
 ## Replace multiple values I
 ```python
+##
+start_time = time.time()
 
+# Replace all non-Hispanic ethnicities with 'NON HISPANIC'
+names['Ethnicity'].loc[(names["Ethnicity"] == 'BLACK NON HISPANIC') | 
+                      (names["Ethnicity"] == 'BLACK NON HISP') | 
+                      (names["Ethnicity"] == 'WHITE NON HISPANIC') | 
+                      (names["Ethnicity"] == 'WHITE NON HISP')] = 'NON HISPANIC'
+
+print("Time using .loc[]: sec".format(time.time() - start_time))
+
+##
+start_time = time.time()
+
+# Replace all non-Hispanic ethnicities with 'NON HISPANIC'
+names['Ethnicity'].replace(['BLACK NON HISPANIC', 'BLACK NON HISP', 'WHITE NON HISPANIC', 'WHITE NON HISP'], 'NON HISPANIC', inplace=True)
+
+print("Time using .replace(): {} sec".format(time.time() - start_time))
 ```
 
 ## Replace multiple values II
 ```python
+start_time = time.time()
 
-```
+# Replace ethnicities as instructed
+names['Ethnicity'].replace(['ASIAN AND PACI','BLACK NON HISP', 'WHITE NON HISP'], ['ASIAN AND PACIFIC ISLANDER','BLACK NON HISPANIC','WHITE NON HISPANIC'], inplace=True)
 
-## Replace values using dictionaries
-```python
-
+print("Time using .replace(): {} sec".format(time.time() - start_time))
 ```
 
 ## Replace single values I
 ```python
-
+# Replace Royal flush or Straight flush to Flush
+poker_hands.replace({'Royal flush':'Flush', 'Straight flush':'Flush'}, inplace=True)
+print(poker_hands['Explanation'].head())
 ```
 
 ## Replace single values II
 ```python
-
+# Replace the number rank by a string
+names['Rank'].replace({1:'FIRST', 2:'SECOND', 3:'THIRD'}, inplace=True)
+print(names.head())
 ```
 
 ## Replace multiple values III
