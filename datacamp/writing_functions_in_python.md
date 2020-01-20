@@ -274,19 +274,53 @@ def in_dir(directory):
 ```
 
 # 3. Decorators
-## Functions are objects
-```python
-
-```
-
 ## Building a command line data app
 ```python
+# Add the missing function references to the function map
+function_map = {
+  'mean': mean,
+  'std': std,
+  'minimum': minimum,
+  'maximum': maximum
+}
 
+data = load_data()
+print(data)
+
+func_name = get_user_input()
+
+# Call the chosen function and pass "data" as an argument
+function_map[func_name](data)
 ```
 
 ## Reviewing your co-worker's code
 ```python
+##
+# Call has_docstring() on the load_and_plot_data() function
+ok = has_docstring(load_and_plot_data)
 
+if not ok:
+  print("load_and_plot_data() doesn't have a docstring!")
+else:
+  print("load_and_plot_data() looks ok")
+
+##
+# Call has_docstring() on the as_2D() function
+ok = has_docstring(as_2D)
+
+if not ok:
+  print("as_2D() doesn't have a docstring!")
+else:
+  print("as_2D() looks ok")
+
+##
+# Call has_docstring() on the log_product() function
+ok = has_docstring(log_product)
+
+if not ok:
+  print("log_product() doesn't have a docstring!")
+else:
+  print("log_product() looks ok")
 ```
 
 ## Returning functions for a math game
