@@ -353,26 +353,6 @@ class TestGetDataAsNumpyArray(object):
         assert actual == pytest.approx(expected), message
 ```
 
-## Reasoning in the test result report
-```python
-
-```
-
-## Continuous integration and code coverage
-```python
-
-```
-
-## Build failing
-```python
-
-```
-
-## What does code coverage mean?
-```python
-
-```
-
 # 4. Testing Models, Plots and Much More
 ## Beyond assertion: setup and teardown
 ```python
