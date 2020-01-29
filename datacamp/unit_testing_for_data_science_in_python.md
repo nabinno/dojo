@@ -354,29 +354,54 @@ class TestGetDataAsNumpyArray(object):
 ```
 
 # 4. Testing Models, Plots and Much More
-## Beyond assertion: setup and teardown
-```python
-
-```
-
 ## Use a fixture for a clean data file
 ```python
-
+# Add a decorator to make this function a fixture
+@pytest.fixture
+def clean_data_file():
+    file_path = "clean_data_file.txt"
+    with open(file_path, "w") as f:
+        f.write("201\t305671\n7892\t298140\n501\t738293\n")
+    yield file_path
+    os.remove(file_path)
+    
+# Pass the correct argument so that the test can use the fixture
+def test_on_clean_file(clean_data_file):
+    expected = np.array([[201.0, 305671.0], [7892.0, 298140.0], [501.0, 738293.0]])
+    # Pass the clean data file path yielded by the fixture as the first argument
+    actual = get_data_as_numpy_array(clean_data_file, 2)
+    assert actual == pytest.approx(expected), "Expected: {0}, Actual: {1}".format(expected, actual) 
 ```
 
 ## Write a fixture for an empty data file
 ```python
-
+@pytest.fixture
+def empty_file():
+    # Assign the file path "empty.txt" to the variable
+    file_path = 'empty.txt'
+    open(file_path, "w").close()
+    # Yield the variable file_path
+    yield file_path
+    # Remove the file in the teardown
+    os.remove(file_path)
+    
+def test_on_empty_file(self, empty_file):
+    expected = np.empty((0, 2))
+    actual = get_data_as_numpy_array(empty_file, 2)
+    assert actual == pytest.approx(expected), "Expected: {0}, Actual: {1}".format(expected, actual)
 ```
 
 ## Fixture chaining using tmpdir
 ```python
+import pytest
 
-```
-
-## Mocking
-```python
-
+@pytest.fixture
+# Add the correct argument so that this fixture can chain with the tmpdir fixture
+def empty_file(tmpdir):
+    # Use the appropriate method to create an empty file in the temporary directory
+    file_path = tmpdir.join("empty.txt")
+    open(file_path, "w").close()
+    yield file_path
 ```
 
 ## Program a bug-free dependency
