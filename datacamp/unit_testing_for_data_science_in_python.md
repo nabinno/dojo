@@ -416,17 +416,42 @@ def convert_to_int_bug_free(comma_separated_integer_string):
 
 ## Mock a dependency
 ```python
-
+# Add the correct argument to use the mocking fixture in this test
+def test_on_raw_data(self, raw_and_clean_data_file, mocker):
+    raw_path, clean_path = raw_and_clean_data_file
+    # Replace the dependency with the bug-free mock
+    convert_to_int_mock = mocker.patch("data.preprocessing_helpers.convert_to_int",
+                                       side_effect=convert_to_int_bug_free)
+    preprocess(raw_path, clean_path)
+    # Check if preprocess() called the dependency correctly
+    assert convert_to_int_mock.call_args_list == [call("1,801"), call("201,411"), call("2,002"), call("333,209"), call("1990"), call("782,911"), call("1,285"), call("389129")]
+    with open(clean_path, "r") as f:
+        lines = f.readlines()
+    first_line = lines[0]
+    assert first_line == "1801\\t201411\\n"
+    second_line = lines[1]
+    assert second_line == "2002\\t333209\\n" 
 ```
-
-## Testing models
-```python
-
+```sh
+!pytest -k 'TestPreprocess'
+!pytest -k 'TestConvertToInt'
 ```
 
 ## Testing on linear data
 ```python
+import numpy as np
+import pytest
+from models.train import model_test
 
+def test_on_perfect_fit():
+    # Assign to a NumPy array containing a linear testing set
+    test_argument = np.array([[1.0, 3.0], [2.0, 5.0], [3.0, 7.0]])
+    # Fill in with the expected value of r^2 in the case of perfect fit
+    expected = 1.0
+    # Fill in with the slope and intercept of the model
+    actual = model_test(test_argument, slope=2.0, intercept=1.0)
+    # Complete the assert statement
+    assert actual == pytest.approx(expected), "Expected: {0}, Actual: {1}".format(expected, actual)
 ```
 
 ## Testing on circular data
