@@ -456,30 +456,55 @@ def test_on_perfect_fit():
 
 ## Testing on circular data
 ```python
-
-```
-
-## Testing plots
-```python
-
+def test_on_circular_data(self):
+    theta = pi/4.0
+    # Assign to a NumPy array holding the circular testing data
+    test_argument = np.array([[1.0, 0.0], [cos(theta), sin(theta)],
+                              [0.0, 1.0],
+                              [cos(3 * theta), sin(3 * theta)],
+                              [-1.0, 0.0],
+                              [cos(5 * theta), sin(5 * theta)],
+                              [0.0, -1.0],
+                              [cos(7 * theta), sin(7 * theta)]]
+                             )
+    # Fill in with the slope and intercept of the straight line
+    actual = model_test(test_argument, slope=0.0, intercept=0.0)
+    # Complete the assert statement
+    assert actual == pytest.approx(0.0)
 ```
 
 ## Generate the baseline image
 ```python
-
+# Add the pytest marker which generates baselines and compares images
+@pytest.mark.mpl_image_compare()
+def test_plot_for_almost_linear_data():
+    slope = 5.0
+    intercept = -2.0
+    x_array = np.array([1.0, 2.0, 3.0])
+    y_array = np.array([3.0, 8.0, 11.0])
+    title = "Test plot for almost linear data"
+    # Return the matplotlib figure returned by the function under test
+    return get_plot_for_best_fit_line(slope, intercept, x_array, y_array, title)
+```
+```sh
+!pytest --mpl-generate-path visualization/baseline -k "test_plot_for_almost_linear_data"
 ```
 
 ## Run the tests for the plotting function
-```python
-
+```sh
+!pytest -k "TestGetPlotForBestFitLine" --mpl
 ```
 
 ## Fix the plotting function
 ```python
+import matplotlib.pyplot as plt
+import numpy as np
 
-```
-
-## Congratulations
-```python
-
+def get_plot_for_best_fit_line(slope, intercept, x_array, y_array, title):
+    fig, ax = plt.subplots()
+    ax.plot(x_array, y_array, ".")
+    ax.plot([0, np.max(x_array)], [intercept, slope * np.max(x_array) + intercept], "-")
+    # Fill in with axis labels so that they match the baseline
+    ax.set(xlabel="area (square feet)", ylabel="price (dollar)", title=title)
+    return fig
 ```
