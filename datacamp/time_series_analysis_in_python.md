@@ -267,44 +267,89 @@ plt.show()
 ```
 
 # 3. Autoregressive (AR) Models
-## Describe AR Model
-```python
-
-```
-
 ## Simulate AR(1) Time Series
 ```python
+# import the module for simulating data
+from statsmodels.tsa.arima_process import ArmaProcess
 
+# Plot 1: AR parameter = +0.9
+plt.subplot(2,1,1)
+ar1 = np.array([1, -0.9])
+ma1 = np.array([1])
+AR_object1 = ArmaProcess(ar1, ma1)
+simulated_data_1 = AR_object1.generate_sample(nsample=1000)
+plt.plot(simulated_data_1)
+
+# Plot 2: AR parameter = -0.9
+plt.subplot(2,1,2)
+ar2 = np.array([1, 0.9])
+ma2 = np.array([1])
+AR_object2 = ArmaProcess(ar2, ma2)
+simulated_data_2 = AR_object2.generate_sample(nsample=1000)
+plt.plot(simulated_data_2)
+plt.show()
 ```
 
 ## Compare the ACF for Several AR Time Series
 ```python
+# Import the plot_acf module from statsmodels
+from statsmodels.graphics.tsaplots import plot_acf
 
-```
+# Plot 1: AR parameter = +0.9
+plot_acf(simulated_data_1, alpha=1, lags=20)
+plt.show()
 
-## Match AR Model with ACF
-```python
+# Plot 2: AR parameter = -0.9
+plot_acf(simulated_data_2, alpha=1, lags=20)
+plt.show()
 
-```
-
-## Estimating and Forecasting AR Model
-```python
-
+# Plot 3: AR parameter = +0.3
+plot_acf(simulated_data_3, alpha=1, lags=20)
+plt.show()
 ```
 
 ## Estimating an AR Model
 ```python
+# Import the ARMA module from statsmodels
+from statsmodels.tsa.arima_model import ARMA
 
+# Fit an AR(1) model to the first simulated data
+mod = ARMA(simulated_data_1, order=(1,0))
+res = mod.fit()
+
+# Print out summary information on the fit
+print(res.summary())
+
+# Print out the estimate for the constant and for phi
+print("When the true phi=0.9, the estimate of phi (and the constant) are:")
+print(res.params)
 ```
 
 ## Forecasting with an AR Model
 ```python
+# Import the ARMA module from statsmodels
+from statsmodels.tsa.arima_model import ARMA
 
+# Forecast the first AR(1) model
+mod = ARMA(simulated_data_1, order=(1,0))
+res = mod.fit()
+res.plot_predict(start=990, end=1010)
+plt.show()
 ```
 
 ## Let's Forecast Interest Rates
 ```python
+# Import the ARMA module from statsmodels
+from statsmodels.tsa.arima_model import ARMA
 
+# Forecast interest rates using an AR(1) model
+mod = ARMA(interest_rate_data, order=(1,0))
+res = mod.fit()
+
+# Plot the original series and the forecasted series
+res.plot_predict(start=0, end='2022')
+plt.legend(fontsize=8)
+plt.show()
 ```
 
 ## Compare AR Model with Random Walk
