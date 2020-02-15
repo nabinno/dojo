@@ -420,11 +420,6 @@ plt.show()
 ```
 
 # 4. Moving Average (MA) and ARMA Models
-## Describe Model
-```python
-
-```
-
 ## Simulate MA(1) Time Series
 ```python
 
