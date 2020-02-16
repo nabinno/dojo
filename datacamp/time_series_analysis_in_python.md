@@ -465,7 +465,7 @@ plot_acf(simulated_data_3, lags=20)
 plt.show()
 ```
 
-## Match ACF with MA Model
+## Estimating an MA Model
 ```python
 # Import the ARMA module from statsmodels
 from statsmodels.tsa.arima_model import ARMA
@@ -482,19 +482,16 @@ print("When the true theta=-0.9, the estimate of theta (and the constant) are:")
 print(res.params)
 ```
 
-## Estimation and Forecasting an MA Model
-```python
-
-```
-
-## Estimating an MA Model
-```python
-
-```
-
 ## Forecasting with MA Model
 ```python
+# Import the ARMA module from statsmodels
+from statsmodels.tsa.arima_model import ARMA
 
+# Forecast the first MA(1) model
+mod = ARMA(simulated_data_1, order=(0,1))
+res = mod.fit()
+res.plot_predict(start=990, end=1010)
+plt.show()
 ```
 
 ## ARMA models
