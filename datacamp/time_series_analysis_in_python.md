@@ -422,17 +422,64 @@ plt.show()
 # 4. Moving Average (MA) and ARMA Models
 ## Simulate MA(1) Time Series
 ```python
+# import the module for simulating data
+from statsmodels.tsa.arima_process import ArmaProcess
 
+# Plot 1: MA parameter = -0.9
+plt.subplot(2,1,1)
+ar1 = np.array([1])
+ma1 = np.array([1, -0.9])
+MA_object1 = ArmaProcess(ar1, ma1)
+simulated_data_1 = MA_object1.generate_sample(nsample=1000)
+plt.plot(simulated_data_1)
+
+# Plot 2: MA parameter = +0.9
+plt.subplot(2,1,2)
+ar2 = np.array([1])
+ma2 = np.array([1, 0.9])
+MA_object2 = ArmaProcess(ar2, ma2)
+simulated_data_2 = MA_object2.generate_sample(nsample=1000)
+plt.plot(simulated_data_2)
+
+plt.show()
 ```
 
 ## Compute the ACF for Several MA Time Series
 ```python
+##
+# Import the plot_acf module from statsmodels
+from statsmodels.graphics.tsaplots import plot_acf
 
+# Plot 1: MA parameter = -0.9
+plot_acf(simulated_data_1, lags=20)
+plt.show()
+
+##
+# Plot 2: MA parameter = 0.9
+plot_acf(simulated_data_2, lags=20)
+plt.show()
+
+##
+# Plot 3: MA parameter = -0.3
+plot_acf(simulated_data_3, lags=20)
+plt.show()
 ```
 
 ## Match ACF with MA Model
 ```python
+# Import the ARMA module from statsmodels
+from statsmodels.tsa.arima_model import ARMA
 
+# Fit an MA(1) model to the first simulated data
+mod = ARMA(simulated_data_1, order=(0,1))
+res = mod.fit()
+
+# Print out summary information on the fit
+print(res.summary())
+
+# Print out the estimate for the constant and for theta
+print("When the true theta=-0.9, the estimate of theta (and the constant) are:")
+print(res.params)
 ```
 
 ## Estimation and Forecasting an MA Model
