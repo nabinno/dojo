@@ -517,17 +517,73 @@ intraday = intraday.set_index('DATE')
 
 ## More Data Cleaning: Missing Data
 ```python
+##
+# Notice that some rows are missing
+print("If there were no missing rows, there would be 391 rows of minute data")
+print("The actual length of the DataFrame is:", len(intraday))
 
+##
+# Everything
+set_everything = set(range(391))
+
+# The intraday index as a set
+set_intraday = set(intraday.index)
+
+# Calculate the difference
+set_missing = set_everything - set_intraday
+
+# Print the difference
+print("Missing rows: ", set_missing)
+
+##
+# From previous step
+intraday = intraday.reindex(range(391), method='ffill')
+
+# Change the index to the intraday times
+intraday.index = pd.date_range(start='2017-09-01 9:30', end='2017-09-01 16:00', freq='1min')
+
+# Plot the intraday time series
+intraday.plot(grid=True)
+plt.show()
 ```
 
 ## Applying an MA Model
 ```python
+# Import plot_acf and ARMA modules from statsmodels
+from statsmodels.graphics.tsaplots import plot_acf
+from statsmodels.tsa.arima_model import ARMA
 
+# Compute returns from prices and drop the NaN
+returns = intraday.pct_change()
+returns = returns.dropna()
+
+# Plot ACF of returns with lags up to 60 minutes
+plot_acf(returns, lags=60)
+plt.show()
+
+# Fit the data to an MA(1) model
+mod = ARMA(returns, order=(0,1))
+res = mod.fit()
+print(res.params)
 ```
 
 ## Equivalence of AR(1) and MA(infinity)
 ```python
+# import the modules for simulating data and plotting the ACF
+from statsmodels.tsa.arima_process import ArmaProcess
+from statsmodels.graphics.tsaplots import plot_acf
 
+# Build a list MA parameters
+ma = [0.8**i for i in range(30)]
+
+# Simulate the MA(30) model
+ar = np.array([1])
+AR_object = ArmaProcess(ar, ma)
+simulated_data = AR_object.generate_sample(nsample=5000)
+
+# Plot the ACF
+plot_acf(simulated_data, lags=30)
+plt.show()
 ```
 
 # 5. Putting It All Together
