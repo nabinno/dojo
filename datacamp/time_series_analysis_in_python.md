@@ -587,19 +587,36 @@ plt.show()
 ```
 
 # 5. Putting It All Together
-## Cointegration Models
-```python
-
-```
-
 ## A Dog on a Leash? (Part 1)
 ```python
+# Plot the prices separately
+plt.subplot(2,1,1)
+plt.plot(7.25*HO, label='Heating Oil')
+plt.plot(NG, label='Natural Gas')
+plt.legend(loc='best', fontsize='small')
 
+# Plot the spread
+plt.subplot(2,1,2)
+plt.plot(7.25*HO-NG, label='Spread')
+plt.legend(loc='best', fontsize='small')
+plt.axhline(y=0, linestyle='--', color='k')
+plt.show()
 ```
 
 ## A Dog on a Leash? (Part 2)
 ```python
+# Import the adfuller module from statsmodels
+from statsmodels.tsa.stattools import adfuller
 
+# Compute the ADF for HO and NG
+result_HO = adfuller(HO['Close'])
+print("The p-value for the ADF test on HO is ", result_HO[1])
+result_NG = adfuller(NG['Close'])
+print("The p-value for the ADF test on NG is ", result_NG[1])
+
+# Compute the ADF of the spread
+result_spread = adfuller(7.25 * HO['Close'] - NG['Close'])
+print("The p-value for the ADF test on the spread is ", result_spread[1])
 ```
 
 ## Are Bitcoin and Ethereum Cointegrated?
