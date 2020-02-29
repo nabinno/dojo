@@ -359,7 +359,21 @@ plt.show()
 
 ## Rolling quantiles for daily air quality in nyc
 ```python
+# Resample, interpolate and inspect ozone data here
+data = data.resample('D').interpolate()
+data.info()
 
+# Create the rolling window
+rolling = data['Ozone'].rolling(360)
+
+# Insert the rolling quantiles to the monthly returns
+data['q10'] = rolling.quantile(0.1)
+data['q50'] = rolling.quantile(0.5)
+data['q90'] = rolling.quantile(0.9)
+
+# Plot the data
+data.plot()
+plt.show()
 ```
 
 ## Expanding window functions with pandas
