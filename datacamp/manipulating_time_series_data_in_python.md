@@ -376,14 +376,19 @@ data.plot()
 plt.show()
 ```
 
-## Expanding window functions with pandas
-```python
-
-```
-
 ## Cumulative sum vs .diff()
 ```python
+# Calculate differences
+differences = data.diff().dropna()
 
+# Select start price
+start_price = data.first('D')
+
+# Calculate cumulative sum
+cumulative_sum = start_price.append(differences).cumsum()
+
+# Validate cumulative sum equals data
+print(data.equals(cumulative_sum))
 ```
 
 ## Cumulative return on $1,000 invested in google vs apple I
