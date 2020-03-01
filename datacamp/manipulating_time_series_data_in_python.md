@@ -393,42 +393,118 @@ print(data.equals(cumulative_sum))
 
 ## Cumulative return on $1,000 invested in google vs apple I
 ```python
+# Define your investment
+investment = 1000
 
+# Calculate the daily returns here
+returns = data.pct_change()
+
+# Calculate the cumulative returns here
+returns_plus_one = returns.add(1)
+cumulative_return = returns_plus_one.cumprod()
+
+# Calculate and plot the investment return here 
+cumulative_return.mul(investment).plot()
+plt.show();
 ```
 
 ## Cumulative return on $1,000 invested in google vs apple II
 ```python
+# Import numpy
+import numpy as np
 
-```
+# Define a multi_period_return function
+def multi_period_return(period_returns):
+    return np.prod(period_returns + 1) - 1
+    
+# Calculate daily returns
+daily_returns = data.pct_change()
 
-## Case study: S&P500 price simulation
-```python
+# Calculate rolling_annual_returns
+rolling_annual_returns = daily_returns.rolling('360D').apply(multi_period_return)
 
+# Plot rolling_annual_returns
+rolling_annual_returns.mul(100).plot();
+plt.show()
 ```
 
 ## Random walk I
 ```python
+# Set seed here
+seed(42)
 
+# Create random_walk
+random_walk = normal(loc=.001, scale=.01)
+
+# Convert random_walk to pd.series
+random_walk = pd.Series(random_walk)
+
+# Create random_prices
+random_prices = random_walk.add(1).cumprod()
+
+# Plot random_prices here
+random_prices.mul(1000).plot()
+plt.show()
 ```
 
 ## Random walk II
 ```python
+# Set seed here
+seed(42)
 
+# Calculate daily_returns here
+daily_returns = fb.pct_change().dropna()
+
+# Get n_obs
+n_obs = daily_returns.count()
+
+# Create random_walk
+random_walk = choice(daily_returns, size=n_obs)
+
+# Convert random_walk to pd.series
+random_walk = pd.Series(random_walk)
+
+# Plot random_walk distribution
+sns.distplot(random_walk)
+plt.show();
 ```
 
 ## Random walk III
 ```python
+# Select fb start price here
+start = fb.price.first('D')
 
-```
+# Add 1 to random walk and append to start
+random_walk = random_walk.add(1)
+random_price = start.append(random_walk)
 
-## Relationships between time series: correlation
-```python
+# Calculate cumulative product here
+random_price = random_price.cumprod()
 
+# Insert into fb and plot
+fb['random'] = random_price
+fb.plot()
+plt.show()
 ```
 
 ## Annual return correlations among several stocks
 ```python
+# Inspect data here
+print(data.info())
 
+# Calculate year-end prices here
+annual_prices = data.resample('A').last()
+
+# Calculate annual returns here
+annual_returns = annual_prices.pct_change()
+
+# Calculate and print the correlation matrix here
+correlations = annual_returns.corr()
+print(correlations)
+
+# Visualize the correlations as heatmap here
+sns.heatmap(correlations, annot=True)
+plt.show()
 ```
 
 # 4. Putting it all together: Building a value-weighted index
