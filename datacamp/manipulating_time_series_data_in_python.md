@@ -508,49 +508,112 @@ plt.show()
 ```
 
 # 4. Putting it all together: Building a value-weighted index
-## Select index components & import data
-```python
-
-```
-
 ## Explore and clean company listing information
 ```python
+# Inspect listings
+print(listings.info())
 
+# Move 'stock symbol' into the index
+listings.set_index('Stock Symbol', inplace=True)
+
+# Drop rows with missing 'sector' data
+listings.dropna(subset=['Sector'], inplace=True)
+
+# Select companies with IPO Year before 2019
+listings = listings[listings['IPO Year'] < 2019]
+
+# Inspect the new listings data
+print(listings.info())
+
+# Show the number of companies per sector
+print(listings.groupby('Sector').size().sort_values(ascending=False))
 ```
 
 ## Select and inspect index components
 ```python
+# Select largest company for each sector
+components = listings.groupby(['Sector'])['Market Capitalization'].nlargest(1)
 
+# Print components, sorted by market cap
+print(components.sort_values(ascending=False))
+
+# Select stock symbols and print the result
+tickers = components.index.get_level_values('Stock Symbol')
+print(tickers)
+
+# Print company name, market cap, and last price for each component 
+info_cols = ['Company Name', 'Market Capitalization', 'Last Sale']
+print(listings.loc[tickers, info_cols].sort_values('Market Capitalization', ascending=False))
 ```
 
 ## Import index component price information
 ```python
+# Print tickers
+print(tickers)
 
-```
+# Import prices and inspect result
+stock_prices = pd.read_csv('stock_prices.csv', parse_dates=['Date'], index_col='Date')
+print(stock_prices.info())
 
-## Build a market-cap weighted index
-```python
+# Calculate the returns
+price_return = stock_prices.iloc[-1].div(stock_prices.iloc[0]).sub(1).mul(100)
 
+# Plot horizontal bar chart of sorted price_return   
+price_return.sort_values().plot(kind='barh', title='Stock Price Returns')
+plt.show()
 ```
 
 ## Calculate number of shares outstanding
 ```python
+# Inspect listings and print tickers
+print(listings.info())
+print(tickers)
 
+# Select components and relevant columns from listings
+components = listings.loc[tickers, ['Market Capitalization', 'Last Sale']]
+
+# Print the first rows of components
+print(components.head())
+
+# Calculate the number of shares here
+no_shares = components['Market Capitalization'].div(components['Last Sale'])
+
+# Print the sorted no_shares
+print(no_shares.sort_values(ascending=False))
 ```
 
 ## Create time series of market value
 ```python
+# Select the number of shares
+no_shares = components['Number of Shares']
+print(no_shares.sort_values(ascending=True))
 
+# Create the series of market cap per ticker
+market_cap = stock_prices.mul(no_shares)
+
+# Select first and last market cap here
+first_value = market_cap.iloc[0]
+last_value = market_cap.iloc[-1]
+
+
+# Concatenate and plot first and last market cap here
+pd.concat([first_value, last_value], axis=1).plot(kind='barh')
+plt.show()
 ```
 
 ## Calculate & plot the composite index
 ```python
+# Aggregate and print the market cap per trading day
+raw_index = market_cap_series.sum(axis=1)
+print(raw_index)
 
-```
+# Normalize the aggregate market cap here 
+index = raw_index.div(raw_index.iloc[0]).mul(100)
+print(index)
 
-## Evaluate index performance
-```python
-
+# Plot the index here
+index.plot(title='Market-Cap Weighted Index')
+plt.show()
 ```
 
 ## Calculate the contribution of each stock to the index
@@ -582,10 +645,3 @@ plt.show()
 ```python
 
 ```
-
-## Congratulations!
-```python
-
-```
-
-
