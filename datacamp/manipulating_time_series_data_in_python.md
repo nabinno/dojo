@@ -434,7 +434,7 @@ plt.show()
 seed(42)
 
 # Create random_walk
-random_walk = normal(loc=.001, scale=.01)
+random_walk = normal(loc=.001, scale=.01, size=2500)
 
 # Convert random_walk to pd.series
 random_walk = pd.Series(random_walk)
@@ -616,7 +616,7 @@ index.plot(title='Market-Cap Weighted Index')
 plt.show()
 ```
 
-## Compare index performance against benchmark I
+## Calculate the contribution of each stock to the index
 ```python
 # Calculate and print the index return here
 index_return = (index.iloc[-1]/index.iloc[0] - 1) * 100
@@ -637,22 +637,74 @@ weights.mul(index_return).sort_values().plot(kind='barh')
 plt.show()
 ```
 
-## Compare index performance against benchmark II
+## Compare index performance against benchmark I
 ```python
+# Convert index series to dataframe here
+data = index.to_frame('Index')
 
+# Normalize djia series and add as new column to data
+djia = djia.div(djia.iloc[0]).mul(100)
+data['DJIA'] = djia
+
+# Show total return for both index and djia
+print(data.iloc[-1].div(data.iloc[0]).sub(1).mul(100))
+
+# Plot both series
+data.plot()
+plt.show()
 ```
 
-## Index correlation & exporting to excel
+## Compare index performance against benchmark II
 ```python
+# Inspect data
+print(data.info())
+print(data.head())
 
+# Create multi_period_return function here
+def multi_period_return(r):
+    return (np.prod(r + 1) - 1) * 100
+
+# Calculate rolling_return_360
+rolling_return_360 = data.pct_change().rolling('360D').apply(multi_period_return)
+
+# Plot rolling_return_360 here
+rolling_return_360.plot(title='Rolling 360D Return')
+plt.show()
 ```
 
 ## Visualize your index constituent correlations
 ```python
+# Inspect stock_prices here
+print(stock_prices.info())
 
+# Calculate the daily returns
+returns = stock_prices.pct_change()
+
+# Calculate and print the pairwise correlations
+correlations = returns.corr()
+print(correlations)
+
+# Plot a heatmap of daily return correlations
+sns.heatmap(correlations, annot=True)
+plt.title('Daily Return Correlations')
+plt.show()
 ```
 
 ## Save your analysis to multiple excel worksheets
 ```python
+# Inspect index and stock_prices
+print(index.info())
+print(stock_prices.info())
 
+# Join index to stock_prices, and inspect the result
+data = stock_prices.join(index)
+print(data.info())
+
+# Create index & stock price returns
+returns = data.pct_change()
+
+# Export data and data as returns to excel
+with pd.ExcelWriter('data.xls') as writer:
+    data.to_excel(writer, sheet_name='data')
+    returns.to_excel(writer, sheet_name='returns')
 ```
