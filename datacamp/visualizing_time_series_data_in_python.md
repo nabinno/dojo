@@ -76,27 +76,65 @@ plt.show()
 
 ## Display and label plots
 ```python
+# Plot a line chart of the discoveries DataFrame using the specified arguments
+ax = discoveries.plot(color='blue', figsize=(8, 3), linewidth=2, fontsize=6)
 
-```
+# Specify the title in your plot
+ax.set_title('Number of great inventions and scientific discoveries from 1860 to 1959', fontsize=8)
 
-## Customize your time series plot
-```python
-
+# Show plot
+plt.show()
 ```
 
 ## Subset time series data
 ```python
+##
+# Select the subset of data between 1945 and 1950
+discoveries_subset_1 = discoveries['1945-01-01':'1950-01-01']
 
+# Plot the time series in your DataFrame as a blue area chart
+ax = discoveries_subset_1.plot(color='blue', fontsize=15)
+
+# Show plot
+plt.show()
+
+##
+# Select the subset of data between 1939 and 1958
+discoveries_subset_2 = discoveries['1939-01-01':'1958-01-01']
+
+# Plot the time series in your DataFrame as a blue area chart
+ax = discoveries_subset_2.plot(color='blue', fontsize=15)
+
+# Show plot
+plt.show()
 ```
 
 ## Add vertical and horizontal markers
 ```python
+# Plot your the discoveries time series
+ax = discoveries.plot(color='blue', fontsize=6)
 
+# Add a red vertical line
+ax.axvline('1939-01-01', color='red', linestyle='--')
+
+# Add a green horizontal line
+ax.axhline(4, color='green', linestyle='--')
+
+plt.show()
 ```
 
 ## Add shaded regions to your plot
 ```python
+# Plot your the discoveries time series
+ax = discoveries.plot(color='blue', fontsize=6)
 
+# Add a vertical red shaded region
+ax.axvspan('1900-01-01', '1915-01-01', color='red', alpha=.3)
+
+# Add a horizontal green shaded region
+ax.axhspan(6, 8, color='green', alpha=.3)
+
+plt.show()
 ```
 
 # 2. Summary Statistics and Diagnostics
