@@ -31,12 +31,47 @@ print(discoveries.dtypes)
 
 ## Your first plot!
 ```python
+# Set the date column as the index of your DataFrame discoveries
+discoveries = discoveries.set_index('date')
 
+# Plot the time series in your DataFrame
+ax = discoveries.plot(color='blue')
+
+# Specify the x-axis label in your plot
+ax.set_xlabel('Date')
+
+# Specify the y-axis label in your plot
+ax.set_ylabel('Number of great discoveries')
+
+# Show plot
+plt.show()
 ```
 
 ## Specify plot styles
 ```python
+##
+# Import the matplotlib.pyplot sub-module
+import matplotlib.pyplot as plt
 
+# Use the fivethirtyeight style
+plt.style.use('fivethirtyeight')
+
+# Plot the time series
+ax1 = discoveries.plot()
+ax1.set_title('FiveThirtyEight Style')
+plt.show()
+
+##
+# Import the matplotlib.pyplot sub-module
+import matplotlib.pyplot as plt
+
+# Use the ggplot style
+plt.style.use('ggplot')
+ax2 = discoveries.plot()
+
+# Set the title
+ax2.set_title('ggplot Style')
+plt.show()
 ```
 
 ## Display and label plots
