@@ -7,6 +7,7 @@
 - [LeetCode](https://leetcode.com)
 - [AtCoder](https://atcoder.jp)
 - [HackerRank](https://www.hackerrank.com/)
+- [O'Reilly](https://www.oreilly.com/)
 - [Pluralsight](https://www.pluralsight.com/)
 - [DataCamp](https://www.datacamp.com/)
 - [Qwiklabs](https://amazon-run.qwiklabs.com)
