@@ -1,0 +1,9 @@
+div.star-rating {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+div.star-rating p {
+  flex-basis: 100%;
+}

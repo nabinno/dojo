@@ -1,0 +1,12 @@
+div.star {
+  cursor: pointer;
+  height: 25px;
+  width: 25px;
+  margin: 2px;
+  background-color: #AAAAAA;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+div.star.selected {
+  background-color: red;
+}
