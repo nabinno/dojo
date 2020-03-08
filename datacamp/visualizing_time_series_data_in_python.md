@@ -255,12 +255,16 @@ plt.show()
 # 3. Seasonality, Trend and Noise
 ## Autocorrelation in time series data
 ```python
+# Import required libraries
+import matplotlib.pyplot as plt
+plt.style.use('fivethirtyeight')
+from statsmodels.graphics import tsaplots
 
-```
+# Display the autocorrelation plot of your time series
+fig = tsaplots.plot_acf(co2_levels['co2'], lags=24)
 
-## Interpret autocorrelation plots
-```python
-
+# Show plot
+plt.show()
 ```
 
 ## Partial autocorrelation in time series data
