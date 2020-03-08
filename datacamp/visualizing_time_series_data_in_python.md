@@ -138,62 +138,121 @@ plt.show()
 ```
 
 # 2. Summary Statistics and Diagnostics
-## Clean your time series data
-```python
-
-```
-
 ## Find missing values
 ```python
+##
+# Display first seven rows of co2_levels
+print(co2_levels.head(7))
 
+##
+# Set datestamp column as index
+co2_levels = co2_levels.set_index('datestamp')
+
+# Print out the number of missing values
+print(co2_levels.isnull().sum())
 ```
 
 ## Handle missing values
 ```python
+# Impute missing values with the next valid observation
+co2_levels = co2_levels.fillna(method='bfill')
 
-```
-
-## Plot aggregates of your data
-```python
-
+# Print out the number of missing values
+print(co2_levels.isnull().sum())
 ```
 
 ## Display rolling averages
 ```python
+# Compute the 52 weeks rolling mean of the co2_levels DataFrame
+ma = co2_levels.rolling(window=52).mean()
 
+# Compute the 52 weeks rolling standard deviation of the co2_levels DataFrame
+mstd = co2_levels.rolling(window=52).std()
+
+# Add the upper bound column to the ma DataFrame
+ma['upper'] = ma['co2'] + (2 * mstd['co2'])
+
+# Add the lower bound column to the ma DataFrame
+ma['lower'] = ma['co2'] - (2 * mstd['co2'])
+
+# Plot the content of the ma DataFrame
+ax = ma.plot(linewidth=0.8, fontsize=6)
+
+# Specify labels, legend, and show the plot
+ax.set_xlabel('Date', fontsize=10)
+ax.set_ylabel('CO2 levels in Mauai Hawaii', fontsize=10)
+ax.set_title('Rolling mean and variance of CO2 levels\nin Mauai Hawaii from 1958 to 2001', fontsize=10)
+plt.show()
 ```
 
 ## Display aggregated values
 ```python
+# Get month for each dates in the index of co2_levels
+index_month = co2_levels.index.month
 
-```
+# Compute the mean CO2 levels for each month of the year
+mean_co2_levels_by_month = co2_levels.groupby(index_month).mean()
 
-## Summarize the values in your time series data
-```python
+# Plot the mean CO2 levels for each month of the year
+mean_co2_levels_by_month.plot(fontsize=6)
 
+# Specify the fontsize on the legend
+plt.legend(fontsize=10)
+
+# Show plot
+plt.show()
 ```
 
 ## Compute numerical summaries
 ```python
+# Print out summary statistics of the co2_levels DataFrame
+print(co2_levels.describe())
 
+# Print out the minima of the co2 column in the co2_levels DataFrame
+print(co2_levels.describe().loc['min'])
+
+# Print out the maxima of the co2 column in the co2_levels DataFrame
+print(co2_levels.describe().loc['max'])
 ```
 
 ## Boxplots and Histograms
 ```python
+##
+# Generate a boxplot
+ax = co2_levels.boxplot()
 
+# Set the labels and display the plot
+ax.set_xlabel('CO2', fontsize=10)
+ax.set_ylabel('Boxplot CO2 levels in Maui Hawaii', fontsize=10)
+plt.legend(fontsize=10)
+plt.show()
+
+##
+# Generate a histogram
+ax = co2_levels.plot(kind='hist', bins=50, fontsize=6)
+
+# Set the labels and display the plot
+ax.set_xlabel('CO2', fontsize=10)
+ax.set_ylabel('Histogram of CO2 levels in Maui Hawaii', fontsize=10)
+plt.legend(fontsize=10)
+plt.show()
 ```
 
 ## Density plots
 ```python
+# Display density plot of CO2 levels values
+ax = co2_levels.plot(kind='density', linewidth=4, fontsize=6)
 
+# Annotate x-axis labels
+ax.set_xlabel('CO2', fontsize=10)
+
+# Annotate y-axis labels
+ax.set_ylabel('Density plot of CO2 levels in Maui Hawaii', fontsize=10)
+
+plt.show()
 ```
 
 # 3. Seasonality, Trend and Noise
-## Autocorrelation and Partial autocorrelation
-```python
-
-```
-
 ## Autocorrelation in time series data
 ```python
 

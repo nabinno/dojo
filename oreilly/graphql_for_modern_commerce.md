@@ -8,6 +8,7 @@ url: https://learning.oreilly.com/library/view/graphql-for-modern/9781492056850/
 # 1. Introducing GraphQL
 ## Commerce Requires More Than REST
 **REST APIの課題**
+
 REST APIは優れていますが、すべての変換テクノロジーと同様に、新たな課題がなければ利益は得られません。
 - 仕様の欠如
 - 呼び出すAPIがわからない
