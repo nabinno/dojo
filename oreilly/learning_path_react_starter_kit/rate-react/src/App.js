@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import StarRating from './StarRating'
+import StarRating from './StarRating.js';
 
 class App extends Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       features: [
         {
@@ -34,35 +34,36 @@ class App extends Component {
           rating: 2
         },
       ]
-    }
+    };
 
-    this.rateFeature = this.rateFeature.bind(this)
+    this.rateFeature = this.rateFeature.bind(this);
   }
 
   rateFeature(id, rating) {
-    const { features } = this.state
+    const { features } = this.state;
     this.setState({
       features: features.map(f => (f.id !== id) ? f : ({ ...f, rating }))
-    })
+    });
   }
 
   render() {
     return (
       <div className="App">
-      <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
 
-      <p>Welcome to the jungle!!!</p>
+          <p>Welcome to the jungle!!!</p>
 
-      <div className="features">
-      {this.state.features.map(f =>
-        <div key={f.id}>
-        <h3>{f.title}</h3>
-        <StarRating starsSelected={f.rating} />
-        </div>
-      )}
-      </div>
-      </header>
+          <div className="features">{
+            this.state.features.map(
+              f =>
+                <div key={f.id}>
+                  <h3>{f.title}</h3>
+                  <StarRating starsSelected={f.rating} />
+                </div>
+            )
+          }</div>
+        </header>
       </div>
     );
   }

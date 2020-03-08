@@ -1,7 +1,8 @@
-import React from 'react'
-import './Star.css'
+import React from 'react';
+import './Star.css';
 
 const Star = ({ selected, onClick }) =>
-  <div className={(selected) ? "star selected" : "star"} onClick={onClick} />
+      <div className={(selected) ? "star selected" : "star"}
+           onClick={onClick} />;
 
-export default Star
+export default Star;
