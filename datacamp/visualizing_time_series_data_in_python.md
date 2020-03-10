@@ -295,35 +295,89 @@ print(decomposition.seasonal)
 
 ## Plot individual components
 ```python
+# Extract the trend component
+trend = decomposition.trend
 
-```
+# Plot the values of the trend
+ax = trend.plot(figsize=(12, 6), fontsize=6)
 
-## A quick review
-```python
-
+# Specify axis labels
+ax.set_xlabel('Date', fontsize=10)
+ax.set_title('Seasonal component the CO2 time-series', fontsize=10)
+plt.show()
 ```
 
 ## Visualize the airline dataset
 ```python
+# Plot the time series in your dataframe
+ax = airline.plot(color='blue', fontsize=12)
 
+# Add a red vertical line at the date 1955-12-01
+ax.axvline('1955-12-01', color='red', linestyle='--')
+
+# Specify the labels in your plot
+ax.set_xlabel('Date', fontsize=12)
+ax.set_title('Number of Monthly Airline Passengers', fontsize=12)
+plt.show()
 ```
 
 ## Analyze the airline dataset
 ```python
+##
+# Print out the number of missing values
+print(airline.isnull().sum())
 
+# Print out summary statistics of the airline DataFrame
+print(airline.describe())
+
+##
+# Display boxplot of airline values
+ax = airline.boxplot()
+
+# Specify the title of your plot
+ax.set_title('Boxplot of Monthly Airline\nPassengers Count', fontsize=20)
+plt.show()
+
+##
+# Get month for each dates from the index of airline
+index_month = airline.index.month
+
+# Compute the mean number of passengers for each month of the year
+mean_airline_by_month = airline.groupby(index_month).mean()
+
+# Plot the mean number of passengers for each month of the year
+mean_airline_by_month.plot()
+plt.legend(fontsize=20)
+plt.show()
 ```
 
 ## Time series decomposition of the airline dataset
 ```python
+##
+# Import statsmodels.api as sm
+import statsmodels.api as sm
 
+# Perform time series decompositon
+decomposition = sm.tsa.seasonal_decompose(airline)
+
+# Extract the trend and seasonal components
+trend = decomposition.trend
+seasonal = decomposition.seasonal
+
+##
+# Print the first 5 rows of airline_decomposed
+print(airline_decomposed.head())
+
+# Plot the values of the airline_decomposed DataFrame
+ax = airline_decomposed.plot(figsize=(12, 6), fontsize=15)
+
+# Specify axis labels
+ax.set_xlabel('Date', fontsize=15)
+plt.legend(fontsize=15)
+plt.show()
 ```
 
 # 4. Work with Multiple Time Series
-## Working with more than one time series
-```python
-
-```
-
 ## Load multiple time series
 ```python
 
