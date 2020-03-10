@@ -281,19 +281,16 @@ fig = tsaplots.plot_pacf(co2_levels['co2'], lags=24)
 plt.show()
 ```
 
-## Interpret partial autocorrelation plots
-```python
-
-```
-
-## Seasonality, trend and noise in time series data
-```python
-
-```
-
 ## Time series decomposition
 ```python
+# Import statsmodels.api as sm
+import statsmodels.api as sm
 
+# Perform time series decompositon
+decomposition = sm.tsa.seasonal_decompose(co2_levels)
+
+# Print the seasonality component
+print(decomposition.seasonal)
 ```
 
 ## Plot individual components
