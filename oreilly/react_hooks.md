@@ -20,7 +20,7 @@ npm start
 ## What are React Hooks?
 
 # 2. Moving from Classes to Function Components (useState, useEffect)
-## Introducing the useState Hook
+## a. Introducing the useState Hook
 ```js:AppClass.js
 import React, { Component } from 'react';
 
@@ -71,48 +71,195 @@ const App = () => {
 export default App;
 ```
 
-## Use Previous State with useState
+## b. Use Previous State with useState
+```js:AppClass.js
+import React, { Component } from 'react';
 
+class App extends Component {
+  state = {
+    count: 0
+  };
 
-## Toggle State with useState
-## Introducing the useEffect Hook
-## Cleaning up Side Effects in useEffect
-## Using / Cleaning up Multiple Listeners in useEffect
-## Cleaning up Listeners without a Supportive API
-## Comparing Function Component and Class Components
+  incrementCount = () => {
+    this.setState(
+      prevState => ({
+        count: prevState.count + 1
+      })
+    );
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <button
+          onClick={this.incrementCount}
+        >
+          I was cliced {this.state.count} times
+        </button>
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+
+```js:AppFunction.js
+import React, { useState } from 'react';
+
+const App = () => {
+  const [count, setCount] = useState(0);
+
+  const incrementCount = () => {
+    setCount(prevCount => prevCount + 1);
+  };
+
+  return (
+    <button onClick={incrementCount}>
+      I was clicked {count} times
+    </button>
+  );
+};
+
+export default App;
+```
+
+## c. Toggle State with useState
+```js:AppClass.js
+import React, { Component } from 'react';
+
+class App extends Component {
+  state = {
+    count: 0,
+    isOn: false
+  };
+
+  incrementCount = () => {
+    this.setState(
+      prevState => ({
+        count: prevState.count + 1
+      })
+    );
+  };
+
+  toggleLight = () => {
+    this.setState(prevState => ({
+      isOn: !prevState.isOn
+    }));
+  }
+
+  render() {
+    return (
+      <>
+        <div className="App">
+          <h2>Counter</h2>
+          <button
+            onClick={this.incrementCount}
+          >
+            I was cliced {this.state.count} times
+          </button>
+
+          <h2>Toggle Light</h2>
+          <div
+            style={{
+              height: '50px',
+              width: '50px',
+              background: this.state.isOn ? 'yellow' : 'grey'
+            }}
+            onClick={this.toggleLight}
+          >
+          </div>
+        </div>
+      </>
+    );
+  }
+}
+
+export default App;
+```
+
+```js:AppFunction.js
+import React, { useState } from 'react';
+
+const App = () => {
+  const [count, setCount] = useState(0);
+
+  const [isOn, setIsOn] = useState(false);
+
+  const incrementCount = () => {
+    setCount(prevCount => prevCount + 1);
+  };
+
+  const toggleLight = () => {
+    setIsOn(prevIsOn => !prevIsOn);
+  };
+
+  return (
+    <>
+      <h2>Counter</h2>
+      <button onClick={incrementCount}>
+        I was clicked {count} times
+      </button>
+
+      <h2>Toggle Light</h2>
+      <img
+        src={
+          isOn
+            ? 'https://icon.now.sh/highlight/fd0'
+            : 'https://icon.now.sh/highlight/aaa'
+        }
+        style={{
+          height: '50px',
+          width: '50px',
+        }}
+        alt="Flashlight"
+        onClick={toggleLight}
+      />
+    </>
+  );
+};
+
+export default App;
+```
+
+## d. Introducing the useEffect Hook
+## e. Cleaning up Side Effects in useEffect
+## f. Using / Cleaning up Multiple Listeners in useEffect
+## g. Cleaning up Listeners without a Supportive API
+## h. Comparing Function Component and Class Components
 
 # 3. Building Stateful Components with Functions
-## Implementing a Login Form with Multiple State Values
-## Implementing a Register Form with a Single State Value
-## Comparing Ways of Managing State
+## a. Implementing a Login Form with Multiple State Values
+## b. Implementing a Register Form with a Single State Value
+## c. Comparing Ways of Managing State
 
 # 4. Data Fetching with Hooks / Replacing Class Lifecycle Methods (useEffect, useRef)
-## Intro to Data Fetching Project
-## Fetching Data on component Mount with useEffect
-## Using Async / Await for Fetching Data in useEffect
-## Fetching Search Results on Component Update with useEffect
-## Fetching Data upon Submitting Form
-## Using the useRef Hook on our Search Input
-## Displaying Loading State with useState
-## Error Handling and Displaying Errors with useState
-## Styling our Project with TailwindCSS (Optional)
+## a. Intro to Data Fetching Project
+## b. Fetching Data on component Mount with useEffect
+## c. Using Async / Await for Fetching Data in useEffect
+## d. Fetching Search Results on Component Update with useEffect
+## e. Fetching Data upon Submitting Form
+## f. Using the useRef Hook on our Search Input
+## g. Displaying Loading State with useState
+## h. Error Handling and Displaying Errors with useState
+## i. Styling our Project with TailwindCSS (Optional)
 
 # 5. Building a Complete CRUD App with React Hooks / Replacing Redux
-## Project Setup for our CRUD App
-## Avoiding Props Drilling with React Context and the useContext Hook
-## Replacing Redux with the useReducer Hook
-## Combining useContext and useReducer to Make Initial App State
-## Styling our TodoList Component with TailwindCSS
-## Toggling Todos / 'TOGGLE_TODO' case
-## Removing Todos / 'REMOVE_TODO' case
-## Adding Todos and TodoForm Component / 'ADD_TODO' case
-## Updating Todos / 'UPDATE_TODO' case
-## Improving our App
+## a. Project Setup for our CRUD App
+## b. Avoiding Props Drilling with React Context and the useContext Hook
+## c. Replacing Redux with the useReducer Hook
+## d. Combining useContext and useReducer to Make Initial App State
+## e. Styling our TodoList Component with TailwindCSS
+## f. Toggling Todos / 'TOGGLE_TODO' case
+## g. Removing Todos / 'REMOVE_TODO' case
+## h. Adding Todos and TodoForm Component / 'ADD_TODO' case
+## i. Updating Todos / 'UPDATE_TODO' case
+## j. Improving our App
 
 # 6. Connecting our App to an API
-## Creating / Deploying our API to Persist App Data
-## Creating a Custom Hook to Fetch Initial App Data
-## Delete Request to Remove Todos
-## Performing Post Request to Add Todos
-## Performing Patch Request to Toggle Todos
-## Finishing our App
+## a. Creating / Deploying our API to Persist App Data
+## b. Creating a Custom Hook to Fetch Initial App Data
+## c. Delete Request to Remove Todos
+## d. Performing Post Request to Add Todos
+## e. Performing Patch Request to Toggle Todos
+## f. Finishing our App
