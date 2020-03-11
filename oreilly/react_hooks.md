@@ -14,8 +14,6 @@ mkdir react_hooks
 cd $_
 create-react-app .
 
-npm i react@next react-dom@next
-
 npm start
 ```
 
@@ -23,7 +21,59 @@ npm start
 
 # 2. Moving from Classes to Function Components (useState, useEffect)
 ## Introducing the useState Hook
+```js:AppClass.js
+import React, { Component } from 'react';
+
+class App extends Component {
+  state = {
+    count: 0
+  };
+
+  incrementCount = () => {
+    this.setState({
+      count: this.state.count + 1
+    });
+  };
+
+  render() {
+    return (
+      <div className="App">
+        <button
+          onClick={this.incrementCount}
+        >
+          I was cliced {this.state.count} times
+        </button>
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+
+```js:AppFunction.js
+import React, { useState } from 'react';
+
+const App = () => {
+  const [count, setCount] = useState(0);
+
+  const incrementCount = () => {
+    setCount(count + 1);
+  };
+
+  return (
+    <button onClick={incrementCount}>
+      I was clicked {count} times
+    </button>
+  );
+};
+
+export default App;
+```
+
 ## Use Previous State with useState
+
+
 ## Toggle State with useState
 ## Introducing the useEffect Hook
 ## Cleaning up Side Effects in useEffect
