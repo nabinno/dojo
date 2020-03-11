@@ -380,57 +380,169 @@ plt.show()
 # 4. Work with Multiple Time Series
 ## Load multiple time series
 ```python
+# Read in meat DataFrame
+meat = pd.read_csv(url_meat)
 
+# Review the first five lines of the meat DataFrame
+print(meat.head(5))
+
+# Convert the date column to a datestamp type
+meat['date'] = pd.to_datetime(meat['date'])
+
+# Set the date column as the index of your DataFrame meat
+meat = meat.set_index('date')
+
+# Print the summary statistics of the DataFrame
+print(meat.describe())
 ```
 
 ## Visualize multiple time series
 ```python
+##
+# Plot time series dataset
+ax = meat.plot(linewidth=2, fontsize=12)
 
-```
+# Additional customizations
+ax.set_xlabel('Date')
+ax.legend(fontsize=15)
 
-## Statistical summaries of multiple time series
-```python
+# Show plot
+plt.show()
 
-```
+##
+# Plot an area chart
+ax = meat.plot.area(fontsize=12)
 
-## Plot multiple time series
-```python
+# Additional customizations
+ax.set_xlabel('Date')
+ax.legend(fontsize=15)
 
+# Show plot
+plt.show()
 ```
 
 ## Define the color palette of your plots
 ```python
+##
+# Plot time series dataset using the cubehelix color palette
+ax = meat.plot(colormap='cubehelix', fontsize=15)
 
+# Additional customizations
+ax.set_xlabel('Date')
+ax.legend(fontsize=18)
+
+# Show plot
+plt.show()
+
+##
+# Plot time series dataset using the cubehelix color palette
+ax = meat.plot(colormap='PuOr', fontsize=15)
+
+# Additional customizations
+ax.set_xlabel('Date')
+ax.legend(fontsize=18)
+
+# Show plot
+plt.show()
 ```
 
 ## Add summary statistics to your time series plot
 ```python
+# Plot the meat data
+ax = meat.plot(fontsize=6, linewidth=1)
 
+# Add x-axis labels
+ax.set_xlabel('Date', fontsize=6)
+
+# Add summary table information to the plot
+ax.table(cellText=meat_mean.values,
+         colWidths = [0.15]*len(meat_mean.columns),
+         rowLabels=meat_mean.index.values,
+         colLabels=meat_mean.columns,
+         loc='top')
+
+# Specify the fontsize and location of your legend
+ax.legend(loc='upper center', bbox_to_anchor=(0.5, 0.95), ncol=3, fontsize=6)
+
+# Show plot
+plt.show()
 ```
 
 ## Plot your time series on individual plots
 ```python
+# Create a facetted graph with 2 rows and 4 columns
+meat.plot(subplots=True, 
+          layout=(2, 4), 
+          sharex=False, 
+          sharey=False, 
+          colormap='viridis', 
+          fontsize=2, 
+          legend=False, 
+          linewidth=0.2)
 
-```
-
-## Find relationships between multiple time series
-```python
-
+plt.show()
 ```
 
 ## Compute correlations between time series
 ```python
+##
+# Print the correlation matrix between the beef and pork columns using the spearman method
+print(meat[['beef', 'pork']].corr(method='spearman'))
 
+# Print the correlation between beef and pork columns
+print(0.827587)
+
+##
+# Compute the correlation between the pork, veal and turkey columns using the pearson method
+print(meat[['pork', 'veal', 'turkey']].corr(method='pearson'))
+
+# Print the correlation between veal and pork columns
+print(-0.808834)
+
+# Print the correlation between veal and turkey columns
+print(-0.768366)
+
+# Print the correlation between pork and turkey columns
+print(0.835215)
 ```
 
 ## Visualize correlation matrices
 ```python
+# Import seaborn library
+import seaborn as sns
 
+# Get correlation matrix of the meat DataFrame: corr_meat
+corr_meat = meat.corr(method='spearman')
+
+
+# Customize the heatmap of the corr_meat correlation matrix
+sns.heatmap(corr_meat,
+            annot=True,
+            linewidths=0.4,
+            annot_kws={"size": 10})
+
+plt.xticks(rotation=90)
+plt.yticks(rotation=0) 
+plt.show()
 ```
 
 ## Clustered heatmaps
 ```python
+# Import seaborn library
+import seaborn as sns
 
+# Get correlation matrix of the meat DataFrame
+corr_meat = meat.corr(method='pearson')
+
+# Customize the heatmap of the corr_meat correlation matrix and rotate the x-axis labels
+fig = sns.clustermap(corr_meat,
+                     row_cluster=True,
+                     col_cluster=True,
+                     figsize=(10, 10))
+
+plt.setp(fig.ax_heatmap.xaxis.get_majorticklabels(), rotation=90)
+plt.setp(fig.ax_heatmap.yaxis.get_majorticklabels(), rotation=0)
+plt.show()
 ```
 
 # 5. Case Study
