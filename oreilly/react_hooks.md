@@ -223,6 +223,36 @@ export default App;
 ```
 
 ## d. Introducing the useEffect Hook
+```js:AppClass.js
+import React, { Component } from 'react';
+
+class App extends Component {
+  state = {
+    count: 0,
+    isOn: false
+  };
+
+  componentDidMount() {
+    document.title = `You have been clicked ${this.state.count} times`;
+  }
+
+  componentDidUpdate() {
+    document.title = `You have been clicked ${this.state.count} times`;
+  }
+```
+
+```js:AppFunction.js
+import React, { useState, useEffect } from 'react';
+
+const App = () => {
+  const [count, setCount] = useState(0);
+  const [isOn, setIsOn] = useState(false);
+
+  useEffect(() => {
+    document.title = `You have clicked ${count} times`;
+  });
+```
+
 ## e. Cleaning up Side Effects in useEffect
 ## f. Using / Cleaning up Multiple Listeners in useEffect
 ## g. Cleaning up Listeners without a Supportive API
