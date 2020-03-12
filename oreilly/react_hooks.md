@@ -361,6 +361,48 @@ export default App;
 ```
 
 ## f. Using / Cleaning up Multiple Listeners in useEffect
+```js:AppFunction.js
+import React, { useState, useEffect } from 'react';
+
+const App = () => {
+  const [count, setCount] = useState(0);
+  const [isOn, setIsOn] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: null, y: null });
+  const [status, setStatus] = useState(navigator.onLine);
+
+  useEffect(() => {
+    document.title = `You have clicked ${count} times`;
+    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, [count]);
+
+  const handleOnline = () => {
+    setStatus(true);
+  };
+
+  const handleOffline = () => {
+    setStatus(false);
+  };
+  return (
+    <>
+      <h2>Network Status</h2>
+      <p>
+        You are <strong>{status ? "online" : "offline"}</strong>
+      </p>
+    </>
+  );
+};
+
+export default App;
+```
+
 ## g. Cleaning up Listeners without a Supportive API
 ## h. Comparing Function Component and Class Components
 
