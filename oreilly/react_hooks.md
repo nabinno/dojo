@@ -6,8 +6,6 @@ title: https://learning.oreilly.com/videos/react-hooks/9781839210075/97818392100
 ---
 
 # 1. Getting Started
-## React Hook Intro
-## What You Will Need for this Course
 ## Install React 16.7 to Use React Hooks
 ```sh
 mkdir react_hooks
@@ -520,7 +518,7 @@ export default function Login() {
 ```
 
 ## b. Implementing a Register Form with a Single State Value
-```js
+```js:Register.js
 import React, { useState } from 'react';
 
 const initialFormState = {
@@ -591,11 +589,20 @@ export default function Register() {
 }
 ```
 
-## c. Comparing Ways of Managing State
-
 # 4. Data Fetching with Hooks / Replacing Class Lifecycle Methods (useEffect, useRef)
 ## a. Intro to Data Fetching Project
+```sh
+create-react-app hook-news
+cd $_
+npm i axios
+npm start
+```
+
 ## b. Fetching Data on component Mount with useEffect
+```js:App.js
+
+```
+
 ## c. Using Async / Await for Fetching Data in useEffect
 ## d. Fetching Search Results on Component Update with useEffect
 ## e. Fetching Data upon Submitting Form
