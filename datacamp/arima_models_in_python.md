@@ -5,24 +5,51 @@ url: https://campus.datacamp.com/courses/arima-models-in-python/chapter-1-arma-m
 ---
 
 # 1. ARMA Models
-## Intro to time series and stationarity
-```python
-
-```
-
 ## Exploration
 ```python
+# Import modules
+import pandas as pd
+import matplotlib.pyplot as plt
 
+# Load in the time series
+candy = pd.read_csv('candy_production.csv', 
+                 index_col='date', 
+                 parse_dates=True)
+
+# Plot and show the time series on axis ax
+fig, ax = plt.subplots()
+candy.plot(ax=ax)
+plt.show()
 ```
 
 ## Train-test splits
 ```python
+# Split the data into a train and test set
+candy_train = candy.loc[:'2006']
+candy_test = candy.loc['2007':]
 
+# Create an axis
+fig, ax = plt.subplots()
+
+# Plot the train and test sets on the axis ax
+candy_train.plot(ax=ax)
+candy_test.plot(ax=ax)
+plt.show()
 ```
 
 ## Is it stationary
 ```python
+##
+df1.plot()
+plt.show()
 
+##
+df2.plot()
+plt.show()
+
+##
+df3.plot()
+plt.show()
 ```
 
 ## Making time series stationary
