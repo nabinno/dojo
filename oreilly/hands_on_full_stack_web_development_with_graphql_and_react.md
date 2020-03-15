@@ -5,23 +5,116 @@ tags: graphql, react
 url: https://learning.oreilly.com/library/view/hands-on-full-stack-web/9781789134520/cover.xhtml
 ---
 
-# Preparing Your Development Environment
-## Application architecture
-### The basic setup
-## Installing and configuring Node.js
-## Setting up React
-### Preparing and configuring webpack
-### Render your first React component
-### Rendering arrays from React state
-### CSS with webpack
-### Event handling and state updates with React
-### Controlling document heads with React Helmet
-### Production build with webpack
-## Useful development tools
-### Analyzing bundle size
-## Summary
+# 1. Preparing Your Development Environment
+## 1.a. Application architecture
+Node.js, Express.js, Apollo, SQL, Sequelize, and React.
 
-# Setting up GraphQL with Express.js
+### The basic setup
+![](https://learning.oreilly.com/library/view/hands-on-full-stack-web/9781789134520/assets/b36a0c95-ddb1-4061-ab98-2760dc14a3be.png)
+
+## 1.b. Setting up React
+```sh
+mkdir ~/graphbook
+cd ~/graphbook
+npm init
+npm install --save react react-dom
+```
+
+### 1.b.1. Preparing and configuring webpack
+```sh
+mkdir public
+touch public/index.html
+
+cat <<EOF >public/index.html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-
+  scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Graphbook</title>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+EOF
+
+npm install --save-dev @babel/core babel-eslint babel-loader @babel/preset-env @babel/preset-react clean-webpack-plugin css-loader eslint file-loader html-webpack-plugin style-loader url-loader webpack webpack-cli webpack-dev-server @babel/plugin-proposal-decorators @babel/plugin-proposal-function-sent @babel/plugin-proposal-export-namespace-from @babel/plugin-proposal-numeric-separator @babel/plugin-proposal-throw-expressions @babel/plugin-proposal-class-properties
+
+npx install-peerdeps --dev eslint-config-airbnb
+
+cat <<EOF >.eslintrc
+{
+  "extends": ["airbnb"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "react/jsx-filename-extension": "off"
+  }
+}
+EOF
+
+cat <<EOF >webpack.client.config.js
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const buildDirectory = 'dist';
+const outputDirectory = buildDirectory + '/client';
+module.exports = {
+  mode: 'development',
+  entry: './src/client/index.js',
+  output: {
+    path: path.join(__dirname, outputDirectory),
+    filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      }
+    ]
+  }, 
+  devServer: {
+    port: 3000,
+    open: true
+  },
+  plugins: [
+    new CleanWebpackPlugin([buildDirectory]),
+    new HtmlWebpackPlugin({
+      template: './public/index.html'
+    })
+  ]
+};
+EOF
+
+mkdir -p src/client
+```
+
+### 1.b.2. Render your first React component
+
+
+### 1.b.3. Rendering arrays from React state
+### 1.b.4. CSS with webpack
+### 1.b.5. Event handling and state updates with React
+### 1.b.6. Controlling document heads with React Helmet
+### 1.b.7. Production build with webpack
+## 1.c. Useful development tools
+### 1.c.1. Analyzing bundle size
+## 1.d. Summary
+
+# 2. Setting up GraphQL with Express.js
 ## Node.js and Express.js
 ### Setting up Express.js
 ### Running Express.js in development
@@ -43,7 +136,7 @@ url: https://learning.oreilly.com/library/view/hands-on-full-stack-web/978178913
 ### Debugging with Postman
 ## Summary
 
-# Connecting to The Database
+# 3. Connecting to The Database
 ## Using databases in GraphQL
 ### Installing MySQL for development
 ### Creating a database in MySQL
@@ -73,7 +166,7 @@ url: https://learning.oreilly.com/library/view/hands-on-full-stack-web/978178913
 ### Creating a new message
 ## Summary
 
-# Integrating React into the Back end with Apollo
+# 4. Integrating React into the Back end with Apollo
 ## Setting up Apollo Client
 ### Installing Apollo Client
 ### Testing the Apollo Client
@@ -98,7 +191,7 @@ url: https://learning.oreilly.com/library/view/hands-on-full-stack-web/978178913
 ## Debugging with the Apollo Client Developer Tools
 ## Summary
 
-# Reusable React Components
+# 5. Reusable React Components
 ## Introducing React patterns
 ### Controlled components
 ### Stateless functions
@@ -124,7 +217,7 @@ url: https://learning.oreilly.com/library/view/hands-on-full-stack-web/978178913
 ### React PropTypes
 ## Summary
 
-# Authentication with Apollo and React
+# 6. Authentication with Apollo and React
 ## JSON Web Tokens
 ## localStorage versus cookie
 ## Authentication with GraphQL
@@ -139,7 +232,7 @@ url: https://learning.oreilly.com/library/view/hands-on-full-stack-web/978178913
 ### Logging out using React
 ## Summary
 
-# Handling Image Uploads
+# 7. Handling Image Uploads
 ## Setting up Amazon Web Services
 ### Creating an AWS S3 bucket
 ### Generating AWS access keys
@@ -148,7 +241,7 @@ url: https://learning.oreilly.com/library/view/hands-on-full-stack-web/978178913
 ### React image cropping and uploading
 ## Summary
 
-# Routing in React
+# 8. Routing in React
 ## Setting up React Router
 ### Installing React Router
 ### Implementing your first route
@@ -161,14 +254,14 @@ url: https://learning.oreilly.com/library/view/hands-on-full-stack-web/978178913
 ### Remembering the redirect location
 ## Summary
 
-# Implementing Server-Side Rendering
+# 9. Implementing Server-Side Rendering
 ## Introduction to server-side rendering
 ## SSR in Express.js
 ## Authentication with SSR
 ## Running Apollo queries with SSR
 ## Summary
 
-# Real-Time Subscriptions
+# 10. Real-Time Subscriptions
 ## GraphQL and WebSockets
 ## Apollo Subscriptions
 ### Subscriptions on the Apollo Server
@@ -177,7 +270,7 @@ url: https://learning.oreilly.com/library/view/hands-on-full-stack-web/978178913
 ## Notifications with Apollo Subscriptions
 ## Summary
 
-# Writing Tests
+# 11. Writing Tests
 ## Testing with Mocha
 ### Our first Mocha test
 ### Starting the back end with Mocha
@@ -188,7 +281,7 @@ url: https://learning.oreilly.com/library/view/hands-on-full-stack-web/978178913
 ## Testing React with Enzyme
 ## Summary
 
-# Optimizing GraphQL with Apollo Engine
+# 12. Optimizing GraphQL with Apollo Engine
 ## Setting up Apollo Engine
 ## Analyzing schemas with Apollo Engine
 ## Performance metrics with Apollo Engine
@@ -196,7 +289,7 @@ url: https://learning.oreilly.com/library/view/hands-on-full-stack-web/978178913
 ## Caching with Apollo Server and the Client
 ## Summary
 
-# Continuous Deployment with CircleCI and Heroku
+# 13. Continuous Deployment with CircleCI and Heroku
 ## Preparing the final production build
 ### Code-splitting with React Loadable and webpack
 ### Code-splitting with SSR
@@ -212,5 +305,5 @@ url: https://learning.oreilly.com/library/view/hands-on-full-stack-web/978178913
 ## Deploying applications to Heroku
 ## Summary
 
-# Other Books You May Enjoy
+# 14. Other Books You May Enjoy
 ## Leave a review - let other readers know what you think
