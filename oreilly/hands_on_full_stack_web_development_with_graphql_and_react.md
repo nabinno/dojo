@@ -103,7 +103,39 @@ mkdir -p src/client
 ```
 
 ### 1.b.2. Render your first React component
+```js:src/client/index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
 
+ReactDOM.render(<App />, document.getElementById('root'));
+```
+
+```js:src/client/App.js
+import React, { Component } from 'react';
+
+export default class App extends Component {
+  render() {
+    return (
+      <div>Hello World!</div>
+    );
+  }
+}
+```
+
+```.babelrc
+{
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    "@babel/plugin-proposal-function-sent",
+    "@babel/plugin-proposal-export-namespace-from",
+    "@babel/plugin-proposal-numeric-separator",
+    "@babel/plugin-proposal-throw-expressions",
+    ["@babel/plugin-proposal-class-properties", { "loose": false }]
+  ],
+  "presets": ["@babel/env","@babel/react"]
+}
+```
 
 ### 1.b.3. Rendering arrays from React state
 ### 1.b.4. CSS with webpack
