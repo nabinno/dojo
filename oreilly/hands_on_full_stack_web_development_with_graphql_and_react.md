@@ -138,6 +138,66 @@ export default class App extends Component {
 ```
 
 ### 1.b.3. Rendering arrays from React state
+```js:src/client/App.js
+import React, { Component } from 'react';
+
+const posts = [
+  {
+    id: 2,
+    text: 'Lorem ipsum',
+    user: {
+      avatar: '/uploads/avatar1.png',
+      username: 'Test User'
+    }
+  },
+  {
+    id: 1,
+    text: 'Lorem ipsum',
+    user: {
+      avatar: '/uploads/avatar2.png',
+      username: 'Test User 2'
+    }
+  }
+];
+
+export default class App extends Component {
+  state = {
+    posts: posts
+  }
+
+  // constructor(props) {
+  //   super(props);
+  //
+  //   this.state = {
+  //     posts：posts
+  //   };
+  // }
+
+  render() {
+    const { posts } = this.state;
+
+    return (
+      <div className="container">
+        <div className="feed">
+          {posts.map(
+            (post, i) =>
+              <div key={post.id} className="post">
+                <div className="header">
+                  <img src={post.user.avatar} />
+                  <h2>{post.user.username}</h2>
+                </div>
+                <p className="content">
+                  {post.text}
+                </p>
+              </div>
+          )}
+        </div>
+      </div>
+    );
+  }
+}
+```
+
 ### 1.b.4. CSS with webpack
 ### 1.b.5. Event handling and state updates with React
 ### 1.b.6. Controlling document heads with React Helmet
