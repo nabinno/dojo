@@ -25,12 +25,29 @@ plt.show()
 
 ## Plotting a time series (II)
 ```python
-
+# Plot the time series in each dataset
+fig, axs = plt.subplots(2, 1, figsize=(5, 10))
+data.iloc[:1000].plot(x='time', y='data_values', ax=axs[0])
+data2.iloc[:1000].plot(x='time', y='data_values', ax=axs[1])
+plt.show()
 ```
 
 ## Machine learning basics
 ```python
+##
+# Print the first 5 rows for inspection
+print(data.head())
 
+##
+from sklearn.svm import LinearSVC
+
+# Construct data for the model
+X = data[['petal length (cm)', 'petal width (cm)']]
+y = data[['target']]
+
+# Fit the model
+model = LinearSVC()
+model.fit(X, y)
 ```
 
 ## Fitting a simple model: classification
