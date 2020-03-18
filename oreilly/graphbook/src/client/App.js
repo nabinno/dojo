@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 import '../../assets/css/style.css';
 
 const posts = [
@@ -51,6 +52,11 @@ export default class App extends Component {
 
     return (
       <div className="container">
+        <Helmet>
+          <title>Graphbook - Feed</title>
+          <meta name="description" content="Newsfeed of all your friends on Graphbook" />
+        </Helmet>
+
         <div className="postForm">
           <form onSubmit={this.handleSubmit}>
             <textarea
@@ -61,6 +67,7 @@ export default class App extends Component {
             <input type="submit" value="Submit" />
           </form>
         </div>
+
         <div className="feed">
           {posts.map(
             (post, i) =>

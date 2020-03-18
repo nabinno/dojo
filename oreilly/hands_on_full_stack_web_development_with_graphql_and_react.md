@@ -198,7 +198,6 @@ export default class App extends Component {
 }
 ```
 
-### 1.b.5. Event handling and state updates with React
 ### 1.b.6. Controlling document heads with React Helmet
 ### 1.b.7. Production build with webpack
 ## 1.c. Useful development tools
