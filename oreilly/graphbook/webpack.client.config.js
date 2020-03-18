@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const buildDirectory = 'dist';
 const outputDirectory = buildDirectory + '/client';
+
 module.exports = {
   mode: 'development',
   entry: './src/client/index.js',
@@ -24,7 +25,7 @@ module.exports = {
         use: ['style-loader', 'css-loader']
       }
     ]
-  }, 
+  },
   devServer: {
     port: 3000,
     open: true

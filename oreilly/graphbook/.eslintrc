@@ -1,10 +1,12 @@
 {
-    "extends": ["airbnb"],
-    "env": {
-        "browser": true,
-        "node": true
-    },
-    "rules": {
-        "react/jsx-filename-extension": "off"
-    }
+  "extends": ["airbnb"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "react/jsx-filename-extension": "off",
+    "comma-dangle": [2, "never"],
+    "import/newline-after-import": [2, "never"]
+  }
 }
