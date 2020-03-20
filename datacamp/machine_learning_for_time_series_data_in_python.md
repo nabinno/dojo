@@ -68,7 +68,15 @@ plt.show()
 
 ## Fitting a simple model: regression
 ```python
+from sklearn import linear_model
 
+# Prepare input and output DataFrames
+X = boston[['AGE']]
+y = boston[['RM']]
+
+# Fit the model
+model = linear_model.LinearRegression()
+model.fit(X, y)
 ```
 
 ## Predicting using a regression model
