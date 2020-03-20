@@ -81,22 +81,67 @@ model.fit(X, y)
 
 ## Predicting using a regression model
 ```python
+# Generate predictions with the model using those inputs
+predictions = model.predict(new_inputs.reshape(-1, 1))
 
+# Visualize the inputs and predicted values
+plt.scatter(new_inputs, predictions, color='r', s=3)
+plt.xlabel('inputs')
+plt.ylabel('predictions')
+plt.show()
 ```
 
 ## Machine learning and time series data
 ```python
+import librosa as lr
+from glob import glob
 
+# List all the wav files in the folder
+audio_files = glob(data_dir + '/*.wav')
+
+# Read in the first audio file, create the time array
+audio, sfreq = lr.load(audio_files[0])
+time = np.arange(0, len(audio)) / sfreq
+
+# Plot audio over time
+fig, ax = plt.subplots()
+ax.plot(time, audio)
+ax.set(xlabel='Time (s)', ylabel='Sound Amplitude')
+plt.show()
 ```
 
 ## Inspecting the classification data
 ```python
+# Read in the data
+data = pd.read_csv('prices.csv', index_col=0)
 
+# Convert the index of the DataFrame to datetime
+data.index = pd.to_datetime(data.index)
+print(data.head())
+
+# Loop through each column, plot its values over time
+fig, ax = plt.subplots()
+for column in data:
+    data[column].plot(ax=ax, label=column)
+ax.legend()
+plt.show()
 ```
 
 ## Inspecting the regression data
 ```python
+fig, axs = plt.subplots(3, 2, figsize=(15, 7), sharex=True, sharey=True)
 
+# Calculate the time array
+time = np.arange(normal.shape[0]) / sfreq
+
+# Stack the normal/abnormal audio so you can loop and plot
+stacked_audio = np.hstack([normal, abnormal]).T
+
+# Loop through each audio file / ax object and plot
+# .T.ravel() transposes the array, then unravels it into a 1-D vector for looping
+for iaudio, ax in zip(stacked_audio, axs.T.ravel()):
+    ax.plot(time, iaudio)
+show_plot_and_make_titles()
 ```
 
 
