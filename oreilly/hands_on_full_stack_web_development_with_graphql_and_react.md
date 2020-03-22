@@ -249,7 +249,27 @@ npm run server
 ```
 
 ## 2.b. Routing in Express.js
+```js:src/server/index.js
+import express from 'express';
+
+const app = express();
+
+app.get('/', (req, res, next) => {
+  console.log('first function');
+  next();
+}, (req, res) => {
+  console.log('second function');
+  res.send('Hello World!');
+});
+app.listen(8000, () => console.log('Listening on port 8000!'));
+```
+
 ### 2.b.1. Serving our production build
+```sh
+npm run client:build
+npm run client
+```
+
 ## 2.c. Using Express.js middleware
 ### 2.c.1. Installing important middleware
 ### 2.c.2. Express Helmet
