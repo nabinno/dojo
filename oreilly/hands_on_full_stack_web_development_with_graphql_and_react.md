@@ -272,6 +272,10 @@ npm run client
 
 ## 2.c. Using Express.js middleware
 ### 2.c.1. Installing important middleware
+```sh
+npm install --save compression cors helmet
+```
+
 ### 2.c.2. Express Helmet
 ### 2.c.3. Compression with Express.js
 ### 2.c.4. CORS in Express.js
