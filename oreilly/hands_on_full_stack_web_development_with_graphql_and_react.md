@@ -214,26 +214,57 @@ npm run analyze
 ```
 
 # 2. Setting up GraphQL with Express.js
-## Node.js and Express.js
-### Setting up Express.js
-### Running Express.js in development
-## Routing in Express.js
-### Serving our production build
-## Using Express.js middleware
-### Installing important middleware
-### Express Helmet
-### Compression with Express.js
-### CORS in Express.js
-## Combining Express.js with Apollo
-### Writing your first GraphQL schema
-### Implementing GraphQL resolvers
-### Sending GraphQL queries
-### Using multiples types in GraphQL schemas
-### Writing your first GraphQL mutation
-## Back end debugging and logging
-### Logging in Node.js
-### Debugging with Postman
-## Summary
+- Express.js installation and explanation
+- Routing in Express.js
+- Middleware in Express.js
+- Binding Apollo Server to a GraphQL endpoint
+- Serving static assets with Express.js
+- Back end debugging and logging
+
+## 2.a. Node.js and Express.js
+```sh
+npm install --save express
+mkdir src/server
+```
+
+### 2.a.1. Setting up Express.js
+```js:src/server/index.js
+import express from 'express';
+
+const app = express();
+
+app.get('*', (req, res) => res.send('Hello World!'));
+app.listen(8000, () => console.log('Listening on port 8000!'));
+```
+
+### 2.a.2. Running Express.js in development
+```package.json
+"server": "nodemon --exec babel-node --watch src/server src/server/index.js"
+```
+
+```sh
+npm install --save nodemon
+npm install --save-dev @babel/node
+npm run server
+```
+
+## 2.b. Routing in Express.js
+### 2.b.1. Serving our production build
+## 2.c. Using Express.js middleware
+### 2.c.1. Installing important middleware
+### 2.c.2. Express Helmet
+### 2.c.3. Compression with Express.js
+### 2.c.4. CORS in Express.js
+## 2.d. Combining Express.js with Apollo
+### 2.d.1. Writing your first GraphQL schema
+### 2.d.2. Implementing GraphQL resolvers
+### 2.d.3. Sending GraphQL queries
+### 2.d.4. Using multiples types in GraphQL schemas
+### 2.d.5. Writing your first GraphQL mutation
+## 2.e. Back end debugging and logging
+### 2.e.1. Logging in Node.js
+### 2.e.2. Debugging with Postman
+## 2.f. Summary
 
 # 3. Connecting to The Database
 ## Using databases in GraphQL
