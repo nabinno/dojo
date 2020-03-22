@@ -199,9 +199,19 @@ export default class App extends Component {
 ```
 
 ### 1.b.7. Production build with webpack
+```sh
+npm run client:build
+```
+
 ## 1.c. Useful development tools
+https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi
+
 ### 1.c.1. Analyzing bundle size
-## 1.d. Summary
+```sh
+npm install --save-dev webpack-bundle-analyzer
+npm run stats
+npm run analyze
+```
 
 # 2. Setting up GraphQL with Express.js
 ## Node.js and Express.js
