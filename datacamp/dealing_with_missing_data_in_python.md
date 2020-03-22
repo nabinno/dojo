@@ -187,29 +187,58 @@ display("/usr/local/share/datasets/matrix_sliced.png")
 ```
 
 # 2. Does Missingness Have A Pattern?
-## Is the data missing at random?
-```python
-
-```
-
 ## Guess the missingness type
 ```python
+##
+# Import missingno as msno
+import missingno as msno
 
+# Visualize the missingness summary
+msno.matrix(diabetes)
+
+# Display nullity matrix
+display("/usr/local/share/datasets/matrix_diabetes.png")
 ```
 
 ## Deduce MNAR
 ```python
+# Import missingno as msno
+import missingno as msno
 
-```
+# Sort diabetes dataframe on 'Serum Insulin'
+sorted_values = diabetes.sort_values('Serum_Insulin')
 
-## Finding patterns in missing data
-```python
+# Visualize the missingness summary of sorted
+msno.matrix(sorted_values)
 
+# Display nullity matrix
+display("/usr/local/share/datasets/matrix_sorted.png")
 ```
 
 ## Finding correlations in your data
 ```python
+##
+# Import missingno
+import missingno as msno
 
+# Plot missingness heatmap of diabetes
+msno.heatmap(diabetes)
+
+# Show plot
+plt.show()
+
+##
+# Import missingno
+import missingno as msno
+
+# Plot missingness heatmap of diabetes
+msno.heatmap(diabetes)
+
+# Plot missingness dendrogram of diabetes
+msno.dendrogram(diabetes)
+
+# Show plot
+plt.show()
 ```
 
 ## Identify the missingness type
