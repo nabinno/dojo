@@ -276,18 +276,23 @@ npm run client
 npm install --save compression cors helmet
 ```
 
-### 2.c.2. Express Helmet
-### 2.c.3. Compression with Express.js
-### 2.c.4. CORS in Express.js
 ## 2.d. Combining Express.js with Apollo
+```sh
+npm install --save apollo-server-express graphql graphql-tools
+mkdir -p src/server/services/
+mkdir -p src/server/services/graphql
+```
+
 ### 2.d.1. Writing your first GraphQL schema
 ### 2.d.2. Implementing GraphQL resolvers
 ### 2.d.3. Sending GraphQL queries
 ### 2.d.4. Using multiples types in GraphQL schemas
 ### 2.d.5. Writing your first GraphQL mutation
+
 ## 2.e. Back end debugging and logging
 ### 2.e.1. Logging in Node.js
 ### 2.e.2. Debugging with Postman
+
 ## 2.f. Summary
 
 # 3. Connecting to The Database
