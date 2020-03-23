@@ -241,41 +241,72 @@ msno.dendrogram(diabetes)
 plt.show()
 ```
 
-## Identify the missingness type
-```python
-
-```
-
-## Visualizing missingness across a variable
-```python
-
-```
-
 ## Fill dummy values
 ```python
-
+def fill_dummy_values(df, scaling_factor=0.075):
+  df_dummy = df.copy(deep=True)
+  for col_name in df_dummy:
+    col = df_dummy[col_name]
+    col_null = col.isnull()    
+    # Calculate number of missing values in column 
+    num_nulls = col_null.sum()
+    # Calculate column range
+    col_range = col.max() - col.min()
+    # Scale the random values to scaling_factor times col_range
+    dummy_values = (rand(num_nulls) - 2) * scaling_factor * col_range + col.min()
+    col[col_null] = dummy_values
+  return df_dummy
 ```
 
 ## Generate scatter plot with missingness
 ```python
+# Fill dummy values in diabetes_dummy
+diabetes_dummy = fill_dummy_values(diabetes)
 
-```
+# Sum the nullity of Skin_Fold and BMI
+nullity = diabetes['Skin_Fold'].isnull()+diabetes['BMI'].isnull()
 
-## When and how to delete missing data
-```python
+# Create a scatter plot of Skin Fold and BMI 
+diabetes_dummy.plot(x='Skin_Fold', y='BMI', kind='scatter', alpha=0.5,
+                    
+                    # Set color to nullity of BMI and Skin_Fold
+                    c=nullity, 
+                    cmap='rainbow')
 
+plt.show()
 ```
 
 ## Delete MCAR
 ```python
+# Visualize the missingness of diabetes prior to dropping missing values
+msno.matrix(diabetes)
 
+# Print the number of missing values in Glucose
+print(diabetes['Glucose'].isnull().sum())
+
+# Drop rows where 'Glucose' has a missing value
+diabetes.dropna(subset=['Glucose'], how='any', inplace=True)
+
+# Visualize the missingness of diabetes after dropping missing values
+msno.matrix(diabetes)
+
+display("/usr/local/share/datasets/glucose_dropped.png")
 ```
 
 ## Will you delete?
 ```python
+# Visualize the missingness in the data
+msno.matrix(diabetes)
 
+# Visualize the correlation of missingness between variables
+msno.heatmap(diabetes)
+
+# Show heatmap
+plt.show()
+
+# Drop rows where 'BMI' has a missing value
+diabetes.dropna(subset=['BMI'], how='all', inplace=True)
 ```
-
 
 # 3. Imputation Techniques
 ## Mean, median & mode imputations
