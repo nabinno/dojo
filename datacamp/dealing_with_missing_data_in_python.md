@@ -309,19 +309,50 @@ diabetes.dropna(subset=['BMI'], how='all', inplace=True)
 ```
 
 # 3. Imputation Techniques
-## Mean, median & mode imputations
-```python
-
-```
-
 ## Mean & median imputation
 ```python
+##
+# Make a copy of diabetes
+diabetes_mean = diabetes.copy(deep=True)
 
+# Create mean imputer object
+mean_imputer = SimpleImputer(strategy='mean')
+
+# Impute mean values in the DataFrame diabetes_mean
+diabetes_mean.iloc[:, :] = mean_imputer.fit_transform(diabetes_mean)
+
+##
+# Make a copy of diabetes
+diabetes_median = diabetes.copy(deep=True)
+
+# Create median imputer object
+median_imputer = SimpleImputer(strategy='median')
+
+# Impute median values in the DataFrame diabetes_median
+diabetes_median.iloc[:, :] = median_imputer.fit_transform(diabetes_median)
 ```
 
 ## Mode and constant imputation
 ```python
+##
+# Make a copy of diabetes
+diabetes_mode = diabetes.copy(deep=True)
 
+# Create mode imputer object
+mode_imputer = SimpleImputer(strategy="most_frequent")
+
+# Impute using most frequent value in the DataFrame mode_imputer
+diabetes_mode.iloc[:, :] = mode_imputer.fit_transform(diabetes_mode)
+
+##
+# Make a copy of diabetes
+diabetes_constant = diabetes.copy(deep=True)
+
+# Create median imputer object
+constant_imputer = SimpleImputer(strategy="constant", fill_value=0)
+
+# Impute missing values to 0 in diabetes_constant
+diabetes_constant.iloc[:, :] = constant_imputer.fit_transform(diabetes_constant)
 ```
 
 ## Visualize imputations
