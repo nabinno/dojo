@@ -357,44 +357,135 @@ diabetes_constant.iloc[:, :] = constant_imputer.fit_transform(diabetes_constant)
 
 ## Visualize imputations
 ```python
+# Set nrows and ncols to 2
+fig, axes = plt.subplots(nrows=2, ncols=2, figsize=(10, 10))
+nullity = diabetes.Serum_Insulin.isnull()+diabetes.Glucose.isnull()
 
-```
+# Create a dictionary of imputations
+imputations = {'Mean Imputation': diabetes_mean, 'Median Imputation': diabetes_median, 
+               'Most Frequent Imputation': diabetes_mode, 'Constant Imputation': diabetes_constant}
 
-## Imputing time-series data
-```python
-
+# Loop over flattened axes and imputations
+for ax, df_key in zip(axes.flatten(), imputations):
+    # Select and also set the title for a DataFrame
+    imputations[df_key].plot(x='Serum_Insulin', y='Glucose', kind='scatter', 
+                          alpha=0.5, c=nullity, cmap='rainbow', ax=ax, 
+                          colorbar=False, title=df_key)
+plt.show()
 ```
 
 ## Filling missing time-series data
 ```python
+##
+# Print prior to imputing missing values
+print(airquality[30:40])
 
+# Fill NaNs using forward fill
+airquality.fillna(method='ffill', inplace=True)
+
+# Print after imputing missing values
+print(airquality[30:40])
+
+##
+# Print prior to imputing missing values
+print(airquality[30:40])
+
+# Fill NaNs using backward fill
+airquality.fillna(method='bfill', inplace=True)
+
+# Print after imputing missing values
+print(airquality[30:40])
 ```
 
 ## Impute with interpolate method
 ```python
+##
+# Print prior to imputing missing values
+print(airquality[30:40])
 
+# Fill NaNs using backward fill
+airquality.fillna(method='bfill', inplace=True)
+
+# Print after imputing missing values
+print(airquality[30:40])
+
+##
+# Print prior to interpolation
+print(airquality[30:40])
+
+# Interpolate the NaNs quadratically
+airquality.interpolate(method='quadratic', inplace=True)
+
+# Print after interpolation
+print(airquality[30:40])
+
+##
+# Print prior to interpolation
+print(airquality[30:40])
+
+# Interpolate the NaNs with nearest value
+airquality.interpolate(method='nearest', inplace=True)
+
+# Print after interpolation
+print(airquality[30:40])
 ```
 
 ## Visualizing time-series imputations
 ```python
+##
+# Impute airquality DataFrame with ffill method
+ffill_imputed = airquality.fillna(method='ffill')
 
-```
+# Plot the imputed DataFrame ffill_imp in red dotted style 
+ffill_imputed['Ozone'].plot(color='red', marker='o', linestyle='dotted', figsize=(30, 5))
 
-## Visualize forward fill imputation
-```python
+plt.show()
 
+##
+# Impute airquality DataFrame with ffill method
+ffill_imputed = airquality.fillna(method='ffill')
+
+# Plot the imputed DataFrame ffill_imp in red dotted style 
+ffill_imputed['Ozone'].plot(color='red', marker='o', linestyle='dotted', figsize=(30, 5))
+
+# Plot the airquality DataFrame with title
+airquality['Ozone'].plot(title='Ozone', marker='o', figsize=(30, 5))
+
+plt.show()
 ```
 
 ## Visualize backward fill imputation
 ```python
+# Impute airquality DataFrame with bfill method
+bfill_imputed = airquality.fillna(method='bfill')
 
+# Plot the imputed DataFrame bfill_imp in red dotted style 
+bfill_imputed['Ozone'].plot(color='red', marker='o', linestyle='dotted', figsize=(30, 5))
+
+# Plot the airquality DataFrame with title
+airquality['Ozone'].plot(title='Ozone', marker='o', figsize=(30, 5))
+
+plt.show()
 ```
 
 ## Plot interpolations
 ```python
+# Set nrows to 3 and ncols to 1
+fig, axes = plt.subplots(nrows=3, ncols=1, figsize=(30, 20))
 
+# Create a dictionary of interpolations
+interpolations = {'Linear Interpolation': linear, 'Quadratic Interpolation': quadratic, 
+                  'Nearest Interpolation': nearest}
+
+# Loop over axes and interpolations
+for ax, df_key in zip(axes, interpolations):
+  # Select and also set the title for a DataFrame
+  interpolations[df_key].Ozone.plot(color='red', marker='o', 
+                                 linestyle='dotted', ax=ax)
+  airquality.Ozone.plot(title=df_key + ' - Ozone', marker='o', ax=ax)
+  
+plt.show()
 ```
-
 
 # 4. Advanced Imputation Techniques
 ## Imputing using fancyimpute
