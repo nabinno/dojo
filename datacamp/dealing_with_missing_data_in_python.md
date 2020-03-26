@@ -488,63 +488,134 @@ plt.show()
 ```
 
 # 4. Advanced Imputation Techniques
-## Imputing using fancyimpute
-```python
-
-```
-
 ## KNN imputation
 ```python
+# Import KNN from fancyimpute
+from fancyimpute import KNN
 
+# Copy diabetes to diabetes_knn_imputed
+diabetes_knn_imputed = diabetes.copy(deep=True)
+
+# Initialize KNN
+knn_imputer = KNN()
+
+# Impute using fit_tranform on diabetes_knn_imputed
+diabetes_knn_imputed.iloc[:, :] = knn_imputer.fit_transform(diabetes_knn_imputed)
 ```
 
 ## MICE imputation
 ```python
+# Import IterativeImputer from fancyimpute
+from fancyimpute import IterativeImputer
 
-```
+# Copy diabetes to diabetes_mice_imputed
+diabetes_mice_imputed = diabetes.copy(deep=True)
 
-## Imputing categorical values
-```python
+# Initialize IterativeImputer
+mice_imputer = IterativeImputer()
 
+# Impute using fit_tranform on diabetes
+diabetes_mice_imputed.iloc[:, :] = mice_imputer.fit_transform(diabetes)
 ```
 
 ## Ordinal encoding of a categorical column
 ```python
+# Create Ordinal encoder
+ambience_ord_enc = OrdinalEncoder()
 
+# Select non-null values of ambience column in users
+ambience = users['ambience']
+ambience_not_null = ambience[ambience.notnull()]
+
+# Reshape ambience_not_null to shape (-1, 1)
+reshaped_vals = ambience_not_null.values.reshape(-1, 1)
+
+# Ordinally encode reshaped_vals
+encoded_vals = ambience_ord_enc.fit_transform(reshaped_vals)
+
+# Assign back encoded values to non-null values of ambience in users
+users.loc[ambience.notnull(), 'ambience'] = np.squeeze(encoded_vals)
 ```
 
 ## Ordinal encoding of a DataFrame
 ```python
+# Create an empty dictionary ordinal_enc_dict
+ordinal_enc_dict = {}
 
+for col_name in users:
+    # Create Ordinal encoder for col
+    ordinal_enc_dict[col_name] = OrdinalEncoder()
+    col = users[col_name]
+    
+    # Select non-null values of col
+    col_not_null = col[col.notnull()]
+    reshaped_vals = col_not_null.values.reshape(-1, 1)
+    encoded_vals = ordinal_enc_dict[col_name].fit_transform(reshaped_vals)
+    
+    # Store the values to non-null values of the column in users
+    users.loc[col.notnull(), col_name] = np.squeeze(encoded_vals)
 ```
 
 ## KNN imputation of categorical values
 ```python
+# Create KNN imputer
+KNN_imputer = KNN()
 
+# Impute and round the users DataFrame
+users.iloc[:, :] = np.round(KNN_imputer.fit_transform(users))
+
+# Loop over the column names in users
+for col_name in users:
+    
+    # Reshape the data
+    reshaped = users[col_name].values.reshape(-1, 1)
+    
+    # Perform inverse transform of the ordinally encoded columns
+    users[col_name] = ordinal_enc_dict[col_name].inverse_transform(reshaped)
 ```
 
 ## Evaluation of different imputation techniques
 ```python
+# Add constant to X and set X & y values to fit linear model
+X = sm.add_constant(diabetes_cc.iloc[:, :-1])
+y = diabetes_cc['Class']
+lm = sm.OLS(y, X).fit()
 
+# Print summary of lm
+print('\nSummary: ', lm.summary())
+
+# Print R squared score of lm
+print('\nAdjusted R-squared score: ', lm.rsquared_adj)
+
+# Print the params of lm
+print('\nCoefficcients:\n', lm.params)
 ```
 
 ## Analyze the summary of linear model
 ```python
+# Store the Adj. R-squared scores of the linear models
+r_squared = pd.DataFrame({'Complete Case': lm.rsquared_adj, 
+                          'Mean Imputation': lm_mean.rsquared_adj, 
+                          'KNN Imputation': lm_KNN.rsquared_adj, 
+                          'MICE Imputation': lm_MICE.rsquared_adj}, 
+                         index=['Adj. R-squared'])
 
+print(r_squared)
 ```
 
 ## Comparing R-squared and coefficients
 ```python
+r_squares = {'Mean Imputation': lm_mean.rsquared_adj, 
+             'KNN Imputation': lm_KNN.rsquared_adj, 
+             'MICE Imputation': lm_MICE.rsquared_adj}
 
+# Select best R-squared
+best_imputation = max(r_squares, key=r_squares.get)
+
+print("The best imputation technique is: ", best_imputation)
 ```
 
 ## Comparing density plots
 ```python
 
 ```
-
-## Conclusion
-```python
-
-```
-
