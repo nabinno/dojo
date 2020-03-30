@@ -321,34 +321,81 @@ print("The longest trip was " + str(longest_trip) + " seconds")
 ```
 
 # 3. Time Zones and Daylight Saving
-## UTC offsets
-```python
-
-```
-
 ## Creating timezone aware datetimes
 ```python
+##
+# Import datetime, timezone
+from datetime import datetime, timezone
 
+# October 1, 2017 at 15:26:26, UTC
+dt = datetime(2017, 10, 1, 15, 26, 26, tzinfo=timezone.utc)
+
+# Print results
+print(dt.isoformat())
+
+##
+# Import datetime, timedelta, timezone
+from datetime import datetime, timedelta, timezone
+
+# Create a timezone for Pacific Standard Time, or UTC-8
+pst = timezone(timedelta(hours=-8))
+
+# October 1, 2017 at 15:26:26, UTC-8
+dt = datetime(2017, 10, 1, 15, 26, 26, tzinfo=pst)
+
+# Print results
+print(dt.isoformat())
+
+##
+# Import datetime, timedelta, timezone
+from datetime import datetime, timedelta, timezone
+
+# Create a timezone for Australian Eastern Daylight Time, or UTC+11
+aedt = timezone(timedelta(hours=11))
+
+# October 1, 2017 at 15:26:26, UTC+11
+dt = datetime(2017, 10, 1, 15, 26, 26, tzinfo=aedt)
+
+# Print results
+print(dt.isoformat())
 ```
 
 ## Setting timezones
 ```python
+# Create a timezone object corresponding to UTC-4
+edt = timezone(timedelta(hours=-4))
 
+# Loop over trips, updating the start and end datetimes to be in UTC-4
+for trip in onebike_datetimes[:10]:
+  # Update trip['start'] and trip['end']
+  trip['start'] = trip['start'].replace(tzinfo = edt)
+  trip['end'] = trip['end'].replace(tzinfo = edt)
 ```
 
 ## What time did the bike leave in UTC?
 ```python
-
-```
-
-## Time zone database
-```python
-
+# Loop over the trips
+for trip in onebike_datetimes[:10]:
+  # Pull out the start and set it to UTC
+  dt = trip['start'].astimezone(timezone.utc)
+  
+  # Print the start time in UTC
+  print('Original:', trip['start'], '| UTC:', dt.isoformat())
 ```
 
 ## Putting the bike trips into the right time zone
 ```python
+# Import tz
+from dateutil import tz
 
+# Create a timezone object for Eastern Time
+et = tz.gettz('America/New_York')
+
+# Loop over trips, updating the datetimes to be in Eastern Time
+for trip in onebike_datetimes[:10]:
+  # Update trip['start'] and trip['end']
+  trip['start'] = trip['start'].replace(tzinfo=et)
+  trip['end'] = trip['end'].replace(tzinfo=et)
 ```
 
 ## What time did the bike leave? (Global edition)
