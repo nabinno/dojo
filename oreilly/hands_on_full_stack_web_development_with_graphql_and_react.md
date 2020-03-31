@@ -284,16 +284,131 @@ mkdir -p src/server/services/graphql
 ```
 
 ### 2.d.1. Writing your first GraphQL schema
+```js
+const typeDefinitions = `
+  type Post {
+    id: Int
+    text: String
+  }
+
+  type RootQuery {
+    posts: [Post]
+  }
+
+  schema {
+    query: RootQuery
+  }
+`;
+
+export default [typeDefinitions];
+```
+
 ### 2.d.2. Implementing GraphQL resolvers
+```js
+const resolvers = {
+  RootQuery: {
+    posts(root, args, context) {
+      return []; 
+    }, 
+  }, 
+}; 
+
+export default resolvers;
+```
+
 ### 2.d.3. Sending GraphQL queries
+```js
+{
+  "operationName": null,
+  "query": "{ 
+    posts { 
+      id
+      text 
+    }
+  }", 
+  "variables": {} 
+}
+```
+
 ### 2.d.4. Using multiples types in GraphQL schemas
+```graphql
+{
+  posts {
+    id
+    text
+    user {
+      avatar
+      username
+    }
+  }
+}
+```
+
 ### 2.d.5. Writing your first GraphQL mutation
+```json
+{
+  "operationName": null,
+  "query": "mutation addPost($post : PostInput!, $user: UserInput!) {
+    addPost(post : $post, user: $user) { 
+      id
+      text
+      user {
+        username
+        avatar
+      }
+    }
+  }",
+  "variables": {
+    "post": { 
+      "text": "You just added a post."
+    },
+    "user": {
+      "avatar": "/uploads/avatar3.png",
+      "username": "Fake User"
+    }
+  }
+}
+```
 
 ## 2.e. Back end debugging and logging
 ### 2.e.1. Logging in Node.js
+```js
+import winston from 'winston';
+
+let transports = [
+  new winston.transports.File({
+    filename: 'error.log',
+    level: 'error',
+  }),
+  new winston.transports.File({
+    filename: 'combined.log',
+    level: 'verbose',
+  }),
+];
+
+if (process.env.NODE_ENV !== 'production') {
+  transports.push(new winston.transports.Console());
+}
+
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.json(),
+  transports,
+});
+
+export default logger;
+```
+
 ### 2.e.2. Debugging with Postman
 
 ## 2.f. Summary
+- Node.jsサーバーにExpress.jsを設定し、Apollo ServerをバインドしてGraphQLエンドポイントでリクエストに応答するようにしています。
+    - これで、クエリを処理し、偽のデータを返し、そのデータを GraphQL mutation で変異させることができるようになりました。
+- さらに、Node.jsサーバ内のすべてのプロセスをログに記録することができます。
+    - Postmanを使ってアプリケーションをデバッグすると、テストされたAPIが得られます。
+- 次の章では、SQLサーバにデータを永続化する方法を学びます。
+- また、GraphQL型のモデルを実装し、データベースの移行を行います。
+    - 現在のリゾルバ関数を Sequelize を介してクエリに置き換える必要があります。
 
 # 3. Connecting to The Database
 ## Using databases in GraphQL
