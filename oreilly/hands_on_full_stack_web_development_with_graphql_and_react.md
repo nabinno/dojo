@@ -411,9 +411,32 @@ export default logger;
     - 現在のリゾルバ関数を Sequelize を介してクエリに置き換える必要があります。
 
 # 3. Connecting to The Database
+この章では、以下の点について説明します。
+- GraphQでのデータベースの使用
+- Node.jsでSequelizeを使う
+- データベースモデルの記述
+- Sequelizeを使用したデータベース移行の実行
+- Sequelizeでデータを播種
+- シークリーズと一緒にアポロンを使う
+
 ## Using databases in GraphQL
 ### Installing MySQL for development
+```sh
+sudo apt update && sudo apt upgrade -y
+sudo apt install mysql-server
+sudo su -
+/etc/init.d/mysql start
+mysql_secure_installation
+mysql -u root
+
+mysql> GRANT ALL PRIVILEGES ON *.* TO 'devuser'@'%' IDENTIFIED BY 'password';
+```
+
 ### Creating a database in MySQL
+```sql
+CREATE DATABASE graphbook_dev CHARACTER SET utf8 COLLATE utf8_general_ci;
+```
+
 ## Integrating Sequelize into our stack
 ### Connecting to a database with Sequelize
 ### Using a configuration file with Sequelize
