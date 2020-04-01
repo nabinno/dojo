@@ -5,19 +5,35 @@ url: https://www.datacamp.com/courses/regular-expressions-in-python
 ---
 
 # 1. Basic Concepts of String Manipulation
-## Introduction to string manipulation
-```python
-
-```
-
 ## First day!
 ```python
+# Find characters in movie variable
+length_string = len(movie)
 
+# Convert to string
+to_string = str(length_string)
+
+# Predefined variable
+statement = "Number of characters in this review:"
+
+# Concatenate strings and print result
+print(statement, to_string)
 ```
 
 ## Artificial reviews
 ```python
+# Select the first 32 characters of movie1
+first_part = movie1[:32]
 
+# Select from 43rd character to the end of movie1
+last_part = movie1[42:]
+
+# Select from 33rd to the 42nd character
+middle_part = movie2[32:42]
+
+# Print concatenation and movie2 variable
+print(first_part+last_part+middle_part) 
+print(movie2)
 ```
 
 ## Palindromes
