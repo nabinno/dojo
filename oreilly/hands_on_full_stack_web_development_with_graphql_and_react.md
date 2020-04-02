@@ -417,7 +417,7 @@ export default logger;
 - データベースモデルの記述
 - Sequelizeを使用したデータベース移行の実行
 - Sequelizeでデータを播種
-- シークリーズと一緒にアポロンを使う
+- Sequelizeと一緒にアポロンを使う
 
 ## Using databases in GraphQL
 ### Installing MySQL for development
@@ -438,6 +438,10 @@ CREATE DATABASE graphbook_dev CHARACTER SET utf8 COLLATE utf8_general_ci;
 ```
 
 ## Integrating Sequelize into our stack
+```sh
+npm install --save sequelize mysql2
+```
+
 ### Connecting to a database with Sequelize
 ### Using a configuration file with Sequelize
 ## Writing database models
