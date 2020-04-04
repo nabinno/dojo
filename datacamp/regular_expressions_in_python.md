@@ -68,29 +68,47 @@ word_root = movie_split[1][:-1]
 print(word_root)
 ```
 
-## Normalizing reviews
-```python
-
-```
-
 ## Time to join!
 ```python
+# Remove tags happening at the end and print results
+movie_tag = movie.rstrip("<\i>")
+print(movie_tag)
 
+# Split the string using commas and print results
+movie_no_comma = movie_tag.split(",")
+print(movie_no_comma)
+
+# Join back together and print results
+movie_join = " ".join(movie_no_comma)
+print(movie_join)
 ```
 
 ## Split lines or split the line?
 ```python
+# Split string at line boundaries
+file_split = file.splitlines()
 
-```
+# Print file_split
+print(file_split)
 
-## Finding and replacing
-```python
-
+# Complete for-loop to split by commas
+for substring in file_split:
+    substring_split = substring.split(',')
+    print(substring_split)
 ```
 
 ## Finding a substring
 ```python
-
+for movie in movies:
+  	# Find if actor occurrs between 37 and 41 inclusive
+    if movie.find("actor", 37, 42) == -1:
+        print("Word not found")
+    # Count occurrences and replace two by one
+    elif movie.count("actor") == 2:  
+        print(movie.replace("actor actor", "actor"))
+    else:
+        # Replace three occurrences by one
+        print(movie.replace("actor actor actor", "actor"))
 ```
 
 ## Where's the word?
