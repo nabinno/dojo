@@ -113,12 +113,30 @@ for movie in movies:
 
 ## Where's the word?
 ```python
+##
+for movie in movies:
+  # Find the first occurrence of word
+  print(movie.find('money', 12, 51))
 
+##
+for movie in movies:
+  try:
+    # Find the first occurrence of word
+  	print(movie.index('money', 12, 51))
+  except ValueError:
+    print("substring not found")
 ```
 
 ## Replacing negations
 ```python
+# Replace negations 
+movies_no_negation = movies.replace("isn't", "is")
 
+# Replace important
+movies_antonym = movies_no_negation.replace("important", "insignificant")
+
+# Print out
+print(movies_antonym)
 ```
 
 
