@@ -188,19 +188,34 @@ message = "Good morning. Today is {today:%B %d, %Y}. It's {today:%H:%M} ... time
 print(message.format(today=get_date))
 ```
 
-## Formatted string literal
-```python
-
-```
-
 ## Literally formatting
 ```python
+##
+# Complete the f-string
+print(f"Data science is considered {field1!r} in the {fact1:d}st century")
 
+##
+# Complete the f-string
+print(f"About {fact2:e} of {field2} in the world")
+
+##
+# Complete the f-string
+print(f"{field3} create around {fact3:.2f}% of the data but only {fact4:.1f}% is analyzed")
 ```
 
 ## Make this function
 ```python
+##
+# Include both variables and the result of dividing them 
+print(f"{number1} tweets were downloaded in {number2} minutes indicating a speed of {(number1 / number2):.1f} tweets per min")
 
+##
+# Replace the substring https by an empty string
+print(f"{string1.replace('https', '')}")
+
+##
+# Divide the length of list by 120 rounded to two decimals
+print(f"Only {(len(list_links) * 100 / 120):.2f}% of the posts contain links")
 ```
 
 ## On time
