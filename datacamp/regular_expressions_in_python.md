@@ -245,12 +245,34 @@ print(wikipedia.substitute(tool=tool3, description=description3))
 
 ## Identifying prices
 ```python
+# Import template
+from string import Template
 
+# Select variables
+our_tool = tools[0]
+our_fee = tools[1]
+our_pay = tools[2]
+
+# Create template
+course = Template("We are offering a 3-month beginner course on $tool just for $$ $fee ${pay}ly")
+
+# Substitute identifiers with three variables
+print(course.substitute(tool=our_tool, fee=our_fee, pay=our_pay))
 ```
 
 ## Playing safe
 ```python
+# Import template
+from string import Template
 
+# Complete template string using identifiers
+the_answers = Template("Check your answer 1: $answer1, and your answer 2: $answer2")
+
+# Use safe_substitute to replace identifiers
+try:
+    print(the_answers.safe_substitute(answers))
+except KeyError:
+    print("Missing information")
 ```
 
 
