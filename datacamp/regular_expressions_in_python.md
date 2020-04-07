@@ -220,17 +220,27 @@ print(f"Only {(len(list_links) * 100 / 120):.2f}% of the posts contain links")
 
 ## On time
 ```python
+##
+# Access values of date and price in east dictionary
+print(f"The price for a house in the east neighborhood was ${east['price']} in {east['date']:%m-%d-%Y}")
 
-```
-
-## Template method
-```python
-
+##
+# Access values of date and price in west dictionary
+print(f"The price for a house in the west neighborhood was ${west['price']} in {west['date']:%m-%d-%Y}.")
 ```
 
 ## Preparing a report
 ```python
+# Import Template
+from string import Template
 
+# Create a template
+wikipedia = Template("$tool is a $description")
+
+# Substitute variables in template
+print(wikipedia.substitute(tool=tool1, description=description1))
+print(wikipedia.substitute(tool=tool2, description=description2))
+print(wikipedia.substitute(tool=tool3, description=description3))
 ```
 
 ## Identifying prices
