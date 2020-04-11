@@ -453,32 +453,58 @@ print(sentences_found_lazy)
 # 4. Advanced Regular Expression Concepts
 ## Try another name
 ```python
+# Write a regex that matches email
+regex_email = r"([A-Za-z0-9]+)@\S+"
 
+for tweet in sentiment_analysis:
+    # Find all matches of regex in each tweet
+    email_matched = re.findall(regex_email, tweet)
+
+    # Complete the format method to print the results
+    print("Lists of users found in this tweet: {}".format(email_matched))
 ```
 
 ## Flying home
 ```python
+# Import re
+import re
 
-```
+# Write regex to capture information of the flight
+regex = r"([A-Z]{2})(\d{4})\s([A-Z]{3})-([A-Z]{3})\s(\d{2}[A-Z]{3})"
 
-## Alternation and non-capturing groups
-```python
-
+# Find all matches of the flight information
+flight_matches = re.findall(regex, flight)
+    
+#Print the matches
+print("Airline: {} Flight number: {}".format(flight_matches[0][0], flight_matches[0][1]))
+print("Departure: {} Destination: {}".format(flight_matches[0][2], flight_matches[0][3]))
+print("Date: {}".format(flight_matches[0][4]))
 ```
 
 ## Love it!
 ```python
+# Write a regex that matches sentences with the optional words
+regex_positive = r"(love|like|enjoy).+?(movie|concert)\s(.+?)\."
 
+for tweet in sentiment_analysis:
+	# Find all matches of regex in tweet
+    positive_matches = re.findall(regex_positive, tweet)
+    
+    # Complete format to print out the results
+    print("Positive comments found {}".format(positive_matches))
 ```
 
 ## Ugh! Not for me!
 ```python
+# Write a regex that matches sentences with the optional words
+regex_negative = r"(hate|dislike|disapprove).+?(?:movie|concert)\s(.+?)\."
 
-```
-
-## Backreferences
-```python
-
+for tweet in sentiment_analysis:
+	# Find all matches of regex in tweet
+    negative_matches = re.findall(regex_negative, tweet)
+    
+    # Complete format to print out the results
+    print("Negative comments found {}".format(negative_matches))
 ```
 
 ## Parsing PDF files
