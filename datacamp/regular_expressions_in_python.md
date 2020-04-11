@@ -406,15 +406,113 @@ for example in passwords:
 
 ## Understanding the difference
 ```python
+# Import re
+import re
 
+# Write a regex to eliminate tags
+string_notags = re.sub(r"<.+?>", "", string)
+
+# Print out the result
+print(string_notags)
 ```
 
 ## Greedy matching
 ```python
+##
+# Write a lazy regex expression 
+numbers_found_lazy = re.findall(r"[0-9]+?", sentiment_analysis)
 
+# Print out the result
+print(numbers_found_lazy)
+
+##
+# Write a greedy regex expression 
+numbers_found_greedy = re.findall(r"[0-9]+", sentiment_analysis)
+
+# Print out the result
+print(numbers_found_greedy)
 ```
 
 ## Lazy approach
 ```python
+##
+# Write a greedy regex expression to match 
+sentences_found_greedy = re.findall(r"\(.+\)", sentiment_analysis)
+
+# Print out the result
+print(sentences_found_greedy)
+
+##
+# Write a lazy regex expression
+sentences_found_lazy = re.findall(r"\(.+?\)", sentiment_analysis)
+
+# Print out the results
+print(sentences_found_lazy)
+```
+
+# 4. Advanced Regular Expression Concepts
+## Try another name
+```python
 
 ```
+
+## Flying home
+```python
+
+```
+
+## Alternation and non-capturing groups
+```python
+
+```
+
+## Love it!
+```python
+
+```
+
+## Ugh! Not for me!
+```python
+
+```
+
+## Backreferences
+```python
+
+```
+
+## Parsing PDF files
+```python
+
+```
+
+## Close the tag, please!
+```python
+
+```
+
+## Reeepeated characters
+```python
+
+```
+
+## Lookaround
+```python
+
+```
+
+## Surrounding words
+```python
+
+```
+
+## Filtering phone numbers
+```python
+
+```
+
+## Finishing line
+```python
+
+```
+
