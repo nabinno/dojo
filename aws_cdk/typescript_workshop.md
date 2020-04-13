@@ -10,10 +10,10 @@ url: https://cdkworkshop.com/20-typescript.html
 # Task
 - [x] Prerequistites
 - [x] New Project
-- [ ] Hello, CDK!
-- [ ] Writing constructs
-- [ ] Using construct libraries
-- [ ] Clean up
+- [x] Hello, CDK!
+- [x] Writing constructs
+- [x] Using construct libraries
+- [x] Clean up
 
 # Supplement
 ## Prerequistites

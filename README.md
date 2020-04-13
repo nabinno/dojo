@@ -12,9 +12,13 @@
 - [DataCamp](https://www.datacamp.com/)
 - [Qwiklabs](https://amazon-run.qwiklabs.com)
 - [Coursera](https://www.coursera.org/)
-- [AWS CDK Intro Workshop](https://cdkworkshop.com)
-- [Microsoft Learn](https://docs.microsoft.com/learn/)
+- [AWS Amplify](https://aws.amazon.com/amplify/)
+- [AWS CDK](https://aws.amazon.com/cdk/)
 - [AWS Lambda](https://aws.amazon.com/lambda/)
+- [AWS IAM](https://aws.amazon.com/iam/)
+- [AWS WAF](https://aws.amazon.com/waf/)
+- [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/)
+- [Microsoft Learn](https://docs.microsoft.com/learn/)
 
 ---
 
