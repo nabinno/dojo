@@ -26,27 +26,73 @@ print('Basket 2: ' + str(basket2))
 
 ## Operations on sets
 ```python
-
+(A | (B & C)) - (D & E)
 ```
 
 ## Storing data in a dictionary
 ```python
+##
+circ_parab = dict()
 
-```
-
-## What are common ways to manipulate strings?
-```python
-
+for x in range_x:
+    for y in range_y:       
+        # Calculate the value for z
+        z = x**2 + y**2
+        # Create a new key for the dictionary
+        key = (x, y)
+        # Create a new key-value pair
+        circ_parab[(x, y)] = z
 ```
 
 ## String indexing and concatenation
 ```python
+##
+def encrypt(text, key):
+  
+    encrypted_text = ''
 
+    # Fill in the blanks to create an encrypted text
+    for char in text.lower():
+        idx = (alphabet.index(char) + key) % len(alphabet)
+        encrypted_text = encrypted_text + alphabet[idx]
+
+    return encrypted_text
+
+# Check the encryption function with the shift equals to 10
+print(encrypt("datacamp", 10))
 ```
 
 ## Operations on strings
 ```python
+##
+# Create a word list from the string stored in text
+word_list = text.split()
 
+##
+# Create a word list from the string stored in text
+word_list = text.split()
+
+# Make every other word uppercased; otherwise - lowercased
+for i in range(len(word_list)):
+    if (i + 1) % 2 == 0:
+        word_list[i] = word_list[i].upper()
+    else:
+        word_list[i] = word_list[i].lower()
+
+##
+# Create a word list from the string stored in 'text'
+word_list = text.split()
+
+# Make every other word uppercased; otherwise - lowercased
+for i in range(len(word_list)):
+    if (i + 1) % 2 == 0:
+        word_list[i] = word_list[i].upper()
+    else:
+        word_list[i] = word_list[i].lower()
+        
+# Join the words back and form a new string
+new_text = " ".join(word_list)
+print(new_text)
 ```
 
 ## Fixing string errors in a DataFrame
