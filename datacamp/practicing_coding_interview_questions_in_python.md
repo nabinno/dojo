@@ -97,36 +97,56 @@ print(new_text)
 
 ## Fixing string errors in a DataFrame
 ```python
+# Make all the values in the 'Hair color' column lowercased
+heroes['Hair color'] = heroes['Hair color'].str.lower()
+  
+# Check the values in the 'Hair color' column
+print(heroes['Hair color'].value_counts())
 
-```
+# Substitute 'Fmale' with 'Female' in the 'Gender' column
+heroes['Gender'] = heroes['Gender'].str.replace('Fmale', 'Female')
 
-## How to write regular expressions in Python?
-```python
-
+# Check if there is no occurences of 'Fmale'
+print(heroes['Gender'].value_counts())
 ```
 
 ## Write a regular expression
 ```python
+# Define the pattern to search for valid temperatures
+pattern = re.compile(r'[+-]?\d+\.?\d* [CF]')
 
-```
+# Print the temperatures out
+print(re.findall(pattern, text))
 
-## Find the correct pattern
-```python
+# Create an object storing the matches using 'finditer()'
+matches_storage = re.finditer(pattern, text)
 
+# Loop over matches_storage and print out item properties
+for match in matches_storage:
+    print('matching sequence = ' + match.group(0))
+    print('start index = ' + str(match.start()))
+    print('end index = ' + str(match.end()))
 ```
 
 ## Splitting by a pattern
 ```python
+# Compile a regular expression
+pattern = re.compile(r', \d+, ')
 
+movies_without_year = []
+for movie in movies:
+    # Retrieve a movie name and its director
+    split_result = re.split(pattern, movie)
+    # Create a new string with a movie name and its director
+    movie_without_year = ', '.join(split_result)
+    # Append the resulting string to movies_without_year
+    movies_without_year.append(movie_without_year)
+    
+for movie in movies_without_year:
+    print(movie)
 ```
-
 
 # 2. Iterable objects and representatives
-## What are iterable objects?
-```python
-
-```
-
 ## enumerate()
 ```python
 
