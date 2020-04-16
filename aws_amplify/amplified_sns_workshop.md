@@ -350,3 +350,128 @@ amplify add hosting
 amplify publish
 ```
 
+# 5. Follow/Timeline機能の実装
+## 5.1. Follow機能: Back-end
+### GraphQL APIの作成
+```graphql
+// ./amplify/backend/api/BoyakiGql/schema.graphql
+type FollowRelationship
+	@model
+	@auth(rules: [
+		{allow: owner, ownerField:"followerId", provider: userPools, operations:[read, create]},
+		{allow: private, provider: userPools, operations:[read]}
+	])
+	@key(fields: ["followeeId", "followerId"])
+{
+	followeeId: ID!
+	followerId: ID!
+	timestamp: AWSTimestamp!
+}
+```
+
+### Mockingによる動作確認
+```
+amplify mock api
+```
+**mutation**
+```
+mutation MyMutation {
+  createFollowRelationship(input: {followeeId: "test_followee", followerId: "test_follower", timestamp: 1587032763}) {
+    followeeId
+    followerId
+    timestamp
+  }
+}
+```
+
+**query**
+```
+query MyQuery {
+  listFollowRelationships(followeeId: "test_followee") {
+    items {
+      followeeId
+      followerId
+      timestamp
+    }
+  }
+}
+```
+
+## 5.2. Follow機能: Front-end
+### PostsBySpecifiedUser
+なぜ$ amplify pushしていないにも関わらず、schema.graphqlの変更が行われた後の挙動をGraphQL APIが行っているのでしょうか。 Amplify CLIでは、 $ amplify pushを実行すると、Amplify Framework(SDK)がリソースにアクセスするために必要なエンドポイント、IDといった情報をaws-exports.jsにexportします。 aws-exports.jsを使ってAmplifyの初期設定を行うと、リソース変更や追加をしても設定を書き換える必要がなくなり、非常に楽です。 そして$ amplify mockコマンドを使用してAmplify Mockingをしている間だけ、ローカルでたちあがったMock ServerのGraphQL Endpointを指すようにaws-exports.jsが書き換わります。
+
+## 5.3. Timeline機能: Back-end
+### Timeline APIの作成
+```
+// ./amplify/backend/api/BoyakiGql/schema.graphql
+type Timeline 
+	@model
+	@auth(rules: [
+      {allow: owner, ownerField: "userId", provider: userPools, operations:[read, create]},
+      {allow: private, provider: iam ,operations:[create]},
+	])
+	@key(fields: ["userId", "timestamp"])
+{
+	userId: ID!
+	timestamp: AWSTimestamp!
+	postId: ID!
+	post: Post @connection(fields: ["postId"])
+}
+```
+
+### GraphQL APIの認証方法にIAMを追加
+```
+amplify update api
+# Please select from one of the below mentioned services: GraphQL
+# Choose the default authorization type for the API Amazon Cognito User Pool
+# Do you want to configure advanced settings for the GraphQL API Yes, I want to make some additional changes.
+# Configure additional auth types? Yes
+# Choose the additional authorization types you want to configure for the API IAM
+# Configure conflict detection? No
+```
+
+### Amplify Mockingによる動作確認
+```
+amplify mock api
+```
+
+
+## 5.4. Timeline機能: @function
+### amplify add function
+```
+amplify add function
+# Provide a friendly name for your resource to be used as a label for this category in the project: createPostAndTimeline
+# Provide the AWS Lambda function name: createPostAndTimeline
+# Choose the function template that you want to use: Hello world function
+# Do you want to access other resources created in this project from your Lambda function? Yes
+# Select the category api
+# Select the operations you want to permit for BoyakiGql create, read
+# Do you want to edit the local lambda function now? No
+```
+
+### createPostAndTimeline Mutationの作成
+```
+type Mutation
+{
+  createPostAndTimeline(
+		content: String!
+	): Post
+    @function(name: "createPostAndTimeline-${env}")
+    @auth(rules: [
+      {allow: private, provider: userPools},
+    ])
+}
+```
+
+### 既存APIへのアクセス権の追加
+```
+cd ./amplify/backend/function/createPostAndTimeline/src
+npm install --save aws-appsync graphql-tag node-fetch
+cd ../../../../..
+```
+
+## 5.5. Timeline機能: Front-end
+```
+amplify publish
+```
