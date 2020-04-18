@@ -475,3 +475,41 @@ cd ../../../../..
 ```
 amplify publish
 ```
+
+# 7. 複数メンバーでの開発
+## 7.1. Staging 環境の構築
+```sh
+amplify env list
+
+amplify env add
+# Do you want to use an existing environment?: No
+# Enter a name for the environment: staging
+# Do you want to use an AWS profile?: Yes
+# Please choose the profile you want to use amplify-handson
+
+amplify env list
+
+amplify env checkout production
+amplify env list
+
+amplify env checkout staging
+amplify push
+```
+
+## 7.2. Githubと連携してCI/CD環境を構築する(2)
+### Amplify Console と Github アカウントを紐付ける
+```
+amplify env checkout production
+amplify status
+amplify remove hosting
+amplify push
+
+amplify env checkout staging
+amplify status
+amplify push
+
+amplify env checkout production
+amplify hosting add
+# ? Select the plugin module to execute (Use arrow keys) では、
+# > Hosting with Amplify Console (Managed hosting with custom domains, Continuous deployment)
+```
