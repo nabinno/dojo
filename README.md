@@ -10,7 +10,7 @@
 - [O'Reilly](https://www.oreilly.com/)
 - [Pluralsight](https://www.pluralsight.com/)
 - [DataCamp](https://www.datacamp.com/)
-- [Qwiklabs](https://amazon-run.qwiklabs.com)
+- [Qwiklabs](https://www.qwiklabs.com)
 - [Coursera](https://www.coursera.org/)
 - [AWS Amplify](https://aws.amazon.com/amplify/)
 - [AWS CDK](https://aws.amazon.com/cdk/)
