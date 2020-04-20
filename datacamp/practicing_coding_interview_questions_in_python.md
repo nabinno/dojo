@@ -233,12 +233,30 @@ print("primes = " + str(primes))
 
 ## Coprime number sequence
 ```python
+##
+def gcd(a, b):
+    # Define the while loop as described
+    while b != 0:
+        temp_a = a
+        a = b
+        b = temp_a % b  
+    # Complete the return statement
+    return a
 
-```
-
-## What is a zip object?
-```python
-
+##
+def gcd(a, b):
+    # Define the while loop as described
+    while b != 0:
+        temp_a = a
+        a = b
+        b = temp_a % b    
+    # Complete the return statement
+    return a
+    
+# Create a list of tuples defining pairs of coprime numbers
+coprimes = [(i, j) for i in list1 
+                   for j in list2 if gcd(i, j) == 1]
+print(coprimes)
 ```
 
 ## Combining iterable objects
