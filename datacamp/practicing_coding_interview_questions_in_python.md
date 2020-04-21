@@ -261,7 +261,21 @@ print(coprimes)
 
 ## Combining iterable objects
 ```python
+# Define a function searching for the longest word
+def get_longest_word(words):
+    longest_word = ''
+    for word in words:
+        if len(word) > len(longest_word):
+            longest_word = word
+    return longest_word
 
+# Create lists with the lengths and longest words
+lengths = [len(item) for item in wlist]
+words = [get_longest_word(item) for item in wlist]
+
+# Combine the resulting data into one iterable object
+for item in zip(wlist, lengths, words):
+    print(item)
 ```
 
 ## Extracting tuples
