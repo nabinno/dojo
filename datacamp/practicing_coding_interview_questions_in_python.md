@@ -280,17 +280,35 @@ for item in zip(wlist, lengths, words):
 
 ## Extracting tuples
 ```python
+# Create a list of tuples with lengths and longest words
+result = [
+    (len(item), get_longest_word(item)) for item in wlist
+]
 
+# Unzip the result    
+lengths, words = zip(*result)
+
+for item in zip(wlist, lengths, words):
+    print(item) 
 ```
 
 ## Creating a DataFrame
 ```python
+# Create a list of tuples with words and their lengths
+word_lengths = [
+    (item, len(item)) for items in wlist for item in items
+]
 
-```
+# Unwrap the word_lengths
+words, lengths = zip(*word_lengths)
 
-## What is a generator and how to create one?
-```python
+# Create a zip object
+col_names = ['word', 'length']
+result = zip(col_names, [words, lengths])
 
+# Convert the result to a dictionary and build a DataFrame
+data_frame = pd.DataFrame(dict(result))
+print(data_frame)
 ```
 
 ## Shift a string
