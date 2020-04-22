@@ -313,7 +313,18 @@ print(data_frame)
 
 ## Shift a string
 ```python
+def shift_string(string, shift):
+    len_string = len(string)
+    # Define a for loop with the yield statement
+    for idx in range(0, len_string):
+        yield string[(idx - shift) % len_string]
+       
+# Create a generator
+gen = shift_string('DataCamp', 5)
 
+# Create a new string using the generator and print it out
+string_shifted = ''.join(gen)
+print(string_shifted)
 ```
 
 ## Throw a dice
