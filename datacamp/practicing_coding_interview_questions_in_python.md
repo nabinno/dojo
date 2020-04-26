@@ -374,11 +374,6 @@ for item in zip(gen, func3(8, 10)):
 
 
 # 3. Functions and lambda expressions
-## How to pass a variable number of arguments to a function?
-```python
-
-```
-
 ## Positional arguments of variable size
 ```python
 
