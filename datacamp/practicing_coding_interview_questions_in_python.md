@@ -376,27 +376,77 @@ for item in zip(gen, func3(8, 10)):
 # 3. Functions and lambda expressions
 ## Positional arguments of variable size
 ```python
-
+# Define the function with an arbitrary number of arguments
+def sort_types(*args):
+    nums, strings = [], []   
+    for arg in args:
+        # Check if 'arg' is a number and add it to 'nums'
+        if isinstance(arg, (int, float)):
+            nums.append(arg)
+        # Check if 'arg' is a string and add it to 'strings'
+        elif isinstance(arg, str):
+            strings.append(arg)
+    
+    return (nums, strings)
+            
+print(sort_types(1.0, 'car', 'hat', 4, 5, 'tree', 0.0))
 ```
 
 ## Keyword arguments of variable size
 ```python
-
+# Define the function with an arbitrary number of arguments
+def key_types(**kwargs):
+    dict_type = dict()
+    # Iterate over key value pairs
+    for key, value in kwargs.items():
+        # Update a list associated with a key
+        if type(value) in dict_type:
+            dict_type[type(value)].append(key)
+        else:
+            dict_type[type(value)] = [key]
+            
+    return dict_type
+  
+res = key_types(a=1, b=2, c=(1, 2), d=3.1, e=4.2)
+print(res)
 ```
 
 ## Combining argument types
 ```python
+# Define the arguments passed to the function
+def sort_all_types(*args, **kwargs):
 
-```
-
-## What is a lambda expression?
-```python
-
+    # Find all the numbers and strings in the 1st argument
+    nums1, strings1 = sort_types(*args)
+    
+    # Find all the numbers and strings in the 2nd argument
+    nums2, strings2 = sort_types(*kwargs.values())
+    
+    return (nums1 + nums2, strings1 + strings2)
+  
+res = sort_all_types(
+	1, 2.0, 'dog', 5.1, num1 = 0.0, num2 = 5, str1 = 'cat'
+)
+print(res)
 ```
 
 ## Define lambda expressions
 ```python
+##
+# Take x and return x squared if x > 0 and 0, otherwise
+squared_no_negatives = lambda x: x**2 if x > 0 else 0
+print(squared_no_negatives(2.0))
+print(squared_no_negatives(-1))
 
+##
+# Take a list of integers nums and leave only even numbers
+get_even = lambda nums: [num for num in nums if num % 2 == 0]
+print(get_even([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+
+##
+# Take strings s1, s2 and list their common characters
+common_chars = lambda s1, s2: set(s1).intersection(set(s2))
+print(common_chars('pasta', 'pizza'))
 ```
 
 ## Converting functions to lambda expressions
