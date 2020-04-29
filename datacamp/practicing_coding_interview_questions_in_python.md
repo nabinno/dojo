@@ -472,12 +472,20 @@ print(str(func3(3, 4, 5)) + ', ' + str(lambda3(3, 4, 5)))
 
 ## Using a lambda expression as an argument
 ```python
+##
+# Sort words by the string length
+words.sort(key=lambda s: len(s))
+print(words) 
 
-```
+##
+# Sort words by the last character in a string
+words.sort(key=lambda s: s[-1])
+print(words)
 
-## What are the functions map(), filter(), reduce()?
-```python
-
+##
+# Sort words by the total amount of certain characters
+words.sort(key=lambda s: s.count('a') + s.count('b') + s.count('c'))
+print(words)
 ```
 
 ## The map() function
