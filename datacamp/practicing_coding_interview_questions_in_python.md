@@ -550,19 +550,40 @@ num = reduce(lambda x, y: 10*x + y, nums)
 print(str(nums) + ' is converted to ' + str(num))
 ```
 
-## Calculate the number of function calls
-```python
-
-```
-
 ## Calculate an average value
 ```python
+# Calculate an average value of the sequence of numbers
+def average(nums):
+  
+    # Base case
+    if len(nums) == 1:
+        return nums[0]
+    
+    # Recursive call
+    n = len(nums)
+    return (nums[0] + (n - 1) * average(nums[1:])) / n
 
+# Testing the function
+print(average([1, 2, 3, 4, 5]))
 ```
 
 ## Approximate Pi with recursion
 ```python
+# Write an expression to get the k-th element of the series 
+get_elmnt = lambda k: ((-1)**k)/(2*k+1)
 
+def calc_pi(n):
+    curr_elmnt = get_elmnt(n)
+    
+    # Define the base case 
+    if n == 0:
+    	return 4
+      
+    # Make the recursive call
+    return 4 * curr_elmnt + calc_pi(n-1)
+  
+# Compare the approximated Pi value to the theoretical one
+print("approx = {}, theor = {}".format(calc_pi(500), math.pi))
 ```
 
 
