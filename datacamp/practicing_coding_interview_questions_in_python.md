@@ -588,49 +588,100 @@ print("approx = {}, theor = {}".format(calc_pi(500), math.pi))
 
 
 # 4. Python for scientific computing
-## What is the difference between a NumPy array and a list?
-```python
-
-```
-
 ## Incorrect array initialization
 ```python
+spiral = []
 
-```
-
-## Accessing subarrays
-```python
-
+for i in range(0, size):
+    # Convert each part marked by a red arrow to a list
+    spiral += list(square[i, i:size-i])
+    # Convert each part marked by a green arrow to a list
+    spiral += list(square[i+1:size-i, size-i-1])
+    # Convert each part marked by a blue arrow to a list
+    spiral += list(reversed(square[size-i-1, i:size-i-1]))
+    # Convert each part marked by a magenta arrow to a list
+    spiral += list(reversed(square[i+1:size-i-1, i]))
+        
+print(spiral)
 ```
 
 ## Operations with NumPy arrays
 ```python
+##
+# Substitute the code in the block 1 given the input_array1
+output_array1 = list(map(lambda x: [5*i for i in x], input_array1))
+print(list(map(lambda x: [5*i for i in x], input_list1)))
+print(output_array1)
 
-```
+##
+# Substitute the code in the block 2 given the input_array2
+output_array2 = list(filter(lambda x: x % 2 == 0, input_array2))
+print(list(filter(lambda x: x % 2 == 0, input_list2)))
+print(output_array2)
 
-## How to use the .apply() method on a DataFrame?
-```python
-
+##
+# Substitute the code in the block 3 given the input_array3
+output_array3 = [[i*i for i in j] for j in input_array3]
+print([[i*i for i in j] for j in input_list3])
+print(output_array3)
 ```
 
 ## Simple use of .apply()
 ```python
+def prevalence(series):
+    vals = list(series)
+    # Create a tuple list with unique items and their counts
+    itms = [(x, vals.count(x)) for x in set(series)]
+    # Extract a tuple with the highest counts using reduce()
+    res = reduce(lambda x, y: x if x[1] > y[1] else y, itms)
+    # Return the item with the highest counts
+    return res[0]
 
+# Apply the prevalence function on the scores DataFrame
+result = scores[groups_to_consider].apply(prevalence)
+print(result)
 ```
 
 ## Additional arguments
 ```python
+def rank(series):
+    # Calculate the mean of the input series
+    mean = np.mean(series)
+    # Return the mean and its rank as a list
+    if mean > 90:
+        return [mean, 'high']
+    if mean > 60:
+        return [mean, 'medium']
+    return [mean, 'low']
 
+# Insert the output of rank() into new columns of scores
+cols = ['math score', 'reading score', 'writing score']
+scores[['mean', 'rank']] = scores[cols].apply(rank, axis=1,
+                                              result_type='expand')
+print(scores[['mean', 'rank']].head())
 ```
 
 ## Functions with additional arguments
 ```python
+##
+def rescale(series, low, high):
+   # Define the expression to rescale input series
+   return series * (high - low)/100 + low
 
-```
+# Rescale the data in cols to lie between 1 and 10
+cols = ['math score', 'reading score', 'writing score'] 
+scores[cols] = scores[cols].apply(rescale, args=[1, 10])
+print(scores[cols].head())
 
-## How to use the .groupby() method on a DataFrame?
-```python
+##
+# Redefine the function to accept keyword arguments
+def rescale(series, low=0, high=100):
+   return series * (high - low)/100 + low
 
+# Rescale the data in cols to lie between 1 and 10
+cols = ['math score', 'reading score', 'writing score']
+scores[cols] = scores[cols].apply(rescale, low=1, high=10)
+print(scores[cols].head())
 ```
 
 ## Standard DataFrame methods
