@@ -490,22 +490,64 @@ print(words)
 
 ## The map() function
 ```python
+def my_zip(*args):
+    
+    # Retrieve Iterable lengths and find the minimal length
+    lengths = list(map(len, args))
+    min_length = min(lengths)
 
+    tuple_list = []
+    for i in range(0, min_length):
+        # Append new items to the 'tuple_list'
+        tuple_list.append(tuple(map(lambda x: x[i], args)))
+
+    return tuple_list
+
+result = my_zip([1, 2, 3], ['a', 'b', 'c', 'd'], 'DataCamp')
+print(result)
 ```
 
 ## The filter() function
 ```python
+##
+# Exclude all the numbers from nums divisible by 3 or 5
+print(nums)
+fnums = filter(lambda x: x % 3 != 0 and x % 5 != 0, nums)
+print(list(fnums))
 
+##
+# Return the string without its vowels
+print(string)
+vowels = 'AEIOUaeiou'
+fstring = filter(lambda x: x not in vowels, string)
+print(''.join(fstring))
+
+##
+# Filter all the spells in spells with more than two 'a's
+print(spells)
+fspells = filter(lambda x: x.count('a') > 2, spells)
+print(list(fspells))
 ```
 
 ## The reduce() function
 ```python
+##
+# Reverse a string using reduce()
+string = 'DataCamp'
+inv_string = reduce(lambda x, y: y + x, string)
+print('Inverted string = ' + inv_string) 
 
-```
+##
+# Find common items shared among all the sets in sets
+sets = [{1, 4, 8, 9}, {2, 4, 6, 9, 10, 8}, {9, 0, 1, 2, 4}]
+common_items = reduce(lambda x, y: x.intersection(y), sets)
+print('common items = ' + str(common_items))
 
-## What is recursion?
-```python
-
+##
+# Convert a number sequence into a single number
+nums = [5, 6, 0, 1]
+num = reduce(lambda x, y: 10*x + y, nums)
+print(str(nums) + ' is converted to ' + str(num))
 ```
 
 ## Calculate the number of function calls
