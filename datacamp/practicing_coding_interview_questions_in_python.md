@@ -498,9 +498,11 @@ def my_zip(*args):
 
     tuple_list = []
     for i in range(0, min_length):
-        # Append new items to the 'tuple_list'
-        tuple_list.append(tuple(map(lambda x: x[i], args)))
-
+        # Map the elements in args with the same index i
+        mapping = map(lambda x: x[i], args)
+        # Convert the mapping and append it to tuple_list
+        tuple_list.append(tuple(mapping))
+        
     return tuple_list
 
 result = my_zip([1, 2, 3], ['a', 'b', 'c', 'd'], 'DataCamp')
@@ -720,30 +722,65 @@ print(result)
 
 ## NaN value imputation
 ```python
+# Define a lambda function that imputes NaN values in series
+impute = lambda series: series.fillna(np.mean(series))
 
-```
+# Impute NaNs in the bmi column of imp_globmean
+imp_globmean['bmi'] = imp_globmean['bmi'].transform(impute)
+print("Global mean = " + str(fheroes['bmi'].mean()) + "\n")
 
-## How to visualize data in Python?
-```python
+groups = imp_grpmean.groupby(['Publisher', 'Alignment'])
 
-```
-
-## Explore feature relationships
-```python
-
+# Impute NaNs in the bmi column of imp_grpmean
+imp_grpmean['bmi'] = groups['bmi'].transform(impute)
+print(groups['bmi'].mean())
 ```
 
 ## Plot a histogram
 ```python
+##
+# Plot a simple histogram of the plasma retinol feature
+plt.hist(retinol['plasma retinol'])
+plt.show()
 
+##
+# Redefine the histogram to have 20 bins
+plt.hist(retinol['plasma retinol'], bins=20)
+plt.show()
+
+##
+plt.hist(retinol['plasma retinol'], bins=20)
+
+# Add a title to the plot
+plt.title('plasm retinol')
+plt.show()
+
+##
+plt.hist(retinol['plasma retinol'], bins=20)
+plt.title('Histogram of Plasma Retinol')
+
+# Add other missing parts to the plot
+plt.xlabel('Plasma Retinol')
+plt.ylabel('Counts')
+plt.show()
 ```
 
 ## Creating boxplots
 ```python
+##
+import seaborn as sns
 
-```
+# Create a boxplot of BMI indices for 'good' and 'bad' sides
+sns.boxplot(x='Alignment', y='bmi', data=heroes)
+plt.show()
 
-## Final thoughts
-```python
+##
+import seaborn as sns
 
+# Select rows from 'heroes' for which the BMI index < 1000
+heroes_filtered = heroes[heroes['bmi'] < 1000]
+
+# Create a new boxplot of BMI indices
+sns.boxplot(x='Alignment', y='bmi', data=heroes_filtered)
+plt.show()
 ```
