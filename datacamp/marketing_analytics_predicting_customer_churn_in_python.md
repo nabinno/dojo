@@ -5,24 +5,9 @@ url: https://campus.datacamp.com/courses/marketing-analytics-predicting-customer
 ---
 
 # 1. Exploratory Data Analysis
-## Welcome to the course
-```python
-
-```
-
-## Defining customer churn
-```python
-
-```
-
 ## Exploring customer churn
 ```python
-
-```
-
-## Grouping and summarizing data
-```python
-
+telco['Churn].value_counts()
 ```
 
 ## Summary statistics for both classes
