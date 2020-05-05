@@ -30,7 +30,49 @@ print(telco.groupby('State')['Churn'].value_counts())
 
 ## Exploring your data using visualizations
 ```python
+##
+# Import matplotlib and seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+# Visualize the distribution of 'Eve_Mins'
+sns.distplot(telco['Day_Mins'])
+
+# Display the plot
+plt.show()
+
+##
+# Import matplotlib and seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Visualize the distribution of 'Eve_Mins'
+sns.distplot(telco['Eve_Mins'])
+
+# Display the plot
+plt.show()
+
+##
+# Import matplotlib and seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Visualize the distribution of 'Night_Mins'
+sns.distplot(telco['Night_Mins'])
+
+# Display the plot
+plt.show()
+
+##
+# Import matplotlib and seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Visualize the distribution of 'Intl_Mins'
+sns.distplot(telco['Intl_Mins'])
+
+# Display the plot
+plt.show()
 ```
 
 ## Exploring feature distributions
