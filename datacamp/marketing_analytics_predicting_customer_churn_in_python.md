@@ -77,14 +77,63 @@ plt.show()
 
 ## Exploring feature distributions
 ```python
+##
+# Import matplotlib and seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+# Create the box plot
+sns.boxplot(x = 'Churn',
+            y = 'CustServ_Calls',
+            data = telco)
+
+# Display the plot
+plt.show()
+
+##
+# Import matplotlib and seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Create the box plot
+sns.boxplot(x = 'Churn',
+            y = 'CustServ_Calls',
+            data = telco,
+            sym = "")
+
+# Display the plot
+plt.show()
+
+##
+# Import matplotlib and seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Add "Vmail_Plan" as a third variable
+sns.boxplot(x = 'Churn',
+            y = 'CustServ_Calls',
+            data = telco,
+            sym = "",
+            hue = "Vmail_Plan")
+
+# Display the plot
+plt.show()
+
+##
+# Import matplotlib and seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Add "Intl_Plan" as a third variable
+sns.boxplot(x = 'Churn',
+            y = 'CustServ_Calls',
+            data = telco,
+            sym = "",
+            hue = "Intl_Plan")
+
+# Display the plot
+plt.show()
 ```
-
-## Customer service calls and churn
-```python
-
-```
-
 
 # 2. Preprocessing for Churn Modeling
 ## Data preprocessing
