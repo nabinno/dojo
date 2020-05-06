@@ -299,7 +299,41 @@ print(confusion_matrix(y_test, y_pred))
 
 ## Computing precision and recall
 ```python
+# Import train_test_split
+from sklearn.model_selection import train_test_split
 
+# Create feature variable
+X = telco.drop('Churn', axis=1)
+
+# Create target variable
+y = telco['Churn']
+
+# Create training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.1)
+
+# Import RandomForestClassifier
+from sklearn.ensemble import RandomForestClassifier
+
+# Instantiate the classifier
+clf = RandomForestClassifier()
+
+# Fit to the training data
+clf.fit(X_train, y_train)
+
+# Predict the labels of the test set
+y_pred = clf.predict(X_test)
+
+# Import precision_score
+from sklearn.metrics import precision_score
+
+# Print the precision
+print(precision_score(y_test, y_pred))
+
+# Import recall_score
+from sklearn.metrics import recall_score
+
+# Print the recall
+print(recall_score(y_test, y_pred))
 ```
 
 ## Other model metrics
