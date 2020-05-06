@@ -197,7 +197,17 @@ print(telco['Avg_Night_Calls'].head())
 # 3. Churn Prediction
 ## Predicting whether a new customer will churn
 ```python
+# Import LogisticRegression
+from sklearn.linear_model import LogisticRegression
 
+# Instantiate the classifier
+clf = LogisticRegression()
+
+# Fit the classifier
+clf.fit(telco[features], telco['Churn'])
+
+# Predict the label of new_customer
+print(clf.predict(new_customer))
 ```
 
 ## Training another scikit-learn model
