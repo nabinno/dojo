@@ -18,6 +18,7 @@
 - [AWS IAM](https://aws.amazon.com/iam/)
 - [AWS WAF](https://aws.amazon.com/waf/)
 - [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/)
+- [Amazon QuickSight](https://aws.amazon.com/quicksight/)
 - [Microsoft Learn](https://docs.microsoft.com/learn/)
 
 ---
