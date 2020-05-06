@@ -212,42 +212,89 @@ print(clf.predict(new_customer))
 
 ## Training another scikit-learn model
 ```python
+# Import DecisionTreeClassifier
+from sklearn.tree import DecisionTreeClassifier
 
-```
+# Instantiate the classifier
+clf = DecisionTreeClassifier()
 
-## Evaluating Model Performance
-```python
+# Fit the classifier
+clf.fit(telco[features], telco['Churn'])
 
+# Predict the label of new_customer
+print(clf.predict(new_customer))
 ```
 
 ## Creating training and test sets
 ```python
+# Import train_test_split
+from sklearn.model_selection import train_test_split
 
+# Create feature variable
+X = telco.drop('Churn', axis=1)
+
+# Create target variable
+y = telco['Churn']
+
+# Create training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
 ```
 
 ## Check each sets length
 ```python
+# Import RandomForestClassifier
+from sklearn.ensemble import RandomForestClassifier
 
-```
+# Instantiate the classifier
+clf = RandomForestClassifier()
 
-## Computing accuracy
-```python
+# Fit to the training data
+clf.fit(X_train, y_train)
 
-```
-
-## Model Metrics
-```python
-
+# Compute accuracy
+print(clf.score(X_test, y_test))
 ```
 
 ## Confusion matrix
 ```python
+# Import confusion_matrix
+from sklearn.metrics import confusion_matrix
 
+# Print the confusion matrix
+print(confusion_matrix(y_test, y_pred))
 ```
 
 ## Varying training set size
 ```python
+# Import train_test_split
+from sklearn.model_selection import train_test_split
 
+# Create feature variable
+X = telco.drop('Churn', axis=1)
+
+# Create target variable
+y = telco['Churn']
+
+# Create training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+
+# Import RandomForestClassifier
+from sklearn.ensemble import RandomForestClassifier
+
+# Instantiate the classifier
+clf = RandomForestClassifier()
+
+# Fit to the training data
+clf.fit(X_train, y_train)
+
+# Predict the labels of the test set
+y_pred = clf.predict(X_test)
+
+# Import confusion_matrix
+from sklearn.metrics import confusion_matrix
+
+# Print confusion matrix
+print(confusion_matrix(y_test, y_pred))
 ```
 
 ## Computing precision and recall

@@ -111,3 +111,14 @@ url: -
 3. Choose S3 bucketsにて作成したバケット「innovate2020-ssm-inventory」を選択
 4. 完了
 
+## QuickSightでチャートをつくる
+1. データセットを選択
+2. Athenaを選択
+3. データソース名「ssm-inventory」に設定
+4. データベース「innovate2020-ssm-inventory-us-east-1-database」を選択
+5. テーブル「aws-application」を選択
+6. データクエリを直接実行を選択
+7. Visualize
+
+# References
+- https://pages.awscloud.com/rs/112-TZM-766/images/%5BH-2%5DAWSInnovate_Online_Conference_2020_Spring_handson%28SSMInventory-QuickSight%29_ans.pdf
