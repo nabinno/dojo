@@ -1,6 +1,6 @@
 ---
 title: システム管理で使えるデータ分析ハンズオン：システム構成情報の収集と可視化
-tags: amazon-quicksight, aws-systems-manager, 
+tags: amazon-quicksight, aws-systems-manager
 url: -
 ---
 

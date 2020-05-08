@@ -71,3 +71,6 @@ url: -
     - ECSServiceAverageCPUUtilization
     - ECSServiceAverageMemoryUtilization
     - ALBRequestCountPerTarget
+
+# Reference
+- https://pages.awscloud.com/rs/112-TZM-766/images/%5BS-12%5DAWSInnovate_Online_Conference_2020_Spring_Container_Operation_ans.pdf

@@ -336,14 +336,25 @@ from sklearn.metrics import recall_score
 print(recall_score(y_test, y_pred))
 ```
 
-## Other model metrics
-```python
-
-```
-
 ## ROC curve
 ```python
+# Generate the probabilities
+y_pred_prob = clf.predict_proba(X_test)[:, 1]
 
+# Import roc_curve
+from sklearn.metrics import roc_curve
+
+# Calculate the roc metrics
+fpr, tpr, thresholds = roc_curve(y_test, y_pred_prob)
+
+# Plot the ROC curve
+plt.plot(fpr, tpr)
+
+# Add labels and diagonal line
+plt.xlabel("False Positive Rate")
+plt.ylabel("True Positive Rate")
+plt.plot([0, 1], [0, 1], "k--")
+plt.show()
 ```
 
 ## Area under the curve
