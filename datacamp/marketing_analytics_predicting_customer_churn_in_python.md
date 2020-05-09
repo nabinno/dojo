@@ -359,19 +359,30 @@ plt.show()
 
 ## Area under the curve
 ```python
+# Import roc_auc_score
+from sklearn.metrics import roc_auc_score
 
-```
-
-## Precision-recall curve
-```python
-
+# Print the AUC
+print(roc_auc_score(y_test, y_pred_prob))
 ```
 
 ## F1 score
 ```python
+# Instantiate the classifier
+clf = RandomForestClassifier()
 
+# Fit to the training data
+clf.fit(X_train, y_train)
+
+# Predict the labels of the test set
+y_pred = clf.predict(X_test)
+
+# Import f1_score
+from sklearn.metrics import f1_score
+
+# Print the F1 score
+print(f1_score(y_test, y_pred))
 ```
-
 
 # 4. Model Tuning
 ## Tuning your model
