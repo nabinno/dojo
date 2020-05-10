@@ -385,19 +385,40 @@ print(f1_score(y_test, y_pred))
 ```
 
 # 4. Model Tuning
-## Tuning your model
-```python
-
-```
-
 ## Tuning the number of features
 ```python
+# Import GridSearchCV
+from sklearn.model_selection import GridSearchCV
 
+# Create the hyperparameter grid
+param_grid = {'max_features': ['auto', 'sqrt', 'log2']}
+
+# Call GridSearchCV
+grid_search = GridSearchCV(clf, param_grid)
+
+# Fit the model
+grid_search.fit(X, y)
+
+# Print the optimal parameters
+print(grid_search.best_params_)
 ```
 
 ## Tuning other hyperparameters
 ```python
+# Import GridSearchCV
+from sklearn.model_selection import GridSearchCV
 
+# Create the hyperparameter grid
+param_grid = {"max_depth": [3, None],
+              "max_features": [1, 3, 10],
+              "bootstrap": [True, False],
+              "criterion": ["gini", "entropy"]}
+
+# Call GridSearchCV
+grid_search = GridSearchCV(clf, param_grid)
+
+# Fit the model
+grid_search.fit(X, y)
 ```
 
 ## Randomized search
