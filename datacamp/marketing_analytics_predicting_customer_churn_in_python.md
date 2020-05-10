@@ -423,12 +423,23 @@ grid_search.fit(X, y)
 
 ## Randomized search
 ```python
+# Import RandomizedSearchCV
+from sklearn.model_selection import RandomizedSearchCV
 
-```
+# Create the hyperparameter grid
+param_dist = {"max_depth": [3, None],
+              "max_features": randint(1, 11),
+              "bootstrap": [True, False],
+              "criterion": ["gini", "entropy"]}
 
-## Feature importances
-```python
+# Call RandomizedSearchCV
+random_search = RandomizedSearchCV(clf, param_dist)
 
+# Fit the model
+random_search.fit(X, y)
+
+# Print best parameters
+print(random_search.best_params_)
 ```
 
 ## Visualizing feature importances
