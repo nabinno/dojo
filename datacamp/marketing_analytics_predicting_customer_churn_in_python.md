@@ -444,7 +444,12 @@ print(random_search.best_params_)
 
 ## Visualizing feature importances
 ```python
+# Calculate feature importances
+importances = clf.feature_importances_
 
+# Create plot
+plt.barh(range(X.shape[1]), importances)
+plt.show()
 ```
 
 ## Improving the plot
