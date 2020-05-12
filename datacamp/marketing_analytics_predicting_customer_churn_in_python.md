@@ -454,32 +454,53 @@ plt.show()
 
 ## Improving the plot
 ```python
+# Sort importances
+sorted_index = np.argsort(importances)
 
-```
+# Create labels
+labels = X.columns[sorted_index]
 
-## Interpreting feature importances
-```python
+# Clear current plot
+plt.clf()
 
-```
-
-## Adding new features
-```python
-
+# Create plot
+plt.barh(range(X.shape[1]), importances[sorted_index], tick_label=labels)
+plt.show()
 ```
 
 ## Does model performance improve?
 ```python
+# Import necessary modules
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
 
+# Create training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3)
+
+# Instantiate the classifier
+clf = RandomForestClassifier()
+
+# Fit to the data
+clf.fit(X_train, y_train)
+
+# Print the accuracy
+print(clf.score(X_test, y_test))
 ```
 
 ## Computing other metrics
 ```python
+# Import f1_score
+from sklearn.metrics import f1_score
 
+# Instantiate the classifier
+clf = RandomForestClassifier()
+
+# Fit to the data
+clf.fit(X_train, y_train)
+
+# Predict the labels of the test set
+y_pred = clf.predict(X_test)
+
+# Print the F1 score
+print(f1_score(y_test, y_pred))
 ```
-
-## Final thoughts
-```python
-
-```
-
-
