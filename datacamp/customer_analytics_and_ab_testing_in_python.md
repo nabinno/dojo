@@ -5,29 +5,22 @@ url: https://campus.datacamp.com/courses/customer-analytics-and-ab-testing-in-py
 ---
 
 # 1. Key Performance Indicators: Measuring Business Success
-## Course introduction and overview
-```python
-
-```
-
-## Understanding the key components of an A/B test
-```python
-
-```
-
-## Defining meaningful KPIs
-```python
-
-```
-
-## Identifying and understanding KPIs
-```python
-
-```
-
 ## Loading & examining our data
 ```python
+# Import pandas 
+import pandas as pd
 
+# Load the customer_data
+customer_data = pd.read_csv('customer_data.csv')
+
+# Load the app_purchases
+app_purchases = pd.read_csv('inapp_purchases.csv')
+
+# Print the columns of customer data
+print(customer_data.columns)
+
+# Print the columns of app_purchases
+print(app_purchases.columns)
 ```
 
 ## Merging on different sets of fields
