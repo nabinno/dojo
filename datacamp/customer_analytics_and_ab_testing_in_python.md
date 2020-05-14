@@ -25,12 +25,12 @@ print(app_purchases.columns)
 
 ## Merging on different sets of fields
 ```python
+# Merge on the 'uid' and 'date' field
+uid_date_combined_data = app_purchases.merge(customer_data, on=['uid', 'date'], how='inner')
 
-```
-
-## Exploratory analysis of KPIs
-```python
-
+# Examine the results 
+print(uid_date_combined_data.head())
+print(len(uid_date_combined_data))
 ```
 
 ## Practicing aggregations
