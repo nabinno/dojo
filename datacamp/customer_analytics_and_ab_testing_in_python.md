@@ -35,7 +35,11 @@ print(len(uid_date_combined_data))
 
 ## Practicing aggregations
 ```python
+# Calculate the mean and median of price and age
+purchase_summary = purchase_data.agg({'price': ['mean', 'median'], 'age': ['mean', 'median']})
 
+# Examine the output 
+print(purchase_summary)
 ```
 
 ## Grouping & aggregating
