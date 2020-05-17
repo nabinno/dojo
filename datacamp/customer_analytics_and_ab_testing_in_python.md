@@ -56,22 +56,48 @@ print(purchase_summary)
 
 ## Calculating KPIs
 ```python
+# Compute max_purchase_date
+max_purchase_date = current_date - timedelta(days=28)
 
+# Filter to only include users who registered before our max date
+purchase_data_filt = purchase_data[purchase_data.reg_date < max_purchase_date]
+
+# Filter to contain only purchases within the first 28 days of registration
+purchase_data_filt = purchase_data_filt[(purchase_data_filt.date <= 
+                        purchase_data_filt.reg_date + timedelta(days=28))]
+
+# Output the mean price paid per purchase
+print(purchase_data_filt.price.mean())
 ```
 
 ## Average purchase price by cohort
 ```python
+# Set the max registration date to be one month before today
+max_reg_date = current_date - timedelta(days=28)
 
+# Find the month 1 values
+month1 = np.where((purchase_data.reg_date < max_reg_date) &
+                 (purchase_data.date < purchase_data.reg_date + timedelta(days=28)),
+                  purchase_data.price, 
+                  np.NaN)
+                 
+# Update the value in the DataFrame
+purchase_data['month1'] = month1
+
+# Group the data by gender and device 
+purchase_data_upd = purchase_data.groupby(by=['gender', 'device'], as_index=False) 
+
+# Aggregate the month1 and price data 
+purchase_summary = purchase_data_upd.agg(
+                        {'month1': ['mean', 'median'],
+                        'price': ['mean', 'median']})
+
+# Examine the results 
+print(purchase_summary)
 ```
-
 
 
 # 2. Exploring and Visualizing Customer Behavior
-## Working with time series data in pandas
-```python
-
-```
-
 ## Parsing dates
 ```python
 
