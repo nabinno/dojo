@@ -100,12 +100,25 @@ print(purchase_summary)
 # 2. Exploring and Visualizing Customer Behavior
 ## Parsing dates
 ```python
+##
+# Provide the correct format for the date
+date_data_one = pd.to_datetime(date_data_one, format='%A %B %d, %Y')
+print(date_data_one)
 
-```
+##
+# Provide the correct format for the date
+date_data_two = pd.to_datetime(date_data_two, format='%Y-%m-%d')
+print(date_data_two)
 
-## Creating time series graphs with matplotlib
-```python
+##
+# Provide the correct format for the date
+date_data_three = pd.to_datetime(date_data_three, format='%m/%d/%Y')
+print(date_data_three)
 
+##
+# Provide the correct format for the date
+date_data_four = pd.to_datetime(date_data_four, format='%Y %B %d %H:%M')
+print(date_data_four)
 ```
 
 ## Plotting time series data
