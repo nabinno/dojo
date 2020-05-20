@@ -155,22 +155,31 @@ print(device_pivot.head())
 
 ## Examining the different cohorts
 ```python
+##
+# Plot the average first week purchases for each country by registration date
+country_pivot.plot(x='reg_date', y=['USA', 'CAN', 'FRA', 'BRA', 'TUR', 'DEU'])
+plt.show()
 
-```
-
-## Understanding and visualizing trends
-```python
-
-```
-
-## Seasonality and moving averages
-```python
-
+##
+# Plot the average first week purchases for each device by registration date
+device_pivot.plot(x='reg_date', y=['and', 'iOS'])
+plt.show()
 ```
 
 ## Exponential rolling average & over/under smoothing
 ```python
+# Compute 7_day_rev
+daily_revenue['7_day_rev'] = daily_revenue.revenue.rolling(window=7,center=False).mean()
 
+# Compute 28_day_rev
+daily_revenue['28_day_rev'] = daily_revenue.revenue.rolling(window=28,center=False).mean()
+    
+# Compute 365_day_rev
+daily_revenue['365_day_rev'] = daily_revenue.revenue.rolling(window=365,center=False).mean()
+    
+# Plot date, and revenue, along with the 3 rolling functions (in order)    
+daily_revenue.plot(x='date', y=['revenue', '7_day_rev', '28_day_rev', '365_day_rev', ])
+plt.show()
 ```
 
 ## Events and releases
