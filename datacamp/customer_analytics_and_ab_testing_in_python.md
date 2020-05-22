@@ -166,7 +166,7 @@ device_pivot.plot(x='reg_date', y=['and', 'iOS'])
 plt.show()
 ```
 
-## Exponential rolling average & over/under smoothing
+## Seasonality and moving averages
 ```python
 # Compute 7_day_rev
 daily_revenue['7_day_rev'] = daily_revenue.revenue.rolling(window=7,center=False).mean()
@@ -182,9 +182,21 @@ daily_revenue.plot(x='date', y=['revenue', '7_day_rev', '28_day_rev', '365_day_r
 plt.show()
 ```
 
-## Events and releases
+## Exponential rolling average & over/under smoothing
 ```python
+# Calculate 'small_scale'
+daily_revenue['small_scale'] = daily_revenue.revenue.ewm(span=10).mean()
 
+# Calculate 'medium_scale'
+daily_revenue['medium_scale'] = daily_revenue.revenue.ewm(span=100).mean()
+
+# Calculate 'large_scale'
+daily_revenue['large_scale'] = daily_revenue.revenue.ewm(span=500).mean()
+
+# Plot 'date' on the x-axis and, our three averages and 'revenue'
+# on the y-axis
+daily_revenue.plot(x = 'date', y =['revenue', 'small_scale', 'medium_scale', 'large_scale'])
+plt.show()
 ```
 
 ## Visualizing user spending
