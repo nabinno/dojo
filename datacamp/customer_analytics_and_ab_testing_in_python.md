@@ -212,26 +212,6 @@ plt.show()
 
 
 # 3. The Design and Application of A/B Testing
-## Good applications of A/B testing
-```python
-
-```
-
-## General properties of an A/B Test
-```python
-
-```
-
-## A/B test generalizability
-```python
-
-```
-
-## Initial A/B test design
-```python
-
-```
-
 ## Experimental units: Revenue per user day
 ```python
 
