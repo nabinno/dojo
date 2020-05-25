@@ -316,22 +316,37 @@ print(se)
 
 ## Exploring the power calculation
 ```python
+# Look at the impact of sample size increase on power
+n_param_one = get_power(n=1000, p1=p1, p2=p2, cl=cl)
+n_param_two = get_power(n=2000, p1=p1, p2=p2, cl=cl)
 
+# Look at the impact of confidence level increase on power
+alpha_param_one = get_power(n=n1, p1=p1, p2=p2, cl=0.8)
+alpha_param_two = get_power(n=n1, p1=p1, p2=p2, cl=0.95)
+    
+# Compare the ratios
+print(n_param_two / n_param_one)
+print(alpha_param_one / alpha_param_two)
 ```
 
 ## Calculating the sample size
 ```python
+# Merge the demographics and purchase data to only include paywall views
+purchase_data = demographics_data.merge(paywall_views, how='inner', on=['uid'])
+                            
+# Find the conversion rate
+conversion_rate = (sum(purchase_data.purchase) / purchase_data.purchase.count())
 
+# Desired Power: 0.95
+# CL 0.90
+# Percent Lift: 0.1
+p2 = conversion_rate * (1 + 0.1)
+sample_size = get_sample_size(0.95, conversion_rate, p2, 0.9)
+print(sample_size)
 ```
-
 
 
 # 4. Analyzing A/B Testing Results
-## Analyzing the A/B test results
-```python
-
-```
-
 ## Confirming our test results
 ```python
 
