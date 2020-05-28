@@ -374,7 +374,20 @@ print(results)
 
 ## Intuition behind statistical significance
 ```python
+##
+# Get the p-value
+p_value = get_pvalue(con_conv=0.1, test_conv=0.17, con_size=1000, test_size=1000)
+print(p_value)
 
+##
+# Get the p-value
+p_value = get_pvalue(con_conv=0.1, test_conv=0.15, con_size=100, test_size=100)
+print(p_value)
+
+##
+# Get the p-value
+p_value = get_pvalue(con_conv=0.48, test_conv=0.50, con_size=1000, test_size=1000)
+print(p_value)
 ```
 
 ## Checking for statistical significance
