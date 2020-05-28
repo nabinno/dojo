@@ -372,16 +372,6 @@ results = results / unique_users * 100
 print(results)
 ```
 
-## Thinking critically about p-values
-```python
-
-```
-
-## Understanding statistical significance
-```python
-
-```
-
 ## Intuition behind statistical significance
 ```python
 
