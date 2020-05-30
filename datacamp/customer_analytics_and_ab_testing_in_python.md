@@ -423,26 +423,49 @@ print(confidence_interval)
 
 ## Calculating confidence intervals
 ```python
+# Calculate the mean of our lift distribution 
+lift_mean = test_conv - cont_conv
 
-```
+# Calculate variance and standard deviation 
+lift_variance = (1 - test_conv) * test_conv /test_size + (1 - cont_conv) * cont_conv / cont_size
+lift_sd = lift_variance**0.5
 
-## Interpreting your test results
-```python
-
+# Find the confidence intervals with cl = 0.95
+confidence_interval = get_ci(lift_mean, 0.95, lift_sd)
+print(confidence_interval)
 ```
 
 ## Plotting the distribution
 ```python
+# Compute the standard deviations
+control_sd = cont_var**0.5
+test_sd = test_var**0.5
 
+# Create the range of x values 
+control_line = np.linspace( cont_conv - 3 * control_sd, cont_conv + 3 * control_sd, 100)
+test_line = np.linspace( test_conv - 3 * test_sd,  test_conv + 3 * test_sd, 100)
+
+# Plot the distribution 
+plt.plot(control_line, mlab.normpdf(control_line, cont_conv, control_sd))
+plt.plot(test_line, mlab.normpdf(test_line, test_conv, test_sd))
+plt.show()
 ```
 
 ## Plotting the difference distribution
 ```python
+# Find the lift statistics
+lift_mean = test_conv - cont_conv
+lift_sd = (test_var + cont_var) ** 0.5
 
+# Generate the range of x-values
+lift_line = np.linspace(lift_mean - 3 * lift_sd, lift_mean + 3 * lift_sd, 100)
+
+# Plot the distribution 
+plt.plot(lift_line, mlab.normpdf(lift_line, lift_mean, lift_sd))
+
+# Add the annotation lines
+plt.axvline(x = lift_mean, color = 'green')
+plt.axvline(x = lwr_ci, color = 'red')
+plt.axvline(x = upr_ci, color = 'red')
+plt.show()
 ```
-
-## Finale
-```python
-
-```
-
