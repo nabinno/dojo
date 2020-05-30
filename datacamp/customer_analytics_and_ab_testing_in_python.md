@@ -405,7 +405,20 @@ else:
 
 ## Understanding confidence intervals
 ```python
+##
+# Compute and print the confidence interval
+confidence_interval  = get_ci(1, 0.975, 0.5)
+print(confidence_interval)
 
+##
+# Compute and print the confidence interval
+confidence_interval  = get_ci(1, 0.95, 2)
+print(confidence_interval)
+
+##
+# Compute and print the confidence interval
+confidence_interval  = get_ci(1, 0.95, 0.001)
+print(confidence_interval)
 ```
 
 ## Calculating confidence intervals
