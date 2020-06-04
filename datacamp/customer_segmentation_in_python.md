@@ -124,14 +124,9 @@ data['Recency_Quartile'] = recency_quartiles
 print(data.sort_values('Recency_Days'))
 ```
 
-## Calculating RFM metrics
-```python
-
-```
-
 ## Largest Frequency value
 ```python
-
+datamart.Frequency.mean()
 ```
 
 ## Calculate RFM values
