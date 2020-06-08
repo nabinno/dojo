@@ -177,41 +177,51 @@ datamart['RFM_Score'] = datamart[['R','F','M']].sum(axis=1)
 print(datamart['RFM_Score'].head())
 ```
 
-## Find average value for RFM Score segment
-```python
-
-```
-
 ## Creating custom segments
 ```python
+# Define rfm_level function
+def rfm_level(df):
+    if df['RFM_Score'] >= 10:
+        return 'Top'
+    elif ((df['RFM_Score'] >= 6) and (df['RFM_Score'] < 10)):
+        return 'Middle'
+    else:
+        return 'Low'
 
+# Create a new variable RFM_Level
+datamart['RFM_Level'] = datamart.apply(rfm_level, axis=1)
+
+# Print the header with top 5 rows to the console
+print(datamart.head())
 ```
 
 ## Analyzing custom segments
 ```python
+# Calculate average values for each RFM_Level, and return a size of each segment 
+rfm_level_agg = datamart.groupby('RFM_Level').agg({
+    'Recency': 'mean',
+    'Frequency': 'mean',
+  
+  	# Return the size of each segment
+    'MonetaryValue': ['mean', 'count']
+}).round(1)
 
+# Print the aggregated dataset
+print(rfm_level_agg)
 ```
 
 
 # 3. Data pre-processing for clustering
-## Data pre-processing
-```python
-
-```
-
-## Assumptions of k-means
-```python
-
-```
-
 ## Calculate statistics of variables
 ```python
+# Print the average values of the variables in the dataset
+print(data.mean())
 
-```
+# Print the standard deviation of the variables in the dataset
+print(data.std())
 
-## Managing skewed variables
-```python
-
+# Use `describe` function to get key statistics of the dataset
+print(data.describe())
 ```
 
 ## Detect skewed variables
