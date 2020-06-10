@@ -241,17 +241,35 @@ plt.show()
 
 ## Manage skewness
 ```python
+# Apply log transformation to var2
+data['var2_log'] = np.log(data['var2'])
 
-```
+# Apply log transformation to var3
+data['var3_log'] = np.log(data['var3'])
 
-## Centering and scaling data
-```python
+# Create a subplot of the distribution of var2_log
+plt.subplot(2, 1, 1); sns.distplot(data['var2_log'])
 
+# Create a subplot of the distribution of var3_log
+plt.subplot(2, 1, 2); sns.distplot(data['var3_log'])
+
+# Show the plot
+plt.show()
 ```
 
 ## Center and scale manually
 ```python
+# Center the data by subtracting average values from each entry
+data_centered = data - data.mean()
 
+# Scale the data by dividing each entry by standard deviation
+data_scaled = data / data.std()
+
+# Normalize the data by applying both centering and scaling
+data_normalized = (data - data.mean()) / data.std()
+
+# Print summary statistics to make sure average is zero and standard deviation is one
+print(data_normalized.describe().round(2))
 ```
 
 ## Center and scale with StandardScaler()
