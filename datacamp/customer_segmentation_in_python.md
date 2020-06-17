@@ -369,24 +369,35 @@ grouped.agg({
   }).round(1)
 ```
 
-## Choosing the number of clusters
-```python
-
-```
-
 ## Calculate sum of squared errors
 ```python
-
+# Fit KMeans and calculate SSE for each k
+for k in range(1, 21):
+  
+    # Initialize KMeans with k clusters
+    kmeans = KMeans(n_clusters=k, random_state=1)
+    
+    # Fit KMeans on the normalized dataset
+    kmeans.fit(data_normalized)
+    
+    # Assign sum of squared distances to k element of dictionary
+    sse[k] = kmeans.inertia_ 
 ```
 
 ## Plot sum of squared errors
 ```python
+# Add the plot title "The Elbow Method"
+plt.title('The Elbow Method')
 
-```
+# Add X-axis label "k"
+plt.xlabel('k')
 
-## Profile and interpret segments
-```python
+# Add Y-axis label "SSE"
+plt.ylabel('SSE')
 
+# Plot SSE values for each key in the dictionary
+sns.pointplot(x=list(sse.keys()), y=list(sse.values()))
+plt.show()
 ```
 
 ## Prepare data for the snake plot
