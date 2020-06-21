@@ -435,17 +435,30 @@ plt.show()
 
 ## Calculate relative importance of each attribute
 ```python
+# Calculate average RFM values for each cluster
+cluster_avg = datamart_rfm_k3.groupby(['Cluster']).mean() 
 
+# Calculate average RFM values for the total customer population
+population_avg = datamart_rfm.mean()
+
+# Calculate relative importance of cluster's attribute value compared to population
+relative_imp = cluster_avg / population_avg - 1
+
+# Print relative importance scores rounded to 2 decimals
+print(relative_imp.round(2))
 ```
 
 ## Plot relative importance heatmap
 ```python
+# Initialize a plot with a figure size of 8 by 2 inches 
+plt.figure(figsize=(8, 2))
 
-```
+# Add the plot title
+plt.title('Relative importance of attributes')
 
-## End-to-end segmentation solution
-```python
-
+# Plot the heatmap
+sns.heatmap(data=relative_imp, annot=True, fmt='.2f', cmap='RdYlGn')
+plt.show()
 ```
 
 ## Pre-process data
