@@ -5,24 +5,11 @@ url: https://campus.datacamp.com/courses/machine-learning-for-marketing-in-pytho
 ---
 
 # 1. Machine learning for marketing basics
-## Why use ML for marketing? Strategies and use cases
-```python
-
-```
-
-## Identify supervised learning examples
-```python
-
-```
-
 ## Supervised vs. unsupervised learning
 ```python
-
-```
-
-## Preparation for modeling
-```python
-
+##
+# Print header of telco dataset
+print(telco.head())
 ```
 
 ## Investigate the data
