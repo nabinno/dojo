@@ -42,12 +42,17 @@ numerical = [x for x in telco_raw.columns if x not in custid + target + categori
 
 ## Encode categorical and scale numerical variables
 ```python
+# Perform one-hot encoding to categorical variables 
+telco_raw = pd.get_dummies(data = telco_raw, columns = categorical, drop_first=True)
 
-```
+# Initialize StandardScaler instance
+scaler = StandardScaler()
 
-## ML modeling steps
-```python
+# Fit and transform the scaler on numerical columns
+scaled_numerical = scaler.fit_transform(telco_raw[numerical])
 
+# Build a DataFrame from scaled_numerical
+scaled_numerical = pd.DataFrame(scaled_numerical, columns=numerical)
 ```
 
 ## Split data to training and testing
