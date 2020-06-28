@@ -103,11 +103,6 @@ print("Test accuracy: ", np.round(accuracy_score(test_Y, pred_Y), 3))
 
 
 # 2. Churn prediction and drivers
-## Churn prediction fundamentals
-```python
-
-```
-
 ## Explore churn rate and split data
 ```python
 
