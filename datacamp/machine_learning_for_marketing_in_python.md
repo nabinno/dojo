@@ -105,7 +105,17 @@ print("Test accuracy: ", np.round(accuracy_score(test_Y, pred_Y), 3))
 # 2. Churn prediction and drivers
 ## Explore churn rate and split data
 ```python
+# Print the unique Churn values
+print(set(telcom['Churn']))
 
+# Calculate the ratio size of each churn group
+telcom.groupby(['Churn']).size() / telcom.shape[0] * 100
+
+# Import the function for splitting data to train and test
+from sklearn.model_selection import train_test_split
+
+# Split the data into train and test
+train, test = train_test_split(telcom, test_size = .25)
 ```
 
 ## Separate features and target variable
