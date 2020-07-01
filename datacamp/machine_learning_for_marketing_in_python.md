@@ -120,12 +120,20 @@ train, test = train_test_split(telcom, test_size = .25)
 
 ## Separate features and target variable
 ```python
+# Store column names from `telcom` excluding target variable and customer ID
+cols = [col for col in telcom.columns if col not in custid + target]
 
-```
+# Extract training features
+train_X = train[cols]
 
-## Predict churn with logistic regression
-```python
+# Extract training target
+train_Y = train[target]
 
+# Extract testing features
+test_X = test[cols]
+
+# Extract testing target
+test_Y = test[target]
 ```
 
 ## Fit logistic regression model
