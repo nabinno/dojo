@@ -138,7 +138,17 @@ test_Y = test[target]
 
 ## Fit logistic regression model
 ```python
+# Fit logistic regression on training data
+logreg.fit(train_X, train_Y)
 
+# Predict churn labels on testing data
+pred_test_Y = logreg.predict(test_X)
+
+# Calculate accuracy score on testing data
+test_accuracy = accuracy_score(test_Y, pred_test_Y)
+
+# Print test accuracy score rounded to 4 decimals
+print('Test accuracy:', round(test_accuracy, 4))
 ```
 
 ## Fit logistic regression with L1 regularization
