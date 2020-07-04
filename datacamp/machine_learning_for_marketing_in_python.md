@@ -153,7 +153,17 @@ print('Test accuracy:', round(test_accuracy, 4))
 
 ## Fit logistic regression with L1 regularization
 ```python
+# Initialize logistic regression instance 
+logreg = LogisticRegression(penalty='l1', C=0.025, solver='liblinear')
 
+# Fit the model on training data
+logreg.fit(train_X, train_Y)
+
+# Predict churn values on test data
+pred_test_Y = logreg.predict(test_X)
+
+# Print the accuracy score on test data
+print('Test accuracy:', round(accuracy_score(test_Y, pred_test_Y), 4))
 ```
 
 ## Identify optimal L1 penalty coefficient
