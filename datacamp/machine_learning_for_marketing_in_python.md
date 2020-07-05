@@ -168,7 +168,20 @@ print('Test accuracy:', round(accuracy_score(test_Y, pred_test_Y), 4))
 
 ## Identify optimal L1 penalty coefficient
 ```python
+# Run a for loop over the range of C list length
+for index in range(0, len(C)):
+  # Initialize and fit Logistic Regression with the C candidate
+  logreg = LogisticRegression(penalty='l1', C=C[index], solver='liblinear')
+  logreg.fit(train_X, train_Y)
+  # Predict churn on the testing data
+  pred_test_Y = logreg.predict(test_X)
+  # Create non-zero count and recall score columns
+  l1_metrics[index,1] = np.count_nonzero(logreg.coef_)
+  l1_metrics[index,2] = recall_score(test_Y, pred_test_Y)
 
+# Name the columns and print the array as pandas DataFrame
+col_names = ['C','Non-Zero Coeffs','Recall']
+print(pd.DataFrame(l1_metrics, columns=col_names))
 ```
 
 ## Predict churn with decision trees
