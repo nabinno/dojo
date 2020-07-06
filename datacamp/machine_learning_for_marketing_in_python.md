@@ -184,14 +184,22 @@ col_names = ['C','Non-Zero Coeffs','Recall']
 print(pd.DataFrame(l1_metrics, columns=col_names))
 ```
 
-## Predict churn with decision trees
-```python
-
-```
-
 ## Fit decision tree model
 ```python
+# Initialize decision tree classifier
+mytree = tree.DecisionTreeClassifier()
 
+# Fit the decision tree on training data
+mytree.fit(train_X, train_Y)
+
+# Predict churn labels on testing data
+pred_test_Y = mytree.predict(test_X)
+
+# Calculate accuracy score on testing data
+test_accuracy = accuracy_score(test_Y, pred_test_Y)
+
+# Print test accuracy
+print('Test accuracy:', round(test_accuracy, 4))
 ```
 
 ## Identify optimal tree depth
