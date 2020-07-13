@@ -252,34 +252,67 @@ display_image("/usr/local/share/datasets/decision_tree_rules.png")
 
 
 # 3. Customer Lifetime Value (CLV) prediction
-## Customer Lifetime Value (CLV) basics
-```python
-
-```
-
 ## Build retention and churn tables
 ```python
+# Extract cohort sizes from the first column of cohort_counts
+cohort_sizes = cohort_counts.iloc[:,0]
 
+# Calculate retention table by dividing the counts with the cohort sizes
+retention = cohort_counts.divide(cohort_sizes, axis=0)
+
+# Calculate churn table
+churn = 1 - retention
+
+# Print the retention table
+print(retention)
 ```
 
 ## Explore retention and churn
 ```python
+# Calculate the mean retention rate
+retention_rate = retention.iloc[:,1:].mean().mean()
 
-```
+# Calculate the mean churn rate
+churn_rate = churn.iloc[:,1:].mean().mean()
 
-## Calculating and projecting CLV
-```python
-
+# Print rounded retention and churn rates
+print('Retention rate: {:.2f}; Churn rate: {:.2f}'.format(retention_rate, churn_rate))
 ```
 
 ## Calculate basic CLV
 ```python
+# Calculate monthly spend per customer
+monthly_revenue = online.groupby(['CustomerID','InvoiceMonth'])['TotalSum'].sum()
 
+# Calculate average monthly spend
+monthly_revenue = np.mean(monthly_revenue)
+
+# Define lifespan to 36 months
+lifespan_months = 36
+
+# Calculate basic CLV
+clv_basic = monthly_revenue * lifespan_months
+
+# Print basic CLV value
+print('Average basic CLV is {:.1f} USD'.format(clv_basic))
 ```
 
 ## Calculate granular CLV
 ```python
+# Calculate average revenue per invoice
+revenue_per_purchase = online.groupby(['InvoiceNo'])['TotalSum'].mean().mean()
 
+# Calculate average number of unique invoices per customer per month
+frequency_per_month = online.groupby(['CustomerID','InvoiceMonth'])['InvoiceNo'].nunique().mean()
+
+# Define lifespan to 36 months
+lifespan_months = 36
+
+# Calculate granular CLV
+clv_granular = revenue_per_purchase * frequency_per_month * lifespan_months
+
+# Print granular CLV value
+print('Average granular CLV is {:.1f} USD'.format(clv_granular))
 ```
 
 ## Calculate traditional CLV
