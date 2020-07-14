@@ -317,12 +317,21 @@ print('Average granular CLV is {:.1f} USD'.format(clv_granular))
 
 ## Calculate traditional CLV
 ```python
+# Calculate monthly spend per customer
+monthly_revenue = online.groupby(['CustomerID','InvoiceMonth'])['TotalSum'].sum().mean()
 
-```
+# Calculate average monthly retention rate
+retention_rate = retention.iloc[:,1:].mean().mean()
 
-## Data preparation for purchase prediction
-```python
+# Calculate average monthly churn rate
+churn_rate = 1 - retention_rate
 
+
+# Calculate traditional CLV 
+clv_traditional = monthly_revenue * (retention_rate / churn_rate)
+
+# Print traditional CLV and the retention rate values
+print('Average traditional CLV is {:.1f} USD at {:.1f} % retention_rate'.format(clv_traditional, retention_rate*100))
 ```
 
 ## Build features
