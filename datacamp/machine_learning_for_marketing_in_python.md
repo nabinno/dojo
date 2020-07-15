@@ -336,7 +336,21 @@ print('Average traditional CLV is {:.1f} USD at {:.1f} % retention_rate'.format(
 
 ## Build features
 ```python
+# Define the snapshot date
+NOW = dt.datetime(2011,11,1)
 
+# Calculate recency by subtracting current date from the latest InvoiceDate
+features = online_X.groupby('CustomerID').agg({
+  'InvoiceDate': lambda x: (NOW - x.max()).days,
+  # Calculate frequency by counting unique number of invoices
+  'InvoiceNo': pd.Series.nunique,
+  # Calculate monetary value by summing all spend values
+  'TotalSum': np.sum,
+  # Calculate average and total quantity
+  'Quantity': ['mean', 'sum']}).reset_index()
+
+# Rename the columns
+features.columns = ['CustomerID', 'recency', 'frequency', 'monetary', 'quantity_avg', 'quantity_total']
 ```
 
 ## Define target variable
