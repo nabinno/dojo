@@ -355,7 +355,16 @@ features.columns = ['CustomerID', 'recency', 'frequency', 'monetary', 'quantity_
 
 ## Define target variable
 ```python
+# Build a pivot table counting invoices for each customer monthly
+cust_month_tx = pd.pivot_table(data=online, values='InvoiceNo',
+                               index=['CustomerID'], columns=['InvoiceMonth'],
+                               aggfunc=pd.Series.nunique, fill_value=0)
 
+# Store November 2011 sales data column name as a list
+target = ['2011-11']
+
+# Store target value as `Y`
+Y = cust_month_tx[target]
 ```
 
 ## Split data to training and testing
