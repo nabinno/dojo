@@ -433,14 +433,16 @@ print(olsreg.summary())
 
 
 # 4. Customer segmentation
-## Customer and product segmentation basics
-```python
-
-```
-
 ## Explore customer product purchase dataset
 ```python
+# Print the header of the `wholesale` dataset
+print(wholesale.head())
 
+# Plot the pairwise relationships between the variables
+sns.pairplot(wholesale, diag_kind='kde')
+
+# Display the chart
+plt.show()
 ```
 
 ## Understand differences in variables
