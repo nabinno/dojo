@@ -1,5 +1,5 @@
 ---
 title: Unsupervised Learning in Python
 tags: python,machine-learning
-url:
+url: https://www.datacamp.com/courses/unsupervised-learning-in-python
 ---
