@@ -160,21 +160,23 @@ print(df.sort_values('labels'))
 ```
 
 
-
 # 2. Visualization with hierarchical clustering and t-SNE
-## Visualizing hierarchies
-```python
-
-```
-
-## How many merges?
-```python
-
-```
-
 ## Hierarchical clustering of the grain data
 ```python
+# Perform the necessary imports
+from scipy.cluster.hierarchy import linkage, dendrogram
+import matplotlib.pyplot as plt
 
+# Calculate the linkage: mergings
+mergings = linkage(samples, method='complete')
+
+# Plot the dendrogram, using varieties as labels
+dendrogram(mergings,
+           labels=varieties,
+           leaf_rotation=90,
+           leaf_font_size=6,
+)
+plt.show()
 ```
 
 ## Hierarchies of stocks
