@@ -211,32 +211,74 @@ plt.show()
 
 ## Extracting the cluster labels
 ```python
+# Perform the necessary imports
+import pandas as pd
+from scipy.cluster.hierarchy import fcluster
 
-```
+# Use fcluster to extract labels: labels
+labels = fcluster(mergings, 6, criterion='distance')
 
-## t-SNE for 2-dimensional maps
-```python
+# Create a DataFrame with labels and varieties as columns: df
+df = pd.DataFrame({'labels': labels, 'varieties': varieties})
 
+# Create crosstab: ct
+ct = pd.crosstab(df['labels'], df['varieties'])
+
+# Display ct
+print(ct)
 ```
 
 ## t-SNE visualization of grain dataset
 ```python
+# Import TSNE
+from sklearn.manifold import TSNE
 
+# Create a TSNE instance: model
+model = TSNE(learning_rate=200)
+
+# Apply fit_transform to samples: tsne_features
+tsne_features = model.fit_transform(samples)
+
+# Select the 0th feature: xs
+xs = tsne_features[:,0]
+
+# Select the 1st feature: ys
+ys = tsne_features[:,1]
+
+# Scatter plot, coloring by variety_numbers
+plt.scatter(xs, ys, c=variety_numbers)
+plt.show()
 ```
 
 ## A t-SNE map of the stock market
 ```python
+# Import TSNE
+from sklearn.manifold import TSNE
 
+# Create a TSNE instance: model
+model = TSNE(learning_rate=50)
+
+# Apply fit_transform to normalized_movements: tsne_features
+tsne_features = model.fit_transform(normalized_movements)
+
+# Select the 0th feature: xs
+xs = tsne_features[:,0]
+
+# Select the 1th feature: ys
+ys = tsne_features[:,1]
+
+# Scatter plot
+plt.scatter(xs, ys, alpha=0.5)
+
+# Annotate the points
+for x, y, company in zip(xs, ys, companies):
+    plt.annotate(company, (x, y), fontsize=5, alpha=0.75)
+plt.show()
 ```
 
 
 
 # 3. Decorrelating your data and dimension reduction
-## Visualizing the PCA transformation
-```python
-
-```
-
 ## Correlated data in nature
 ```python
 
