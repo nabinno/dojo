@@ -277,7 +277,6 @@ plt.show()
 ```
 
 
-
 # 3. Decorrelating your data and dimension reduction
 ## Correlated data in nature
 ```python
@@ -464,27 +463,35 @@ print(df.sort_values('label'))
 # 4. Discovering interpretable features
 ## Non-negative data
 ```python
+# Import NMF
+from sklearn.decomposition import NMF
 
-```
+# Create an NMF instance: model
+model = NMF(n_components=6)
 
-## NMF applied to Wikipedia articles
-```python
+# Fit the model to articles
+model.fit(articles)
 
+# Transform the articles: nmf_features
+nmf_features = model.transform(articles)
+
+# Print the NMF features
+print(nmf_features)
 ```
 
 ## NMF features of the Wikipedia articles
 ```python
+# Import pandas
+import pandas as pd
 
-```
+# Create a pandas DataFrame: df
+df = pd.DataFrame(nmf_features, index=titles)
 
-## NMF reconstructs samples
-```python
+# Print the row for 'Anne Hathaway'
+print(df.loc['Anne Hathaway'])
 
-```
-
-## NMF learns interpretable parts
-```python
-
+# Print the row for 'Denzel Washington'
+print(df.loc['Denzel Washington'])
 ```
 
 ## NMF learns topics of documents
