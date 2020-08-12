@@ -192,22 +192,35 @@ print("Number of selected features:", np.count_nonzero(coefs))
 
 ## Identifying the most positive and negative words
 ```python
+# Get the indices of the sorted cofficients
+inds_ascending = np.argsort(lr.coef_.flatten()) 
+inds_descending = inds_ascending[::-1]
 
-```
+# Print the most positive words
+print("Most positive words: ", end="")
+for i in range(5):
+    print(vocab[inds_descending[i]], end=", ")
+print("\n")
 
-## Logistic regression and probabilities
-```python
-
-```
-
-## Getting class probabilities
-```python
-
+# Print most negative words
+print("Most negative words: ", end="")
+for i in range(5):
+    print(vocab[inds_ascending[i]], end=", ")
+print("\n")
 ```
 
 ## Regularization and probabilities
 ```python
+# Set the regularization strength
+model = LogisticRegression(C=0.1)
 
+# Fit and plot
+model.fit(X,y)
+plot_classifier(X,y,model,proba=True)
+
+# Predict probabilities on training points
+prob = model.predict_proba(X)
+print("Maximum predicted probability", np.max(prob))
 ```
 
 ## Visualizing easy and difficult examples
