@@ -5,19 +5,24 @@ url: https://www.datacamp.com/courses/case-study-school-budgeting-with-machine-l
 ---
 
 # 1. Exploring the raw data
-## Loading the data
-```python
-
-```
-
 ## Summarizing the data
 ```python
+# Print the summary statistics
+print(df.describe())
 
-```
+# Import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
-## Looking at the datatypes
-```python
+# Create the histogram
+plt.hist(df['FTE'].dropna())
 
+# Add title and labels
+plt.title('Distribution of %full-time \n employee works')
+plt.xlabel('% of full-time')
+plt.ylabel('num employees')
+
+# Display the histogram
+plt.show()
 ```
 
 ## Exploring datatypes in pandas
