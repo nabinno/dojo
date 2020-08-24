@@ -56,11 +56,6 @@ plt.ylabel('Number of unique values')
 plt.show()
 ```
 
-## Penalizing highly confident wrong answers
-```python
-
-```
-
 ## Computing log loss with NumPy
 ```python
 
