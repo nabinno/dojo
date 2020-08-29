@@ -135,14 +135,19 @@ clf.fit(X_train, y_train)
 print("Accuracy: {}".format(clf.score(X_test, y_test)))
 ```
 
-## Making predictions
-```python
-
-```
-
 ## Use your model to predict values on holdout data
 ```python
+# Instantiate the classifier: clf
+clf = OneVsRestClassifier(LogisticRegression())
 
+# Fit it to the training data
+clf.fit(X_train, y_train)
+
+# Load the holdout data: holdout
+holdout = pd.read_csv('HoldoutData.csv', index_col=0)
+
+# Generate predictions: predictions
+predictions = clf.predict_proba(holdout.fillna(-1000)[NUMERIC_COLUMNS])
 ```
 
 ## Writing out your results to a csv for submission
