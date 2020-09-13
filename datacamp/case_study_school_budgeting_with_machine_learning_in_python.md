@@ -595,16 +595,6 @@ pl = Pipeline([
     ])
 ```
 
-## Learning from the expert: the winning model
-```python
-
-```
-
-## Why is hashing a useful trick?
-```python
-
-```
-
 ## Implementing the hashing trick in scikit-learn
 ```python
 
