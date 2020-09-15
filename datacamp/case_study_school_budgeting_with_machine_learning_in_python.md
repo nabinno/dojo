@@ -497,7 +497,6 @@ print("\nAccuracy on budget dataset: ", accuracy)
 ```
 
 
-
 # 4. Learning from the experts
 ## Deciding what's a word
 ```python
@@ -595,7 +594,7 @@ pl = Pipeline([
     ])
 ```
 
-## Build the winning model
+## Implementing the hashing trick in scikit-learn
 ```python
 # Import HashingVectorizer
 from sklearn.feature_extraction.text import HashingVectorizer
@@ -617,15 +616,30 @@ hashed_df = pd.DataFrame(hashed_text.data)
 print(hashed_df.head())
 ```
 
-## What tactics got the winner the best score?
+## Build the winning model
 ```python
+# Import the hashing vectorizer
+from sklearn.feature_extraction.text import HashingVectorizer
 
+# Instantiate the winning model pipeline: pl
+pl = Pipeline([
+        ('union', FeatureUnion(
+            transformer_list = [
+                ('numeric_features', Pipeline([
+                    ('selector', get_numeric_data),
+                    ('imputer', Imputer())
+                ])),
+                ('text_features', Pipeline([
+                    ('selector', get_text_data),
+                    ('vectorizer', HashingVectorizer(token_pattern=TOKENS_ALPHANUMERIC,
+                                                     non_negative=True, norm=None, binary=False,
+                                                     ngram_range=(1, 2))),
+                    ('dim_red', SelectKBest(chi2, chi_k))
+                ]))
+             ]
+        )),
+        ('int', SparseInteractions(degree=2)),
+        ('scale', MaxAbsScaler()),
+        ('clf', OneVsRestClassifier(LogisticRegression()))
+    ])
 ```
-
-## Next steps and the social impact of your work
-```python
-
-```
-
-
-
