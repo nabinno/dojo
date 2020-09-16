@@ -1,0 +1,23 @@
+{
+  "name": "dojo",
+  "version": "1.0.0",
+  "description": "<img src=dojo.jpg width=400 /> <sup id=\"a1\">[[1]](#f1)</sup>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nabinno/dojo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nabinno/dojo/issues"
+  },
+  "homepage": "https://github.com/nabinno/dojo#readme",
+  "dependencies": {
+    "zenn-cli": "^0.1.21"
+  }
+}
