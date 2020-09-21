@@ -120,13 +120,6 @@ output = predict_with_network(input_data)
 print(output)
 ```
 
-## Levels of representation
-```python
-
-```
-
-
-
 
 # 2. Optimizing a neural network with backward propagation
 ## The need for optimization
