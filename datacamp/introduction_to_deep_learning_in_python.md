@@ -122,21 +122,6 @@ print(output)
 
 
 # 2. Optimizing a neural network with backward propagation
-## The need for optimization
-```python
-
-```
-
-## Calculating model errors
-```python
-
-```
-
-## Understanding how weights change model accuracy
-```python
-
-```
-
 ## Coding how weight changes affect accuracy
 ```python
 
