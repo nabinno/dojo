@@ -187,14 +187,19 @@ print("Mean squared error with weights_0: %f" %mse_0)
 print("Mean squared error with weights_1: %f" %mse_1)
 ```
 
-## Gradient descent
-```python
-
-```
-
 ## Calculating slopes
 ```python
+# Calculate the predictions: preds
+preds = (weights * input_data).sum()
 
+# Calculate the error: error
+error = preds - target
+
+# Calculate the slope: slope
+slope = 2 * input_data * error
+
+# Print the slope
+print(slope)
 ```
 
 ## Improving model weights
