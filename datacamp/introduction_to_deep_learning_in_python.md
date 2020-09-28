@@ -258,32 +258,6 @@ plt.ylabel('Mean Squared Error')
 plt.show()
 ```
 
-## Backpropagation
-```python
-
-```
-
-## The relationship between forward and backward propagation
-```python
-
-```
-
-## Thinking about backward propagation
-```python
-
-```
-
-## Backpropagation in practice
-```python
-
-```
-
-## A round of backpropagation
-```python
-
-```
-
-
 
 
 # 3. Building deep learning models with keras
