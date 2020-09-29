@@ -259,18 +259,7 @@ plt.show()
 ```
 
 
-
 # 3. Building deep learning models with keras
-## Creating a keras model
-```python
-
-```
-
-## Understanding your data
-```python
-
-```
-
 ## Specifying a model
 ```python
 
