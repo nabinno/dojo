@@ -29,6 +29,18 @@ library
   exposed-modules:
       SomeFunc
       StartingOut
+      TypesAndTypeclasses
+      SyntaxInFunctions
+      Recursion
+      HigherOrderFunctions
+      Modules
+      MakingOurOwnTypesAndTypeclasses
+      InputAndOutput
+      FunctionallySolvingProblems
+      FunctorsApplicativeFunctorsAndMonoids
+      AFistfulOfMonads
+      ForAFewMonadsMore
+      Zippers
   other-modules:
       Paths_lyhgg
   hs-source-dirs:
