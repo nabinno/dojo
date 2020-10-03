@@ -13,7 +13,7 @@
 ├── Setup.hs
 ├── src
 │   ├── SomeFunc.hs
-│   ├── SomrtingOut.hs .... 02
+│   ├── StartingOut.hs .... 02
 │   ├── TypesAndTypeclasses.hs .... 03
 │   ├── SyntaxInFunctions.hs .... 04
 │   ├── Recursion.hs .... 05
@@ -31,3 +31,32 @@
 └── test
     └── Spec.hs
 ```
+
+## Build & Execute
+```console
+$ stack build
+
+$ stack exec lyhgg-exe
+```
+
+## Run
+```console
+$ stack run
+```
+
+## REPL
+```console
+$ stack repl
+```
+
+---
+
+## LISENCE
+MIT
+
+## EPILOGUE
+>     A whale!
+>     Down it goes, and more, and more
+>     Up goes its tail!
+>
+>     -Buson Yosa
