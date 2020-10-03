@@ -1,0 +1,63 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.33.0.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: dd894fa7417f96dc85bb8baf6521ff404d59af6678e94e4c583e4bf81584cd4c
+
+name:           lyhgg
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/lyhgg#readme>
+homepage:       https://github.com/nabinno/dojo/blob/master/lyhgg#readme
+bug-reports:    https://github.com/nabinno/dojo/issues
+author:         nabinno
+maintainer:     nab@blahfe.com
+copyright:      2020 Nab Inno
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/nabinno/dojo/blob/master/lyhgg
+
+library
+  exposed-modules:
+      SomeFunc
+      StartingOut
+  other-modules:
+      Paths_lyhgg
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable lyhgg-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_lyhgg
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , lyhgg
+  default-language: Haskell2010
+
+test-suite lyhgg-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_lyhgg
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , lyhgg
+  default-language: Haskell2010

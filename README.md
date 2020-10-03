@@ -2,6 +2,7 @@
 <img src=dojo.jpg width=400 /> <sup id="a1">[[1]](#f1)</sup>
 
 # Fields
+- [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters)
 - [Codewars](https://codewars.com)
 - [Project Euler](https://projecteuler.net)
 - [LeetCode](https://leetcode.com)
