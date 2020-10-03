@@ -25,7 +25,7 @@
 │   ├── FunctorsApplicativeFunctorsAndMonoids.hs .... 11
 │   ├── AFistfulOfMonads.hs .... 12
 │   ├── ForAFewMonadsMore.hs .... 13
-│   └── Zippers .... 14
+│   └── Zippers.hs .... 14
 ├── stack.yaml
 ├── stack.yaml.lock
 └── test
