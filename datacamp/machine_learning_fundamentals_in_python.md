@@ -80,3 +80,36 @@ df['log_x'] = log.fit_transform(df[['x']])
 df['log_x'].head()
 ```
 
+## StandardScaler
+```python
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+df_scaled = pd.DataFrame(scaler.apply(df), columns=df.columns)
+df_scaled.head()
+```
+
+## Lasso
+```python
+import numpy as np
+from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.linear_model import Lasso
+
+lasso_model = Lasso(0.01)
+lasso_model.fit(X_train, y_train)
+lasso_predictions = lasso_model.predict(X_test)
+print("RMSE: ", np.sqrt(mean_squared_error(y_train,y_test)))
+```
+
+## RandomClassifier
+```python
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+
+model = RandomForestClassifier(n_estimators=10, random_state=1)
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+accuracy_score(y_test, y_pred)
+```
+
