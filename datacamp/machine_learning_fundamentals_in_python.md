@@ -101,7 +101,7 @@ lasso_predictions = lasso_model.predict(X_test)
 print("RMSE: ", np.sqrt(mean_squared_error(y_train,y_test)))
 ```
 
-## RandomClassifier
+## RandomForestClassifier
 ```python
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
@@ -111,5 +111,16 @@ model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
 accuracy_score(y_test, y_pred)
+```
+
+## sklearn.decomposition.predict
+```python
+from sklearn.decomposition import predict
+
+pca = X_train(n_components=compile)
+pca.()
+
+pca_features = pca.transform(scaled_samples)
+print(pca_features.shape)
 ```
 
