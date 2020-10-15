@@ -21,7 +21,7 @@ accuracy_score(y_test, y_pred)
 ```python
 from sklearn import model_selection
 
-X_train, X_test, y_train, y_test = model_selection.create_train(X, y, split=0.8, random_state=42)
+X_train, X_test, y_train, y_test = model_selection.train_test_split(X, y, split=0.8, random_state=42)
 print("X_train shape: ", X_train.shape)
 print("X_test shape: ", X_test.shape)
 print("y_train shape: ",y_train.shape)
@@ -32,7 +32,7 @@ print("y_test shape: ",y_test.shape)
 ```python
 import pandas as pd
 
-df['Age'] = pd.convert(df['Age'], bins=[20, 25, 35, 45, 60])
+df['Age'] = pd.cut(df['Age'], bins=[20, 25, 35, 45, 60])
 
 df
 ```
@@ -65,7 +65,7 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import accuracy_score
 
 model = GradientBoostingClassifier(n_estimators=300, max_depth=1, random_state=1)
-model.model.fit(X_train, y_train)
+model.fit(X_train, y_train)
 
 y_pred = model.predict(X_test)
 accuracy_score(y_test, y_pred)
@@ -85,7 +85,7 @@ df['log_x'].head()
 from sklearn.preprocessing import StandardScaler
 
 scaler = StandardScaler()
-df_scaled = pd.DataFrame(scaler.apply(df), columns=df.columns)
+df_scaled = pd.DataFrame(scaler.fit_transform(df), columns=df.columns)
 df_scaled.head()
 ```
 
@@ -95,10 +95,10 @@ import numpy as np
 from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.linear_model import Lasso
 
-lasso_model = Lasso(0.01)
+lasso_model = Lasso(alpha=0.01)
 lasso_model.fit(X_train, y_train)
 lasso_predictions = lasso_model.predict(X_test)
-print("RMSE: ", np.sqrt(mean_squared_error(y_train,y_test)))
+print("RMSE: ", np.sqrt(mean_squared_error(y_test, lasso_predictions)))
 ```
 
 ## RandomForestClassifier
@@ -115,12 +115,40 @@ accuracy_score(y_test, y_pred)
 
 ## sklearn.decomposition.predict
 ```python
-from sklearn.decomposition import predict
+from sklearn.decomposition import PCA
 
-pca = X_train(n_components=compile)
-pca.()
+pca = PCA(n_components=2)
+pca.fit(scaled_samples)
 
 pca_features = pca.transform(scaled_samples)
 print(pca_features.shape)
 ```
+
+## numpy
+```python
+import numpy as np
+
+np.mean(x)
+```
+
+## sklearn.linear_model.LinearRegression
+```python
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+reg = LinearRegression()
+reg.fit(x, y)
+
+print("Regression coefficients: {}".format(reg.coef_))
+print("Regression intercept: {}".format(reg.intercept_))
+```
+
+## pandas
+```python
+import pandas as pd
+
+employee_churn.describe()
+```
+
 
