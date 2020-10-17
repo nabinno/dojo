@@ -152,3 +152,15 @@ employee_churn.describe()
 ```
 
 
+# 2nd time
+## sklearn.linear_model.LogisticRegression
+```python
+from sklearn.linear_model import LogisticRegression
+
+model = LogisticRegression(random_state=1)
+model.fit(X_train, y_train)
+
+y_pred = model.predict(y_train, y_test)
+model.score(X_test, y_test)
+```
+
