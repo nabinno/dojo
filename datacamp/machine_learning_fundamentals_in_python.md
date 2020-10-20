@@ -164,3 +164,18 @@ y_pred = model.predict(y_train, y_test)
 model.score(X_test, y_test)
 ```
 
+## Linear regression
+An algorithm that describes a continuous response variable as a function of one or more predictor variables.
+
+## K-means clustering
+K-means clustering is a supervised learning algorithm that predicts categorical variables (called clusters) as a function of continuous variables.
+
+## numpy.histgram
+```python
+import numpy as np
+
+np.histgram(x)
+```
+
+
+
