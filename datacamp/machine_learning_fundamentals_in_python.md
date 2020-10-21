@@ -170,12 +170,14 @@ An algorithm that describes a continuous response variable as a function of one 
 ## K-means clustering
 K-means clustering is a supervised learning algorithm that predicts categorical variables (called clusters) as a function of continuous variables.
 
-## numpy.histgram
+## numpy.histogram
 ```python
 import numpy as np
 
-np.histgram(x)
+np.histogram(x)
 ```
 
+## Linear regression
+A retail company that wants to predict their total sales to understand the impact of online promotions.
 
 
