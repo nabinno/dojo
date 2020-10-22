@@ -180,4 +180,50 @@ np.histogram(x)
 ## Linear regression
 A retail company that wants to predict their total sales to understand the impact of online promotions.
 
+## Benefits of regularization
+Regularization helps to address the problem of over-fitting training data by restricting the model's coefficients.
+
+## sklearn.ensemble.RandomForestClassifier
+```python
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+
+model = RandomForestClassifier(n_estimators=10, random_state=1)
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+accuracy_score(y_test, y_pred)
+```
+
+## Classification model
+The metrics used when assessing the performance of a classification model
+- Precision
+- Recall
+- Median absolute error
+
+## statsmodels.formula.api.glm
+```python
+import statsmodels.api as sm
+from statsmodels.formula.api import glm
+
+model = glm(
+	'goal ~ player', 
+	data = score,
+	family = sm.families.Poisson()
+).fit()
+
+model.predict(test)
+```
+
+## sklearn.ensemble.RandomForestClassifier (2)
+```python
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+
+model = RandomForestClassifier(n_estimators=300, max_depth=1, random_state=1)
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+accuracy_score(y_test, y_pred)
+```
 
