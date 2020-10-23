@@ -227,3 +227,13 @@ y_pred = model.predict(X_test)
 accuracy_score(y_test, y_pred)
 ```
 
+## pandas
+```python
+import pandas as pd
+
+pd.get_dummies(df, columns=['Animal'])
+```
+
+
+
+
