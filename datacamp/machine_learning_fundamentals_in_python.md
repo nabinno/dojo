@@ -4,7 +4,7 @@ tags: machine-learning, python
 url: https://assessment.datacamp.com/machine-learning-fundamentals-with-python
 ---
 
-# 1st times
+# 1. Assesment
 ## RandomForestClassifier
 ```python
 from sklearn.ensemble import RandomForestClassifier
@@ -152,7 +152,7 @@ employee_churn.describe()
 ```
 
 
-# 2nd time
+# 2. Assesment
 ## sklearn.linear_model.LogisticRegression
 ```python
 from sklearn.linear_model import LogisticRegression
@@ -160,7 +160,7 @@ from sklearn.linear_model import LogisticRegression
 model = LogisticRegression(random_state=1)
 model.fit(X_train, y_train)
 
-y_pred = model.predict(y_train, y_test)
+y_pred = model.predict(X_test)
 model.score(X_test, y_test)
 ```
 
@@ -168,13 +168,13 @@ model.score(X_test, y_test)
 An algorithm that describes a continuous response variable as a function of one or more predictor variables.
 
 ## K-means clustering
-K-means clustering is a supervised learning algorithm that predicts categorical variables (called clusters) as a function of continuous variables.
+K-means clustering groups data into relatively distinct groups by using a pre-determined number of clusters and iterating cluster assignments.
 
-## numpy.histogram
+## numpy.mean
 ```python
 import numpy as np
 
-np.histogram(x)
+np.mean(x)
 ```
 
 ## Linear regression
@@ -196,9 +196,7 @@ accuracy_score(y_test, y_pred)
 ```
 
 ## Classification model
-The metrics used when assessing the performance of a classification model
-- Precision
-- Recall
+Which of the following metrics would not be used when assessing the performance of a classification model?
 - Median absolute error
 
 ## statsmodels.formula.api.glm
@@ -234,6 +232,29 @@ import pandas as pd
 pd.get_dummies(df, columns=['Animal'])
 ```
 
+## sklearn.linear_model.LinearRegression
+```python
+import numpy as np
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+
+reg = LinearRegression()
+reg.fit(x_train, y_train)
+
+reg.predict(x_test)
+```
+
+## plot
+Consider the following plot. Which of the statements below is not true?
+- There are outliers in the data, which may be impacting results
+
+## Transformation to a variable
+Why might you consider applying a transformation to a variable?
+- Because there is an outlier
+
+## Unsupervised learning problem
+Which one of the following statements describes an unsupervised learning problem?
+- A machine learning problem where we seek to understand whether observations fit into distinct groups based on their similarities.
 
 
 
