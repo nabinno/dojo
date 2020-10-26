@@ -410,4 +410,19 @@ accuracy_score(y_test, y_pred)
 ```
 
 # 4. Assessment
+## Random forest
+How does a random forest improve upon a decision tree?
+- have been trained on different bootstrap samples of the training set.
 
+## sklearn.tree.DecisionTreeClassifier
+```python
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import accuracy_score
+
+model = DecisionTreeClassifier(max_depth=4, random_state=1)
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+
+accuracy_score(y_test, y_pred)
+```
