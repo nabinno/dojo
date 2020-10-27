@@ -426,3 +426,9 @@ y_pred = model.predict(X_test)
 
 accuracy_score(y_test, y_pred)
 ```
+
+## Decision tree
+In which of the following situations might you want to use a decision tree?
+- When model output should be easily interpretable.
+
+
