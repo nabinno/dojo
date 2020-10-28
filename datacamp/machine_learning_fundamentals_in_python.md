@@ -432,3 +432,13 @@ In which of the following situations might you want to use a decision tree?
 - When model output should be easily interpretable.
 
 
+## sklearn.linear_model.LogisticRegression
+```python
+from sklearn.linear_model import LogisticRegression
+
+model = LogisticRegression(random_state=1)
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+model.score(X_test, y_test)
+```
