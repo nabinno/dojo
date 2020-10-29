@@ -442,3 +442,8 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 model.score(X_test, y_test)
 ```
+
+## Multiple Choice
+What is the most likely missing data mechanism that can be diagnosed?
+- Missing completely at random
+
