@@ -447,3 +447,12 @@ model.score(X_test, y_test)
 What is the most likely missing data mechanism that can be diagnosed?
 - Missing completely at random
 
+## seaborn.boxplot
+```python
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+sns.boxplot(x='Age',y='Attrition',data=churn)
+plt.show()
+```
+
