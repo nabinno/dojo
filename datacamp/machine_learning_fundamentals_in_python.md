@@ -456,3 +456,14 @@ sns.boxplot(x='Age',y='Attrition',data=churn)
 plt.show()
 ```
 
+## sklearn.ensemble.GradientBoostingClassifier
+```python
+from sklearn.ensemble import GradientBoostingClassifier
+from sklearn.metrics import accuracy_score
+
+model = GradientBoostingClassifier(n_estimators=300, max_depth=1, random_state=1)
+model.fit(X_train, y_train)
+
+y_pred = model.predict(X_test)
+accuracy_score(y_test, y_pred)
+```
