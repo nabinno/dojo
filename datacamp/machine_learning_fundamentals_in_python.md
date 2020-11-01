@@ -467,3 +467,10 @@ model.fit(X_train, y_train)
 y_pred = model.predict(X_test)
 accuracy_score(y_test, y_pred)
 ```
+
+## One-hot
+```python
+import pandas as pd
+
+pd.get_dummies(df, columns=['Animal'])
+```
