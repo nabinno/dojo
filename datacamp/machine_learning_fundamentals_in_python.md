@@ -474,3 +474,15 @@ import pandas as pd
 
 pd.get_dummies(df, columns=['Animal'])
 ```
+
+## sklearn.linear_model.Lasso
+```python
+import numpy as np
+from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.linear_model import Lasso
+
+lasso_model = Lasso(alpha=0.01)
+lasso_model.fit(X_train, y_train)
+lasso_predictions = lasso_model.predict(X_test)
+print("RMSE: ", np.sqrt(mean_squared_error(y_test,lasso_predictions)))
+```
