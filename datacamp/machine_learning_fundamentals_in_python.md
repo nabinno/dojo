@@ -486,3 +486,21 @@ lasso_model.fit(X_train, y_train)
 lasso_predictions = lasso_model.predict(X_test)
 print("RMSE: ", np.sqrt(mean_squared_error(y_test,lasso_predictions)))
 ```
+
+## sklearn.model_selection
+```python
+import pandas as pd
+from sklearn import model_selection
+
+X_temp, X_test, y_temp, y_test = model_selection.train_test_split(X, y, 
+                                                            split=0.2, 
+                                                            random_state=42)
+
+X_train, X_val, y_train, y_val = model_selection.train_test_split(X_temp, y_temp, 
+                                                            split=0.25, 
+                                                            random_state=42)
+
+print("X_train shape: ", X_train.shape)
+print("X_test shape: ", X_test.shape)
+print("X_val shape: ", X_test.shape)
+```
