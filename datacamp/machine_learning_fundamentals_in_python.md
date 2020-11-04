@@ -504,3 +504,12 @@ print("X_train shape: ", X_train.shape)
 print("X_test shape: ", X_test.shape)
 print("X_val shape: ", X_test.shape)
 ```
+
+## sklearn.preprocessing.StandardScaler
+```python
+from sklearn.preprocessing import StandardScaler
+
+scaler = StandardScaler()
+df_scaled = pd.DataFrame(scaler.fit_transform(df), columns=df.columns)
+df_scaled.head()
+```
