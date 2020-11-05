@@ -513,3 +513,16 @@ scaler = StandardScaler()
 df_scaled = pd.DataFrame(scaler.fit_transform(df), columns=df.columns)
 df_scaled.head()
 ```
+
+## scipy.cluster.hierarchy.linkage
+```python
+from scipy.cluster.hierarchy import linkage
+
+distances = linkage(
+	df[['x_scaled', 'y_scaled']], 
+	method = 'complete',
+	metric = 'euclidean'
+)
+
+distances[:5]
+```
