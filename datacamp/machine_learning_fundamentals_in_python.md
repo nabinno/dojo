@@ -412,6 +412,7 @@ accuracy_score(y_test, y_pred)
 # 4. Assessment
 ## Random forest
 How does a random forest improve upon a decision tree?
+A random forest reduces variance by combining decision trees that
 - have been trained on different bootstrap samples of the training set.
 
 ## sklearn.tree.DecisionTreeClassifier
@@ -452,7 +453,7 @@ What is the most likely missing data mechanism that can be diagnosed?
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-sns.boxplot(x='Age',y='Attrition',data=churn)
+sns.boxplot(x='Attribution',y='Age',data=churn)
 plt.show()
 ```
 
@@ -493,11 +494,11 @@ import pandas as pd
 from sklearn import model_selection
 
 X_temp, X_test, y_temp, y_test = model_selection.train_test_split(X, y, 
-                                                            split=0.2, 
+                                                            test_size=0.2, 
                                                             random_state=42)
 
 X_train, X_val, y_train, y_val = model_selection.train_test_split(X_temp, y_temp, 
-                                                            split=0.25, 
+                                                            test_size=0.25, 
                                                             random_state=42)
 
 print("X_train shape: ", X_train.shape)
@@ -529,11 +530,11 @@ distances[:5]
 
 ## Hierarchical clustering linkage methods
 Given two different clusters, which of the following statements is not true regarding hierarchical clustering linkage methods?
-- The single method calculates pairwise similarity between all observations in both clusters. The smallest of these distances is then used as the distance between the clusters.
+- The complete method calculates pairwise similarity between all observations in both clusters. The sum of these distances is then used as the distance between the clusters.
 
 ## sklearn.ensemble.RandomForestRegressor
 ```python
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import RandomizedSearchCV
 from sklearn.ensemble import RandomForestRegressor
 
 rfr = RandomForestRegressor(random_state=42)
@@ -542,9 +543,9 @@ param_dist = {"max_depth": [2, 4, 6, 8, 10],
               "max_features": [2, 4],
               "min_samples_split": [2, 4, 8, 16, 18]}
 
-random_search = train_test_split(X, 
-                           y, 
-                           split = 10,
+random_search = train_test_splitRandomizedSearchCV(rtr,
+                           param_dist,
+                           n_iter = 10,
                            random_state=42)
 
 random_search.fit(X_train, y_train)
@@ -555,6 +556,6 @@ random_search.best_params_
 ```python
 import numpy as np
 
-np.mean(x)
+np.median(x)
 ```
 
