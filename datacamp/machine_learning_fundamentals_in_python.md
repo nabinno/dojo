@@ -526,3 +526,35 @@ distances = linkage(
 
 distances[:5]
 ```
+
+## Hierarchical clustering linkage methods
+Given two different clusters, which of the following statements is not true regarding hierarchical clustering linkage methods?
+- The single method calculates pairwise similarity between all observations in both clusters. The smallest of these distances is then used as the distance between the clusters.
+
+## sklearn.ensemble.RandomForestRegressor
+```python
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+
+rfr = RandomForestRegressor(random_state=42)
+
+param_dist = {"max_depth": [2, 4, 6, 8, 10],
+              "max_features": [2, 4],
+              "min_samples_split": [2, 4, 8, 16, 18]}
+
+random_search = train_test_split(X, 
+                           y, 
+                           split = 10,
+                           random_state=42)
+
+random_search.fit(X_train, y_train)
+random_search.best_params_
+```
+
+## numpy
+```python
+import numpy as np
+
+np.mean(x)
+```
+
