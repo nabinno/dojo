@@ -5,29 +5,20 @@ url: https://www.datacamp.com/courses/statistical-thinking-in-python-part-1
 ---
 
 # 1. Graphical exploratory data analysis
-## Introduction to Exploratory Data Analysis
-```python
-
-```
-
-## Tukey's comments on EDA
-```python
-
-```
-
-## Advantages of graphical EDA
-```python
-
-```
-
-## Plotting a histogram
-```python
-
-```
-
 ## Plotting a histogram of iris data
 ```python
+# Import plotting modules
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+# Set default Seaborn style
+sns.set()
+
+# Plot histogram of versicolor petal lengths
+plt.hist(versicolor_petal_length)
+
+# Show histogram
+plt.show()
 ```
 
 ## Axis labels!
