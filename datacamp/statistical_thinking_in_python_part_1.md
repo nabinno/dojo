@@ -23,22 +23,53 @@ plt.show()
 
 ## Axis labels!
 ```python
+# Plot histogram of versicolor petal lengths
+_ = plt.hist(versicolor_petal_length)
 
+# Label axes
+plt.xlabel('petal length (cm)')
+plt.ylabel('count')
+
+# Show histogram
+plt.show()
 ```
 
 ## Adjusting the number of bins in a histogram
 ```python
+# Import numpy
+import numpy as np
 
-```
+# Compute number of data points: n_data
+n_data = len(versicolor_petal_length)
 
-## Plot all of your data: Bee swarm plots
-```python
+# Number of bins is the square root of number of data points: n_bins
+n_bins = np.sqrt(n_data)
 
+# Convert number of bins to integer: n_bins
+n_bins = int(n_bins)
+
+# Plot the histogram
+_ = plt.hist(versicolor_petal_length, bins=n_bins)
+
+# Label axes
+_ = plt.xlabel('petal length (cm)')
+_ = plt.ylabel('count')
+
+# Show histogram
+plt.show()
 ```
 
 ## Bee swarm plot
 ```python
+# Create bee swarm plot with Seaborn's default settings
+sns.swarmplot(x='species', y='petal length (cm)', data=df)
 
+# Label the axes
+plt.xlabel('species')
+plt.ylabel('petal length (cm)')
+
+# Show the plot
+plt.show()
 ```
 
 ## Interpreting a bee swarm plot
