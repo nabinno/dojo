@@ -125,12 +125,6 @@ _ = plt.ylabel('ECDF')
 plt.show()
 ```
 
-## Onward toward the whole story!
-```python
-
-```
-
-
 
 # 2. Quantitative exploratory data analysis
 ## Introduction to summary statistics: The sample mean and median
