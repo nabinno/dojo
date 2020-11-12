@@ -127,24 +127,13 @@ plt.show()
 
 
 # 2. Quantitative exploratory data analysis
-## Introduction to summary statistics: The sample mean and median
-```python
-
-```
-
-## Means and medians
-```python
-
-```
-
 ## Computing means
 ```python
+# Compute the mean: mean_length_vers
+mean_length_vers = np.mean(versicolor_petal_length)
 
-```
-
-## Percentiles, outliers, and box plots
-```python
-
+# Print the result with some nice formatting
+print('I. versicolor:', mean_length_vers, 'cm')
 ```
 
 ## Computing percentiles
