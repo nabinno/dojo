@@ -196,12 +196,14 @@ print(variance_explicit, variance_np)
 
 ## The standard deviation and the variance
 ```python
+# Compute the variance: variance
+variance = np.var(versicolor_petal_length)
 
-```
+# Print the square root of the variance
+print(variance)
 
-## Covariance and the Pearson correlation coefficient
-```python
-
+# Print the standard deviation
+print(np.std(versicolor_petal_length))
 ```
 
 ## Scatter plots
