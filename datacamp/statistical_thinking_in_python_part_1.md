@@ -208,7 +208,15 @@ print(np.std(versicolor_petal_length))
 
 ## Scatter plots
 ```python
+# Make a scatter plot
+plt.plot(versicolor_petal_length, versicolor_petal_width, marker='.', linestyle='none')
 
+# Label the axes
+plt.xlabel('xxx')
+plt.ylabel('yyy')
+
+# Show the result
+plt.show()
 ```
 
 ## Variance and covariance by looking
