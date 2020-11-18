@@ -252,28 +252,7 @@ print(r)
 ```
 
 
-
 # 3. Thinking probabilistically-- Discrete variables
-## Probabilistic logic and statistical inference
-```python
-
-```
-
-## What is the goal of statistical inference?
-```python
-
-```
-
-## Why do we use the language of probability?
-```python
-
-```
-
-## Random number generators and hacker statistics
-```python
-
-```
-
 ## Generating random numbers using the np.random module
 ```python
 
