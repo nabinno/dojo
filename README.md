@@ -13,6 +13,7 @@
 - [DataCamp](https://www.datacamp.com/)
 - [Qwiklabs](https://www.qwiklabs.com)
 - [Coursera](https://www.coursera.org/)
+- [AWS CSAP (Certified Solutions Architect Professional)](https://aws.amazon.com/jp/certification/certified-solutions-architect-professional/)
 - [AWS Amplify](https://aws.amazon.com/amplify/)
 - [AWS CDK](https://aws.amazon.com/cdk/)
 - [AWS Lambda](https://aws.amazon.com/lambda/)
