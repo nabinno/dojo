@@ -70,5 +70,36 @@ WEBサービスの構成
 制約
 - この移行は週末の土日2日間で実施
 - 効率的で迅速な対応が不可欠
+=> AWS Server Migration Service
 
+## 8. データベース移行方法
+現状
+- ニュースメディア配信アプリケーション
+  - EC2インスタンス
+  - ELB
+  - Auto-Scalingグループ
+  - MySQL
+期待
+- MySQLからPosgreSQLへとデータベースを移行
+=> AWS Database Migration Service
 
+## 9. AWS Lambda
+新規事業用アプリケーション
+- RDS MySQL
+  - 多数の顧客の基本情報
+  - これまでの売買記録
+  - 分析などに利用予定
+- Lambda
+  - RDSのコネクション接続
+=> AWS Lambda, RDS Proxy
+
+## 10. ロケーションベースのアラート機能
+グローバルな国際決済サービス
+- iOSおよびAndroidモバイル
+- 飲食店クーポンモバイルアプリ
+期待
+- ロケーションベースのアラート機能を追加
+  - GPSを利用して近隣店舗に近づいた際に
+    - その店舗を紹介するチャットボットによるレコメンデーション
+    - クーポン提示
+=> Amazon DynamoDB, Amazon EC2, Amazon SQS, AutoScaling, AWS Lambda, Amazon Lex 
