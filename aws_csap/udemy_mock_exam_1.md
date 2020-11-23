@@ -162,3 +162,113 @@ AWS上の社内システム
 - 一時認証によって付与されたアクセス権を取り消す方法
 => AWS IAM, AWS Security Token Service
 
+## 17. DDos攻撃対策
+社内アプリケーションに対するDDoS攻撃によって大規模なシステム障害が発生
+- DDoS攻撃などの外部攻撃を軽減
+- 具体的に防止するべき攻撃リスト
+  - DDoS攻撃
+  - SYNフラッド
+  - UDPリフレクション攻撃
+  - SQLインジェクション
+  - クロスサイトスクリプティング
+  - 不正IP取得によるアカウントアクセス
+  - ネットワーク情報の取得
+=> AWS Shield Standard/Advanced, Amazon Route 53 (shuffle sharding, anycast striping)
+
+## 18. AWS CloudFormation
+S3とRDSを利用したデータ共有アプリケーション
+- CloudFormationテンプレートを利用
+- 画像をS3バケットに保存
+- RDSに顧客データを記録
+要件
+- サービスを停止
+  - いつでも再開できるように準備が必要
+  - インフラを終了
+  - 同時にデータを保持
+=> AWS CloudFormation DeletionPolicy (S3 retain), RDS (snapshot)
+
+## 19. 誤操作対策
+AWS上にエンタープライズシステム
+- システムが突如停止するという障害が発生
+  - 一人のエンジニアが本番環境のEC2インスタンスを誤って終了
+  - 実稼働するアプリケーションにアクセスできる開発者が多数存在
+=> AWS IAM, Amazon EC2, Amazon VPC
+
+## 20. Amazon CloudFrontの配置
+美術鑑賞向けSNSサービス「PINTORアプリケーション」
+- CloudFrontディストリビューションを使用
+  - コンテンツ読み込み時間を短縮
+- 配信されるデータは個人情報も多い
+要件
+- アプリケーションからユーザーへのCloudFront配信においてHTTPS通信を実施
+- CloudFrontのビューアリクエストの割合を増やすことにより
+  - パフォーマンスを改善
+  - コストを抑える
+=> AWS Certificate Manager, Amazon CloudFront (Cache-control max-age directive)
+
+## 21. Amazon EC2のパフォチュー
+顧客管理向けのJavaアプリケーション
+- WEBサーバーにEC2
+  - 約40％のCPU使用率に相当する一定のワークロード
+  - オンデマンドEC2インスタンスのフリート
+  - インスタンスは複数利用
+    - 通信を最適化することが求められている
+- RDSに顧客の構成情報データ
+=> T3, プレイスメントグループ, 拡張ネットワーク
+
+## 22. SSL証明書の適用
+モバイルアプリケーション
+- EC2インスタンス
+  - AutoScalingグループ
+  - ELB
+- セキュリティポリシー
+  - インスタンスからVPC内の他のサービスへの全てのアウトバウンド接続について
+    - インスタンスアクセス時に一意のSSL認証が利用される必要がある
+=> AWS Certificate Manager, Elastic Load Balancer
+
+## 23. VPCエンドポイントをつかったS3との連携
+顧客管理システム
+- AWSパブリッククラウド
+- ２層アプリケーション
+- EC2
+  - データ処理サーバー
+  - S3
+    - データ保存と管理
+    - S3との間において毎秒5 Gbpsを超えるデータを送信
+    - プライベートサブネットのアプリケーションレイヤーからS3にデータを転送
+  - インスタンスの処理にはサードパーティーのソフトウェアが利用
+    - 定期的にソフトウェアに対するパッチ更新が必要
+=> Amazon EC2, Amazon S3 (bucket policy), VPC Endpoint
+
+## 24. データ共有システム
+社内データ共有システム
+- データセンターにホストして運用
+- 社内データ
+  - データセンターのストレージに保存
+  - 中長期保存用のため迅速なデータ抽出は必要ない
+  - データ処理のためにOSSメッセージングシステムを利用したジョブ管理を行っている
+  - データはテープライブラリによってアーカイブされる構成をオンプレミスで実施
+要件
+- これらのシステムをAWSに移行
+=> EC2 (Auto Scaling, Spot Instance), Amazon SQS, Amazon S3 Glacier
+
+## 25. IDフェデレーション
+エンタープライズシステムのデータセンター
+- AWSクラウドに拡張するハイブリッドクラウドインフラストラクチャ
+  - オンプレミス側とクラウド側で2つの個別のログインアカウントを持つ
+    - 複数の資格情報を保存することを避ける必要がある
+要件
+- AWSリソースを管理する構成
+  - 社内アカウントを使用して既にサインインしているオンプレミスユーザーが個別のIAMユーザーを作成しないこと
+=> AWS IAM (Id Provider OpenID), AWS Security Token Service (AssumeRoleWithWebIdentity)
+
+## 26. ECSのオートスケーリング
+エンタープライズアプリケーション
+- Amazon ECSを使用したDockerベースの
+- マルチAZ構成でリードレプリカを持つRDS MySQL
+  - 高可用でスケーラブル
+要件
+- アプリケーション層にスケーラビリティを確保
+  - ECSクラスターに対するオートスケーリング設定を実施
+=> AWS CloudWatch (Capacity Provider Reservation), AWS Auto Scaling, Amazon ECS (AWS ECS Cluster Auto Scaling)
+
