@@ -334,14 +334,21 @@ n_lose_money = np.sum(n_defaults >= 10)
 print('Probability of losing money =', n_lose_money / len(n_defaults))
 ```
 
-## Probability distributions and stories: The Binomial distribution
-```python
-
-```
-
 ## Sampling out of the Binomial distribution
 ```python
+# Take 10,000 samples out of the binomial distribution: n_defaults
+n_defaults = np.random.binomial(n=100, p=0.05, size=10000)
 
+# Compute CDF: x, y
+x, y = ecdf(n_defaults)
+
+# Plot the CDF with axis labels
+plt.plot(x, y, marker='.', linestyle='none')
+plt.xlabel('100 loans')
+plt.ylabel('CDF')
+
+# Show the plot
+plt.show()
 ```
 
 ## Plotting the Binomial PMF
