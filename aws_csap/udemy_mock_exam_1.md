@@ -103,3 +103,62 @@ WEBサービスの構成
     - その店舗を紹介するチャットボットによるレコメンデーション
     - クーポン提示
 => Amazon DynamoDB, Amazon EC2, Amazon SQS, AutoScaling, AWS Lambda, Amazon Lex 
+
+## 11. AWS Storage GatewayとCHAP認証
+AWSとオンプレミスサイトを併用したハイブリッドアーキテクチャ
+- AWS Storage Gatewayのボリュームゲートウェイ
+- iSCSIを介したハイブリッド構成のデータ共有システム
+- セキュリティ上の問題
+  - データ共有システムのネットワークに対するDDoS攻撃
+  - 不正アクセス
+  - 不正傍受
+=> AWS Storage Gateway, CHAP
+
+## 12. AWS LambdaとAmazon Rekognition API
+動物画像検索アプリ (画像識別)
+- ユーザーが動物写真などをアップロード、類似した動物を画像検索
+- 一連の写真をアップロード、特定の画像が利用された時間を検索
+期待
+- アプリケーションの開発と運用を低コストに実施
+=> AWS Lambda, Amazon Rekognition API, Lambda -> S3
+
+## 13. Amazon Transit Gatewayをつかったセキュリティ構成
+AWS上の社内システム
+- セキュリティ強化
+  - 利用するVPCに侵入検知・防止システムを実装
+- システム要件
+  - VPC内で実行されている数百にも及ぶインスタンスを拡張できる機能が必要
+  - 現在VPCは12個起動
+期待
+- まとめてモニタリングする効率的な方法
+=> AWS Transit Gateway, Amazon VPC, IDS/IPS
+
+## 14. AWS Snowball Edge Storage Optimizedをつかったデータ移行
+要件
+- オンプレのインフラとアプリケーション全般をAWSクラウドに移行
+  - 合計150TBのデータ
+    - タイムリーかつ費用対効果の高い方法でS3バケットに移動する必要がある
+  - 既存のインターネット接続の空き容量を使用
+    - データをAWSにアップロードするのには1週間以上かかると予測
+=> AWS Snowball Edge Storage Optimized
+
+
+## 15. AWSでスケーラビリティと弾力性を高める
+3層ウェブアプリケーションとなっているニュースサイト
+- オンプレミスでデプロイ
+要件
+- スケーラビリティと弾力性を高めるためにAWSに移行
+  - トラフィック変動に自動的に対応する必要あり
+    - Web層とアプリケーション層を組み合わせた読み取り専用のニュースレポートサイト
+    - 予測不可能な大規模なトラフィック要求を受け取るデータベース層
+=> ELB, AutoScaling, ElastiCache Redis, CloudWatch, RDS Read/Replica
+
+## 16. AWS Security Token Service
+モバイルアプリケーション
+- ユーザーがS3バケット内のデータを利用する際に一時認証を利用
+  - STSを利用して一時的な認証情報を取得しユーザーに渡す
+  - ただし一部の一時認証情報のアクセス権限が間違っているため必要なリソースへのアクセスが提供されていないことが判明
+要件
+- 一時認証によって付与されたアクセス権を取り消す方法
+=> AWS IAM, AWS Security Token Service
+
