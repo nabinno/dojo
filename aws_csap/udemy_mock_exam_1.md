@@ -272,3 +272,12 @@ AWS上にエンタープライズシステム
   - ECSクラスターに対するオートスケーリング設定を実施
 => AWS CloudWatch (Capacity Provider Reservation), AWS Auto Scaling, Amazon ECS (AWS ECS Cluster Auto Scaling)
 
+## 27. AWS Resource Access Manager
+社内の統合管理のために全社共通のIT運用部門
+- AWS Organizationsを使用
+  - マルチアカウントおよびマルチリージョンを管理
+  - AWSアカウントAとAWSアカウントBとAWSアカウントC
+要件
+- クロスアカウント処理が必要となる定期タスクの自動化設定
+  - アカウントAのユーザーがアカウントBのEC2インスタンスへのアクセスを定期的に実施
+=> AWS Resource Access Manager (enable-sharing-with-aws-organizations), AWS Organizations (trusted access)
