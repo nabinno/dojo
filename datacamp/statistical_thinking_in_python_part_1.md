@@ -353,12 +353,18 @@ plt.show()
 
 ## Plotting the Binomial PMF
 ```python
+# Compute bin edges: bins
+bins = np.arange(0, max(n_defaults) + 1.5) - 0.5
 
-```
+# Generate histogram
+plt.hist(n_defaults, normed=True, bins=bins)
 
-## Poisson processes and the Poisson distribution
-```python
+# Label axes
+plt.xlabel('')
+plt.ylabel('')
 
+# Show the plot
+plt.show()
 ```
 
 ## Relationship between Binomial and Poisson distributions
