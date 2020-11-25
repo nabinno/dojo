@@ -281,3 +281,18 @@ AWS上にエンタープライズシステム
 - クロスアカウント処理が必要となる定期タスクの自動化設定
   - アカウントAのユーザーがアカウントBのEC2インスタンスへのアクセスを定期的に実施
 => AWS Resource Access Manager (enable-sharing-with-aws-organizations), AWS Organizations (trusted access)
+
+## 28. 安全なECS環境
+CI/CD環境
+- 開発環境などは全てDocker
+- Fargate起動タイプを使用するAmazon ECSクラスター
+要件
+- 社内製品を販売するためのECサイトを構築
+- ECSでの実装
+  - 環境変数を使用
+- 顧客データベースの資格情報をECサイトに提供する必要があり
+  - セキュリティを徹底
+    - 資格情報がデータ保持とイメージ転送が安全であることが保障
+    - かつクラスター自体で表示できないように
+=> Systems Manager (parameter store), KMS, ECS, Secrets Manager, IAM
+
