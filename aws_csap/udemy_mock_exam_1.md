@@ -296,3 +296,14 @@ CI/CD環境
     - かつクラスター自体で表示できないように
 => Systems Manager (parameter store), KMS, ECS, Secrets Manager, IAM
 
+## 29. VPN
+ウェブベースの会計アプリケーション
+- フロントサーバー群はAWSのパブリックサブネット上で利用
+- 社内のネットワークからのみAWSサイト間VPN接続によって利用
+要件
+- 会社ではSOHOを推進
+  - 外部Wifiがある環境であればどこからでもリモートで接続して作業ができる機能を実装
+	- 下記事案に関してセキュリティ性能をできる限り高める
+      - 外部からのアクセスが頻繁に発生すること
+      - 機密性の高いデータを扱っていること
+=> Amazon VPC (Private Subnet <- NAT Gateway <- Public Subnet), VPN (OpenVPN)
