@@ -307,3 +307,75 @@ CI/CD環境
       - 外部からのアクセスが頻繁に発生すること
       - 機密性の高いデータを扱っていること
 => Amazon VPC (Private Subnet <- NAT Gateway <- Public Subnet), VPN (OpenVPN)
+
+## 30. AWS Directory Service
+オンプレミス環境
+- 以前からMicrosoft Active Directoryを使用
+- すべての従業員アカウントとデバイスを管理
+AWSクラウドを利用したハイブリッドアーキテクチャを採用することを決定
+- AWS Directory Serviceの設定を行うことが必要
+  - 既存のWindowsアカウントパスワードを使用して様々なAWSリソースに接続して使用
+  - 新規にAWSにおいてIAM管理を実施することは非効率
+=> AWS Directory Service <-> MS Active Directory, AD Connector (SSO)
+
+## 31. AWS VPN CloudHub
+AWSをクラウドソリューションとして導入
+- AWSとオフィスネットワークとを接続
+- リモートネットワークをAmazon VPC環境に接続するための接続設定を実施
+社内要件
+- 予測可能なネットワークパフォーマンスを提供
+- 安全なIPsec VPN接続を実現
+- コスト効率の良い方法で可用性を達成
+=> AWS DIrect Connect, AWS VPN CloudHub (private link)
+
+## 32. AssumeRoleによるユーザー認証
+ハイブリッドクラウドアーキテクチャを採用
+- 自社ネットワークとAWSのクラウドインフラストラクチャを接続
+- 既存のいくつかのデータベースを高速処理が可能なAWS上のサービスに移管
+要件
+- オンプレミス環境のアプリケーションからAWSリソースへとアクセスするための認証方式
+- 社内ではSAML 2.0をサポートしていない社内のID認証システムによってユーザー管理を実施
+=> AWS Directory Service (Active Directory Connector), AWS IAM (Custom ID Borker), AWS Security Token Service (AssumeRole API)
+
+## 33. AWS Direct Connect
+ハイブリッドクラウドアーキテクチャ
+- 自社ネットワークとAWSのクラウドインフラストラクチャを接続
+移行要件
+- ハイブリッドクラウドを実現するためにオンプレミス環境からAWSへの Direct Connect接続を確立
+- Direct Connectリンクを設定してルートをオンプレミス環境に接続
+=> AWS Direct Connect (Virtual Private Gateway), Amazon VPC (Route Propagation)
+
+## 34. Multi-AZとAuto Scaling
+EコマースサイトをAWSにホスト
+- 3つのアベイラビリティーゾーン
+  - ALBとオンデマンドEC2インスタンス
+利用者が増加
+- このECサイトのピーク時に処理落ちが発生
+- システムの改善を依頼
+要件
+- 負荷のピーク時にはマルチAZに負荷を分散してオートスケール処理ができる必要
+- スポットインスタンスを上手く利用してコスト最適に実現
+=> Amazon VPC (multi-AZ), EC2 (spot instance) -> Auto Scaling
+
+## 35. Business Continuity Planning
+事業継続性計画（BCP）ガイドライン
+- 障害復旧時間（RTO）は1時間
+- 目標復旧時点（RPO）は15分前
+- 下記ケースにおいて推定される障害復旧時間とデータ損失
+  - 災害が発生したことで停電などが発生
+  - 午後2時にサーバーが停止
+=> RPO 1:45, Lost 1:45-2:00
+
+## 36. Amazon DynamoDB (global secondary indexes)
+業務システム
+- EC2
+- ELB
+- DynamoDB
+  - 設定時にUser_IDの主キーを持つTRANSACTIONSというテーブルを作成
+  - 問題なく、IDの主キーに基づいてデータを照会できるように構成
+DynamoDBテーブルの要件
+- データ集計機能
+  - ユーザーのアクセス頻度に応じて対象顧客をセグメンテーション
+- 絞り込み検索
+  - User_IDというパーティションキーに関連付け
+=> Amazon DynamoDB - Build table with global secondary indexes
