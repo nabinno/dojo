@@ -463,19 +463,16 @@ _ = plt.ylabel('CDF')
 plt.show()
 ```
 
-## Are the Belmont Stakes results Normally distributed?
-```python
-
-```
-
 ## What are the chances of a horse matching or beating Secretariat's record?
 ```python
+# Take a million samples out of the Normal distribution: samples
+samples = np.random.normal(mu, sigma, size=1000000)
 
-```
+# Compute the fraction that are faster than 144 seconds: prob
+prob = np.sum(samples <= 144) / len(samples)
 
-## The Exponential distribution
-```python
-
+# Print the result
+print('Probability of besting Secretariat:', prob)
 ```
 
 ## Matching a story and a distribution
