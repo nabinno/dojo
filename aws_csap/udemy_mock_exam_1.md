@@ -379,3 +379,21 @@ DynamoDBテーブルの要件
 - 絞り込み検索
   - User_IDというパーティションキーに関連付け
 => Amazon DynamoDB - Build table with global secondary indexes
+
+## 37. 分析基盤とコスト管理
+アプリケーションログファイルから定期的な分析レポートを作成する監査用ログシステム
+- すべてのログデータはAmazon S3バケットに収集
+  - その後、毎日のAmazon EMRジョブによって分析が実行
+    - 日次レポートと集計テーブルをCSV形式で生成
+	- 別のS3バケットに保存
+	- Amazon Redshiftデータウェアハウスに転送
+課題
+- 分析に利用するデータの使用頻度は不確実
+- データ管理のライフサイクルポリシーをうまく設定できません
+要件
+- パフォーマンスやデータの整合性を損なうことなくコスト削減
+=> Redshift (reserved instance)
+=> EMR core/master node (reserved instance), EMR task node (spot instance)
+=> S3 (Intelligent Tiering)
+
+
