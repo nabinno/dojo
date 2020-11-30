@@ -397,3 +397,17 @@ DynamoDBテーブルの要件
 => S3 (Intelligent Tiering)
 
 
+## 38. AWS Organizations
+複数部門と支社でAWSサービスを利用
+- 部門ごとにAWSアカウントを作成
+- 各アカウント
+  - その特定アカウントのみのルートアクセス権を持つシステム管理者によって管理
+要件
+- 全社統一でAWSアカウントを統合
+  - 内部統制を強化
+  - コスト削減
+  - 複数のAWSアカウント全体でポリシーを集中管理
+    - 特定のAWSサービスを許可または拒否
+      - 個々のアカウントまたはアカウントのグループに対して
+=> AWS Organizations (organization unit, service control policy)
+
