@@ -112,12 +112,12 @@ x_vers, y_vers = ecdf(versicolor_petal_length)
 x_virg, y_virg = ecdf(virginica_petal_length)
 
 # Plot all ECDFs on the same plot
-plt.plot(x_set, y_set)
-plt.plot(x_vers, y_vers)
-plt.plot(x_virg, y_virg)
+_ = plt.plot(x_set, y_set, marker='.', linestyle='none')
+_ = plt.plot(x_vers, y_vers, marker='.', linestyle='none')
+_ = plt.plot(x_virg, y_virg, marker='.', linestyle='none')
 
 # Annotate the plot
-plt.legend(('setosa', 'versicolor', 'virginica'), loc='lower right')
+_ = plt.legend(('setosa', 'versicolor', 'virginica'), loc='lower right')
 _ = plt.xlabel('petal length (cm)')
 _ = plt.ylabel('ECDF')
 
@@ -463,6 +463,27 @@ _ = plt.ylabel('CDF')
 plt.show()
 ```
 
+## Are the Belmont Stakes results Normally distributed?
+```python
+# Compute mean and standard deviation: mu, sigma
+mu = np.mean(belmont_no_outliers)
+sigma = np.std(belmont_no_outliers)
+
+# Sample out of a normal distribution with this mu and sigma: samples
+samples = np.random.normal(mu, sigma, size=10000)
+
+# Get the CDF of the samples and of the data
+x_theor, y_theor = ecdf(samples)
+x, y = ecdf(belmont_no_outliers)
+
+# Plot the CDFs and show the plot
+_ = plt.plot(x_theor, y_theor)
+_ = plt.plot(x, y, marker='.', linestyle='none')
+_ = plt.xlabel('Belmont winning time (sec.)')
+_ = plt.ylabel('CDF')
+plt.show()
+```
+
 ## What are the chances of a horse matching or beating Secretariat's record?
 ```python
 # Take a million samples out of the Normal distribution: samples
@@ -490,11 +511,17 @@ def successive_poisson(tau1, tau2, size=1):
 
 ## Distribution of no-hitters and cycles
 ```python
+# Draw samples of waiting times
+waiting_times = successive_poisson(764, 715, size=100000)
 
+# Make the histogram
+_ = plt.hist(waiting_times, bins=100, histtype='step',
+             normed=True)
+
+# Label axes
+_ = plt.xlabel('total waiting time (games)')
+_ = plt.ylabel('PDF')
+
+# Show the plot
+plt.show()
 ```
-
-## Final thoughts
-```python
-
-```
-
