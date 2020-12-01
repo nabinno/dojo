@@ -411,3 +411,11 @@ DynamoDBテーブルの要件
       - 個々のアカウントまたはアカウントのグループに対して
 => AWS Organizations (organization unit, service control policy)
 
+## 39. Amazon DynamoDBによるリージョン間のレプリケーション
+C to C専門のモバイルフリマサイト
+- 複数のAWSリージョンに対してバックエンドAPIが起動
+  - ユーザーに最も近いリージョンで販売および取引が処理されるようにルーティング
+  - 東京リージョンから東南アジアにも展開
+要件
+- トランザクションがシンガポールリージョンにも自動的に複製されるレプリケーション構成を実現
+=> Amazon DynamoDB (global-table: singapore)
