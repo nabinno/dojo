@@ -432,3 +432,24 @@ AWS Organizationsを使用
 - 事前に予防
 => AWS CloudTrail, AWS Organizations, CloudWatch Events, SNS
 
+## 41. Amazon S3 (requester pays bucket)
+開発部門
+- 複数のAmazon S3バケットを使用
+  - さまざまなデジタルアートワーク用の高解像度メディアファイルを保存
+運用部門
+- 別AWSアカウントにて
+  - 開発部門S3バケット内のデータを利用した既存アプリケーションとの連携機能が運用
+課題
+- 運用部門のAWSアカウントから開発部門S3バケットの複数オブジェクトを頻繁に取得
+  - 転送コストが開発部門に請求
+=> Amazon S3 (requester pays bucket)
+
+## 42. Amazon VPC (overlap error of subnets)
+レガシーシステムをアップグレードするためにAWSへの移行
+- オンプレミスネットワークをAWSクラウドに移行
+  - 以下のように構成
+    - VPC（10.0.0.0/16）
+      - パブリックサブネット（10.0.0.0/24）
+      - プライベートサブネット（10.0.1.0/24）
+      - 新しいパブリックサブネット（10.0.0.0/16）を追加
+=> Amazon VPC (overlap error of subnet) (新しいパブリックサブネットと既存パブリックサブネット)
