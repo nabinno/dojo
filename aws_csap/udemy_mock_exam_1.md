@@ -453,3 +453,23 @@ AWS Organizationsを使用
       - プライベートサブネット（10.0.1.0/24）
       - 新しいパブリックサブネット（10.0.0.0/16）を追加
 => Amazon VPC (overlap error of subnet) (新しいパブリックサブネットと既存パブリックサブネット)
+
+## 43. Amazon CloudFront (distribution, whitelist headers)
+オンプレミスのデータセンター
+- サプライチェーンアプリケーションをホスト
+  - ホワイトリストに登録した信頼できるIPアドレスを使用
+要件
+- このアプリケーションを含めてオンプレミス環境のインフラをAWSへと移行
+  - IPアドレスホワイトリストの変更を要求することなく、VPCに移行
+=> Amazon CloudFront (distribution, whitelist headers)
+
+## 44. Federated identity with AWS IAM
+オンプレミス環境
+- サードパーティーのSAML IdPを利用したログイン
+  - これを利用したAWSリソースへのアクセス制御が必要
+要件
+- オンプレミスネットワークをAWSクラウドに接続するハイブリッドクラウドアーキテクチャ
+- SAML IdPを利用したAWSリソースへのアクセス制御
+=> SAML 2.0 IdP (federation access)
+=> AWS IAM (IAM SAML ID Provider)
+
