@@ -473,3 +473,26 @@ AWS Organizationsを使用
 => SAML 2.0 IdP (federation access)
 => AWS IAM (IAM SAML ID Provider)
 
+## 45. AWS IAM (AssumeRoleWithWebIdentity)
+写真共有アプリケーション
+- 構成
+  - アプリケーションサーバー: 一連のECインスタンスにELBとAutoScalingが設定
+  - S3: 写真を保存
+  - Amazon DynamoDB: 文字情報を保存
+要件
+- アプリケーションサーバーからDynamoDBテーブルへと連携する処理を実装
+- このアプリケーションへのモバイル認証を実施して、DynamoDBへのアクセスすることが必要
+  - Amazon Cognitoを利用しない方式
+=> Web IdP, AWS IAM (AssumeRoleWithWebIdentity), Amazon DynamoDB
+
+## 46. Amazon CloudWatch Logs
+AWSにおいて決済管理システムや顧客管理ポータルを運用
+- WindowsおよびLinux EC2インスタンスの毎月のパフォーマンスチェック
+- 実稼働環境で実行されている200を超えるオンデマンドEC2インスタンスを利用
+  - 収集分析
+    - 各インスタンスのメトリクス
+      - メモリ使用量
+      - ディスク容量
+    - さまざまなシステム詳細情報のログ
+=> Amazon CloudWatch Logs (agent), Amazon EC2, CloudWatch Logs Insights
+
