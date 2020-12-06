@@ -496,3 +496,12 @@ AWSにおいて決済管理システムや顧客管理ポータルを運用
     - さまざまなシステム詳細情報のログ
 => Amazon CloudWatch Logs (agent), Amazon EC2, CloudWatch Logs Insights
 
+## 47. VPC Lambda
+Lambda関数を使ったシステムコンポーネントの設計・実装
+- WEB上で該当するLambda関数を実行すると
+  - VPCにホストされているデータベースに処理結果を保存する機能を構築して
+    - Lambda関数からVPC内のプライベートサブネットにあるデータベースにアクセスを試みましたが
+      - Lambda関数は動作を停止してしまいました
+=> Lambda (security group: outbound)
+=> Amazon VPC, NAT Gateway
+
