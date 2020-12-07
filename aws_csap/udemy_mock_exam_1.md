@@ -505,3 +505,14 @@ Lambda関数を使ったシステムコンポーネントの設計・実装
 => Lambda (security group: outbound)
 => Amazon VPC, NAT Gateway
 
+## 48. Amazon CloudFront (Lambda Edge, Origin Failover)
+仮想通貨取引システム
+- 今年リリースしたモバイルから仮想通貨取引に参加できるアプリケーション
+  - サーバレスアーキテクチャにより実装
+課題
+- このモバイルアプリケーションはグローバルに何10万人ものユーザーを抱えており
+  - CloudFrontによってコンテンツが配信されることで最適な配信構成を実現していましたが
+   - 最近になってHTTP 504エラーが時々発生しているようです
+   - 特にログイン時に時間がかかっているようです
+=> Amazon CloudFront (Lambda Edge)
+=> Amazon CloudFront (Origin Failover)
