@@ -516,3 +516,18 @@ Lambda関数を使ったシステムコンポーネントの設計・実装
    - 特にログイン時に時間がかかっているようです
 => Amazon CloudFront (Lambda Edge)
 => Amazon CloudFront (Origin Failover)
+
+## 49. Amazon CloudFront (Origin Access Identity)
+動画再生アプリケーション
+- 動画データをS3に保存
+- EC2インスタンスによる動画処理
+- グローバルにユーザーに利用してもらう配信プラットフォームであるため
+  - CloudFrontを前面に設定
+課題
+- 動画配信のセキュリティ制御を実装
+要件
+- 動画配信において
+  - 配信者をアプリケーションの会員ユーザーに限定することが必要であり
+  - 暗号化によって保存データを保護する必要があります
+=> Amazon CloudFront (SSL, Origin Access Identity)
+
