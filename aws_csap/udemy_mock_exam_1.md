@@ -531,3 +531,46 @@ Lambda関数を使ったシステムコンポーネントの設計・実装
   - 暗号化によって保存データを保護する必要があります
 => Amazon CloudFront (SSL, Origin Access Identity)
 
+## 50. Amazon EC2 (Place Group)
+多層Webアプリケーション
+- WEB層において
+  - プレースメントグループを構成している9つのEC2インスタンスが実行
+  - EC2インスタンスの処理負荷が増加
+    - このプレイスメントグループに対して2つの新しいインスタンスを追加
+=> Amazon EC2 (Place Group)
+
+## 51. Amazon Kinesis Data Streams
+IoTデータによる農業データ管理システム
+- 毎日の実行タスク
+  - その日の農地のかかる土壌および水分データを取得
+  - 最適な育成環境であるかを管理
+  - 機械学習によってレコメンデーションを実行
+要件
+- この機能を実施するためには
+  - 下記2つのトランザクション処理を実施することが必要
+    - リアルタイム土壌分析処理
+    - リアルタイム栄養素分析処理
+- 2つのトランザクション機能が効率的にデータを処理できるようにするには
+  - 同じトランザクションデータが確実に配信されてシリアル順でデータ順序が保証されていることが必要
+=> Amazon Kinesis Data Streams, Amazon SQS (FIFO)
+
+## 52. Amazon VPC (DHCP, domain-name-servers=AmazonProvidedDNS)
+ネットワーク構成を実装
+- DHCPは構成情報をTCP/IPネットワーク上のホストに提供
+- DHCPオプションの最初のセットを作成してAmazonのDNSサーバーを利用してVPCに関連付けましたが
+  - エラーが発生
+=> Amazon VPC (DHCP, domain-name-servers=AmazonProvidedDNS)
+
+## 53. AWS IAM (service principal: apigateway.amazon.com)
+タスク管理アプリケーションサービス
+- DynamoDBテーブル
+- アプリケーションのデータ処理において新規のサーバレス機能を実装
+  - APIゲートウェイからLambda関数を呼び出すことで
+    - DynamoDBテーブルのデータを取得してデータ集計
+  - 実装にはLambda関数によるDynamoDBテーブルへのアクセスのためには
+    - Lambda関数に対してIAMロールを設定することが必要となり
+	- 現在設定
+=> AWS Lambda, AWS IAM (service principal: apigateway.amazon.com)
+=> AWS Lambda, Amazon DynamoDB, IAM (action: [dynamodb:GetItem, dynamodb:PutItem])
+
+
