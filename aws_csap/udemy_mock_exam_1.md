@@ -573,4 +573,39 @@ IoTデータによる農業データ管理システム
 => AWS Lambda, AWS IAM (service principal: apigateway.amazon.com)
 => AWS Lambda, Amazon DynamoDB, IAM (action: [dynamodb:GetItem, dynamodb:PutItem])
 
+## 54.Amazon EC2 (reserved instance)
+金融システム向けのAWSクラウド環境
+- 会社にはシステム開発・運用の各段階を分けるために3つの統合された請求先アカウントがあります
+- 利用しているアカウントは
+  - 開発
+    - AZ：ap-northeast-1d
+    - 3つのm4.largeのリザーブドインスタンス
+    - 開発アカウントで実行されているインスタンスはありません
+  - テスト
+  - 本番環境用
+    - AZ：ap-northeast-1d
+    - 5つのm4.largeインスタンス 利用中
+=> Amazon VPC (AZ: ap-northeast-1d), Amazon EC2 (reserved instance)
+
+## 55. Amazon CloudFront (Viewer Protocol Policy)
+新しいSNSアプリケーション
+- 日常の写真などを共有したりメッセージを発信
+- EC2インスタンス
+  - 2つのアベイラビリティーゾーンにデプロイ
+  - Auto Scalingグループ
+  - ELB
+  - CloudFront - 静的なコンテンツを配信
+課題
+- HTTPS/SSLを利用していないためGoogle検索ランキングが低くなっている
+=> Amazon CloudFront (Viewer Protocol Policy, HTTPS Only)
+=> Amazon CloudFront (Viewer Protocol Policy, Redirect HTTP to HTTPS)
+=> Amazon CloudFront (Viewer Protocol Policy, SSL/TLS)
+
+## 56. aws auto-scaling terminate-instance-in-auto-scaling-group --instance-id
+現在開発している顔認証システム
+- オンデマンドEC2インスタンス
+  - Auto Scalingグループを使用
+  - エラーを引き起こしている特定のインスタンスが1つあり
+    - これを迅速に終了する必要があります
+=> aws auto-scaling terminate-instance-in-auto-scaling-group --instance-id
 
