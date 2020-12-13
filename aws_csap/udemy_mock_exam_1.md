@@ -625,3 +625,26 @@ IoTデータによる農業データ管理システム
       - トラフィック制御用のIPアドレス
 => Elastic IP Address, EC2
 
+## 58. Elastic Load Balancing (path-based routing)
+eコマースアプリケーション
+- 複数のEC2インスタンス
+- ELB
+- 複数のデバイスプラットフォームをサポート
+  - モバイルやPC端末など多様なデバイスからアクセスして利用される予定
+要件
+- SSLによるセキュアな通信方式を設定することが必要
+=> Elastic Load Balancing (path-based routing)
+
+## 59. Amazon EC2, Auto Scaling
+AIベースの交通監視アプリケーション
+- このシステムは都市全体で使用されるため下記のような状態は大きな問題
+  - 間違った情報を利用
+  - 途中で障害が発生して不必要なダウンタイムが発生
+要件
+- システムダウンを極力回避するために
+  - 可用性と耐障害性を高める必要
+- アプリケーションの処理にはEC2インスタンスサーバー
+- データベース処理にはSQLクエリ処理
+=> Elastic Load Balancing, Amazon EC2, Auto Scaling, Amazon Aurora (multi-AZ), Amazon Route 53 (alias record)
+
+
