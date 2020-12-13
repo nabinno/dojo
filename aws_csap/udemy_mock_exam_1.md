@@ -647,4 +647,24 @@ AIベースの交通監視アプリケーション
 - データベース処理にはSQLクエリ処理
 => Elastic Load Balancing, Amazon EC2, Auto Scaling, Amazon Aurora (multi-AZ), Amazon Route 53 (alias record)
 
+## 60. Amazon VPC (Secondary IPv4 CIDR)
+保険をAPIで提供するアプリケーション
+- IPv4 CIDRブロック10.0.0.0/24のVPCに設置
+  - IPアドレスが枯渇
+要件
+- VPC CIDR範囲を拡張するが必要
+=> Amazon VPC (Secondary IPv4 CIDR)
+
+## 61. AWS Key Management Service, AWS CloudHSM, Amazon EBS
+健康管理アプリケーション
+- 複数のEC2インスタンス
+  - ELB
+  - AutoScalingグループ
+  - EBS - 機密性の高い健康記録データ保存
+要件
+- セキュリティコンプライアンスの一環として下記が義務付けられている
+  - クラウドインフラストラクチャに保存されているすべてのデータ適切に保護あるいは暗号化
+  - 暗号化方式を検討
+=> AWS CloudHSM, EBS
+=> AWS Key Management Service, EBS
 
