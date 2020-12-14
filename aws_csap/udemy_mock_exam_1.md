@@ -668,3 +668,12 @@ AIベースの交通監視アプリケーション
 => AWS CloudHSM, EBS
 => AWS Key Management Service, EBS
 
+## 62. LDAP with AWS Security Token Service
+顧客管理用のWEBアプリケーション
+- ハイブリッドアーキテクチャ
+  - データベースがAWSのRDSに移行
+要件
+- オンプレミス環境にあるWEBアプリケーション
+  - LDAP（Lightweight Directory Access Protocol）サーバーによる認証
+  - AWS上にあるRDSの顧客データにアクセスすることが必要
+=> Identity broker, LDAP authentication, AWS Security Token Service (AssumeRole), Amazon RDS
