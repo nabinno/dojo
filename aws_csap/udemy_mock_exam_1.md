@@ -677,3 +677,14 @@ AIベースの交通監視アプリケーション
   - LDAP（Lightweight Directory Access Protocol）サーバーによる認証
   - AWS上にあるRDSの顧客データにアクセスすることが必要
 => Identity broker, LDAP authentication, AWS Security Token Service (AssumeRole), Amazon RDS
+
+## 63. AWS CloudFormation, AWS Service Catalog
+統合管理・一括請求の仕組みを構築
+- 複数アカウントを管理するためにAWS Organizationsを利用
+- 組織内のすべてのリソースを適切に管理するには
+  - すべてのアカウントでリソースが作成されたときに
+    - タグが常に追加されるようにする必要
+=> AWS Service Catalog
+=> AWS CloudFormation
+
+
