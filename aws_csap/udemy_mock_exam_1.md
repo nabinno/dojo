@@ -687,4 +687,12 @@ AIベースの交通監視アプリケーション
 => AWS Service Catalog
 => AWS CloudFormation
 
+## 64. Elastic Load Balancing (without sticky session), Amazon EC2
+仲介業者を介さずに物件の内見予約が出来るアプリケーション
+- ２つのAZに展開された8のECインスタンスによって構成
+- 負荷テストを実施したところ負荷分散が達成されていない
+  - ユーザーセッションは両方のAZのEC2インスタンスに均等に分散
+  - 負荷テストツールのトラフィックは１つのAZにあるEC2インスタンスのみを利用
+=> Elastic Load Balancing (without sticky session), Amazon EC2
+=> Distributed stress testing
 
