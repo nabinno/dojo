@@ -696,3 +696,12 @@ AIベースの交通監視アプリケーション
 => Elastic Load Balancing (without sticky session), Amazon EC2
 => Distributed stress testing
 
+## 65. AWS CloudFormation (CreationPolicy: { ResourceSignal: Timeout })
+CloudFormationを利用した環境構築
+- スタック全体の起動に失敗した場合に
+  - 自動的にロールバックするCloudFormationテンプレートを準備する必要がある
+- アプリケーションスタックを適切に実行するには
+  - 最初に前提条件パッケージをインストールする必要がある
+- 展開が完了するには約1時間ほどかかる場合がある
+=> AWS CloudFormation (CreationPolicy: { ResourceSignal: Timeout })
+
