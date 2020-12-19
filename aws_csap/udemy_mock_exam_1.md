@@ -705,3 +705,11 @@ CloudFormationを利用した環境構築
 - 展開が完了するには約1時間ほどかかる場合がある
 => AWS CloudFormation (CreationPolicy: { ResourceSignal: Timeout })
 
+## 66. Amazon CloudFront (Origin Access Identity), Amazon S3
+S3を利用したコンテンツ共有の仕組みを構築
+- ユーザーからのアクセスに限定する必要
+  - インスタンスのIPアドレスからのみオブジェクトにアクセスできるようにする設定することが要件
+=> Amazon CloudFront (Origin Access Identity), Amazon S3
+
+
+
