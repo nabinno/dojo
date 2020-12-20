@@ -768,3 +768,47 @@ Eコマースサイト
   - コンテンツの読込時間が長いというクレームが発生するようになりました
 => Amazon RDS (snapshot), Amazon Aurora (multi cluster, read replica), Amazon CloudFront
 
+## 72. Amazon Redshift (auto snapshot), Amazon Redshift (disater recovery)
+仮想通貨取引プラットフォーム
+- 取引実行データの分析においてRedshiftクラスターを実行
+要件
+- Redshiftの災害対応の構成を検討
+  - リージョン内のAZが停止した際に即時に対応できる構成
+  - リージョン自体が停止したい際には1日で回復できる構成
+=> Amazon Redshift (auto snapshot), Amazon Redshift (disater recovery)
+=> Amazon Redshift (multi AZ)
+
+## 73. Network ACL (inbound: port 1024-65535)
+WEBアプリケーション
+- Amazon EC2インスタンス
+  - 複数のアベイラビリティーゾーン
+  - ALB
+  - Auto Scalingグループでホスト
+- HTTPおよびHTTPSトラフィックを許可するために
+  - ポート80および443でのインバウンドトラフィックを許可
+    - ALBおよびEC2インスタンスの両方のネットワークACL
+    - セキュリティグループ
+課題
+- インターネットからWEBアプリケーションへと接続することができない
+=> Network ACL (inbound: port 1024-65535)
+
+## 74. SSM Agent, AWS Systems Manager Automation
+オンライン決済プラットフォーム
+- EC2インスタンス
+  - Auto Scalingグループ
+  - ELB
+  - AWS Systems Managerを使用してEC2インスタンスのグループを監視および処理
+要件
+- これらのインスタンスにメンテナンスやOSパッチなどのバッチ操作がある場合は
+  - Systems Managerを使用してこれらのアクティビティを自動的に実施する設定が必要
+=> EC2 (SSM Agent)
+=> AWS Systems Manager Automation
+
+## 75. Amazon EC2 (AMI, key pairs)
+AWSの既存リソースの一部を別リージョンに移行
+1. すべてのAmazon Machine Image（AMI）を東京リージョンからシンガポールリージョンにコピー
+  - しかしながら、AMIのコピーするだけでは該当EC2インスタンスにアクセスすることができない
+  - シンガポールリージョンに向けてコピーされたAMIを起動する際には
+    - 最適なPEMキーを指定して起動することが必要
+      - 会社の管理方針としてPEMキーを単一のキーで一元的に利用することが求められている
+=> Amazon EC2 (AMI, key pairs)
