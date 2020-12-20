@@ -711,5 +711,60 @@ S3を利用したコンテンツ共有の仕組みを構築
   - インスタンスのIPアドレスからのみオブジェクトにアクセスできるようにする設定することが要件
 => Amazon CloudFront (Origin Access Identity), Amazon S3
 
+## 67. RD Gateway Server
+インターネットを介してVPCに接続し
+- EC2インスタンスを管理
+  - パブリックサブネット
+  - プライベートサブネット
+要件
+- Microsoft Remote Desktop Protocol（RDP）アクセスによるリモートアクセスを実現したい
+  - EC2インスタンスへのインターネットアクセスを制限して安全なものにするため
+    - Bastionホストを利用したインターネットアクセスを構成する必要
+=> Amazon EC2 (private subnet), RD Gateway Server/Amazon EC2 (security group)
 
+## 68. Amazon CloudWatch Dashboards (cross-region)
+Eコマースサイト
+- マルチリージョン
+- EC2
+要件
+- EC2インスタンス全てのパフォーマンスを監視する必要
+=> Amazon CloudWatch Dashboards (cross-region)
+ 
+## 69. Amazon Cognito, AWS STS (AssumeRole, AssumeRoleWithWebIdentity)
+データ共有システム
+- ユーザーが直接アップロードしたデータを単一のS3バケットに保存
+- ユーザーはS3バケットから直接自分がアップロードしたデータを表示およびダウンロードできる
+要件
+- 社員数1万ものユーザーがいるためこれらのデータ処理は可能な限り安全に実施される必要
+=> Amazon RDS, AWS IAM, Amazon Cognito, AWS Security Token Service (AssumeRoleWithWebIdentity), Amazon S3
+=> Amazon RDS, AWS IAM, AWS Security Token Service (AssumeRole), Amazon S3
+
+## 70. Amazon VPC (Subnet, Network ACL), Amazon EC2 (Placement Group, Security Group), AWS Config
+金融機関の決済システム
+- 2つのグループに分類されたEC2インスタンス群
+  - 同じアベイラビリティゾーン（AZ）
+  - 2つの異なるサブネット
+  - 1つのグループのEC2インスタンス群
+    - データベースを実行
+  - もう1つのグループのEC2インスタンス群
+    - データベースからデータを取得するWebサーバー
+要件
+- このWEBアプリケーションが正しく機能するためには
+  - EC2インスタンス群内での通信パフォーマンスを最適なものとした上で
+  - それぞれのEC2インスタンスの一連のグループが相互に接続できることを確認する必要
+- インスタンスに関連付けられたセキュリティ構成の変更履歴を追跡する必要
+=> Amazon VPC (Subnet, Network ACL), Amazon EC2 (Placement Group, Security Group), AWS Config
+
+## 71. Amazon RDS (snapshot), Amazon Aurora (multi cluster, read replica), Amazon CloudFront
+英語ニュースサイト
+- 各記事には多数の画像が含まれ、そのコンテンツは少なくとも200語以上あります
+- 新しい記事は最初の1か月間で最も閲覧されており
+  - 著者は公開後最初の1か月で頻繁に記事を更新する傾向があります
+- データベースにはRDS MySQLを利用しており
+  - ニュース記事のデータ処理にはクエリ処理が多数利用されるため
+    - リレーショナルモデルが必要不可欠です
+課題
+- 最近になってこのニュースメディアの利用者が急増しており
+  - コンテンツの読込時間が長いというクレームが発生するようになりました
+=> Amazon RDS (snapshot), Amazon Aurora (multi cluster, read replica), Amazon CloudFront
 
