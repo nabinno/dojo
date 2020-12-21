@@ -1,38 +1,40 @@
 ---
 title: Udemy Mock Exam 1
-url: https://www.udemy.com/course/aws-53225/learn/quiz/4723906#overview
 tags: aws-csap, amazon-web-services
+url: https://www.udemy.com/course/aws-53225/learn/quiz/4723906#overview
 ---
 
 # 1st time
-## 1. ソリューションアーキテクチャ
+## [x] 1. Amazon SWF
 フロー
 - 子プロセスを作成
 - 画像識別による一時的な評価と人の目による二次的評価を実施
 - 親プロセスに評価結果を返信するプロセスが必要
-=> AWS Step Functions
+=> Amazon SWF
 
-## 2. 移行方法とライセンス管理方法
+## [x] 2. AWS Server Migration Service, Amazon EC2, AWS License Manager
 - DB2、SAP、Windowsオペレーティングシステムサーバーなどのライセンスを使用
 - これらのライセンスごとAWSに移行する予定
-=> RDS, Windows AMI, AWS License Manager
+=> AWS Server Migration Service, Amazon EC2, AWS License Manager
 
-## 3. 権限
-- サードパーティのWEBアプリケーションを使用したい
+## [x] 3. AWS IAM (cross account)
+WEBアプリケーションを使用したい
 - アカウント内で実行されているEC2インスタンスへのAPIコマンドを発行するアクセス権が必要
 - 第三者による目的外利用ができない形式で権限を付与することが必須
-=> AWS IAM, Amazon API Gateway
+=> AWS IAM (cross account)
 
-## 4. EC2のアクセス制限
-- 社内用業務WEBアプリケーション
-- パブリックサブネットに設置されたWebサーバー、EC2インスタンスで構成
+## [x] 4. Proxy Server, Amazon VPC
+社内用業務WEBアプリケーション
+- パブリックサブネットに設置
+- EC2インスタンス
+要件
 - オープンなインターネットから誰でもアクセスできるようにはしたくはない
-- パッチ更新のために
-  - インバウンドリクエストを受ける
-  - 特定のURLへのアウトバウンドリクエストのみに限定
-=> Security Group
+  - パッチ更新のために
+    - インバウンドリクエストを受ける
+    - 特定のURLへのアウトバウンドリクエストのみに限定
+=> Proxy Server, Amazon VPC
 
-## 5. 最もコスト効率がよく最適なアーキテクチャ
+## [x] 5. 最もコスト効率がよく最適なアーキテクチャ - Multi-AZ, NAT Gateway, ELB, Bastion host, Security Gropu
 ニュースメディア配信アプリケーションの構成
 - 東京リージョン
 - EC2インスタンス
@@ -46,7 +48,7 @@ tags: aws-csap, amazon-web-services
 	  - セキュリティ上の理由からジャンプホストへのSSHポートのみを開くことが要件
 => Multi-AZ, NAT Gateway, ELB, Bastion host, Security Gropu
 
-## 6. IPv6の設定
+## [x] 6. IPv6の設定 - Internet Gateway -> Amazon VPC (subnet/IPv6 CIDR, Network ACL) -> EC2 (security group/IPv6 CIDR)
 WEBサービスの構成
 - IPv4 CIDR（10.0.0.0/16）のVPC内に設置
   - 2つのパブリックサブネット
@@ -57,7 +59,7 @@ WEBサービスの構成
 社内方針
 - IPv6によるIP管理が実施
 - 上記アプリケーションでも今後はIPv6を利用した構成に変更することが求められている
-=> Egress-only Internet Gateway, Amazon VPC
+=> Internet Gateway -> Amazon VPC (subnet/IPv6 CIDR, Network ACL) -> EC2 (security group/IPv6 CIDR)
 
 ## 7. AWSへの移行
 現状
