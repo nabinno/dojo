@@ -61,7 +61,7 @@ WEBサービスの構成
 - 上記アプリケーションでも今後はIPv6を利用した構成に変更することが求められている
 => Internet Gateway -> Amazon VPC (subnet/IPv6 CIDR, Network ACL) -> EC2 (security group/IPv6 CIDR)
 
-## 7. AWSへの移行
+## [x] 7. AWSへの移行
 現状
 - WEBアプリケーション
   - オンプレミス環境
@@ -73,6 +73,7 @@ WEBサービスの構成
 - この移行は週末の土日2日間で実施
 - 効率的で迅速な対応が不可欠
 => AWS Server Migration Service
+=> Amazon EC2 (VM Import/Export)
 
 ## 8. データベース移行方法
 現状
