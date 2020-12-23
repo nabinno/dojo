@@ -96,7 +96,7 @@ WEBサービスの構成
   - RDSのコネクション接続
 => AWS Lambda, RDS Proxy
 
-## 10. ロケーションベースのアラート機能
+## [x] 10. ロケーションベースのアラート機能 - Amazon DynamoDB, Amazon EC2, Amazon SQS, AutoScaling, AWS Lambda, Amazon Lex 
 グローバルな国際決済サービス
 - iOSおよびAndroidモバイル
 - 飲食店クーポンモバイルアプリ
@@ -107,7 +107,7 @@ WEBサービスの構成
     - クーポン提示
 => Amazon DynamoDB, Amazon EC2, Amazon SQS, AutoScaling, AWS Lambda, Amazon Lex 
 
-## 11. AWS Storage GatewayとCHAP認証
+## [x] 11. AWS Storage GatewayとCHAP認証
 AWSとオンプレミスサイトを併用したハイブリッドアーキテクチャ
 - AWS Storage Gatewayのボリュームゲートウェイ
 - iSCSIを介したハイブリッド構成のデータ共有システム
