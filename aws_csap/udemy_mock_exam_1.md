@@ -155,7 +155,7 @@ AWS上の社内システム
     - 予測不可能な大規模なトラフィック要求を受け取るデータベース層
 => ELB, AutoScaling, ElastiCache Memcached, CloudWatch, RDS Read/Replica
 
-## 16. AWS Security Token Service
+## [x] 16. AWS Security Token Service
 モバイルアプリケーション
 - ユーザーがS3バケット内のデータを利用する際に一時認証を利用
   - STSを利用して一時的な認証情報を取得しユーザーに渡す
