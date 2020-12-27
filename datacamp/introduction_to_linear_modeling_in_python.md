@@ -117,14 +117,40 @@ fig = plot_cdfs(dx, dy, zx, zy)
 
 ## Covariance vs Correlation
 ```python
+# Compute the covariance from the deviations.
+dx = x - np.mean(x)
+dy = y - np.mean(y)
+covariance = np.mean(dx * dy)
+print("Covariance: ", covariance)
 
+# Compute the correlation from the normalized deviations.
+zx = dx / np.std(x)
+zy = dy / np.std(y)
+correlation = np.std(zx * zy)
+print("Correlation: ", correlation)
+
+# Plot the normalized deviations for visual inspection. 
+fig = plot_normalized_deviations(zx, zy)
 ```
 
 ## Correlation Strength
 ```python
+# Complete the function that will compute correlation.
+def correlation(x,y):
+    x_dev = x - np.mean(x)
+    y_dev = y - np.mean(y)
+    x_norm = x_dev / np.std(x)
+    y_norm = y_dev / np.std(y)
+    return np.mean(x_norm * y_norm)
 
+# Compute and store the correlation for each data set in the list.
+for name, data in data_sets.items():
+    data['correlation'] = correlation(data['x'], data['y'])
+    print('data set {} has correlation {:.2f}'.format(name, data['correlation']))
+
+# Assign the data set with the best correlation.
+best_data = data_sets['A']
 ```
-
 
 
 # 2. Building Linear Models
