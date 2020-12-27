@@ -164,7 +164,7 @@ AWS上の社内システム
 - 一時認証によって付与されたアクセス権を取り消す方法
 => AWS IAM, AWS Security Token Service
 
-## 17. DDos攻撃対策
+## [x] 17. DDos攻撃対策 - Amazon Route 53 (shuffle sharding, anycast routing) AWS Shield Advanced, AWS WAF
 社内アプリケーションに対するDDoS攻撃によって大規模なシステム障害が発生
 - DDoS攻撃などの外部攻撃を軽減
 - 具体的に防止するべき攻撃リスト
@@ -175,7 +175,9 @@ AWS上の社内システム
   - クロスサイトスクリプティング
   - 不正IP取得によるアカウントアクセス
   - ネットワーク情報の取得
-=> AWS Shield Standard/Advanced, Amazon Route 53 (shuffle sharding, anycast striping)
+=> Amazon Route 53 (shuffle sharding, anycast routing)
+=> AWS Shield Advanced
+=> AWS WAF
 
 ## 18. AWS CloudFormation
 S3とRDSを利用したデータ共有アプリケーション
