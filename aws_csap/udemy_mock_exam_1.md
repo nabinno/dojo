@@ -179,7 +179,7 @@ AWS上の社内システム
 => AWS Shield Advanced
 => AWS WAF
 
-## 18. AWS CloudFormation
+## [x] 18. AWS CloudFormation - AWS CloudFormation DeletionPolicy (S3 retain), Amazon RDS (snapshot)
 S3とRDSを利用したデータ共有アプリケーション
 - CloudFormationテンプレートを利用
 - 画像をS3バケットに保存
@@ -189,14 +189,14 @@ S3とRDSを利用したデータ共有アプリケーション
   - いつでも再開できるように準備が必要
   - インフラを終了
   - 同時にデータを保持
-=> AWS CloudFormation DeletionPolicy (S3 retain), RDS (snapshot)
+=> AWS CloudFormation DeletionPolicy (S3 retain), Amazon RDS (snapshot)
 
-## 19. 誤操作対策
+## [x] 19. 誤操作対策 - AWS IAM, Amazon EC2 (tag), Amazon VPC
 AWS上にエンタープライズシステム
 - システムが突如停止するという障害が発生
   - 一人のエンジニアが本番環境のEC2インスタンスを誤って終了
   - 実稼働するアプリケーションにアクセスできる開発者が多数存在
-=> AWS IAM, Amazon EC2, Amazon VPC
+=> AWS IAM, Amazon EC2 (tag), Amazon VPC
 
 ## 20. Amazon CloudFrontの配置
 美術鑑賞向けSNSサービス「PINTORアプリケーション」
