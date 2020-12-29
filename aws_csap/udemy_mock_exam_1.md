@@ -198,7 +198,7 @@ AWS上にエンタープライズシステム
   - 実稼働するアプリケーションにアクセスできる開発者が多数存在
 => AWS IAM, Amazon EC2 (tag), Amazon VPC
 
-## 20. Amazon CloudFrontの配置
+## [x] 20. Amazon CloudFrontの配置 - AWS Certificate Manager, Amazon CloudFront (Cache-control max-age directive)
 美術鑑賞向けSNSサービス「PINTORアプリケーション」
 - CloudFrontディストリビューションを使用
   - コンテンツ読み込み時間を短縮
@@ -210,7 +210,7 @@ AWS上にエンタープライズシステム
   - コストを抑える
 => AWS Certificate Manager, Amazon CloudFront (Cache-control max-age directive)
 
-## 21. Amazon EC2のパフォチュー
+## [x] 21. Amazon EC2のパフォチュー - Amazon EC2 (Placement Group, T3, Enhanced Networking)
 顧客管理向けのJavaアプリケーション
 - WEBサーバーにEC2
   - 約40％のCPU使用率に相当する一定のワークロード
@@ -218,9 +218,10 @@ AWS上にエンタープライズシステム
   - インスタンスは複数利用
     - 通信を最適化することが求められている
 - RDSに顧客の構成情報データ
-=> T3, プレイスメントグループ, 拡張ネットワーク
+=> Amazon EC2 (Placement Group, T3, Enhanced Networking)
 
-## 22. SSL証明書の適用
+
+## [x] 22. SSL証明書の適用 - AWS Certificate Manager, Elastic Load Balancer
 モバイルアプリケーション
 - EC2インスタンス
   - AutoScalingグループ
