@@ -154,19 +154,23 @@ best_data = data_sets['A']
 
 
 # 2. Building Linear Models
-## What makes a model linear
-```python
-
-```
-
 ## Terms in a Model
 ```python
-
+fig, msg = plot_possible_answer(answer='D')
 ```
 
 ## Model Components
 ```python
+# Define the general model as a function
+def model(x, a0=3, a1=2, a2=0):
+    return a0 + (a1*x) + (a2*x*x)
 
+# Generate array x, then predict y values for specific, non-default a0 and a1
+x = np.linspace(-10, 10, 21)
+y = model(x)
+
+# Plot the results, y versus x
+fig = plot_prediction(x, y)
 ```
 
 ## Model Parameters
