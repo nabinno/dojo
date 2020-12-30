@@ -231,7 +231,7 @@ AWS上にエンタープライズシステム
     - インスタンスアクセス時に一意のSSL認証が利用される必要がある
 => AWS Certificate Manager, Elastic Load Balancer
 
-## 23. VPCエンドポイントをつかったS3との連携
+## [x] 23. VPCエンドポイントをつかったS3との連携 - Amazon EC2, Amazon S3 (bucket policy), VPC Endpoint, NAT Gateway
 顧客管理システム
 - AWSパブリッククラウド
 - ２層アプリケーション
@@ -243,7 +243,7 @@ AWS上にエンタープライズシステム
     - プライベートサブネットのアプリケーションレイヤーからS3にデータを転送
   - インスタンスの処理にはサードパーティーのソフトウェアが利用
     - 定期的にソフトウェアに対するパッチ更新が必要
-=> Amazon EC2, Amazon S3 (bucket policy), VPC Endpoint
+=> Amazon EC2, Amazon S3 (bucket policy), VPC Endpoint, NAT Gateway
 
 ## 24. データ共有システム
 社内データ共有システム
