@@ -245,7 +245,7 @@ AWS上にエンタープライズシステム
     - 定期的にソフトウェアに対するパッチ更新が必要
 => Amazon EC2, Amazon S3 (bucket policy), VPC Endpoint, NAT Gateway
 
-## 24. データ共有システム
+## [x] 24. データ共有システム - Amazon EC2 (Auto Scaling, Spot Instance), Amazon SQS, Amazon S3 Glacier
 社内データ共有システム
 - データセンターにホストして運用
 - 社内データ
@@ -255,17 +255,18 @@ AWS上にエンタープライズシステム
   - データはテープライブラリによってアーカイブされる構成をオンプレミスで実施
 要件
 - これらのシステムをAWSに移行
-=> EC2 (Auto Scaling, Spot Instance), Amazon SQS, Amazon S3 Glacier
+=> Amazon EC2 (Auto Scaling, Spot Instance), Amazon SQS, Amazon S3 Glacier
 
-## 25. IDフェデレーション
+## [x] 25. IDフェデレーション - AWS IAM (SAML Id Provider), AWS SSO, AWS Security Token Service
 エンタープライズシステムのデータセンター
 - AWSクラウドに拡張するハイブリッドクラウドインフラストラクチャ
   - オンプレミス側とクラウド側で2つの個別のログインアカウントを持つ
     - 複数の資格情報を保存することを避ける必要がある
 要件
 - AWSリソースを管理する構成
-  - 社内アカウントを使用して既にサインインしているオンプレミスユーザーが個別のIAMユーザーを作成しないこと
-=> AWS IAM (Id Provider OpenID), AWS Security Token Service (AssumeRoleWithWebIdentity)
+  - 社内アカウントを使用して既にサインインしているオンプレミスユーザーが
+    - 個別のIAMユーザーを作成しないこと
+=> AWS IAM (SAML Id Provider), AWS SSO, AWS Security Token Service
 
 ## 26. ECSのオートスケーリング
 エンタープライズアプリケーション
