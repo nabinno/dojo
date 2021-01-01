@@ -268,7 +268,7 @@ AWS上にエンタープライズシステム
     - 個別のIAMユーザーを作成しないこと
 => AWS IAM (SAML Id Provider), AWS SSO, AWS Security Token Service
 
-## 26. ECSのオートスケーリング
+## [x] 26. ECSのオートスケーリング
 エンタープライズアプリケーション
 - Amazon ECSを使用したDockerベースの
 - マルチAZ構成でリードレプリカを持つRDS MySQL
@@ -278,7 +278,7 @@ AWS上にエンタープライズシステム
   - ECSクラスターに対するオートスケーリング設定を実施
 => AWS CloudWatch (Capacity Provider Reservation), AWS Auto Scaling, Amazon ECS (AWS ECS Cluster Auto Scaling)
 
-## 27. AWS Resource Access Manager
+## [x] 27. AWS Resource Access Manager
 社内の統合管理のために全社共通のIT運用部門
 - AWS Organizationsを使用
   - マルチアカウントおよびマルチリージョンを管理
@@ -288,7 +288,7 @@ AWS上にエンタープライズシステム
   - アカウントAのユーザーがアカウントBのEC2インスタンスへのアクセスを定期的に実施
 => AWS Resource Access Manager (enable-sharing-with-aws-organizations), AWS Organizations (trusted access)
 
-## 28. 安全なECS環境
+## [x] 28. 安全なECS環境 - AWS Secrets Manager, AWS KMS, AWS IAM, Amazon ECS
 CI/CD環境
 - 開発環境などは全てDocker
 - Fargate起動タイプを使用するAmazon ECSクラスター
@@ -300,9 +300,9 @@ CI/CD環境
   - セキュリティを徹底
     - 資格情報がデータ保持とイメージ転送が安全であることが保障
     - かつクラスター自体で表示できないように
-=> Systems Manager (parameter store), KMS, ECS, Secrets Manager, IAM
+=> AWS Secrets Manager, AWS KMS, AWS IAM, Amazon ECS
 
-## 29. VPN
+## [x] 29. VPN
 ウェブベースの会計アプリケーション
 - フロントサーバー群はAWSのパブリックサブネット上で利用
 - 社内のネットワークからのみAWSサイト間VPN接続によって利用
