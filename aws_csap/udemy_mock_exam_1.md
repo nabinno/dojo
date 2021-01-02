@@ -314,15 +314,16 @@ CI/CD環境
       - 機密性の高いデータを扱っていること
 => Amazon VPC (Private Subnet <- NAT Gateway <- Public Subnet), VPN (OpenVPN)
 
-## 30. AWS Directory Service
+## [x] 30. AWS Directory Service - AWS Directory Service <-> MS Active Directory, AWS Managed Microsoft AD (SSO)
 オンプレミス環境
 - 以前からMicrosoft Active Directoryを使用
 - すべての従業員アカウントとデバイスを管理
-AWSクラウドを利用したハイブリッドアーキテクチャを採用することを決定
-- AWS Directory Serviceの設定を行うことが必要
-  - 既存のWindowsアカウントパスワードを使用して様々なAWSリソースに接続して使用
-  - 新規にAWSにおいてIAM管理を実施することは非効率
-=> AWS Directory Service <-> MS Active Directory, AD Connector (SSO)
+要件
+- AWSクラウドを利用したハイブリッドアーキテクチャを採用することを決定
+  - AWS Directory Serviceの設定を行うことが必要
+    - 既存のWindowsアカウントパスワードを使用して様々なAWSリソースに接続して使用
+    - 新規にAWSにおいてIAM管理を実施することは非効率
+=> AWS Directory Service <-> MS Active Directory, AWS Managed Microsoft AD (SSO)
 
 ## 31. AWS VPN CloudHub
 AWSをクラウドソリューションとして導入
