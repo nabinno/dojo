@@ -325,7 +325,7 @@ CI/CD環境
     - 新規にAWSにおいてIAM管理を実施することは非効率
 => AWS Directory Service <-> MS Active Directory, AWS Managed Microsoft AD (SSO)
 
-## 31. AWS VPN CloudHub
+## [x] 31. AWS VPN CloudHub - AWS Direct Connect, AWS Site-to-Site VPN (IPSec, private link)
 AWSをクラウドソリューションとして導入
 - AWSとオフィスネットワークとを接続
 - リモートネットワークをAmazon VPC環境に接続するための接続設定を実施
@@ -333,24 +333,24 @@ AWSをクラウドソリューションとして導入
 - 予測可能なネットワークパフォーマンスを提供
 - 安全なIPsec VPN接続を実現
 - コスト効率の良い方法で可用性を達成
-=> AWS DIrect Connect, AWS VPN CloudHub (private link)
+=> AWS Direct Connect, AWS Site-to-Site VPN (IPSec, private link)
 
-## 32. AssumeRoleによるユーザー認証
+## [x] 32. AssumeRoleによるユーザー認証 - AWS Security Token Service (AssumeRole, GetFederationToken)
 ハイブリッドクラウドアーキテクチャを採用
 - 自社ネットワークとAWSのクラウドインフラストラクチャを接続
 - 既存のいくつかのデータベースを高速処理が可能なAWS上のサービスに移管
 要件
 - オンプレミス環境のアプリケーションからAWSリソースへとアクセスするための認証方式
 - 社内ではSAML 2.0をサポートしていない社内のID認証システムによってユーザー管理を実施
-=> AWS Directory Service (Active Directory Connector), AWS IAM (Custom ID Borker), AWS Security Token Service (AssumeRole API)
+=> AWS Security Token Service (AssumeRole, GetFederationToken)
 
-## 33. AWS Direct Connect
+## [x] 33. AWS Direct Connect - AWS Direct Connect (virtual private gateway), Amazon VPC (route propagation, route table), Amazon EC2
 ハイブリッドクラウドアーキテクチャ
 - 自社ネットワークとAWSのクラウドインフラストラクチャを接続
 移行要件
 - ハイブリッドクラウドを実現するためにオンプレミス環境からAWSへの Direct Connect接続を確立
 - Direct Connectリンクを設定してルートをオンプレミス環境に接続
-=> AWS Direct Connect (Virtual Private Gateway), Amazon VPC (Route Propagation)
+=> AWS Direct Connect (virtual private gateway), Amazon VPC (route propagation, route table), Amazon EC2
 
 ## 34. Multi-AZとAuto Scaling
 EコマースサイトをAWSにホスト
