@@ -352,7 +352,7 @@ AWSをクラウドソリューションとして導入
 - Direct Connectリンクを設定してルートをオンプレミス環境に接続
 => AWS Direct Connect (virtual private gateway), Amazon VPC (route propagation, route table), Amazon EC2
 
-## 34. Multi-AZとAuto Scaling
+## [x] 34. Multi-AZとAuto Scaling - Amazon EC2 (spot fleet), Auto Scaling (multi-AZ)
 EコマースサイトをAWSにホスト
 - 3つのアベイラビリティーゾーン
   - ALBとオンデマンドEC2インスタンス
@@ -362,7 +362,7 @@ EコマースサイトをAWSにホスト
 要件
 - 負荷のピーク時にはマルチAZに負荷を分散してオートスケール処理ができる必要
 - スポットインスタンスを上手く利用してコスト最適に実現
-=> Amazon VPC (multi-AZ), EC2 (spot instance) -> Auto Scaling
+=> Amazon EC2 (spot fleet), Auto Scaling (multi-AZ)
 
 ## 35. Business Continuity Planning
 事業継続性計画（BCP）ガイドライン
