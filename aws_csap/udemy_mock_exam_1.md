@@ -364,7 +364,7 @@ EコマースサイトをAWSにホスト
 - スポットインスタンスを上手く利用してコスト最適に実現
 => Amazon EC2 (spot fleet), Auto Scaling (multi-AZ)
 
-## 35. Business Continuity Planning
+## [x] 35. Business Continuity Planning
 事業継続性計画（BCP）ガイドライン
 - 障害復旧時間（RTO）は1時間
 - 目標復旧時点（RPO）は15分前
@@ -373,7 +373,7 @@ EコマースサイトをAWSにホスト
   - 午後2時にサーバーが停止
 => RPO 1:45, Lost 1:45-2:00
 
-## 36. Amazon DynamoDB (global secondary indexes)
+## [x] 36. Amazon DynamoDB (local secondary indexes)
 業務システム
 - EC2
 - ELB
@@ -385,7 +385,7 @@ DynamoDBテーブルの要件
   - ユーザーのアクセス頻度に応じて対象顧客をセグメンテーション
 - 絞り込み検索
   - User_IDというパーティションキーに関連付け
-=> Amazon DynamoDB - Build table with global secondary indexes
+=> Amazon DynamoDB (local secondary indexes)
 
 ## 37. 分析基盤とコスト管理
 アプリケーションログファイルから定期的な分析レポートを作成する監査用ログシステム
