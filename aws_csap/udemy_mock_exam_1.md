@@ -387,7 +387,7 @@ DynamoDBテーブルの要件
   - User_IDというパーティションキーに関連付け
 => Amazon DynamoDB (local secondary indexes)
 
-## 37. 分析基盤とコスト管理
+## [x] 37. 分析基盤とコスト管理
 アプリケーションログファイルから定期的な分析レポートを作成する監査用ログシステム
 - すべてのログデータはAmazon S3バケットに収集
   - その後、毎日のAmazon EMRジョブによって分析が実行
@@ -403,8 +403,7 @@ DynamoDBテーブルの要件
 => EMR core/master node (reserved instance), EMR task node (spot instance)
 => S3 (Intelligent Tiering)
 
-
-## 38. AWS Organizations
+## [x] 38. AWS Organizations - Service Control Policy, AWS IAM
 複数部門と支社でAWSサービスを利用
 - 部門ごとにAWSアカウントを作成
 - 各アカウント
@@ -417,6 +416,7 @@ DynamoDBテーブルの要件
     - 特定のAWSサービスを許可または拒否
       - 個々のアカウントまたはアカウントのグループに対して
 => AWS Organizations (organization unit, service control policy)
+=> AWS Organizations (organization unit), AWS IAM
 
 ## 39. Amazon DynamoDBによるリージョン間のレプリケーション
 C to C専門のモバイルフリマサイト
