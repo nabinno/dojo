@@ -418,14 +418,14 @@ DynamoDBテーブルの要件
 => AWS Organizations (organization unit, service control policy)
 => AWS Organizations (organization unit), AWS IAM
 
-## 39. Amazon DynamoDBによるリージョン間のレプリケーション
+## [x] 39. Amazon DynamoDBによるリージョン間のレプリケーション - Amazon DynamoDB (streams: singapore, global-table: all)
 C to C専門のモバイルフリマサイト
 - 複数のAWSリージョンに対してバックエンドAPIが起動
   - ユーザーに最も近いリージョンで販売および取引が処理されるようにルーティング
   - 東京リージョンから東南アジアにも展開
 要件
 - トランザクションがシンガポールリージョンにも自動的に複製されるレプリケーション構成を実現
-=> Amazon DynamoDB (global-table: singapore)
+=> Amazon DynamoDB (streams: singapore, global-table: all)
 
 ## 40. AWS CloudTrail
 AWS Organizationsを使用
