@@ -427,7 +427,7 @@ C to C専門のモバイルフリマサイト
 - トランザクションがシンガポールリージョンにも自動的に複製されるレプリケーション構成を実現
 => Amazon DynamoDB (streams: singapore, global-table: all)
 
-## 40. AWS CloudTrail
+## [x] 40. AWS CloudTrail - [AWS Config, AWS CloudTrail] <-> AWS Organizations, AWS CloudWatch Events -> Amazon SNS (topic)
 AWS Organizationsを使用
 - 複数の組織単位（OU）にグループ化されたさまざまなチームや部門
 - 年度ITセキュリティ監査を実施
@@ -437,7 +437,8 @@ AWS Organizationsを使用
 - 今後は許可のない外部アカウントの登録は拒否される必要がある
 - 違反をモニタリングして早期に発見
 - 事前に予防
-=> AWS CloudTrail, AWS Organizations, CloudWatch Events, SNS
+=> AWS Config <-> AWS Organizations, AWS CloudWatch Events -> Amazon SNS (topic)
+=> AWS CloudTrail <-> AWS Organizations, AWS CloudWatch Events -> Amazon SNS
 
 ## 41. Amazon S3 (requester pays bucket)
 開発部門
