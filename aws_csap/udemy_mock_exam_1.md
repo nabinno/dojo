@@ -440,7 +440,7 @@ AWS Organizationsを使用
 => AWS Config <-> AWS Organizations, AWS CloudWatch Events -> Amazon SNS (topic)
 => AWS CloudTrail <-> AWS Organizations, AWS CloudWatch Events -> Amazon SNS
 
-## 41. Amazon S3 (requester pays bucket)
+## [x] 41. Amazon S3 (requester pays bucket)
 開発部門
 - 複数のAmazon S3バケットを使用
   - さまざまなデジタルアートワーク用の高解像度メディアファイルを保存
@@ -452,7 +452,7 @@ AWS Organizationsを使用
   - 転送コストが開発部門に請求
 => Amazon S3 (requester pays bucket)
 
-## 42. Amazon VPC (overlap error of subnets)
+## [x] 42. Amazon VPC (overlap error of subnets)
 レガシーシステムをアップグレードするためにAWSへの移行
 - オンプレミスネットワークをAWSクラウドに移行
   - 以下のように構成
@@ -462,14 +462,14 @@ AWS Organizationsを使用
       - 新しいパブリックサブネット（10.0.0.0/16）を追加
 => Amazon VPC (overlap error of subnet) (新しいパブリックサブネットと既存パブリックサブネット)
 
-## 43. Amazon CloudFront (distribution, whitelist headers)
+## [x] 43. ネットワークをオンプレからクラウドに移設 - BYOIP, Amazon Registrar RDAP
 オンプレミスのデータセンター
 - サプライチェーンアプリケーションをホスト
   - ホワイトリストに登録した信頼できるIPアドレスを使用
 要件
 - このアプリケーションを含めてオンプレミス環境のインフラをAWSへと移行
   - IPアドレスホワイトリストの変更を要求することなく、VPCに移行
-=> Amazon CloudFront (distribution, whitelist headers)
+=> BYOIP, Amazon Registrar RDAP
 
 ## 44. Federated identity with AWS IAM
 オンプレミス環境
