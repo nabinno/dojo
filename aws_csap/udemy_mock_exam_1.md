@@ -471,15 +471,14 @@ AWS Organizationsを使用
   - IPアドレスホワイトリストの変更を要求することなく、VPCに移行
 => BYOIP, Amazon Registrar RDAP
 
-## 44. Federated identity with AWS IAM
+## [x] 44. Federation user with AWS IAM - AWS IAM (IAM SAML 2.0 IdP)
 オンプレミス環境
 - サードパーティーのSAML IdPを利用したログイン
   - これを利用したAWSリソースへのアクセス制御が必要
 要件
 - オンプレミスネットワークをAWSクラウドに接続するハイブリッドクラウドアーキテクチャ
 - SAML IdPを利用したAWSリソースへのアクセス制御
-=> SAML 2.0 IdP (federation access)
-=> AWS IAM (IAM SAML ID Provider)
+=> AWS IAM (IAM SAML 2.0 IdP)
 
 ## 45. AWS IAM (AssumeRoleWithWebIdentity)
 写真共有アプリケーション
