@@ -480,7 +480,7 @@ AWS Organizationsを使用
 - SAML IdPを利用したAWSリソースへのアクセス制御
 => AWS IAM (IAM SAML 2.0 IdP)
 
-## 45. AWS IAM (AssumeRoleWithWebIdentity)
+## [x] 45. AWS IAM (AssumeRoleWithWebIdentity)
 写真共有アプリケーション
 - 構成
   - アプリケーションサーバー: 一連のECインスタンスにELBとAutoScalingが設定
@@ -492,7 +492,7 @@ AWS Organizationsを使用
   - Amazon Cognitoを利用しない方式
 => Web IdP, AWS IAM (AssumeRoleWithWebIdentity), Amazon DynamoDB
 
-## 46. Amazon CloudWatch Logs
+## [x] 46. Amazon CloudWatch Logs
 AWSにおいて決済管理システムや顧客管理ポータルを運用
 - WindowsおよびLinux EC2インスタンスの毎月のパフォーマンスチェック
 - 実稼働環境で実行されている200を超えるオンデマンドEC2インスタンスを利用
@@ -501,7 +501,7 @@ AWSにおいて決済管理システムや顧客管理ポータルを運用
       - メモリ使用量
       - ディスク容量
     - さまざまなシステム詳細情報のログ
-=> Amazon CloudWatch Logs (agent), Amazon EC2, CloudWatch Logs Insights
+=> Amazon CloudWatch Agent <-> Amazon EC2, CloudWatch Logs Insights
 
 ## 47. VPC Lambda
 Lambda関数を使ったシステムコンポーネントの設計・実装
