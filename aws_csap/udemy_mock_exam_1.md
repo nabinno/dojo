@@ -492,7 +492,7 @@ AWS Organizationsを使用
   - Amazon Cognitoを利用しない方式
 => Web IdP, AWS IAM (AssumeRoleWithWebIdentity), Amazon DynamoDB
 
-## [x] 46. Amazon CloudWatch Logs
+## [x] 46. Amazon CloudWatch Logs - Amazon CloudWatch Agent <-> Amazon EC2, CloudWatch Logs Insights
 AWSにおいて決済管理システムや顧客管理ポータルを運用
 - WindowsおよびLinux EC2インスタンスの毎月のパフォーマンスチェック
 - 実稼働環境で実行されている200を超えるオンデマンドEC2インスタンスを利用
@@ -503,7 +503,7 @@ AWSにおいて決済管理システムや顧客管理ポータルを運用
     - さまざまなシステム詳細情報のログ
 => Amazon CloudWatch Agent <-> Amazon EC2, CloudWatch Logs Insights
 
-## 47. VPC Lambda
+## [x] 47. VPC Lambda
 Lambda関数を使ったシステムコンポーネントの設計・実装
 - WEB上で該当するLambda関数を実行すると
   - VPCにホストされているデータベースに処理結果を保存する機能を構築して
@@ -512,7 +512,7 @@ Lambda関数を使ったシステムコンポーネントの設計・実装
 => Lambda (security group: outbound)
 => Amazon VPC, NAT Gateway
 
-## 48. Amazon CloudFront (Lambda Edge, Origin Failover)
+## [x] 48. Amazon CloudFront (Lambda Edge, Origin Failover)
 仮想通貨取引システム
 - 今年リリースしたモバイルから仮想通貨取引に参加できるアプリケーション
   - サーバレスアーキテクチャにより実装
@@ -524,7 +524,7 @@ Lambda関数を使ったシステムコンポーネントの設計・実装
 => Amazon CloudFront (Lambda Edge)
 => Amazon CloudFront (Origin Failover)
 
-## 49. Amazon CloudFront (Origin Access Identity)
+## [x] 49. Amazon CloudFront (AES256, Origin Access Identity)
 動画再生アプリケーション
 - 動画データをS3に保存
 - EC2インスタンスによる動画処理
@@ -536,7 +536,7 @@ Lambda関数を使ったシステムコンポーネントの設計・実装
 - 動画配信において
   - 配信者をアプリケーションの会員ユーザーに限定することが必要であり
   - 暗号化によって保存データを保護する必要があります
-=> Amazon CloudFront (SSL, Origin Access Identity)
+=> Amazon CloudFront (AES256, Origin Access Identity)
 
 ## 50. Amazon EC2 (Place Group)
 多層Webアプリケーション
