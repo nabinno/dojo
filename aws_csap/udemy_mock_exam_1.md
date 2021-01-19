@@ -538,13 +538,13 @@ Lambda関数を使ったシステムコンポーネントの設計・実装
   - 暗号化によって保存データを保護する必要があります
 => Amazon CloudFront (AES256, Origin Access Identity)
 
-## 50. Amazon EC2 (Place Group)
+## [x] 50. Placement Group (stop, add & start Amazon EC2)
 多層Webアプリケーション
 - WEB層において
   - プレースメントグループを構成している9つのEC2インスタンスが実行
   - EC2インスタンスの処理負荷が増加
     - このプレイスメントグループに対して2つの新しいインスタンスを追加
-=> Amazon EC2 (Place Group)
+=> Placement Group (stop, add & start Amazon EC2)
 
 ## 51. Amazon Kinesis Data Streams
 IoTデータによる農業データ管理システム
