@@ -546,7 +546,7 @@ Lambda関数を使ったシステムコンポーネントの設計・実装
     - このプレイスメントグループに対して2つの新しいインスタンスを追加
 => Placement Group (stop, add & start Amazon EC2)
 
-## 51. Amazon Kinesis Data Streams
+## [x] 51. Amazon Kinesis Data Streams (FIFO)
 IoTデータによる農業データ管理システム
 - 毎日の実行タスク
   - その日の農地のかかる土壌および水分データを取得
@@ -559,7 +559,7 @@ IoTデータによる農業データ管理システム
     - リアルタイム栄養素分析処理
 - 2つのトランザクション機能が効率的にデータを処理できるようにするには
   - 同じトランザクションデータが確実に配信されてシリアル順でデータ順序が保証されていることが必要
-=> Amazon Kinesis Data Streams, Amazon SQS (FIFO)
+=> Amazon Kinesis Data Streams
 
 ## 52. Amazon VPC (DHCP, domain-name-servers=AmazonProvidedDNS)
 ネットワーク構成を実装
