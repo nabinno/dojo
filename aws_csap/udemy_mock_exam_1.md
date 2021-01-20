@@ -561,14 +561,14 @@ IoTデータによる農業データ管理システム
   - 同じトランザクションデータが確実に配信されてシリアル順でデータ順序が保証されていることが必要
 => Amazon Kinesis Data Streams
 
-## 52. Amazon VPC (DHCP, domain-name-servers=AmazonProvidedDNS)
+## [x] 52. Amazon VPC (DHCP, domain-name-servers=AmazonProvidedDNS)
 ネットワーク構成を実装
 - DHCPは構成情報をTCP/IPネットワーク上のホストに提供
 - DHCPオプションの最初のセットを作成してAmazonのDNSサーバーを利用してVPCに関連付けましたが
   - エラーが発生
 => Amazon VPC (DHCP, domain-name-servers=AmazonProvidedDNS)
 
-## 53. AWS IAM (service principal: apigateway.amazon.com)
+## [x] 53. AWS IAM (service principal: apigateway.amazon.com)
 タスク管理アプリケーションサービス
 - DynamoDBテーブル
 - アプリケーションのデータ処理において新規のサーバレス機能を実装
@@ -580,7 +580,7 @@ IoTデータによる農業データ管理システム
 => AWS Lambda, AWS IAM (service principal: apigateway.amazon.com)
 => AWS Lambda, Amazon DynamoDB, IAM (action: [dynamodb:GetItem, dynamodb:PutItem])
 
-## 54.Amazon EC2 (reserved instance)
+## [x] 54. AWS Organizations <-> AWS Billing (Consolidated Billing), Amazon VPC (AZ: ap-northeast-1d), Amazon EC2 (reserved instance)
 金融システム向けのAWSクラウド環境
 - 会社にはシステム開発・運用の各段階を分けるために3つの統合された請求先アカウントがあります
 - 利用しているアカウントは
@@ -592,7 +592,7 @@ IoTデータによる農業データ管理システム
   - 本番環境用
     - AZ：ap-northeast-1d
     - 5つのm4.largeインスタンス 利用中
-=> Amazon VPC (AZ: ap-northeast-1d), Amazon EC2 (reserved instance)
+=> AWS Organizations <-> AWS Billing (Consolidated Billing), Amazon VPC (AZ: ap-northeast-1d), Amazon EC2 (reserved instance)
 
 ## 55. Amazon CloudFront (Viewer Protocol Policy)
 新しいSNSアプリケーション
