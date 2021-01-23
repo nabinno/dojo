@@ -594,7 +594,7 @@ IoTデータによる農業データ管理システム
     - 5つのm4.largeインスタンス 利用中
 => AWS Organizations <-> AWS Billing (Consolidated Billing), Amazon VPC (AZ: ap-northeast-1d), Amazon EC2 (reserved instance)
 
-## 55. Amazon CloudFront (Viewer Protocol Policy)
+## [x] 55. Amazon CloudFront (Viewer Protocol Policy)
 新しいSNSアプリケーション
 - 日常の写真などを共有したりメッセージを発信
 - EC2インスタンス
@@ -608,13 +608,13 @@ IoTデータによる農業データ管理システム
 => Amazon CloudFront (Viewer Protocol Policy, Redirect HTTP to HTTPS)
 => Amazon CloudFront (Viewer Protocol Policy, SSL/TLS)
 
-## 56. aws auto-scaling terminate-instance-in-auto-scaling-group --instance-id
+## [x] 56. Auto Scaling - aws auto-scaling terminate-instance-in-auto-scaling-group --instance-id YOUR-INSTANCE-ID --no-should-decrement-desired-capacity
 現在開発している顔認証システム
 - オンデマンドEC2インスタンス
   - Auto Scalingグループを使用
   - エラーを引き起こしている特定のインスタンスが1つあり
     - これを迅速に終了する必要があります
-=> aws auto-scaling terminate-instance-in-auto-scaling-group --instance-id
+=> aws auto-scaling terminate-instance-in-auto-scaling-group --instance-id YOUR-INSTANCE-ID --no-should-decrement-desired-capacity
 
 ## 57. Elastic IP Address
 不動産ポータルサイト
