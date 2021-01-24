@@ -632,7 +632,7 @@ IoTデータによる農業データ管理システム
       - トラフィック制御用のIPアドレス
 => Amazon EC2 (Elastic Network Interface, Elastic IP Address)
 
-## 58. Elastic Load Balancing (path-based routing)
+## [x] 58. Elastic Load Balancing, AWS Certificate Manager
 eコマースアプリケーション
 - 複数のEC2インスタンス
 - ELB
@@ -640,9 +640,9 @@ eコマースアプリケーション
   - モバイルやPC端末など多様なデバイスからアクセスして利用される予定
 要件
 - SSLによるセキュアな通信方式を設定することが必要
-=> Elastic Load Balancing (path-based routing)
+=> Elastic Load Balancing, AWS Certificate Manager
 
-## 59. Amazon EC2, Auto Scaling
+## [x] 59. Elastic Load Balancing, Amazon SQS, Auto Scaling, Amazon EC2, Amazon Aurora (multi-AZ), Amazon Route 53 (alias record)
 AIベースの交通監視アプリケーション
 - このシステムは都市全体で使用されるため下記のような状態は大きな問題
   - 間違った情報を利用
@@ -652,9 +652,9 @@ AIベースの交通監視アプリケーション
   - 可用性と耐障害性を高める必要
 - アプリケーションの処理にはEC2インスタンスサーバー
 - データベース処理にはSQLクエリ処理
-=> Elastic Load Balancing, Amazon EC2, Auto Scaling, Amazon Aurora (multi-AZ), Amazon Route 53 (alias record)
+=> Elastic Load Balancing, Amazon SQS, Auto Scaling, Amazon EC2, Amazon Aurora (multi-AZ), Amazon Route 53 (alias record)
 
-## 60. Amazon VPC (Secondary IPv4 CIDR)
+## [x] 60. Amazon VPC (Secondary IPv4 CIDR)
 保険をAPIで提供するアプリケーション
 - IPv4 CIDRブロック10.0.0.0/24のVPCに設置
   - IPアドレスが枯渇
@@ -662,7 +662,7 @@ AIベースの交通監視アプリケーション
 - VPC CIDR範囲を拡張するが必要
 => Amazon VPC (Secondary IPv4 CIDR)
 
-## 61. AWS Key Management Service, AWS CloudHSM, Amazon EBS
+## [x] 61. AWS Key Management Service, Amazon EBS
 健康管理アプリケーション
 - 複数のEC2インスタンス
   - ELB
@@ -672,10 +672,9 @@ AIベースの交通監視アプリケーション
 - セキュリティコンプライアンスの一環として下記が義務付けられている
   - クラウドインフラストラクチャに保存されているすべてのデータ適切に保護あるいは暗号化
   - 暗号化方式を検討
-=> AWS CloudHSM, EBS
 => AWS Key Management Service, EBS
 
-## 62. LDAP with AWS Security Token Service
+## [x] 62. LDAP with AWS Security Token Service
 顧客管理用のWEBアプリケーション
 - ハイブリッドアーキテクチャ
   - データベースがAWSのRDSに移行
@@ -685,7 +684,7 @@ AIベースの交通監視アプリケーション
   - AWS上にあるRDSの顧客データにアクセスすることが必要
 => Identity broker, LDAP authentication, AWS Security Token Service (AssumeRole), Amazon RDS
 
-## 63. AWS CloudFormation, AWS Service Catalog
+## [x] 63. AWS CloudFormation, AWS Service Catalog
 統合管理・一括請求の仕組みを構築
 - 複数アカウントを管理するためにAWS Organizationsを利用
 - 組織内のすべてのリソースを適切に管理するには
@@ -694,7 +693,7 @@ AIベースの交通監視アプリケーション
 => AWS Service Catalog
 => AWS CloudFormation
 
-## 64. Elastic Load Balancing (without sticky session), Amazon EC2
+## [x] 64. Elastic Load Balancing (without sticky session), Amazon EC2
 仲介業者を介さずに物件の内見予約が出来るアプリケーション
 - ２つのAZに展開された8のECインスタンスによって構成
 - 負荷テストを実施したところ負荷分散が達成されていない
@@ -703,7 +702,7 @@ AIベースの交通監視アプリケーション
 => Elastic Load Balancing (without sticky session), Amazon EC2
 => Distributed stress testing
 
-## 65. AWS CloudFormation (CreationPolicy: { ResourceSignal: Timeout })
+## [x] 65. AWS CloudFormation (CreationPolicy: { ResourceSignal: Timeout })
 CloudFormationを利用した環境構築
 - スタック全体の起動に失敗した場合に
   - 自動的にロールバックするCloudFormationテンプレートを準備する必要がある
@@ -712,7 +711,7 @@ CloudFormationを利用した環境構築
 - 展開が完了するには約1時間ほどかかる場合がある
 => AWS CloudFormation (CreationPolicy: { ResourceSignal: Timeout })
 
-## 66. Amazon CloudFront (Origin Access Identity), Amazon S3
+## [x] 66. Amazon CloudFront (Origin Access Identity), Amazon S3
 S3を利用したコンテンツ共有の仕組みを構築
 - ユーザーからのアクセスに限定する必要
   - インスタンスのIPアドレスからのみオブジェクトにアクセスできるようにする設定することが要件
