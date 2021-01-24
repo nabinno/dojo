@@ -616,7 +616,7 @@ IoTデータによる農業データ管理システム
     - これを迅速に終了する必要があります
 => aws auto-scaling terminate-instance-in-auto-scaling-group --instance-id YOUR-INSTANCE-ID --no-should-decrement-desired-capacity
 
-## 57. Elastic IP Address
+## [x] 57. Amazon EC2 (Elastic Network Interface, Elastic IP Address)
 不動産ポータルサイト
 - ECインスタンスベースのWebサーバー
   - パブリックサブネットに設定
@@ -630,7 +630,7 @@ IoTデータによる農業データ管理システム
     - 2つのパブリックIPアドレスを利用することが要件
       - バックエンド処理用のIPアドレス
       - トラフィック制御用のIPアドレス
-=> Elastic IP Address, EC2
+=> Amazon EC2 (Elastic Network Interface, Elastic IP Address)
 
 ## 58. Elastic Load Balancing (path-based routing)
 eコマースアプリケーション
