@@ -717,7 +717,7 @@ S3を利用したコンテンツ共有の仕組みを構築
   - インスタンスのIPアドレスからのみオブジェクトにアクセスできるようにする設定することが要件
 => Amazon CloudFront (Origin Access Identity), Amazon S3
 
-## 67. RD Gateway Server
+## [x] 67. RD Gateway Server - Amazon EC2 (public subnet), RD Gateway Server/Amazon EC2 (security group 0.0.0.0/0)
 インターネットを介してVPCに接続し
 - EC2インスタンスを管理
   - パブリックサブネット
@@ -726,7 +726,7 @@ S3を利用したコンテンツ共有の仕組みを構築
 - Microsoft Remote Desktop Protocol（RDP）アクセスによるリモートアクセスを実現したい
   - EC2インスタンスへのインターネットアクセスを制限して安全なものにするため
     - Bastionホストを利用したインターネットアクセスを構成する必要
-=> Amazon EC2 (private subnet), RD Gateway Server/Amazon EC2 (security group)
+=> Amazon EC2 (public subnet), RD Gateway Server/Amazon EC2 (security group 0.0.0.0/0)
 
 ## 68. Amazon CloudWatch Dashboards (cross-region)
 Eコマースサイト
