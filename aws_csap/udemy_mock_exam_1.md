@@ -728,7 +728,7 @@ S3を利用したコンテンツ共有の仕組みを構築
     - Bastionホストを利用したインターネットアクセスを構成する必要
 => Amazon EC2 (public subnet), RD Gateway Server/Amazon EC2 (security group 0.0.0.0/0)
 
-## 68. Amazon CloudWatch Dashboards (cross-region)
+## [x] 68. Amazon CloudWatch Dashboards (cross-region)
 Eコマースサイト
 - マルチリージョン
 - EC2
@@ -736,7 +736,7 @@ Eコマースサイト
 - EC2インスタンス全てのパフォーマンスを監視する必要
 => Amazon CloudWatch Dashboards (cross-region)
  
-## 69. Amazon Cognito, AWS STS (AssumeRole, AssumeRoleWithWebIdentity)
+## [x] 69. Amazon Cognito, AWS STS (AssumeRole, AssumeRoleWithWebIdentity)
 データ共有システム
 - ユーザーが直接アップロードしたデータを単一のS3バケットに保存
 - ユーザーはS3バケットから直接自分がアップロードしたデータを表示およびダウンロードできる
@@ -745,7 +745,7 @@ Eコマースサイト
 => Amazon RDS, AWS IAM, Amazon Cognito, AWS Security Token Service (AssumeRoleWithWebIdentity), Amazon S3
 => Amazon RDS, AWS IAM, AWS Security Token Service (AssumeRole), Amazon S3
 
-## 70. Amazon VPC (Subnet, Network ACL), Amazon EC2 (Placement Group, Security Group), AWS Config
+## [x] 70. Amazon VPC (Subnet, Network ACL), Amazon EC2 (Placement Group, Security Group), AWS Config
 金融機関の決済システム
 - 2つのグループに分類されたEC2インスタンス群
   - 同じアベイラビリティゾーン（AZ）
@@ -761,7 +761,7 @@ Eコマースサイト
 - インスタンスに関連付けられたセキュリティ構成の変更履歴を追跡する必要
 => Amazon VPC (Subnet, Network ACL), Amazon EC2 (Placement Group, Security Group), AWS Config
 
-## 71. Amazon RDS (snapshot), Amazon Aurora (multi cluster, read replica), Amazon CloudFront
+## [x] 71. Amazon RDS (snapshot), Amazon Aurora (multi cluster, read replica), Amazon CloudFront
 英語ニュースサイト
 - 各記事には多数の画像が含まれ、そのコンテンツは少なくとも200語以上あります
 - 新しい記事は最初の1か月間で最も閲覧されており
@@ -774,15 +774,15 @@ Eコマースサイト
   - コンテンツの読込時間が長いというクレームが発生するようになりました
 => Amazon RDS (snapshot), Amazon Aurora (multi cluster, read replica), Amazon CloudFront
 
-## 72. Amazon Redshift (auto snapshot), Amazon Redshift (disater recovery)
+## [x] 72. Amazon Redshift - auto snapshot -> disater recovery, single AZ <-> Amazon S3
 仮想通貨取引プラットフォーム
 - 取引実行データの分析においてRedshiftクラスターを実行
 要件
 - Redshiftの災害対応の構成を検討
   - リージョン内のAZが停止した際に即時に対応できる構成
   - リージョン自体が停止したい際には1日で回復できる構成
-=> Amazon Redshift (auto snapshot), Amazon Redshift (disater recovery)
-=> Amazon Redshift (multi AZ)
+=> Amazon Redshift (auto snapshot -> disater recovery)
+=> Amazon Redshift (single AZ) <-> Amazon S3
 
 ## 73. Network ACL (inbound: port 1024-65535)
 WEBアプリケーション
