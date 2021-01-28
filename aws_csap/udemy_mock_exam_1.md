@@ -784,7 +784,7 @@ Eコマースサイト
 => Amazon Redshift (auto snapshot -> disater recovery)
 => Amazon Redshift (single AZ) <-> Amazon S3
 
-## 73. Network ACL (inbound: port 1024-65535)
+## [x] 73. Network ACL (outbound: port 1024-65535), Linux, Elastic Load Balancing, Windows Server 2003, NAT Gateway, AWS Lambda
 WEBアプリケーション
 - Amazon EC2インスタンス
   - 複数のアベイラビリティーゾーン
@@ -796,9 +796,9 @@ WEBアプリケーション
     - セキュリティグループ
 課題
 - インターネットからWEBアプリケーションへと接続することができない
-=> Network ACL (inbound: port 1024-65535)
+=> Network ACL (outbound: port 1024-65535, Linux, Elastic Load Balancing, Windows Server 2003, NAT Gateway, AWS Lambda
 
-## 74. SSM Agent, AWS Systems Manager Automation
+## [x] 74. AWS Systems Manager Automation, AWS Systems Manager Console, Amazon CloudWatch Events (CloudWatch Agent)
 オンライン決済プラットフォーム
 - EC2インスタンス
   - Auto Scalingグループ
@@ -807,8 +807,8 @@ WEBアプリケーション
 要件
 - これらのインスタンスにメンテナンスやOSパッチなどのバッチ操作がある場合は
   - Systems Managerを使用してこれらのアクティビティを自動的に実施する設定が必要
-=> EC2 (SSM Agent)
 => AWS Systems Manager Automation
+=> AWS Systems Manager Console, Amazon CloudWatch Events (CloudWatch Agent)
 
 ## 75. Amazon EC2 (AMI, key pairs)
 AWSの既存リソースの一部を別リージョンに移行
