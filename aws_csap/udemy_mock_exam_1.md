@@ -810,11 +810,12 @@ WEBアプリケーション
 => AWS Systems Manager Automation
 => AWS Systems Manager Console, Amazon CloudWatch Events (CloudWatch Agent)
 
-## 75. Amazon EC2 (AMI, key pairs)
+## [x] 75. Amazon EC2 (AMI, key pairs)
 AWSの既存リソースの一部を別リージョンに移行
-1. すべてのAmazon Machine Image（AMI）を東京リージョンからシンガポールリージョンにコピー
-  - しかしながら、AMIのコピーするだけでは該当EC2インスタンスにアクセスすることができない
-  - シンガポールリージョンに向けてコピーされたAMIを起動する際には
-    - 最適なPEMキーを指定して起動することが必要
-      - 会社の管理方針としてPEMキーを単一のキーで一元的に利用することが求められている
+- すべてのAmazon Machine Image（AMI）を東京リージョンからシンガポールリージョンにコピー
+前提
+- AMIのコピーするだけでは該当EC2インスタンスにアクセスすることができない
+- シンガポールリージョンに向けてコピーされたAMIを起動する際には
+  - 最適なPEMキーを指定して起動することが必要
+- 会社の管理方針としてPEMキーを単一のキーで一元的に利用することが求められている
 => Amazon EC2 (AMI, key pairs)
