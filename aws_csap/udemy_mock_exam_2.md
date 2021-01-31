@@ -16,4 +16,15 @@ url: https://www.udemy.com/course/aws-53225/learn/quiz/4723918#content
     - 他のアウトバウンド接続を明示的に拒否する設定を行う必要がある
 => Amazon EC2 (security group: outbound)
 
-## 2.
+## 2. Amazon CloudWatch Metrics (HTTPCode_Backend_5XXX)
+社内業務システム
+- Classic Load Balancerを使用して
+  - 複数のリザーブドEC2インスタンスに均等に着信トラフィックを分散
+課題
+- この業務システムのアプリケーションサーバーが原因と思われる断続的な使用不可が発生
+- この原因を究明するために
+  - 登録されたインスタンスから送信されたサーバーエラーを確認することが必要
+=> HTTPCode_Backend_5XXX
+
+
+
