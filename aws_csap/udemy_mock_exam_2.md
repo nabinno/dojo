@@ -52,3 +52,16 @@ url: https://www.udemy.com/course/aws-53225/learn/quiz/4723918#content
 - バージョン管理後にユーザー構成情報ファイルとユーザー構成情報ファイル02が更新
 => Amazon S3 (versioning)
 
+## 5. Amazon Rekognition
+防犯カメラの映像から万引きを特定するサービス
+- 防犯カメラからのストリーミングビデオで顔認証を実施
+  - 過去の万引き犯データとマッチング
+要件
+- デオを介してリアルタイムで迅速に顔のアドレスを指定
+  - ダウンストリームの処理に適した方法で出力を保存できる必要がある
+- Rekognitionを使用してサービスを開発
+=> PutMedia API: Kinesis Video Streams -> Rekognition Video
+=> CreateStreamProcessor: Rekognition Video
+=> Rekognition Video -> Data Streams -> Data Streams Analytics
+
+ 
