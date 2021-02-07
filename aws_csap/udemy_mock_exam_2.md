@@ -64,4 +64,17 @@ url: https://www.udemy.com/course/aws-53225/learn/quiz/4723918#content
 => CreateStreamProcessor: Rekognition Video
 => Rekognition Video -> Data Streams -> Data Streams Analytics
 
+## 6. AWS Database Migration Service
+MySQLデータベースをオンプレミス環境
+方針
+- AWSクラウドとのハイブリッド構成、MySQLをAWSに移行することを検討
+要件
+- オンプレミスとの同期を維持するにはAWSのDBインスタンスが必要
+- DB移行後は徹底的にテストされて問題なく
+  - オンプレミス環境との齟齬がなくなった段階でオンプレミスDBは利用されなくなる
+- Amazon Database Migration Service（DMS）を利用した実施方法を整理
+=> On-premise DB <-> RDS: DMS (VPN)
+=> DMS (CPU, replication)
+=> DMS (migrate existing data and replicate ongoing changes)
+
  
