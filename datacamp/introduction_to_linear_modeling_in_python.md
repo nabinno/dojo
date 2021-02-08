@@ -442,12 +442,17 @@ print('RMSE = {:0.2f}, MSE = {:0.2f}, RSS = {:0.2f}'.format(RMSE, MSE, RSS))
 
 ## R-Squared
 ```python
+# Compute the residuals and the deviations
+residuals = y_model - y_data
+deviations = np.mean(y_data) - y_data
 
-```
+# Compute the variance of the residuals and deviations
+var_residuals = np.mean(np.square(residuals))
+var_deviations = np.mean(np.square(deviations))
 
-## Standard Error
-```python
-
+# Compute r_squared as 1 - the ratio of RSS/Variance
+r_squared = 1 - (var_residuals / var_deviations)
+print('R-squared is {:0.2f}'.format(r_squared))
 ```
 
 ## Variation Around the Trend
