@@ -493,14 +493,19 @@ print('Model 2: SE = {:0.3f}, R-squared = {:0.3f}'.format(se_2, rsquared_2))
 
 
 # 4. Estimating Model Parameters
-## Inferential Statistics Concepts
-```python
-
-```
-
 ## Sample Statistics versus Population
 ```python
+# Compute the population statistics
+print("Population mean {:.1f}, stdev {:.2f}".format( population.mean(), population.std() ))
 
+# Set random seed for reproducibility
+np.random.seed(42)
+
+# Construct a sample by randomly sampling 31 points from the population
+sample = np.random.choice(population, size=31)
+
+# Compare sample statistics to the population statistics
+print("    Sample mean {:.1f}, stdev {:.2f}".format( sample.mean(), sample.std() ))
 ```
 
 ## Variation in Sample Statistics
