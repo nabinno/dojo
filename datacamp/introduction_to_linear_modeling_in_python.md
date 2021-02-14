@@ -527,22 +527,45 @@ print("Stdevs: center={:>6.2f}, spread={:>6.2f}".format(stdevs.mean(), stdevs.st
 
 ## Visualizing Variation of a Statistic
 ```python
+# Generate sample distribution and associated statistics
+means, stdevs = get_sample_statistics(population, num_samples=100, num_pts=1000)
 
-```
+# Define the binning for the histograms
+mean_bins = np.linspace(97.5, 102.5, 51)
+std_bins = np.linspace(7.5, 12.5, 51)
 
-## Model Estimation and Likelihood
-```python
-
+# Plot the distribution of means, and the distribution of stdevs
+fig = plot_hist(data=means, bins=mean_bins, data_name="Means", color='green')
+fig = plot_hist(data=stdevs, bins=std_bins, data_name="Stdevs", color='red')
 ```
 
 ## Estimation of Population Parameters
 ```python
+# Compute the mean and standard deviation of the sample_distances
+sample_mean = np.mean(sample_distances)
+sample_stdev = np.std(sample_distances)
 
+# Use the sample mean and stdev as estimates of the population model parameters mu and sigma
+population_model = gaussian_model(sample_distances, mu=sample_mean, sigma=sample_stdev)
+
+# Plot the model and data to see how they compare
+fig = plot_data_and_model(sample_distances, population_model)
 ```
 
 ## Maximizing Likelihood, Part 1
 ```python
+# Compute sample mean and stdev, for use as model parameter value guesses
+mu_guess = np.mean(sample_distances)
+sigma_guess = np.std(sample_distances)
 
+# For each sample distance, compute the probability modeled by the parameter guesses
+probs = np.zeros(len(sample_distances))
+for n, distance in enumerate(sample_distances):
+    probs[n] = gaussian_model(distance, mu=mu_guess, sigma=sigma_guess)
+
+# Compute and print the log-likelihood as the sum() of the log() of the probabilities
+loglikelihood = np.sum(np.log(probs))
+print('For guesses mu={:0.2f} and sigma={:0.2f}, the loglikelihood={:0.2f}'.format(mu_guess, sigma_guess, loglikelihood))
 ```
 
 ## Maximizing Likelihood, Part 2
