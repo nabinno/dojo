@@ -126,10 +126,10 @@ print("Covariance: ", covariance)
 # Compute the correlation from the normalized deviations.
 zx = dx / np.std(x)
 zy = dy / np.std(y)
-correlation = np.std(zx * zy)
+correlation = np.mean(zx * zy)
 print("Correlation: ", correlation)
 
-# Plot the normalized deviations for visual inspection. 
+# Plot the normalized deviations for visual inspection.
 fig = plot_normalized_deviations(zx, zy)
 ```
 
@@ -607,41 +607,111 @@ fig = plot_data_hist(bootstrap_means)
 
 ## Estimating Speed and Confidence
 ```python
+# Resample each preloaded population, and compute speed distribution
+population_inds = np.arange(0, 99, dtype=int)
+for nr in range(num_resamples):
+    sample_inds = np.random.choice(population_inds, size=100, replace=True)
+    sample_inds.sort()
+    sample_distances = distances[sample_inds]
+    sample_times = times[sample_inds]
+    a0, a1 = least_squares(sample_times, sample_distances)
+    resample_speeds[nr] = a1
 
+# Compute effect size and confidence interval, and print
+speed_estimate = np.mean(resample_speeds)
+ci_90 = np.percentile(resample_speeds, [5, 95])
+print('Speed Estimate = {:0.2f}, 90% Confidence Interval: {:0.2f}, {:0.2f} '.format(speed_estimate, ci_90[0], ci_90[1]))
 ```
 
 ## Visualize the Bootstrap
 ```python
+# Create the bootstrap distribution of speeds
+resample_speeds = compute_resample_speeds(distances, times)
+speed_estimate = np.mean(resample_speeds)
+percentiles = np.percentile(resample_speeds, [5, 95])
 
-```
-
-## Model Errors and Randomness
-```python
-
+# Plot the histogram with the estimate and confidence interval
+fig, axis = plt.subplots()
+hist_bin_edges = np.linspace(0.0, 4.0, 21)
+axis.hist(resample_speeds, hist_bin_edges, color='green', alpha=0.35, rwidth=0.8)
+axis.axvline(speed_estimate, label='Estimate', color='black')
+axis.axvline(percentiles[0], label=' 5th', color='blue')
+axis.axvline(percentiles[1], label='95th', color='blue')
+axis.legend()
+plt.show()
 ```
 
 ## Test Statistics and Effect Size
 ```python
+# Create two poulations, sample_distances for early and late sample_times.
+# Then resample with replacement, taking 500 random draws from each population.
+group_duration_short = sample_distances[sample_times < 5]
+group_duration_long = sample_distances[sample_times > 5]
+resample_short = np.random.choice(group_duration_short, size=500, replace=True)
+resample_long = np.random.choice(group_duration_long, size=500, replace=True)
 
+# Difference the resamples to compute a test statistic distribution, then compute its mean and stdev
+test_statistic = resample_long - resample_short
+effect_size = np.mean(test_statistic)
+standard_error = np.std(test_statistic)
+
+# Print and plot the results
+print('Test Statistic: mean={:0.2f}, stdev={:0.2f}'.format(effect_size, standard_error))
+fig = plot_test_statistic(test_statistic)
 ```
 
 ## Null Hypothesis
 ```python
+# Shuffle the time-ordered distances, then slice the result into two populations.
+shuffle_bucket = np.concatenate((group_duration_short, group_duration_long))
+np.random.shuffle(shuffle_bucket)
+slice_index = len(shuffle_bucket)//2
+shuffled_half1 = shuffle_bucket[0:slice_index]
+shuffled_half2 = shuffle_bucket[slice_index:]
 
+# Create new samples from each shuffled population, and compute the test statistic
+resample_half1 = np.random.choice(shuffled_half1, size=500, replace=True)
+resample_half2 = np.random.choice(shuffled_half2, size=500, replace=True)
+test_statistic = resample_half2 - resample_half1
+
+# Compute and print the effect size
+effect_size = np.mean(test_statistic)
+print('Test Statistic, after shuffling, mean = {}'.format(effect_size))
 ```
 
 ## Visualizing Test Statistics
 ```python
+# From the unshuffled populations, compute the test statistic distribution
+resample_short = np.random.choice(group_duration_short, size=500, replace=True)
+resample_long = np.random.choice(group_duration_long, size=500, replace=True)
+test_statistic_unshuffled = resample_long - resample_short
 
+# Shuffle two populations, cut in half, and recompute the test statistic
+shuffled_half1, shuffled_half2 = shuffle_and_split(group_duration_short, group_duration_long)
+resample_half1 = np.random.choice(shuffled_half1, size=500, replace=True)
+resample_half2 = np.random.choice(shuffled_half2, size=500, replace=True)
+test_statistic_shuffled = resample_half2 - resample_half1
+
+# Plot both the unshuffled and shuffled results and compare
+fig = plot_test_statistic(test_statistic_unshuffled, label='Unshuffled')
+fig = plot_test_statistic(test_statistic_shuffled, label='Shuffled')
 ```
 
 ## Visualizing the P-Value
 ```python
+# Compute the test stat distribution and effect size for two population groups
+test_statistic_unshuffled = compute_test_statistic(group_duration_short, group_duration_long)
+effect_size = np.mean(test_statistic_unshuffled)
 
+# Randomize the two populations, and recompute the test stat distribution
+shuffled_half1, shuffled_half2 = shuffle_and_split(group_duration_short, group_duration_long)
+test_statistic_shuffled = compute_test_statistic(shuffled_half1, shuffled_half2)
+
+# Compute the p-value as the proportion of shuffled test stat values >= the effect size
+condition = test_statistic_shuffled >= effect_size
+p_value = len(test_statistic_shuffled[condition]) / len(test_statistic_shuffled)
+
+# Print p-value and overplot the shuffled and unshuffled test statistic distributions
+print("The p-value is = {}".format(p_value))
+fig = plot_test_stats_and_pvalue(test_statistic_unshuffled, test_statistic_shuffled)
 ```
-
-## Course Conclusion
-```python
-
-```
-
