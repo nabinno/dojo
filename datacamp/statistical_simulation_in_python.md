@@ -123,19 +123,22 @@ print("The highest price at which it makes sense to buy the ticket is {}".format
 
 
 # 2. Probability & data generation process
-## Probability basics
-```python
-
-```
-
-## Queen and spade
-```python
-
-```
-
 ## Two of a kind
 ```python
+# Shuffle deck & count card occurrences in the hand
+n_sims, two_kind = 10000, 0
+for i in range(n_sims):
+    np.random.shuffle(deck_of_cards)
+    hand, cards_in_hand = deck_of_cards[0:5], {}
+    for [suite, numeric_value] in hand:
+        # Count occurrences of each numeric value
+        cards_in_hand[numeric_value] = cards_in_hand.get(numeric_value, 0) + 1
+    
+    # Condition for getting at least 2 of a kind
+    if max(cards_in_hand.values()) >=2: 
+        two_kind += 1
 
+print("Probability of seeing at least two of a kind = {} ".format(two_kind/n_sims))
 ```
 
 ## Game of thirteen
