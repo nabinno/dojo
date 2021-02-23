@@ -143,12 +143,20 @@ print("Probability of seeing at least two of a kind = {} ".format(two_kind/n_sim
 
 ## Game of thirteen
 ```python
+# Pre-set constant variables
+deck, sims, coincidences = np.arange(1, 14), 10000, 0
 
-```
+for _ in range(sims):
+    # Draw all the cards without replacement to simulate one game
+    draw = np.random.choice(deck, size=13, replace=False)
+    # Check if there are any coincidences
+    coincidence = (draw == list(np.arange(1, 14))).any()
+    if coincidence == 1:
+        coincidences += 1
 
-## More probability concepts
-```python
-
+# Calculate probability of winning
+prob_of_winning = 1 - coincidences / sims
+print("Probability of winning = {}".format(prob_of_winning))
 ```
 
 ## The conditional urn
