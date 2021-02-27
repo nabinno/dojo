@@ -243,7 +243,17 @@ print("Probability of Passing the driving test = {}".format(pass_outcomes_frac))
 
 ## National elections
 ```python
+outcomes, sims, probs = [], 1000, p
 
+for _ in range(sims):
+    # Simulate elections in the 50 states
+    election = np.random.binomial(p=probs, n=1)
+    # Get average of Red wins and add to `outcomes`
+    outcomes.append(election.mean())
+
+# Calculate probability of Red winning in less than 45% of the states
+prob_red_wins = sum([(x < 0.45) for x in outcomes])/len(outcomes)
+print("Probability of Red winning in less than 45% of the states = {}".format(prob_red_wins))
 ```
 
 ## Fitness goals
