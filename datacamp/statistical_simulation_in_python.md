@@ -350,14 +350,19 @@ prob_without_replacement = success_no_rep/sims
 print("Probability with replacement = {}, without replacement = {}".format(prob_with_replacement, prob_without_replacement))
 ```
 
-## Bootstrapping
-```python
-
-```
-
 ## Running a simple bootstrap
 ```python
-
+# Draw some random sample with replacement and append mean to mean_lengths.
+mean_lengths, sims = [], 1000
+for i in range(sims):
+    temp_sample = np.random.choice(wrench_lengths, replace=True, size=len(wrench_lengths))
+    sample_mean = np.mean(temp_sample)
+    mean_lengths.append(sample_mean)
+    
+# Calculate bootstrapped mean and 95% confidence interval.
+boot_mean = np.mean(mean_lengths)
+boot_95_ci = np.percentile(mean_lengths, [2.5, 97.5])
+print("Bootstrapped Mean Length = {}, 95% CI = {}".format(boot_mean, boot_95_ci))
 ```
 
 ## Non-standard estimators
