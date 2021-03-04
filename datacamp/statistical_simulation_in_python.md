@@ -382,17 +382,34 @@ print("Height Median CI = {} \nHeight Weight Correlation CI = {}".format( height
 
 ## Bootstrapping regression
 ```python
+rsquared_boot, coefs_boot, sims = [], [], 1000
+reg_fit = sm.OLS(df['y'], df.iloc[:,1:]).fit()
 
-```
+# Run 1K iterations
+for i in range(sims):
+    # First create a bootstrap sample with replacement with n=df.shape[0]
+    bootstrap = df.sample(n=df.shape[0], replace=True)
+    # Fit the regression and append the r square to rsquared_boot
+    rsquared_boot.append(sm.OLS(bootstrap['y'],bootstrap.iloc[:,1:]).fit().rsquared)
 
-## Jackknife resampling
-```python
-
+# Calculate 95% CI on rsquared_boot
+r_sq_95_ci = np.percentile(rsquared_boot, [2.5, 97.5])
+print("R Squared 95% CI = {}".format(r_sq_95_ci))
 ```
 
 ## Basic jackknife estimation - mean
 ```python
+# Leave one observation out from wrench_lengths to get the jackknife sample and store the mean length
+mean_lengths, n = [], len(wrench_lengths)
+index = np.arange(n)
 
+for i in range(n):
+    jk_sample = wrench_lengths[index != i]
+    mean_lengths.append(np.mean(jk_sample))
+
+# The jackknife estimate is the mean of the mean lengths from each sample
+mean_lengths_jk = np.mean(np.array(mean_lengths))
+print("Jackknife estimate of the mean = {}".format(mean_lengths_jk))
 ```
 
 ## Jackknife confidence interval for the median
