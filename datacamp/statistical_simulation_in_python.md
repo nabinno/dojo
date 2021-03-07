@@ -434,7 +434,18 @@ print("Jackknife 95% CI lower = {}, upper = {}".format(jk_lower_ci, jk_upper_ci)
 
 ## Generating a single permutation
 ```python
+# Concatenate the two arrays donations_A and donations_B into data
+len_A, len_B = len(donations_A), len(donations_B)
+data = np.concatenate([donations_A, donations_B])
 
+# Get a single permutation of the concatenated length
+perm = np.random.permutation(len(donations_A) + len(donations_B))
+
+# Calculate the permutated datasets and difference in means
+permuted_A = data[perm[:len(donations_A)]]
+permuted_B = data[perm[len(donations_A):]]
+diff_in_means = np.mean(permuted_A) - np.mean(permuted_B)
+print("Difference in the permuted mean values = {}.".format(diff_in_means))
 ```
 
 ## Hypothesis testing - Difference of means
