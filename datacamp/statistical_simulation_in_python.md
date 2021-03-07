@@ -450,7 +450,18 @@ print("Difference in the permuted mean values = {}.".format(diff_in_means))
 
 ## Hypothesis testing - Difference of means
 ```python
+# Generate permutations equal to the number of repetitions
+perm = np.array([np.random.permutation(len(donations_A) + len(donations_B)) for i in range(reps)])
+permuted_A_datasets = data[perm[:, :len(donations_A)]]
+permuted_B_datasets = data[perm[:, len(donations_A):]]
 
+# Calculate the difference in means for each of the datasets
+samples = np.mean(permuted_A_datasets, axis=1) - np.mean(permuted_B_datasets, axis=1)
+
+# Calculate the test statistic and p-value
+test_stat = np.mean(donations_A) - np.mean(donations_B)
+p_val = 2*np.sum(samples >= np.abs(test_stat))/reps
+print("p-value = {}".format(p_val))
 ```
 
 ## Hypothesis testing - Non-standard statistics
