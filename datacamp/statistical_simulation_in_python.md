@@ -484,7 +484,19 @@ print("Median: test statistic = {}, p-value = {}".format(test_stat_median, p_val
 # 4. Advanced Applications of Simulation
 ## Modeling Corn Production
 ```python
+# Initialize variables
+cost = 5000
+rain = np.random.normal(50, 15)
 
+# Corn Production Model
+def corn_produced(rain, cost):
+  mean_corn = 100*(cost**0.1)*(rain**0.2)
+  corn = np.random.poisson(mean_corn)
+  return corn
+
+# Simulate and print corn production
+corn_result = corn_produced(rain, cost)
+print("Simulated Corn Production = {}".format(corn_result))
 ```
 
 ## Modeling Profits
