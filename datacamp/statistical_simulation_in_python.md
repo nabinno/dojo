@@ -536,14 +536,19 @@ cost_max = [x for x in results.keys() if results[x] == max(results.values())][0]
 print("Average profit is maximized when cost = {}".format(cost_max))
 ```
 
-## Monte Carlo Integration
-```python
-
-```
-
 ## Integrating a Simple Function
 ```python
+# Define the sim_integrate function
+def sim_integrate(func, xmin, xmax, sims):
+    x = np.random.uniform(xmin, xmax, sims)
+    y = np.random.uniform(min(min(func(x)), 0), max(func(x)), sims)
+    area = (max(y) - min(y))*(xmax-xmin)
+    result = area * sum(abs(y) < abs(func(x)))/sims
+    return result
 
+# Call the sim_integrate function and print results
+result = sim_integrate(func = lambda x: x*np.exp(x), xmin = 0, xmax = 1, sims = 50)
+print("Simulated answer = {}, Actual Answer = 1".format(result))
 ```
 
 ## Calculating the value of pi
