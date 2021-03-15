@@ -586,12 +586,21 @@ print("P-value: {}, Statistically Significant? {}".format(p_value, stat_sig))
 
 ## Power Analysis - Part II
 ```python
+sample_size = 50
 
-```
-
-## Applications in Finance
-```python
-
+# Keep incrementing sample size by 10 till we reach required power
+while 1:
+    control_time_spent = np.random.normal(loc=control_mean, scale=control_sd, size=(sample_size,sims))
+    treatment_time_spent = np.random.normal(loc=control_mean*(1+effect_size), scale=control_sd, size=(sample_size,sims))
+    t, p = st.ttest_ind(treatment_time_spent, control_time_spent)
+    
+    # Power is the fraction of times in the simulation when the p-value was less than 0.05
+    power = (p < 0.05).sum()/sims
+    if power >= 0.8: 
+        break
+    else: 
+        sample_size += 10
+print("For 80% power, sample size required = {}".format(sample_size))
 ```
 
 ## Portfolio Simulation - Part I
