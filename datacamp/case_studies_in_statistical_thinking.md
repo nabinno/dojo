@@ -5,14 +5,24 @@ url: https://www.datacamp.com/courses/case-studies-in-statistical-thinking
 ---
 
 # 1. Fish sleep and bacteria growth: A review of Statistical Thinking I and II
-## Activity of zebrafish and melatonin
-```python
-
-```
-
 ## EDA: Plot ECDFs of active bout length
 ```python
+# Import the dc_stat_think module as dcst
+import dc_stat_think as dcst
 
+# Generate x and y values for plotting ECDFs
+x_wt, y_wt = dcst.ecdf(bout_lengths_wt)
+x_mut, y_mut = dcst.ecdf(bout_lengths_mut)
+
+# Plot the ECDFs
+_ = plt.plot(x_wt, y_wt, marker='.', linestyle='none')
+_ = plt.plot(x_mut, y_mut, marker='.', linestyle='none')
+
+# Make a legend, label axes, and show plot
+_ = plt.legend(('wt', 'mut'))
+_ = plt.xlabel('active bout length (min)')
+_ = plt.ylabel('ECDF')
+plt.show()
 ```
 
 ## Interpreting ECDFs and the story
