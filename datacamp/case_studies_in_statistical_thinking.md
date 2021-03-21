@@ -46,14 +46,20 @@ mut: mean = {3:.3f} min., conf. int. = [{4:.1f}, {5:.1f}] min.
 """.format(mean_wt, *conf_int_wt, mean_mut, *conf_int_mut))
 ```
 
-## Permutation and bootstrap hypothesis tests
-```python
-
-```
-
 ## Permutation test: wild type versus heterozygote
 ```python
+# Compute the difference of means: diff_means_exp
+diff_means_exp = np.mean(bout_lengths_het) - np.mean(bout_lengths_wt)
 
+# Draw permutation replicates: perm_reps
+perm_reps = dcst.draw_perm_reps(bout_lengths_het, bout_lengths_wt, 
+                               dcst.diff_of_means, size=10000)
+
+# Compute the p-value: p_val
+p_val = np.sum(perm_reps >= diff_means_exp) / len(perm_reps)
+
+# Print the result
+print('p =', p_val)
 ```
 
 ## Bootstrap hypothesis test
