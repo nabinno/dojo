@@ -88,7 +88,25 @@ print('p-value =', p)
 
 ## Assessing the growth rate
 ```python
+# Compute logarithm of the bacterial area: log_bac_area
+log_bac_area = np.log(bac_area)
 
+# Compute the slope and intercept: growth_rate, log_a0
+growth_rate, log_a0 = np.polyfit(t, log_bac_area, 1)
+
+# Draw 10,000 pairs bootstrap replicates: growth_rate_bs_reps, log_a0_bs_reps
+growth_rate_bs_reps, log_a0_bs_reps = dcst.draw_bs_pairs_linreg(
+    t, log_bac_area, size=10000
+)
+
+# Compute confidence intervals: growth_rate_conf_int
+growth_rate_conf_int = np.percentile(growth_rate_bs_reps, [2.5, 97.5])
+
+# Print the result to the screen
+print("""
+Growth rate: {0:.4f} 1/hour
+95% conf int: [{1:.4f}, {2:.4f}] 1/hour
+""".format(growth_rate, *growth_rate_conf_int))
 ```
 
 ## Plotting the growth curve
