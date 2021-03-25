@@ -132,7 +132,16 @@ plt.show()
 # 2. Analysis of results of the 2015 FINA World Swimming Championships
 ## Graphical EDA of men's 200 free heats
 ```python
+# Generate x and y values for ECDF
+x, y = dcst.ecdf(mens_200_free_heats)
 
+# Plot the ECDF as dots
+_ = plt.plot(x, y, marker='.', linestyle='none')
+
+# Label axes and show plot
+_ = plt.xlabel('time (s)')
+_ = plt.ylabel('ECDF')
+plt.show()
 ```
 
 ## 200 m free time with confidence interval
