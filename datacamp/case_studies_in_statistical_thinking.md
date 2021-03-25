@@ -111,17 +111,25 @@ Growth rate: {0:.4f} 1/hour
 
 ## Plotting the growth curve
 ```python
+# Plot data points in a semilog-y plot with axis labeles
+_ = plt.semilogy(t, bac_area, marker='.', linestyle='none')
 
+# Generate x-values for the bootstrap lines: t_bs
+t_bs = np.array([0, 14])
+
+# Plot the first 100 bootstrap lines
+for i in range(100):
+    y = np.exp(growth_rate_bs_reps[i] * t_bs + log_a0_bs_reps[i])
+    _ = plt.semilogy(t_bs, y, linewidth=0.5, alpha=0.05, color='red')
+    
+# Label axes and show plot
+_ = plt.xlabel('time (hr)')
+_ = plt.ylabel('area (sq. µm)')
+plt.show()
 ```
-
 
 
 # 2. Analysis of results of the 2015 FINA World Swimming Championships
-## Introduction to swimming data
-```python
-
-```
-
 ## Graphical EDA of men's 200 free heats
 ```python
 
