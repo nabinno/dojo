@@ -188,7 +188,19 @@ plt.show()
 
 ## Parameter estimates of difference between finals and semifinals
 ```python
+# Mean fractional time difference: f_mean
+f_mean = f.mean()
 
+# Get bootstrap reps of mean: bs_reps
+bs_reps = dcst.draw_bs_reps(f, np.mean, size=10000)
+
+# Compute confidence intervals: conf_int
+conf_int = np.percentile(bs_reps, [2.5, 97.5])
+
+# Report
+print("""
+mean frac. diff.: {0:.5f}
+95% conf int of mean frac. diff.: [{1:.5f}, {2:.5f}]""".format(f_mean, *conf_int))
 ```
 
 ## How to do the permutation test
