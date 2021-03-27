@@ -169,14 +169,21 @@ median time: {3:.2f} sec.
 """.format(mean_time, *conf_int_mean, median_time, *conf_int_median))
 ```
 
-## Do swimmers go faster in the finals?
-```python
-
-```
-
 ## EDA: finals versus semifinals
 ```python
+# Compute fractional difference in time between finals and semis
+f = (semi_times - final_times) / semi_times
 
+# Generate x and y values for the ECDF: x, y
+x, y = dcst.ecdf(f)
+
+# Make a plot of the ECDF
+plt.plot(x, y, marker='.', linestyle='none')
+
+# Label axes and show plot
+_ = plt.xlabel('f')
+_ = plt.ylabel('ECDF')
+plt.show()
 ```
 
 ## Parameter estimates of difference between finals and semifinals
