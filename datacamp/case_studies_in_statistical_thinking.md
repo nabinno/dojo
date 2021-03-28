@@ -203,24 +203,41 @@ mean frac. diff.: {0:.5f}
 95% conf int of mean frac. diff.: [{1:.5f}, {2:.5f}]""".format(f_mean, *conf_int))
 ```
 
-## How to do the permutation test
-```python
-
-```
-
 ## Generating permutation samples
 ```python
+def swap_random(a, b):
+    """Randomly swap entries in two arrays."""
+    # Indices to swap
+    swap_inds = np.random.random(size=len(a)) < 0.5
+    
+    # Make copies of arrays a and b for output
+    a_out = np.copy(a)
+    b_out = np.copy(b)
+    
+    # Swap values
+    a_out[swap_inds] = b[swap_inds]
+    b_out[swap_inds] = a[swap_inds]
 
+    return a_out, b_out
 ```
 
 ## Hypothesis test: Do women swim the same way in semis and finals?
 ```python
+# Set up array of permutation replicates
+perm_reps = np.empty(1000)
 
-```
+for i in range(1000):
+    # Generate a permutation sample
+    semi_perm, final_perm = swap_random(semi_times, final_times)
+    
+    # Compute f from the permutation sample
+    f = (semi_perm - final_perm) / semi_perm
+    
+    # Compute and store permutation replicate
+    perm_reps[i] = np.mean(f)
 
-## How does the performance of swimmers decline over long events?
-```python
-
+# Compute and print p-value
+print('p =', np.sum(perm_reps >= f_mean) / 1000)
 ```
 
 ## EDA: Plot all your data
