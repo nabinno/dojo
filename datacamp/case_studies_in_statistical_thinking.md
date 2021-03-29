@@ -242,7 +242,20 @@ print('p =', np.sum(perm_reps >= f_mean) / 1000)
 
 ## EDA: Plot all your data
 ```python
+# Plot the splits for each swimmer
+for splitset in splits:
+    _ = plt.plot(split_number, splitset, linewidth=1, color='lightgray')
 
+# Compute the mean split times
+mean_splits = np.mean(splits, axis=0)
+
+# Plot the mean split times
+plt.plot(mean_splits, split_number, marker='.', linewidth=3, markersize=12)
+
+# Label axes and show plot
+_ = plt.xlabel('split number')
+_ = plt.ylabel('split time (s)')
+plt.show()
 ```
 
 ## Linear regression of average split time
