@@ -287,18 +287,27 @@ mean slowdown: {0:.3f} sec./split
 
 ## Hypothesis test: are they slowing down?
 ```python
+# Observed correlation
+rho = dcst.pearson_r(split_number, mean_splits)
 
+# Initialize permutation reps
+perm_reps_rho = np.empty(10000)
+
+# Make permutation reps
+for i in range(10000):
+    # Scramble the split number array
+    scrambled_split_number = np.random.permutation(split_number)
+    
+    # Compute the Pearson correlation coefficient
+    perm_reps_rho[i] = dcst.pearson_r(scrambled_split_number, mean_splits)
+    
+# Compute and print p-value
+p_val = np.sum(perm_reps_rho >= rho) / 10000
+print('p =', p_val)
 ```
-
-
 
 
 # 3. The "Current Controversy" of the 2013 World Championships
-## Introduction to the current controversy
-```python
-
-```
-
 ## A metric for improvement
 ```python
 
