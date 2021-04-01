@@ -11,9 +11,9 @@
     "cdk": "cdk"
   },
   "devDependencies": {
-    "aws-cdk": "^1.11.0",
-    "@aws-cdk/assert": "^1.6.1",
+    "@aws-cdk/assert": "^1.95.2",
     "@types/jest": "^24.0.18",
+    "aws-cdk": "^1.95.2",
     "jest": "^24.9.0",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.1.0",
@@ -27,6 +27,7 @@
     "@aws-cdk/aws-sns-subscriptions": "^1.11.0",
     "@aws-cdk/aws-sqs": "^1.11.0",
     "@aws-cdk/core": "^1.11.0",
-    "cdk-dynamo-table-viewer": "^3.0.2"
+    "cdk-dynamo-table-viewer": "^3.0.2",
+    "netmask": ">=2.0.1"
   }
 }
