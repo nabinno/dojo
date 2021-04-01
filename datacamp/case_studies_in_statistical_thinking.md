@@ -308,14 +308,21 @@ print('p =', p_val)
 
 
 # 3. The "Current Controversy" of the 2013 World Championships
-## A metric for improvement
-```python
-
-```
-
 ## ECDF of improvement from low to high lanes
 ```python
+# Compute the fractional improvement of being in high lane: f
+f = (swimtime_low_lanes - swimtime_high_lanes) / swimtime_low_lanes
 
+# Make x and y values for ECDF: x, y
+x, y = dcst.ecdf(f)
+
+# Plot the ECDFs as dots
+plt.plot(x, y, marker='.', linestyle='none')
+
+# Label the axes and show the plot
+plt.xlabel('f')
+plt.ylabel('ECDF')
+plt.show()
 ```
 
 ## Estimation of mean improvement
