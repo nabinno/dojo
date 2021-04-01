@@ -41,11 +41,12 @@
     "install:sam": "bin/install-sam.sh"
   },
   "devDependencies": {
-    "@aws-cdk/assert": "^1.15.0",
+    "@aws-cdk/assert": "^1.95.2",
     "@types/jest": "^24.0.21",
-    "aws-cdk": "^1.15.0",
+    "aws-cdk": "^1.95.2",
     "jest": "^24.9.0",
     "nanoid-cli": "^1.1.0",
+    "netmask": ">=2.0.1",
     "prettier": "1.18.2",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.1.0",
