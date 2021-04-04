@@ -357,12 +357,30 @@ print('p =', p_val)
 
 ## Did the 2015 event have this problem?
 ```python
+# Compute f and its mean
+f = (swimtime_low_lanes_15 - swimtime_high_lanes_15) / swimtime_low_lanes_15
+f_mean = np.mean(f)
 
-```
+# Draw 10,000 bootstrap replicates
+bs_reps = dcst.draw_bs_reps(f, np.mean, size=10000)
 
-## The zigzag effect
-```python
+# Compute 95% confidence interval
+conf_int = np.percentile(bs_reps, [2.5, 97.5])
 
+# Shift f
+f_shift = f - f_mean
+
+# Draw 100,000 bootstrap replicates of the mean
+bs_reps = dcst.draw_bs_reps(f_shift, np.mean, size=100000)
+
+# Compute the p-value
+p_val = np.sum(bs_reps >= f_mean) / 100000
+
+# Print the results
+print("""
+mean frac. diff.: {0:.5f}
+95% conf int of mean frac. diff.: [{1:.5f}, {2:.5f}]
+p-value: {3:.5f}""".format(f_mean, *conf_int, p_val))
 ```
 
 ## Which splits should we consider?
