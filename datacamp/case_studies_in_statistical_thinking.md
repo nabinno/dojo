@@ -342,14 +342,17 @@ mean frac. diff.: {0:.5f}
 95% conf int of mean frac. diff.: [{1:.5f}, {2:.5f}]""".format(f_mean, *conf_int))
 ```
 
-## How should we test the hypothesis?
-```python
-
-```
-
 ## Hypothesis test: Does lane assignment affect performance?
 ```python
+# Shift f: f_shift
+f_shift = f - f_mean
 
+# Draw 100,000 bootstrap replicates of the mean: bs_reps
+bs_reps = dcst.draw_bs_reps(f_shift, np.mean, size=100000)
+
+# Compute and report the p-value
+p_val = np.sum(bs_reps >= f_mean) / 100000
+print('p =', p_val)
 ```
 
 ## Did the 2015 event have this problem?
