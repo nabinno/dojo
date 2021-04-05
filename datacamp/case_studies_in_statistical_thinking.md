@@ -383,14 +383,19 @@ mean frac. diff.: {0:.5f}
 p-value: {3:.5f}""".format(f_mean, *conf_int, p_val))
 ```
 
-## Which splits should we consider?
-```python
-
-```
-
 ## EDA: mean differences between odd and even splits
 ```python
+# Plot the the fractional difference for 2013 and 2015
+plt.plot(lanes, f_13, marker='.', markersize=12, linestyle='none')
+plt.plot(lanes, f_15, marker='.', markersize=12, linestyle='none')
 
+# Add a legend
+_ = plt.legend((2013, 2015))
+
+# Label axes and show plot
+plt.xlabel('lane')
+plt.ylabel('farc. diff. (odd - even)')
+plt.show()
 ```
 
 ## How does the current effect depend on lane position?
