@@ -400,19 +400,53 @@ plt.show()
 
 ## How does the current effect depend on lane position?
 ```python
+# Compute the slope and intercept of the frac diff/lane curve
+slope, intercept = np.polyfit(lanes, f_13, 1)
 
+# Compute bootstrap replicates
+bs_reps_slope, bs_reps_int = dcst.draw_bs_pairs_linreg(lanes, f_13, size=10000)
+
+# Compute 95% confidence interval of slope
+conf_int = np.percentile(bs_reps_slope, [2.5, 97.5])
+
+# Print slope and confidence interval
+print("""
+slope: {0:.5f} per lane
+95% conf int: [{1:.5f}, {2:.5f}] per lane""".format(slope, *conf_int))
+
+# x-values for plotting regression lines
+x = np.array([1, 8])
+
+# Plot 100 bootstrap replicate lines
+for i in range(100):
+    _ = plt.plot(x, bs_reps_slope[i] * x + bs_reps_int[i], 
+                 color='red', alpha=0.2, linewidth=0.5)
+   
+# Update the plot
+plt.draw()
+plt.show()
 ```
 
 ## Hypothesis test: can this be by chance?
 ```python
+# Compute observed correlation: rho
+rho = dcst.pearson_r(lanes, f_13)
 
+# Initialize permutation reps: perm_reps_rho
+perm_reps_rho = np.empty(10000)
+
+# Make permutation reps
+for i in range(10000):
+    # Scramble the lanes array: scrambled_lanes
+    scrambled_lanes = np.random.permutation(lanes)
+    
+    # Compute the Pearson correlation coefficient
+    perm_reps_rho[i] = dcst.pearson_r(scrambled_lanes, f_13)
+    
+# Compute and print p-value
+p_val = np.sum(perm_reps_rho >= rho) / 10000
+print('p =', p_val)
 ```
-
-## Recap of swimming analysis
-```python
-
-```
-
 
 
 
