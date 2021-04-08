@@ -451,14 +451,15 @@ print('p =', p_val)
 
 
 # 4. Statistical seismology and the Parkfield region
-## Introduction to statistical seismology and the Parkfield experiment
-```python
-
-```
-
 ## Parkfield earthquake magnitudes
 ```python
+# Make the plot
+plt.plot(*dcst.ecdf(mags), marker='.', linestyle='none')
 
+# Label axes and show plot
+plt.xlabel('magnitude')
+plt.ylabel('ECDF')
+plt.show()
 ```
 
 ## Computing the b-value
