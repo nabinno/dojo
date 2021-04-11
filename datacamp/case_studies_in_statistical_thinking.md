@@ -513,14 +513,35 @@ b-value: {0:.2f}
 95% conf int: [{1:.2f}, {2:.2f}]""".format(b, *conf_int))
 ```
 
-## Timing of major earthquakes and the Parkfield sequence
-```python
-
-```
-
 ## Interearthquake time estimates for Parkfield
 ```python
+# Compute the mean time gap: mean_time_gap
+mean_time_gap = np.mean(time_gap)
 
+# Standard deviation of the time gap: std_time_gap
+std_time_gap = np.std(time_gap)
+
+# Generate theoretical Exponential distribution of timings: time_gap_exp
+time_gap_exp = np.random.exponential(mean_time_gap, 10000)
+
+# Generate theoretical Normal distribution of timings: time_gap_norm
+time_gap_norm = np.random.normal(mean_time_gap, std_time_gap, 10000)
+
+# Plot theoretical CDFs
+_ = plt.plot(*dcst.ecdf(time_gap_exp))
+_ = plt.plot(*dcst.ecdf(time_gap_norm))
+
+# Plot Parkfield ECDF
+_ = plt.plot(*dcst.ecdf(time_gap, formal=True, min_x=-10, max_x=50))
+
+# Add legend
+_ = plt.legend(('Exp.', 'Norm.'), loc='upper left')
+
+# Label axes, set limits and show plot
+_ = plt.xlabel('time gap (years)')
+_ = plt.ylabel('ECDF')
+_ = plt.xlim(-10, 50)
+plt.show()
 ```
 
 ## When will the next big Parkfield quake be?
