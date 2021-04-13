@@ -565,14 +565,22 @@ print('Exponential:', conf_int_exp)
 print('     Normal:', conf_int_norm)
 ```
 
-## How are the Parkfield interearthquake times distributed?
-```python
-
-```
-
 ## Computing the value of a formal ECDF
 ```python
+def ks_stat(data1, data2):
+    # Compute ECDF from data: x, y
+    x, y = dcst.ecdf(data1)
+    
+    # Compute corresponding values of the target CDF
+    cdf = dcst.ecdf_formal(x, data2)
 
+    # Compute distances between concave corners and CDF
+    D_top = y - cdf
+
+    # Compute distance between convex corners and CDF
+    D_bottom = cdf - y + 1/len(data1)
+
+    return np.max((D_top, D_bottom))
 ```
 
 ## Computing the K-S statistic
