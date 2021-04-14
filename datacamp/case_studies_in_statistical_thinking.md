@@ -583,14 +583,24 @@ def ks_stat(data1, data2):
     return np.max((D_top, D_bottom))
 ```
 
-## Computing the K-S statistic
-```python
-
-```
-
 ## Drawing K-S replicates
 ```python
+def draw_ks_reps(n, f, args=(), size=10000, n_reps=10000):
+    # Generate samples from target distribution
+    x_f = f(*args, size=size)
+    
+    # Initialize K-S replicates
+    reps = np.empty(n_reps)
+    
+    # Draw replicates
+    for i in range(n_reps):
+        # Draw samples for comparison
+        x_samp = f(*args, size=n)
+        
+        # Compute K-S statistic
+        reps[i] = dcst.ks_stat(x_samp, i)
 
+    return reps
 ```
 
 ## The K-S test for Exponentiality
