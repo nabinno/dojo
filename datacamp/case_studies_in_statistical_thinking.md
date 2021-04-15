@@ -605,17 +605,23 @@ def draw_ks_reps(n, f, args=(), size=10000, n_reps=10000):
 
 ## The K-S test for Exponentiality
 ```python
+# Draw target distribution: x_f
+x_f = np.random.exponential(mean_time_gap, size=10000)
 
+# Compute K-S stat: d
+d = dcst.ks_stat(x_f, time_gap)
+
+# Draw K-S replicates: reps
+reps = dcst.draw_ks_reps(len(time_gap), np.random.exponential, 
+                         args=(mean_time_gap,), size=10000, n_reps=10000)
+
+# Compute and print p-value
+p_val = np.sum(reps >= d) / 10000
+print('p =', p_val)
 ```
-
 
 
 # 5. Earthquakes and oil mining in Oklahoma
-## Variations in earthquake frequency and seismicity
-```python
-
-```
-
 ## EDA: Plotting earthquakes over time
 ```python
 
