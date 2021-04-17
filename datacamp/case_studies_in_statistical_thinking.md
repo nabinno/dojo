@@ -624,7 +624,13 @@ print('p =', p_val)
 # 5. Earthquakes and oil mining in Oklahoma
 ## EDA: Plotting earthquakes over time
 ```python
+# Plot time vs. magnitude
+plt.plot(time, mags, marker='.', linestyle='none', alpha=0.1)
 
+# Label axes and show the plot
+plt.xlabel('time (year)')
+plt.ylabel('magnitude')
+plt.show()
 ```
 
 ## Estimates of the mean interearthquake times
