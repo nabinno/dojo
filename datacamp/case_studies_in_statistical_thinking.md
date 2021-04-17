@@ -635,7 +635,27 @@ plt.show()
 
 ## Estimates of the mean interearthquake times
 ```python
+# Compute mean interearthquake time
+mean_dt_pre = np.mean(dt_pre)
+mean_dt_post = np.mean(dt_post)
 
+# Draw 10,000 bootstrap replicates of the mean
+bs_reps_pre = dcst.draw_bs_reps(dt_pre, np.mean, size=10000)
+bs_reps_post = dcst.draw_bs_reps(dt_post, np.mean, size=10000)
+
+# Compute the confidence interval
+conf_int_pre = np.percentile(bs_reps_pre, [2.5, 97.5])
+conf_int_post = np.percentile(bs_reps_post, [2.5, 97.5])
+
+# Print the results
+print("""1980 through 2009
+mean time gap: {0:.2f} days
+95% conf int: [{1:.2f}, {2:.2f}] days""".format(mean_dt_pre, *conf_int_pre))
+
+print("""
+2010 through mid-2017
+mean time gap: {0:.2f} days
+95% conf int: [{1:.2f}, {2:.2f}] days""".format(mean_dt_post, *conf_int_post))
 ```
 
 ## Hypothesis test: did earthquake frequency change?
