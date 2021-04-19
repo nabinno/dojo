@@ -678,19 +678,20 @@ p_val = np.sum(bs_reps >= mean_dt_diff) / 10000
 print('p =', p_val)
 ```
 
-## How to display your analysis
-```python
-
-```
-
-## Earthquake magnitudes in Oklahoma
-```python
-
-```
-
 ## EDA: Comparing magnitudes before and after 2010
 ```python
+# Get magnitudes before and after 2010
+mags_pre = mags[time < 2010]
+mags_post = mags[time >= 2010]
 
+# Generate ECDFs
+plt.plot(*dcst.ecdf(mags_pre), marker='.', linestyle='none')
+
+# Label axes and show plot
+_ = plt.xlabel('magnitude')
+_ = plt.ylabel('ECDF')
+plt.legend(('1980 though 2009', '2010 through mid-2017'), loc='upper left')
+plt.show()
 ```
 
 ## Quantification of the b-values
