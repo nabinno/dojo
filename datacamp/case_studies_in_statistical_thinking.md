@@ -713,15 +713,21 @@ b-value: {3:.2f}
 95% conf int: [{4:.2f}, {5:.2f}]
 """.format(b_pre, *conf_int_pre, b_post, *conf_int_post))
 ```
-
-## How should we do a hypothesis test on differences of the b-value?
-```python
-
-```
-
 ## Hypothesis test: are the b-values different?
 ```python
+# Only magnitudes above completeness threshold
+mags_pre = mags_pre[mags_pre >= mt]
+mags_post = mags_post[mags_post >= mt]
 
+# Observed difference in mean magnitudes: diff_obs
+diff_obs = np.mean(mags_post) - np.mean(mags_pre)
+
+# Generate permutation replicates: perm_reps
+perm_reps = dcst.draw_perm_reps(mags_post, mags_pre, dcst.diff_of_means, size=10000)
+
+# Compute and print p-value
+p_val = np.sum(perm_reps < diff_obs) / 10000
+print('p =', p_val)
 ```
 
 ## What can you conclude from this analysis?
