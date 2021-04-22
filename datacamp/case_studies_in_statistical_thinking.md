@@ -729,13 +729,3 @@ perm_reps = dcst.draw_perm_reps(mags_post, mags_pre, dcst.diff_of_means, size=10
 p_val = np.sum(perm_reps < diff_obs) / 10000
 print('p =', p_val)
 ```
-
-## What can you conclude from this analysis?
-```python
-
-```
-
-## Closing comments
-```python
-
-```
