@@ -5,82 +5,22 @@ url: https://www.datacamp.com/courses/introduction-to-data-engineering
 ---
 
 # 1. Introduction to Data Engineering
-## What is data engineering?
-```python
-
-```
-
-## Tasks of the data engineer
-```python
-
-```
-
-## Data engineer or data scientist?
-```python
-
-```
-
-## Data engineering problems
-```python
-
-```
-
-## Tools of the data engineer
-```python
-
-```
-
-## Kinds of databases
-```python
-
-```
-
-## Processing tasks
-```python
-
-```
-
-## Scheduling tools
-```python
-
-```
-
-## Cloud providers
-```python
-
-```
-
-## Why cloud computing?
-```python
-
-```
-
-## Big players in cloud computing
-```python
-
-```
-
-## Cloud services
-```python
-
-```
-
 
 
 # 2. Data engineering toolbox
-## Databases
-```python
-
-```
-
-## SQL vs NoSQL
-```python
-
-```
-
 ## The database schema
 ```python
+# Complete the SELECT statement
+data = pd.read_sql("""
+SELECT first_name, last_name FROM "Customer"
+ORDER BY last_name, first_name
+""", db_engine)
 
+# Show the first 3 rows of the DataFrame
+print(data.head(3))
+
+# Show the info of the DataFrame
+print(data.info())
 ```
 
 ## Joining on relations
