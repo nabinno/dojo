@@ -57,7 +57,13 @@ parallel_apply(take_mean_age, athlete_events.groupby('Year'), 4)
 
 ## Using a DataFrame
 ```python
+import dask.dataframe as dd
 
+# Set the number of pratitions
+athlete_events_dask = dd.from_pandas(athlete_events, npartitions = 4)
+
+# Calculate the mean Age per Year
+print(athlete_events_dask.groupby('Year').Age.mean().compute())
 ```
 
 ## Parallel computation frameworks
