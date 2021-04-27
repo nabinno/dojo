@@ -66,19 +66,19 @@ athlete_events_dask = dd.from_pandas(athlete_events, npartitions = 4)
 print(athlete_events_dask.groupby('Year').Age.mean().compute())
 ```
 
-## Parallel computation frameworks
-```python
-
-```
-
-## Spark, Hadoop and Hive
-```python
-
-```
-
 ## A PySpark groupby
 ```python
+# Print the type of athlete_events_spark
+print(type(athlete_events_spark))
 
+# Print the schema of athlete_events_spark
+print(athlete_events_spark.printSchema())
+
+# Group by the Year, and find the mean Age
+print(athlete_events_spark.groupBy('Year').mean('Age'))
+
+# Group by the Year, and find the mean Age
+print(athlete_events_spark.groupBy('Year').mean('Age').show())
 ```
 
 ## Running PySpark files
