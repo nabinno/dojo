@@ -144,17 +144,35 @@ print(post_score)
 
 ## Read from a database
 ```python
+# Function to extract table to a pandas DataFrame
+def extract_table_to_pandas(tablename, db_engine):
+    query = "SELECT * FROM {}".format(tablename)
+    return pd.read_sql(query, db_engine)
 
-```
+# Connect to the database using the connection URI
+connection_uri = "postgresql://repl:password@localhost:5432/pagila" 
+db_engine = sqlalchemy.create_engine(connection_uri)
 
-## Transform
-```python
+# Extract the film table into a pandas DataFrame
+extract_table_to_pandas("film", db_engine)
 
+# Extract the customer table into a pandas DataFrame
+extract_table_to_pandas("customer", db_engine)
 ```
 
 ## Splitting the rental rate
 ```python
+# Get the rental rate column as a string
+rental_rate_str = film_df.rental_rate.astype("str")
 
+# Split up and expand the column
+rental_rate_expanded = rental_rate_str.str.split(".", expand=True)
+
+# Assign the columns to film_df
+film_df = film_df.assign(
+    rental_rate_dollar=rental_rate_expanded[0],
+    rental_rate_cents=rental_rate_expanded[1],
+)
 ```
 
 ## Prepare for transformations
