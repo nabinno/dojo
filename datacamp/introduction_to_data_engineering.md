@@ -318,7 +318,16 @@ def load_to_dwh(recommendations):
 
 ## Defining the DAG
 ```python
+# Define the DAG so it runs on a daily basis
+dag = DAG(dag_id="recommendations",
+          schedule_interval="0 0 * * *")
 
+# Make sure `etl()` is called in the operator. Pass the correct kwargs.
+task_recommendations = PythonOperator(
+    task_id="recommendations_task",
+    python_callable=etl,
+    op_kwargs={"db_engines":db_engines},
+)
 ```
 
 ## Enable the DAG
