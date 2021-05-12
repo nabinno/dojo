@@ -5,14 +5,16 @@ url: https://www.datacamp.com/courses/streamlined-data-ingestion-with-pandas
 ---
 
 # 1. Importing Data from Flat Files
-## Introduction to flat files
-```python
-
-```
-
 ## Get data from CSVs
 ```python
+# Import pandas as pd
+import pandas as pd
 
+# Read the CSV and assign it to the variable data
+data = pd.read_csv("vt_tax_data_2016.csv")
+
+# View the first few lines of data
+print(data.head())
 ```
 
 ## Get data from other flat files
