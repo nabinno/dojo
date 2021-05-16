@@ -57,14 +57,17 @@ print(vt_data_first500.head())
 print(vt_data_next500.head())
 ```
 
-## Handling errors and missing data
-```python
-
-```
-
 ## Specify data types
 ```python
+# Create dict specifying data types for agi_stub and zipcode
+data_types = {'agi_stub': 'category',
+			  'zipcode': str}
 
+# Load csv using dtype to set correct data types
+data = pd.read_csv("vt_tax_data_2016.csv", dtype=data_types)
+
+# Print data types of resulting frame
+print(data.dtypes.head())
 ```
 
 ## Set custom NA values
