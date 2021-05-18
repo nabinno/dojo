@@ -72,15 +72,31 @@ print(data.dtypes.head())
 
 ## Set custom NA values
 ```python
+# Create dict specifying that 0s in zipcode are NA values
+null_values = {"zipcode": 0}
 
+# Load csv using na_values keyword argument
+data = pd.read_csv("vt_tax_data_2016.csv", 
+                   na_values=null_values)
+
+# View rows with NA ZIP codes
+print(data[data.zipcode.isna()])
 ```
 
 ## Skip bad data
 ```python
-
+try:
+  # Set warn_bad_lines to issue warnings about bad records
+  data = pd.read_csv("vt_tax_data_2016_corrupt.csv", 
+                     error_bad_lines=False, 
+                     warn_bad_lines=True)
+  
+  # View first 5 records
+  print(data.head())
+  
+except pd.io.common.CParserError:
+    print("Your data contained rows that could not be parsed.")
 ```
-
-
 
 
 # 2. Importing Data From Excel Files
