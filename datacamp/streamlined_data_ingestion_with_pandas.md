@@ -262,24 +262,69 @@ print(survey_data["Part2EndTime"].head())
 
 
 # 3. Importing Data from Databases
-## Introduction to databases
-```python
-
-```
-
 ## Connect to a database
 ```python
+# Import sqlalchemy's create_engine() function
+from sqlalchemy import create_engine
 
+# Create the database engine
+engine = create_engine("sqlite:///data.db")
+
+# View the tables in the database
+print(engine.table_names())
 ```
 
 ## Load entire tables
 ```python
+##
+# Load libraries
+import pandas as pd
+from sqlalchemy import create_engine
 
+# Create the database engine
+engine = create_engine('sqlite:///data.db')
+
+# Load hpd311calls without any SQL
+hpd_calls = pd.read_sql('hpd311calls', engine)
+
+# View the first few rows of data
+print(hpd_calls.head())
+
+##
+# Create the database engine
+engine = create_engine("sqlite:///data.db")
+
+# Create a SQL query to load the entire weather table
+query = """
+SELECT *
+  FROM weather;
+"""
+
+# Load weather with the SQL query
+weather = pd.read_sql(query, engine)
+
+# View the first few rows of data
+print(weather.head())
 ```
 
 ## Refining imports with SQL queries
 ```python
+# Create database engine for data.db
+engine = create_engine('sqlite:///data.db')
 
+# Write query to get date, tmax, and tmin from weather
+query = """
+SELECT date,
+       tmax, 
+       tmin
+  FROM weather;
+"""
+
+# Make a data frame by passing query and engine to read_sql()
+temperatures = pd.read_sql(query, engine)
+
+# View the resulting data frame
+print(temperatures)
 ```
 
 ## Selecting columns with SQL
