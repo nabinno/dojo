@@ -327,34 +327,73 @@ temperatures = pd.read_sql(query, engine)
 print(temperatures)
 ```
 
-## Selecting columns with SQL
-```python
-
-```
-
 ## Selecting rows
 ```python
+# Create query to get hpd311calls records about safety
+query = """
+SELECT *
+FROM hpd311calls
+WHERE complaint_type = 'SAFETY';
+"""
 
+# Query the database and assign result to safety_calls
+safety_calls = pd.read_sql(query, engine)
+
+# Graph the number of safety calls by borough
+call_counts = safety_calls.groupby('borough').unique_key.count()
+call_counts.plot.barh()
+plt.show()
 ```
 
 ## Filtering on multiple conditions
 ```python
+# Create query for records with max temps <= 32 or snow >= 1
+query = """
+SELECT * 
+  FROM weather
+ WHERE tmax <= 32
+    OR snow >= 1;
+"""
 
-```
+# Query database and assign result to wintry_days
+wintry_days = pd.read_sql(query, engine)
 
-## More complex SQL queries
-```python
-
+# View summary stats about the temperatures
+print(wintry_days.describe())
 ```
 
 ## Getting distinct values
 ```python
+# Create query for unique combinations of borough and complaint_type
+query = """
+SELECT DISTINCT borough,
+       complaint_type
+  FROM hpd311calls;
+"""
 
+# Load results of query to a data frame
+issues_and_boros = pd.read_sql(query, engine)
+
+# Check assumption about issues and boroughs
+print(issues_and_boros)
 ```
 
 ## Counting in groups
 ```python
+# Create query to get call counts by complaint_type
+query = """
+SELECT DISTINCT complaint_type,
+     count(*)
+  FROM hpd311calls
+  GROUP BY complaint_type;
+"""
 
+# Create data frame of call counts by issue
+calls_by_issue = pd.read_sql(query, engine)
+
+# Graph the number of calls for each housing issue
+calls_by_issue.plot.barh(x="complaint_type")
+plt.show()
 ```
 
 ## Working with aggregate functions
