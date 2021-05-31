@@ -398,17 +398,38 @@ plt.show()
 
 ## Working with aggregate functions
 ```python
+# Create query to get temperature and precipitation by month
+query = """
+SELECT month, 
+        MAX(tmax), 
+        MIN(tmin),
+        SUM(prcp)
+  FROM weather 
+ GROUP BY month;
+"""
 
-```
+# Get data frame of monthly weather stats
+weather_by_month = pd.read_sql(query, engine)
 
-## Loading multiple tables with joins
-```python
-
+# View weather stats by month
+print(weather_by_month)
 ```
 
 ## Joining tables
 ```python
+# Query to join weather to call records by date columns
+query = """
+SELECT * 
+  FROM hpd311calls
+  JOIN weather
+  ON hpd311calls.created_date = weather.date;
+"""
 
+# Create data frame of joined tables
+calls_with_weather = pd.read_sql(query, engine)
+
+# View the data frame to make sure all columns were joined
+print(calls_with_weather.head())
 ```
 
 ## Joining and filtering
