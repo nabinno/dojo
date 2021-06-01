@@ -434,26 +434,71 @@ print(calls_with_weather.head())
 
 ## Joining and filtering
 ```python
+##
+# Query to get hpd311calls and precipitation values
+query = """
+SELECT hpd311calls.*, weather.prcp
+  FROM hpd311calls
+  JOIN weather
+  ON hpd311calls.created_date = weather.date;"""
 
+# Load query results into the leak_calls data frame
+leak_calls = pd.read_sql(query, engine)
+
+# View the data frame
+print(leak_calls.head())
+
+##
+# Query to get water leak calls and daily precipitation
+query = """
+SELECT hpd311calls.*, weather.prcp
+  FROM hpd311calls
+  JOIN weather
+    ON hpd311calls.created_date = weather.date
+  WHERE hpd311calls.complaint_type = 'WATER LEAK';"""
+
+# Load query results into the leak_calls data frame
+leak_calls = pd.read_sql(query, engine)
+
+# View the data frame
+print(leak_calls.head())
 ```
 
 ## Joining, filtering, and aggregating
 ```python
+# Modify query to join tmax and tmin from weather by date
+query = """
+SELECT hpd311calls.created_date, 
+	   COUNT(*), 
+       weather.tmax,
+       weather.tmin
+  FROM hpd311calls 
+       JOIN weather
+       ON hpd311calls.created_date = weather.date
+ WHERE hpd311calls.complaint_type = 'HEAT/HOT WATER' 
+ GROUP BY hpd311calls.created_date;
+ """
 
+# Query database and save results as df
+df = pd.read_sql(query, engine)
+
+# View first 5 records
+print(df.head())
 ```
-
 
 
 
 # 4. Importing JSON Data and Working with APIs
-## Introduction to JSON
-```python
-
-```
-
 ## Load JSON data
 ```python
+# Load pandas as pd
+import pandas as pd
 
+# Load the daily report to a data frame
+pop_in_shelters = pd.read_json('dhs_daily_report.json')
+
+# View summary stats about pop_in_shelters
+print(pop_in_shelters.describe())
 ```
 
 ## Work with JSON orientations
