@@ -295,78 +295,120 @@ csvstat Spotify_FullData.csv
 
 ## Practice pushing data back to database
 ```sh
+# Preview file
+ls
 
+# Upload Spotify_MusicAttributes.csv to database
+csvsql --db "sqlite:///SpotifyDatabase.db" --insert Spotify_MusicAttributes.csv
+
+# Store SQL query as shell variable
+sqlquery="SELECT * FROM Spotify_MusicAttributes"
+
+# Apply SQL query to re-pull new table in database
+sql2csv --db "sqlite:///SpotifyDatabase.db" --query "$sqlquery" 
 ```
 
 ## Database and SQL with csvkit
 ```sh
+# Store SQL for querying from SQLite database 
+sqlquery_pull="SELECT * FROM SpotifyMostRecentData"
 
+# Apply SQL to save table as local file 
+sql2csv --db "sqlite:///SpotifyDatabase.db" --query "$sqlquery_pull" > SpotifyMostRecentData.csv
+
+# Store SQL for UNION of the two local CSV files
+sqlquery_union="SELECT * FROM SpotifyMostRecentData UNION ALL SELECT * FROM Spotify201812"
+
+# Apply SQL to union the two local CSV files and save as local file
+csvsql --query "$sqlquery_union" SpotifyMostRecentData.csv Spotify201812.csv > UnionedSpotifyData.csv
+
+# Push UnionedSpotifyData.csv to database as a new table
+csvsql --db "sqlite:///SpotifyDatabase.db" --insert UnionedSpotifyData.csv
 ```
-
-
-
 
 
 # 4. Data Pipeline one the Command Line
-
-## Sh on the command line
+## Executing Python script on the command line
 ```sh
+# in one step, create a new file and pass the print function into the file
+echo "print('This is my first Python script')" > my_first_python_script.py
 
+# check file location 
+ls
+
+# check file content 
+cat my_first_python_script.py
+
+# execute Python script file directly from command line  
+python my_first_python_script.py
 ```
 
-## Finding Sh version on the command line
+## Installing Python dependencies
 ```sh
+# Add scikit-learn to the requirements.txt file
+echo "scikit-learn" > requirements.txt
 
+# Preview file content
+cat requirements.txt
+
+# Install the required dependencies
+pip install -r requirements.txt
+
+# Verify that Scikit-Learn is now installed
+pip list
 ```
 
-## Executing Sh script on the command line
+## Running a Python model
 ```sh
+# Re-install requirements
+pip install -r requirements.txt
 
-```
+# Preview Python model script for import dependencies
+cat create_model.py
 
-## Sh package installation with pip
-```sh
+# Verify that dependencies are installed
+pip list
 
-```
+# Execute Python model script, which outputs a pkl file
+python create_model.py
 
-## Understanding pip's capabilities
-```sh
-
-```
-
-## Installing Sh dependencies
-```sh
-
-```
-
-## Running a Sh model
-```sh
-
-```
-
-## Data job automation with cron
-```sh
-
-```
-
-## Understanding cron scheduling syntax
-```sh
-
+# Verify that the model.pkl file has been created 
+ls
 ```
 
 ## Scheduling a job with crontab
 ```sh
+# Verify that there are no CRON jobs currently scheduled
+crontab -l 
 
+# Create Python file hello_world.py
+echo "print('hello world')" > hello_world.py
+
+# Preview Python file 
+cat hello_world.py
+
+# Add as job that runs every minute on the minute to crontab
+echo "* * * * * python hello_world.py" | crontab
+
+# Verify that the CRON job has been added
+crontab -l
 ```
 
 ## Model production on the command line
 ```sh
+# Preview both Python script and requirements text file
+cat create_model.py
+cat requirements.txt
 
+# Pip install Python dependencies in requirements file
+pip install -r requirements.txt
+
+# Run Python script on command line
+python create_model.py
+
+# Add CRON job that runs create_model.py every minute
+echo "* * * * * python create_model.py" | crontab
+
+# Verify that the CRON job has been scheduled via CRONTAB
+crontab -l
 ```
-
-## Course recap
-```sh
-
-```
-
-
