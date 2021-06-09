@@ -229,44 +229,68 @@ csvstack -g "Sep2018","Oct2018" Spotify201809_subset.csv Spotify201810_subset.cs
 
 
 # 3. Database Operations on the Command Line
-## Using sql2csv documentation
-```sh
-
-```
-
-## Understand sql2csv connectors
-```sh
-
-```
-
 ## Practice pulling data from database
 ```sh
+# Verify database name 
+ls
 
-```
+# Save query to new file Spotify_Popularity_5Rows.csv
+sql2csv --db "sqlite:///SpotifyDatabase.db" \
+        --query "SELECT * FROM Spotify_Popularity LIMIT 5" \
+        > Spotify_Popularity_5Rows.csv
 
-## Manipulating data using SQL syntax
-```sh
+# Verify newly created file
+ls
 
+# Print preview of newly created file
+csvlook Spotify_Popularity_5Rows.csv
 ```
 
 ## Applying SQL to a local CSV file
 ```sh
+##
+# Preview CSV file
+ls
 
+# Apply SQL query to Spotify_MusicAttributes.csv
+csvsql --query "SELECT * FROM Spotify_MusicAttributes ORDER BY duration_ms LIMIT 1" Spotify_MusicAttributes.csv
+
+##
+# Reformat the output using csvlook 
+csvsql --query "SELECT * FROM Spotify_MusicAttributes ORDER BY duration_ms LIMIT 1" \
+	Spotify_MusicAttributes.csv | csvlook
+
+##
+# Re-direct output to new file: LongestSong.csv
+csvsql --query "SELECT * FROM Spotify_MusicAttributes ORDER BY duration_ms LIMIT 1" \
+	Spotify_MusicAttributes.csv > LongestSong.csv
+    
+# Preview newly created file 
+csvlook LongestSong.csv
 ```
 
 ## Cleaner scripting via shell variables
 ```sh
+# Preview CSV file
+ls
 
+# Store SQL query as shell variable
+sqlquery="SELECT * FROM Spotify_MusicAttributes ORDER BY duration_ms LIMIT 1"
+
+# Apply SQL query to Spotify_MusicAttributes.csv
+csvsql --query "$sqlquery" Spotify_MusicAttributes.csv
 ```
 
 ## Joining local CSV files using SQL
 ```sh
+# Store SQL query as shell variable
+sql_query="SELECT ma.*, p.popularity FROM Spotify_MusicAttributes ma INNER JOIN Spotify_Popularity p ON ma.track_id = p.track_id"
 
-```
+# Join 2 local csvs into a new csv using the saved SQL
+csvsql --query "$sql_query" Spotify_MusicAttributes.csv Spotify_Popularity.csv > Spotify_FullData.csv
 
-## Pushing data back to database
-```sh
-
+# Preview newly created file
+csvstat Spotify_FullData.csv
 ```
 
 ## Practice pushing data back to database
