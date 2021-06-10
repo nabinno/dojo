@@ -6,13 +6,17 @@ url: https://www.datacamp.com/courses/command-line-automation-in-python
 
 # 1. IPython shell commands
 ## Learn the Python interpreter
-```python
+```sh
+$ cat script.ipy
+!python3 -c "from random import choices;days = ['Mo', 'Tu', 'We', 'Th', 'Fr'];print(choices(days))"
 
+$ ipython script.ipy
 ```
 
 ## Execute Python commands
-```python
-
+```ipython
+var = !ls -h test_dir/*.csv
+print(len(var))
 ```
 
 ## Execute IPython shell commands
