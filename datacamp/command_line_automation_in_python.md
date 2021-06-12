@@ -19,53 +19,56 @@ var = !ls -h test_dir/*.csv
 print(len(var))
 ```
 
-## Execute IPython shell commands
-```python
-
-```
-
 ## Capture IPython Shell output
-```python
-
+```ipython
+%%bash
+echo "Running Directory Audit Script"
+CSV=`ls -l test_dir/*.csv | wc -l`
+TXT=`ls -l test_dir/*.csv | wc -l`
+echo 'The directory contains this a total # *.csv files: ' $CSV
+echo 'The directory contains this a total # *.txt files: ' $TXT
 ```
 
 ## Using Bash Magic command
-```python
-
-```
-
-## Using the ! operator in IPython
-```python
-
-```
-
-## Automate with SList
-```python
-
+```ipython
+!ls -l | awk '{SUM+=$5} END {print SUM}'
 ```
 
 ## Use SList fields to parse shell output
-```python
-
+```ipython
+disk_space = !df -h
+print(disk_space.fields(0))
 ```
 
 ## Find Python files using SLIST grep
-```python
-
+```ipython
+res = !ls src
+print(res.grep('.py'))
 ```
 
 ## Using SList to grep
 ```python
+import os
+from slist_out import slist_out
 
+# Save the name of the root directory
+root = "test_dir"
+
+# Find the backups with "_2" in slist_out
+result = slist_out.grep('_2')
+
+# Extract the filenames
+for res in result:
+	filename = res.split()[-1]
+    
+	# Create the full path
+	fullpath = os.path.join(root, filename)
+	print(f"fullpath of backup file: {fullpath}")
 ```
 
 
 
-
-
-
 # 2. Shell commands with subprocess
-
 ## Execute shell commands in subprocess
 ```python
 
