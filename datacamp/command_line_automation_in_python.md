@@ -267,49 +267,121 @@ print(disk_total.stdout.decode("utf-8"))
 
 
 # 3. Walking the file system
-## Dealing with file systems
-```python
-
-```
-
 ## Double trouble
 ```python
+import os
 
+# Walk the filesystem starting at the test_dir
+matches = []
+for root, _, files in os.walk('/home/repl/workspace/test_dir'):
+    for name in files:
+      	# Create the full path to the file by using os.path.join()
+        fullpath = os.path.join(root, name)
+        print(f"Processing file: {fullpath}")
+        # Split off the extension and discard the rest of the path
+        _, ext = os.path.splitext(fullpath)
+        # Match the extension pattern .csv
+        if ext == ".csv":
+            matches.append(fullpath)
+            
+# Print the matches you find
+print(matches)
 ```
 
 ## Y'all got some renaming to do
 ```python
+import pathlib
+import os
 
+# Walk the filesystem starting at the test_dir
+for root, _, files in os.walk('cattle'):
+    for name in files:
+      	
+        # Create the full path to the file by using os.path.join()
+        fullpath = os.path.join(root, name)
+        print(f"Processing file: {fullpath}")
+        
+        # Rename file
+        if "shorthorn" in name:
+            p = pathlib.Path(fullpath)
+            shortname = name.split("_")[0] # You need to split the name by underscore
+            new_name = f"{shortname}_longhorn"
+            print(f"Renaming file {name} to {new_name}")
+            p.rename(new_name)
 ```
 
 ## Sweet pickle
 ```python
+import os
+from my.models.pca import X_digits
+from sklearn.externals import joblib
 
-```
+# Walk the filesystem starting at the my path
+for root, _, files in os.walk('my'):
+    for name in files:
+      	# Create the full path to the file by using os.path.join()
+        fullpath = os.path.join(root, name)
+        print(f"Processing file: {fullpath}")
+        _, ext = os.path.splitext(fullpath)
+        # Match the extension pattern .joblib
+        if ext == ".joblib":
+            clf = joblib.load(fullpath)
+            break
 
-## Find files matching a pattern
-```python
-
+# Predict from pickled model
+print(clf.transform(X_digits))
 ```
 
 ## Rogue founder code
 ```python
+import pathlib
+import os
 
+path = pathlib.Path("/home/repl/workspace/prod")
+matches = sorted(path.glob("*.jar"))
+for match in matches:
+  print(f"Found rogue .jar file in production: {match}")
 ```
 
 ## Is this pattern True?
 ```python
+import fnmatch
 
-```
+# List of file names to process
+files = ["data1.csv", "script.py", "image.png", "data2.csv", "all.py"]
 
-## High-level file and directory operations
-```python
+# Function that returns 
+def csv_matches(list_of_files):
+    """Return matches for csv files"""
 
+    matches = fnmatch.filter(list_of_files, "*.csv")
+    return matches
+
+# Call function to find matches
+matches = csv_matches(files)
+print(f"Found matches: {matches}")
 ```
 
 ## Goons over my shammy
 ```python
+import tempfile
+import os
 
+# Create a self-destructing temporary file
+with tempfile.NamedTemporaryFile() as exploding_file:
+  	# This file will be deleted automatically after the with statement block
+    print(f"Temp file created: {exploding_file.name}")
+    exploding_file.write(b"This message will self-destruct in 5....4...\n")
+    
+    # Get to the top of the file
+    exploding_file.seek(0)
+
+    #Print the message
+    print(exploding_file.read())
+
+# Check to sure file self-destructed
+if not os.path.exists(exploding_file.name): 
+    print(f"self-destruction verified: {exploding_file.name}")
 ```
 
 ## Archive users
