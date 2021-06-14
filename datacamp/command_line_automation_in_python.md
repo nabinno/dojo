@@ -386,12 +386,25 @@ if not os.path.exists(exploding_file.name):
 
 ## Archive users
 ```python
+from shutil import make_archive
+import os
 
-```
+# Archive root
+username = "user1"
+root_dir = "/home/repl/workspace/"
+apath = "/home/repl/workspace/archive"
 
-## Using pathlib
-```python
+# Archive base
+final_archive_base = f"{apath}/{username}"
 
+# Create tar and gzipped archive
+make_archive(final_archive_base, "gztar", apath)
+
+# Create zip archive
+make_archive(final_archive_base, "zip", apath)
+
+# Print out archives
+print(os.listdir(apath))
 ```
 
 ## Does it even exist?
