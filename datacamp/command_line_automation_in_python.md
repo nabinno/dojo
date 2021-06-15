@@ -409,34 +409,90 @@ print(os.listdir(apath))
 
 ## Does it even exist?
 ```python
+import pathlib
 
+# Read the index of social media posts
+with open("/home/repl/workspace/posts_index.txt") as posts:
+    for post in posts.readlines():
+        
+        # Create a pathlib object
+        path = pathlib.Path(post.strip())
+
+        # Check if the social media post still exists on disk
+        if path.exists():
+            print(f"Found active post: {post}")
+        else:
+            print(f"Post is missing: {post}")
 ```
 
 ## File writing one-liner
 ```python
+from subprocess import run, PIPE
+from pathlib import Path
 
+# Find all the python files you created and print them out
+for i in range(3):
+    path = Path(f"/home/repl/workspace/test/file_{i}.py")
+    path.write_text("#!/usr/bin/env python\n")
+    path.write_text("import datetime;print(datetime.datetime.now())")
+  
+
+# Find all the python files you created and print them out
+for file in Path("/home/repl/workspace/test/").glob("*.py"):
+   # Gets the resolved full path
+   fullpath = str(file.resolve())
+   proc = run(["python3", fullpath], stdout=PIPE)
+   print(proc)
 ```
-
-
-
-
 
 
 # 4. Command line functions
-
-## Using functions for automation
-```python
-
-```
-
 ## Funky clusters
 ```python
+from sklearn.datasets.samples_generator import make_blobs
+from sklearn.cluster import KMeans
 
+# Create sample blobs from sklearn datasets
+def blobs():
+    X, y = make_blobs(n_samples=10, centers=3, n_features=2,random_state=0)
+    return X,y
+  
+# Perform KMeans cluster
+def cluster(X, random_state=170, num=2):
+    return KMeans(n_clusters=num, random_state=random_state).fit_predict(X) # Returns cluster assignment
+
+# Run everything:  Call both functions.  X creates the data and cluster clusters the data.
+def main():
+    X,_ = blobs()
+    return cluster(X)
+# Print the KMeans cluster assignments
+print(main()) 
 ```
 
 ## Hello decorator
 ```python
+from functools import wraps
 
+def nothing(f):
+    @wraps(f)
+    def wrapper(*args, **kwds):
+        return f(*args, **kwds)
+    return wrapper
+
+# Decorate first function
+@nothing
+def something():
+    pass
+
+# Decorate second function
+@nothing
+def another():
+    pass
+
+# Put uncalled function into a list and print name  
+funcs = [something, another]
+for func in funcs:
+    print(f"function name: {func.__name__}")
 ```
 
 ## Debugging decorator
