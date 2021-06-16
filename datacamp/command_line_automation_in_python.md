@@ -497,7 +497,22 @@ for func in funcs:
 
 ## Debugging decorator
 ```python
+from functools import wraps
 
+# Create decorator
+def debug(f):
+	@wraps(f)
+	def wrap(*args, **kw):
+		result = f(*args, **kw)
+		print(f"function name: {f.__name__}, args: [{args}], kwargs: [{kw}]")
+		return result
+	return wrap
+  
+# Apply decorator
+@debug
+def mult(x, y=10):
+	return x*y
+print(mult(5, y=5))
 ```
 
 ## Understand script input
