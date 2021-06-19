@@ -515,19 +515,22 @@ def mult(x, y=10):
 print(mult(5, y=5))
 ```
 
-## Understand script input
-```python
-
-```
-
-## Using python command-line tools
-```python
-
-```
-
 ## Backwards day
 ```python
+import subprocess
 
+# Write a file
+with open("input.txt", "w") as input_file:
+    input_file.write("Reverse this string\n")
+    input_file.write("Reverse this too!")
+
+# Runs python script that reverse strings in a file line by line
+run_script = subprocess.Popen(
+    ["/usr/bin/python3", "/home/repl/workspace/reverseit.py", "input.txt"], stdout=subprocess.PIPE)
+
+# Print out the script output
+for line in run_script.stdout.readlines():
+    print(line)
 ```
 
 ## Introduction to Click
