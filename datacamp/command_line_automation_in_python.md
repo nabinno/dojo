@@ -533,14 +533,20 @@ for line in run_script.stdout.readlines():
     print(line)
 ```
 
-## Introduction to Click
-```python
-
-```
-
 ## Simple yet true
 ```python
+import click
+import random
+random.seed(42)
 
+# Create random values to choose from
+values = ["Nashville", "Austin", "Denver", "Cleveland"]
+
+# Select a random choice
+result = random.choice(values)
+
+# Print the random choice using click echo
+click.echo(f"My choice is: {result}")
 ```
 
 ## Running a click application from subprocess
