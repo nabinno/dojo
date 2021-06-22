@@ -570,16 +570,42 @@ print(cluster2.stdout)
 
 ## Got a ticket to write
 ```python
+import click
 
+# Setup
+words = ["Asset", "Bubble", "10", "Year"]
+filename = "words.txt"
+
+# Write with click.open()
+with click.open_file(filename, 'w') as f:
+
+# Loop over words with a for loop
+    for word in words:
+        f.write(f'{word}\n')
+
+# Read it back
+with open(filename) as output_file:
+    print(output_file.read())
 ```
 
 ## Invoking command line tests
 ```python
+import click
+from click.testing import CliRunner
+from setup import main
 
+# Define the click command
+@click.command()
+@click.option("--num", default=2, help="Number of clusters")
+def run_cluster(num):
+    result = main(num)
+    click.echo(f'Cluster assignments: {result} for total clusters [{num}]')
+
+# Create the click test runner
+runner = CliRunner()
+
+# Run the click app and assert it runs without error
+result = runner.invoke(run_cluster, ['--num', '2'])
+assert result.exit_code == 0
+print(result.output)
 ```
-
-## Course Summary
-```python
-
-```
-
