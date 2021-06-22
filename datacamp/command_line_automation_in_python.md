@@ -551,12 +551,21 @@ click.echo(f"My choice is: {result}")
 
 ## Running a click application from subprocess
 ```python
+import subprocess
 
-```
+# Run help for click tool
+help_out = subprocess.run(["/usr/bin/python3.6", "./cluster.py", "--help"],
+                     stdout=subprocess.PIPE)
 
-## Using click to write command line tools
-```python
+# Run cluster
+cluster2 = subprocess.run(["/usr/bin/python3.6", "./cluster.py", "--num", "2"],
+                     stdout=subprocess.PIPE)
 
+# Print help
+print(help_out.stdout)
+
+# Print cluster output
+print(cluster2.stdout)
 ```
 
 ## Got a ticket to write
