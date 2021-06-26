@@ -100,19 +100,39 @@ for bucket in response['Buckets']:
     print(bucket['Name'])
 ```
 
-## Uploading and retrieving files
-```python
-
-```
-
 ## Putting files in the cloud
 ```python
+# Upload final_report.csv to gid-staging
+s3.upload_file(Bucket='gid-staging',
+              # Set filename and key
+               Filename='final_report.csv',
+               Key='2019/final_report_01_01.csv')
 
+# Get object metadata and print it
+response = s3.head_object(Bucket='gid-staging', 
+                       Key='2019/final_report_01_01.csv')
+
+# Print the size of the uploaded object
+print(response['ContentLength'])
 ```
 
 ## Spring cleaning
 ```python
+# List only objects that start with '2018/final_'
+response = s3.list_objects(Bucket='gid-staging',
+                           Prefix='2018/final_')
 
+# Iterate over the objects
+if 'Contents' in response:
+  for obj in response['Contents']:
+      # Delete the object
+      s3.delete_object(Bucket='gid-staging', Key=obj['Key'])
+
+# Print the keys of remaining objects in the bucket
+response = s3.list_objects(Bucket='gid-staging')
+
+for obj in response['Contents']:
+  	print(obj['Key'])
 ```
 
 
