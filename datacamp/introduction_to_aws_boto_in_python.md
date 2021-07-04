@@ -332,37 +332,92 @@ print(c_alerts_arn == c_alerts_arn_1)
 
 ## Creating multiple topics
 ```python
+# Create list of departments
+departments = ['trash', 'streets', 'water']
 
+for dept in departments:
+  	# For every department, create a general topic
+    sns.create_topic(Name="{}_general".format(dept))
+    
+    # For every department, create a critical topic
+    sns.create_topic(Name="{}_critical".format(dept))
+
+# Print all the topics in SNS
+response = sns.list_topics()
+print(response['Topics'])
 ```
 
 ## Deleting multiple topics
 ```python
+# Get the current list of topics
+topics = sns.list_topics()['Topics']
 
+for topic in topics:
+  # For each topic, if it is not marked critical, delete it
+  if "critical" not in topic['TopicArn']:
+    sns.delete_topic(TopicArn=topic['TopicArn'])
+
+# Print the list of remaining critical topics
+print(sns.list_topics()['Topics'])
 ```
 
 ## SNS Subscriptions
 ```python
+# Subscribe Elena's phone number to streets_critical topic
+resp_sms = sns.subscribe(
+  TopicArn = str_critical_arn,
+    Protocol='sms', Endpoint="+16196777733"
+)
 
-```
+# Print the SubscriptionArn
+print(resp_sms['SubscriptionArn'])
 
-## Subscribing to topics
-```python
+# Subscribe Elena's email to streets_critical topic.
+resp_email = sns.subscribe(
+  TopicArn = str_critical_arn,
+    Protocol='email', Endpoint="eblock@sandiegocity.gov"
+)
 
+# Print the SubscriptionArn
+print(resp_email['SubscriptionArn'])
 ```
 
 ## Creating multiple subscriptions
 ```python
+# For each email in contacts, create subscription to street_critical
+for email in contacts['Email']:
+  sns.subscribe(TopicArn = str_critical_arn,
+                # Set channel and recipient
+                Protocol = 'email',
+                Endpoint = email)
 
+# List subscriptions for streets_critical topic, convert to DataFrame
+response = sns.list_subscriptions_by_topic(
+  TopicArn = str_critical_arn
+)
+subs = pd.DataFrame(response['Subscriptions'])
+
+# Preview the DataFrame
+subs.head()
 ```
 
 ## Deleting multiple subscriptions
 ```python
+# List subscriptions for streets_critical topic.
+response = sns.list_subscriptions_by_topic(
+  TopicArn = str_critical_arn)
 
-```
+# For each subscription, if the protocol is SMS, unsubscribe
+for sub in response['Subscriptions']:
+  if sub['Protocol'] == 'sms':
+	  sns.unsubscribe(SubscriptionArn=sub['SubscriptionArn'])
 
-## Sending messages
-```python
+# List subscriptions for streets_critical topic in one line
+subs = sns.list_subscriptions_by_topic(
+  TopicArn=str_critical_arn)['Subscriptions']
 
+# Print the subscriptions
+print(subs)
 ```
 
 ## Sending an alert
