@@ -440,12 +440,18 @@ if streets_v_count > 100:
 
 ## Sending a single SMS message
 ```python
-
-```
-
-## Case Study: Building a notification system
-```python
-
+# Loop through every row in contacts
+for idx, row in contacts.iterrows():
+    
+    # Publish an ad-hoc sms to the user's phone number
+    response = sns.publish(
+        # Set the phone number
+        PhoneNumber = str(row['Phone']),
+        # The message should include the user's name
+        Message = 'Hello {}'.format(row['Name'])
+    )
+   
+    print(response)
 ```
 
 ## Creating multi-level topics
