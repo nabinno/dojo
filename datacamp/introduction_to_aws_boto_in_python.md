@@ -456,7 +456,19 @@ for idx, row in contacts.iterrows():
 
 ## Creating multi-level topics
 ```python
+dept_arns = {} 
 
+for dept in departments:
+  # For each deparment, create a critical topic
+  critical = sns.create_topic(Name="{}_critical".format(dept))
+  # For each department, create an extreme topic
+  extreme = sns.create_topic(Name="{}_extreme".format(dept))
+  # Place the created TopicARNs into a dictionary 
+  dept_arns['{}_critical'.format(dept)] = critical['TopicArn']
+  dept_arns['{}_extreme'.format(dept)] = extreme['TopicArn']
+
+# Print the filled dictionary.
+print(dept_arns)
 ```
 
 ## Different protocols per topic level
