@@ -473,7 +473,21 @@ print(dept_arns)
 
 ## Different protocols per topic level
 ```python
-
+for index, user_row in contacts.iterrows():
+  # Get topic names for the users's dept
+  critical_tname = "{}_critical".format(user_row['Department'])
+  extreme_tname = "{}_extreme".format(user_row['Department'])
+  
+  # Get or create the TopicArns for a user's department.
+  critical_arn = sns.create_topic(Name=critical_tname)['TopicArn']
+  extreme_arn = sns.create_topic(Name=extreme_tname)['TopicArn']
+  
+  # Subscribe each users email to the critical Topic
+  sns.subscribe(TopicArn = critical_arn, 
+                Protocol='email', Endpoint=user_row['Email'])
+  # Subscribe each users phone number for the extreme Topic
+  sns.subscribe(TopicArn = extreme_arn, 
+                Protocol='sms', Endpoint=str(user_row['Phone']))
 ```
 
 ## Sending multi-level alerts
