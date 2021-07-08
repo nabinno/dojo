@@ -492,10 +492,20 @@ for index, user_row in contacts.iterrows():
 
 ## Sending multi-level alerts
 ```python
+if vcounts['water'] > 100:
+  # If over 100 water violations, publish to water_critical
+  sns.publish(
+    TopicArn = dept_arns['water_critical'],
+    Message = "{} water issues".format(vcounts['water']),
+    Subject = "Help fix water violations NOW!")
 
+if vcounts['water'] > 300:
+  # If over 300 violations, publish to water_extreme
+  sns.publish(
+    TopicArn = dept_arns['water_extreme'],
+    Message = "{} violations! RUN!".format(vcounts['water']),
+    Subject = "THIS IS BAD.  WE ARE FLOODING!")
 ```
-
-
 
 
 # 4. Pattern Rekognition
