@@ -509,14 +509,21 @@ if vcounts['water'] > 300:
 
 
 # 4. Pattern Rekognition
-## Rekognizing patterns
-```python
-
-```
-
 ## Cat detector
 ```python
+# Use Rekognition client to detect labels
+image1_response = rekog.detect_labels(
+    # Specify the image as an S3Object; Return one label
+    Image=image1, MaxLabels=1)
 
+# Print the labels
+print(image1_response['Labels'])
+
+# Use Rekognition client to detect labels
+image2_response = rekog.detect_labels(Image=image2, MaxLabels=1)
+
+# Print the labels
+print(image2_response['Labels'])
 ```
 
 ## Multiple cat detector
