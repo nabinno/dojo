@@ -518,17 +518,22 @@ image1_response = rekog.detect_labels(
 
 # Print the labels
 print(image1_response['Labels'])
-
-# Use Rekognition client to detect labels
-image2_response = rekog.detect_labels(Image=image2, MaxLabels=1)
-
-# Print the labels
-print(image2_response['Labels'])
 ```
 
 ## Multiple cat detector
 ```python
-
+# Create an empty counter variable
+cats_count = 0
+# Iterate over the labels in the response
+for label in response['Labels']:
+    # Find the cat label, look over the detected instances
+    if label['Name'] == 'Cat':
+        for instance in label['Instances']:
+            # Only count instances with confidence > 85
+            if (instance['Confidence'] > 85):
+                cats_count += 1
+# Print count of cats
+print(cats_count)
 ```
 
 ## Parking sign reader
