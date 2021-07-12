@@ -538,17 +538,47 @@ print(cats_count)
 
 ## Parking sign reader
 ```python
+##
+# Create empty list of words
+words = []
+# Iterate over the TextDetections in the response dictionary
+for text_detection in response['TextDetections']:
+  	# If TextDetection type is WORD, append it to words list
+    if text_detection['Type'] == 'WORD':
+        # Append the detected text
+        words.append(text_detection['DetectedText'])
+# Print out the words list
+print(words)
 
-```
-
-## Comprehending text
-```python
-
+##
+# Create empty list of lines
+lines = []
+# Iterate over the TextDetections in the response dictionary
+for text_detection in response['TextDetections']:
+  	# If TextDetection type is Line, append it to lines list
+    if text_detection['Type'] == 'LINE':
+        # Append the detected text
+        lines.append(text_detection['DetectedText'])
+# Print out the words list
+print(lines)
 ```
 
 ## Detecting language
 ```python
+# For each dataframe row
+for index, row in dumping_df.iterrows():
+    # Get the public description field
+    description =dumping_df.loc[index, 'public_description']
+    if description != '':
+        # Detect language in the field content
+        resp = comprehend.detect_dominant_language(Text=description)
+        # Assign the top choice language to the lang column.
+        dumping_df.loc[index, 'lang'] = resp['Languages'][0]['LanguageCode']
 
+# Count the total number of spanish posts
+spanish_post_ct = len(dumping_df[dumping_df.lang == 'es'])
+# Print the result
+print("{} posts in Spanish".format(spanish_post_ct))
 ```
 
 ## Translating Get It Done requests
