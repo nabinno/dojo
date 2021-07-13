@@ -583,7 +583,21 @@ print("{} posts in Spanish".format(spanish_post_ct))
 
 ## Translating Get It Done requests
 ```python
-
+for index, row in dumping_df.iterrows():
+  	# Get the public_description into a variable
+    description = dumping_df.loc[index, 'public_description']
+    if description != '':
+      	# Translate the public description
+        resp = translate.translate_text(
+            Text=description, 
+            SourceLanguageCode='auto', TargetLanguageCode='en')
+        # Store original language in original_lang column
+        dumping_df.loc[index, 'original_lang'] = resp['SourceLanguageCode']
+        # Store the translation in the translated_desc column
+        dumping_df.loc[index, 'translated_desc'] = resp['TranslatedText']
+# Preview the resulting DataFrame
+dumping_df = dumping_df[['service_request_id', 'original_lang', 'translated_desc']]
+dumping_df.head()
 ```
 
 ## Getting request sentiment
