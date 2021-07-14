@@ -602,12 +602,18 @@ dumping_df.head()
 
 ## Getting request sentiment
 ```python
-
-```
-
-## Case Study: Scooting Around!
-```python
-
+for index, row in dumping_df.iterrows():
+  	# Get the translated_desc into a variable
+    description = dumping_df.loc[index, 'public_description']
+    if description != '':
+      	# Get the detect_sentiment response
+        response = comprehend.detect_sentiment(
+          Text=description, 
+          LanguageCode='en')
+        # Get the sentiment key value into sentiment column
+        dumping_df.loc[index, 'sentiment'] = response['Sentiment']
+# Preview the dataframe
+dumping_df.head()
 ```
 
 ## Scooter community sentiment
