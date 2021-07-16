@@ -111,37 +111,77 @@ ALTER TABLE fact_booksales ADD CONSTRAINT sales_store
 
 ## Extending the book dimension
 ```
+-- Create a new table for dim_author with an author column
+CREATE TABLE dim_author (
+    author varchar(256)  NOT NULL
+);
 
-```
+-- Insert authors 
+INSERT INTO dim_author
+SELECT DISTINCT author FROM dim_book_star;
 
-## Normalized and denormalized databases
-```
+-- Add a primary key 
+ALTER TABLE dim_author ADD COLUMN author_id SERIAL PRIMARY KEY;
 
+-- Output the new table
+SELECT * FROM dim_author;
 ```
 
 ## Querying the star schema
 ```
-
+-- Output each state and their total sales_amount
+SELECT dim_store_star.state, sum(fact_booksales.sales_amount)
+FROM fact_booksales
+	-- Join to get book information
+    JOIN dim_book_star on dim_book_star.book_id = fact_booksales.book_id
+	-- Join to get store information
+    JOIN dim_store_star on dim_store_star.store_id = fact_booksales.store_id
+-- Get all books with in the novel genre
+WHERE  
+    dim_book_star.genre = 'novel'
+-- Group results by state
+GROUP BY
+    dim_store_star.state;
 ```
 
 ## Querying the snowflake schema
 ```
-
+-- Output each state and their total sales_amount
+SELECT dim_state_sf.state, sum(fact_booksales.sales_amount)
+FROM fact_booksales
+    -- Joins for genre
+    JOIN dim_book_sf on dim_book_sf.book_id = fact_booksales.book_id
+    JOIN dim_genre_sf on dim_genre_sf.genre_id = dim_book_sf.genre_id
+    -- Joins for state 
+    JOIN dim_store_sf on dim_store_sf.store_id = fact_booksales.store_id 
+    JOIN dim_city_sf on dim_city_sf.city_id = dim_store_sf.city_id
+	JOIN dim_state_sf on dim_state_sf.state_id = dim_city_sf.state_id
+-- Get all books with in the novel genre and group the results by state
+WHERE  
+    dim_genre_sf.genre = 'novel'
+GROUP BY
+    dim_state_sf.state;
 ```
 
 ## Updating countries
 ```
-
+-- Output records that need to be updated in the star schema
+SELECT * FROM dim_store_star
+WHERE dim_store_star.country != 'USA' AND dim_store_star.country !='CA';
 ```
 
 ## Extending the snowflake schema
 ```
+-- Add a continent_id column with default value of 1
+ALTER TABLE dim_country_sf
+ADD continent_id int NOT NULL DEFAULT(1);
 
-```
-
-## Normal forms
-```
-
+-- Add the foreign key constraint
+ALTER TABLE dim_country_sf ADD CONSTRAINT country_continent
+   FOREIGN KEY (continent_id) REFERENCES dim_continent_sf(continent_id);
+   
+-- Output updated table
+SELECT * FROM dim_country_sf;
 ```
 
 ## Converting to 1NF
