@@ -186,7 +186,17 @@ SELECT * FROM dim_country_sf;
 
 ## Converting to 1NF
 ```
+-- Create a new table to hold the cars rented by customers
+CREATE TABLE cust_rentals (
+  customer_id INT NOT NULL,
+  car_id VARCHAR(128) NULL,
+  invoice_id VARCHAR(128) NULL
+);
 
+-- Drop column from customers table to satisfy 1NF
+ALTER TABLE customers
+DROP COLUMN cars_rented,
+DROP COLUMN invoice_id;
 ```
 
 ## Converting to 2NF
