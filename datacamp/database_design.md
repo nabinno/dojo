@@ -240,7 +240,17 @@ DROP COLUMN type_car;
 # 3. Database Views
 ## Tables vs. views
 ```
+Only Tables
+- Part of the physical schema of a database
 
+Views & Tables
+- Contains rows and columns
+- Can be queried
+- Has access control
+
+Only Views
+- Takes up less memory
+- Always defined by a query
 ```
 
 ## Viewing views
