@@ -273,14 +273,21 @@ INNER JOIN labels ON labels.reviewid = high_scores.reviewid
 WHERE label = 'self-released';
 ```
 
-## Managing views
-```
-
-```
-
 ## Creating a view from other views
 ```
+##
+-- Create a view with the top artists in 2017
+CREATE VIEW top_artists_2017 AS
+-- with only one column holding the artist field
+SELECT artist_title.artist FROM artist_title
+INNER JOIN top_15_2017
+ON top_15_2017.reviewid = artist_title.reviewid;
 
+-- Output the new view
+SELECT * FROM top_artists_2017;
+
+##
+DROP VIEW top_15_2017 CASCADE;
 ```
 
 ## Granting and revoking access
