@@ -301,22 +301,37 @@ GRANT UPDATE, INSERT ON long_reviews TO editor;
 
 ## Updatable views
 ```
-
+##
+SELECT * FROM information_schema.views WHERE table_schema = 'public' AND is_updatable = 'YES';
 ```
 
 ## Redefining a view
 ```
+-- Redefine the artist_title view to have a label column
+CREATE OR REPLACE VIEW artist_title AS
+SELECT reviews.reviewid, reviews.title, artists.artist, labels.label
+FROM reviews
+INNER JOIN artists
+ON artists.reviewid = reviews.reviewid
+INNER JOIN labels
+ON labels.reviewid = reviews.reviewid;
 
-```
-
-## Materialized views
-```
-
+SELECT * FROM artist_title;
 ```
 
 ## Materialized versus non-materialized
 ```
+Non-Materialized Views
+- Always returns up-to-date data
+- Better to use on write-intensive databases
 
+Non-Materialized & Materialized Views
+- Helps reduce the overhead of writing queries
+- Can be used in a data warehouse
+
+Materialized Views
+- Consumes more storage
+- Stores the query result on disk
 ```
 
 ## Creating and refreshing a materialized view
