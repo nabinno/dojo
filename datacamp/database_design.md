@@ -351,20 +351,9 @@ REFRESH MATERIALIZED VIEW genre_count;
 SELECT * FROM genre_count;
 ```
 
-## Managing materialized views
-```
-
-```
-
-
 
 
 # 4. Database Mangement
-## Database roles and access control
-```
-
-```
-
 ## Create a role
 ```
 
