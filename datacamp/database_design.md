@@ -380,7 +380,13 @@ ALTER ROLE marta WITH PASSWORD 's3cur3p@ssw0rd';
 
 ## Add a user role to a group role
 ```
+-- Add Marta to the data scientist group
+GRANT data_scientist TO marta;
 
+-- Celebrate! You hired data scientists.
+
+-- Remove Marta from the data scientist group
+REVOKE data_scientist FROM marta;
 ```
 
 ## Table partitioning
