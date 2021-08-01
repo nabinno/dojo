@@ -389,19 +389,19 @@ GRANT data_scientist TO marta;
 REVOKE data_scientist FROM marta;
 ```
 
-## Table partitioning
-```
-
-```
-
-## Reasons to partition
-```
-
-```
-
 ## Partitioning and normalization
 ```
+Normalization
+- Reduce redundancy in table
+- Changes the logical data model
 
+Vertical Partitioning
+- Move specific columns to slower medium
+- (Example) Move the third and fourth column to separate table
+
+Horizontal Partitioning
+- Sharding is an extension on this, using multiple machines
+- (Example) Use the timestamp to move rows from Q4 in a specific table
 ```
 
 ## Creating vertical partitions
