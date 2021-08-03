@@ -452,14 +452,23 @@ SELECT film_id, title, release_year FROM film;
 SELECT * FROM film_partitioned;
 ```
 
-## Data integration
-```
-
-```
-
 ## Data integration do's and dont's
 ```
+## False
+- Automated testing and proactive alerts are not needed
+- You should choose whichever solution is right for the job right now
+- All your data has to be updated in real time in the final view
+- Your data integration solution, hand-coded or ETL tool, should work once and then you can use the resulting view to run queries forever
+- Everybody should have access to sensitive data in the final view
+- After data integration all your data should be in a single table
 
+## True
+- Being able to access the desired data through a single view does not mean all data is sotred together
+- My source data can be in different formats and database management systems
+- My source data can be stored in different physical locations
+- Data integration should be business driven, e.g. what combination of data will be useful for the business
+- Data in the final view can be updated in different intervals
+- You should be careful choosing a hand-coded solution because of maintenance cost
 ```
 
 ## Analyzing a data integration plan
