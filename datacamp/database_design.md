@@ -471,16 +471,6 @@ SELECT * FROM film_partitioned;
 - You should be careful choosing a hand-coded solution because of maintenance cost
 ```
 
-## Analyzing a data integration plan
-```
-
-```
-
-## Picking a Database Management System (DBMS)
-```
-
-```
-
 ## SQL versus NoSQL
 ```
 
