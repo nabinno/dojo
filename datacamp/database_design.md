@@ -473,12 +473,25 @@ SELECT * FROM film_partitioned;
 
 ## SQL versus NoSQL
 ```
+SQL
+- You are concerned about data consistency and 100% data integrity is your top goal.
 
+NoSQL
+- You are dealing with rapidly evolving features, functions, data types, and it’s difficult to predict how the application will grow over time.
+- You have a lot of data, many different data types, and your data needs will only grow over time.
+- Your data needs scale up, out, and down.
 ```
 
 ## Choosing the right DBMS
 ```
+SQL
+- A banking application where it's extremely important that data integrity is ensured.
 
+NoSQL
+- A social media tool that provides users with the opportunities to gorw their networks via connections.
+- During the holiday shopping season, an e-commerce website needs to keep track of millions of shopping carts.
+- Data warehousing on big data.
+- A blog that needs to create and incorporate new types of content, such as images, comments, and videos.
 ```
 
 
