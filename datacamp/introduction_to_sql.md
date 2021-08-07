@@ -245,32 +245,101 @@ WHERE name NOT LIKE 'A%';
 # 3. Aggregate Functions
 ## Aggregate functions
 ```sql
+##
+SELECT SUM(duration)
+FROM films;
 
+##
+SELECT AVG(duration)
+FROM films;
+
+##
+SELECT MIN(duration)
+FROM films;
+
+##
+SELECT MAX(duration)
+FROM films;
 ```
 
 ## Aggregate functions practice
 ```sql
+##
+SELECT SUM(gross)
+FROM films;
 
+##
+SELECT AVG(gross)
+FROM films;
+
+##
+SELECT MIN(gross)
+FROM films;
+
+##
+SELECT MAX(gross)
+FROM films;
 ```
 
 ## Combining aggregate functions with WHERE
 ```sql
+##
+SELECT SUM(gross)
+FROM films
+WHERE release_year >= 2000;
 
+##
+SELECT AVG(gross)
+FROM films
+WHERE title LIKE 'A%';
+
+##
+SELECT MIN(gross)
+FROM films
+WHERE release_year = 1994;
+
+##
+SELECT MAX(gross)
+FROM films
+WHERE release_year BETWEEN 2000 AND 2012;
 ```
 
 ## A note on arithmetic
 ```sql
-
+SELECT (10/3);
+-- 3
 ```
 
 ## It's AS simple AS aliasing
 ```sql
+##
+SELECT title, gross - budget AS net_profit
+FROM films;
 
+##
+SELECT title, duration/60.0 AS duration_hours
+FROM films;
+
+##
+SELECT AVG(duration)/60.0 AS avg_duration_hours
+FROM films;
 ```
 
 ## Even more aliasing
 ```sql
+##
+-- get the count(deathdate) and multiply by 100.0
+-- then divide by count(*)
+SELECT COUNT(deathdate)*100.0/COUNT(*) AS percentage_dead
+FROM people;
 
+##
+SELECT MAX(release_year) - MIN(release_year) AS difference
+FROM films;
+
+##
+SELECT (MAX(release_year) - MIN(release_year)) / 10.0 AS number_of_decades
+FROM films;
 ```
 
 
@@ -279,63 +348,192 @@ WHERE name NOT LIKE 'A%';
 # 4. Sorting and grouping
 ## ORDER BY
 ```sql
+##
+SELECT name
+FROM people
+ORDER BY name ASC;
 
-```
+##
+SELECT name
+FROM people
+ORDER BY birthdate ASC;
 
-## Sorting single columns
-```sql
-
+##
+SELECT birthdate, name
+FROM people
+ORDER BY birthdate ASC;
 ```
 
 ## Sorting single columns (2)
 ```sql
+##
+SELECT title
+FROM films
+WHERE release_year = 2000 OR release_year = 2012;
 
+##
+SELECT *
+FROM films
+WHERE release_year <> 2015
+ORDER BY duration ASC;
+
+##
+SELECT title, gross
+FROM films
+WHERE title LIKE 'M%'
+ORDER BY title ASC;
 ```
 
 ## Sorting single columns (DESC)
 ```sql
+##
+SELECT imdb_score, film_id
+FROM reviews
+ORDER BY imdb_score DESC;
 
+##
+SELECT title
+FROM films
+ORDER BY title DESC;
+
+##
+SELECT title, duration
+FROM films
+ORDER BY duration DESC;
 ```
 
 ## Sorting multiple columns
 ```sql
+##
+SELECT birthdate, name
+FROM people
+ORDER BY birthdate ASC, name ASC;
 
-```
+##
+SELECT release_year, duration, title
+FROM films
+ORDER BY release_year ASC, duration ASC;
 
-## GROUP BY
-```sql
+##
+SELECT certification, release_year, title
+FROM films
+ORDER BY certification ASC, release_year ASC;
 
+##
+SELECT name, birthdate
+FROM people
+ORDER BY name ASC, birthdate ASC;
 ```
 
 ## GROUP BY practice
 ```sql
+##
+SELECT release_year, COUNT(*)
+FROM films
+GROUP BY release_year;
 
+##
+SELECT release_year, AVG(duration)
+FROM films
+GROUP BY release_year;
+
+##
+SELECT release_year, MAX(budget)
+FROM films
+GROUP BY release_year;
+
+##
+SELECT imdb_score, COUNT(*)
+FROM reviews
+GROUP BY imdb_score;
 ```
 
 ## GROUP BY practice (2)
 ```sql
+##
+SELECT release_year, MIN(gross)
+FROM films
+GROUP BY release_year;
 
+##
+SELECT language, SUM(gross)
+FROM films
+GROUP BY language;
+
+##
+SELECT country, SUM(budget)
+FROM films
+GROUP BY country;
+
+##
+SELECT release_year, country, MAX(budget)
+FROM films
+GROUP BY release_year, country
+ORDER BY release_year, country;
+
+##
+SELECT country, release_year, MIN(gross)
+FROM films
+GROUP BY release_year, country
+ORDER BY country, release_year
 ```
 
 ## HAVING a great time
 ```sql
-
+SELECT COUNT(t.c1) FROM (
+  SELECT release_year AS c1
+  FROM films
+  GROUP BY release_year
+  HAVING COUNT(title) > 200
+) AS t;
 ```
 
 ## All together now
 ```sql
+##
+SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year;
 
+##
+SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM films
+GROUP BY release_year
+HAVING AVG(budget) >= 60000000;
+
+##
+SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year
+HAVING AVG(budget) > 60000000
+ORDER BY AVG(gross) DESC;
 ```
 
 ## All together now (2)
 ```sql
-
+-- select country, average budget, 
+--     and average gross
+SELECT country, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+-- from the films table
+FROM films
+-- group by country 
+GROUP BY country
+-- where the country has more than 10 titles
+HAVING COUNT(title) > 10
+-- order by country
+ORDER BY country
+-- limit to only show 5 results
+LIMIT 5;
 ```
 
 ## A taste of things to come
 ```sql
-
+##
+SELECT title, imdb_score
+FROM films
+JOIN reviews
+ON films.id = reviews.film_id
+WHERE title = 'To Kill a Mockingbird';
 ```
-
-
-
