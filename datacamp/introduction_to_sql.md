@@ -12,42 +12,81 @@ SELECT name FROM people;
 
 ## Onboarding | Errors
 ```sql
-
+-- Try running me!
+SELECT 'DataCamp <3 SQL' AS result;
 ```
 
 ## Onboarding | Multi-step Exercises
 ```sql
-
+SELECT 'SQL is cool'
+AS result;
 ```
 
 ## Beginning your SQL journey
 ```sql
+##
+SELECT title
+FROM tilms;
 
-```
+##
+SELECT release_year
+FROM films;
 
-## SELECTing single columns
-```sql
-
+##
+SELECT name
+FROM people;
 ```
 
 ## SELECTing multiple columns
 ```sql
+##
+SELECT * FROM films;
 
+##
+SELECT title, release_year
+FROM films;
+
+##
+SELECT title, release_year, country
+FROM films;
 ```
 
 ## SELECT DISTINCT
 ```sql
+##
+SELECT DISTINCT country FROM films;
 
+##
+SELECT DISTINCT certification FROM films;
+
+##
+SELECT DISTINCT role FROM roles;
 ```
 
 ## Learning to COUNT
 ```sql
-
+SELECT COUNT(*) FROM reviews;
+-- 4968
 ```
 
 ## Practice with COUNT
 ```sql
+##
+SELECT COUNT(*) FROM people;
 
+##
+SELECT COUNT(birthdate)
+FROM people;
+
+##
+SELECT COUNT(DISTINCT birthdate)
+FROM people;
+
+##
+SELECT COUNT(DISTINCT language) FROM films;
+
+##
+SELECT COUNT(DISTINCT country) FROM films;
 ```
 
 
