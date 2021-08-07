@@ -5,14 +5,9 @@ url: https://campus.datacamp.com/courses/introduction-to-sql
 ---
 
 # 1. Selecting columns
-## Onboarding | Tables
-```sql
-
-```
-
 ## Onboarding | Query Result
 ```sql
-
+SELECT name FROM people;
 ```
 
 ## Onboarding | Errors
