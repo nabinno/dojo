@@ -445,19 +445,29 @@ FROM countries AS c1
 WHERE region LIKE 'M%esia';
 ```
 
-## Review outer joins
-```sql
-
-```
-
-## CROSSing the rubicon
-```sql
-
-```
-
 ## A table of two cities
 ```sql
+##
+-- Select fields
+SELECT c.name AS city, l.name AS language
+-- From cities (alias as c)
+FROM cities AS c        
+  -- Join to languages (alias as l)
+  CROSS JOIN languages AS l
+-- Where c.name like Hyderabad
+WHERE c.name LIKE 'Hyder%';
 
+##
+-- Select fields
+SELECT c.name AS city, l.name AS language
+-- From cities (alias as c)
+FROM cities AS c
+  -- Join to languages (alias as l)
+  INNER JOIN languages AS l
+    -- Match on country code
+    ON l.code = c.country_code
+-- Where c.name like Hyderabad
+WHERE c.name LIKE 'Hyder%';
 ```
 
 ## Outer challenge
