@@ -472,36 +472,71 @@ WHERE c.name LIKE 'Hyder%';
 
 ## Outer challenge
 ```sql
-
+-- Select fields
+SELECT c.name country, c.region, p.life_expectancy life_exp
+-- From countries (alias as c)
+FROM countries AS c
+  -- Join to populations (alias as p)
+  LEFT JOIN populations AS p
+    -- Match on country code
+    ON c.code = p.country_code
+-- Focus on 2010
+WHERE year = 2010
+-- Order by life_exp
+ORDER BY life_exp
+-- Limit to 5 records
+LIMIT 5;
 ```
-
 
 
 
 # 3. Set theory clauses
-## State of the UNION
-```sql
-
-```
-
 ## Union
 ```sql
-
+-- Select fields from 2010 table
+SELECT *
+  -- From 2010 table
+  FROM economies2010
+	-- Set theory clause
+	UNION
+-- Select fields from 2015 table
+SELECT *
+  -- From 2015 table
+  FROM economies2015
+-- Order by code and year
+ORDER BY code, year;
 ```
 
 ## Union (2)
 ```sql
-
+-- Select field
+SELECT country_code
+  -- From cities
+  FROM cities
+	-- Set theory clause
+	UNION
+-- Select field
+SELECT code
+  -- From currencies
+  FROM currencies
+-- Order by country_code
+ORDER BY country_code;
 ```
 
 ## Union all
 ```sql
-
-```
-
-## INTERSECTional data science
-```sql
-
+-- Select fields
+SELECT code, year
+  -- From economies
+  FROM economies
+	-- Set theory clause
+	UNION ALL
+-- Select fields
+SELECT country_code, year
+  -- From populations
+  FROM populations
+-- Order by code, year
+ORDER BY code, year;
 ```
 
 ## Intersect
