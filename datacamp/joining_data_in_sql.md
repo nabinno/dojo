@@ -557,37 +557,88 @@ ORDER BY code, year;
 
 ## Intersect (2)
 ```sql
-
-```
-
-## Review union and intersect
-```sql
-
-```
-
-## EXCEPTional
-```sql
-
+-- Select fields
+SELECT code, name
+  -- From countries
+  FROM countries
+	-- Set theory clause
+	INTERSECT
+-- Select fields
+SELECT country_code, name
+  -- From cities
+  FROM cities;
 ```
 
 ## Except
 ```sql
-
+-- Select field
+SELECT name
+  -- From cities
+  FROM cities
+	-- Set theory clause
+	EXCEPT
+-- Select field
+SELECT capital
+  -- From countries
+  FROM countries
+-- Order by result
+ORDER BY name;
 ```
 
 ## Except (2)
 ```sql
-
-```
-
-## Semi-joins and Anti-joins
-```sql
-
+-- Select field
+SELECT capital
+  -- From countries
+  FROM countries
+	-- Set theory clause
+	EXCEPT
+-- Select field
+SELECT name
+  -- From cities
+  FROM cities
+-- Order by ascending capital
+ORDER BY capital;
 ```
 
 ## Semi-join
 ```sql
+##
+-- Select code
+SELECT code
+  -- From countries
+  FROM countries
+-- Where region is Middle East
+WHERE region = 'Middle East';
 
+##
+-- Query from step 1:
+/*
+SELECT code
+  FROM countries
+WHERE region = 'Middle East';
+*/
+
+-- Select field
+SELECT DISTINCT name
+  -- From languages
+  FROM languages
+-- Order by name
+ORDER BY name;
+
+##
+-- Query from step 2
+SELECT DISTINCT name
+  FROM languages
+-- Where in statement
+WHERE code IN
+  -- Query from step 1
+  -- Subquery
+  (SELECT code
+   FROM countries
+   WHERE region = 'Middle East')
+-- Order by name
+ORDER BY name;
 ```
 
 ## Relating semi-join to a tweaked inner join
