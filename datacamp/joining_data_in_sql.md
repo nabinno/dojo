@@ -641,14 +641,40 @@ WHERE code IN
 ORDER BY name;
 ```
 
-## Relating semi-join to a tweaked inner join
-```sql
-
-```
-
 ## Diagnosing problems using anti-join
 ```sql
+##
+-- Select statement
+SELECT COUNT(continent)
+  -- From countries
+  FROM countries
+-- Where continent is Oceania
+WHERE continent = 'Oceania';
 
+##
+-- Select fields (with aliases)
+SELECT c1.code, c1.name, c2.basic_unit AS currency
+  -- From countries (alias as c1)
+  FROM countries AS c1
+  	-- Join with currencies (alias as c2)
+  	INNER JOIN currencies AS c2
+    -- Match on code
+    ON c1.code = c2.code
+-- Where continent is Oceania
+WHERE continent = 'Oceania';
+
+##
+-- Select fields
+SELECT *
+  -- From Countries
+  FROM countries
+  -- Where continent is Oceania
+  WHERE continent = 'Oceania'
+  	-- And code not in
+  	AND code NOT IN
+  	-- Subquery
+  	(SELECT code
+  	 FROM currencies);
 ```
 
 ## Set theory challenge
