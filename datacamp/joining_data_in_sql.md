@@ -870,28 +870,65 @@ SELECT code, inflation_rate, unemployment_rate
 ORDER BY inflation_rate;
 ```
 
-## Subquery review
-```sql
-
-```
-
-## Course review
-```sql
-
-```
-
 ## Final challenge
 ```sql
-
+-- Select fields
+SELECT DISTINCT c.name, e.total_investment, e.imports
+  -- From table (with alias)
+  FROM economies AS e
+    -- Join with table (with alias)
+    LEFT JOIN countries AS c
+      -- Match on code
+      ON (c.code = e.code
+      -- and code in Subquery
+        AND c.code IN (
+          SELECT l.code
+          FROM languages AS l
+          WHERE l.official = 'true'
+        ) )
+  -- Where region and year are correct
+  WHERE c.region = 'Central America' AND e.year = 2015
+-- Order by field
+ORDER BY c.name;
 ```
 
 ## Final challenge (2)
 ```sql
-
+-- Select fields
+SELECT c.region, c.continent, AVG(p.fertility_rate) AS avg_fert_rate
+  -- From left table
+  FROM populations AS p
+    -- Join to right table
+    INNER JOIN countries AS c
+      -- Match on join condition
+      ON c.code = p.country_code
+  -- Where specific records matching some condition
+  WHERE p.year = 2015
+-- Group appropriately
+GROUP BY c.region, c.continent
+-- Order appropriately
+ORDER BY avg_fert_rate;
 ```
 
 ## Final challenge (3)
 ```sql
-
+-- Select fields
+SELECT c.name, c.country_code, c.city_proper_pop, c.metroarea_pop,
+      -- Calculate city_perc
+      c.city_proper_pop / c.metroarea_pop * 100 AS city_perc
+  -- From appropriate table
+  FROM cities AS c
+  -- Where 
+  WHERE name IN
+    -- Subquery
+    (SELECT c2.capital
+     FROM countries AS c2
+     WHERE (c2.continent = 'Europe'
+        OR c2.continent LIKE '%America'))
+       AND c.metroarea_pop IS NOT NULL
+-- Order appropriately
+ORDER BY city_perc DESC
+-- Limit amount
+LIMIT 10;
 ```
 
