@@ -5,19 +5,25 @@ url: https://learn.datacamp.com/courses/data-engineering-for-everyone
 ---
 
 # 1. What is data engineering?
-## Data engineering and big data
-```python
-
-```
-
 ## Go with the flow
-```python
-
+```txt
+1. Data collection and storage
+2. Data preparation
+3. Exploration and visualization
+4. Experimentation and prediction
 ```
 
 ## Not responsible
-```python
+```txt
+## Data engineering tasks
+Optimizing the customers databases for analysis.
+Ensuring corrupted, unreadable music tracks are removed and don't end up facing customers.
+Gathering music consumption data from desktop and mobile sources.
 
+## Not data engineering tasks
+Building a visualization to understand listening patterns by city.
+Running an experiment to identify the optimal search bar positioning in the app.
+Based on their listening behavior, predict which songs customers are likely to enjoy.
 ```
 
 ## Big time
