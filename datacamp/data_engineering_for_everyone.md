@@ -61,21 +61,23 @@ Use Python to run an analysis and understand whether users prefer having the sea
 ```
 
 
-
 # 2. Storing data
-## Data structures
-```python
-
-```
-
-## Structures
-```python
-
-```
-
 ## What's the difference
 ```python
+## Structured
+Corresponds to data in tabular format.
+Is created and queried using SQL.
+Is easy to search and organize.
 
+## Semi-structured
+Follows a model while allowing more flexibility than structured data.
+Is moderately easy to easy and organize.
+Is stored in XML or JSON format, or in NoSQL databases.
+
+## Unstructured
+Is difficult to search and organize.
+Is usually stored in data lakes.
+Stores images, pictures, videos and text.
 ```
 
 ## SQL databases
