@@ -80,24 +80,17 @@ Is usually stored in data lakes.
 Stores images, pictures, videos and text.
 ```
 
-## SQL databases
-```python
-
-```
-
-## We can work it out
-```python
-
-```
-
-## Columns
-```python
-
-```
-
 ## Different breeds
 ```python
+## Data engineers
+Modifying the whole songs table to remove trailing spaces entered by mistake in front of the title.
+Creating a new table to store the songs customers listened to the most over the past year.
+Updating an artist's table after they edited their biography.
 
+## Data scientist
+Querying the top songs of the past year to identify which genre dominated.
+Querying the lyrics table to find all the songs that have 'data' in the title.
+Querying the artist table to find all the bands that come from France.
 ```
 
 ## Data warehouses and data lakes
