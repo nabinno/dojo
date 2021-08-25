@@ -93,21 +93,20 @@ Querying the lyrics table to find all the songs that have 'data' in the title.
 Querying the artist table to find all the bands that come from France.
 ```
 
-## Data warehouses and data lakes
-```python
-
-```
-
-## Tell the truth
-```python
-
-```
-
 ## Our warehouse (in the middle of our street)
 ```python
+## A data lake
+Is optimized for cost efficiency.
+Stores raw data.
+Is mainly used by data scientist and engineers.
+Can store structured, semi-structured and unstructured data.
 
+## A data warehouse
+Stores mainly structured data.
+Usually stores smaller amounts of data than the other.
+Is optimized for analysis.
+Is mainly used by data analysts, business analysts, data scientists and machine learning engineers.
 ```
-
 
 
 
