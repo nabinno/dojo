@@ -111,19 +111,19 @@ Is mainly used by data analysts, business analysts, data scientists and machine 
 
 
 # 3. Moving and processing data
-## Processing data
-```python
-
-```
-
 ## Connect the dots
 ```python
+## Extract
+Pulling the top 20 songs users have been listening to on a loop.
+Collecting data from Google Analytics about our web-markting promotion offering 3 months of access to the premium tier.
 
-```
+## Transform
+Summarizing the yearly listening activity to tell users how many hours they've listened to music on Spotflix this year.
+Sorting a playlist's songs based on the date they were added.
 
-## Scheduling data
-```python
-
+## Load
+Saving the new order of a playlist that was sorted based on the date songs were added, so that it remains that way the next time the user connects.
+Writing all the followers of a user in a table.
 ```
 
 ## Schedules
