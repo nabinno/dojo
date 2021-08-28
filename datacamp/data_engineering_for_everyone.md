@@ -128,7 +128,18 @@ Writing all the followers of a user in a table.
 
 ## Schedules
 ```python
+## Manual
+Running the pipeline processing sign ups because in the past 10 minutes, 100 new users complained to support that they can't connect.
+Running the song encoding pipeline, because engineering changed the encoder and wants to make sure they still pass the validation check.
 
+## Time
+Collecting data from Google Analytics every morning to check how the promotion campaign is going.
+Processing music videos uploaded by artists every hour.
+Generating the Spotflix Weekly Playlist from Chapter 1 every Monday at 00:00 AM.
+
+## Condition
+Running validation checks if new videos are being collected.
+Updating the number of followers in a playlist table after a user subscribed to it.
 ```
 
 ## One or the other
