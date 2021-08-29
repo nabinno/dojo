@@ -166,14 +166,17 @@ Parallel computing can't be used to optimize for memory usage.
 Parallel computing will always make things faster.
 ```
 
-## Cloud computing
-```python
-
-```
-
 ## Obscured by clouds
 ```python
+## Right
+Cloud computing encompasses storage, database and computing solutions.
+A multicloud solution reduces reliance on a single vendor.
+Leveraging the cloud instead of having our own on-premises data center allows us to use just the resources we need, when we need them.
 
+## Wrong
+EC2, S3 and RDS are solutions offered by Microsoft Azure.
+Multicloud solutions reduce security and governance concerns.
+Cloud computing reduces all kinds of risk.
 ```
 
 ## Somewhere I belong
