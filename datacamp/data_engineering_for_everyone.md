@@ -144,22 +144,26 @@ Updating the number of followers in a playlist table after a user subscribed to 
 
 ## One or the other
 ```python
+## Batch
+Loading new employees to Spotflix's employee table.
+Reducing access to premium features when someone unsubscribes.
 
-```
-
-## Parallel computing
-```python
-
-```
-
-## Whenever, whenever
-```python
-
+## Stream
+Updating the count of followers in a playlist when a user subscribes to it.
+When a user listens to songs that are being recommended in real time, loading his upvotes and downvotes on each song.
 ```
 
 ## Parallel universe
 ```python
+## Right
+Parallel computing is used to provide extra processing power.
+It's a good idea to use parallel computing to encode songs uploaded by artists to the `.ogg` format that Spotflix prefers.
+Parallel computing relies on processing units.
 
+## Wrong
+It's a good idea to use parallel computing to update the employees table every morning.
+Parallel computing can't be used to optimize for memory usage.
+Parallel computing will always make things faster.
 ```
 
 ## Cloud computing
