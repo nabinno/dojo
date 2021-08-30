@@ -5,19 +5,14 @@ url: https://campus.datacamp.com/courses/introduction-to-bash-scripting/
 ---
 
 # 1. From Command-Line to Bash Script
-## Introduction and refresher
-```bash
-
-```
-
 ## Extracting scores with shell
 ```bash
-
+cat start_dir/second_dir/soccer_scores.csv | grep 1959
 ```
 
 ## Searching a book with shell
 ```bash
-
+cat two_cities.txt | egrep 'Sydney Carton|Charles Darnay' | wc -l
 ```
 
 ## Your first Bash script
