@@ -181,10 +181,16 @@ Cloud computing reduces all kinds of risk.
 
 ## Somewhere I belong
 ```python
+## File storage
+AWS S3
+IBM Cloud File Storage
 
-```
+## Computing
+Azure Virtual Machines
+Amazon EC2
 
-## We are the champions
-```python
-
+## Databases
+Amazon Redshift (data warehouse)
+Snowflake Data Warehouse
+Google Cloud Datastore (NoSQL)
 ```
