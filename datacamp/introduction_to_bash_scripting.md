@@ -15,14 +15,14 @@ cat start_dir/second_dir/soccer_scores.csv | grep 1959
 cat two_cities.txt | egrep 'Sydney Carton|Charles Darnay' | wc -l
 ```
 
-## Your first Bash script
-```bash
-
-```
-
 ## A simple Bash script
 ```bash
+#!/bin/bash
 
+# Concatenate the file
+cat *.txt
+
+# Now save and run!
 ```
 
 ## Shell pipelines to Bash scripts
