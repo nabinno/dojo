@@ -45,14 +45,17 @@ cat soccer_scores.csv | sed 's/Cherno/Cherno City/g' | sed 's/Arda/Arda United/g
 # Now save and run!
 ```
 
-## Standard streams & arguments
-```bash
-
-```
-
 ## Using arguments in Bash scripts
 ```bash
+# Echo the first and second ARGV arguments
+echo $1
+echo $2
 
+# Echo out the entire ARGV array
+echo $*
+
+# Echo out the size of ARGV
+echo $#
 ```
 
 ## Using arguments with HR data
