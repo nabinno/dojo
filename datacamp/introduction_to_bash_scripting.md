@@ -60,26 +60,31 @@ echo $#
 
 ## Using arguments with HR data
 ```bash
+# Echo the first ARGV argument
+echo $1 
 
+# Cat all the files
+# Then pipe to grep using the first ARGV argument
+# Then write out to a named csv using the first ARGV argument
+cat hire_data/* | grep "$1" > "$1".csv
 ```
 
 
 
 
 # 2. Variables in Bash Scripting
-## Basic variables in Bash
-```bash
-
-```
-
 ## Using variables in Bash
 ```bash
+# Create the required variable
+yourname="Sam"
 
+# Print out the assigned name (Help fix this error!)
+echo "Hi there ${yourname}, welcome to the website!"
 ```
 
 ## Shell within a shell
 ```bash
-
+echo "Right now it is `date`"
 ```
 
 ## Numeric variables in Bash
