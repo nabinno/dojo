@@ -107,17 +107,39 @@ $ bash script.sh 108
 
 ## Extracting data from files
 ```bash
+# Create three variables from the temp data files' contents
+temp_a=$(cat temps/region_A)
+temp_b=$(cat temps/region_B)
+temp_c=$(cat temps/region_C)
 
-```
-
-## Arrays in Bash
-```bash
-
+# Print out the three variables
+echo "The three temperatures were $temp_a, $temp_b, and $temp_c"
 ```
 
 ## Creating an array
 ```bash
+##
+# Create a normal array with the mentioned elements
+capital_cities=("Sydney" "New York" "Paris")
 
+##
+# Create a normal array with the mentioned elements using the declare method
+declare capital_cities=()
+
+# Add (append) the elements
+capital_cities+="Sydney"
+capital_cities+="New York"
+capital_cities+="Paris"
+
+##
+# The array has been created for you
+capital_cities=("Sydney" "New York" "Paris")
+
+# Print out the entire array
+echo ${capital_cities[@]}
+
+# Print out the array length
+echo ${#capital_cities[@]}
 ```
 
 ## Creating associative arrays
