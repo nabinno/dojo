@@ -191,14 +191,20 @@ echo ${region_temps[@]}
 
 
 # 3. Control Statements in Bash Scripting
-## IF statements
-```bash
-
-```
-
 ## Sorting model results
 ```bash
+# Extract Accuracy from first ARGV element
+accuracy=$(grep Accuracy $1 | sed 's/.* //')
 
+# Conditionally move into good_models folder
+if [ $accuracy -ge 90 ]; then
+    mv $1 good_models/
+fi
+
+# Conditionally move into bad_models folder
+if [ $accuracy -lt 90 ]; then
+    mv $1 bad_models/
+fi
 ```
 
 ## Moving relevant files
