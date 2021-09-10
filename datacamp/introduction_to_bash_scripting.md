@@ -224,19 +224,14 @@ $ bash script.sh log1.txt
 $ bash script.sh logdays.txt
 ```
 
-## FOR loops & WHILE statements
-```bash
-
-```
-
 ## A simple FOR loop
 ```bash
-
-```
-
-## Correcting a WHILE statement
-```bash
-
+# Use a FOR loop on files in directory
+for file in inherited_folder/*.R
+do
+    # Echo out each file
+    echo $file
+done
 ```
 
 ## Cleaning up a directory
