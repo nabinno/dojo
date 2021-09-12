@@ -247,34 +247,47 @@ do
 done
 ```
 
-## CASE statements
-```bash
-
-```
-
 ## Days of the week with CASE
 ```bash
+$ cat script.sh
+# Create a CASE statement matching the first ARGV element
+case $1 in
+  # Match on all weekdays
+  Monday|Tuesday|Wednesday|Thusday|Friday)
+  echo "It is a Weekday!";;
+  # Match on all weekend days
+  Saturday|Sunday)
+  echo "It is a Weekend!";;
+  # Create a default
+  *)
+  echo "Not a day!";;
+esac
 
+$ bash script.sh Wednesday
+$ bash script.sh Saturday 
 ```
 
 ## Moving model results with CASE
 ```bash
-
+# Use a FOR loop for each file in 'model_out/'
+for file in model_out/*
+do
+    # Create a CASE statement for each file's contents
+    case $(cat $file) in
+      # Match on tree and non-tree models
+      *"Random Forest"*|*GBM*|*XGBoost*)
+      mv $file tree_models/ ;;
+      *KNN*|*Logistic*)
+      rm $file ;;
+      # Create a default
+      *) 
+      echo "Unknown model in FILE" ;;
+    esac
+done
 ```
-
-## Finishing a CASE statement
-```bash
-
-```
-
 
 
 # 4. Functions and Automation
-## Basic functions in Bash
-```bash
-
-```
-
 ## Uploading model results to the cloud
 ```bash
 
