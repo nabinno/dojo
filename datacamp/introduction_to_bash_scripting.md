@@ -387,11 +387,13 @@ echo "The total sum of the test array is $total"
 
 ## Scheduling cronjobs with crontab
 ```bash
+##
+$ crontab -l
 
+##
+$ crontab -e
+30 2 * * * bash extract_data.sh
+
+##
+$ crontab -l
 ```
-
-## Thanks and wrap up
-```bash
-
-```
-
