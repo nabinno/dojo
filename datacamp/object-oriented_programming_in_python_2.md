@@ -152,35 +152,80 @@ mon_sal = emp.monthly_salary()
 print(mon_sal)
 ```
 
-## Class anatomy: the __init__ constructor
-```python
-
-```
-
 ## Correct use of __init__
 ```python
+class Counter:
+    def __init__(self, count, name):
+	  self.count = 5
+	  self.name = name
 
+c = Counter(0, "My counter")
+print(c.count)
 ```
 
 ## Add a class constructor
 ```python
+# Import datetime from datetime
+from datetime import datetime
 
+class Employee:   
+    def __init__(self, name, salary=0):
+        self.name = name
+        if salary > 0:
+          self.salary = salary
+        else:
+          self.salary = 0
+          print("Invalid salary!")
+          
+        # Add the hire_date attribute and set it to today's date
+        self.hire_date = datetime.today()
+        
+    # From the previous lesson
+    def give_raise(self, amount):
+        self.salary += amount
+
+    def monthly_salary(self):
+        return self.salary/12
+      
+emp = Employee("Korel Rossi", -1000)
+print(emp.name)
+print(emp.salary)
 ```
 
 ## Write a class from scratch
 ```python
+# For use of np.sqrt
+import numpy as np
 
+class Point:
+    """ A point on a 2D plane
+    
+   Attributes
+    ----------
+    x : float, default 0.0. The x coordinate of the point        
+    y : float, default 0.0. The y coordinate of the point
+    """
+    def __init__(self, x=0.0, y=0.0):
+      self.x = x
+      self.y = y
+      
+    def distance_to_origin(self):
+      """Calculate distance from the point to the origin (0,0)"""
+      return np.sqrt(self.x ** 2 + self.y ** 2)
+    
+    def reflect(self, axis):
+      """Reflect the point with respect to x or y axis."""
+      if axis == "x":
+        self.y = - self.y
+      elif axis == "y":
+        self.x = - self.x
+      else:
+        print("The argument axis only accepts values 'x' and 'y'!")
 ```
-
 
 
 
 # 2. Inheritance and Polymorphism
-## Instance and class data
-```python
-
-```
-
 ## Class-level attributes
 ```python
 
