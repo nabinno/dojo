@@ -299,17 +299,44 @@ print(Player.MAX_SPEED)
 
 ## Alternative constructors
 ```python
+# import datetime from datetime
+from datetime import datetime
 
-```
+class BetterDate:
+    def __init__(self, year, month, day):
+      self.year, self.month, self.day = year, month, day
+      
+    @classmethod
+    def from_str(cls, datestr):
+        year, month, day = map(int, datestr.split("-"))
+        return cls(year, month, day)
+      
+    # Define a class method from_datetime accepting a datetime object
+    @classmethod
+    def from_datetime(cls, datetime):
+        year, month, day = datetime.year, datetime.month, datetime.day
+        return cls(year, month, day)
 
-## Class inheritance
-```python
-
+# You should be able to run the code below with no errors: 
+today = datetime.today()     
+bd = BetterDate.from_datetime(today)   
+print(bd.year)
+print(bd.month)
+print(bd.day)
 ```
 
 ## Understanding inheritance
 ```python
+## True
+Class `Indexer` is inherited from `Counter`.
+Inheritance represents is-a relationship.
+Running `ind = Indexer()` will cause an error.
+If `ind` is an `Indexer` object, then `isinstance(ind, Counter)` will return `True`.
 
+## False
+Inheritance can be used to add some of the parts of one class to another class.
+If `ind` is an `Indexer` object, then running `ind.add_counts(5)` will cause an error.
+Every `Counter` object is an `Indexer` object.
 ```
 
 ## Create a subclass
