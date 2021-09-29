@@ -493,29 +493,30 @@ pn = Phone(873555333)
 print(acct == pn)
 ```
 
-## Comparison and inheritance
-```python
-
-```
-
-## Operator overloading: string representation
-```python
-
-```
-
 ## String formatting review
 ```python
-
+"my_num is {}, and my_str is \"{}\".".format(my_num, my_str)
 ```
 
 ## String representation of objects
 ```python
+class Employee:
+    def __init__(self, name, salary=30000):
+        self.name, self.salary = name, salary
+      
 
-```
+    def __str__(self):
+        s = "Employee name: {name}\nEmployee salary: {salary}".format(name=self.name, salary=self.salary)      
+        return s
+      
+    # Add the __repr__method  
+    def __repr__(self):
+        return "Employee(\"{}\", {})".format(self.name, self.salary)
 
-## Exceptions
-```python
-
+emp1 = Employee("Amar Howard", 30000)
+print(repr(emp1))
+emp2 = Employee("Carolyn Ramirez", 35000)
+print(repr(emp2))
 ```
 
 ## Catching exceptions
