@@ -571,18 +571,19 @@ class Employee:
 
 ## Handling exception hierarchies
 ```python
-
+emp = Employee("Katze Rik", 50000)
+try:
+  emp.give_bonus(7000)
+except BonusError:
+  print("BonusError caught")
+except SalaryError:
+  print("SalaryError caught")
 ```
 
 
 
 
 # 4. Best Practices of Class Design
-## Designing for inheritance and polymorphism
-```python
-
-```
-
 ## Polymorphic methods
 ```python
 
