@@ -586,22 +586,70 @@ except SalaryError:
 # 4. Best Practices of Class Design
 ## Polymorphic methods
 ```python
+class Parent:
+    def talk(self):
+        print("Parent talking!")     
 
+class Child(Parent):
+    def talk(self):
+        print("Child talking!")          
+
+class TalkativeChild(Parent):
+    def talk(self):
+        print("TalkativeChild talking!")
+        Parent.talk(self)
+
+
+p, c, tc = Parent(), Child(), TalkativeChild()
+
+for obj in (p, c, tc):
+    obj.talk()
+
+# Parent talking!
+# Child talking!
+# Talkative Child talking!
+# Parent talking!
 ```
 
 ## Square and rectangle
 ```python
+class Rectangle:
+    def __init__(self, w,h):
+      self.w, self.h = w,h
+      
+# Define set_h to set h
+    def set_h(self, h):
+      self.h = h
 
-```
+# Define set_w to set w
+    def set_w(self, w):
+      self.w = w
+      
+class Square(Rectangle):
+    def __init__(self, w):
+      self.w, self.h = w, w 
+      
+# Define set_h to set w and h 
+    def set_h(self, h):
+      self.h = h
+      self.w = h
 
-## Managing data access: private attributes
-```python
-
+# Define set_w to set w and h 
+    def set_w(self, w):
+      self.w = w
+      self.h = w
 ```
 
 ## Attribute naming conventions
 ```python
+## _name
+A helper method that checks validity of an attribute's value but isn't considered a part of class's public interface.
 
+## __name
+A 'version' attribute that stores the current version of the class and shouldn't be passed to child classes, who will have their own version.
+
+## __name__
+A method that is run whenever the object is printed.
 ```
 
 ## Using internal attributes
