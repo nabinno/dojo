@@ -28,7 +28,7 @@ etl_dag = DAG('example_etl', default_args=default_args)
 
 ## Working with DAGs and the Airflow shell
 ```python
-
+$ airflow list_dags
 ```
 
 ## Troubleshooting DAG creation
