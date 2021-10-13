@@ -4,7 +4,7 @@ tags: python, apache-airflow
 url: https://campus.datacamp.com/courses/object-oriented-programming-in-pythonhttps://campus.datacamp.com/courses/introduction-to-airflow-in-python/
 ---
 
-# Intro to Airflow
+# 1. Intro to Airflow
 ## Running a task in Airflow
 ```python
 $ airflow run etl_pipeline download_file 2020-01-08
@@ -44,36 +44,41 @@ dag = DAG( 'refresh_data', default_args=default_args )
 
 ## Starting the Airflow webserver
 ```python
-
-```
-
-## Navigating the Airflow UI
-```python
-
-```
-
-## Examining DAGs with the Airflow UI
-```python
-
+$ airflow webserver -p 9000
 ```
 
 
 
 
-# Implementing Airflow DAGs
-## Airflow operators
-```python
-
-```
-
+# 2. Implementing Airflow DAGs
 ## Defining a BashOperator task
 ```python
+# Import the BashOperator
+from airflow.operators.bash_operator import BashOperator
 
+# Define the BashOperator 
+cleanup = BashOperator(
+    task_id='cleanup_task',
+    # Define the bash_command
+    bash_command='cleanup.sh',
+    # Add the task to the dag
+    dag=analytics_dag
+)
 ```
 
 ## Multiple BashOperators
 ```python
+# Define a second operator to run the `consolidate_data.sh` script
+consolidate = BashOperator(
+    task_id='consolidate_task',
+    bash_command='consolidate_data.sh',
+    dag=analytics_dag)
 
+# Define a final operator to execute the `push_data.sh` script
+push_data = BashOperator(
+    task_id='pushdata_task',
+    bash_command='push_data.sh',
+    dag=analytics_dag)
 ```
 
 ## Airflow tasks
@@ -139,7 +144,7 @@ dag = DAG( 'refresh_data', default_args=default_args )
 
 
 
-# Maintaining and monitoring Airflow workflows
+# 3. Maintaining and monitoring Airflow workflows
 ## Airflow sensors
 ```python
 
@@ -213,7 +218,7 @@ dag = DAG( 'refresh_data', default_args=default_args )
 
 
 
-# Building production pipelines in Airflow
+# 4. Building production pipelines in Airflow
 ## Working with templates
 ```python
 
