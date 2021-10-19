@@ -173,7 +173,12 @@ dag = DAG('update_dataflows', default_args=default_args, schedule_interval='30 1
 
 ## Deciphering Airflow schedules
 ```python
-
+* * * * *
+timedelta(minutes=5)
+@hourly
+* 0,12 * * *
+timedelta(days=1)
+@weekly
 ```
 
 ## Troubleshooting DAG runs
