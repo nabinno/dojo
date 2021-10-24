@@ -305,16 +305,6 @@ part3 = SimpleHttpOperator(
 precheck >> part3 >> part2
 ```
 
-## Airflow executors
-```python
-
-```
-
-## Determining the executor
-```python
-
-```
-
 ## Executor implications
 ```python
 
