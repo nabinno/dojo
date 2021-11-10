@@ -11,9 +11,7 @@ published: true
 - [AWS SSM Session Manager Proxy : DBE-9500](https://youtrack.jetbrains.com/issue/DBE-9500)
     - `So I checked the PATH with echo, and there are many missing paths, how should I solve them?`
 
-上記Jetbrainsのトラックを見るに、Authentication Type「 `OpenSSH config and authentication agent` 」は
-AWS CLIと Session Manager Pluginのパスを読み込めていないようなので、
-下記対処により（ターミナルでポートフォーワード処理せずに）DataGripだけで完結できます。
+上記Jetbrainsのトラックを見るに、Authentication Type「 `OpenSSH config and authentication agent` 」はAWS CLIと Session Manager Pluginのパスを読み込めていないようなので、下記対処により（ターミナルでポートフォーワード処理せずに）DataGripだけで完結できます。
 
 1. まずAWS CLIと Session Manager Pluginを環境変数Pathに設定します
 2. 次にProxyCommand実行時に
