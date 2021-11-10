@@ -13,7 +13,7 @@ published: true
 
 上記Jetbrainsのトラックを見るに、Authentication Type「 `OpenSSH config and authentication agent` 」はAWS CLIと Session Manager Pluginのパスを読み込めていないようなので、下記対処により（ターミナルでポートフォーワード処理せずに）DataGripだけで完結できます。
 
-1. まずAWS CLIと Session Manager Pluginを環境変数Pathに設定します
+1. まずAWS CLIと Session Manager Pluginを環境変数Pathに設定
 2. 次にProxyCommand実行時に
     1. PowerShellの絶対パスで実行
     2. 環境変数PATHを読み込んだ後に `aws ssm start-session` を実行
