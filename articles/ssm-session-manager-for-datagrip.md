@@ -1,7 +1,7 @@
 ---
 title: "Windows上にてSSMセッションマネージャープロキシでDataGripからDBに接続する方法"
 emoji: "📛"
-type: "aws"
+type: "tech"
 topic: ["ssm-session-manager", "aws", "datagrip"]
 published: true
 ---
