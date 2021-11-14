@@ -5,24 +5,10 @@ url: https://www.datacamp.com/courses/building-data-engineering-pipelines-in-pyt
 ---
 
 # 1. Ingesting Data
-## Components of a data platform
-```python
-
-```
-
-## Dashboards providing business value
-```python
-
-```
-
-## Snapshots in a data lake
-```python
-
-```
-
 ## The data catalog
 ```python
-
+In: type(catalog['diaper_reviews'].read())
+Out: pyspark.sql.dataframe.DataFrame
 ```
 
 ## Introduction to data ingestion with Singer
