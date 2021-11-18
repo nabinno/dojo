@@ -91,8 +91,8 @@ for shop in requests.get(SHOPS_URL).json()["shops"]:
 ```
 
 ## Chain taps and targets
-```python
-
+```sh
+tap-marketing-api | target-csv --config ingest/data_lake.conf
 ```
 
 
