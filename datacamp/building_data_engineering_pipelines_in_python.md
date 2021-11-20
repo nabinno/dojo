@@ -97,19 +97,33 @@ tap-marketing-api | target-csv --config ingest/data_lake.conf
 
 
 # 2. Creating a data transformation pipeline with PySpark
-## Basic introduction to PySpark
-```python
-
-```
-
 ## Reading a CSV file
 ```python
+# Read a csv file and set the headers
+df = (spark.read
+      .options(header=True)
+      .csv("/home/repl/workspace/mnt/data_lake/landing/ratings.csv"))
 
+df.show()
 ```
 
 ## Defining a schema
 ```python
+# Define the schema
+schema = StructType([
+  StructField("brand", StringType(), nullable=False),
+  StructField("model", StringType(), nullable=False),
+  StructField("absorption_rate", IntegerType(), nullable=True),
+  StructField("comfort", IntegerType(), nullable=True)
+])
 
+better_df = (spark
+             .read
+             .options(header="true")
+             # Pass the predefined schema to the Reader
+             .schema(schema)
+             .csv("/home/repl/workspace/mnt/data_lake/landing/ratings.csv"))
+pprint(better_df.dtypes)
 ```
 
 ## Cleaning data
@@ -268,7 +282,21 @@ tap-marketing-api | target-csv --config ingest/data_lake.conf
 
 ## Scheduling Spark jobs with Airflow
 ```python
+# Import the operator
+from airflow.contrib.operators.spark_submit_operator import SparkSubmitOperator
 
+# Set the path for our files.
+entry_point = os.path.join(os.environ["AIRFLOW_HOME"], "scripts", "clean_ratings.py")
+dependency_path = os.path.join(os.environ["AIRFLOW_HOME"], "dependencies", "pydiaper.zip")
+
+with DAG('data_pipeline', start_date=datetime(2019, 6, 25),
+         schedule_interval='@daily') as dag:
+  	# Define task clean, running a cleaning job.
+    clean_data = SparkSubmitOperator(
+        application=entry_point, 
+        py_files=dependency_path,
+        task_id='clean_data',
+        conn_id='spark_default')
 ```
 
 ## Scheduling the full data pipeline with Airflow
