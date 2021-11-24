@@ -193,14 +193,9 @@ aggregated = (purchased
 aggregated.show()
 ```
 
-## Packaging your application
-```python
-
-```
-
 ## Creating a deployable artifact
 ```python
-
+zip --recurse-paths pydiaper.zip pydiaper
 ```
 
 ## Submitting your Spark job
