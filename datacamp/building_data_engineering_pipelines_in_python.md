@@ -200,7 +200,8 @@ zip --recurse-paths pydiaper.zip pydiaper
 
 ## Submitting your Spark job
 ```python
-
+# You need to run this command in the terminal
+spark-submit --py-files spark_pipelines/pydiaper/pydiaper.zip ./spark_pipelines/pydiaper/pydiaper/cleaning/clean_ratings.py
 ```
 
 ## Debugging simple errors
