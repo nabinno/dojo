@@ -204,23 +204,8 @@ zip --recurse-paths pydiaper.zip pydiaper
 spark-submit --py-files spark_pipelines/pydiaper/pydiaper.zip ./spark_pipelines/pydiaper/pydiaper/cleaning/clean_ratings.py
 ```
 
-## Debugging simple errors
-```python
-
-```
-
-## Verifying your pipeline’s output
-```python
-
-```
-
 
 # 3. Testing your data pipeline
-## On the importance of tests
-```python
-
-```
-
 ## Regression errors
 ```python
 
