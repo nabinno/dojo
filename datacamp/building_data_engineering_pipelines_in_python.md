@@ -206,14 +206,25 @@ spark-submit --py-files spark_pipelines/pydiaper/pydiaper.zip ./spark_pipelines/
 
 
 # 3. Testing your data pipeline
-## Regression errors
-```python
-
-```
-
 ## Characteristics of tests
 ```python
+## Unit Test
+Can typically be written in a few minutes.
+They typically run in milliseconds.
+Lowercasing a column in a table is an example of this.
+You typically have most of these.
+You should be able to run these on your local laptop without configuration, aside from installing a test framework.
 
+## Service Test
+Requires a bit of setup to have each service configured in the desired state.
+Tests the interaction between a few services.
+A database writing out to a file is an example.
+
+## End-to-end Test
+Most difficult to debug.
+Combine the services of many systems.
+Subscribing for a newsletter and receiving e-mail confirmation from this is an example.
+Is closest to what an end-user experiences.
 ```
 
 ## Writing unit tests for PySpark
