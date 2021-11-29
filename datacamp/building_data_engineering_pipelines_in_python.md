@@ -283,14 +283,13 @@ if __name__ == "__main__":
     main()
 ```
 
-## Continuous testing
-```python
-
-```
-
 ## A high-level view on CI/CD
 ```python
-
+Check out your application from version control.
+Install your Python application's dependecies.
+Run the test suite of your application.
+Create artifacts (jar, egg, wheel, documentation, ...).
+Save the artifacts to a location accessible by your company's compute infrastructure.
 ```
 
 ## Understanding the output of pytest
