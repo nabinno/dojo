@@ -292,14 +292,29 @@ Create artifacts (jar, egg, wheel, documentation, ...).
 Save the artifacts to a location accessible by your company's compute infrastructure.
 ```
 
-## Understanding the output of pytest
-```python
-
-```
-
 ## Improving style guide compliancy
-```python
-
+```yml:config.yml
+version: 2
+jobs:
+  build:
+    working_directory: ~/data_scientists/optimal_diapers/
+    docker:
+      - image: gcr.io/my-companys-container-registry-on-google-cloud-123456/python:3.6.4
+    steps:
+      - checkout
+      - run:
+          command: |
+            sudo pip install pipenv
+            pipenv install
+      - run:
+          command: |
+            pipenv run flake8 .
+            pipenv run pytest .
+      - store_test_results:
+          path: test-results
+      - store_artifacts:
+          path: test-results
+          destination: tr1
 ```
 
 
