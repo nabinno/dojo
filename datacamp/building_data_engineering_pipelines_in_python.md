@@ -350,19 +350,34 @@ tasks_with_tomato_sauce_parent >> bake_pizza
 bake_pizza.set_upstream(prepare_oven)
 ```
 
-## Building a data pipeline with Airflow
-```python
-
-```
-
 ## Preparing a DAG for daily pipelines
 ```python
-
+# Create a DAG object
+dag = DAG(
+  dag_id='optimize_diaper_purchases',
+  default_args={
+    # Don't email on failure
+    'email_on_failure': False,
+    # Specify when tasks should have started earliest
+    'start_date': datetime(2019, 6, 25)
+  },
+  # Run the DAG daily
+  schedule_interval='@daily')
 ```
 
 ## Scheduling bash scripts with Airflow
 ```python
+config = os.path.join(os.environ["AIRFLOW_HOME"], 
+                      "scripts",
+                      "configs", 
+                      "data_lake.conf")
 
+ingest = BashOperator(
+  # Assign a descriptive id
+  task_id="ingest_data", 
+  # Complete the ingestion pipeline
+  bash_command="target-csv --config %s" % config,
+  dag=dag)
 ```
 
 ## Scheduling Spark jobs with Airflow
