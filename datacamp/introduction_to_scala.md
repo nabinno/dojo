@@ -20,7 +20,16 @@ Scala means "fudgesicle" in Swedish.
 
 ## Why use Scala?
 ```scala
+## Scalable
+Lego
+Scala
+Farmers' market
+Bazaar
 
+## Not scalable
+The Taj Mahl
+Empire State Building
+Cathedral
 ```
 
 ## Who uses Scala?
