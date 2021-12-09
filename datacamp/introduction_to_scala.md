@@ -32,19 +32,15 @@ Empire State Building
 Cathedral
 ```
 
-## Who uses Scala?
-```scala
-
-```
-
-## Scala code and the Scala interpreter
-```scala
-
-```
-
 ## What makes Scala scalable?
 ```scala
+## Object-oriented
+Every operation is a mtehotd call.
+Every value is an object.
 
+## Functional
+Operations of a program should map input values to output values rather than change data in place.
+Functions are first-class values.
 ```
 
 ## Scala is object-oriented
