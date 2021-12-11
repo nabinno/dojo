@@ -45,7 +45,11 @@ Functions are first-class values.
 
 ## Scala is object-oriented
 ```scala
+// lable?// Calculate the difference between 8 and 5
+val difference = 8 - 5
 
+// Print the difference
+println(difference)
 ```
 
 ## Reasons for programming in Scala
