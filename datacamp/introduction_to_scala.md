@@ -52,19 +52,12 @@ val difference = 8 - 5
 println(difference)
 ```
 
-## Reasons for programming in Scala
-```scala
-
-```
-
-## Immutable variables (val) and value types
-```scala
-
-```
-
 ## Define immutable variables (val)
 ```scala
-
+// Define immutable variables for clubs 2♣ through 4♣
+val twoClubs: Int = 2
+val threeClubs: Int = 3
+val fourClubs: Int = 4
 ```
 
 ## Don't try to change me
