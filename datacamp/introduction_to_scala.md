@@ -62,50 +62,56 @@ val fourClubs: Int = 4
 
 ## Don't try to change me
 ```scala
+// Define immutable variables for player names
+val playerA: String = "Alex"
+val playerB: String = "Chen"
+var playerC: String = "Marta"
 
-```
-
-## Mutable variables (var) and type inference
-```scala
-
+// Change playerC from Marta to Umberto
+playerC = "Umberto"
 ```
 
 ## Define mutable variables (var)
 ```scala
-
+// Define mutable variables for all aces
+var aceClubs: Int = 1
+var aceDiamonds: Int = 1
+var aceHearts: Int = 1
+var aceSpades: Int = 1
 ```
 
 ## You can change me
 ```scala
+// Create a mutable variable for Alex as player A
+var playerA: String = "Alex"
 
+// Change the point value of A♦ from 1 to 11
+aceDiamonds = 11
+
+// Calculate hand value for J♣ and A♦
+println(jackClubs + aceDiamonds)
 ```
 
 ## Pros and cons of immutability
-```scala
+```txt
+## Pros
+You have to write fewer tests.
+Your code is easier to reason about.
+Your data won't be changed inadvertently.
 
+## Cons
+More memory required due to data copying.
 ```
-
 
 
 # 2. Workflows, Functions, Collections
-## Scripts, applications, and real-world workflows
-```scala
-
-```
-
 ## Create and run a Scala script
-```scala
-
-```
-
-## Benefits of compiled languages
-```scala
-
-```
-
-## Functions
-```scala
-
+```txt
+Open a bank file in your text editor of choice.
+Write one line of code in the file: `println("Let's play Twenty-One!")`.
+Save the file in your desired working directory with the name `game.scala`.
+Open a command prompt. Navigate to your desired working directory, then type `scala game.scala` and click enter.
+Observe `Let's play Twenty-One!` printed to output.
 ```
 
 ## What do functions do?
