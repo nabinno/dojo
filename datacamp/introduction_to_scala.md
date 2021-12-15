@@ -115,8 +115,8 @@ Observe `Let's play Twenty-One!` printed to output.
 ```
 
 ## What do functions do?
-```scala
-
+```
+Functions are invoked with a list of arguments to produce a result.
 ```
 
 ## Identify the body of a function
