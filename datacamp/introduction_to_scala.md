@@ -119,14 +119,14 @@ Observe `Let's play Twenty-One!` printed to output.
 Functions are invoked with a list of arguments to produce a result.
 ```
 
-## Identify the body of a function
-```scala
-
-```
-
 ## Call a function
 ```scala
+// Calculate hand values
+var handPlayerA: Int = queenDiamonds + threeClubs + aceHearts + fiveSpades
+var handPlayerB: Int = kingHearts + jackHearts
 
+// Find and print the maximum hand value
+println(maxHand(handPlayerA, handPlayerB))
 ```
 
 ## Arrays
