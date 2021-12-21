@@ -180,14 +180,15 @@ hands(2) = hands(2) + kingClubs
 hands.foreach(println)
 ```
 
-## Lists
-```scala
-
-```
-
 ## Initialize and prepend to a list
 ```scala
+// Initialize a list with an element for each round's prize
+val prizes = List(10, 15, 20, 25, 30)
+println(prizes)
 
+// Prepend to prizes to add another round and prize
+val newPrizes = 5 :: prizes
+println(newPrizes)
 ```
 
 ## Initialize a list using cons and Nil
