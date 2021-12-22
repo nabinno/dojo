@@ -193,7 +193,9 @@ println(newPrizes)
 
 ## Initialize a list using cons and Nil
 ```scala
-
+// Initialize a list with an element each round's prize
+val prizes = 10 :: 15 :: 20 :: 25 :: 30 :: Nil
+println(prizes)
 ```
 
 ## Concatenate Lists
