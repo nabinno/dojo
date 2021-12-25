@@ -211,14 +211,17 @@ val venuesTOWorld = venuesNTOA ::: venuesEuroTO
 
 
 # 3. Type Systems, Control Structures, Style
-## Scala's static type system
-```scala
-
-```
-
 ## Static typing vs. dynamic typing
 ```scala
+## Statically-typed language
+Types are checked before run time.
+The type of a variable is known at compile time.
+Types are checked before execution time.
 
+## Dynamically-typed language
+Types are checked during execution.
+Types are checked during run time.
+Types are checked on the fly.
 ```
 
 ## Pros and cons of static type systems
