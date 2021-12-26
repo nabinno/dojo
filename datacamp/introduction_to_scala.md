@@ -226,22 +226,48 @@ Types are checked on the fly.
 
 ## Pros and cons of static type systems
 ```scala
+## Pros
+Your program behaves as expected (i.e., prove the absence of common type-related bugs)
+Safe refactorings.
+Increased performance at run time.
+Documentation in the form of type annotations (`: Int` in `val fourHearts: Int = 4`)
 
-```
+## Cons
+The time it takes to check types.
 
-## Make decisions with if and else
-```scala
-
+## Cons addressed by Scala's type system
+Code is verbose (i.e., code is longer/more annoying to write)
+The language is not flexible (e.g., one strict way of composing a type)
 ```
 
 ## if and printing
 ```scala
+// Point value of a player's hand
+val hand = sevenClubs + kingDiamonds + threeSpades
 
+// Congratulate the player if they have reached 21
+if (hand == 21) {
+    println("Twenty-One!")
+}
 ```
 
 ## if expressions result in a value
 ```scala
+// Point value of a player's hand
+val hand = sevenClubs + kingDiamonds + threeSpades
 
+// Inform a player where their current hand stands
+val informPlayer: String = {
+  if (hand > 21)
+    "Bust! :("
+  else if (hand == 21) 
+    "Twenty-One! :)"
+  else
+    "Hit or stay?"
+}
+
+// Print the message
+print(informPlayer)
 ```
 
 ## if and else inside of a function
