@@ -287,43 +287,70 @@ val myHandPointsToBust = pointsToBust(tenSpades + fiveClubs)
 println(myHandPointsToBust)
 ```
 
-## while and the imperative style
-```scala
-
-```
-
 ## A simple while loop
 ```scala
+// Define counter variable
+var i = 0
 
+// Define the number of loop iterations
+val numRepetitions = 3
+
+// Loop to print a message for winner of the round
+while (i < numRepetitions) {
+  if (i < 2)
+    println("winner")
+  else
+    println("chicken dinner")
+  // Increment the counter variable
+  i = i + 1
+}
 ```
 
 ## Loop over a collection with while
 ```scala
+// Define counter variable
+var i = 0
 
-```
+// Create list with five hands of Twenty-One
+var hands = List(16, 21, 8, 25, 4)
 
-## foreach and the functional style
-```scala
-
-```
-
-## Is Scala purely a functional language?
-```scala
-
+// Loop through hands
+while (i < hands.length) {
+  // Find and print number of points to bust
+  println(pointsToBust(hands(i)))
+  // Increment the counter variable
+  i += 1
+}
 ```
 
 ## Converting while to foreach
 ```scala
+// Find the number of points that will cause a bust
+def pointsToBust(hand: Int) = {
+  // If the hand is a bust, 0 points remain
+  if (bust(hand))
+    println(0)
+  // Otherwise, calculate the difference between 21 and the current hand
+  else
+    println(21 - hand)
+}
 
+// Create list with five hands of Twenty-One
+var hands = List(16, 21, 8, 25, 4)
+
+// Loop through hands, finding each hand's number of points to bust
+hands.foreach(pointsToBust)
 ```
 
 ## Signs of style
 ```scala
+## Imperative-style code
+Type `Unit`
+Side effects
+`var`
 
+## Functional-style code
+No side effects
+Non-`Unit` value types (e.g. `Int`)
+`val`
 ```
-
-## The essence of Scala
-```scala
-
-```
-
