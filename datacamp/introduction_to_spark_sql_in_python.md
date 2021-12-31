@@ -7,7 +7,11 @@ url: https://campus.datacamp.com/courses/introduction-to-spark-sql-in-python
 # 1. Pyspark SQL
 ## Create a SQL table from a dataframe
 ```python
+# Load trainsched.txt
+df = spark.read.csv("trainsched.txt", header=True)
 
+# Create temporary table called table1
+df.createOrReplaceTempView("table1")
 ```
 
 ## Determine the column names of a table
