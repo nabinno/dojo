@@ -98,14 +98,13 @@ sql_df.show()
 
 
 # 2. Using window function sql for natural language processing
-## Loading natural language text
-```python
-
-```
-
 ## Loading a dataframe from a parquet file
 ```python
+# Load the dataframe
+df = spark.read.load('sherlock_sentences.parquet')
 
+# Filter and show the first 5 rows
+df.where('id > 70').show(5, truncate=False)
 ```
 
 ## Split and explode a text column
