@@ -126,56 +126,92 @@ print("\nNumber of rows: ", exploded_df.count())
 pyspark.sql.function.monotonically_increasing_id()
 ```
 
-## Moving window analysis
-```python
-
-```
-
 ## Creating context window feature data
 ```python
-
+# Word for each row, previous two and subsequent two words
+query = """
+SELECT
+part,
+LAG(word, 2) OVER(PARTITION BY part ORDER BY id) AS w1,
+LAG(word, 1) OVER(PARTITION BY part ORDER BY id) AS w2,
+word AS w3,
+LEAD(word, 1) OVER(PARTITION BY part ORDER BY id) AS w4,
+LEAD(word, 2) OVER(PARTITION BY part ORDER BY id) AS w5
+FROM text
+"""
+spark.sql(query).where("part = 12").show(10)
 ```
 
 ## Repartitioning the data
 ```python
+# Repartition text_df into 12 partitions on 'chapter' column
+repart_df = text_df.repartition(12, 'chapter')
 
-```
-
-## Common word sequences
-```python
-
-```
-
-## What type of data is this
-```python
-
+# Prove that repart_df has 12 partitions
+repart_df.rdd.getNumPartitions()
 ```
 
 ## Finding common word sequences
 ```python
-
+# Find the top 10 sequences of five words
+query = """
+SELECT w1, w2, w3, w4, w5, COUNT(*) AS count FROM (
+   SELECT word AS w1,
+   LEAD(word,1) OVER(PARTITION BY part ORDER BY id ) AS w2,
+   LEAD(word,2) OVER(PARTITION BY part ORDER BY id ) AS w3,
+   LEAD(word,3) OVER(PARTITION BY part ORDER BY id ) AS w4,
+   LEAD(word,4) OVER(PARTITION BY part ORDER BY id ) AS w5
+   FROM text
+)
+GROUP BY w1, w2, w3, w4, w5
+ORDER BY count DESC
+LIMIT 10
+""" 
+df = spark.sql(query)
+df.show()
 ```
 
 ## Unique 5-tuples in sorted order
 ```python
-
+# Unique 5-tuples sorted in descending order
+query = """
+SELECT DISTINCT w1, w2, w3, w4, w5 FROM (
+   SELECT word AS w1,
+   LEAD(word,1) OVER(PARTITION BY part ORDER BY id ) AS w2,
+   LEAD(word,2) OVER(PARTITION BY part ORDER BY id ) AS w3,
+   LEAD(word,3) OVER(PARTITION BY part ORDER BY id ) AS w4,
+   LEAD(word,4) OVER(PARTITION BY part ORDER BY id ) AS w5
+   FROM text
+)
+ORDER BY w1 DESC, w2 DESC, w3 DESC, w4 DESC, w5 DESC
+LIMIT 10
+"""
+df = spark.sql(query)
+df.show()
 ```
 
 ## Most frequent 3-tuples per chapter
 ```python
+#   Most frequent 3-tuple per chapter
+query = """
+SELECT chapter, w1, w2, w3, count FROM
+(
+  SELECT
+  chapter,
+  ROW_NUMBER() OVER (PARTITION BY chapter ORDER BY count DESC) AS row,
+  w1, w2, w3, count
+  FROM ( %s )
+)
+WHERE row = 1
+ORDER BY chapter ASC
+""" % subquery
 
+spark.sql(query).show()
 ```
-
-
 
 
 
 # 3. Caching, Logging, and the Spark UI
-## Caching
-```python
-
-```
-
 ## Practicing caching: part 1
 ```python
 
