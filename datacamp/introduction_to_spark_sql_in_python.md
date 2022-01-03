@@ -109,12 +109,21 @@ df.where('id > 70').show(5, truncate=False)
 
 ## Split and explode a text column
 ```python
+# Split the clause column into a column called words 
+split_df = clauses_df.select(split('clause', ' ').alias('words'))
+split_df.show(5, truncate=False)
 
+# Explode the words column into a column called word 
+exploded_df = split_df.select(explode('words').alias('word'))
+exploded_df.show(10)
+
+# Count the resulting number of rows in exploded_df
+print("\nNumber of rows: ", exploded_df.count())
 ```
 
 ## Using monotonically_increasing_id()
 ```python
-
+pyspark.sql.function.monotonically_increasing_id()
 ```
 
 ## Moving window analysis
