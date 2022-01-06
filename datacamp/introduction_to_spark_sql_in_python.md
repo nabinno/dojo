@@ -259,19 +259,10 @@ spark.catalog.uncacheTable('table1')
 print("table1 is cached: ", spark.catalog.isCached('table1'))
 ```
 
-## The Spark UI
-```python
-
-```
-
-## Spark UI storage tab
-```python
-
-```
-
 ## Inspecting cache in the Spark UI
 ```python
-
+partitioned_df.count()
+spark.sql("select count(*) from text")
 ```
 
 ## Logging
