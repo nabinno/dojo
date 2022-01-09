@@ -282,7 +282,14 @@ logging.error("Selected columns: %s", text_df.select("id", "word"))
 
 ## Practice logging 2
 ```python
-
+# Uncomment the 5 statements that do NOT trigger text_df
+logging.debug("text_df columns: %s", text_df.columns)
+logging.info("table1 is cached: %s", spark.catalog.isCached(tableName="table1"))
+# logging.warning("The first row of text_df: %s", text_df.first())
+logging.error("Selected columns: %s", text_df.select("id", "word"))
+logging.info("Tables: %s", spark.sql("show tables").collect())
+logging.debug("First row: %s", spark.sql("SELECT * FROM table1 limit 1"))
+# logging.debug("Count: %s", spark.sql("SELECT COUNT(*) AS count FROM table1").collect())
 ```
 
 ## Query plans
