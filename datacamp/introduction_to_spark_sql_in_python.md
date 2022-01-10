@@ -292,21 +292,42 @@ logging.debug("First row: %s", spark.sql("SELECT * FROM table1 limit 1"))
 # logging.debug("Count: %s", spark.sql("SELECT COUNT(*) AS count FROM table1").collect())
 ```
 
-## Query plans
-```python
-
-```
-
 ## Practice query plans
 ```python
+# Run explain on text_df
+text_df.explain()
 
+# Run explain on "SELECT COUNT(*) AS count FROM table1" 
+spark.sql("SELECT COUNT(*) AS count FROM table1").explain()
+
+# Run explain on "SELECT COUNT(DISTINCT word) AS words FROM table1"
+spark.sql("SELECT COUNT(DISTINCT word) AS words FROM table1").explain()
 ```
 
 ## Practice reading query plans 2
 ```python
+##
+part2_df.explain()
+== Physical Plan ==
+*(1) Project [word#0, id#1L, part#2, title#3]
++- *(1) Filter (isnotnull(part#2) && (part#2 = 2))
+   +- *(1) FileScan parquet [word#0,id#1L,part#2,title#3] Batched: true, Format: Parquet, Location: InMemoryFileIndex[file:/tmp/tmp45c58t7t/sherlock_parts.parquet], PartitionFilters: [], PushedFilters: [IsNotNull(part), EqualTo(part,2)], ReadSchema: struct<word:string,id:bigint,part:int,title:string>
 
+##
+part3_df.explain()
+ERROR! Session/line number was not unique in database. History logging moved to new session 4
+== Physical Plan ==
+InMemoryTableScan [word#8, id#9L, part#10, title#11]
+   +- InMemoryRelation [word#8, id#9L, part#10, title#11], StorageLevel(disk, memory, deserialized, 1 replicas)
+         +- *(1) Project [word#8, id#9L, part#10, title#11]
+            +- *(1) Filter (isnotnull(part#10) && (part#10 = 4))
+               +- *(1) FileScan parquet [word#8,id#9L,part#10,title#11] Batched: true, Format: Parquet, Location: InMemoryFileIndex[file:/tmp/tmpa3yeth4x/sherlock_parts.parquet], PartitionFilters: [], PushedFilters: [IsNotNull(part), EqualTo(part,4)], ReadSchema: struct<word:string,id:bigint,part:int,title:string>
+
+##
+part4_df.explain()
+== Physical Plan ==
+*(1) FileScan parquet [word#36,id#37L] Batched: true, Format: Parquet, Location: InMemoryFileIndex[file:/tmp/tmpoy0gar8y/sherlock.parquet], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<word:string,id:bigint>
 ```
-
 
 
 
