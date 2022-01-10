@@ -332,29 +332,48 @@ part4_df.explain()
 
 
 # 4. Text classification
-## Extract Transform Select
-```python
-
-```
-
 ## Practicing creating a UDF
 ```python
+# Returns true if the value is a nonempty vector
+nonempty_udf = udf(lambda x:  
+    True if (x and hasattr(x, "toArray") and x.numNonzeros())
+    else False, BooleanType())
 
+# Returns first element of the array as string
+s_udf = udf(lambda x: str(x[0]) if (x and type(x) is list and len(x) > 0)
+    else '', StringType())
 ```
 
 ## Practicing array column
 ```python
+# Show the rows where doc contains the item '5'
+df_before.where(array_contains('doc', '5')).show()
 
-```
+# UDF removes items in TRIVIAL_TOKENS from array
+rm_trivial_udf = udf(lambda x:
+                     list(set(x) - TRIVIAL_TOKENS) if x
+                     else x,
+                     ArrayType(StringType()))
 
-## Creating feature data for classification
-```python
+# Remove trivial tokens from 'in' and 'out' columns of df2
+df_after = df_before.withColumn('in', rm_trivial_udf('in'))\
+                    .withColumn('out', rm_trivial_udf('out'))
 
+# Show the rows of df_after where doc contains the item '5'
+df_after.where(array_contains('doc','5')).show()
 ```
 
 ## Creating a UDF for vector data
 ```python
+# Selects the first element of a vector column
+first_udf = udf(lambda x:
+            float(x.indices[0]) 
+            if (x and hasattr(x, "toArray") and x.numNonzeros())
+            else 0.0,
+            FloatType())
 
+# Apply first_udf to the output column
+df.select(first_udf("output").alias("result")).show(5)
 ```
 
 ## Applying a UDF to vector data
