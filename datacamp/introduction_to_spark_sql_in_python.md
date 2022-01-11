@@ -376,14 +376,13 @@ first_udf = udf(lambda x:
 df.select(first_udf("output").alias("result")).show(5)
 ```
 
-## Applying a UDF to vector data
-```python
-
-```
-
 ## Transforming text to vector format
 ```python
+# Add label by applying the get_first_udf to output column
+df_new = df.withColumn('label', get_first_udf('output'))
 
+# Show the first five rows 
+df_new.limit(5)
 ```
 
 ## Text Classification
