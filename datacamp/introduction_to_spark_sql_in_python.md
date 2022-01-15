@@ -419,7 +419,14 @@ df_examples.where("endword <> 'him'").sample(False, .1, 42).show(5)
 
 ## Split the data
 ```python
+# Split the examples into train and test, use 80/20 split
+df_trainset, df_testset = df_examples.randomSplit((0.80, 0.20), 42)
 
+# Print the number of training examples
+print("Number training: ", df_trainset.count())
+
+# Print the number of test examples
+print("Number test: ", df_testset.count())
 ```
 
 ## Train the classifier
