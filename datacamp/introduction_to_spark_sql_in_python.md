@@ -431,7 +431,17 @@ print("Number test: ", df_testset.count())
 
 ## Train the classifier
 ```python
+# Import the logistic regression classifier
+from pyspark.ml.classification import LogisticRegression
 
+# Instantiate logistic setting elasticnet to 0.0
+logistic = LogisticRegression(maxIter=100, regParam=0.4, elasticNetParam=0.0)
+
+# Train the logistic classifer on the trainset
+df_fitted = logistic.fit(df_trainset)
+
+# Print the number of training iterations
+print("Training iterations: ", df_fitted.summary.totalIterations)
 ```
 
 ## Predicting and evaluating
