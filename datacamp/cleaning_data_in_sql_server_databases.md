@@ -5,14 +5,22 @@ url: https://campus.datacamp.com/courses/cleaning-data-in-sql-server-databases/s
 ---
 
 # Starting with Cleaning Data
-## Introduction to Cleaning Data
-```sql
-
-```
-
 ## Unifying flight formats I
 ```sql
-
+SELECT 
+	-- Concat the strings
+	CONCAT(
+		carrier_code, 
+		' - ', 
+      	-- Replicate zeros
+		REPLICATE('0', 9 - LEN(registration_code)), 
+		registration_code, 
+		', ', 
+		airport_code)
+	AS registration_code
+FROM flight_statistics
+-- Filter registers with more than 100 delays
+WHERE delayed > 100
 ```
 
 ## Unifying flight formats II
