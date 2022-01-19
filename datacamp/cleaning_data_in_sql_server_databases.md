@@ -40,19 +40,28 @@ FROM flight_statistics
 WHERE delayed > 100
 ```
 
-## Cleaning messy strings
-```sql
-
-```
-
 ## Trimming strings I
 ```sql
-
+SELECT 
+	airport_code,
+	-- Use the appropriate function to remove the extra spaces
+    TRIM(airport_name) AS airport_name,
+	airport_city,
+    airport_state
+-- Select the source table
+FROM airports
 ```
 
 ## Trimming strings II
 ```sql
-
+SELECT 
+	airport_code,
+	-- Use the appropriate function to remove the extra spaces
+    RTRIM(LTRIM(airport_name)) AS airport_name,
+	airport_city,
+    airport_state
+-- Select the source table
+FROM airports
 ```
 
 ## Unifying strings
