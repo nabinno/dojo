@@ -66,7 +66,39 @@ FROM airports
 
 ## Unifying strings
 ```sql
+##
+SELECT 
+	airport_code,
+	airport_name,
+    -- Use the appropriate function to unify the values
+    REPLACE(airport_city, 'ch', 'Chicago') AS airport_city,
+	airport_state
+FROM airports  
+WHERE airport_code IN ('ORD', 'MDW')
 
+##
+SELECT airport_code, airport_name, 
+	-- Use the CASE statement
+	CASE
+    	-- Unify the values
+		WHEN airport_city <> 'Chicago' THEN REPLACE(airport_city, 'ch', 'Chicago')
+		ELSE airport_city 
+	END AS airport_city,
+    airport_state
+FROM airports
+WHERE airport_code IN ('ORD', 'MDW')
+
+##
+SELECT 
+	airport_code, airport_name,
+    	-- Convert to uppercase
+    	UPPER(
+            -- Replace 'Chicago' with 'ch'.
+          	REPLACE(airport_city, 'Chicago', 'ch')
+        ) AS airport_city,
+    airport_state
+FROM airports
+WHERE airport_code IN ('ORD', 'MDW')
 ```
 
 ## Comparing the similarity between strings
