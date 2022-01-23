@@ -101,14 +101,19 @@ FROM airports
 WHERE airport_code IN ('ORD', 'MDW')
 ```
 
-## Comparing the similarity between strings
-```sql
-
-```
-
 ## SOUNDEX() and DIFFERENCE()
 ```sql
-
+SELECT 
+    -- First name and surname of the statisticians
+	DISTINCT S1.statistician_name, S1.statistician_surname
+-- Join flight_statistics with itself
+FROM flight_statistics S1 INNER JOIN flight_statistics S2 
+	-- The SOUNDEX result of the first name and surname have to be the same
+	ON SOUNDEX(S1.statistician_name) = SOUNDEX(S2.statistician_name) 
+	AND SOUNDEX(S1.statistician_surname) = SOUNDEX(S2.statistician_surname) 
+-- The texts of the first name or the texts of the surname have to be different
+WHERE S1.statistician_name <> S2.statistician_name
+	OR S1.statistician_surname <> S2.statistician_surname
 ```
 
 ## Comparing names with SOUNDEX()
