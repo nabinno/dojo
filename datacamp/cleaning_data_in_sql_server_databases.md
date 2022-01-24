@@ -4,7 +4,7 @@ tags: sql-server
 url: https://campus.datacamp.com/courses/cleaning-data-in-sql-server-databases/starting-with-cleaning-data
 ---
 
-# Starting with Cleaning Data
+# 1. Starting with Cleaning Data
 ## Unifying flight formats I
 ```sql
 SELECT 
@@ -101,7 +101,7 @@ FROM airports
 WHERE airport_code IN ('ORD', 'MDW')
 ```
 
-## SOUNDEX() and DIFFERENCE()
+## Comparing names with SOUNDEX()
 ```sql
 SELECT 
     -- First name and surname of the statisticians
@@ -116,20 +116,24 @@ WHERE S1.statistician_name <> S2.statistician_name
 	OR S1.statistician_surname <> S2.statistician_surname
 ```
 
-## Comparing names with SOUNDEX()
-```sql
-
-```
-
 ## Comparing names with DIFFERENCE()
 ```sql
-
+SELECT 
+    -- First name and surnames of the statisticians
+	DISTINCT S1.statistician_name, S1.statistician_surname
+-- Join flight_statistics with itself
+FROM flight_statistics S1 INNER JOIN flight_statistics S2 
+	-- The DIFFERENCE of the first name and surname has to be equals to 4
+	ON DIFFERENCE(S1.statistician_name, S2.statistician_name) = 4
+	AND DIFFERENCE(S1.statistician_surname, S2.statistician_surname) = 4
+-- The texts of the first name or the texts of the surname have to be different
+WHERE S1.statistician_name <> S2.statistician_name
+	OR S1.statistician_surname <> S2.statistician_surname
 ```
 
 
 
-
-# Dealing with missing data, duplicate data, and different date formats
+# 2. Dealing with missing data, duplicate data, and different date formats
 ## Dealing with missing data
 ```sql
 
@@ -193,7 +197,7 @@ WHERE S1.statistician_name <> S2.statistician_name
 
 
 
-# Dealing with out of range values, different data types, and pattern matching
+# 3. Dealing with out of range values, different data types, and pattern matching
 ## Out of range values and inaccurate data
 ```sql
 
@@ -257,7 +261,7 @@ WHERE S1.statistician_name <> S2.statistician_name
 
 
 
-# Combining, splitting, and transforming data
+# 4. Combining, splitting, and transforming data
 ## Combining data of some columns into one column
 ```sql
 
