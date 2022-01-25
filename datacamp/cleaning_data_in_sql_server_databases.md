@@ -134,29 +134,60 @@ WHERE S1.statistician_name <> S2.statistician_name
 
 
 # 2. Dealing with missing data, duplicate data, and different date formats
-## Dealing with missing data
-```sql
-
-```
-
 ## Removing missing values
 ```sql
+##
+SELECT *
+-- Select the appropriate table
+FROM airports
+-- Exclude the rows where airport_city is NULL
+WHERE airport_city IS NOT NULL
 
+##
+SELECT *
+-- Select the appropriate table
+FROM airports
+-- Return only the rows where airport_city is NULL
+WHERE airport_city IS NULL
 ```
 
 ## Removing blank spaces
 ```sql
+##
+SELECT *
+-- Select the appropriate table
+FROM airports
+-- Exclude the rows where airport_city is missing
+WHERE airport_city <> ''
 
+##
+SELECT *
+-- Select the appropriate table
+FROM airports
+-- Return only the rows where airport_city is missing
+WHERE airport_city = ''
 ```
 
 ## Filling missing values using ISNULL()
 ```sql
-
+SELECT
+  airport_code,
+  airport_name,
+  -- Replace missing values for airport_city with 'Unknown'
+  ISNULL(airport_city, 'Unknown') AS airport_city,
+  -- Replace missing values for airport_state with 'Unknown'
+  ISNULL(airport_state, 'Unknown') AS airport_state
+FROM airports
 ```
 
 ## Filling missing values using COALESCE()
 ```sql
-
+SELECT
+airport_code,
+airport_name,
+-- Replace the missing values
+COALESCE(airport_city, airport_state, 'Unknown') AS location
+FROM airports
 ```
 
 ## Avoiding duplicate data
