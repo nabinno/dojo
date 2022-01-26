@@ -190,19 +190,62 @@ COALESCE(airport_city, airport_state, 'Unknown') AS location
 FROM airports
 ```
 
-## Avoiding duplicate data
-```sql
-
-```
-
-## Diagnosing duplicates
-```sql
-
-```
-
 ## Treating duplicates
 ```sql
+##
+SELECT *,
+	   -- Apply ROW_NUMBER()
+       ROW_NUMBER() OVER (
+         	-- Write the partition
+            PARTITION BY 
+                airport_code,
+                carrier_code,
+                registration_date
+			ORDER BY 
+                airport_code, 
+                carrier_code, 
+                registration_date
+        ) row_num
+FROM flight_statistics
 
+##
+-- Use the WITH clause
+WITH cte AS (
+    SELECT *, 
+        ROW_NUMBER() OVER (
+            PARTITION BY 
+                airport_code, 
+                carrier_code, 
+                registration_date
+			ORDER BY 
+                airport_code, 
+                carrier_code, 
+                registration_date
+        ) row_num
+    FROM flight_statistics
+)
+SELECT * FROM cte
+-- Get only duplicates
+WHERE row_num > 1;
+
+##
+WITH cte AS (
+    SELECT *, 
+        ROW_NUMBER() OVER (
+            PARTITION BY 
+                airport_code, 
+                carrier_code, 
+                registration_date
+			ORDER BY 
+                airport_code, 
+                carrier_code, 
+                registration_date
+        ) row_num
+    FROM flight_statistics
+)
+SELECT * FROM cte
+-- Exclude duplicates
+WHERE row_num = 1;
 ```
 
 ## Dealing with different date formats
