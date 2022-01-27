@@ -248,14 +248,19 @@ SELECT * FROM cte
 WHERE row_num = 1;
 ```
 
-## Dealing with different date formats
-```sql
-
-```
-
 ## Using CONVERT()
 ```sql
-
+SELECT 
+    airport_code,
+    carrier_code,
+    canceled,
+    -- Convert the registration_date to a DATE and print it in mm/dd/yyyy format
+    CONVERT(VARCHAR(10), CAST(registration_date AS DATE), 101) AS registration_date
+FROM flight_statistics 
+-- Convert the registration_date to mm/dd/yyyy format
+WHERE CONVERT(VARCHAR(10), CAST(registration_date AS DATE), 101) 
+	-- Filter the first six months of 2014 in mm/dd/yyyy format 
+	BETWEEN '01/01/2014' AND '2014/06/30'
 ```
 
 ## Using FORMAT()
