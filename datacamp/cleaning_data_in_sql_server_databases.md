@@ -265,7 +265,14 @@ WHERE CONVERT(VARCHAR(10), CAST(registration_date AS DATE), 101)
 
 ## Using FORMAT()
 ```sql
-
+SELECT 
+	pilot_code,
+	pilot_name,
+	pilot_surname,
+	carrier_code,
+    -- Convert the entry_date to a DATE and print it in dd/MM/yyyy format
+	FORMAT(CAST(entry_date AS DATE), 'dd/MM/yyyy') AS entry_date
+from pilots
 ```
 
 ## CONVERT() vs FORMAT()
