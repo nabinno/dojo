@@ -293,7 +293,15 @@ WHERE num_ratings < 0 OR num_ratings > 5000
 
 ## Excluding out of range values
 ```sql
+##
+SELECT * FROM series
+-- Exclude the out of range values
+WHERE num_ratings BETWEEN 0 AND 5000
 
+##
+SELECT * FROM series
+-- Exclude the out of range values
+WHERE num_ratings >= 0 AND num_ratings <= 5000
 ```
 
 ## Detecting and excluding inaccurate data
