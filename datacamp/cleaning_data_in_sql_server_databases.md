@@ -306,7 +306,19 @@ WHERE num_ratings >= 0 AND num_ratings <= 5000
 
 ## Detecting and excluding inaccurate data
 ```sql
+##
+SELECT * FROM series
+-- Detect series for adults
+WHERE is_adult = 1
+-- Detect series with the minimum age smaller than 18
+AND min_age < 18
 
+##
+SELECT * FROM series
+-- Filter series for adults
+WHERE is_adult = 1
+-- Exclude series with the minimum age greater or equals to 18
+AND min_age >= 18
 ```
 
 ## Converting data with different types
