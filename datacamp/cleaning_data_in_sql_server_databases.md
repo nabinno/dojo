@@ -340,7 +340,11 @@ WHERE CONVERT(INT, num_ratings) BETWEEN 0 AND 5000
 
 ## The series with most episodes
 ```sql
-
+SELECT s.name series_name, COUNT(e.name) episodes_count
+FROM episodes e
+INNER JOIN series s ON s.id = e.series_id
+GROUP BY s.name
+ORDER BY episodes_count DESC;
 ```
 
 ## Pattern matching
