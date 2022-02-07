@@ -347,24 +347,30 @@ GROUP BY s.name
 ORDER BY episodes_count DESC;
 ```
 
-## Pattern matching
-```sql
-
-```
-
-## Characters to specify a patterns
-```sql
-
-```
-
 ## Matching urls
 ```sql
-
+SELECT 
+	name,
+    -- URL of the official site
+	official_site
+FROM series
+-- Get the URLs that don't match the pattern
+WHERE official_site NOT LIKE
+	-- Write the pattern
+	'www.%'
 ```
 
 ## Checking phone numbers
 ```sql
-
+SELECT 
+	name, 
+    -- Contact number
+    contact_number
+FROM series
+-- Get the numbers that don't match the pattern
+WHERE contact_number NOT LIKE
+	-- Write the pattern
+	'555-___-____'
 ```
 
 
