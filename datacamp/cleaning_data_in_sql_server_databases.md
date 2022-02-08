@@ -298,7 +298,7 @@ SELECT * FROM series
 -- Exclude the out of range values
 WHERE num_ratings BETWEEN 0 AND 5000
 
-##
+#
 SELECT * FROM series
 -- Exclude the out of range values
 WHERE num_ratings >= 0 AND num_ratings <= 5000
@@ -377,14 +377,23 @@ WHERE contact_number NOT LIKE
 
 
 # 4. Combining, splitting, and transforming data
-## Combining data of some columns into one column
-```sql
-
-```
-
 ## Combining cities and states using +
 ```sql
+##
+SELECT 
+	client_name,
+	client_surname,
+    -- Concatenate city with state
+    city + ', ' + state AS city_state
+FROM clients
 
+##
+SELECT 
+	client_name,
+	client_surname,
+    -- Consider the NULL values
+	ISNULL(city, '') + ISNULL(', ' + state, '') AS city_state
+FROM clients
 ```
 
 ## Concatenating cities and states
