@@ -398,7 +398,15 @@ FROM clients
 
 ## Concatenating cities and states
 ```sql
-
+SELECT 
+		client_name,
+		client_surname,
+    -- Use the function to concatenate the city and the state
+		CONCAT(
+				city,
+				CASE WHEN state IS NULL THEN '' 
+				ELSE CONCAT(', ', state) END) AS city_state
+FROM clients
 ```
 
 ## Working with DATEFROMPARTS()
