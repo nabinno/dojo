@@ -411,7 +411,16 @@ FROM clients
 
 ## Working with DATEFROMPARTS()
 ```sql
-
+##
+SELECT 
+	product_name,
+	units,
+    -- Use the function to concatenate the different parts of the date
+	DATEFROMPARTS(
+      	year_of_sale,
+      	month_of_sale, 
+      	day_of_sale) AS complete_date
+FROM paper_shop_daily_sales
 ```
 
 ## Splitting data of one column into more columns
