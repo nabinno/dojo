@@ -423,14 +423,16 @@ SELECT
 FROM paper_shop_daily_sales
 ```
 
-## Splitting data of one column into more columns
-```sql
-
-```
-
 ## Using SUBSTRING() and CHARINDEX()
 ```sql
-
+SELECT 
+	client_name,
+	client_surname,
+    -- Extract the name of the city
+	SUBSTRING(city_state, 1, CHARINDEX(', ', city_state) - 1) AS city,
+    -- Extract the name of the state
+    SUBSTRING(city_state, CHARINDEX(', ', city_state) + 1, LEN(city_state)) AS state
+FROM clients_split
 ```
 
 ## Using RIGHT() , LEFT() and REVERSE()
