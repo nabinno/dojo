@@ -437,12 +437,14 @@ FROM clients_split
 
 ## Using RIGHT() , LEFT() and REVERSE()
 ```sql
-
-```
-
-## SUBSTRING() or CHARINDEX()?
-```sql
-
+SELECT
+	client_name,
+	client_surname,
+    -- Extract the name of the city
+	LEFT(city_state, CHARINDEX(', ', city_state) - 1) AS city,
+    -- Extract the name of the state
+    RIGHT(city_state, CHARINDEX(' ,', REVERSE(city_state)) - 1) AS state
+FROM clients_split
 ```
 
 ## Transforming rows into columns and vice versa
