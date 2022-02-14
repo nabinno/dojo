@@ -469,12 +469,11 @@ AS paper_shop_pivot
 
 ## Turning columns into rows
 ```sql
-
+SELECT * FROM pivot_sales
+-- Use the operator to convert columns into rows
+UNPIVOT
+	-- The resulting column that will contain the turned columns into rows
+	(units FOR product_name IN (notebooks, pencils, crayons))
+-- Give the alias name
+AS unpivot_sales
 ```
-
-## Congratulations!
-```sql
-
-```
-
-
