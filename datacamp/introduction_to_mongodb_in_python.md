@@ -5,14 +5,10 @@ url: https://www.datacamp.com/courses/introduction-to-using-mongodb-for-data-sci
 ---
 
 # 1. Flexibly Structured Data
-## Intro to MongoDB and the Nobel Prize dataset
-```python
-
-```
-
 ## Count documents in a collection
 ```python
-
+client.nobel.prizes.count_documents({})
+client.nobel.laureates.count_documents({})
 ```
 
 ## Listing databases and collections
