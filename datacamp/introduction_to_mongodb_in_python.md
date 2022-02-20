@@ -44,14 +44,13 @@ print(prize_fields)
 print(laureate_fields)
 ```
 
-## Finding documents
-```python
-
-```
-
 ## "born" approximation
 ```python
+In: db.laureates.count_documents({"born": {"$lt": "1800"}})
+38
 
+In: db.laureates.count_documents({"born": {"$lt": "1700"}})
+38
 ```
 
 ## Composing filters
