@@ -141,17 +141,14 @@ print(doc)
 
 
 
-
 # 2. Working with Distinct Values and Sets
-
-## Survey Distinct Values
-```python
-
-```
-
 ## Categorical data validation
 ```python
-
+In [1]: db.prizes.find_one()
+In [2]: db.laureates.find_one()
+In [3]: set(db.prizes.distinct("category")) == set(db.laureates.distinct("prizes.category"))
+True
+In [4]: assert set(db.prizes.distinct("category")) == set(db.laureates.distinct("prizes.category"))
 ```
 
 ## Never from there, but sometimes there at last
