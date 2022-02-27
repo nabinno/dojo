@@ -153,7 +153,9 @@ In [4]: assert set(db.prizes.distinct("category")) == set(db.laureates.distinct(
 
 ## Never from there, but sometimes there at last
 ```python
-
+# Countries recorded as countries of death but not as countries of birth
+countries = set(db.laureates.distinct("diedCountry")) - set(db.laureates.distinct("bornCountry"))
+print(countries)
 ```
 
 ## Countries of affiliation
