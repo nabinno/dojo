@@ -165,14 +165,9 @@ count = len(db.laureates.distinct("prizes.affiliations.country"))
 print(count)
 ```
 
-## Distinct Values Given Filters
-```python
-
-```
-
 ## Born here, went there
 ```python
-
+db.laureates.distinct("prizes.affiliations.country", {"bornCountry": "USA"})
 ```
 
 ## Triple plays (mostly) all around
