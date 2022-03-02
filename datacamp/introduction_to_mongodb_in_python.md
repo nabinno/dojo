@@ -180,14 +180,22 @@ triple_play_categories = set(db.prizes.distinct("category", criteria))
 assert set(db.prizes.distinct("category")) - triple_play_categories == {"literature"}
 ```
 
-## Filter Arrays using Distinct Values
-```python
-
-```
-
 ## Sharing in physics after World War II
 ```python
-
+In [1]: db.laureates.count_documents({
+            "prizes": {"$elemMatch": {
+                "category": "physics",
+                "share": {"$ne": "1"},
+                "year": {"$gte": "1945"}}}})
+Out[1]: 143
+In [2]: db.laureates.count_documents({
+            "prizes": {"$elemMatch": {
+                "category": "physics",
+                "share": "1",
+                "year": {"$gte": "1945"}}}})
+Out[2]: 18
+In [3]: 18/143
+Out[3]: 0.1258741258741259
 ```
 
 ## Meanwhile, in other categories...
