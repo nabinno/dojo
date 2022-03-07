@@ -240,14 +240,10 @@ ratio = n_in_or_after / (n_in_or_after + n_before)
 print(ratio)
 ```
 
-## Distinct As You Like It
-```python
-
-```
-
 ## Glenn, George, and others in the G.B. crew
 ```python
-
+In [1]: db.laureates.count_documents({"firstname": Regex("^G.+"), "surname": Regex("^S.+")})
+Out[1]: 9
 ```
 
 ## Germany, then and now
