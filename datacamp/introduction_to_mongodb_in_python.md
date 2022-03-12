@@ -293,15 +293,9 @@ print([(laureate[first], laureate[last]) for laureate in db.laureates.find(crite
 
 
 # 3. Get Only What You Need, and Fast
-
-## Projection
-```python
-
-```
-
 ## Shares of the 1903 Prize in Physics
 ```python
-
+In [1]: db.laureates.find_one({"prizes": {"$elemMatch": {"category": "physics", "year": "1903"}}})
 ```
 
 ## Rounding up the G.S. crew
