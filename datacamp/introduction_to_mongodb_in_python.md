@@ -300,7 +300,17 @@ In [1]: db.laureates.find_one({"prizes": {"$elemMatch": {"category": "physics", 
 
 ## Rounding up the G.S. crew
 ```python
+# Use projection to select only firstname and surname
+docs = db.laureates.find(
+       filter= {"firstname" : {"$regex" : "^G"},
+                "surname" : {"$regex" : "^S"}  },
+   projection= ["firstname", "surname"]  )
 
+# Iterate over docs and concatenate first name and surname
+full_names = [doc["firstname"] + " " + doc["surname"] for doc in docs]
+
+# Print the full names
+print(full_names)
 ```
 
 ## Doing our share of data validation
