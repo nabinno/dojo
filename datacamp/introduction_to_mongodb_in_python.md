@@ -392,14 +392,14 @@ for doc in docs:
   print(doc)
 ```
 
-## What are indexes?
-```python
-
-```
-
 ## High-share categories
 ```python
-
+In [1]: db.prizes.distinct("category", {"laureates.share": {"$gt": "3"}})
+In [2]: db.prizes.find(
+           filter={},
+           projection={"year":1, "category":1, "_id":0},
+           sort=[("laureates.share", 1), ("category", 1)]
+        )
 ```
 
 ## Recently single?
