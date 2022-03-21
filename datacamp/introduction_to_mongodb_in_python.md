@@ -440,14 +440,18 @@ five_most_common = Counter(n_born_and_affiliated).most_common(5)
 print(five_most_common)
 ```
 
-## Limits
-```python
-
-```
-
 ## Setting a new limit?
 ```python
-
+In [1]: list(db.prizes.find({"category": "economics"},
+                            {"year": 1, "_id": 0})
+            .sort("year")
+            .limit(3)
+            .limit(5))
+Out[1]: [{'year': '1969'},
+         {'year': '1970'},
+         {'year': '1971'},
+         {'year': '1972'},
+         {'year': '1973'}]
 ```
 
 ## The first five prizes with quarter shares
