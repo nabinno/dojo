@@ -494,20 +494,17 @@ pprint(pages[0])
 
 
 # 4. Aggregation Pipelines: Let the Server Do It For You
-
-## Intro to Aggregation
-```python
-
-```
-
-## Sequencing stages
-```python
-
-```
-
 ## Aggregating a few individuals' country data
 ```python
+# Translate cursor to aggregation pipeline
+pipeline = [
+    {"$match": {"gender": {"$ne": "org"}}},
+    {"$project": {"bornCountry": 1, "prizes.affiliations.country": 1}},
+    {"$limit": 3}
+]
 
+for doc in db.laureates.aggregate(pipeline):
+    print("{bornCountry}: {prizes}".format(**doc))
 ```
 
 ## Passing the aggregation baton to Python
