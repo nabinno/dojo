@@ -528,14 +528,12 @@ for key, group in groupby(cursor, key=itemgetter("year")):
         print("{year}: {missing}".format(year=key, missing=", ".join(sorted(missing))))
 ```
 
-## Aggregation Operators and Grouping
-```python
-
-```
-
 ## Field Paths and Sets
 ```python
-
+list(db.prizes.aggregate([
+    {"$project": {"allThree": {"$setEquals": ["$laureates.share", ["3"]]},
+                  "noneThree": {"$not": {"$setIsSubset": [["3"], "$laureates.share"]}}}},
+    {"$match": {"$nor": [{"allThree": True}, {"noneThree": True}]}}]))
 ```
 
 ## Organizing prizes
