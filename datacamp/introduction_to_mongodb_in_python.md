@@ -550,12 +550,27 @@ print(list(db.laureates.aggregate(pipeline)))
 
 ## Gap years, aggregated
 ```python
+from collections import OrderedDict
 
-```
-
-## Zoom into Array Fields
-```python
-
+original_categories = sorted(set(db.prizes.distinct("category", {"year": "1901"})))
+pipeline = [
+    {"$match": {"category": {"$in": original_categories}}},
+    {"$project": {"category": 1, "year": 1}},
+    
+    # Collect the set of category values for each prize year.
+    {"$group": {"_id": "$year", "categories": {"$addToSet": "$category"}}},
+    
+    # Project categories *not* awarded (i.e., that are missing this year).
+    {"$project": {"missing": {"$setDifference": [original_categories, "$categories"]}}},
+    
+    # Only include years with at least one missing category
+    {"$match": {"missing.0": {"$exists": True}}},
+    
+    # Sort in reverse chronological order. Note that "_id" is a distinct year at this stage.
+    {"$sort": OrderedDict([("_id", -1)])},
+]
+for doc in db.prizes.aggregate(pipeline):
+    print("{year}: {missing}".format(year=doc["_id"],missing=", ".join(sorted(doc["missing"]))))
 ```
 
 ## Embedding aggregation expressions
