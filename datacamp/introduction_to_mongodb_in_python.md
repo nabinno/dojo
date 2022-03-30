@@ -538,7 +538,14 @@ list(db.prizes.aggregate([
 
 ## Organizing prizes
 ```python
+# Count prizes awarded (at least partly) to organizations as a sum over sizes of "prizes" arrays.
+pipeline = [
+    {"$match": {"gender": "org"}},
+    {"$project": {"n_prizes": {"$size": "$prizes"}}},
+    {"$group": {"_id": None, "n_prizes_total": {"$sum": "$n_prizes"}}}
+]
 
+print(list(db.laureates.aggregate(pipeline)))
 ```
 
 ## Gap years, aggregated
