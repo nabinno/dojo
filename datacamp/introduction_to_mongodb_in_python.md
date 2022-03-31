@@ -575,7 +575,17 @@ for doc in db.prizes.aggregate(pipeline):
 
 ## Embedding aggregation expressions
 ```python
+In [1]: db.laureates.count_documents({"bornCountry": {"$in": db.laureates.distinct("bornCountry")}})
+Out[1]: 901
 
+In [2]: db.laureates.count_documents({"$expr": {"$in": ["$bornCountry", db.laureates.distinct("bornCountry")]}})
+Out[2]: 901
+
+In [3]: db.laureates.count_documents({"$expr": {"$eq": [{"$type": "$bornCountry"}, "string"]}})
+Out[3]: 901
+
+In [4]: db.laureates.count_documents({"bornCountry": {"$type": "string"}})
+Out[4]: 901
 ```
 
 ## Here and elsewhere
@@ -607,9 +617,3 @@ for doc in db.prizes.aggregate(pipeline):
 ```python
 
 ```
-
-## Wrap-Up
-```python
-
-```
-
