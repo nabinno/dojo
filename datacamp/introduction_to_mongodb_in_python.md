@@ -637,14 +637,9 @@ pipeline = [
 for doc in db.prizes.aggregate(pipeline): print(doc)
 ```
 
-## Something Extra: $addFields to Aid Analysis
-```python
-
-```
-
 ## "...it's the life in your years"
 ```python
-
+{"$project": {"years": 1, "firstname": 1, "surname": 1, "_id": 0}}
 ```
 
 ## How many prizes were awarded to immigrants?
