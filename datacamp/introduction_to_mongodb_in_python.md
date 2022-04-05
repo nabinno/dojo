@@ -644,7 +644,19 @@ for doc in db.prizes.aggregate(pipeline): print(doc)
 
 ## How many prizes were awarded to immigrants?
 ```python
+pipeline = [
+    # Limit results to people; project needed fields; unwind prizes
+    {"$match": {"gender": {"$ne": "org"}}},
+    {"$project": {"bornCountry": 1, "prizes.affiliations.country": 1}},
+    {"$unwind": "$prizes"},
+  
+    # Count prizes with no country-of-birth affiliation
+    {"$addFields": {"bornCountryInAffiliations": {"$in": ["$bornCountry", "$prizes.affiliations.country"]}}},
+    {"$match": {"bornCountryInAffiliations": False}},
+    {"$count": "awardedElsewhere"},
+]
 
+print(list(db.laureates.aggregate(pipeline)))
 ```
 
 ## Refinement: filter out "unaffiliated" people
