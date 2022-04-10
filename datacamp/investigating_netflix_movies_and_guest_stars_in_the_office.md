@@ -19,28 +19,69 @@ movie_dict
 
 
 # 2. Creating a DataFrame from a dictionary
+```python
+# Import pandas under its usual alias
+import pandas as pd
+
+# Create a DataFrame from the dictionary
+durations_df = pd.DataFrame(movie_dict)
+
+# Print the DataFrame
+durations_df
+```
 
 
 # 3. A visual inspection of our data
+```python
+
+```
+
 
 
 # 4. Loading the rest of the data from a CSV
+```python
+
+```
+
 
 
 # 5. Filtering for movies!
+```python
+
+```
+
 
 
 # 6. Creating a scatter plot
+```python
+
+```
+
 
 
 # 7. Digging deeper
+```python
+
+```
+
 
 
 # 8. Marking non-feature films
+```python
+
+```
+
 
 
 # 9. Plotting with color!
+```python
+
+```
+
 
 
 # 10. What next?
+```python
+
+```
 
