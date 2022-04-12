@@ -51,14 +51,25 @@ plt.show()
 
 # 4. Loading the rest of the data from a CSV
 ```python
+# Read in the CSV as a DataFrame
+netflix_df = pd.read_csv("datasets/netflix_data.csv")
 
+# Print the first five rows of the DataFrame
+netflix_df[0:5]
 ```
 
 
 
 # 5. Filtering for movies!
 ```python
+# Subset the DataFrame for type "Movie"
+netflix_df_movies_only = netflix_df[netflix_df['type'] == 'Movie']
 
+# Select only the columns of interest
+netflix_movies_col_subset = netflix_df_movies_only[['title', 'country', 'genre', 'release_year', 'duration']]
+
+# Print the first five rows of the new DataFrame
+netflix_movies_col_subset[0:5]
 ```
 
 
