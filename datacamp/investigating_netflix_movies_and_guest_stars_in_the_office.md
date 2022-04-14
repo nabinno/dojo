@@ -100,7 +100,22 @@ plt.show()
 
 # 8. Marking non-feature films
 ```python
+# Define an empty list
+colors = []
 
+# Iterate over rows of netflix_movies_col_subset
+for lab, row in netflix_movies_col_subset.iterrows():
+    if row['genre'] == "Children":
+        colors.append("red")
+    elif row['genre'] == "Documentaries":
+        colors.append("blue")
+    elif row['genre'] == "Stand-Up":
+        colors.append("green")
+    else:
+        colors.append("black")
+
+# Inspect the first 10 values in your list      
+colors[0:10]
 ```
 
 
