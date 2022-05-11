@@ -407,12 +407,14 @@ print(temperatures_ind.loc[rows_to_keep])
 
 ## Sorting by index values
 ```python
+# Sort temperatures_ind by index values
+print(temperatures_ind.sort_index())
 
-```
+# Sort temperatures_ind by index values at the city level
+print(temperatures_ind.sort_index(level="city"))
 
-## Slicing and subsetting with .loc and .iloc
-```python
-
+# Sort temperatures_ind by country then descending city
+print(temperatures_ind.sort_index(level=["country", "city"], ascending=[True, False]))
 ```
 
 ## Slicing index values
