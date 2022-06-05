@@ -66,7 +66,13 @@ print('wards_census_altered table shape:', wards_census_altered.shape)
 
 ## One-to-many relationships
 ```python
+## One-to-one
+The relationship between `customer` and `cust_tax_info`.
+The relationship between `products` and `inventory`.
 
+## One-to-many
+The relationship between the `customer` and `orders`
+The relationship between the `products` and `orders`.
 ```
 
 ## One-to-many classification
