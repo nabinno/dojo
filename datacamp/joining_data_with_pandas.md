@@ -4,7 +4,7 @@ title: Joining Data with pandas
 url: https://campus.datacamp.com/courses/joining-data-with-pandas/data-merging-basics
 ---
 
-# Data Merging Basics
+# 1. Data Merging Basics
 ## What column to merge on?
 ```python
 taxi_owners.merge(taxi_veh, on='vid')
@@ -161,15 +161,17 @@ print(sorted_pop_vac_lic.head())
 
 
 
-# Merging Tables With Different Join Types
-## Left join
-```python
-
-```
-
+# 2. Merging Tables With Different Join Types
 ## Counting missing rows with left join
 ```python
+# Merge the movies table with the financials table with a left join
+movies_financials = movies.merge(financials, on='id', how='left')
 
+# Count the number of rows in the budget column that are missing
+number_of_missing_fin = movies_financials['budget'].isnull().sum()
+
+# Print the number of movies missing financials
+print(number_of_missing_fin)
 ```
 
 ## Enriching a dataset
@@ -235,7 +237,7 @@ print(sorted_pop_vac_lic.head())
 
 
 
-# Advanced Merging and Concatenating
+# 3. Advanced Merging and Concatenating
 ## Filtering joins
 ```python
 
@@ -294,7 +296,7 @@ print(sorted_pop_vac_lic.head())
 
 
 
-# Merging Ordered and Time-Series Data
+# 4. Merging Ordered and Time-Series Data
 ## Using merge_ordered()
 ```python
 
