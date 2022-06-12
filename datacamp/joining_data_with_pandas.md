@@ -195,12 +195,8 @@ print(toystory_tag.shape)
 
 ## How many rows with a left join?
 ```python
-
-```
-
-## Other joins
-```python
-
+left_table.merge(one_to_one, on='id', how='left').shape
+left_table.merge(one_to_many, on='id', how='left').shape
 ```
 
 ## Right join to find unique movies
