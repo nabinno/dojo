@@ -283,16 +283,6 @@ direct_crews = crews_self_merged[boolean_filter]
 print(direct_crews.head())
 ```
 
-## How does pandas handle self joins?
-```python
-
-```
-
-## Merging on indexes
-```python
-
-```
-
 ## Index merge for movie ratings
 ```python
 
