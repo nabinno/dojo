@@ -316,14 +316,11 @@ print(titles_diff.sort_values('diff', ascending=False).head())
 
 
 # 3. Advanced Merging and Concatenating
-## Filtering joins
-```python
-
-```
-
 ## Steps of a semi join
-```python
-
+```txt
+1. Merge the left and right tables on key column using an inner join.
+2. Search if the key column in the left table is in the merged tables using the `.isin()` method creating a Boolean `Series`.
+3. Subset the rows of the left table.
 ```
 
 ## Performing an anti join
