@@ -403,14 +403,13 @@ tracks_sold = tracks_invoices.groupby(['tid','name']).agg({'quantity':'sum'})
 print(tracks_sold.sort_values(['quantity'], ascending=False))
 ```
 
-## Verifying integrity
-```python
-
-```
-
 ## Validating a merge
 ```python
+##
+artists.merge(albums, on='artid', validate='one_to_many').head()
 
+##
+artists.merge(albums, on='artid', validate=many_to_many').head()
 ```
 
 ## Concatenate and merge to find common songs
