@@ -461,9 +461,22 @@ inflation_unemploy.plot(kind='scatter', x='unemployment_rate', y='cpi')
 plt.show()
 ```
 
-## merge_ordered() caution, multiple columns
+## `merge_ordered()` caution, multiple columns
 ```python
+##
+# Merge gdp and pop on date and country with fill and notice rows 2 and 3
+ctry_date = pd.merge_ordered(gdp, pop, on=('date', 'country'),
+                             fill_method='ffill')
 
+# Print ctry_date
+print(ctry_date)
+
+##
+# Merge gdp and pop on country and date with fill
+date_ctry = pd.merge_ordered(gdp, pop, on=('country', 'date'), fill_method='ffill')
+
+# Print date_ctry
+print(date_ctry)
 ```
 
 ## Using merge_asof()
