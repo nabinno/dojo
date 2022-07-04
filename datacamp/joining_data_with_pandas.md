@@ -479,7 +479,7 @@ date_ctry = pd.merge_ordered(gdp, pop, on=('country', 'date'), fill_method='ffil
 print(date_ctry)
 ```
 
-## Using merge_asof() to study stocks
+## Using `merge_asof()` to study stocks
 ```python
 # Use merge_asof() to merge jpm and wells
 jpm_wells = pd.merge_asof(jpm, wells, on='date_time', suffixes=('', '_wells'), direction='nearest')
@@ -510,9 +510,20 @@ gdp_recession.plot(kind='bar', y='gdp', x='date', color=is_recession, rot=90)
 plt.show()
 ```
 
-## merge_asof() and merge_ordered() differences
+## `merge_asof()` and `merge_ordered()` differences
 ```python
+## merge_asof()
+It can be used to do fuzzy matching of dates between tables.
+After matching two tables, if there are missing values at the top of the table from the right table, this function can fill them in.
+Has an argument that can be set to 'forward' to select the first row in the right table whose key column is greater than or equal to the left's.
 
+## both
+This function can set the suffix for overlapping column names.
+This function can be used when working with ordered or time-series data.
+
+## merge_ordered()
+It allows for a right join during the merge.
+If it cannot match the rows of the tables exactly, it can use forward fill to interpolate the missing data.
 ```
 
 ## Selecting data with .query()
