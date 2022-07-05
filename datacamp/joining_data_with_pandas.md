@@ -526,14 +526,12 @@ It allows for a right join during the merge.
 If it cannot match the rows of the tables exactly, it can use forward fill to interpolate the missing data.
 ```
 
-## Selecting data with .query()
-```python
-
-```
-
 ## Explore financials with .query()
 ```python
-
+social_fin.query("value > 50000000000")
+social_fin.query("company=='facebook'")
+social_fin.query("financial=='net_income' and value < 0")
+social_fin.query("financial=='gross_profit' and value > 100000")
 ```
 
 ## Subsetting rows with .query()
