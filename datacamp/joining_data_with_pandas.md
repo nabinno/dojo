@@ -555,7 +555,7 @@ plt.show()
 
 ## Select the right .melt() arguments
 ```python
-
+inflation.melt(id_vars=['country','indicator'], var_name='year', value_name='annual')
 ```
 
 ## Using .melt() to reshape government data
