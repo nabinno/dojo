@@ -31,14 +31,16 @@ sns.countplot(y=region)
 plt.show()
 ```
 
-## Using pandas with Seaborn
-```python
-
-```
-
 ## "Tidy" vs. "untidy" data
 ```python
+# Import pandas
+import pandas as pd
 
+# Create a DataFrame from csv file
+df = pd.read_csv(csv_filepath)
+
+# Print the head of df
+print(df.head())
 ```
 
 ## Making a count plot with a DataFrame
