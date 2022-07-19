@@ -97,7 +97,25 @@ plt.show()
 # 2. Visualizing Two Quantitative Variables
 ## Creating subplots with col and row
 ```python
+##
+# Change this scatter plot to arrange the plots in rows instead of columns
+sns.relplot(x="absences", y="G3", 
+            data=student_data,
+            kind="scatter", 
+            col="study_time")
 
+# Show plot
+plt.show()
+
+##
+# Change this scatter plot to arrange the plots in rows instead of columns
+sns.relplot(x="absences", y="G3", 
+            data=student_data,
+            kind="scatter", 
+            row="study_time")
+
+# Show plot
+plt.show()
 ```
 
 ## Creating two-factor subplots
