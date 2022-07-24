@@ -160,14 +160,18 @@ sns.relplot(x="acceleration", y="mpg", data=mpg, kind="scatter", style="origin",
 plt.show()
 ```
 
-## Introduction to line plots
-```python
-
-```
-
 ## Interpreting line plots
 ```python
+##
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+# Create line plot
+sns.relplot(x="model_year", y="mpg", data=mpg, kind="line")
+
+# Show plot
+plt.show()
 ```
 
 ## Visualizing standard deviation with line plots
