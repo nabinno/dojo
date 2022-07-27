@@ -204,14 +204,14 @@ plt.show()
 
 
 # 3. Visualizing a Categorical and a Quantitative Variable
-## Count plots and bar plots
-```python
-
-```
-
 ## Count plots
 ```python
+# Separate into column subplots based on age category
+sns.catplot(y="Internet usage", data=survey_data,
+            kind="count", col="Age Category")
 
+# Show plot
+plt.show()
 ```
 
 ## Bar plots with percentages
