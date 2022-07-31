@@ -254,11 +254,6 @@ sns.catplot(x="study_time", y="G3", data=student_data, order=study_time_order, k
 plt.show()
 ```
 
-## Create and interpret a box plot
-```python
-
-```
-
 ## Omitting outliers
 ```python
 
