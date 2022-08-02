@@ -286,14 +286,16 @@ sns.catplot(x="romantic", y="G3",
 plt.show()
 ```
 
-## Point plots
-```python
-
-```
-
 ## Customizing point plots
 ```python
-
+# Remove the lines joining the points
+sns.catplot(x="famrel", y="absences",
+			data=student_data,
+            kind="point",
+            capsize=0.2, join=False)
+            
+# Show plot
+plt.show()
 ```
 
 ## Point plots with subgroups
