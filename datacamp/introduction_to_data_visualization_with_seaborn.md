@@ -318,14 +318,23 @@ plt.show()
 
 
 # 4. Customizing Seaborn Plots
-## Changing plot style and color
-```python
-
-```
-
 ## Changing style and palette
 ```python
+# Change the color palette to "RdBu"
+sns.set_style("whitegrid")
+sns.set_palette("RdBu")
 
+# Create a count plot of survey responses
+category_order = ["Never", "Rarely", "Sometimes", 
+                  "Often", "Always"]
+
+sns.catplot(x="Parents Advice", 
+            data=survey_data, 
+            kind="count", 
+            order=category_order)
+
+# Show plot
+plt.show()
 ```
 
 ## Changing the scale
