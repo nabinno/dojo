@@ -366,14 +366,22 @@ sns.catplot(x="Gender", y="Age",
 plt.show()
 ```
 
-## Adding titles and labels: Part 1
-```python
-
-```
-
 ## FacetGrids vs. AxesSubplots
 ```python
+# Create scatter plot
+g = sns.relplot(x="weight", 
+                y="horsepower", 
+                data=mpg,
+                kind="scatter")
 
+# Identify plot type
+type_of_g = type(g)
+
+# Print type
+print(type_of_g)
+
+# <script.py> output:
+#     <class 'seaborn.axisgrid.FacetGrid'>
 ```
 
 ## Adding a title to a FacetGrid object
