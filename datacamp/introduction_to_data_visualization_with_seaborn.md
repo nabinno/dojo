@@ -386,7 +386,17 @@ print(type_of_g)
 
 ## Adding a title to a FacetGrid object
 ```python
+# Create scatter plot
+g = sns.relplot(x="weight", 
+                y="horsepower", 
+                data=mpg,
+                kind="scatter")
 
+# Add a title "Car Weight vs. Horsepower"
+g.fig.suptitle("Car Weight vs. Horsepower")
+
+# Show plot
+plt.show()
 ```
 
 ## Adding titles and labels: Part 2
