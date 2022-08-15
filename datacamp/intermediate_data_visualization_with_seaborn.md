@@ -5,19 +5,15 @@ url: https://campus.datacamp.com/courses/intermediate-data-visualization-with-se
 ---
 
 # 1. Seaborn Introduction
-## Introduction to Seaborn
-```python
-
-```
-
-## Seaborn foundation
-```python
-
-```
-
 ## Reading a csv file
 ```python
+# import all modules
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
 
+# Read in the DataFrame
+df = pd.read_csv(grant_file)
 ```
 
 ## Comparing a histogram and displot
