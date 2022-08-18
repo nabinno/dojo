@@ -57,16 +57,6 @@ sns.displot(df['Award_Amount'],
 plt.show()
 ```
 
-## Interpreting the results
-```python
-
-```
-
-## Regression Plots in Seaborn
-```python
-
-```
-
 ## Create a regression plot
 ```python
 
