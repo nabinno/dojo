@@ -121,7 +121,17 @@ plt.clf()
 
 ## Comparing styles
 ```python
+##
+sns.set_style("dark")
+sns.displot(df["fmr_2"])
+plt.show()
+plt.clf()
 
+##
+sns.set_style("whitegrid")
+sns.displot(df["fmr_2"])
+plt.show()
+plt.clf()
 ```
 
 ## Removing spines
