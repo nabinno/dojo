@@ -65,14 +65,10 @@ ax.set_title("Weather patterns in Austin and Seattle")
 plt.show()
 ```
 
-## Small multiples
-```python
-
-```
-
 ## Creating a grid of subplots
 ```python
-
+fig, ax = plt.subplots(3, 2)
+plt.show()
 ```
 
 ## Creating small multiples with plt.subplots
