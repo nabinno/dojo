@@ -112,14 +112,13 @@ plt.show()
 
 
 # 2. Plotting time-series
-## Plotting time-series data
-```python
-
-```
-
 ## Read data with a time index
 ```python
+# Import pandas as pd
+import pandas as pd
 
+# Read the data from file using read_csv
+climate_change = pd.read_csv("climate_change.csv", parse_dates=["date"], index_col="date")
 ```
 
 ## Plot time-series data
