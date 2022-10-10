@@ -348,12 +348,18 @@ plt.show()
 
 ## Creating boxplots
 ```python
+fig, ax = plt.subplots()
 
-```
+# Add a boxplot for the "Height" column in the DataFrames
+ax.boxplot([mens_rowing["Height"], mens_gymnastics["Height"]])
 
-## Quantitative comparisons: scatter plots
-```python
+# Add x-axis tick labels:
+ax.set_xticklabels(["Rowing", "Gymnastics"])
 
+# Add a y-axis label
+ax.set_ylabel("Height (cm)")
+
+plt.show()
 ```
 
 ## Simple scatter plot
