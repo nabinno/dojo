@@ -398,19 +398,21 @@ plt.show()
 
 
 # 4. Sharing visualizations with others
-## Preparing your figures to share with others
-```python
-
-```
-
-## Selecting a style for printing
-```python
-
-```
-
 ## Switching between styles
 ```python
+##
+# Use the "ggplot" style and create new Figure/Axes
+plt.style.use("ggplot")
+fig, ax = plt.subplots()
+ax.plot(seattle_weather["MONTH"], seattle_weather["MLY-TAVG-NORMAL"])
+plt.show()
 
+##
+# Use the "Solarize_Light2" style and create new Figure/Axes
+plt.style.use("Solarize_Light2")
+fig, ax = plt.subplots()
+ax.plot(austin_weather["MONTH"], austin_weather["MLY-TAVG-NORMAL"])
+plt.show()
 ```
 
 ## Saving your visualizations
