@@ -443,14 +443,16 @@ fig.set_size_inches([5, 3])
 fig.savefig('figure_5_3.png')
 ```
 
-## Automating figures from data
-```python
-
-```
-
 ## Unique values of a column
 ```python
+# Extract the "Sport" column
+sports_column = summer_2016_medals["Sport"]
 
+# Find the unique values of the "Sport" column
+sports = sports_column.unique()
+
+# Print out the unique sports values
+print(sports)
 ```
 
 ## Automate your visualization
