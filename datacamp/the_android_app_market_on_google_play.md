@@ -42,7 +42,16 @@ print(apps.info())
 
 # 3. Correcting data types
 ```python
+import numpy as np
 
+# Convert Installs to float data type
+apps["Installs"] = apps["Installs"].astype(float)
+
+# Convert Price to float data type
+apps["Price"] = apps["Price"].astype(float)
+
+# Checking dtypes of the apps dataframe
+print(apps.info())
 ```
 
 
