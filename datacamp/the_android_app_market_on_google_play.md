@@ -82,7 +82,27 @@ plotly.offline.iplot(data)
 
 # 5. Distribution of app ratings
 ```python
+# Average rating of apps
+avg_app_rating = apps["Rating"].mean()
+print('Average app rating = ', avg_app_rating)
 
+# Distribution of apps according to their ratings
+data = [go.Histogram(
+        x = apps['Rating']
+)]
+
+# Vertical dashed line to indicate the average app rating
+layout = {'shapes': [{
+              'type' :'line',
+              'x0': avg_app_rating,
+              'y0': 0,
+              'x1': avg_app_rating,
+              'y1': 1000,
+              'line': { 'dash': 'dashdot'}
+          }]
+          }
+
+plotly.offline.iplot({'data': data, 'layout': layout})
 ```
 
 
