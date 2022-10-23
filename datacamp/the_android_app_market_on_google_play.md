@@ -57,7 +57,26 @@ print(apps.info())
 
 # 4. Exploring app categories
 ```python
+import plotly
+plotly.offline.init_notebook_mode(connected=True)
+import plotly.graph_objs as go
 
+# Print the total number of unique categories
+num_categories = len(apps["Category"].unique())
+print('Number of categories = ', num_categories)
+
+# Count the number of apps in each 'Category'. 
+num_apps_in_category = apps["Category"].value_counts()
+
+# Sort num_apps_in_category in descending order based on the count of apps in each category
+sorted_num_apps_in_category = num_apps_in_category.sort_values(ascending=False)
+
+data = [go.Bar(
+        x = num_apps_in_category.index, # index = category name
+        y = num_apps_in_category.values, # value = count
+)]
+
+plotly.offline.iplot(data)
 ```
 
 
