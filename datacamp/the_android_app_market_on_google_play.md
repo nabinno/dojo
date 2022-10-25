@@ -108,13 +108,47 @@ plotly.offline.iplot({'data': data, 'layout': layout})
 
 # 6. Size and price of an app
 ```python
+%matplotlib inline
+import seaborn as sns
+sns.set_style("darkgrid")
+import warnings
+warnings.filterwarnings("ignore")
 
+# Select rows where both 'Rating' and 'Size' values are present (ie. the two values are not null)
+apps_with_size_and_rating_present = apps[(~apps['Rating'].isnull()) & (~apps['Size'].isnull())]
+
+# Subset for categories with at least 250 apps
+large_categories = apps_with_size_and_rating_present.groupby(['Category']).filter(lambda x: len(x) >= 250)
+
+# Plot size vs. rating
+plt1 = sns.jointplot(x = large_categories['Size'], y = large_categories['Rating'])
+
+# Select apps whose 'Type' is 'Paid'
+paid_apps = apps_with_size_and_rating_present[apps_with_size_and_rating_present['Type'] == 'Paid']
+
+# Plot price vs. rating
+plt2 = sns.jointplot(x = paid_apps['Price'], y = paid_apps['Rating'])
 ```
 
 
 # 7. Relation between app category and app price
 ```python
+import matplotlib.pyplot as plt
+fig, ax = plt.subplots()
+fig.set_size_inches(15, 8)
 
+# Select a few popular app categories
+popular_app_cats = apps[apps.Category.isin(['GAME', 'FAMILY', 'PHOTOGRAPHY',
+                                            'MEDICAL', 'TOOLS', 'FINANCE',
+                                            'LIFESTYLE','BUSINESS'])]
+
+# Examine the price trend by plotting Price vs Category
+ax = sns.stripplot(x = popular_app_cats["Price"], y = popular_app_cats["Category"], jitter=True, linewidth=1)
+ax.set_title('App pricing trend across categories')
+
+# Apps whose Price is greater than 200
+apps_above_200 = popular_app_cats[popular_app_cats["Price"] > 200]
+apps_above_200[['Category', 'App', 'Price']]
 ```
 
 
