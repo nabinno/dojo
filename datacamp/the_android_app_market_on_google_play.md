@@ -154,7 +154,15 @@ apps_above_200[['Category', 'App', 'Price']]
 
 # 8. Filter out "junk" apps
 ```python
+# Select apps priced below $100
+apps_under_100 = popular_app_cats[popular_app_cats['Price'] < 100]
 
+fig, ax = plt.subplots()
+fig.set_size_inches(15, 8)
+
+# Examine price vs category with the authentic apps (apps_under_100)
+ax = sns.stripplot(x = 'Price', y = 'Category', data = apps_under_100, jitter = True, linewidth = 1)
+ax.set_title('App pricing trend across categories after filtering for junk apps')
 ```
 
 
