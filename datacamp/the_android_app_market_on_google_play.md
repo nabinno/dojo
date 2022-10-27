@@ -168,7 +168,28 @@ ax.set_title('App pricing trend across categories after filtering for junk apps'
 
 # 9. Popularity of paid apps vs free apps
 ```python
+trace0 = go.Box(
+    # Data for paid apps
+    y = apps[apps['Type'] == 'Paid']['Installs'],
+    name = 'Paid'
+)
 
+trace1 = go.Box(
+    # Data for free apps
+    y = apps[apps['Type'] == 'Free']['Installs'],
+    name = 'Free'
+)
+
+layout = go.Layout(
+    title = "Number of downloads of paid apps vs. free apps",
+    yaxis = dict(title = "Log number of downloads",
+                type = 'log',
+                autorange = True)
+)
+
+# Add trace0 and trace1 to a list for plotting
+data = [trace0, trace1]
+plotly.offline.iplot({'data': data, 'layout': layout})
 ```
 
 
