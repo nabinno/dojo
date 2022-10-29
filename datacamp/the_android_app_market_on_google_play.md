@@ -195,7 +195,22 @@ plotly.offline.iplot({'data': data, 'layout': layout})
 
 # 10. Sentiment analysis of user reviews
 ```python
+# Load user_reviews.csv
+reviews_df = pd.read_csv('datasets/user_reviews.csv')
 
+# Join the two dataframes
+merged_df = pd.merge(apps, reviews_df)
+
+# Drop NA values from Sentiment and Review columns
+merged_df = merged_df.dropna(subset = ['Sentiment', 'Review'])
+
+sns.set_style('ticks')
+fig, ax = plt.subplots()
+fig.set_size_inches(11, 8)
+
+# User review sentiment polarity for paid vs. free apps
+ax = sns.boxplot(x = merged_df['Type'], y = merged_df['Sentiment_Polarity'], data = merged_df)
+ax.set_title('Sentiment Polarity Distribution')
 ```
 
 
