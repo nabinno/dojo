@@ -6,7 +6,13 @@ url: https://app.datacamp.com/learn/projects/163
 
 # 1. Scala's real-world project repository data
 ```python
+# Importing pandas
+import pandas as pd
 
+# Loading in the data
+pulls_one = pd.read_csv('datasets/pulls_2011-2013.csv')
+pulls_two = pd.read_csv('datasets/pulls_2014-2018.csv')
+pull_files = pd.read_csv('datasets/pull_files.csv')
 ```
 
 
