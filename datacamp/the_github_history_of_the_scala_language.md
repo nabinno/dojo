@@ -18,7 +18,11 @@ pull_files = pd.read_csv('datasets/pull_files.csv')
 
 # 2. Preparing and cleaning the data
 ```python
+# Append pulls_one to pulls_two
+pulls = pulls_one.append(pulls_two)
 
+# Convert the date for the pulls object
+pulls['date'] = pd.to_datetime(pulls['date'], utc=True)
 ```
 
 
