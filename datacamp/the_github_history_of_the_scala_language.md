@@ -28,7 +28,8 @@ pulls['date'] = pd.to_datetime(pulls['date'], utc=True)
 
 # 3. Merging the DataFrames
 ```python
-
+# Merge the two DataFrames
+data = pd.merge(pulls, pull_files)
 ```
 
 
