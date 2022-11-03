@@ -35,7 +35,19 @@ data = pd.merge(pulls, pull_files)
 
 # 4. Is the project still actively maintained?
 ```python
+%matplotlib inline
 
+# Create a column that will store the month
+data['month'] = data['date'].dt.month
+
+# Create a column that will store the year
+data['year'] = data['date'].dt.year
+
+# Group by the month and year and count the pull requests
+counts = data.groupby(['year', 'month'])['pid'].count()
+
+# Plot the results
+counts.plot(kind='bar', figsize = (12,4))
 ```
 
 
