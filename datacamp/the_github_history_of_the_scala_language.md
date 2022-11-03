@@ -53,7 +53,14 @@ counts.plot(kind='bar', figsize = (12,4))
 
 # 5. Is there camaraderie in the project?
 ```python
+# Required for matplotlib
+%matplotlib inline
 
+# Group by the submitter
+by_user = data.groupby('user').agg({'date': 'max'})
+
+# Plot the histogram
+by_user.hist()
 ```
 
 
