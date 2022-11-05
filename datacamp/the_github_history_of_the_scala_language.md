@@ -66,7 +66,18 @@ by_user.hist()
 
 # 6. What files were changed in the last ten pull requests?
 ```python
+# Identify the last 10 pull requests
+last_10 = pulls.sort_values(by = 'date').tail(10)
+last_10
 
+# Join the two data sets
+joined_pr = pull_files.merge(last_10, on='pid')
+
+# Identify the unique files
+files = set(joined_pr['file'])
+
+# Print the results
+files
 ```
 
 
