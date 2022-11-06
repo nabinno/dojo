@@ -99,7 +99,19 @@ author_counts = file_pr.groupby('user').count()
 
 # 8. Who made the last ten pull requests on a given file?
 ``python`
+file = 'src/compiler/scala/reflect/reify/phases/Calculate.scala'
 
+# Select the pull requests that changed the target file
+file_pr = pull_files[pull_files['file'] == file]
+
+# Merge the obtained results with the pulls DataFrame
+joined_pr = pulls.merge(file_pr, on='pid')
+
+# Find the users of the last 10 most recent pull requests
+users_last_10 = set(joined_pr.nlargest(10, 'date')['user'])
+
+# Printing the results
+users_last_10
 ```
 
 
