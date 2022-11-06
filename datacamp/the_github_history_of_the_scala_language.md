@@ -83,7 +83,17 @@ files
 
 # 7. Who made the most pull requests to a given file?
 ``python`
+# This is the file we are interested in:
+file = 'src/compiler/scala/reflect/reify/phases/Calculate.scala'
 
+# Identify the commits that changed the file
+file_pr = pull_files.merge(pulls)[pull_files.merge(pulls)['file'] == file]
+
+# Count the number of changes made by each developer
+author_counts = file_pr.groupby('user').count()
+
+# Print the top 3 developers
+# ... YOUR CODE FOR TASK 7 ...
 ```
 
 
