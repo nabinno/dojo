@@ -117,7 +117,22 @@ users_last_10
 
 # 9. The pull requests of two special developers
 ``python`
+%matplotlib inline
 
+# The developers we are interested in
+authors = ['xeno-by', 'soc']
+
+# Get all the developers' pull requests
+by_author = pulls[pulls['user'].isin(authors)]
+
+# Count the number of pull requests submitted each year
+counts = by_author.groupby([by_author['user'], by_author['date'].dt.year]).agg({'pid': 'count'}).reset_index()
+
+# Convert the table to a wide format
+counts_wide = counts.pivot_table(index='date', columns='user', values='pid', fill_value=0)
+
+# Plot the results
+counts_wide.plot(kind='bar')
 ```
 
 
