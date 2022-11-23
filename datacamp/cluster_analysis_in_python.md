@@ -196,14 +196,16 @@ sns.scatterplot(x='x_scaled',
 plt.show()
 ```
 
-## How many clusters?
-```python
-
-```
-
 ## Create a dendrogram
 ```python
+# Import the dendrogram function
+from scipy.cluster.hierarchy import dendrogram
 
+# Create a dendrogram
+dn = dendrogram(distance_matrix)
+
+# Display the dendogram
+plt.show()
 ```
 
 ## How many clusters in comic con data?
