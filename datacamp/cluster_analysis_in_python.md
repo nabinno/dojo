@@ -210,7 +210,8 @@ plt.show()
 
 ## How many clusters in comic con data?
 ```python
-
+dn
+plt.show()
 ```
 
 ## Limitations of hierarchical clustering
