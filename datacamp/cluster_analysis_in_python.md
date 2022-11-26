@@ -214,14 +214,9 @@ dn
 plt.show()
 ```
 
-## Limitations of hierarchical clustering
-```python
-
-```
-
 ## Timing run of hierarchical clustering
 ```python
-
+%timeit linkage(comic_con[['x_scaled', 'y_scaled']], method = 'ward', metric = 'euclidean')
 ```
 
 ## FIFA 18: exploring defenders
