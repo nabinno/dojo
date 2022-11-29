@@ -258,7 +258,8 @@ plt.show()
 
 ## Runtime of k-means clustering
 ```python
-
+In [2]: %timeit kmeans(fifa[['scaled_sliding_tackle', 'scaled_aggression']], 2)
+56.7 ms +- 7.62 ms per loop (mean +- std. dev. of 7 runs, 10 loops each)
 ```
 
 ## How many clusters?
