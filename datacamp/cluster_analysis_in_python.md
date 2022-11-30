@@ -262,14 +262,23 @@ In [2]: %timeit kmeans(fifa[['scaled_sliding_tackle', 'scaled_aggression']], 2)
 56.7 ms +- 7.62 ms per loop (mean +- std. dev. of 7 runs, 10 loops each)
 ```
 
-## How many clusters?
-```python
-
-```
-
 ## Elbow method on distinct clusters
 ```python
+distortions = []
+num_clusters = range(1, 7)
 
+# Create a list of distortions from the kmeans function
+for i in num_clusters:
+    cluster_centers, distortion = kmeans(comic_con[['x_scaled', 'y_scaled']], i)
+    distortions.append(distortion)
+
+# Create a DataFrame with two lists - num_clusters, distortions
+elbow_plot = pd.DataFrame({'num_clusters': num_clusters, 'distortions': distortions})
+
+# Creat a line plot of num_clusters and distortions
+sns.lineplot(x='num_clusters', y='distortions', data = elbow_plot)
+plt.xticks(num_clusters)
+plt.show()
 ```
 
 ## Elbow method on uniform data
