@@ -281,11 +281,6 @@ plt.xticks(num_clusters)
 plt.show()
 ```
 
-## Elbow method on uniform data
-```python
-
-```
-
 ## Limitations of k-means clustering
 ```python
 
