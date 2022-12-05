@@ -356,14 +356,21 @@ plt.show()
 
 
 # 4. Clustering in Real World
-## Dominant colors in images
-```python
-
-```
-
 ## Extract RGB values from image
 ```python
+# Import image class of matplotlib
+import matplotlib.image as img
 
+# Read batman image and print dimensions
+batman_image = img.imread('batman.jpg')
+print(batman_image.shape)
+
+# Store RGB values of all pixels in lists r, g and b
+for rgbs in batman_image:
+    for temp_r, temp_g, temp_b in rgbs:
+        r.append(temp_r)
+        g.append(temp_g)
+        b.append(temp_b)
 ```
 
 ## How many dominant colors?
