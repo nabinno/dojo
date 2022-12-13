@@ -20,7 +20,15 @@ nobel.head(n=6)
 
 # 2. So, who gets the Nobel Prize?
 ```python
+# Display the number of (possibly shared) Nobel Prizes handed
+# out between 1901 and 2016
+display(len(nobel))
 
+# Display the number of prizes won by male and female recipients.
+display(nobel['sex'].value_counts())
+
+# Display the number of prizes won by the top 10 nationalities.
+nobel['birth_country'].value_counts().head(10)
 ```
 
 
