@@ -34,7 +34,13 @@ nobel['birth_country'].value_counts().head(10)
 
 # 3. USA dominance
 ```python
+# Calculating the proportion of USA born winners per decade
+nobel['usa_born_winner'] = nobel['birth_country'] == "United States of America"
+nobel['decade'] = (np.floor(nobel['year'] / 10) * 10).astype(int)
+prop_usa_winners = nobel.groupby('decade', as_index=False)['usa_born_winner'].mean()
 
+# Display the proportions of USA born winners per decade
+display(prop_usa_winners)
 ```
 
 
