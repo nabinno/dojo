@@ -46,7 +46,18 @@ display(prop_usa_winners)
 
 # 4. USA dominance, visualized
 ```python
+# Setting the plotting theme
+sns.set()
+# and setting the size of all plots.
+import matplotlib.pyplot as plt
+plt.rcParams['figure.figsize'] = [11, 7]
 
+# Plotting USA born winners 
+ax = sns.lineplot(data=prop_usa_winners, x='decade', y='usa_born_winner')
+
+# Adding %-formatting to the y-axis
+from matplotlib.ticker import PercentFormatter
+ax.yaxis.set_major_formatter(PercentFormatter(1.0))
 ```
 
 
