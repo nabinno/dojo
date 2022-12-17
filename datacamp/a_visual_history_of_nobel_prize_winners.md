@@ -63,7 +63,13 @@ ax.yaxis.set_major_formatter(PercentFormatter(1.0))
 
 # 5. What is the gender of a typical Nobel Prize winner?
 ```python
+# Calculating the proportion of female laureates per decade
+nobel['female_winner'] = nobel['sex'] == "Female"
+prop_female_winners = nobel.groupby(['decade', 'category'], as_index=False)['female_winner'].mean()
 
+# Plotting USA born winners with % winners on the y-axis
+ax = sns.lineplot(x='decade', y='female_winner', hue='category', data=prop_female_winners)
+ax.yaxis.set_major_formatter(PercentFormatter(1.0))
 ```
 
 
