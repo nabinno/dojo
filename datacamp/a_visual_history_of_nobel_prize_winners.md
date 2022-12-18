@@ -82,7 +82,8 @@ nobel[nobel.sex == 'Female'].nsmallest(1, 'year')
 
 # 7. Repeat laureates
 ```python
-
+# Selecting the laureates that have received 2 or more prizes.
+nobel.groupby('full_name').filter(lambda x: len(x) >= 2)
 ```
 
 
