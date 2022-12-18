@@ -75,7 +75,8 @@ ax.yaxis.set_major_formatter(PercentFormatter(1.0))
 
 # 6. The first woman to win the Nobel Prize
 ```python
-
+# Picking out the first woman to win a Nobel Prize
+nobel[nobel.sex == 'Female'].nsmallest(1, 'year')
 ```
 
 
