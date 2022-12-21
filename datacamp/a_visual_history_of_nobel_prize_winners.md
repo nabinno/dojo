@@ -109,7 +109,11 @@ sns.lmplot(data=nobel, x='year', y='age', row='category')
 
 # 10. Oldest and youngest winners
 ```python
+# The oldest winner of a Nobel Prize as of 2016
+display(nobel.nlargest(1, 'age'))
 
+# The youngest winner of a Nobel Prize as of 2016
+nobel.nsmallest(1, 'age')
 ```
 
 
