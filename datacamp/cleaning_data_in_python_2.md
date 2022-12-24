@@ -5,14 +5,20 @@ url: https://www.datacamp.com/courses/cleaning-data-in-python
 ---
 
 # 1. Common data problems
-## Data type constraints
-```python
-
-```
-
 ## Common data types
 ```python
+## Numeric data types
+Salary earned monthly
+Number of items bought in a basket
 
+## Text
+Shipping address of a customer
+First name
+City of residence
+
+## Dates
+Order date of a product
+Birthdates of clients
 ```
 
 ## Numeric data or ... ?
