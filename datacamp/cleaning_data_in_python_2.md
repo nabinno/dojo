@@ -85,19 +85,16 @@ ride_sharing.loc[ride_sharing['ride_dt'] > today, 'ride_dt'] = today
 print(ride_sharing['ride_dt'].max())
 ```
 
-## Uniqueness constraints
-```python
-
-```
-
-## How big is your subset?
-```python
-
-```
-
 ## Finding duplicates
 ```python
+# Find duplicates
+duplicates = ride_sharing.duplicated(subset = ['ride_id'], keep = False)
 
+# Sort your duplicated rides
+duplicated_rides = ride_sharing[duplicates].sort_values(['ride_id'])
+
+# Print relevant columns of duplicated_rides
+print(duplicated_rides[['ride_id','duration','user_birth_year']])
 ```
 
 ## Treating duplicates
