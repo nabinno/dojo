@@ -119,14 +119,18 @@ assert duplicated_rides.shape[0] == 0
 
 
 # 2. Text and categorical data problems
-## Membership constraints
-```python
-
-```
-
 ## Members only
 ```python
+## Membership Constraint
+A `has_loan` column with the value `12`.
+A `month` column with the value `14`.
+A `GPA` column containing a `Z-` grade.
+A `day_of_week` column with the value `Suntermonday`.
 
+## Other Constraint
+An `age` column with values above `130`.
+A `birthdate` column with values in the future.
+A `revenue` column represented as a string.
 ```
 
 ## Finding consistency
