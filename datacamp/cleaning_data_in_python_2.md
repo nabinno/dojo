@@ -158,14 +158,17 @@ print(airlines[cat_clean_rows])
 print(airlines[~cat_clean_rows])
 ```
 
-## Categorical variables
-```python
-
-```
-
 ## Categories of errors
 ```python
+## White spaces and inconsistency
+.str.lower()
+.str.upper()
+.str.strip()
 
+## Creating or remapping categories
+pandas.qcut()
+pandas.cut()
+.replace()
 ```
 
 ## Inconsistent categories
