@@ -279,7 +279,14 @@ print(banking['acct_year'])
 
 ## Cross field validation
 ```python
+## Cross field validation
+Row wise operations such as `.sum(axis = 1)`
+Confirming the Age provided by users by cross checking their birthdays.
 
+## Not cross field validation
+Making sure that a `revenue` column is a numeric column.
+The use of the `.astype()` method.
+Making sure a `subscription_date` column has no values set in the future.
 ```
 
 ## Cross field or no cross field?
