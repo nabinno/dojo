@@ -417,14 +417,16 @@ for cuisine in categories:
 print(restaurants['cuisine_type'].unique())
 ```
 
-## Generating pairs
-```python
-
-```
-
 ## To link or not to link?
 ```python
+## Record linkage
+Merging two basketball DataFrames, with columns `team_A`, `team_B`, and `time` and differently formatted team names between each DataFrame.
+Two customer DataFrames containing names and address, one with a unique identifier per customer, one without.
+Using an `address` column to join two DataFrames, with address in each DataFrame being formatted slightly defferently.
 
+## Regular joins
+Consolidating two DataFrames containing details on DataCamp courses, with each DataCamp course having its own unique identifier.
+Two basketball DataFrames with a common unique identifier per game.
 ```
 
 ## Pairs of restaurants
