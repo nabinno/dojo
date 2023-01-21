@@ -458,14 +458,10 @@ potential_matches = comp_cl.compute(pairs, restaurants, restaurants_new)
 print(potential_matches)
 ```
 
-## Linking DataFrames
-```python
-
-```
-
 ## Getting the right index
 ```python
-
+matches.index.get_level_values(0)
+matches.index.get_level_values('uid_1')
 ```
 
 ## Linking them together!
