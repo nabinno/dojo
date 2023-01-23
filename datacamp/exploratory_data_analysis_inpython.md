@@ -5,19 +5,19 @@ url: https://app.datacamp.com/learn/courses/exploratory-data-analysis-in-python
 ---
 
 # 1. Read, clean, and validate
-## DataFrames and Series
-```python
-
-```
-
-## Read the codebook
-```python
-
-```
-
 ## Exploring the NSFG data
 ```python
+# Display the number of rows and columns
+nsfg.shape
 
+# Display the names of the columns
+nsfg.columns
+
+# Select column birthwgt_oz1: ounces
+ounces = nsfg['birthwgt_oz1']
+
+# Print the first 5 elements of ounces
+print(ounces.head())
 ```
 
 ## Clean and Validate
