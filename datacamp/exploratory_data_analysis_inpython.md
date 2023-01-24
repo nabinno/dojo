@@ -20,19 +20,13 @@ ounces = nsfg['birthwgt_oz1']
 print(ounces.head())
 ```
 
-## Clean and Validate
-```python
-
-```
-
-## Validate a variable
-```python
-
-```
-
 ## Clean a variable
 ```python
+# Replace the value 8 with NaN
+nsfg['nbrnaliv'].replace([8], np.nan, inplace=True)
 
+# Print the values and their frequencies
+print(nsfg['nbrnaliv'].value_counts())
 ```
 
 ## Compute a variable
