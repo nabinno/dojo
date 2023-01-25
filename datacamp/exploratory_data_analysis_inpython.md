@@ -31,12 +31,15 @@ print(nsfg['nbrnaliv'].value_counts())
 
 ## Compute a variable
 ```python
+# Select the columns and divide by 100
+agecon = nsfg['agecon'] / 100
+agepreg = nsfg['agepreg'] / 100
 
-```
+# Compute the difference
+preg_length = agepreg - agecon
 
-## Filter and visualize
-```python
-
+# Compute summary statistics
+print(preg_length.describe())
 ```
 
 ## Make a histogram
