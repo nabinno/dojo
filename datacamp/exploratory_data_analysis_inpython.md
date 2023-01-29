@@ -87,17 +87,14 @@ print('Multiple full-term mean:', mult_full_term_weight.mean())
 
 
 
-
-
 # 2. Distributions
-## Probability mass functions
-```python
-
-```
-
 ## Make a PMF
 ```python
+# Compute the PMF for year
+pmf_year = Pmf(gss['year'], normalize=False)
 
+# Print the result
+print(pmf_year)
 ```
 
 ## Plot a PMF
