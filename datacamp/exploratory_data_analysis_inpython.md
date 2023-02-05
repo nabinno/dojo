@@ -160,7 +160,7 @@ plt.show()
 
 ## Distribution of education
 ```python
-
+gss[gss['educ'] <= 12].count() / gss['educ'].count()
 ```
 
 ## Extract education levels
