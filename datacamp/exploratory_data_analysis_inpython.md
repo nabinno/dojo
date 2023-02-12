@@ -253,19 +253,37 @@ plt.show()
 
 
 # 3. Relationships
-## Exploring relationships
-```python
-
-```
-
 ## PMF of age
 ```python
+# Extract AGE
+age = brfss['AGE']
 
+# Plot the PMF
+pmf_age = Pmf(age)
+pmf_age.bar()
+
+# Label the axes
+plt.xlabel('Age in years')
+plt.ylabel('PMF')
+plt.show()
 ```
 
 ## Scatter plot
 ```python
+# Select the first 1000 respondents
+brfss = brfss[:1000]
 
+# Extract age and weight
+age = brfss['AGE']
+weight = brfss['WTKG3']
+
+# Make a scatter plot
+plt.plot(age, weight, 'o', alpha=0.1)
+
+plt.xlabel('Age in years')
+plt.ylabel('Weight in kg')
+
+plt.show()
 ```
 
 ## Jittering
