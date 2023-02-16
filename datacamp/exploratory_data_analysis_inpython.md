@@ -322,7 +322,7 @@ plt.ylabel('Weight in kg')
 plt.show()
 ```
 
-## Income and height
+## Distribution of income
 ```python
 # Extract income
 income = brfss['INCOME2']
@@ -333,6 +333,21 @@ Pmf(income).bar()
 # Label the axes
 plt.xlabel('Income level')
 plt.ylabel('PMF')
+plt.show()
+```
+
+## Income and height
+```python
+# Drop rows with missing data
+data = brfss.dropna(subset=['INCOME2', 'HTM4'])
+
+# Make a violin plot
+sns.violinplot(x='INCOME2', y='HTM4', data=data, inner=None)
+
+# Remove unneeded lines and label axes
+sns.despine(left=True, bottom=True)
+plt.xlabel('Income level')
+plt.ylabel('Height in cm')
 plt.show()
 ```
 
