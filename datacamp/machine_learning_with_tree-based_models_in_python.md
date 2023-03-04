@@ -82,14 +82,18 @@ print(f'Accuracy achieved by using entropy: {accuracy_entropy:.3f}')
 print(f'Accuracy achieved by using the gini index: {accuracy_gini:.3f}')
 ```
 
-## Decision tree for regression
-```python
-
-```
-
 ## Train your first regression tree
 ```python
+# Import DecisionTreeRegressor from sklearn.tree
+from sklearn.tree import DecisionTreeRegressor
 
+# Instantiate dt
+dt = DecisionTreeRegressor(max_depth=8,
+             min_samples_leaf=0.13,
+            random_state=3)
+
+# Fit dt to the training set
+dt.fit(X_train, y_train)
 ```
 
 ## Evaluate the regression tree
