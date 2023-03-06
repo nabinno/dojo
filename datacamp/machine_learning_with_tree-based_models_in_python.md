@@ -134,21 +134,11 @@ print('Regression Tree test set RMSE: {:.2f}'.format(rmse_dt))
 
 
 
-
 # 2. The Bias-Variance Tradeoff
-## Generalization Error
-```python
-
-```
-
 ## Complexity, bias and variance
 ```python
-
-```
-
-## Overfitting and underfitting
-```python
-
+Complexity, bias and variance
+- As the complexity of f increases, the bias term decreases while the variance term increases.
 ```
 
 ## Diagnose bias and variance problems
