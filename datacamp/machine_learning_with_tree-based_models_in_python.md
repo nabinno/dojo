@@ -189,8 +189,17 @@ print('Train RMSE: {:.2f}'.format(RMSE_train))
 ```
 
 ## High bias or high variance?
-```python
+```
+## Problem
+dt suffers from high bias because RMSE_CV = RMSE_train and both scores are greater than baseline_RMSE.
 
+## IPython Shell
+In [2]: RMSE_train
+Out[2]: 5.15
+In [3]: RMSE_CV
+Out[3]: 5.14
+In [4]: baseline_RMSE
+Out[4]: 5.1
 ```
 
 ## Ensemble Learning
