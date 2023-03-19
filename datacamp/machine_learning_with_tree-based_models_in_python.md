@@ -289,14 +289,22 @@ acc_test = accuracy_score(y_test, y_pred)
 print('Test set accuracy of bc: {:.2f}'.format(acc_test)) 
 ```
 
-## Out of Bag Evaluation
-```python
-
-```
-
 ## Prepare the ground
 ```python
+# Import DecisionTreeClassifier
+from sklearn.tree import DecisionTreeClassifier
 
+# Import BaggingClassifier
+from sklearn.ensemble import BaggingClassifier
+
+# Instantiate dt
+dt = DecisionTreeClassifier(min_samples_leaf=8, random_state=1)
+
+# Instantiate bc
+bc = BaggingClassifier(base_estimator=dt,
+            n_estimators=50,
+            oob_score=True,
+            random_state=1)
 ```
 
 ## OOB Score vs Test Set Score
