@@ -325,14 +325,17 @@ acc_oob = bc.oob_score_
 print('Test set accuracy: {:.3f}, OOB accuracy: {:.3f}'.format(acc_test, acc_oob))
 ```
 
-## Random Forests (RF)
-```python
-
-```
-
 ## Train an RF regressor
 ```python
+# Import RandomForestRegressor
+from sklearn.ensemble import RandomForestRegressor
 
+# Instantiate rf
+rf = RandomForestRegressor(n_estimators=25,
+            random_state=2)
+            
+# Fit rf to the training set
+rf.fit(X_train, y_train)
 ```
 
 ## Evaluate the RF regressor
