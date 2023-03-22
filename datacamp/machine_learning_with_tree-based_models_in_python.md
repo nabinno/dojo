@@ -355,16 +355,23 @@ print('Test set RMSE of rf: {:.2f}'.format(rmse_test))
 
 ## Visualizing features importances
 ```python
+# Create a pd.Series of features importances
+importances = pd.Series(data=rf.feature_importances_,
+                        index= X_train.columns)
 
+# Sort importances
+importances_sorted = importances.sort_values()
+
+# Draw a horizontal barplot of importances_sorted
+importances_sorted.plot(kind='barh', color='lightgreen')
+plt.title('Features Importances')
+plt.show()
 ```
 
 
 
 
 # 4. Boosting
-0%
-Boosting refers to an ensemble method in which several models are trained sequentially with each model learning from the errors of its predecessors. In this chapter, you'll be introduced to the two boosting methods of AdaBoost and Gradient Boosting.
-
 ## Adaboost
 ```python
 
