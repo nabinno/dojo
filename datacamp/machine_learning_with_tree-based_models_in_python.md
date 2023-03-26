@@ -406,14 +406,15 @@ ada_roc_auc = roc_auc_score(y_test, y_pred_proba)
 print('ROC AUC score: {:.2f}'.format(ada_roc_auc))
 ```
 
-## Gradient Boosting (GB)
-```python
-
-```
-
 ## Define the GB regressor
 ```python
+# Import GradientBoostingRegressor
+from sklearn.ensemble import GradientBoostingRegressor
 
+# Instantiate gb
+gb = GradientBoostingRegressor(n_estimators=200,
+            max_depth=4,
+            random_state=2)
 ```
 
 ## Train the GB regressor
