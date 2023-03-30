@@ -465,9 +465,18 @@ y_pred = sgbr.predict(X_test)
 
 ## Evaluate the SGB regressor
 ```python
+# Import mean_squared_error as MSE
+from sklearn.metrics import mean_squared_error as MSE
 
+# Compute test set MSE
+mse_test = MSE(y_test, y_pred)
+
+# Compute test set RMSE
+rmse_test = mse_test**(1/2)
+
+# Print rmse_test
+print('Test set RMSE of sgbr: {:.3f}'.format(rmse_test))
 ```
-
 
 
 
