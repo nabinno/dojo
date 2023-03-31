@@ -480,15 +480,14 @@ print('Test set RMSE of sgbr: {:.3f}'.format(rmse_test))
 
 
 
-# 4. Model Tuning
-## Tuning a CART's Hyperparameters
-```python
-
-```
-
+# 5. Model Tuning
 ## Tree hyperparameters
 ```python
+# Instantiate a DecisionTreeClassifier 'dt'
+dt = DecisionTreeClassifier(random_state=SEED)
 
+# Print out dt's hyperparameters
+dt.get_params()
 ```
 
 ## Set the tree's hyperparameter grid
