@@ -530,19 +530,37 @@ test_roc_auc = roc_auc_score(y_test, y_pred_proba)
 print('Test set ROC AUC score: {:.3f}'.format(test_roc_auc))
 ```
 
-## Tuning a RF's Hyperparameters
-```python
-
-```
-
 ## Random forests hyperparameters
 ```python
-
+In [1]: rf.get_params()
+Out[1]:
+{'bootstrap': True,
+ 'ccp_alpha': 0.0,
+ 'criterion': 'squared_error',
+ 'max_depth': None,
+ 'max_features': 'auto',
+ 'max_leaf_nodes': None,
+ 'max_samples': None,
+ 'min_impurity_decrease': 0.0,
+ 'min_samples_leaf': 1,
+ 'min_samples_split': 2,
+ 'min_weight_fraction_leaf': 0.0,
+ 'n_estimators': 100,
+ 'n_jobs': -1,
+ 'oob_score': False,
+ 'random_state': 2,
+ 'verbose': 0,
+ 'warm_start': False}
 ```
 
 ## Set the hyperparameter grid of RF
 ```python
-
+# Define the dictionary 'params_rf'
+params_rf = {
+    'n_estimators': [100,350,500],
+    'max_features': ['log2','auto','sqrt'],
+    'min_samples_leaf': [2,10,30]
+}
 ```
 
 ## Search for the optimal forest
