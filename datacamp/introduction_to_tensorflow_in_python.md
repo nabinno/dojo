@@ -5,14 +5,19 @@ url: https://campus.datacamp.com/courses/introduction-to-tensorflow-in-python
 ---
 
 # 1. Introduction to TensorFlow
-## Constants and variables
-```python
-
-```
-
 ## Defining data as constants
 ```python
+# Import constant from TensorFlow
+from tensorflow import constant
 
+# Convert the credit_numpy array into a tensorflow constant
+credit_constant = constant(credit_numpy)
+
+# Print constant datatype
+print('\n The datatype is:', credit_constant.dtype)
+
+# Print constant shape
+print('\n The shape is:', credit_constant.shape)
 ```
 
 ## Defining variables
