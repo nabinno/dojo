@@ -71,7 +71,27 @@ print(error.numpy())
 
 ## Summing over tensor dimensions
 ```python
+import tensorflow as tf
 
+wealth = tf.constant([[11,50],[7,2],[4,60],[3,0],[25,10]])
+
+# The individual in the first row has the highest total wealth (i.e. stocks + bonds).
+total_wealth = tf.reduce_sum(wealth, axis=1)
+print(total_wealth.numpy()) # [61  9 64  3 35]
+print(total_wealth[0].numpy() > tf.reduce_max(total_wealth[1:]).numpy()) # False
+
+# Combined, the 5 individuals hold $50,000 in stocks.
+total_stocks = tf.reduce_sum(wealth[:,1])
+print(total_stocks.numpy()) # 122
+print(total_stocks.numpy() == 50) # False
+
+# Combined, the 5 individuals hold $50,000 in bonds.
+total_bonds = tf.reduce_sum(wealth[:,0])
+print(total_bonds.numpy()) # 50
+print(total_bonds.numpy() == 50) # True
+
+# The individual in the second row has the lowest total wealth (i.e. stocks + bonds).
+print(total_wealth[1].numpy() < tf.reduce_min(total_wealth).numpy()) # False
 ```
 
 ## Advanced operations
