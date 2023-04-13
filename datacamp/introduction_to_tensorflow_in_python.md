@@ -94,14 +94,13 @@ print(total_bonds.numpy() == 50) # True
 print(total_wealth[1].numpy() < tf.reduce_min(total_wealth).numpy()) # False
 ```
 
-## Advanced operations
-```python
-
-```
-
 ## Reshaping tensors
 ```python
+# Reshape the grayscale image tensor into a vector
+gray_vector = reshape(gray_tensor, (28*28, 1))
 
+# Reshape the color image tensor into a vector
+color_vector = reshape(color_tensor, (28*28*3, 1))
 ```
 
 ## Optimizing with gradients
