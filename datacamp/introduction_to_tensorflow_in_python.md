@@ -172,7 +172,25 @@ print(waterfront)
 
 ## Loss functions
 ```python
+##
+# Import the keras module from tensorflow
+from tensorflow import keras
 
+# Compute the mean absolute error (mae)
+loss = keras.losses.mse(price, predictions)
+
+# Print the mean absolute error (mae)
+print(loss.numpy())
+
+##
+# Import the keras module from tensorflow
+from tensorflow import keras
+
+# Compute the mean absolute error (mae)
+loss = keras.losses.mae(price, predictions)
+
+# Print the mean absolute error (mae)
+print(loss.numpy())
 ```
 
 ## Loss functions in TensorFlow
