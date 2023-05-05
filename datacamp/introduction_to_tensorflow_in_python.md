@@ -460,14 +460,19 @@ for j in range(100):
 print(x_1.numpy(), x_2.numpy())
 ```
 
-## Training a network in TensorFlow
-```python
-
-```
-
 ## Initialization in TensorFlow
 ```python
+# Define the layer 1 weights
+w1 = Variable(random.normal([23, 7]))
 
+# Initialize the layer 1 bias
+b1 = Variable(ones([7]))
+
+# Define the layer 2 weights
+w2 = Variable(random.normal([7, 1]))
+
+# Define the layer 2 bias
+b2 = Variable(ones([0, 0]))
 ```
 
 ## Defining the model and loss function
