@@ -565,14 +565,22 @@ model = keras.Model(inputs=[m1_inputs, m2_inputs], outputs=merged)
 print(model.summary())
 ```
 
-## Training and validation with Keras
-```python
-
-```
-
 ## Training with Keras
 ```python
+# Define a sequential model
+model = keras.Sequential()
 
+# Define a hidden layer
+model.add(keras.layers.Dense(16, activation='relu', input_shape=(784,)))
+
+# Define the output layer
+model.add(keras.layers.Dense(4, activation='softmax'))
+
+# Compile the model
+model.compile('SGD', loss='categorical_crossentropy')
+
+# Complete the fitting operation
+model.fit(sign_language_features, sign_language_labels, epochs=5)
 ```
 
 ## Metrics and validation with Keras
