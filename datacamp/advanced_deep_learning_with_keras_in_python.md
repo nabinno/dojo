@@ -56,7 +56,8 @@ model = Model(input_tensor, output_tensor)
 
 ## Compile a model
 ```python
-
+# Compile the model
+model.compile(optimizer='adam', loss='mean_absolute_error')
 ```
 
 ## Visualize a model
