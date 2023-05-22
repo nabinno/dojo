@@ -62,7 +62,20 @@ model.compile(optimizer='adam', loss='mean_absolute_error')
 
 ## Visualize a model
 ```python
+# Import the plotting function
+from tensorflow.keras.utils import plot_model
+import matplotlib.pyplot as plt
 
+# Summarize the model
+model.summary()
+
+# Plot the model
+plot_model(model, to_file='model.png')
+
+# Display the image
+data = plt.imread('model.png')
+plt.imshow(data)
+plt.show()
 ```
 
 ## Fit and evaluate a model
