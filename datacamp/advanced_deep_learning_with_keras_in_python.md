@@ -78,14 +78,14 @@ plt.imshow(data)
 plt.show()
 ```
 
-## Fit and evaluate a model
-```python
-
-```
-
 ## Fit the model to the tournament basketball data
 ```python
-
+# Now fit the model
+model.fit(games_tourney_train['seed_diff'], games_tourney_train['score_diff'],
+          epochs=1,
+          batch_size=128,
+          validation_split=0.1,
+          verbose=True)
 ```
 
 ## Evaluate the model on a test set
