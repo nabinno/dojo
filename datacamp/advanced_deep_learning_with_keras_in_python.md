@@ -366,7 +366,9 @@ model.fit(games_tourney_train[['home', 'seed_diff', 'pred']],
 
 ## Evaluate the model
 ```python
-
+# Evaluate the model on the games_tourney_test dataset
+print(model.evaluate(games_tourney_test[['home', 'seed_diff', 'prediction']],
+               games_tourney_test['score_diff'], verbose=False))
 ```
 
 
