@@ -375,14 +375,19 @@ print(model.evaluate(games_tourney_test[['home', 'seed_diff', 'prediction']],
 
 
 # 4. Multiple Outputs
-## Two-output models
-```python
-
-```
-
 ## Simple two-output model
 ```python
+# Define the input
+input_tensor = Input(shape=(2,))
 
+# Define the output
+output_tensor = Dense(2)(input_tensor)
+
+# Create a model
+model = Model(input_tensor, output_tensor)
+
+# Compile the model
+model.compile(optimizer='adam', loss='mean_absolute_error')
 ```
 
 ## Fit a model with two outputs
