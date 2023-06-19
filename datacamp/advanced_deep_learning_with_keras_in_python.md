@@ -415,14 +415,19 @@ print(games_tourney_train.mean())
 print(model.evaluate(games_tourney_test[['seed_diff', 'pred']], games_tourney_test[['score_1', 'score_2']], verbose=False))
 ```
 
-## Single model for classification and regression
-```python
-
-```
-
 ## Classification and regression in one model
 ```python
+# Create an input layer with 2 columns
+input_tensor = Input(shape=(2,))
 
+# Create the first output
+output_tensor_1 = Dense(1, activation='linear', use_bias=False)(input_tensor)
+
+# Create the second output (use the first output as input here)
+output_tensor_2 = Dense(1, activation='sigmoid', use_bias=False)(output_tensor_1)
+
+# Create a model with 2 outputs
+model = Model(input_tensor, [output_tensor_1, output_tensor_2])
 ```
 
 ## Compile and fit the model
