@@ -448,19 +448,30 @@ model.fit(games_tourney_train[['seed_diff', 'pred']],
 
 ## Inspect the model (II)
 ```python
+##
+# Print the model weights
+print(model.get_weights())
 
+# Print the training data means
+print(games_tourney_train.mean())
+
+##
+# Import the sigmoid function from scipy
+from scipy.special import expit as sigmoid
+
+# Weight from the model
+weight = 0.14
+
+# Print the approximate win probability predicted close game
+print(sigmoid(1 * weight))
+
+# Print the approximate win probability predicted blowout game
+print(sigmoid(10 * weight))
 ```
 
 ## Evaluate on new data with two metrics
 ```python
-
+# Evaluate the model on new data
+print(model.evaluate(games_tourney_test[['seed_diff', 'pred']],
+               [games_tourney_test[['score_diff']], games_tourney_test[['won']]], verbose=False))
 ```
-
-## Wrap-up
-```python
-
-```
-
-
-
-
