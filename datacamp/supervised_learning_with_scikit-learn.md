@@ -5,6 +5,36 @@ url: https://www.datacamp.com/courses/supervised-learning-with-scikit-learn
 ---
 
 # 1. Classification
+## Binary classification
+```python
+In [1]:
+churn_df.head()
+Out[1]:
+   account_length  total_day_charge  total_eve_charge  total_night_charge  total_intl_charge  customer_service_calls  churn
+0             101             45.85             17.65                9.64               1.22                       3      1
+1              73             22.30              9.05                9.98               2.75                       2      0
+2              86             24.62             17.53               11.49               3.13                       4      0
+3              59             34.73             21.02                9.66               3.24                       1      0
+4             129             27.42             18.75               10.11               2.59                       1      0
+
+In [2]:
+churn_df.info()
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 3333 entries, 0 to 3332
+Data columns (total 7 columns):
+ #   Column                  Non-Null Count  Dtype  
+---  ------                  --------------  -----  
+ 0   account_length          3333 non-null   int64  
+ 1   total_day_charge        3333 non-null   float64
+ 2   total_eve_charge        3333 non-null   float64
+ 3   total_night_charge      3333 non-null   float64
+ 4   total_intl_charge       3333 non-null   float64
+ 5   customer_service_calls  3333 non-null   int64  
+ 6   churn                   3333 non-null   int64  
+dtypes: float64(4), int64(3)
+memory usage: 182.4 KB
+```
+
 ## k-Nearest Neighbors: Fit
 ```python
 # Import KNeighborsClassifier from sklearn.neighbors
