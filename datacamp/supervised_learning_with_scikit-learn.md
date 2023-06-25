@@ -35,6 +35,14 @@ dtypes: float64(4), int64(3)
 memory usage: 182.4 KB
 ```
 
+## The supervised learning workflow
+```python
+from sklearn.module import Model
+model = Model()
+model.fit(X, y)
+model.predict(X_new)
+```
+
 ## k-Nearest Neighbors: Fit
 ```python
 # Import KNeighborsClassifier from sklearn.neighbors
