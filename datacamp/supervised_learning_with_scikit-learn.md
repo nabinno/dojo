@@ -76,6 +76,7 @@ knn.fit(X, y)
 
 ## k-Nearest Neighbors: Predict
 ```python
+##
 # Import KNeighborsClassifier from sklearn.neighbors
 from sklearn.neighbors import KNeighborsClassifier 
 
@@ -95,6 +96,13 @@ y_pred = knn.predict(X)
 # Predict and print the label for the new data point X_new
 new_prediction = knn.predict(X_new)
 print("Prediction: {}".format(new_prediction)) 
+
+##
+# Predict the labels for the X_new
+y_pred = knn.predict(X_new)
+
+# Print the predictions for X_new
+print("Predictions: {}".format(y_pred))
 ```
 
 ## The digits recognition dataset
