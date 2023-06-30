@@ -257,6 +257,23 @@ X = X.reshape(-1,1)
 print(X.shape, y.shape)
 ```
 
+## Building a linear regression model
+```python
+# Import LinearRegression
+from sklearn.linear_model import LinearRegression
+
+# Create the model
+reg = LinearRegression()
+
+# Fit the model to the data
+reg.fit(X, y)
+
+# Make predictions
+predictions = reg.predict(X)
+
+print(predictions[:5])
+```
+
 ## Importing data for supervised learning
 ```python
 # Import numpy and pandas
