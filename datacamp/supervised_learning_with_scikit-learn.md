@@ -401,6 +401,23 @@ rmse = np.sqrt(mean_squared_error(y_test, y_pred))
 print("Root Mean Squared Error: {}".format(rmse))
 ```
 
+## Cross-validation for R-squared
+```python
+# Import the necessary modules
+from sklearn.model_selection import KFold, cross_val_score
+
+# Create a KFold object
+kf = KFold(n_splits=6, shuffle=True, random_state=5)
+
+reg = LinearRegression()
+
+# Compute 6-fold cross-validation scores
+cv_scores = cross_val_score(reg, X, y, cv=kf)
+
+# Print scores
+print(cv_scores)
+```
+
 ## 5-fold cross-validation
 ```python
 # Import the necessary modules
