@@ -454,6 +454,18 @@ cvscores_10 = cross_val_score(reg, X, y, cv=10)
 print(np.mean(cvscores_10))
 ```
 
+## Analyzing cross-validation metrics
+```python
+# Print the mean
+print(np.mean(cv_results))
+
+# Print the standard deviation
+print(np.std(cv_results))
+
+# Print the 95% confidence interval
+print(np.quantile(cv_results, [0.025, 0.975]))
+```
+
 ## Regularization I: Lasso
 ```python
 # Import Lasso
