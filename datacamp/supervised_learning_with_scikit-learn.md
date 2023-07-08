@@ -468,6 +468,7 @@ print(np.quantile(cv_results, [0.025, 0.975]))
 
 ## Regularization I: Lasso
 ```python
+##
 # Import Lasso
 from sklearn.linear_model import Lasso
 
@@ -485,6 +486,23 @@ print(lasso_coef)
 plt.plot(range(len(df_columns)), lasso_coef)
 plt.xticks(range(len(df_columns)), df_columns.values, rotation=60)
 plt.margins(0.02)
+plt.show()
+
+##
+# Import Lasso
+from sklearn.linear_model import Lasso
+
+# Instantiate a lasso regression model
+lasso = Lasso(alpha=0.3)
+
+# Fit the model to the data
+lasso.fit(X, y)
+
+# Compute and print the coefficients
+lasso_coef = lasso.coef_
+print(lasso_coef)
+plt.bar(sales_columns, lasso_coef)
+plt.xticks(rotation=45)
 plt.show()
 ```
 
