@@ -604,6 +604,7 @@ print(classification_report(y_test, y_pred))
 
 ## Building a logistic regression model
 ```python
+##
 # Import the necessary modules
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix, classification_report
@@ -623,6 +624,21 @@ y_pred = logreg.predict(X_test)
 # Compute and print the confusion matrix and classification report
 print(confusion_matrix(y_test, y_pred))
 print(classification_report(y_test, y_pred))
+
+##
+# Import LogisticRegression
+from sklearn.linear_model import LogisticRegression
+
+# Instantiate the model
+logreg = LogisticRegression()
+
+# Fit the model
+logreg.fit(X_train, y_train)
+
+# Predict probabilities
+y_pred_probs = logreg.predict_proba(X_test)[:, 1]
+
+print(y_pred_probs[:10])
 ```
 
 ## Plotting an ROC curve
