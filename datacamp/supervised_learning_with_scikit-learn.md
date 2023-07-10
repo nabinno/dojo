@@ -641,8 +641,9 @@ y_pred_probs = logreg.predict_proba(X_test)[:, 1]
 print(y_pred_probs[:10])
 ```
 
-## Plotting an ROC curve
+## Plotting an ROC curve / Building a logistic regression model
 ```python
+##
 # Import necessary modules
 from sklearn.metrics import roc_curve
 
@@ -658,6 +659,22 @@ plt.plot(fpr, tpr)
 plt.xlabel('False Positive Rate')
 plt.ylabel('True Positive Rate')
 plt.title('ROC Curve')
+plt.show()
+
+##
+# Import roc_curve
+from sklearn.metrics import roc_curve
+
+# Generate ROC curve values: fpr, tpr, thresholds
+fpr, tpr, thresholds = roc_curve(y_test, y_pred_probs)
+
+plt.plot([0, 1], [0, 1], 'k--')
+
+# Plot tpr against fpr
+plt.plot(fpr, tpr)
+plt.xlabel('False Positive Rate')
+plt.ylabel('True Positive Rate')
+plt.title('ROC Curve for Diabetes Prediction')
 plt.show()
 ```
 
