@@ -676,6 +676,9 @@ plt.xlabel('False Positive Rate')
 plt.ylabel('True Positive Rate')
 plt.title('ROC Curve for Diabetes Prediction')
 plt.show()
+
+##
+The ROC curve is above the dotted line, so the model performs better than randomly guessing the class of each observation.
 ```
 
 ## AUC computation
