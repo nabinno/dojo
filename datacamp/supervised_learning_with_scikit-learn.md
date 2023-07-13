@@ -681,8 +681,9 @@ plt.show()
 The ROC curve is above the dotted line, so the model performs better than randomly guessing the class of each observation.
 ```
 
-## AUC computation
+## AUC computation / ROC AUC
 ```python
+##
 # Import necessary modules
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import cross_val_score
@@ -698,6 +699,19 @@ cv_auc = cross_val_score(logreg, X, y, scoring='roc_auc', cv=5)
 
 # Print list of AUC scores
 print("AUC scores computed using 5-fold cross-validation: {}".format(cv_auc))
+
+##
+# Import roc_auc_score
+from sklearn.metrics import roc_auc_score
+
+# Calculate roc_auc_score
+print(roc_auc_score(y_test, y_pred_probs))
+
+# Calculate the confusion matrix
+print(confusion_matrix(y_test, y_pred))
+
+# Calculate the classification report
+print(classification_report(y_test, y_pred))
 ```
 
 ## Hyperparameter tuning with GridSearchCV
