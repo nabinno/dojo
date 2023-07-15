@@ -716,6 +716,7 @@ print(classification_report(y_test, y_pred))
 
 ## Hyperparameter tuning with GridSearchCV
 ```python
+##
 # Import necessary modules
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GridSearchCV
@@ -736,6 +737,21 @@ logreg_cv.fit(X, y)
 # Print the tuned parameters and score
 print("Tuned Logistic Regression Parameters: {}".format(logreg_cv.best_params_)) 
 print("Best score is {}".format(logreg_cv.best_score_))
+
+##
+# Import GridSearchCV
+from sklearn.model_selection import GridSearchCV
+
+# Set up the parameter grid
+param_grid = {"alpha": np.linspace(1e-05, 1, 20)}
+
+# Instantiate lasso_cv
+lasso_cv = GridSearchCV(lasso, param_grid, cv=kf)
+
+# Fit to the training data
+lasso_cv.fit(X_train, y_train)
+print("Tuned lasso paramaters: {}".format(lasso_cv.best_params_))
+print("Tuned lasso score: {}".format(lasso_cv.best_score_))
 ```
 
 ## Hyperparameter tuning with RandomizedSearchCV
