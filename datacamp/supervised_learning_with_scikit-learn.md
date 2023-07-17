@@ -879,6 +879,7 @@ plt.show()
 
 ## Creating dummy variables
 ```python
+##
 # Create dummy variables: df_region
 df_region = pd.get_dummies(df)
 
@@ -890,6 +891,13 @@ df_region = pd.get_dummies(df, drop_first=True)
 
 # Print the new columns of df_region
 print(df_region.columns)
+
+##
+# Create music_dummies
+music_dummies = pd.get_dummies(music_df, drop_first=True)
+
+# Print the new DataFrame's shape
+print("Shape of music_dummies: {}".format(music_dummies.shape))
 ```
 
 ## Regression with categorical features
