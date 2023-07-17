@@ -902,6 +902,7 @@ print("Shape of music_dummies: {}".format(music_dummies.shape))
 
 ## Regression with categorical features
 ```python
+##
 # Import necessary modules
 from sklearn.model_selection import cross_val_score
 from sklearn.linear_model import Ridge
@@ -914,6 +915,22 @@ ridge_cv = cross_val_score(ridge, X, y, cv=5)
 
 # Print the cross-validated scores
 print(ridge_cv)
+
+##
+# Create X and y
+X = music_dummies.drop("popularity", axis=1).values
+y = music_dummies["popularity"].values
+
+# Instantiate a ridge model
+ridge = Ridge(alpha=0.2)
+
+# Perform cross-validation
+scores = cross_val_score(ridge, X, y, cv=kf, scoring="neg_mean_squared_error")
+
+# Calculate RMSE
+rmse = np.sqrt(-scores)
+print("Average RMSE: {}".format(np.mean(rmse)))
+print("Standard Deviation of the target array: {}".format(np.std(y)))
 ```
 
 ## Dropping missing data
