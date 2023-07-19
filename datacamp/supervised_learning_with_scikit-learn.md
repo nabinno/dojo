@@ -965,8 +965,9 @@ print(music_df.isna().sum().sort_values())
 print("Shape of the `music_df`: {}".format(music_df.shape))
 ```
 
-## Imputing missing data in a ML Pipeline I
+## Imputing missing data in a ML Pipeline I / Pipeline fro song genre prediction: I
 ```python
+##
 # Import the Imputer module
 from sklearn.preprocessing import Imputer
 from sklearn.svm import SVC
@@ -980,6 +981,21 @@ clf = SVC()
 # Setup the pipeline with the required steps: steps
 steps = [('imputation', imp),
         ('SVM', clf)]
+
+##
+# Import modules
+from sklearn.impute import SimpleImputer
+from sklearn.pipeline import Pipeline
+
+# Instantiate an imputer
+imputer = SimpleImputer()
+
+# Instantiate a knn model
+knn = KNeighborsClassifier(3)
+
+# Build steps for the pipeline
+steps = [("imputer", imputer), 
+         ("knn", knn)]
 ```
 
 ## Imputing missing data in a ML Pipeline II
