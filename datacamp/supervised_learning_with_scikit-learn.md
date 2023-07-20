@@ -998,8 +998,9 @@ steps = [("imputer", imputer),
          ("knn", knn)]
 ```
 
-## Imputing missing data in a ML Pipeline II
+## Imputing missing data in a ML Pipeline II / Pipeline for song genre prediction: II
 ```python
+##
 # Import necessary modules
 from sklearn.preprocessing import Imputer
 from sklearn.pipeline import Pipeline
@@ -1023,6 +1024,21 @@ y_pred = pipeline.predict(X_test)
 
 # Compute metrics
 print(classification_report(y_test, y_pred))
+##
+steps = [("imputer", imp_mean),
+        ("knn", knn)]
+
+# Create the pipeline
+pipeline = Pipeline(steps)
+
+# Fit the pipeline to the training data
+pipeline.fit(X_train, y_train)
+
+# Make predictions on the test set
+y_pred = pipeline.predict(X_test)
+
+# Print the confusion matrix
+print(confusion_matrix(y_test, y_pred))
 ```
 
 ## Centering and scaling your data
