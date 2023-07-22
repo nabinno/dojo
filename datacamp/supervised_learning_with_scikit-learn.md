@@ -1024,6 +1024,7 @@ y_pred = pipeline.predict(X_test)
 
 # Compute metrics
 print(classification_report(y_test, y_pred))
+
 ##
 steps = [("imputer", imp_mean),
         ("knn", knn)]
@@ -1041,8 +1042,9 @@ y_pred = pipeline.predict(X_test)
 print(confusion_matrix(y_test, y_pred))
 ```
 
-## Centering and scaling your data
+## Centering and scaling your data / Centering and scaling for regression
 ```python
+##
 # Import scale
 from sklearn.preprocessing import scale
 
@@ -1056,6 +1058,21 @@ print("Standard Deviation of Unscaled Features: {}".format(np.std(X)))
 # Print the mean and standard deviation of the scaled features
 print("Mean of Scaled Features: {}".format(np.mean(X_scaled))) 
 print("Standard Deviation of Scaled Features: {}".format(np.std(X_scaled)))
+
+##
+# Import StandardScaler
+from sklearn.preprocessing import StandardScaler
+
+# Create pipeline steps
+steps = [("scaler", StandardScaler()),
+         ("lasso", Lasso(alpha=0.5))]
+
+# Instantiate the pipeline
+pipeline = Pipeline(steps)
+pipeline.fit(X_train, y_train)
+
+# Calculate and print R-squared
+print(pipeline.score(X_test, y_test))
 ```
 
 ## Centering and scaling in a pipeline
