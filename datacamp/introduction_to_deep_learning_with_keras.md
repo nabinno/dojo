@@ -5,19 +5,16 @@ url: https://campus.datacamp.com/courses/introduction-to-deep-learning-with-kera
 ---
 
 # 1. Introducing Keras
-## What is Keras?
-```python
-
-```
-
 ## Describing Keras
 ```python
-
+False - Keras can work well on its own without using a backend, like TensorFlow.
+=> Keras is a wrapper around a backend library, so a backend like TensorFlow, Theano, CNTK, etc must be provided.
 ```
 
 ## Would you use deep learning?
 ```python
-
+Imagine you're building an app that allows you to take a picture of your clothes and then shows you a pair of shoes that would match well. This app needs a machine learning module that's in charge of identifying the type of clothes you are wearing, as well as their color and texture. Would you use deep learning to accomplish this task?
+=> I'd use deep learning since we are dealing with unstructured data and neural networks work well with images.
 ```
 
 ## Your first neural network
