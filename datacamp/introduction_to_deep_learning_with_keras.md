@@ -80,14 +80,20 @@ model.add(Dense(3, input_shape=(2,)))
 model.add(Dense(1))
 ```
 
-## Surviving a meteor strike
-```python
-
-```
-
 ## Specifying a model
 ```python
+# Instantiate a Sequential model
+model = Sequential()
 
+# Add a Dense layer with 50 neurons and an input of 1 neuron
+model.add(Dense(50, input_shape=(1,), activation='relu'))
+
+# Add two Dense layers with 50 neurons and relu activation
+model.add(Dense(50, activation='relu'))
+model.add(Dense(50, activation='relu'))
+
+# End your model with a Dense layer and no activation
+model.add(Dense(1))
 ```
 
 ## Training
