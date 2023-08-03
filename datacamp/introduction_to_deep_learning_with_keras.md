@@ -131,14 +131,22 @@ plot_orbit(eighty_min_orbit)
 
 
 # 2. Going Deeper
-## Binary classification
-```python
-
-```
-
 ## Exploring dollar bills
 ```python
+# Import seaborn
+import seaborn as sns
 
+# Use pairplot and set the hue to be our class column
+sns.pairplot(banknotes, hue='class') 
+
+# Show the plot
+plt.show()
+
+# Describe the data
+print('Dataset stats: \n', banknotes.describe())
+
+# Count the number of observations per class
+print('Observations per class: \n', banknotes['class'].value_counts())
 ```
 
 ## A binary classification model
