@@ -151,7 +151,21 @@ print('Observations per class: \n', banknotes['class'].value_counts())
 
 ## A binary classification model
 ```python
+# Import the sequential model and dense layer
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
 
+# Create a sequential model
+model = Sequential()
+
+# Add a dense layer 
+model.add(Dense(1, input_shape=(4,), activation='sigmoid'))
+
+# Compile your model
+model.compile(loss='binary_crossentropy', optimizer='sgd', metrics=['accuracy'])
+
+# Display a summary of your model
+model.summary()
 ```
 
 ## Is this dollar bill fake ?
