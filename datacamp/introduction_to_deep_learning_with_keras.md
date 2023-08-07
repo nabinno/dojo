@@ -201,7 +201,21 @@ model.compile(loss='categorical_crossentropy',
 
 ## Prepare your dataset
 ```python
+# Transform into a categorical variable
+darts.competitor = pd.Categorical(darts.competitor)
 
+# Assign a number to each category (label encoding)
+darts.competitor = darts.competitor.cat.codes 
+
+# Import to_categorical from keras utils module
+from tensorflow.keras.utils import to_categorical
+
+coordinates = darts.drop(['competitor'], axis=1)
+# Use to_categorical on your labels
+competitors = to_categorical(darts.competitor)
+
+# Now print the one-hot encoded labels
+print('One-hot encoded competitors: \n',competitors)
 ```
 
 ## Training on dart throwers
