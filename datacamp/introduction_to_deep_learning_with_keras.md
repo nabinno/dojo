@@ -220,7 +220,14 @@ print('One-hot encoded competitors: \n',competitors)
 
 ## Training on dart throwers
 ```python
+# Fit your model to the training data for 200 epochs
+model.fit(coord_train, competitors_train, epochs=200)
 
+# Evaluate your model accuracy on the test data
+accuracy = model.evaluate(coord_test, competitors_test)[1]
+
+# Print accuracy
+print('Accuracy:', accuracy)
 ```
 
 ## Softmax predictions
