@@ -337,14 +337,22 @@ h_callback = model.fit(X_train, y_train,
 
 
 # 3. 
-## Learning curves
-```python
-
-```
-
 ## Learning the digits
 ```python
+# Instantiate a Sequential model
+model = Sequential()
 
+# Input and hidden layer with input_shape, 16 neurons, and relu 
+model.add(Dense(16, input_shape = (64,), activation = 'relu'))
+
+# Output layer with 10 neurons (one per digit) and softmax
+model.add(Dense(10, activation = 'softmax'))
+
+# Compile your model
+model.compile(optimizer = 'adam', loss = 'categorical_crossentropy', metrics = ['accuracy'])
+
+# Test if your model is well assembled by predicting before training
+print(model.predict(X_train))
 ```
 
 ## Is the model overfitting?
