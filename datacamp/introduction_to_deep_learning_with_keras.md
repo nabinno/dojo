@@ -357,7 +357,12 @@ print(model.predict(X_train))
 
 ## Is the model overfitting?
 ```python
+##
+# Train your model for 60 epochs, using X_test and y_test as validation data
+h_callback = model.fit(X_train, y_train, epochs = 60, validation_data = (X_test, y_test), verbose=0)
 
+# Extract from the h_callback object loss and val_loss to plot the learning curve
+plot_loss(h_callback.history['loss'], h_callback.history['val_loss'])
 ```
 
 ## Do we need more data?
