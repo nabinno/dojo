@@ -383,14 +383,20 @@ for size in training_sizes:
 plot_results(train_accs, test_accs)
 ```
 
-## Activation functions
-```python
-
-```
-
 ## Different activation functions
 ```python
+# Activation functions to try
+activations = ['relu', 'leaky_relu', 'sigmoid', 'tanh']
 
+# Loop over the activation functions
+activation_results = {}
+
+for act in activations:
+  # Get a new model with the current activation
+  model = get_model(act_function=act)
+  # Fit the model and store the history results
+  h_callback = model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=20, verbose=0)
+  activation_results[act] = h_callback
 ```
 
 ## Comparing activation functions
