@@ -399,14 +399,21 @@ for act in activations:
   activation_results[act] = h_callback
 ```
 
-## Comparing activation functions
-```python
-
-```
-
 ## Comparing activation functions II
 ```python
+# Create a dataframe from val_loss_per_function
+val_loss= pd.DataFrame(val_loss_per_function)
 
+# Call plot on the dataframe
+val_loss.plot()
+plt.show()
+
+# Create a dataframe from val_acc_per_function
+val_acc = pd.DataFrame(val_acc_per_function)
+
+# Call plot on the dataframe
+val_acc.plot()
+plt.show()
 ```
 
 ## Batch size and batch normalization
