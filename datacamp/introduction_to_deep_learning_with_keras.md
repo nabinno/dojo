@@ -457,7 +457,14 @@ batchnorm_model.compile(optimizer='sgd', loss='categorical_crossentropy', metric
 
 ## Batch normalization effects
 ```python
+# Train your standard model, storing its history callback
+h1_callback = standard_model.fit(X_train, y_train, validation_data=(X_test,y_test), epochs=10, verbose=0)
 
+# Train the batch normalized model you recently built, store its history callback
+h2_callback = batchnorm_model.fit(X_train, y_train, validation_data=(X_test,y_test), epochs=10, verbose=0)
+
+# Call compare_histories_acc passing in both model histories
+compare_histories_acc(h1_callback, h2_callback)
 ```
 
 ## Hyperparameter tuning
