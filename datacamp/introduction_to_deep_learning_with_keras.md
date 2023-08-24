@@ -488,7 +488,21 @@ def create_model(learning_rate, activation):
 
 ## Tuning the model parameters
 ```python
+# Import KerasClassifier from tensorflow.keras scikit learn wrappers
+from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
 
+# Create a KerasClassifier
+model = KerasClassifier(build_fn = create_model)
+
+# Define the parameters to try out
+params = {'activation': ['relu', 'tanh'], 'batch_size': [32, 128, 256], 
+          'epochs': [50, 100, 200], 'learning_rate': [0.1, 0.01, 0.001]}
+
+# Create a randomize search cv object passing in the parameters to try
+random_search = RandomizedSearchCV(model, param_distributions = params, cv = KFold(3))
+
+# Running random_search.fit(X,y) would start the search,but it takes too long! 
+show_results()
 ```
 
 ## Training with cross-validation
