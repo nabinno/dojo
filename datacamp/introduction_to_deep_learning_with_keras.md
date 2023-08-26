@@ -507,7 +507,21 @@ show_results()
 
 ## Training with cross-validation
 ```python
+# Import KerasClassifier from tensorflow.keras wrappers
+from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
 
+# Create a KerasClassifier
+model = KerasClassifier(build_fn = create_model(learning_rate = 0.001, activation = 'relu'), epochs = 50, 
+             batch_size = 128, verbose = 0)
+
+# Calculate the accuracy score for each fold
+kfolds = cross_val_score(model, X, y, cv = 3)
+
+# Print the mean accuracy
+print('The mean accuracy was:', kfolds.mean())
+
+# Print the accuracy standard deviation
+print('With a standard deviation of:', kfolds.std())
 ```
 
 
