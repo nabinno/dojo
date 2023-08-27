@@ -547,7 +547,18 @@ print(inp_to_out([X_test]))
 
 ## Neural separation
 ```python
-
+for i in range(0, 21):
+  	# Train model for 1 epoch
+    h = model.fit(X_train, y_train, batch_size = 16, epochs = 1, verbose = 0)
+    if i%4==0: 
+      # Get the output of the first layer
+      layer_output = inp_to_out([X_test])[0]
+      
+      # Evaluate model accuracy for this epoch
+      test_accuracy = model.evaluate(X_test, y_test)[1] 
+      
+      # Plot 1st vs 2nd neuron output
+      plot()
 ```
 
 ## Building an autoencoder
