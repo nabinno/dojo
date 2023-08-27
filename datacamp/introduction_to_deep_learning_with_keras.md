@@ -526,16 +526,23 @@ print('With a standard deviation of:', kfolds.std())
 
 
 
-
 # 4. Advanced Model Architectures
-## Tensors, layers, and autoencoders
-```python
-
-```
-
 ## It's a flow of tensors
 ```python
+# Import tensorflow.keras backend
+import tensorflow.keras.backend as K
 
+# Input tensor from the 1st layer of the model
+inp = model.layers[0].input
+
+# Output tensor from the 1st layer of the model
+out = model.layers[0].output
+
+# Define a function from inputs to outputs
+inp_to_out = K.function([inp], [out])
+
+# Print the results of passing X_test through the 1st layer
+print(inp_to_out([X_test]))
 ```
 
 ## Neural separation
