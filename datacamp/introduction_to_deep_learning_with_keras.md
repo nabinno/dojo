@@ -563,7 +563,20 @@ for i in range(0, 21):
 
 ## Building an autoencoder
 ```python
+# Start with a sequential model
+autoencoder = Sequential()
 
+# Add a dense layer with input the original image pixels and neurons the encoded representation
+autoencoder.add(Dense(32, input_shape=(784, ), activation="relu"))
+
+# Add an output layer with as many neurons as the orginal image pixels
+autoencoder.add(Dense(784, activation = "sigmoid"))
+
+# Compile your model with adadelta
+autoencoder.compile(optimizer = 'adadelta', loss = 'binary_crossentropy')
+
+# Summarize your model structure
+autoencoder.summary()
 ```
 
 ## De-noising like an autoencoder
