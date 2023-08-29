@@ -581,7 +581,19 @@ autoencoder.summary()
 
 ## De-noising like an autoencoder
 ```python
+# Build your encoder by using the first layer of your autoencoder
+encoder = Sequential()
+encoder.add(autoencoder.layers[0])
 
+# Encode the noisy images and show the encodings for your favorite number [0-9]
+encodings = encoder.predict(X_test_noise)
+show_encodings(encodings, number = 1)
+
+# Predict on the noisy images with your autoencoder
+decoded_imgs = autoencoder.predict(X_test_noise)
+
+# Plot noisy vs decoded images
+compare_plot(X_test_noise, decoded_imgs)
 ```
 
 ## Intro to CNNs
