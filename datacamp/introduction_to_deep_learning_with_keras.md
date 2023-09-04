@@ -665,14 +665,23 @@ preds = model.predict(img_ready)
 print('Predicted:', decode_predictions(preds, top=3)[0])
 ```
 
-## Intro to LSTMs
-```python
-
-```
-
 ## Text prediction with LSTMs
 ```python
+# Split text into an array of words 
+words = text.split()
 
+# Make sentences of 4 words each, moving one word at a time
+sentences = []
+for i in range(4, len(words)):
+  sentences.append(' '.join(words[i-4:i]))
+
+# Instantiate a Tokenizer, then fit it on the sentences
+tokenizer = Tokenizer()
+tokenizer.fit_on_texts(sentences)
+
+# Turn sentences into a sequence of numbers
+sequences = tokenizer.texts_to_sequences(sentences)
+print("Sentences: \n {} \n Sequences: \n {}".format(sentences[:5],sequences[:5]))
 ```
 
 ## Build your LSTM model
