@@ -720,14 +720,3 @@ def predict_text(test_text, model = model):
   # Return the word that maps to the prediction
   return tokenizer.index_word[pred]
 ```
-
-## Test your model!
-```python
-
-```
-
-## You're done!
-```python
-
-```
-
