@@ -30,3 +30,10 @@ model.compile(optimizer='adam',
 print(model.layers)
 ```
 
+## 4. What is the correct way to initialize a neural netwrok model?
+```python
+[x] model=Sequential()
+[ ] model=Sequential
+[ ] model=sequential
+[ ] model=sequential()
+```
