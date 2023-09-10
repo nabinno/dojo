@@ -37,3 +37,12 @@ print(model.layers)
 [ ] model=sequential
 [ ] model=sequential()
 ```
+
+## 5.
+```txt
+Which of the following options describes a logical flow when starting to fit a neural network?
+[x]Start with small network, get validation score, if validation score is still getting better, increase model capacity
+[ ]Start with large network, get validation score, if validation score is still getting better, increase model capacity
+[ ]Start with large network, get validation score, if validation score is still getting better, decrease model capacity
+[ ]Start with small network, get validation score, if validation score is still getting better, decrease model capacity
+```
