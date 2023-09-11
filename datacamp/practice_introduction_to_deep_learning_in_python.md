@@ -38,11 +38,17 @@ print(model.layers)
 [ ] model=sequential()
 ```
 
-## 5.
+## 5. Which of the following options describes a logical flow when starting to fit a neural network?
 ```txt
-Which of the following options describes a logical flow when starting to fit a neural network?
 [x]Start with small network, get validation score, if validation score is still getting better, increase model capacity
 [ ]Start with large network, get validation score, if validation score is still getting better, increase model capacity
 [ ]Start with large network, get validation score, if validation score is still getting better, decrease model capacity
 [ ]Start with small network, get validation score, if validation score is still getting better, decrease model capacity
+```
+
+## 6. Which import statement below will allow you to reopen/use models you create?
+```python
+[ ]from keras.models import open_model
+[x]from keras.models import load_model
+[ ]from keras.models import use_model
 ```
