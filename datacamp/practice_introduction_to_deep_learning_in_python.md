@@ -52,3 +52,15 @@ print(model.layers)
 [x]from keras.models import load_model
 [ ]from keras.models import use_model
 ```
+
+## 7.
+```python
+model = Sequential()
+add_layers(model)
+model.compile(
+    optimizer='adam',
+    loss='categorical_crossentropy'
+)
+print(model.layers)
+```
+
