@@ -71,3 +71,11 @@ print(model.layers)
 [ ]model.add(Dense(10, activation = 'relu'))
 [x]model.add(Dense(1))
 ```
+
+## B-2. What is the correct way to initialize a neural network model?
+```python
+[ ]model=sequential
+[ ]model=sequential()
+[x]model=Sequential()
+[ ]model=Sequential
+```
