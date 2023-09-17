@@ -97,3 +97,78 @@ print(model.layers)
 
 #=> [<deras.layers.core.Dense object at 0x7f60753653c8>]
 ```
+
+## B-5. Create the first layer of the model.
+```python
+model = Sequential()
+model.add(Dense(100,
+        activation='relu',
+        input_shape = (n_cols,)))
+print(model.layers[0].name)
+
+#=> dense_1
+```
+
+## B-6. Which of the following options describes a logical flow when starting to fit a neural network?
+```txt
+[ ]Start with large network, get validation score, if validation score is still getting better, decrease model capacity
+[x]Start with small network, get validation score, if validation score is still getting better, increase model capacity
+[ ]Start with small network, get validation score, if validation score is still getting better, decrease model capacity
+[ ]Start with large network, get validation score, if validation score is still getting better, increase model capacity
+```
+
+## C-1. `weights`, `input_data`, `preds` and `error` have already been loaded/calculated. Like in backpropagation, calculate the slope of the weights using the loss function, `mean_squared_error`.
+```python
+slope = 2 * input_data * error
+print(slope)
+
+#=> [-84 -56 -70]
+```
+
+## C-2. Fill in the code to find the value at `n_0` given `data`
+```python
+val = (data * weights['n_0']).sum()
+print(val)
+
+#=> 7
+```
+
+## C-3. You use the ReLU activation function on the two input data points -3, and 7. What is the output?
+```txt
+[ ]3,7
+[ ]0,-7
+[x]0,7
+[ ]-3,0
+```
+
+## C-4. Ensure that `30%` of the initial data is held out of training for validation. Note: The function `make_model` initiates and  compiles a 2-layered classification model.
+```python
+model = Sequential()
+make_model(model)
+model.fit(predictors, target,
+    verbose = 0, validation_split=0.3)
+
+#=> <keras.callbacks.History at 0x7f6076480dd8>
+```
+
+## C-5. Fill in the code to have the same behavior as the ReLU activation function.
+```python
+def relu(input):
+    output = max(0, input)
+    return output
+output = relu(-2)
+print(output)
+
+#=> 0
+```
+
+## C-6. Ensure that `30%` of the initial data is held out of training for validation. Note: The function `make_model` initiates and compiles a 2-layered classification model.
+```python
+model = Sequential()
+make_model(model)
+model.fit(predictors, target,
+    verbose = 0, validation_split=0.3)
+
+#=> <keras.callbacks.History at 0x7f6076480dd8>
+```
+
