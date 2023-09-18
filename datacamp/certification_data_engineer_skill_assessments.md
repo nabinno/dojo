@@ -4,7 +4,7 @@ tags: deep-engineering, structured-query-language, python
 url: https://app.datacamp.com/certification/get-started/data-engineer/associate/study-guide
 ---
 
-# Data Management in SQL (PostgreSQL)
+# 1. Data Management in SQL (PostgreSQL)
 ## A-1. Add the rows from the `movie_2010` table to `movie_2000` but keep the duplicates.
 ```sql
 -- movie_2000
@@ -238,15 +238,20 @@ SELECT Trip_ID, EXTRACT(DAY FROM Start_Time) :: NUMERIC AS Start_Day
 FROM bike_trips;
 ```
 
-# Exploratory Analysis Theory
+# 2. Exploratory Analysis Theory
+## A-9. A factory collected some data points regarding the number of hours it took to make an item and the return rate of the item. An analyst wants to check if there is a relationship between these two variables. What plot is best suited for visualizing the relationship?
+```
+[ ]Scatter plot
+[ ]Heatmap
+[ ]Box plot
+[x]Bar plot
+```
+
+# 3. Importing & Cleaning Data in Python
 
 
 
-# Importing & Cleaning Data in Python
-
-
-
-# Python Programming
+# 4. Python Programming
 
 
 
