@@ -247,6 +247,14 @@ FROM bike_trips;
 [x]Bar plot
 ```
 
+## A-10. Before proceeding with further analyses, we want to know the distribution shape of one of our features with continuous data. Which of the following visualization types allows us to do it?
+```
+[ ]Heatmap
+[ ]Histogram
+[x]Scatter Plot
+[ ]Line Graph
+```
+
 # 3. Importing & Cleaning Data in Python
 
 
