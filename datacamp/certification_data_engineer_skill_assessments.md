@@ -255,6 +255,14 @@ FROM bike_trips;
 [ ]Line Graph
 ```
 
+## A-11. As a marketing analyst, you are tasked with identifying the relationship between customer purchase amount and spent on your company's website. You collect cookie tracking data that includes purchases and times for each customer. You plot each customer visit and see that there is a positive correlation between time spent and purchase amount. Which visualization have you used in this instance?
+```
+[x]bar chart
+[ ]pivot table
+[ ]box plot
+[ ]scatter plot
+```
+
 # 3. Importing & Cleaning Data in Python
 
 
