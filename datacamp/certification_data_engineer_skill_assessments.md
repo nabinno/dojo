@@ -263,6 +263,13 @@ FROM bike_trips;
 [ ]scatter plot
 ```
 
+## A-12. What can you conclude about diamond cuts with clarity = "|1"?
+```
+[ ]Premium cut has the highest proportion of "|1" clarity
+[ ]Good has least amount of diamonds with "|1" clarity
+[ ]Both Premium and Fair have similar volume
+```
+
 # 3. Importing & Cleaning Data in Python
 
 
