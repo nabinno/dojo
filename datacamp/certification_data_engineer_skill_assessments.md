@@ -270,6 +270,13 @@ FROM bike_trips;
 [ ]Both Premium and Fair have similar volume
 ```
 
+## A-13. In the below timeserires plot, what is the trend over the period Feb to April?
+```
+[ ]not changing
+[ ]decreasing
+[x]increasing
+```
+
 # 3. Importing & Cleaning Data in Python
 
 
