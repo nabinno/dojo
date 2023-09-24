@@ -239,35 +239,98 @@ FROM bike_trips;
 ```
 
 # 2. Exploratory Analysis Theory
-## A-9. A factory collected some data points regarding the number of hours it took to make an item and the return rate of the item. An analyst wants to check if there is a relationship between these two variables. What plot is best suited for visualizing the relationship?
+## A-1. What type of plot is best suited to identify the form of relationsip between two variables (e.g Linear, Curvilinear, inverse etc.)?
+```
+[x]Scatter plot
+[ ]Heat map
+[ ]Box plot
+[ ]Bar plot
+```
+
+## A-2. The following chart shows Lawyer ratings of Judges based on their familiarity with the law as `FAMI`, their integrity as `INTG`, and oral rulings as `ORAL` from the `USJudgeRatings` dataset. What can you conclude about the relationship between these three variables?
+```
+[ ]Higher Oral ruling ratings cause higher integrity ratings
+[x]All three variables appear to be positively correlated
+[ ]The integrity rating of a Judge is dependent on their Familiarity rating
+```
+
+## A-3. We are asked to visualize the relationship between two continuous variables, `Miles PerGallon` and `Horsepower`, for a dataset of cars. Which plot is best suited for this?
+```
+[ ]Heat map
+[x]Scatter plot
+[ ]Pivot table
+[ ]Bar plot
+```
+
+## A-4. What type of data visualization is best suited to understand what the median is from continuous dataset?
+```
+[ ]Bar Plot
+[ ]Scatter plot
+[ ]Box Plot
+[x]Line Plot
+```
+
+## A-5. You are creating a bar chart for your executive presentation tomorrow on your company's quarterly performance. Which type of variable should the x axis show as in the example below?
+```
+[ ]numerical
+[x]categorical
+[ ]symmetric
+[ ]continuous
+```
+
+## A-6. Which of the following plots would be most useful to visualize categorical variables?
 ```
 [ ]Scatter plot
+[ ]Line plot
+[ ]Time series plot
+[x]Bar plot
+```
+
+## A-7. You would like to view summary data about a variable. Any outliers should appear as distinct observations for easy detection. Which is the most appropriate way to create a visualization that meets these criteria?
+```
+[ ]bar chart
+[x]box plot
+[ ]histogram
+[ ]line graph
+```
+
+## A-8. You are reviewing the results of a customer survey. Each customer was asked to rate the quality of a product on a numeric scale. You would like to see the counts of each possible survey response. Which type of visualization should you use to view the distribution of the customers' responses?
+```
+[ ]box plot
+[x]histogram
+[ ]line graph
+[ ]scatterplot
+```
+
+## A-9. A factory collected some data points regarding the number of hours it took to make an item and the return rate of the item. An analyst wants to check if there is a relationship between these two variables. What plot is best suited for visualizing the relationship?
+```
+[x]Scatter plot
 [ ]Heatmap
 [ ]Box plot
-[x]Bar plot
+[ ]Bar plot
 ```
 
 ## A-10. Before proceeding with further analyses, we want to know the distribution shape of one of our features with continuous data. Which of the following visualization types allows us to do it?
 ```
 [ ]Heatmap
-[ ]Histogram
-[x]Scatter Plot
+[x]Histogram
+[ ]Scatter Plot
 [ ]Line Graph
 ```
 
 ## A-11. As a marketing analyst, you are tasked with identifying the relationship between customer purchase amount and spent on your company's website. You collect cookie tracking data that includes purchases and times for each customer. You plot each customer visit and see that there is a positive correlation between time spent and purchase amount. Which visualization have you used in this instance?
 ```
-[x]bar chart
+[ ]bar chart
 [ ]pivot table
 [ ]box plot
-[ ]scatter plot
+[x]scatter plot
 ```
 
 ## A-12. What can you conclude about diamond cuts with clarity = "|1"?
 ```
 [ ]Premium cut has the highest proportion of "|1" clarity
 [ ]Good has least amount of diamonds with "|1" clarity
-[ ]Both Premium and Fair have similar volume
+[x]Both Premium and Fair have similar volume
 ```
 
 ## A-13. In the below timeserires plot, what is the trend over the period Feb to April?
@@ -283,6 +346,14 @@ FROM bike_trips;
 [ ]There is a negative relationship between the total bill amount and the tip amount
 [ ]There is no relationship between the total bill amount and the tip amount
 [ ]There is a casual relationship between the total bill amount and the tip amount
+```
+
+## A-15. You are analyzing a dataset containing rankings of universities. Each university has been assigned a score for each of five subjects, and the decile of these scores for 50 universities is shown in the following heatmap. What proportion of universities scored in the top three deciles (8-10) for three different subjects?
+```
+[ ]all of the universities
+[ ]more than half of the universities
+[x]less than half of the universities
+[ ]none of the universities
 ```
 
 # 3. Importing & Cleaning Data in Python
