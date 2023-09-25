@@ -356,6 +356,14 @@ FROM bike_trips;
 [ ]none of the universities
 ```
 
+## B-1. What type of data visualization is best suited to understand what the median is from continuous dataset?
+```
+[ ]Bar Plot
+[ ]Scatter plot
+[ ]Box Plot
+[x]Line Plot
+```
+
 # 3. Importing & Cleaning Data in Python
 
 
