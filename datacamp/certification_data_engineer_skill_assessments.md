@@ -364,6 +364,14 @@ FROM bike_trips;
 [x]Line Plot
 ```
 
+## B-2. We want to know the sales trend of our new releaseed product over the last week using the information of the below `df`. Which of the following visualization types should we choose?
+```
+[ ]Box Plot
+[x]Histogram
+[ ]Scatter Plot
+[ ]Line Graph
+```
+
 # 3. Importing & Cleaning Data in Python
 
 
