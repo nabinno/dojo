@@ -372,6 +372,14 @@ FROM bike_trips;
 [ ]Line Graph
 ```
 
+## B-3. The scatter plot shown below shows the relationship between the total price of the bill (x-axis) and the amount of tip (y-axis). Based on the scatter plot shown, how can you interpret the relationship between total bill and tip amount?
+```
+[ ]As the bill amount increases, the tip amount tends to decrease
+[x]As the bill amount increases, the tip amount tends to increase
+[ ]As the bill amount increases, the tip amount stays constant
+[ ]As the bill amount increases, the tip amount increases by a factor of 10
+```
+
 # 3. Importing & Cleaning Data in Python
 
 
