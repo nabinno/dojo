@@ -380,6 +380,15 @@ FROM bike_trips;
 [ ]As the bill amount increases, the tip amount increases by a factor of 10
 ```
 
+## B-4. What type of plot is best suited to identify the form of relationsip between two variables (e.g Linear, Curvilinear, inverse etc.)?
+```
+[x]Scatter plot
+[ ]Heat map
+[ ]Box plot
+[ ]Bar plot
+```
+
+
 # 3. Importing & Cleaning Data in Python
 
 
