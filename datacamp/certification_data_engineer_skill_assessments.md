@@ -388,6 +388,20 @@ FROM bike_trips;
 [ ]Bar plot
 ```
 
+## B-5. You are preparing a report on monthly sales from four regions in which your company operates. You would like to create a single visualization to show the previous 12 months of sales records from each region. The readers of the report should be able to clearly and quickly analyze the sales trends for each region. What should you use to present this data? 
+```
+[x]bar chart
+[ ]box plot
+[ ]histogram
+[ ]line graph
+```
+
+## B-6. What is a possible benefit of using a violin plot instead of a box plot?
+```
+[ ]The violin plot is more commonly used than the box plot.
+[ ]The box plot does not show the median, while the violin plot does.
+[x]THe violin plot shows the actual distribution, unlike the boxplot.
+```
 
 # 3. Importing & Cleaning Data in Python
 
