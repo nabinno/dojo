@@ -411,6 +411,22 @@ FROM bike_trips;
 [ ]There is a casual relationship between the total bill amount and the tip amount
 ```
 
+## B-8. You are analyzing a dataset containing rankings of universities. Each university has been assigned a score for each of five subjects, and the decile of these scores for 50 universities is shown in the following heatmap. How would you describe the relationship between subject and universties?
+```
+[ ]Some universities are highly ranked in all 5 subjects
+[ ]Universities appear to specialize in 2-3 subjects
+[x]Many universities rank poorly in 4-5 subjects
+[ ]There are subjects in which all universities rank highly
+```
+
+## B-9. You would like to view summary data about a variable. Any outliers should appear as distinct observations for easy detection. Which is the most appropriate way to create a visualization that meets these criteria?
+```
+[ ]bar chart
+[x]box plot
+[ ]histogram
+[ ]line graph
+```
+
 # 3. Importing & Cleaning Data in Python
 
 
