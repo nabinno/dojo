@@ -427,6 +427,14 @@ FROM bike_trips;
 [ ]line graph
 ```
 
+## B-10. The following heat map represents the number of video game of units sold, split by studio and genre. What could we say when comparing all the information provided?
+```
+[x]Studio C has the highest number of units sold in FPS and RPG genres
+[ ]Studio A has the highest number of units sold in Adventure genre
+[ ]Studio B units sold are consistent across all video game genre
+[ ]Studio D should focus all resources only in developing RPG games
+```
+
 # 3. Importing & Cleaning Data in Python
 
 
