@@ -435,6 +435,30 @@ FROM bike_trips;
 [ ]Studio D should focus all resources only in developing RPG games
 ```
 
+## B-11. You are working at a store which is open every day of the week. In order to plan staffing levels, you would like to create a visualization showing the average, minimum, and maximum number of customers the store has received on each day of the week for the past year, using the data from the below. What kind of visualization should you use?
+```
+[x]A bar chat with one color for each day of the week
+[ ]A box plot with one box for each day of the week
+[ ]A line graph with one line for each day of the week
+[ ]A histogram with one plot for each day of the week
+```
+
+## B-12. You are creating a bar chart for your executive presentation tomorrow on your company's quarterly performance. Which type of variable should the x axis show as in the example below?
+```
+[ ]numerical
+[x]categorical
+[ ]symmetric
+[ ]continuous
+```
+
+## B-13. We are given a dataset containing the number of miles that different brands of cars ran before they broke down. Which plot is best suited to identify the outliers in miles per brand?
+```
+[ ]Bar Plot
+[x]Scatter Plot
+[ ]Histogram
+[ ]Box Plot
+```
+
 # 3. Importing & Cleaning Data in Python
 
 
