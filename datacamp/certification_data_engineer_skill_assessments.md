@@ -459,6 +459,13 @@ FROM bike_trips;
 [ ]Box Plot
 ```
 
+## B-14. What can we conclude about the `USArrests` data set from the below scatter plot?
+```
+[ ]Urban Population is correlated with both Murder and Assault
+[x]The number of Murders and Assaults is correlated
+[ ]There are more Assaults in areas with higher Urban Population
+```
+
 # 3. Importing & Cleaning Data in Python
 
 
