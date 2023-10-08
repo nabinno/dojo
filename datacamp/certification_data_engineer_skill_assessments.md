@@ -466,6 +466,15 @@ FROM bike_trips;
 [ ]There are more Assaults in areas with higher Urban Population
 ```
 
+## C-1. We are asked to visualize the relationship between two continuous variables, `Miles PerGallon` and `Horsepower`, for a dataset of cars. Which plot is best suited for this?
+```
+[ ]Heat map
+[x]Scatter plot
+[ ]Pivot table
+[ ]Bar plot
+```
+
+
 # 3. Importing & Cleaning Data in Python
 
 
