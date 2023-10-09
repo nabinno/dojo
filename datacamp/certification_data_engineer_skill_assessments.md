@@ -360,16 +360,16 @@ FROM bike_trips;
 ```
 [ ]Bar Plot
 [ ]Scatter plot
-[ ]Box Plot
-[x]Line Plot
+[x]Box Plot
+[ ]Line Plot
 ```
 
 ## B-2. We want to know the sales trend of our new releaseed product over the last week using the information of the below `df`. Which of the following visualization types should we choose?
 ```
 [ ]Box Plot
-[x]Histogram
+[ ]Histogram
 [ ]Scatter Plot
-[ ]Line Graph
+[x]Line Graph
 ```
 
 ## B-3. The scatter plot shown below shows the relationship between the total price of the bill (x-axis) and the amount of tip (y-axis). Based on the scatter plot shown, how can you interpret the relationship between total bill and tip amount?
@@ -390,10 +390,10 @@ FROM bike_trips;
 
 ## B-5. You are preparing a report on monthly sales from four regions in which your company operates. You would like to create a single visualization to show the previous 12 months of sales records from each region. The readers of the report should be able to clearly and quickly analyze the sales trends for each region. What should you use to present this data? 
 ```
-[x]bar chart
+[ ]bar chart
 [ ]box plot
 [ ]histogram
-[ ]line graph
+[x]line graph
 ```
 
 ## B-6. What is a possible benefit of using a violin plot instead of a box plot?
@@ -422,8 +422,8 @@ FROM bike_trips;
 ## B-9. You would like to view summary data about a variable. Any outliers should appear as distinct observations for easy detection. Which is the most appropriate way to create a visualization that meets these criteria?
 ```
 [ ]bar chart
-[x]box plot
-[ ]histogram
+[ ]box plot
+[x]histogram
 [ ]line graph
 ```
 
@@ -437,8 +437,8 @@ FROM bike_trips;
 
 ## B-11. You are working at a store which is open every day of the week. In order to plan staffing levels, you would like to create a visualization showing the average, minimum, and maximum number of customers the store has received on each day of the week for the past year, using the data from the below. What kind of visualization should you use?
 ```
-[x]A bar chat with one color for each day of the week
-[ ]A box plot with one box for each day of the week
+[ ]A bar chat with one color for each day of the week
+[x]A box plot with one box for each day of the week
 [ ]A line graph with one line for each day of the week
 [ ]A histogram with one plot for each day of the week
 ```
@@ -454,9 +454,9 @@ FROM bike_trips;
 ## B-13. We are given a dataset containing the number of miles that different brands of cars ran before they broke down. Which plot is best suited to identify the outliers in miles per brand?
 ```
 [ ]Bar Plot
-[x]Scatter Plot
+[ ]Scatter Plot
 [ ]Histogram
-[ ]Box Plot
+[x]Box Plot
 ```
 
 ## B-14. What can we conclude about the `USArrests` data set from the below scatter plot?
@@ -466,14 +466,13 @@ FROM bike_trips;
 [ ]There are more Assaults in areas with higher Urban Population
 ```
 
-## C-1. We are asked to visualize the relationship between two continuous variables, `Miles PerGallon` and `Horsepower`, for a dataset of cars. Which plot is best suited for this?
+## B-15. We are asked to visualize the relationship between two continuous variables, `Miles PerGallon` and `Horsepower`, for a dataset of cars. Which plot is best suited for this?
 ```
 [ ]Heat map
 [x]Scatter plot
 [ ]Pivot table
 [ ]Bar plot
 ```
-
 
 # 3. Importing & Cleaning Data in Python
 
