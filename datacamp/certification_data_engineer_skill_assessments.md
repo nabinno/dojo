@@ -474,6 +474,22 @@ FROM bike_trips;
 [ ]Bar plot
 ```
 
+## C-1. What type of plot is best suited to identify the form of relationsip between two variables (e.g Linear, Curvilinear, inverse etc.)?
+```
+[x]Scatter plot
+[ ]Heat map
+[ ]Box plot
+[ ]Bar plot
+```
+
+## C-2. You are analyzing your company's daily sales data from several locations. The data is sotred in the following table. You would like to see the total annual sales volume from each lcoation. What type of visualization should you use? 
+```
+[x]bar chart
+[ ]box plot
+[ ]histogram
+[ ]line graph
+```
+
 # 3. Importing & Cleaning Data in Python
 
 
