@@ -498,6 +498,15 @@ FROM bike_trips;
 [ ]Line Plot
 ```
 
+## C-4. A factory collected some data points regarding the number of hours it took to make an item and the return rate of the item. An analyst wants to check if there is a relationship between these two variables. What plot is best suited for visualizing the relationship?
+```
+[x]Scatter plot
+[ ]Heatmap
+[ ]Box plot
+[ ]Bar plot
+```
+
+
 # 3. Importing & Cleaning Data in Python
 
 
