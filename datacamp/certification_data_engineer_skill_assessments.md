@@ -514,7 +514,13 @@ FROM bike_trips;
 [ ]line graph
 ```
 
-
+## C-6. The scatter plot shown below showns the relationship between the total price of the bill (x-axis) and the amount of tip given (y-axis). Based on the scatter plot shown, what is the relationship between total bill and tip amount?
+```
+[x]There is a positive relationship between the total bill amount and the tip amount
+[ ]There is a negative relationship between the total bill amount and the tip amount
+[ ]There is no relationship between the total bill amount and the tip amount
+[ ]There is a casual relationship between the total bill amount and the tip amount
+```
 
 
 # 3. Importing & Cleaning Data in Python
