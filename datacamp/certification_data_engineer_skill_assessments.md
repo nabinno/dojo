@@ -506,6 +506,16 @@ FROM bike_trips;
 [ ]Bar plot
 ```
 
+## C-5. You would like to view summary data about a variable. Any outliers should appear as distinct observations for easy detection. Which is the most appropriate way to create a visualization that meets these criteria?
+```
+[ ]bar chart
+[x]box plot
+[ ]histogram
+[ ]line graph
+```
+
+
+
 
 # 3. Importing & Cleaning Data in Python
 
