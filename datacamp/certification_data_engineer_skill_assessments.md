@@ -522,6 +522,13 @@ FROM bike_trips;
 [ ]There is a casual relationship between the total bill amount and the tip amount
 ```
 
+## C-7. We conducted a study an employees' stress levels and job performance. According to the following plot, what conclusion can we arrive at?
+```
+[ ]Higher stress levels are related with better performance
+[ ]We don't have enough information on their relationship
+[ ]There is no relationship between the variables
+[x]Job performance is negatively correlated with stress levels
+```
 
 # 3. Importing & Cleaning Data in Python
 
