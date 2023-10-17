@@ -530,6 +530,14 @@ FROM bike_trips;
 [x]Job performance is negatively correlated with stress levels
 ```
 
+## C-8. You are analyzing a dataset containing rankings of universities. Each university has been assigned a score for each of five subjects, and the decile of these scores for 50 universities is shown in the following heatmap. How would you describe the relationship between subject and universties?
+```
+[ ]Some universities are highly ranked in all 5 subjects
+[x]Universities appear to specialize in 2-3 subjects
+[ ]Many universities rank poorly in 4-5 subjects
+[ ]There are subjects in which all universities rank highly
+```
+
 # 3. Importing & Cleaning Data in Python
 
 
