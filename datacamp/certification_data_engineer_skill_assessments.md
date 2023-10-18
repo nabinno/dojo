@@ -538,6 +538,14 @@ FROM bike_trips;
 [ ]There are subjects in which all universities rank highly
 ```
 
+## C-9. Which of the following plots would be most useful to visualize categorical variables?
+```
+[ ]Scatter plot
+[ ]Line plot
+[ ]Time series plot
+[x]Bar plot
+```
+
 # 3. Importing & Cleaning Data in Python
 
 
