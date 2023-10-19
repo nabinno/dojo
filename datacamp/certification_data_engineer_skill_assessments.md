@@ -546,6 +546,14 @@ FROM bike_trips;
 [x]Bar plot
 ```
 
+## C-10. We want to know and compare the distribution of five features with quantitative data. Which plot would be best for visualizing the distribution of 5 features?
+```
+[ ]Histogram
+[x]Box Plot
+[ ]Scatter Plot
+[ ]Bar chart
+```
+
 # 3. Importing & Cleaning Data in Python
 
 
