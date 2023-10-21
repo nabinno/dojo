@@ -554,6 +554,14 @@ FROM bike_trips;
 [ ]Bar chart
 ```
 
+## C-11. Box plot is considered a good visualization type when we want to:
+```
+[ ]Summarize distributions of features
+[ ]Summarize discrete variables measured on a ratio scale
+[x]Study the relationship between two quantitative variables
+[ ]Summarize and compare correlations between continuous features
+```
+
 # 3. Importing & Cleaning Data in Python
 
 
