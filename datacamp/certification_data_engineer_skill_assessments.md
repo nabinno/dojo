@@ -570,6 +570,13 @@ FROM bike_trips;
 [ ]roughly 70
 ```
 
+## C-13. What is a possible benefit of using a violin plot instead of a box plot?
+```
+[ ]The violin plot is more commonly used than the box plot.
+[ ]The box plot does not show the median, while the violin plot does.
+[x]THe violin plot shows the actual distribution, unlike the boxplot.
+```
+
 # 3. Importing & Cleaning Data in Python
 
 
