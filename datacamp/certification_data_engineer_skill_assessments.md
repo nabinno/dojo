@@ -562,6 +562,14 @@ FROM bike_trips;
 [ ]Summarize and compare correlations between continuous features
 ```
 
+## C-12. As a marketing analyst, you have conducted a study of a new protein drink. You would like to know the median age of those that purchased your product. Given the box plot below, what is the approximate median age of those that purchased?
+```
+[ ]roughly 40
+[x]roughly 60
+[ ]roughly 50
+[ ]roughly 70
+```
+
 # 3. Importing & Cleaning Data in Python
 
 
