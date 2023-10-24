@@ -556,9 +556,9 @@ FROM bike_trips;
 
 ## C-11. Box plot is considered a good visualization type when we want to:
 ```
-[ ]Summarize distributions of features
+[x]Summarize distributions of features
 [ ]Summarize discrete variables measured on a ratio scale
-[x]Study the relationship between two quantitative variables
+[ ]Study the relationship between two quantitative variables
 [ ]Summarize and compare correlations between continuous features
 ```
 
@@ -575,6 +575,22 @@ FROM bike_trips;
 [ ]The violin plot is more commonly used than the box plot.
 [ ]The box plot does not show the median, while the violin plot does.
 [x]THe violin plot shows the actual distribution, unlike the boxplot.
+```
+
+## C-14. A designer would like to understand how users are interacting with the homepage of a website. If we are given the co-ordinates of clicks and the number of clicks on the homepage, what plot can be best suited to visualize this?
+```
+[ ]Scatter plot
+[x]Heat map
+[ ]Box plot 
+[ ]Bar plot
+```
+
+## C-15. The line graph below shows the relationship between the number of passengers taking flights (y-axis) and years (x-axis). What is the relationship between the number of people taking flights across time (in years)?
+```
+[x]There is a positive relationship between the number of passengers and years
+[ ]There is a negative relationship between the number of passengers and years
+[ ]There is no relationship between the number of passengers and years
+[ ]There is a casual relationship between the number of passengers and years
 ```
 
 # 3. Importing & Cleaning Data in Python
