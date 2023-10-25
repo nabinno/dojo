@@ -594,8 +594,16 @@ FROM bike_trips;
 ```
 
 # 3. Importing & Cleaning Data in Python
+## A-1. You have been giving a dataset by a colleague who prefers to work with MATLAB. Being a Pythonista, you would like to import the data as a Python dictionary.
+```py
+import scipy.io
+import numpy as np
 
+file_name = 'cars_train_annos.mat'
 
+annotations = scipy.io.loadmat(file_name)
+print(annotations["__header__"])
+```
 
 # 4. Python Programming
 
