@@ -605,6 +605,19 @@ annotations = scipy.io.loadmat(file_name)
 print(annotations["__header__"])
 ```
 
+## A-2. Consider the Pandas DataFrme `df` below. Convert the columns `math` and `chemistry` from wide to long format.
+```csv
+id,math,chemistry
+012,85,88
+013,88,86
+014,90,91
+```
+```py
+import pandas as pd
+df = pd.melt(df, id_vars='id', value_vars=['math', 'chemistry'])
+print(df)
+```
+
 # 4. Python Programming
 
 
