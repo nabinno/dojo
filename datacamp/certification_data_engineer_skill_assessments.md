@@ -618,6 +618,17 @@ df = pd.melt(df, id_vars='id', value_vars=['math', 'chemistry'])
 print(df)
 ```
 
+## A-3. Accacia is a large consulting firm and potentially a very large client for your company. Some Acacia employees already use your company's platform. Help determine who these users are by filtering the `users` DataFrme for users that have an `@acacia.com` email address.
+```py
+-- users
+  name    email
+0 Miranda 'miranda@acacia.com'
+1 Tony    'tony@gmail.com'
+
+import pandas as pd
+print(users[users['email'].strr.contains('@acacia.com')])
+```
+
 # 4. Python Programming
 
 
