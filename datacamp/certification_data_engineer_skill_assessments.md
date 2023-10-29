@@ -581,7 +581,7 @@ FROM bike_trips;
 ```
 [ ]Scatter plot
 [x]Heat map
-[ ]Box plot 
+[ ]Box plot
 [ ]Bar plot
 ```
 
@@ -595,7 +595,7 @@ FROM bike_trips;
 
 # 3. Importing & Cleaning Data in Python
 ## A-1. You have been giving a dataset by a colleague who prefers to work with MATLAB. Being a Pythonista, you would like to import the data as a Python dictionary.
-```py
+```python
 import scipy.io
 import numpy as np
 
@@ -606,27 +606,38 @@ print(annotations["__header__"])
 ```
 
 ## A-2. Consider the Pandas DataFrme `df` below. Convert the columns `math` and `chemistry` from wide to long format.
-```csv
-id,math,chemistry
-012,85,88
-013,88,86
-014,90,91
-```
-```py
+```python
+# -- dataset
+# id,math,chemistry
+# 012,85,88
+# 013,88,86
+# 014,90,91
+
 import pandas as pd
 df = pd.melt(df, id_vars='id', value_vars=['math', 'chemistry'])
 print(df)
 ```
 
 ## A-3. Accacia is a large consulting firm and potentially a very large client for your company. Some Acacia employees already use your company's platform. Help determine who these users are by filtering the `users` DataFrme for users that have an `@acacia.com` email address.
-```py
--- users
-  name    email
-0 Miranda 'miranda@acacia.com'
-1 Tony    'tony@gmail.com'
+```python
+# -- users
+#   name    email
+# 0 Miranda 'miranda@acacia.com'
+# 1 Tony    'tony@gmail.com'
 
 import pandas as pd
 print(users[users['email'].strr.contains('@acacia.com')])
+```
+
+## A-4. Convert the names of the plants in the `name` column of the `plants` DataFrme from uppercase to lowercase.
+```python
+# -- plants
+#   name     binomial name       sales price
+# 0 ALFREDO  Monstera Deliciosa  24.95
+
+import pandas as pd
+plants['name'] = plants['name'].str.lower()
+print(plants.head())
 ```
 
 # 4. Python Programming
