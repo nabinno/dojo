@@ -640,6 +640,17 @@ plants['name'] = plants['name'].str.lower()
 print(plants.head())
 ```
 
+## A-5. Consider the dataset contained in `data.txt` below. Load the file as a single data type object using `numpy`.
+```python
+# -- data.txt
+#     0      1
+# 0  34  17800
+
+import numpy as np
+data = np.loadtxt("data.txt", delimiter="\t", dtype="int")
+print(data)
+```
+
 # 4. Python Programming
 
 
