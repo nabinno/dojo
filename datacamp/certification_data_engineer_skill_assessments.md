@@ -651,6 +651,15 @@ data = np.loadtxt("data.txt", delimiter="\t", dtype="int")
 print(data)
 ```
 
+## A-6. Consider the Pandas `DataFrme` `contact` below. Separate the column `email` by the `@` character.
+```python
+# -- contact
+#   email
+# 0 mary@datacamp.com
+
+print(contact.email.str.split('@', expand = True))
+```
+
 # 4. Python Programming
 
 
