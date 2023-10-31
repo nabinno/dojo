@@ -660,6 +660,18 @@ print(data)
 print(contact.email.str.split('@', expand = True))
 ```
 
+## A-7. A friend sent you an unprocessed `.csv` file containing Data Science skills data that was scraped from a job listing website. Convert the text in the `roles` column of the `jobs` DataFrame to lower case.
+```python
+# >>> jobs.head()
+#
+#   skills                   roles
+# 0 Business Intelligence... Immediate opening For Data
+
+import pandas as pd
+jobs['roles'] = jobs['roles'].str.lower()
+print(jobs['roles'].head())
+```
+
 # 4. Python Programming
 
 
