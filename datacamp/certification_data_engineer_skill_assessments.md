@@ -672,6 +672,11 @@ jobs['roles'] = jobs['roles'].str.lower()
 print(jobs['roles'].head())
 ```
 
+## A-8. Determine the data types of all the columns contained in the `books` DataFrame.
+```python
+print(books.dtypes)
+```
+
 # 4. Python Programming
 
 
