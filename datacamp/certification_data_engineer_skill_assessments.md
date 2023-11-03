@@ -677,6 +677,17 @@ print(jobs['roles'].head())
 print(books.dtypes)
 ```
 
+## A-9. You have been asked to produce to summary graphic of the race times of an athlete. The data is stored in the data frame `times`, but some values are missing as the athlete did not race that day. The experts have told you to replace these times with the time from the race before it. The data is already arrange by date.
+```python
+#         date   val
+# 0 2020-03-28  25.5
+# 1 2020-04-30  24.2
+
+import pandas as pd
+times_no_missing = times.fillna(method = 'ffill')
+print(times_nomissing.head(n = 2)
+```
+
 # 4. Python Programming
 
 
