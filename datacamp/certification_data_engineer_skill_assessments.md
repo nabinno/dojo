@@ -688,6 +688,20 @@ times_no_missing = times.fillna(method = 'ffill')
 print(times_nomissing.head(n = 2)
 ```
 
+## A-10. The following shows a preview of the data `candy.csv`. Import the data , ensuring that missing values are correctly encoded. The file name has been saved for you in the object `file_name`.
+```csv
+reviewer, candy, rating
+a,MGMs,9
+a,-,-
+b,MGMs,-
+b,Skittles,3.5
+```
+```python
+import pandas as pd
+candy = pd.read_csv(file_name, na_values=['-'])
+print(candy.head())
+```)
+
 # 4. Python Programming
 
 
