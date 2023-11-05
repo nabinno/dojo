@@ -700,9 +700,21 @@ b,Skittles,3.5
 import pandas as pd
 candy = pd.read_csv(file_name, na_values=['-'])
 print(candy.head())
-```)
+```
+
+# A-11. Complete the code to return the output.
+```python
+import numpy as np
+import pandas as pd
+data = pd.Series(['apple','banana','apple','banana'])
+print(data.str.upper())
+
+# output
+# 0 APPLE
+# 1 BANANA
+# 2 APPLE
+# 3 BANANA
+# dtype: object
+```
 
 # 4. Python Programming
-
-
-
