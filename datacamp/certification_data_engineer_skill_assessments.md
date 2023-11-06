@@ -728,4 +728,17 @@ data = np.loadtxt("data.txt", delimiter="\t", dtype="int")
 print(data)
 ```
 
+## A-13. Consider the Pandas DataFrame `restaurant` below. Compute the average price and rating for each category of restaurant.
+```python
+#    id   cuisine  price  rating
+# 0 121   Chinese      2     4.0
+# 1 122  American      3     4.5
+
+import pandas as pd
+import numpy as np
+
+df = pd.pivot_table(restaurant, values = ['price', 'raiting'], index = 'cuisine', aggfunc = np.mean)
+print(df)
+```
+
 # 4. Python Programming
