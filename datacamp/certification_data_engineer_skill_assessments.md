@@ -702,7 +702,7 @@ candy = pd.read_csv(file_name, na_values=['-'])
 print(candy.head())
 ```
 
-# A-11. Complete the code to return the output.
+## A-11. Complete the code to return the output.
 ```python
 import numpy as np
 import pandas as pd
@@ -715,6 +715,17 @@ print(data.str.upper())
 # 2 APPLE
 # 3 BANANA
 # dtype: object
+```
+
+## A-12. Consider the dataset contained in `data.txt` below. Load the file as a single data type object using `numpy`.
+```python
+#    0     1
+# 0 34 17800
+# 1 22  2000
+
+import numpy as np
+data = np.loadtxt("data.txt", delimiter="\t", dtype="int")
+print(data)
 ```
 
 # 4. Python Programming
