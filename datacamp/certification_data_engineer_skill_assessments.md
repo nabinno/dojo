@@ -741,4 +741,12 @@ df = pd.pivot_table(restaurant, values = ['price', 'raiting'], index = 'cuisine'
 print(df)
 ```
 
+## A-14. A friend sent you an unprocessed `.csv` file containing Data Science skills data that was scraped from a job listing website. You're unsure of the structure of the data so import only the first 4 rows to help you decide how to proceed. Complete the code to return the output:
+```python
+import pandas as pd
+
+job_listings = pd.read_csv(file_name, index_col=0, nrows=4)
+print(job_listings.head().transpose())
+```
+
 # 4. Python Programming
