@@ -626,7 +626,7 @@ print(df)
 # 1 Tony    'tony@gmail.com'
 
 import pandas as pd
-print(users[users['email'].strr.contains('@acacia.com')])
+print(users[users['email'].strr.contains('acacia)])
 ```
 
 ## A-4. Convert the names of the plants in the `name` column of the `plants` DataFrme from uppercase to lowercase.
