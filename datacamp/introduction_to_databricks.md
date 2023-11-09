@@ -5,14 +5,14 @@ url: https://app.datacamp.com/learn/courses/introduction-to-databricks
 ---
 
 # 1. Introduction to Databricks
-## Introduction to the Databricks Lakehouse Platform
-```
-
-```
-
 ## Why pick a Lakehouse?
 ```
+Which of the following is not a reason to implement a lakehouse architecture?
 
+[ ]You want great performance for both BI and machine learning workloads.
+[ ]You want a single architecture to support all of your data workloads.
+[x]You want to store all of your data in a proprietory data format.
+[ ]You want the most cost-effective architectural solution for your organization.
 ```
 
 ## Benefits of the Databricks Lakehouse
