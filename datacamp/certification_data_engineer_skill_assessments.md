@@ -749,4 +749,16 @@ job_listings = pd.read_csv(file_name, index_col=0, nrows=4)
 print(job_listings.head().transpose())
 ```
 
+## A-15. Consider the Pandas DataFrame `df`. Complete the code to return the output.
+```
+## df
+#    id  age  group_a  group_b
+# 0   1   12     True    False
+# 1   2   45     True     True
+
+import pandas as pd
+
+print(df.melt(id_vars = "id", value_vars = ["group_a", "group_b"]))
+```
+
 # 4. Python Programming
