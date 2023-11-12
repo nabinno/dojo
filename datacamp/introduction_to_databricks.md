@@ -27,7 +27,17 @@ As part of your presentation to the CIO, you would like to list why you should w
 
 ## Architectural Decisions
 ```
+## Data Warehouse
+Typically very expensive
+Performant for structured data only
 
+## Data Lake
+Data becomes very messy
+Sub-optimal performance for different workloads
+
+## Lakehouse
+Great performance across all workloads
+Very cost-effective for any data workload
 ```
 
 ## Core features of the Databricks Lakehouse Platform
