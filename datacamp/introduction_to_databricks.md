@@ -16,8 +16,13 @@ Which of the following is not a reason to implement a lakehouse architecture?
 ```
 
 ## Benefits of the Databricks Lakehouse
+As part of your presentation to the CIO, you would like to list why you should want to switch to the lakehouse architecture. Which of the following are key benefits of the Databricks platform? Select all that apply.
 ```
-
+[x]Built on open-source technologies
+[x]Databricks can run on any major cloud provider.
+[x]Databricks enables data teams to be more collaborative.
+[ ]Only teams that heavily use Python will benefit from Databricks
+[ ]Database administrators can separate their data warehousing workloads away from other languages and personas.
 ```
 
 ## Architectural Decisions
