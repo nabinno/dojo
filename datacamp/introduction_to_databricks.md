@@ -40,14 +40,20 @@ Great performance across all workloads
 Very cost-effective for any data workload
 ```
 
-## Core features of the Databricks Lakehouse Platform
-```
-
-```
-
 ## Why Delta?
 ```
+The benefits of storing data in the Delta Lake table format include:
 
+1. Fully ACID-compliant transactions: Delta Lake provides support for ACID (Atomicity, Consistency, Isolation, Durability) transactions, which ensures data integrity and consistency even in the face of concurrent data updates and failures.
+2. Unified batch and streaming data sources: Delta Lake is designed to handle both batch and streaming data sources, making it suitable for real-time data processing scenarios.
+3. Time travel and table history: Delta Lake allows you to access and query previous versions of the data (table history) through time travel capabilities, which can be useful for auditing, data recovery, and analysis purposes.
+
+So, the correct answers are:
+
+[x]Fully ACID-compliant transactions
+[x]Unified batch and streaming data sources
+[ ]Rigid table schema limitations
+[x]Time travel and table history
 ```
 
 ## Databricks for different personas
