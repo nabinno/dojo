@@ -58,7 +58,13 @@ So, the correct answers are:
 
 ## Databricks for different personas
 ```
+One of the concerns of your CIO is that your future data architecture must satisfy all the different teams who work with your company's data. While you feel confident that Databricks can, you want to provide a list that clearly outlines supported personas.
+Which of the following is not a dedicated persona in the Databricks Lakehouse platform?
 
+[ ]Data engineer
+[x]Software developer
+[ ]Data scientist
+[ ]SQL analyst
 ```
 
 ## Capabilities for each data persona
