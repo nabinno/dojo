@@ -69,7 +69,17 @@ Which of the following is not a dedicated persona in the Databricks Lakehouse pl
 
 ## Capabilities for each data persona
 ```
+## SQL analyst
+Dashboards
+SQL Editor
+SQL Warehouses
 
+## Data Engineer
+Delta Live Tables
+
+## Data Scientist
+Model Registry
+Model Serving
 ```
 
 ## Administering a Databricks workspace
