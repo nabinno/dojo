@@ -84,7 +84,15 @@ Model Serving
 
 ## Administering a Databricks workspace
 ```
+As your organization starts to adopt Databricks more, you have deployed multiple different workspaces for your lines of business. Each workspace is designed for a particular team and should only have access to their respective datasets. Your CIO has expressed concerns about how you can control access to the underlying datasets and the workspaces themselves as adoptions grow. They have asked you how Databricks and your architecture address this concern.
+Which of the following statements is true with regard to user access within a Databricks account?
 
+[ ]There is no way to easily ensure that users are assigned to the correct workspace, and must assign users manually.
+[x]You can automatically sync users from your IdP to your Databricks account and then assign them to the correct workspaces based on their line of business.
+[ ]You can automatically sync users from your IdP to your Databricks workspaces with no configuration
+[ ]You do not need to assign users to Databricks, and can just pull their access information from your IdP.
+
+Note: This means that while Databricks supports automatic synchronization of users from your Identity Provider, there is still a requirement for configuration or manual intervention to ensure that users are assigned to the correct workspaces according to their specific roles or lines of business. This approach helps maintain secure and organized access control as your organization scales up its use of Databricks.
 ```
 
 ## Managing and adding users
