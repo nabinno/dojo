@@ -95,19 +95,15 @@ Which of the following statements is true with regard to user access within a Da
 Note: This means that while Databricks supports automatic synchronization of users from your Identity Provider, there is still a requirement for configuration or manual intervention to ensure that users are assigned to the correct workspaces according to their specific roles or lines of business. This approach helps maintain secure and organized access control as your organization scales up its use of Databricks.
 ```
 
-## Managing and adding users
-```
-
-```
-
-## Setting up a Databricks workspace example
-```
-
-```
-
 ## Control Plane vs. Data Plane
 ```
+As you deploy your Databricks workspaces, you ensure your security team has approved the platform. In particular, the security team is curious about what information Databricks has access to and what you control.
+Which of the following is true regarding the relationship between the Databricks Control Plane and the customer Data Plane?
 
+[ ]The Control Plane stores customer data and the Databricks application, and the Data Plane only stores data.
+[x]User interactions with the Databricks platform exist within the Control Plane, and is responsible for tasks such as launching clusters and initiating jobs.
+[ ]Databricks creates a duplicate copy of everything between the Control and Data Plane.
+[ ]The Data Plane is where customers store their data in the data lake, ensuring better data security.
 ```
 
 ## Configure your Databricks workspace
