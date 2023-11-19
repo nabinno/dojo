@@ -108,9 +108,14 @@ Which of the following is true regarding the relationship between the Databricks
 
 ## Configure your Databricks workspace
 ```
+As you deploy your Databricks workspaces, you ensure your security team has approved the platform. In particular, the security team is curious about what information Databricks has access to and what you control.
+Which of the following is true regarding the relationship between the Databricks Control Plane and the customer Data Plane?
 
+[ ]The Control Plane stores customer data and the Databricks application, and the Data Plane only stores data.
+[x]User interactions with the Databricks platform exist within the Control Plane, and is responsible for tasks such as launching clusters and initiating jobs.
+[ ]Databricks creates a duplicate copy of everything between the Control and Data Plane.
+[x]The Data Plane is where customers store their data in the data lake, ensuring better data security.
 ```
-
 
 
 
