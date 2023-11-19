@@ -82,7 +82,7 @@ Model Registry
 Model Serving
 ```
 
-## Administering a Databricks workspace
+## Managing and adding users
 ```
 As your organization starts to adopt Databricks more, you have deployed multiple different workspaces for your lines of business. Each workspace is designed for a particular team and should only have access to their respective datasets. Your CIO has expressed concerns about how you can control access to the underlying datasets and the workspaces themselves as adoptions grow. They have asked you how Databricks and your architecture address this concern.
 Which of the following statements is true with regard to user access within a Databricks account?
@@ -103,18 +103,21 @@ Which of the following is true regarding the relationship between the Databricks
 [ ]The Control Plane stores customer data and the Databricks application, and the Data Plane only stores data.
 [x]User interactions with the Databricks platform exist within the Control Plane, and is responsible for tasks such as launching clusters and initiating jobs.
 [ ]Databricks creates a duplicate copy of everything between the Control and Data Plane.
-[ ]The Data Plane is where customers store their data in the data lake, ensuring better data security.
+[x]The Data Plane is where customers store their data in the data lake, ensuring better data security.
 ```
 
 ## Configure your Databricks workspace
 ```
-As you deploy your Databricks workspaces, you ensure your security team has approved the platform. In particular, the security team is curious about what information Databricks has access to and what you control.
-Which of the following is true regarding the relationship between the Databricks Control Plane and the customer Data Plane?
+Databricks:
+Set up Unity Catalog to govern data.
+Add users and groups to the Databricks environment.
+Create a starter cluster and SQL Warehouse for your users.
 
-[ ]The Control Plane stores customer data and the Databricks application, and the Data Plane only stores data.
-[x]User interactions with the Databricks platform exist within the Control Plane, and is responsible for tasks such as launching clusters and initiating jobs.
-[ ]Databricks creates a duplicate copy of everything between the Control and Data Plane.
-[x]The Data Plane is where customers store their data in the data lake, ensuring better data security.
+Cloud Service Provider (CSP):
+Collect and store data from source systems.
+Set up user security groups across cloud services.
+
+NOTE: Databricks focuses mainly on setting up data management and analytical environments, while CSP involves the collection, storage, and security management of data.
 ```
 
 
