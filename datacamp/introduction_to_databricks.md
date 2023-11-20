@@ -123,14 +123,16 @@ NOTE: Databricks focuses mainly on setting up data management and analytical env
 
 
 # 2. Data Engineering
-## Getting started with Databricks
-```
-
-```
-
 ## Data Explorer capabilities
 ```
+You are a data engineer working for the centralized IT department at Sierra Publishing. On a day-to-day basis, you will get a variety of requests from different parts of your organization regarding different datasets. Historically, you have explored data programmatically by reading in different datasets one at a time.
+Which of the following will be the benefits of using the Data Explorer instead of your previous approach?
 
+[x] **Ability to See Sample Data for a Particular Table**: This is beneficial because it allows you to quickly get a sense of the data structure and content without needing to write and execute code to load the entire dataset. It facilitates initial data assessment and decision-making on how to process or use the data.
+[x] **See the Lineage for Your Data Assets**: Understanding data lineage is crucial for data governance, quality, and auditing purposes. The Data Explorer can visually show where data comes from, how it's processed, and where it's used. This helps in tracing errors, understanding dependencies, and managing data more effectively.
+[x] **Provides the Code to Query a Specific Table**: This feature saves time and effort. Instead of writing queries from scratch, you can use or modify the provided code, enhancing productivity and reducing the likelihood of errors.
+[x] **Ability to Share Data with Other Users**: Data collaboration is essential in a large organization. The Data Explorer UI likely includes features to share data views or datasets with colleagues, facilitating teamwork and ensuring consistency in data use across different departments.
+[ ] **Ability to Automatically Clean Your Data**: This is not typically a primary feature of a Data Explorer UI. Data cleaning is usually a separate process that involves specific tools or code. However, a Data Explorer might offer insights or identify issues that could be helpful in the data cleaning process.
 ```
 
 ## Setting up a notebook
