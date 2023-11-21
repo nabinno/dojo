@@ -137,7 +137,12 @@ Which of the following will be the benefits of using the Data Explorer instead o
 
 ## Setting up a notebook
 ```
+[ ]Create a SQL notebook and require all code to be in SQL.
+[x]Create a Python notebook for your data engineering pipelines, and use %sql in the cells for your data analysts.
+[ ]Create a Python notebook and require all code to be in Python.
+[ ]There is no way for you to create a setup that supports both languages.
 
+NOTE: This approach allows you to write in Python, which is your primary language, and enables your data analysts to write SQL queries within the same notebook by using the `%sql` magic command. Databricks notebooks support multi-language capabilities, making it possible to use different programming languages within the same notebook. This setup fosters collaboration and ensures that both you and your data analyst team can work efficiently in your preferred languages within the same data asset.
 ```
 
 ## Cluster configurations
