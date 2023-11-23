@@ -147,7 +147,15 @@ NOTE: This approach allows you to write in Python, which is your primary languag
 
 ## Cluster configurations
 ```
+## Valid Cluster Configuration
+Databricks Runtime: Valid. The Databricks Runtime is a crucial part of the cluster configuration, encompassing the Apache Spark cluster manager and optimized versions of Hadoop components.
+Node instance types: Valid. You can choose the types of nodes (instances) to use in your cluster. Different instance types offer varying combinations of CPU, memory, storage, and networking capacity, suitable for different workloads.
+Auto termination time: Valid. This setting allows clusters to automatically terminate after a specified period of inactivity, which is an important feature for cost savings.
+User access to cluster: Partially Valid. While there isn't a direct setting to control user access to a cluster, managing user permissions and access controls at the workspace level indirectly relates to cluster usage.
 
+## Invalid Cluster Configuration
+How fast workloads run on the cluster: Invalid. There's no direct option to set the "speed" of workload execution. However, the performance of workloads is indirectly influenced by various settings like node types and cluster size.
+Cluster monthly budget: Invalid. Databricks doesn’t have a direct feature to set a "monthly budget" for clusters. However, cost management tools can be used to track and limit expenses, though this falls under organizational management rather than being a part of cluster configuration.
 ```
 
 ## Data Engineering foundations in Databricks
