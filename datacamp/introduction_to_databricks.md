@@ -160,7 +160,10 @@ Cluster monthly budget: Invalid. Databricks doesn’t have a direct feature to s
 
 ## Data Engineering foundations in Databricks
 ```
-
+[x]DataFrames already exist in both pandas and SQL: This is correct. DataFrames are a common data structure used in both pandas (a popular Python library for data manipulation) and SQL. Your team's familiarity with these tools will be an advantage when working with DataFrames in Databricks.
+[ ]DataFrames are complex and difficult to work with: DataFrames are a powerful and flexible way to work with data, but they are not inherently complex or difficult to work with. In fact, they provide a structured and efficient way to perform data operations, and their syntax is often more intuitive than writing raw SQL queries or using lower-level Spark RDDs (Resilient Distributed Datasets). Your team should not be discouraged by the perception that DataFrames are overly complex.
+[x]Databricks will create the DataFrame, regardless of the language you use in your programming: This is also correct. Databricks supports multiple programming languages like Python, Scala, and R. DataFrames can be created and manipulated using these languages, so your team can continue using their preferred language while working with DataFrames.
+[ ]DataFrames only work when writing code in Python
 ```
 
 ## DataFrames
