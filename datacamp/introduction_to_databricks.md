@@ -176,7 +176,7 @@ Cluster monthly budget: Invalid. Databricks doesn’t have a direct feature to s
 
 ## Reading from a database
 ```
-
+Use spark.read() to use a JDBC connection and read data from the database.
 ```
 
 ## Write an external table
