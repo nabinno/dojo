@@ -181,12 +181,17 @@ Use spark.read() to use a JDBC connection and read data from the database.
 
 ## Write an external table
 ```
-
-```
-
-## Data transformations in Databricks
-```
-
+CREATE TABLE postgresql_table
+USING postgresql
+OPTIONS (
+  dbtable '<table-name>',
+  host '<database-host-url>',
+  port '5432',
+  database '<database-name>',
+  user '<username>',
+  password '<password>'
+)
+LOCATION <path-to-data-lake>
 ```
 
 ## Loading in hosted files
