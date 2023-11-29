@@ -196,7 +196,9 @@ LOCATION <path-to-data-lake>
 
 ## Loading in hosted files
 ```
-
+[x]Use Auto Loader to automatically ingest new data files as they come in: Auto Loader is a feature in Databricks that can automatically detect and ingest new data files as they are added to a specified directory. This would address the issue of not knowing when new data files come in and simplify the process of keeping your tables accurate by automatically incorporating new data.
+[ ]Scheduling a job to check the directory every hour: this option is a manual approach and may not be as efficient or timely as using Auto Loader.
+[ ]Creating a Kafka topic and continuously streaming the data: this option is a different approach that involves streaming data continuously and might be suitable for certain use cases, but it may not be necessary or the most straightforward solution for this specific problem.
 ```
 
 ## Selecting the right language
