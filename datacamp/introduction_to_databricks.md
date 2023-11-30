@@ -203,7 +203,15 @@ LOCATION <path-to-data-lake>
 
 ## Selecting the right language
 ```
+## Databricks Supported
+Language: SQL - Joining two tables together
+Language: R - Performing advanced statistical techniques on your data
+Language: Python - Creating a custom function for a business-specific calculation
 
+## Not Supported
+Language: Rust - Creating a definition for a data schema
+Language: C# - Crafting an In-depth testing process
+Language: Ruby - Creating a complex function that Iterates over each row
 ```
 
 ## Data pipeline steps
