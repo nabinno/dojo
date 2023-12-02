@@ -216,7 +216,11 @@ Language: Ruby - Creating a complex function that Iterates over each row
 
 ## Data pipeline steps
 ```
-
+1. Gather information about the Kafka topic: Before you can start processing the data, you need to gather information about the Kafka topic, such as the topic name, partitions, and offsets. This information will be essential for setting up the data stream.
+2. Read the data into a Structured DataFrame: Once you have the necessary information about the Kafka topic, you can use Databricks to read the streaming data from Kafka into a Structured DataFrame. This step involves configuring the Kafka source and defining the schema for your DataFrame.
+3. Clean the streaming data: After reading the data into a DataFrame, you may need to perform data cleaning and transformation operations. This could include handling missing values, data type conversions, or any other necessary data preparation tasks.
+4. Join our other datasets into the stream: Next, you can join the streaming data with other datasets as required for your analytics. This step allows you to enrich the streaming data with additional context or information from your static datasets.
+5. Write the stream as a Delta table in a new data lake bucket: Once you've processed and enriched the streaming data, you can write the result as a Delta table to a new data lake bucket. Delta tables in Databricks provide a reliable and efficient way to manage and version your data, making it available for downstream consumers.
 ```
 
 ## Data orchestration in Databricks
