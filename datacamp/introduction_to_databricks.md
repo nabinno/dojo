@@ -240,7 +240,10 @@ Language: Ruby - Creating a complex function that Iterates over each row
 
 ## Benefits of Delta Live Tables
 ```
-
+[x]Combined process for batch and streaming datasets
+[ ]Reduced need for data pipelines
+[ ]Data is never lost or corrupted
+[x]Maintain better data quality with set expectations
 ```
 
 ## End-to-end data pipeline example in Databricks
