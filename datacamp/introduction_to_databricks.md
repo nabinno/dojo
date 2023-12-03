@@ -223,14 +223,19 @@ Language: Ruby - Creating a complex function that Iterates over each row
 5. Write the stream as a Delta table in a new data lake bucket: Once you've processed and enriched the streaming data, you can write the result as a Delta table to a new data lake bucket. Delta tables in Databricks provide a reliable and efficient way to manage and version your data, making it available for downstream consumers.
 ```
 
-## Data orchestration in Databricks
-```
-
-```
-
 ## Possible automations in Databricks
 ```
+## Can be a Databricks Job
+- Python scripts: Databricks supports Python, and Python scripts can be executed as part of a Databricks Job.
+- Databricks Notebooks: These are native to the Databricks environment and can be scheduled and automated as Databricks Jobs.
+- SQL queries: Databricks supports the execution of SQL queries, which can be part of a Databricks Job.
+- JAR files: Databricks can run JAR files as Jobs, especially those written for Apache Spark.
+- dbt Tasks: Databricks can integrate with dbt (data build tool) for running transformation tasks as part of a Databricks Job.
 
+## Cannot be a Databricks Job
+- Cloud automations: This typically refers to broader cloud management tasks that are outside the scope of what Databricks Jobs are designed for.
+- pgSQL scripts: While Databricks supports PostgreSQL syntax to some extent, running specific PostgreSQL (pgSQL) scripts directly as a Job might not be feasible without modifications or additional integrations.
+- Excel macros: Databricks cannot execute Excel macros as they are specific to Microsoft Excel and require the Excel environment.
 ```
 
 ## Benefits of Delta Live Tables
