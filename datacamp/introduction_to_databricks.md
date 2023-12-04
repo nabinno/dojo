@@ -246,14 +246,13 @@ Language: Ruby - Creating a complex function that Iterates over each row
 [x]Maintain better data quality with set expectations
 ```
 
-## End-to-end data pipeline example in Databricks
-```
-
-```
-
 ## Data pipeline steps
 ```
-
+1. Ingest raw data files into a Delta table with Autoloader.
+2. Create a Delta Live Table pipeline to clean and join datasets.
+3. Create a Delta Live Table pipeline to aggregate datasets for BI applications.
+4. Orchestrate all the Data Engineering tasks with a Databricks Workflow.
+5. Monitor the data quality of the pipelines to keep track of the accuracy of your tables.
 ```
 
 
