@@ -259,14 +259,12 @@ Language: Ruby - Creating a complex function that Iterates over each row
 
 
 # 3. Databricks SQL and Data Warehousing
-## Overview of Databricks SQL
-```
-
-```
-
 ## Benefits of Databricks SQL
 ```
-
+[x] Access to more advanced capabilities as part of a broader platform: Databricks provides a unified platform that integrates various advanced capabilities like machine learning, data engineering, and data science, in addition to its SQL capabilities. This integration can be highly beneficial for complex data analytics workflows.
+[x] Flexible, open access to data and the SQL language: Databricks SQL offers flexible and open access to data, allowing users to query data across different data sources using the familiar SQL language. This flexibility can be crucial in a data-driven organization where data resides in various formats and locations.
+[ ] Leverage a proprietary system that restricts access to different tools: This is not a benefit. In fact, this would be a limitation, as proprietary systems often restrict flexibility and integration with other tools and platforms.
+[x] Use of a scalable, optimized compute engine for SQL workloads: Databricks SQL is built on a highly optimized and scalable compute engine designed to handle SQL workloads efficiently. This means that you can expect improved performance, especially for large-scale data processing tasks, which is a critical factor for analytics-driven organizations like yours.
 ```
 
 ## Databricks SQL in the data workflow
