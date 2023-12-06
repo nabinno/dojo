@@ -269,7 +269,11 @@ Language: Ruby - Creating a complex function that Iterates over each row
 
 ## Databricks SQL in the data workflow
 ```
-
+1. Ingest Raw Data into the Delta Lake: The first step is to ingest raw data into Delta Lake. Delta Lake provides a storage layer that brings reliability to Data Lakes. It allows you to store both structured and unstructured data and is an essential part of the Databricks platform.
+2. Clean / Transform the Data with Delta Live Tables: Once the data is in Delta Lake, the next step is to clean and transform it. This step is crucial for ensuring data quality and usability. Delta Live Tables provide an easy and reliable way to transform and clean your data.
+3. Aggregate the Data Based on Business Needs: After the data is cleaned and transformed, the next step is to aggregate it according to your business requirements. This involves summarizing your data to make it more suitable for analysis, such as calculating totals, averages, or other statistical measures.
+4. Query the Data Using Databricks SQL: With your data aggregated, you can now query it using Databricks SQL. This SQL analytics service on Databricks allows you to run quick and efficient queries on your data, enabling you to extract meaningful insights.
+5. Visualize Your Queries Using Your BI Tool: Finally, the insights gained from your queries can be visualized using a Business Intelligence (BI) tool. This step is about representing your data in a more accessible and understandable format, which is crucial for making informed business decisions.
 ```
 
 ## Databricks SQL vs. other databases
