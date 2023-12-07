@@ -278,7 +278,14 @@ Language: Ruby - Creating a complex function that Iterates over each row
 
 ## Databricks SQL vs. other databases
 ```
+### Databricks SQL
+- Operates on Open Data Formats: Databricks SQL is designed to work seamlessly with open data formats like Parquet, Delta Lake, etc. This is a distinguishing feature of Databricks SQL, as it allows for more flexibility and interoperability with different data sources and tools.
+- Leverage ML Models: Databricks SQL integrates closely with machine learning capabilities, leveraging Apache Spark’s MLlib or Databricks’ own machine learning features. This enables users to easily incorporate machine learning models into their SQL queries and analytics workflows.
+- Built on ANSI SQL and Spark: Databricks SQL is built upon Apache Spark and supports ANSI SQL, which is a standard SQL dialect. This ensures compatibility with traditional SQL queries while also benefiting from Spark's distributed processing capabilities.
 
+### Other Data Warehousing Tools
+- Tech-Specific SQL: Traditional data warehousing tools often use proprietary or tech-specific SQL dialects. This might limit interoperability and could require more specialized knowledge compared to the more universally known ANSI SQL.
+- SQL Workloads Only: Many conventional data warehousing solutions are primarily designed for SQL workloads and might not natively support machine learning or operations on open data formats. They focus more on structured data processing and analysis.
 ```
 
 ## Getting started with Databricks SQL
