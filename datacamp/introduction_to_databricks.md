@@ -288,14 +288,11 @@ Language: Ruby - Creating a complex function that Iterates over each row
 - SQL Workloads Only: Many conventional data warehousing solutions are primarily designed for SQL workloads and might not natively support machine learning or operations on open data formats. They focus more on structured data processing and analysis.
 ```
 
-## Getting started with Databricks SQL
-```
-
-```
-
 ## Choosing your SQL warehouse
 ```
-
+[ ]Pro: Typically offers more advanced features and customization options. However, it might not be as quick to spin up compared to a serverless option, which can be a drawback for users who need immediate access to data.
+[x]Serverless: This type of warehouse is designed for ease of use and quick accessibility. It generally requires less management and can automatically scale to meet demand, meaning users won't have to wait for the warehouse to spin up. This aligns well with the users' expectation of quickly accessing data. Additionally, Databricks has been known to integrate the latest features into their serverless offerings.
+[ ]Classic: Usually the most basic option with standard features. It might not include the latest updates from Databricks as promptly as the serverless option and could have longer spin-up times compared to serverless warehouses.
 ```
 
 ## SQL Editor vs. notebooks
