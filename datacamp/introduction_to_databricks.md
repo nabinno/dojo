@@ -305,7 +305,12 @@ Language: Ruby - Creating a complex function that Iterates over each row
 
 ## Creating the usSales table
 ```
-
+CREATE TABLE usSales
+USING delta AS (
+    SELECT *
+    FROM globalSales
+    WHERE country = 'United States
+)
 ```
 
 ## Databricks SQL queries and dashboards
