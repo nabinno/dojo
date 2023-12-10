@@ -297,7 +297,10 @@ Language: Ruby - Creating a complex function that Iterates over each row
 
 ## SQL Editor vs. notebooks
 ```
-
+[X]A dedicated data explorer pane to see catalogs, schema, and tables - This feature can be a significant benefit of the SQL Editor. A dedicated data explorer pane provides an easy and organized way to view and manage databases, schemas, and tables, which is essential for efficient SQL query writing and data exploration.
+[X]Dedicated area for writing SQL queries - The SQL Editor typically offers a streamlined and specialized interface for writing SQL queries. This focused environment can enhance productivity and user experience, especially for those primarily working with SQL.
+[ ]SQL queries always run faster in the SQL Editor - This statement is misleading. The speed of SQL query execution depends on various factors such as the query's complexity, the amount of data being processed, and the underlying database's performance. The interface used for writing the query (SQL Editor vs. Notebook) does not inherently affect the execution speed.
+[ ]Databricks will write SQL queries for you in the SQL Editor - This is not a feature of the SQL Editor. While some tools may offer query suggestions or autocomplete features, the actual writing of SQL queries is still a manual process that requires user input and decision-making.
 ```
 
 ## Creating the usSales table
