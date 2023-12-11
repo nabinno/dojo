@@ -313,14 +313,16 @@ USING delta AS (
 )
 ```
 
-## Databricks SQL queries and dashboards
-```
-
-```
-
 ## Understanding Databricks SQL assets
 ```
+[ ]Dashboards can have multiple visualizations attached to them, and queries can show results from multiple dashboards or visualizations.
+[ ]Visualizations can have multiple queries attached to them, and dashboards can show results from multiple queries or visualizations.
+[x]Queries can have multiple visualizations attached to them, and dashboards can show results from multiple queries or visualizations.
+[ ]There is no way to relate queries, visualizations, or dashboards together in Databricks SQL.
 
+NOTE:
+In the Databricks SQL environment, the typical workflow involves creating queries to extract and process data. These queries can then be used to generate visualizations, such as charts or graphs, to represent the data in a more digestible and visually appealing format. Multiple visualizations can be created from a single query, depending on the different aspects of the data you want to highlight.
+Furthermore, these visualizations can be compiled together into dashboards. A dashboard is a collection of visualizations that provides a comprehensive view of the data insights. Each dashboard can contain results from multiple queries, allowing for a broad overview of different data points and trends. This setup is useful for monitoring, reporting, and data analysis purposes, where you might need to observe various metrics and KPIs simultaneously.
 ```
 
 ## Using parameters in queries
