@@ -327,7 +327,12 @@ Furthermore, these visualizations can be compiled together into dashboards. A da
 
 ## Using parameters in queries
 ```
+[ ]SELECT * FROM sales_distribution WHERE distributor = companyName AND num_transactions >= transactionCount
+[x]SELECT * FROM sales_distribution WHERE distributor = {{companyName}} AND num_transactions >= {{transactionCount}}
+[ ]SELECT * FROM sales_distribution WHERE {{company_name}} AND {{transactionCount}}
+[ ]SELECT company_name, transactionCount FROM sales_distribution
 
+NOTE: This query uses the parameters {{companyName}} and {{transactionCount}} in the WHERE clause to filter the results based on the selected distributor and the minimum number of transactions specified. This allows the user to interactively change the criteria for analysis through the parameter widgets in the dashboard.
 ```
 
 ## Creating a Databricks SQL Dashboard
