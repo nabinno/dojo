@@ -335,14 +335,18 @@ Furthermore, these visualizations can be compiled together into dashboards. A da
 NOTE: This query uses the parameters {{companyName}} and {{transactionCount}} in the WHERE clause to filter the results based on the selected distributor and the minimum number of transactions specified. This allows the user to interactively change the criteria for analysis through the parameter widgets in the dashboard.
 ```
 
-## Creating a Databricks SQL Dashboard
-```
-
-```
-
 ## Create a user review query
 ```
-
+USE book_catalog.distribution;
+CREATE VIEW user_demographics AS (
+    SELECT Location,
+        avg(Age) AS averageAge,
+        count(User-ID) AS totalReviews,
+        round(avg(Book-Rating), 1) AS averageRating
+    FROM user_reviews
+    WHERE Location IN ('california', 'new york', 'quebec', 'alberta', 'ontario')
+    GROUP BY Location
+);
 ```
 
 
