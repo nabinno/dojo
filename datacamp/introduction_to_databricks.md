@@ -353,11 +353,6 @@ CREATE VIEW user_demographics AS (
 
 
 # 4. Databricks for Large-scale Applications and Machine Learning
-## Overview of Lakehouse AI
-```
-
-```
-
 ## Lakehouse benefits to ML
 ```
 
