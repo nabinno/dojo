@@ -355,7 +355,11 @@ CREATE VIEW user_demographics AS (
 # 4. Databricks for Large-scale Applications and Machine Learning
 ## Lakehouse benefits to ML
 ```
-
+[x]Access to a scalable and performant compute engine: This is a core benefit of Databricks. The platform provides a scalable and high-performance computing environment, which is essential for handling large datasets and complex machine learning models.
+[x]Support for all the open source libraries and frameworks your team needs: Databricks is known for its extensive support of open-source libraries and frameworks. It integrates well with popular machine learning and data processing frameworks, making it a flexible choice for teams used to working with a variety of tools.
+[ ]Create and tune models for you with a drag-and-drop UI: While Databricks provides an interactive workspace and supports various tools for machine learning, it doesn't create and tune models automatically through a drag-and-drop UI. It's more about providing the environment and tools for data scientists to build, tune, and deploy models rather than doing it automatically.
+[x]Allow your team to collaborate with data engineers and data analysts: This is another significant benefit of Databricks. Its collaborative environment is designed to bridge the gap between data engineers, data scientists, and analysts, facilitating seamless collaboration and integration of workflows.
+[ ]Automatically deploy your model anywhere you need it to go: Databricks streamlines the deployment process, but it doesn't fully automate deployment to any destination. It provides tools and integrations to facilitate deployment, but this typically requires some configuration and management from the team.
 ```
 
 ## MLOps tasks in Databricks
