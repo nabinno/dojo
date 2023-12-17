@@ -378,14 +378,13 @@ Governing access to models with Unity Catalog.
 Deploying a model on a Serving Endpoint.
 ```
 
-## Using Databricks for machine learning
-```
-
-```
-
 ## EDA in Databricks
 ```
+[ ]Yes, they can have Databricks write code for them to perform EDA.
+[x]Yes, they can use the built-in visualization tools in Databricks Notebooks for EDA.
+[ ]No, there is no way for them to perform EDA without knowing pandas.
 
+NOTE: Databricks provides various visualization tools and capabilities that can help junior data analysts explore and analyze data without requiring extensive knowledge of pandas or coding. These tools allow them to create visualizations, generate summary statistics, and gain insights from the data, making it easier for them to contribute to machine learning workloads.
 ```
 
 ## Why the ML Runtime?
