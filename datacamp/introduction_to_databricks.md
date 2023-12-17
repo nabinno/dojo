@@ -364,7 +364,18 @@ CREATE VIEW user_demographics AS (
 
 ## MLOps tasks in Databricks
 ```
+## DataOps
+Removing NULL values from your silver table.
+Adding a column as feature in a data table.
+Ingesting row data int oDelta tables.
 
+## ModelOps
+Generate on example model using AutoML.
+Training a SparkML model.
+
+## DevOps
+Governing access to models with Unity Catalog.
+Deploying a model on a Serving Endpoint.
 ```
 
 ## Using Databricks for machine learning
