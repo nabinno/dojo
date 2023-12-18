@@ -389,7 +389,10 @@ NOTE: Databricks provides various visualization tools and capabilities that can 
 
 ## Why the ML Runtime?
 ```
-
+[x]ML Runtime comes with the leading libraries pre-installed: ML Runtime comes with the leading libraries pre-installed: The Databricks ML Runtime is pre-configured with popular machine learning libraries like scikit-learn, TensorFlow, PyTorch, and more. This eliminates the need for manually managing and installing these libraries, saving time and effort for data scientists.
+[ ]ML Runtime comes with all the libraries you'll ever need from the online respositories.
+[x]ML Runtime is optimized for machine learning workloads: ML Runtime is optimized for machine learning workloads: ML Runtime is specifically designed and optimized for machine learning workloads. It includes performance improvements, hardware acceleration support, and other optimizations that can significantly enhance the efficiency and speed of machine learning tasks when compared to manual library management on local laptops or non-specialized environments.
+[ ]ML Runtime is no different than installing your libraries onto each cluster.
 ```
 
 ## Exploring data in a notebook
