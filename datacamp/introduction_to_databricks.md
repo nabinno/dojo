@@ -397,7 +397,19 @@ NOTE: Databricks provides various visualization tools and capabilities that can 
 
 ## Exploring data in a notebook
 ```
-
+df = spark.read.table('review_data')
+dbutils.data.summarize(df)
+feature_df = (
+    df.withColumn('feature1', ...)
+      .withColumn('feature2', ...)
+)
+from databricks import feature_store
+fs = feature_store.FeatureStoreClient()
+fs.create_table(
+    name=review_features,
+    df=feature_df,
+    description="review features"
+)
 ```
 
 ## Model training with MLFlow in Databricks
