@@ -412,11 +412,6 @@ fs.create_table(
 )
 ```
 
-## Model training with MLFlow in Databricks
-```
-
-```
-
 ## Single node vs. multi node ML
 ```
 
