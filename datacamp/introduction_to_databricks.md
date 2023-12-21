@@ -414,7 +414,15 @@ fs.create_table(
 
 ## Single node vs. multi node ML
 ```
+## Single Node
+Quick, easy, local setup
+scikit-learn
+Great for play around with
 
+## Multi node
+Highly scalable
+Sparl ML
+Great for production
 ```
 
 ## Databricks for citizen data scientists
