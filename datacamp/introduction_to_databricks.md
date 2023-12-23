@@ -427,7 +427,12 @@ Great for production
 
 ## Databricks for citizen data scientists
 ```
+[ ]The junior data scientists should use an external "black box" auto ML tool and give those models to you.
+[ ]The junior data scientists should force themselves to use specific frameworks and learn independently.
+[x]The junior data scientists can create models with AutoML, and you can review or tune the code from the generated notebooks.
+[ ]The junior data scientists will not be able to contribute until they learn how to program an end-to-end pipeline.
 
+NOTE: This approach allows the junior data scientists to contribute effectively using AutoML tools, which are more accessible for those not yet comfortable with building machine-learning pipelines from scratch. At the same time, it provides an opportunity for you to review, understand, and improve upon the work they start, ensuring quality and consistency in your production models.
 ```
 
 ## Using MLFlow for Tracking
