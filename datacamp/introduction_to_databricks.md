@@ -474,14 +474,13 @@ mlflow.register_model(model_uri, "model_name")
 ```
 This process simplifies the experimentation and model selection phase of machine learning projects, making it easier to track, compare, and manage different models and their respective runs.
 
-## Deploying a model in Databricks
-```
-
-```
-
 ## Models and the Model Registry
 ```
-
+[x]1. Easily see current and past versions of the same model. - This is true. The Model Registry allows you to track and view different versions of a model, making it easy to compare and manage them over time.
+[x]2. Ability to push a model into either Staging or Production. - This is true. The Model Registry typically provides a mechanism to deploy models to different environments, such as staging or production, making it easier to manage the deployment process.
+[ ]3. Ability to automatically select the best version of a model for Production. - This can be true in some cases, depending on the specific implementation of the Model Registry. Some Model Registries offer features for automated model selection based on criteria like performance metrics.
+[ ]4. Automatically push the latest version of a model into Production. - This may or may not be a feature of the Model Registry. It depends on the configuration and automation set up for deployment. Not all Model Registries have this capability by default.
+[x]5. Ability for others to discover their version of the model. - This is true. The Model Registry allows team members to discover and access different versions of a model, facilitating collaboration and knowledge sharing among data science teams.
 ```
 
 ## Why Databricks for model deployment?
