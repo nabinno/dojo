@@ -436,9 +436,43 @@ NOTE: This approach allows the junior data scientists to contribute effectively 
 ```
 
 ## Using MLFlow for Tracking
+### 1. Define an Experiment
+An experiment in MLflow is a way to organize and keep track of your machine learning runs. Each experiment can contain multiple runs, and each run represents a single trial of training a model. When you define an experiment, you essentially create a workspace where all related runs are stored and tracked.
+
+### 2. Start the Machine Learning Run
+To start tracking a machine learning run in MLflow, you use the `mlflow.start_run()` context manager. This initiates a new run in the current active experiment. If no experiment is active, it creates a run in a default experiment.
+
+```python
+import mlflow
+
+with mlflow.start_run() as run:
+# Your training code goes here
 ```
 
+### 3. Train Your Model and Track Your Information
+While the run is active, you can log parameters, metrics, models, and artifacts. There are two primary ways to log this information:
+- **`mlflow.autolog()`**: This automatically logs metrics, parameters, and models without needing explicit log statements. It's useful for standard training scenarios.
+```python
+mlflow.autolog()
+# Training code here
 ```
+- **`mlflow.log_param()` and `mlflow.log_metric()`**: These are used for manual logging. `log_param` records a single key-value pair of a parameter, and `log_metric` records a key-value pair of a metric.
+```python
+mlflow.log_param("param_name", param_value)
+mlflow.log_metric("metric_name", metric_value)
+```
+
+### 4. Compare Your Model Runs in the MLFlow Experiment
+After conducting several runs, you can use the MLflow UI to compare these runs. The MLflow UI provides a visual interface where you can view, compare, and analyze different runs. You can sort and filter runs based on metrics and parameters, which is very useful for identifying the best performing models.
+
+### 5. Select the Model from the Best Run
+Once you've compared the runs, you can select the best model based on your criteria (e.g., highest accuracy, lowest error rate). MLflow allows you to register this model in its model registry, where you can version, manage, and deploy models.
+```python
+best_run_id = "your_best_run_id_here"
+model_uri = f"runs:/{best_run_id}/model"
+mlflow.register_model(model_uri, "model_name")
+```
+This process simplifies the experimentation and model selection phase of machine learning projects, making it easier to track, compare, and manage different models and their respective runs.
 
 ## Deploying a model in Databricks
 ```
