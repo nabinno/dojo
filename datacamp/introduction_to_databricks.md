@@ -485,7 +485,12 @@ This process simplifies the experimentation and model selection phase of machine
 
 ## Why Databricks for model deployment?
 ```
+[ ]Model Serving Endpoints can be deployed in both on-prem and cloud environments.
+[ ]Model Serving Endpoints are deployed in our environment, and we can control them however we want.
+[ ]Model Serving Endpoints do not have any appreciable benefit over hosting models with on-prem compute.
+[x]Model Serving Endpoints simplify the overhead of managing compute resources and provide built-in capabilities for model monitoring.
 
+NOTE: Using Databricks Model Serving Endpoints can simplify the deployment process for machine learning models by abstracting away much of the complexity of managing compute resources in the cloud. Additionally, Databricks provides built-in capabilities for model monitoring, which can be valuable for tracking model performance and ensuring that it continues to perform well in production. This can save time and effort compared to traditional deployment methods with on-prem compute resources, which often require more manual configuration and monitoring setup.
 ```
 
 ## Example end-to-end machine learning pipeline
