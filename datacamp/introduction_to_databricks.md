@@ -493,14 +493,13 @@ This process simplifies the experimentation and model selection phase of machine
 NOTE: Using Databricks Model Serving Endpoints can simplify the deployment process for machine learning models by abstracting away much of the complexity of managing compute resources in the cloud. Additionally, Databricks provides built-in capabilities for model monitoring, which can be valuable for tracking model performance and ensuring that it continues to perform well in production. This can save time and effort compared to traditional deployment methods with on-prem compute resources, which often require more manual configuration and monitoring setup.
 ```
 
-## Example end-to-end machine learning pipeline
-```
-
-```
-
 ## End-to-end ML pipeline
 ```
-
+1. Transform datasets, create features, and store them in the Feature Store. - This step involves data preprocessing and feature engineering, which should be done before model training.
+2. Train your regression model using the SparkML library. - Once you have prepared the datasets and features, you can proceed with training your regression model.
+3. Test out your model against another dataset and track the results with MLFlow. - After training, it's important to evaluate your model's performance on a separate test dataset and track the results using MLFlow for monitoring and experimentation.
+4. Store your trained model in the Model Registry. - Once your model is trained and evaluated, you can store it in a model registry for versioning and easy access.
+5. Serve your model with a Databricks serving endpoint for your end users to consume. - Finally, you can deploy your trained model to a serving endpoint, making it accessible for end users to consume and make predictions.
 ```
 
 ## Wrap Up
