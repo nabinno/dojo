@@ -501,8 +501,3 @@ NOTE: Using Databricks Model Serving Endpoints can simplify the deployment proce
 4. Store your trained model in the Model Registry. - Once your model is trained and evaluated, you can store it in a model registry for versioning and easy access.
 5. Serve your model with a Databricks serving endpoint for your end users to consume. - Finally, you can deploy your trained model to a serving endpoint, making it accessible for end users to consume and make predictions.
 ```
-
-## Wrap Up
-```
-
-```
