@@ -16,7 +16,17 @@ NOTE: This order allows the team to first gather the necessary data, then visual
 
 ## Building a customer service chatbot
 ```
+Data Collection:
+- Gather corresponding customer information for each conversation
+- Input the timestamps for each transcript
 
+Exploration and Visualization:
+- Create a bar chart of the number of conversations of each type
+- Plot the number of conversations vs. the time of day
+
+Experimentation and Prediction:
+- Use a Markov model to predict possible responses for each question
+- Create an algorithm that classifies the initial customer question
 ```
 
 ## Improving OKRs
