@@ -31,7 +31,11 @@ Experimentation and Prediction:
 
 ## Improving OKRs
 ```
+[x]Use a linear regression to estimate a user's Net Promoter Score (NPS) based on their previous purchases, social media interactions, and cohort.
+[ ]Collect data on which users are most active on the website.
+[ ]Create a dashboard with a histogram showing the number of users with different levels of engagement.
 
+NOTE: This Key Result involves applying predictive modeling techniques (linear regression) to estimate NPS based on various user data, which aligns with the concept of predicting outcomes using data. It also involves experimentation by building a predictive model to assess user behavior.
 ```
 
 ## Applications of Data Science
