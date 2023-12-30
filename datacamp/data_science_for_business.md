@@ -38,14 +38,19 @@ Experimentation and Prediction:
 NOTE: This Key Result involves applying predictive modeling techniques (linear regression) to estimate NPS based on various user data, which aligns with the concept of predicting outcomes using data. It also involves experimentation by building a predictive model to assess user behavior.
 ```
 
-## Applications of Data Science
-```
-
-```
-
 ## Assigning data science projects
 ```
+## Traditional Machine Learning
+- Cluster customers into different segments
+- Dynamic pricing of products
 
+## Internet of Things
+- Automate building cooling using temperature sensors
+- Detect machinery failure with vibration detectors
+
+## Deep Learning
+- Automatically summarize text from meeting notes
+- Flag images that contain a safety violation
 ```
 
 ## Investment research
