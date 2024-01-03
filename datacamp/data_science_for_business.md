@@ -53,14 +53,12 @@ NOTE: This Key Result involves applying predictive modeling techniques (linear r
 - Flag images that contain a safety violation
 ```
 
-## Investment research
-```
-
-```
-
 ## Building a data science team
 ```
-
+[ ]1. Traditional machine learning: Traditional machine learning techniques involve training models on structured data to make predictions or classifications. In the case of the startup, while they may use some machine learning algorithms to process the sensor data and make predictions about traffic conditions, the primary focus appears to be on sensor technology and data collection rather than machine learning. Therefore, this category may not be the best fit.
+[ ]2. Deep learning: Deep learning involves using neural networks to analyze and extract patterns from data. If the startup is using deep learning models to process the sensor data and provide traffic insights, then this category could be relevant. However, based on the provided information, it seems that the startup's core innovation is the sensor technology itself, with data collection being a key component. Deep learning might come into play for more advanced analysis, but it's not the primary focus.
+[x]3. Internet of things (IoT): IoT refers to the network of interconnected physical devices that collect and exchange data. In this case, the startup's product involves installing vibration sensors to collect data from bridges and highways. This aligns closely with the IoT concept, as it involves sensor deployment, data collection, and potentially remote monitoring. Therefore, categorizing the startup under the IoT category would be appropriate.
+[ ]4. Natural language processing (NLP): NLP deals with the interaction between computers and human language. Given that the startup's focus is on vibration sensors and traffic measurement, it does not seem relevant to the NLP category, as it doesn't involve language processing or text analysis.
 ```
 
 ## Interpreting a team sprint
