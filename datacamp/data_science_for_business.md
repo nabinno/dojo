@@ -63,7 +63,9 @@ NOTE: This Key Result involves applying predictive modeling techniques (linear r
 
 ## Interpreting a team sprint
 ```
-
+[x]Hybrid
+[ ]Embedded
+[ ]Isolated
 ```
 
 ## Editing a job posting
