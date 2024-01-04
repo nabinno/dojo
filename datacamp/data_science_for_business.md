@@ -70,7 +70,19 @@ NOTE: This Key Result involves applying predictive modeling techniques (linear r
 
 ## Editing a job posting
 ```
+[x]Expert user of Excel or Google Sheets, including VLOOKUP and pivot tables
+[ ]Some experience with Deep Learning and neural nets
+[ ]Basic proficiency in either Java, Scala, or Python for database operations
 
+# Data Analyst Job Posting
+Job Id: 8675309
+Location: New York
+Business: Cool Company
+Job Summary:  Join our awesome company and do data analysis for us!
+Basic Qualifications:
+- Proficient in SQL for data analysis (including JOINs, WINDOW functions)
+- Familiarity with Tableau or Power BI for building dashboards
+- Expert user of Excel or Google Sheets, including VLOOKUP and pivot tables
 ```
 
 ## Matching skills to jobs
