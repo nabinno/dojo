@@ -87,7 +87,12 @@ Basic Qualifications:
 
 ## Matching skills to jobs
 ```
+Data Engineer:
+- Strong Java skills
+- Expert at building and maintaining SQL databases
 
+Machine Learning Scientist:
+- Experience with Python, especially frediction and modeling
 ```
 
 ## Classifying data tasks
