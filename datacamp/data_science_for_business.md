@@ -97,7 +97,17 @@ Machine Learning Scientist:
 
 ## Classifying data tasks
 ```
+Data Engineer:
+- Create a new table in SQL database
+- Give new team members database access
 
+Data Analyst:
+- Create a dashboard for Marketing team
+- Update Excel spreadsheet with new graphs
+
+Machine Learning Scientist:
+- Train anormaly detector algorithm
+- Build image classifier for self-driving car
 ```
 
 
