@@ -114,14 +114,17 @@ Machine Learning Scientist:
 
 
 # 2. Data Collection and Storage
-## Data sources and risks
-```
-
-```
-
 ## Classifying data for security
 ```
+PII:
+- Work address
+- Customer name
+- Email address
 
+Not PII:
+- Customer's language
+- Delivery date
+- Product ordered
 ```
 
 ## Creating web data events
