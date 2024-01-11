@@ -129,7 +129,11 @@ Not PII:
 
 ## Creating web data events
 ```
+[x] Liking a story: This event is valuable for tracking user engagement with the content on the website. It can help understand which stories or posts are popular and which ones are not resonating with users.
+[x] Sharing a story: Tracking when users share a story is important for understanding the virality and reach of the content on the website. It can provide insights into the effectiveness of social sharing features.
+[x] Clicking a navigation link: This event is crucial for monitoring user navigation behavior within the website. It helps determine which sections or pages of the website are most frequently visited and can identify potential usability issues if users are frequently clicking on links that don't work.
 
+NOTE: All of the above events should be stored in Jacinda's data warehouse because they provide valuable data points for analyzing user interactions and improving the website's performance. These events can help Jacinda's team make data-driven decisions to enhance the user experience and content engagement on SkimmedIt.
 ```
 
 ## Protecting PII
