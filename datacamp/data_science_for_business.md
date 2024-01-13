@@ -138,7 +138,12 @@ NOTE: All of the above events should be stored in Jacinda's data warehouse becau
 
 ## Protecting PII
 ```
+[ ] Everyone should have access to both tables because transparency is a core company value: This approach might be risky from a data privacy perspective, especially if the tables contain Personally Identifiable Information (PII) or sensitive customer data. Access should generally be restricted to authorized personnel to protect the data.
+[ ] The entire analytics team should have access to Customers, and everyone at the company should have access to Purchases: This approach may be reasonable if the Customers table contains non-sensitive information that the analytics team needs for their work, while Purchases data is considered less sensitive. However, it's still important to ensure that sensitive PII is appropriately protected within the Customers table, and access should be controlled based on specific job responsibilities and data protection regulations.
+[x] Only people with a demonstrated need to contact customers should have access to Customers, and everyone can have access to Purchases: This approach is more in line with data protection best practices. Access to the Customers table is limited to those who need it for their job functions, reducing the risk of unauthorized access to sensitive customer information. Purchases, which may contain less sensitive data, can be made more widely available.
+[ ] Only managers should have access to either table: Restricting access to only managers may be too limiting, as it could hinder operational efficiency and prevent authorized personnel from performing their tasks. Access should generally be granted based on job roles and responsibilities, rather than just managerial positions.
 
+NOTE: In practice, a more balanced approach is often recommended, where access is granted on a need-to-know basis, and security and privacy concerns are carefully considered. Data access should be aligned with data protection laws, such as GDPR or CCPA, and organizational policies to ensure the appropriate level of security and compliance. A Data Access Policy should be developed that outlines who can access what data and under what circumstances.
 ```
 
 ## Solicited data
