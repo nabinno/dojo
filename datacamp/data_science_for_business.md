@@ -146,14 +146,18 @@ NOTE: All of the above events should be stored in Jacinda's data warehouse becau
 NOTE: In practice, a more balanced approach is often recommended, where access is granted on a need-to-know basis, and security and privacy concerns are carefully considered. Data access should be aligned with data protection laws, such as GDPR or CCPA, and organizational policies to ensure the appropriate level of security and compliance. A Data Access Policy should be developed that outlines who can access what data and under what circumstances.
 ```
 
-## Solicited data
-```
-
-```
-
 ## Identifying question purpose
 ```
+Create marketing collateral:
+- What makes "Wine Not?" your favorite wine subscription service?
+- What is the best bottle of wine you have received from "Wine Not?"
 
+De-risk decision making:
+- For a friend's birthday, rank these gifts: gift certificate for dinner at a nice restaurant, gift subscription to "Wine Not?", $50 Amazon gift card.
+- On a scale of 1-5, how likely would you be to gift a subscription to "Wine Not?" to a friend colleague?
+
+Monitor quality:
+- Please rate your satisfaction with your last "Wine Not?" box on a scale of 1-5, where 1 is extremely dissatisfied and 5 is extremely satisfied.
 ```
 
 ## Validating focus group feedback
