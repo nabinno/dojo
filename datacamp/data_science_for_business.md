@@ -162,7 +162,10 @@ Monitor quality:
 
 ## Validating focus group feedback
 ```
-
+[ ]"Do you wish Foodwheel had delivery estimates? Select 'yes' or 'no'." - This question directly addresses the focus group's discussion about delivery time estimates and can provide quantitative data on whether this is an important feature for a larger sample of users.
+[ ]"What features do you want from Foodwheel? Write in anything you like!" - This open-ended question allows users to provide feedback on a wide range of features they desire. It will help capture additional insights and potentially reveal if high-res pictures of food or corporate accounts are also important to a broader user base.
+[x]"Rank the following features from most important to least important: delivery time estimate, high-res pictures of food, corporate accounts." - This question allows users to prioritize these specific features, providing a quantitative measure of their importance relative to each other. It can help validate the focus group's hypotheses about feature importance.
+[ ]"Which would you rather have: corporate accounts so that your company can pay for your lunch or delivery time estimates?" - This question directly addresses the trade-off between corporate accounts and delivery time estimates, which was discussed during the focus group. It can help validate whether users prefer one feature over the other.
 ```
 
 ## Net Promoter Score
