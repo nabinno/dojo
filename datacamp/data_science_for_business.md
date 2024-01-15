@@ -170,7 +170,12 @@ Monitor quality:
 
 ## Net Promoter Score
 ```
+[ ]Quantitative method of measuring revealed preference
+[ ]Qualitative method of measuring revealed preference
+[x]Quantitative method of measuring stated preference
+[ ]Qualitative method of measuring stated preference
 
+NOTE: Net Promoter Score (NPS) is a quantitative method of measuring stated preference, as it involves asking users to provide a numerical rating (on a scale of 0-10) to indicate how likely they are to recommend a product or website.
 ```
 
 ## Collecting additional data
