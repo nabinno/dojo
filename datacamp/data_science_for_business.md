@@ -178,14 +178,18 @@ Monitor quality:
 NOTE: Net Promoter Score (NPS) is a quantitative method of measuring stated preference, as it involves asking users to provide a numerical rating (on a scale of 0-10) to indicate how likely they are to recommend a product or website.
 ```
 
-## Collecting additional data
-```
-
-```
-
 ## Sorting data sources
 ```
+APIs:
+- Number of Facebook Likes for a new beauty product from users: Explanation: Lucinda can use APIs provided by Facebook or the beauty product's social media platform to access real-time data on the number of likes for the product.
+- Track stock prices of different beauty brands over time: Explanation: Lucinda can use financial market APIs (e.g., stock market data providers) to access historical and real-time stock price information for different beauty brands.
 
+Public Records:
+- Number of women between the ages of 30 - 45 living in Miami-Dade: Explanation: Public records, such as census data or government demographic information, would be the most appropriate source for population statistics like the number of women in a specific age group living in a particular area.
+- Average household income in Miami-Dade County: Explanation: Public records or government data sources would provide information on average household income in a specific geographic area like Miami-Dade County.
+
+Mechanical Turk (MTurk):
+- Build a training set where each customer review is labeled as either: Explanation: Using Mechanical Turk, Lucinda can crowdsource the labeling of customer reviews by hiring human annotators to classify them.
 ```
 
 ## Asthma frequency
