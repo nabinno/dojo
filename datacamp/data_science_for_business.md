@@ -194,7 +194,12 @@ Mechanical Turk (MTurk):
 
 ## Asthma frequency
 ```
+[ ]APIs:  Many health-related organizations and government agencies provide APIs (Application Programming Interfaces) that allow developers to access and retrieve health data, including asthma hospitalization rates by state. Examples include APIs provided by the Centers for Disease Control and Prevention (CDC) or the World Health Organization (WHO).
+[x]Public Records: Government health departments and agencies often publish health statistics, including asthma hospitalization rates, as public records. These records can be accessed and used for analysis and visualization.
+[ ]SQL: atabase: Some organizations maintain their own databases of health-related data, which can be queried using SQL (Structured Query Language) to extract relevant information. These databases may include hospitalization records and state-specific health data.
+[ ]Mechanical Turk: While Mechanical Turk could be used for data collection, it is less likely to be the source for this specific type of data as asthma hospitalization rates are typically collected and reported by official health agencies or organizations with access to health-related datasets.
 
+NOTE: The team member who created the visualization of asthma hospitalization rates for different states for the health insurance company likely used public records or APIs to collect this data.
 ```
 
 ## Data storage and retrieval
