@@ -202,14 +202,14 @@ Mechanical Turk (MTurk):
 NOTE: The team member who created the visualization of asthma hospitalization rates for different states for the health insurance company likely used public records or APIs to collect this data.
 ```
 
-## Data storage and retrieval
-```
-
-```
-
 ## Cloud platforms
 ```
+[ ]Google Cloud
+[ ]Amazon Web Services
+[ ]Microsoft Azure
+[x]MongoDB
 
+NOTE: MongoDB is NOT an example of a Cloud provider. MongoDB is a NoSQL database management system, while Google Cloud, Amazon Web Services, and Microsoft Azure are all cloud service providers that offer a wide range of cloud computing services, including infrastructure as a service (IaaS), platform as a service (PaaS), and software as a service (SaaS) offerings.
 ```
 
 ## Querying a database
