@@ -214,7 +214,10 @@ NOTE: MongoDB is NOT an example of a Cloud provider. MongoDB is a NoSQL database
 
 ## Querying a database
 ```
-
+[ ]Relational Database, NoSQL
+[x]Relational Database, SQL
+[ ]Document Database, NoSQL
+[ ]Document Database, SQL
 ```
 
 ## Which type of database?
