@@ -222,7 +222,13 @@ NOTE: MongoDB is NOT an example of a Cloud provider. MongoDB is a NoSQL database
 
 ## Which type of database?
 ```
+Relational Database
+- Customer information for all customers, such as name, phone number, user_id, and location.
+- The dates, times, subjects, and recipient addresses for all emails sent by the sales team
 
+Document Database
+- Text from various emails sendt and received by the sales team
+- Images of different products, including metadata about the image's contents
 ```
 
 
