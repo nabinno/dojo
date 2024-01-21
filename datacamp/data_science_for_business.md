@@ -235,14 +235,12 @@ Document Database
 
 
 # 3. Analysis and Visualization
-## Dashboards
-```
-
-```
-
 ## Classifying dashboard elements
 ```
-
+[ ](A) Page Visit Length By Age
+[ ](B) Visits Today
+[X](C) Monthly Active Users
+[ ](D) Web Traffic Source
 ```
 
 ## Improving a dashboard
