@@ -245,7 +245,10 @@ Document Database
 
 ## Improving a dashboard
 ```
-
+[ ]Nothing, it's fine as it is.
+[ ]Change it to a bar chart as in "categorical comparisons" to make it clear how many stocks are from each industry.
+[x]Change it to a stacked bar chart as in "tracking composition over time" to make it easier to visually compare different segments.
+[ ]Change it to a single number as in "highlighting a single number", to emphasize the total value of the portfolio.
 ```
 
 ## Choosing the right dashboard
