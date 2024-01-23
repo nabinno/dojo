@@ -253,7 +253,9 @@ Document Database
 
 ## Choosing the right dashboard
 ```
-
+Line Chart: Number of clients served per month ... A Line chart is ideal for tracking a value over time, such as the number of clients served per month. It allows Kevin to visualize the trend and fluctuations in the number of clients served over different months.
+Bar Chart: Number of trades made by each analyst in the past 30 days ... A Bar chart is suitable for categorical comparison, and in this case, it can be used to compare the number of trades made by each analyst in the past 30 days. Each analyst's name can be on the x-axis, and the number of trades they made can be represented by the height of the bars.
+Table: A list of the names and ticker symbols for the top 5 stocks over the past 10 days ... A Table is the best choice for displaying information in a structured manner. It allows Kevin to present a list of names and ticker symbols for the top 5 stocks over the past 10 days in a clear and organized format.
 ```
 
 ## Ad hoc analysis
