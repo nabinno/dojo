@@ -258,14 +258,11 @@ Bar Chart: Number of trades made by each analyst in the past 30 days ... A Bar c
 Table: A list of the names and ticker symbols for the top 5 stocks over the past 10 days ... A Table is the best choice for displaying information in a structured manner. It allows Kevin to present a list of names and ticker symbols for the top 5 stocks over the past 10 days in a clear and organized format.
 ```
 
-## Ad hoc analysis
-```
-
-```
-
 ## Filling out an ad hoc request
 ```
-
+[ ]A SQL command that she thinks might get the results; it will speed up the process.
+[ ]The name of the analyst who she wants to work on the project; that way she knows it will be done correctly.
+[x]The reason why she needs this data; the analysts might suggest other data that will help her with her problem.
 ```
 
 ## Classifying requests
