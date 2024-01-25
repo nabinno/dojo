@@ -267,7 +267,13 @@ Table: A list of the names and ticker symbols for the top 5 stocks over the past
 
 ## Classifying requests
 ```
+Dashboard request
+- CEO wants daily updates on how many new subscriptions we received.
+- Growth team wants to track weekly progress on their new sign-up workflow.
 
+Ad hoc request:
+- Legal department wants to know if any of our subscribers are from a sactioned country. They need to remove those users ASAP!
+- Marketing wants to know what percent of subscribers have a `.edu` email address. They're investigating a student discount.
 ```
 
 ## A/B Testing
