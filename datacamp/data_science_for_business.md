@@ -276,14 +276,12 @@ Ad hoc request:
 - Marketing wants to know what percent of subscribers have a `.edu` email address. They're investigating a student discount.
 ```
 
-## A/B Testing
-```
-
-```
-
 ## Creating an A/B testing workflow
 ```
-
+1. Picking a metric to track: Determine the specific metric(s) you want to measure to evaluate the performance of your ad copies. This should be the first step to define your experiment's goals.
+2. Calculating sample size: After selecting the metric, calculate the sample size required for your A/B test to ensure statistical significance. This step is crucial to ensure that your results are reliable.
+3. Running the experiment: Once you have determined the sample size and have set up the necessary infrastructure for the test, you can begin running the A/B test by randomly assigning your audience to two groups: one exposed to ad copy A and the other exposed to ad copy B.
+4. Checking for significance: After running the experiment for an appropriate duration, collect and analyze the data to determine if the differences in performance between the two ad copies are statistically significant. This step is essential to draw valid conclusions from your A/B test results.
 ```
 
 ## Sample size
