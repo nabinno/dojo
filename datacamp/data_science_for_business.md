@@ -286,7 +286,12 @@ Ad hoc request:
 
 ## Sample size
 ```
+[ ]increases/increases
+[ ]decreases/increases
+[ ]increases/decreases
+[x]decreases/decreases
 
+NOTE: As baseline conversion increases, sample size decreases. As minimum detectable difference increases, sample size decreases.
 ```
 
 ## Intermediate results
