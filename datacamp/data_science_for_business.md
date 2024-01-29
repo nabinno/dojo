@@ -296,7 +296,11 @@ NOTE: As baseline conversion increases, sample size decreases. As minimum detect
 
 ## Intermediate results
 ```
+[ ]It looks like the bar representing the new workflow has a slightly lower cancellation rate than the bar representing the old workflow, so Alondra should stop the test and switch to the new workflow.
+[x]The number of users exposed to the test has not yet reached the desired sample size, so Alondra should wait and make her judgment after the desired sample size has been reached.
+[ ]The results are not yet significant, so Alondra should cancel the test and keep using the old workflow.
 
+NOTE: Based on the information provided, Alondra should conclude that the results are not yet significant. Therefore, she should not make any final judgments or decisions based on the current state of the experiment. She should wait until the desired sample size has been reached and conduct a proper statistical analysis to determine the significance of the results before making any decisions about whether to continue with the new workflow or stick with the old one.
 ```
 
 
