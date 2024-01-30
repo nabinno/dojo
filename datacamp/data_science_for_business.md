@@ -307,14 +307,18 @@ NOTE: Based on the information provided, Alondra should conclude that the result
 
 
 # 4.
-## Supervised machine learning
-```
-
-```
-
 ## When to use Supervised Learning
 ```
+A/B Test:
+- Growth team wants to know which barner ad gets the most clicks.
+- Sales team wants to know which script maximized purchases from calls with new clients.
 
+Supervised Machine Learning:
+- Customer Success team wants to know which customers are likely to churn based on previous purchases and social media interactions.
+- Finance team wants to know which customer accounts are likely to miss a pyment based on previous payments and demographics.
+
+Dashboard:
+- CEO wants a chart correlating customer age with lifetime value.
 ```
 
 ## Features and labels
