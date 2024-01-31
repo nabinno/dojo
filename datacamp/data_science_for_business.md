@@ -323,7 +323,12 @@ Dashboard:
 
 ## Features and labels
 ```
+[ ]50XP
+[ ]Age
+[ ]Income
+[x]Loan Type
 
+NOTE: In the context of building a recommendation system to predict the type of loan that a customer is most likely to use, the "Loan Type" column is the label. The label is the target variable that the machine learning model will predict. In this case, Juan's team wants to predict the loan type, so "Loan Type" is the label, and the other columns like "Age" and "Income" are likely to be features or attributes used to make predictions about the label.
 ```
 
 ## Model evaluation
