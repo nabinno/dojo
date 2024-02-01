@@ -333,7 +333,16 @@ NOTE: In the context of building a recommendation system to predict the type of 
 
 ## Model evaluation
 ```
+[x]Decision tree - it has high rates of accuracy for both valid transactions and fraudulent transactions.
+[ ]Logistic classifier - overall, it is accurate in 97% of cases.
+[ ]Random forest - it has equal accuracy for both fraudulent and valid transactions.
 
+NOTE: Decision Tree:
+- Accuracy for Valid Transactions: High
+- Accuracy for Fraudulent Transactions: High
+- Precision for Fraudulent Transactions: High
+- Recall for Fraudulent Transactions: High
+The decision tree model appears to perform well on both valid and fraudulent transactions based on the provided data. It has high accuracy for both classes, which suggests that it correctly classifies a significant portion of transactions.
 ```
 
 ## Clustering
