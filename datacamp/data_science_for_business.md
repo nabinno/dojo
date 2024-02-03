@@ -345,14 +345,17 @@ NOTE: Decision Tree:
 The decision tree model appears to perform well on both valid and fraudulent transactions based on the provided data. It has high accuracy for both classes, which suggests that it correctly classifies a significant portion of transactions.
 ```
 
-## Clustering
-```
-
-```
-
 ## Supervised vs. unsupervised
 ```
+Supervised:
+- Predict whether a new clothing style will be successful based on previous season's trends - This involves predicting a binary outcome (successful or not) based on historical data, making it a classic supervised learning problem.
+- Predict if a customer will purchase an item based on what previous customers purchased - Again, this problem involves predicting a binary outcome (purchase or not) based on historical customer behavior, making it a supervised learning task.
 
+Unsupervised:
+- Divide customers into different categories based on their shopping habits - This task involves clustering customers into different categories based on their shopping habits. Since there are no predefined labels, it's an unsupervised learning problem, specifically clustering.
+- Create groupings of clothing items that have similar features - This problem involves finding patterns and similarities among clothing items without predefined labels, which makes it an unsupervised learning task, particularly clustering or dimensionality reduction.
+
+NOTE: In summary, both tasks involving prediction with historical data are Supervised, while tasks involving grouping or clustering without predefined labels are Unsupervised.
 ```
 
 ## Cluster size selection
