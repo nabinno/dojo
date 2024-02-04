@@ -367,14 +367,16 @@ NOTE: In summary, both tasks involving prediction with historical data are Super
 [ ]6
 ```
 
-## Special topics in Machine Learning
-```
-
-```
-
 ## Classifying machine learning tasks
 ```
+Time Serires Forecasting:
+- Predict a stock's future performance based on data from the past year.
 
+NLP:
+- Parse the President's Tweets and buy or sell bonds based on the sentiment
+
+Traditional Machine Learning
+- Group stocks into different risk categories based on their industry and price
 ```
 
 ## Sentiment Analysis
