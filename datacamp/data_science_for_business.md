@@ -360,7 +360,11 @@ NOTE: In summary, both tasks involving prediction with historical data are Super
 
 ## Cluster size selection
 ```
-
+[ ]2
+[ ]3
+[x]4
+[ ]5
+[ ]6
 ```
 
 ## Special topics in Machine Learning
