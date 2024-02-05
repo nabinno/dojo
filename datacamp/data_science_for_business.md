@@ -381,7 +381,10 @@ Traditional Machine Learning
 
 ## Sentiment Analysis
 ```
-
+[ ]I really agree with this comment "Great film, one of the best Star Wars films."
+[ ]Worst star wars movie ever made. It disrespected the force and everything we love.
+[ ]A fun exciting, visually striking movie with a great score, great characters, and great action. The Last Jedi is very well directed, but very messy.
+[x]This movie was a pointless, ugly, and plot-hole-riddled mess. All it served to do was crush all hope and destroy everything that remained of the Original Trilogy
 ```
 
 ## Deep Learning and Explainable AI
