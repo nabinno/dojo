@@ -387,14 +387,15 @@ Traditional Machine Learning
 [x]This movie was a pointless, ugly, and plot-hole-riddled mess. All it served to do was crush all hope and destroy everything that remained of the Original Trilogy
 ```
 
-## Deep Learning and Explainable AI
-```
-
-```
-
 ## Finding the correct solution
 ```
+Deep Learning:
+- Classify images from mammograms as cancerous or non-cancerous.
+- Extract information from medical journal articles.
 
+Explainable AI:
+- Provide a list of likely diagnoses, given a set of facts about a patient.
+- Predict whether or not a nurse is likely to quit within the next month.
 ```
 
 ## Should I use Deep Learning?
