@@ -400,5 +400,10 @@ Explainable AI:
 
 ## Should I use Deep Learning?
 ```
+[ ]Explainable AI, because she doesn't have enough data for Deep Learning.
+[x]Explainable AI, because she needs to be able to justify how each interest rate was calculated.
+[ ]Deep Learning, because the results need to be as accurate as possible.
+[ ]Deep Learning, because the data will have many features, and Explainable AI can only handle a few.
 
+NOTE: Using Explainable AI would allow Patricia to understand and justify how each interest rate was calculated, which is important considering the legal requirements regarding discrimination based on various factors. Additionally, Explainable AI methods would provide transparency and interpretability in the decision-making process, which is crucial for ensuring fairness and compliance with legal regulations.
 ```
