@@ -537,3 +537,134 @@ JOIN reviews
 ON films.id = reviews.film_id
 WHERE title = 'To Kill a Mockingbird';
 ```
+
+----------------------------------------------------------------------
+
+# 1. Relational Databases
+## What are the advantages of databases?
+```
+[ ]More storage
+[ ]Many people can use at once
+[ ]Can be secured with encryption
+[x]All of the above
+
+NOTE: Advantages of storing data in a database, rather than using traditional formats like spreadsheets, include:
+- More storage: Databases can typically handle much larger volumes of data compared to spreadsheets, making them suitable for storing large datasets efficiently.
+- Many people can use at once: Databases support concurrent access by multiple users, allowing for collaborative work and simultaneous data retrieval and manipulation without conflicts.
+- Can be secured with encryption: Databases offer features for securing data through encryption techniques, ensuring that sensitive information remains protected from unauthorized access or breaches.
+```
+
+## Data organization
+```
+
+```
+
+## Tables
+```
+
+```
+
+## Picking a unique ID
+```
+
+```
+
+## Setting the table in style
+```
+
+```
+
+## Our very own table
+```
+
+```
+
+## Data
+```
+
+```
+
+## At your service
+```
+
+```
+
+## Finding data types
+```
+
+```
+
+## Choice of type
+```
+
+```
+
+
+
+
+# 2. Querying
+## Introducing queries
+```
+
+```
+
+## SQL strengths
+```
+
+```
+
+## Developing SQL style
+```
+
+```
+
+## Querying the books table
+```
+
+```
+
+## Writing queries
+```
+
+```
+
+## Making queries DISTINCT
+```
+
+```
+
+## Aliasing
+```
+
+```
+
+## VIEWing your query
+```
+
+```
+
+## SQL flavors
+```
+
+```
+
+## Comparing flavors
+```
+
+```
+
+## Limiting results
+```
+
+```
+
+## Translating between flavors
+```
+
+```
+
+## Congratulations!
+```
+
+```
+
