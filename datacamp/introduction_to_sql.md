@@ -556,7 +556,10 @@ NOTE: Advantages of storing data in a database, rather than using traditional fo
 
 ## Data organization
 ```
-
+[ ]This is a table containing three relational databases: employees, job_levels, and departments.
+[x]This is a relational database containing three tables: employees, job_levels, and departments.
+[ ]This is a database, but it is not relational, because no relationship exists between job levels and departments.
+[ ]This is not a database because there is no SQL code shown.
 ```
 
 ## Tables
