@@ -572,7 +572,11 @@ NOTE: Advantages of storing data in a database, rather than using traditional fo
 
 ## Setting the table in style
 ```
-
+customer:
+| id  | customer | phone_num    | zip_code |
+| --- | -------- | ------------ | -------- |
+| 567 | Jele     | 781-765-2395 | 02476    |
+| 568 | Raushon  | 617-356-7772 | 01132    |
 ```
 
 ## Our very own table
