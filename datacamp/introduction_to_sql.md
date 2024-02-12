@@ -562,14 +562,12 @@ NOTE: Advantages of storing data in a database, rather than using traditional fo
 [ ]This is not a database because there is no SQL code shown.
 ```
 
-## Tables
-```
-
-```
-
 ## Picking a unique ID
 ```
-
+[ ]name
+[ ]dept_id
+[ ]year_hired
+[x]id
 ```
 
 ## Setting the table in style
