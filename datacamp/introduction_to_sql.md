@@ -581,7 +581,8 @@ customer:
 
 ## Our very own table
 ```
-
+SELECT *
+FROM books;
 ```
 
 ## Data
