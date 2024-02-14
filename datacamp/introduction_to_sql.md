@@ -585,14 +585,14 @@ SELECT *
 FROM books;
 ```
 
-## Data
-```
-
-```
-
 ## At your service
 ```
+[ ]Servers can be used for storing website information as well as databases.
+[ ]A server can handle requests from many computers at once.
+[x]Servers are usually personal computers such as laptops.
+[ ]Data from a database is physically stored on a server.
 
+NOTE: Servers are not usually personal computers such as laptops. Servers are typically powerful computers specifically designed to handle requests and store data for multiple clients or users. They often have specialized hardware configurations optimized for performance, reliability, and scalability.
 ```
 
 ## Finding data types
