@@ -597,7 +597,10 @@ NOTE: Servers are not usually personal computers such as laptops. Servers are ty
 
 ## Finding data types
 ```
-
+[ ]You can find this information by looking at each table in the database.
+[ ]You can find this information by looking at a diagram of relationships between tables.
+[ ]You can find this information by looking at the values in each field for each table.
+[s]You can find this information by looking at a database schema.
 ```
 
 ## Choice of type
