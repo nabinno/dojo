@@ -605,7 +605,17 @@ NOTE: Servers are not usually personal computers such as laptops. Servers are ty
 
 ## Choice of type
 ```
+VARCHAR
+- Phone numbers such as 321-123-5555
+- Product reviews written by customers
 
+INT
+- Model year such as 2004
+- Number of mailing list subscribers such as 9782
+
+NUMERIC
+- Product prices in dollars such as 65.75
+- Weight in tons such as 5.57
 ```
 
 
