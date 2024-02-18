@@ -633,7 +633,15 @@ NOTE: SQL (Structured Query Language) is particularly well-suited for querying a
 
 ## Developing SQL style
 ```
+Make suggestion:
+- Make `CARD_NUM` and `TOTAL_FINE` lowercase
+- Add a `;` at the end of the query
+- Capitalize `from`
 
+Don't make suggestion:
+- Capitalize `patrons`
+- All code should be on just one line
+- Make `SELECT` lowercase
 ```
 
 ## Querying the books table
