@@ -622,14 +622,13 @@ NUMERIC
 
 
 # 2. Querying
-## Introducing queries
-```
-
-```
-
 ## SQL strengths
 ```
+[ ]All data needed to answer the business question is presented in a spreadsheet, and no complicated relationships exist between different data points.
+[x]Large amounts of data about many different but related areas of a business are housed in a relational database.
+[ ]The data needed to answer the business question doesn't exist yet.
 
+NOTE: SQL (Structured Query Language) is particularly well-suited for querying and manipulating data stored in relational databases, where data is organized into tables with defined relationships between them. Therefore, when dealing with large amounts of data stored in a structured manner within a relational database, SQL provides an efficient and effective means to retrieve and analyze the required information.
 ```
 
 ## Developing SQL style
