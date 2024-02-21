@@ -675,7 +675,9 @@ FROM books;
 
 ## Aliasing
 ```
-
+-- Alias author so that it becomes unique_author
+SELECT DISTINCT author unique_author
+FROM books;
 ```
 
 ## VIEWing your query
