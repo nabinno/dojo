@@ -691,14 +691,17 @@ FROM books;
 SELECT * FROM library_authors;
 ```
 
-## SQL flavors
-```
-
-```
-
 ## Comparing flavors
 ```
+PostgreSQL:
+- Research funds provided by DARPA
+- Free and open source
+- Developed at the University of California, Berkeley
 
+SQL Server:
+- Has both free and enterprise versions
+- Queried using T-SQL
+- Created by Microsoft
 ```
 
 ## Limiting results
