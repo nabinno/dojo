@@ -714,7 +714,10 @@ LIMIT 10
 
 ## Translating between flavors
 ```
-
+[ ]Replace FROM with TABLE
+[ ]Replace SELECT, FROM, and LIMIT with the corresponding SQL Server keywords
+[x]Remove LIMIT statement and add TOP(10) after SELECT
+[ ]Replace LIMIT with TOP and remove the ; at the end of the query
 ```
 
 ## Congratulations!
