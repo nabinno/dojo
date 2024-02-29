@@ -41,14 +41,11 @@ SELECT COUNT(DISTINCT country) AS count_distinct_countries
 FROM films;
 ```
 
-## Query execution
-```
-
-```
-
 ## Order of execution
 ```
-
+FROM
+SELECT
+LIMIT
 ```
 
 ## Debugging errors
