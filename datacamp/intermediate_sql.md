@@ -79,7 +79,10 @@ Poor Practice:
 
 ## Formatting
 ```
-
+-- Rewrite this query
+SELECT person_id, role
+FROM roles
+LIMIT 10;
 ```
 
 ## Non-standard fields
