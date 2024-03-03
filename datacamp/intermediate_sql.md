@@ -64,14 +64,17 @@ SELECT COUNT(birthdate) AS count_birthdays
 FROM people;
 ```
 
-## SQL style
-```
-
-```
-
 ## SQL best practices
 ```
+Best Practice:
+- Captialize keywords
+- Use underscores in field names rather than spaces
+- End queries with a semicolon
 
+Poor Practice:
+- Write the query on one line
+- Don't capitalize keywords
+- Write lots of queries with no semicolon
 ```
 
 ## Formatting
