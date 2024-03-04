@@ -87,7 +87,8 @@ LIMIT 10;
 
 ## Non-standard fields
 ```
-
+SELECT film_id, "facebook likes"
+FROM reviews;
 ```
 
 
