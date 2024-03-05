@@ -93,17 +93,17 @@ FROM reviews;
 
 
 
-
-
 # 2. Filtering Records
-## Filtering numbers
-```
-
-```
-
 ## Filtering results
 ```
+SELECT title
+FROM films
+WHERE release_year > 2000;
 
+[ ]Films released before the year 2000
+[x]Films released after the year 2000
+[ ]Films released after the year 2001
+[ ]Films released in 2000
 ```
 
 ## Using WHERE with numbers
