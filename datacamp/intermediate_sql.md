@@ -127,7 +127,10 @@ WHERE num_votes > 100000;
 
 ## Using WHERE with text
 ```
-
+-- Count the Spanish-language films
+SELECT COUNT(language) AS count_spanish
+FROM films
+WHERE language = 'Spanish';
 ```
 
 ## Multiple criteria
