@@ -271,16 +271,17 @@ WHERE language IS NOT NULL;
 
 
 
-
 # 3.Aggregate Functions
-## Summarizing data
-```
-
-```
-
 ## Aggregate functions and data types
 ```
+Numerical data only:
+- SUM()
+- AVG()
 
+Various data types:
+- COUNT()
+- MIN()
+- MAX()
 ```
 
 ## Practice with aggregate functions
