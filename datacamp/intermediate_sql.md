@@ -303,14 +303,27 @@ SELECT MIN(duration) shortest_film
 FROM films;
 ```
 
-## Summarizing subsets
-```
-
-```
-
 ## Combining aggregate functions with WHERE
 ```
+-- Calculate the sum of gross from the year 2000 or later
+SELECT SUM(gross) total_gross
+FROM films
+WHERE release_year >= 2000;
 
+-- Calculate the average gross of films that start with A
+SELECT AVG(gross) avg_gross_A
+FROM films
+WHERE title LIKE 'A%';
+
+-- Calculate the lowest gross film in 1994
+SELECT MIN(gross) lowest_gross
+FROM films
+WHERE release_year = 1994;
+
+-- Calculate the highest gross film released between 2000-2012
+SELECT MAX(gross) highest_gross
+FROM films
+WHERE release_year BETWEEN 2000 AND 2012;
 ```
 
 ## Using ROUND()
