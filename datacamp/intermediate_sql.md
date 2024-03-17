@@ -286,7 +286,21 @@ Various data types:
 
 ## Practice with aggregate functions
 ```
+-- Query the sum of film durations
+SELECT SUM(duration) total_duration
+FROM films;
 
+-- Calculate the average duration of all films
+SELECT AVG(duration) average_duration
+FROM films;
+
+-- Find the latest release_year
+SELECT MAX(release_year) latest_year
+FROM films;
+
+-- Find the duration of the shortest film
+SELECT MIN(duration) shortest_film
+FROM films;
 ```
 
 ## Summarizing subsets
