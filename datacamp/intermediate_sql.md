@@ -328,7 +328,9 @@ WHERE release_year BETWEEN 2000 AND 2012;
 
 ## Using ROUND()
 ```
-
+-- Round the average number of facebook_likes to one decimal place
+SELECT ROUND(AVG(facebook_likes),1) avg_facebook_likes
+FROM reviews;
 ```
 
 ## ROUND() with a negative parameter
