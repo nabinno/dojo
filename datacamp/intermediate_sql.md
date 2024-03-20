@@ -333,19 +333,10 @@ SELECT ROUND(AVG(facebook_likes),1) avg_facebook_likes
 FROM reviews;
 ```
 
-## ROUND() with a negative parameter
-```
-
-```
-
-## Aliasing and arithmetic
-```
-
-```
-
 ## Using arithmetic
 ```
-
+SELECT CAST(discount AS FLOAT) / paid_price AS discount_percentage
+FROM ticket_sales;
 ```
 
 ## Aliasing with functions
