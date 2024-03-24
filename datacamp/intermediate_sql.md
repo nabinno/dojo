@@ -364,14 +364,14 @@ FROM films;
 
 
 # 4. Sorting and Grouping
-## Sorting results
-```
-
-```
-
 ## Sorting text
 ```
-
+How does ORDER BY sort a column of text values by default?
+- Alphabetically (A-Z)
+- This is often referred to as ascending alphabetical order.
+- Uppercase letters come before lowercase letters.
+- Numbers come before letters.
+- If you want to sort in the opposite order (reverse alphabetical order from Z to A), you can specify ORDER BY column_name DESC.
 ```
 
 ## Sorting single fields
