@@ -376,7 +376,15 @@ How does ORDER BY sort a column of text values by default?
 
 ## Sorting single fields
 ```
+-- Select name from people and sort alphabetically
+SELECT name
+FROM people
+ORDER BY name;
 
+-- Select the title and duration from longest to shortest film
+SELECT title, duration
+FROM films
+ORDER BY duration;
 ```
 
 ## Sorting multiple fields
