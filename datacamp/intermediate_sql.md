@@ -389,17 +389,28 @@ ORDER BY duration;
 
 ## Sorting multiple fields
 ```
+-- Select the release year, duration, and title sorted by release year and duration
+SELECT release_year, duration, title
+FROM films
+ORDER BY release_year, duration;
 
-```
-
-## Grouping data
-```
-
+-- Select the certification, release year, and title sorted by certification and release year
+SELECT certification, release_year, title
+FROM films
+ORDER BY certification, release_year;
 ```
 
 ## GROUP BY single fields
 ```
+-- Find the release_year and film_count of each year
+SELECT release_year, COUNT(id) film_count
+FROM films
+GROUP BY release_year;
 
+-- Find the release_year and average duration of films for each year
+SELECT release_year, AVG(duration) avg_duration
+FROM films
+GROUP BY release_year;
 ```
 
 ## GROUP BY multiple fields
