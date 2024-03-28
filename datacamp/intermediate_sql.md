@@ -423,7 +423,10 @@ GROUP BY release_year, country;
 
 ## Answering business questions
 ```
-
+SELECT release_year, COUNT(DISTINCT language) count_languages
+FROM films
+GROUP BY release_year
+ORDER BY count_languages;
 ```
 
 ## Filtering grouped data
