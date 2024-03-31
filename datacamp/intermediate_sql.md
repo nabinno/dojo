@@ -442,7 +442,15 @@ HAVING COUNT(DISTINCT certification) > 10;
 
 ## HAVING and sorting
 ```
-
+-- Select the country and average_budget from films
+SELECT country, AVG(budget) average_budget
+FROM films
+-- Group by country
+GROUP BY country
+-- Filter to countries with an average_budget of more than one billion
+HAVING AVG(budget) > 1000000000
+-- Order by descending order of the aggregated budget
+ORDER BY AVG(budget) DESC;
 ```
 
 ## All together now
