@@ -455,10 +455,31 @@ ORDER BY AVG(budget) DESC;
 
 ## All together now
 ```
+-- Select the release_year for films released after 1990 grouped by year
+SELECT release_year
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year;
 
-```
+-- Modify the query to also list the average budget and average gross
+SELECT release_year, AVG(budget) avg_budget, AVG(gross) avg_gross
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year;
 
-## Congratulations!
-```
+SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year
+-- Modify the query to see only years with an avg_budget of more than 60 million
+HAVING AVG(budget) > 60000000;
 
+SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year
+HAVING AVG(budget) > 60000000
+-- Order the results from highest to lowest average gross and limit to one
+ORDER BY AVG(gross) DESC
+LIMIT 1;
 ```
