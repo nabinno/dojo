@@ -4,37 +4,27 @@ tags: database,structured-query-language,join
 url: https://campus.datacamp.com/courses/joining-data-in-sql
 ---
 
-## # 1. Introducing Inner Joins
-```sql
-
-```
-
-## The ins and outs of INNER JOIN
-```sql
-
-```
-
-## 50 XP
-```sql
-
-```
-
 ## Your first join
 ```sql
+-- Select all columns from cities
+SELECT *
+FROM cities;
 
-```
+SELECT *
+FROM cities
+-- Inner join to countries
+INNER JOIN countries
+-- Match on country codes
+ON countries.code = cities.country_code;
 
-## 100 XP
-```sql
-
+-- Select name fields (with alias) and region
+SELECT cities.name AS city, countries.name AS country, countries.region
+FROM cities
+INNER JOIN countries
+ON cities.country_code = countries.code;
 ```
 
 ## Joining with aliased tables
-```sql
-
-```
-
-## 100 XP
 ```sql
 
 ```
@@ -44,17 +34,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 100 XP
-```sql
-
-```
-
 ## Defining relationships
-```sql
-
-```
-
-## 50 XP
 ```sql
 
 ```
@@ -64,17 +44,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 100 XP
-```sql
-
-```
-
 ## Inspecting a relationship
-```sql
-
-```
-
-## 100 XP
 ```sql
 
 ```
@@ -84,27 +54,12 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 50 XP
-```sql
-
-```
-
 ## Joining multiple tables
 ```sql
 
 ```
 
-## 100 XP
-```sql
-
-```
-
 ## Checking multi-table joins
-```sql
-
-```
-
-## 100 XP
 ```sql
 
 ```
@@ -123,17 +78,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 50 XP
-```sql
-
-```
-
 ## Remembering what is LEFT
-```sql
-
-```
-
-## 100 XP
 ```sql
 
 ```
@@ -143,17 +88,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 100 XP
-```sql
-
-```
-
 ## Building on your LEFT JOIN
-```sql
-
-```
-
-## 100 XP
 ```sql
 
 ```
@@ -163,17 +98,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 100 XP
-```sql
-
-```
-
 ## FULL JOINs
-```sql
-
-```
-
-## 50 XP
 ```sql
 
 ```
@@ -183,17 +108,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 100 XP
-```sql
-
-```
-
 ## Chaining FULL JOINs
-```sql
-
-```
-
-## 100 XP
 ```sql
 
 ```
@@ -203,17 +118,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 50 XP
-```sql
-
-```
-
 ## Histories and languages
-```sql
-
-```
-
-## 100 XP
 ```sql
 
 ```
@@ -223,17 +128,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 100 XP
-```sql
-
-```
-
 ## Self joins
-```sql
-
-```
-
-## 50 XP
 ```sql
 
 ```
@@ -243,17 +138,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 100 XP
-```sql
-
-```
-
 ## All joins on deck
-```sql
-
-```
-
-## 100 XP
 ```sql
 
 ```
@@ -271,17 +156,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 50 XP
-```sql
-
-```
-
 ## UNION vs. UNION ALL
-```sql
-
-```
-
-## 100 XP
 ```sql
 
 ```
@@ -291,17 +166,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 100 XP
-```sql
-
-```
-
 ## Comparing two set operations
-```sql
-
-```
-
-## 100 XP
 ```sql
 
 ```
@@ -311,17 +176,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 50 XP
-```sql
-
-```
-
 ## INTERSECT
-```sql
-
-```
-
-## 100 XP
 ```sql
 
 ```
@@ -331,17 +186,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 50 XP
-```sql
-
-```
-
 ## EXCEPT
-```sql
-
-```
-
-## 50 XP
 ```sql
 
 ```
@@ -351,17 +196,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 100 XP
-```sql
-
-```
-
 ## Calling all set operators
-```sql
-
-```
-
-## 100 XP
 ```sql
 
 ```
@@ -380,17 +215,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 50 XP
-```sql
-
-```
-
 ## Multiple WHERE clauses
-```sql
-
-```
-
-## 100 XP
 ```sql
 
 ```
@@ -400,17 +225,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 100 XP
-```sql
-
-```
-
 ## Diagnosing problems using anti join
-```sql
-
-```
-
-## 100 XP
 ```sql
 
 ```
@@ -420,17 +235,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 50 XP
-```sql
-
-```
-
 ## Subquery inside WHERE
-```sql
-
-```
-
-## 100 XP
 ```sql
 
 ```
@@ -440,17 +245,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 100 XP
-```sql
-
-```
-
 ## Subquery inside SELECT
-```sql
-
-```
-
-## 100 XP
 ```sql
 
 ```
@@ -460,17 +255,7 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 50 XP
-```sql
-
-```
-
 ## Subquery inside FROM
-```sql
-
-```
-
-## 100 XP
 ```sql
 
 ```
@@ -480,27 +265,12 @@ url: https://campus.datacamp.com/courses/joining-data-in-sql
 
 ```
 
-## 100 XP
-```sql
-
-```
-
 ## Final challenge
 ```sql
 
 ```
 
-## 100 XP
-```sql
-
-```
-
 ## The finish line
-```sql
-
-```
-
-## 50 XP
 ```sql
 
 ```
