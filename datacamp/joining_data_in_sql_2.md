@@ -59,7 +59,30 @@ ON languages.code = countries.code;
 
 ## Inspecting a relationship
 ```sql
+-- Select country and language names, aliased
+SELECT c.name country, l.name language
+-- From countries (aliased)
+FROM countries c
+-- Join to languages (aliased)
+INNER JOIN languages l
+-- Use code as the joining field with the USING keyword
+USING(code);
 
+-- Rearrange SELECT statement, keeping aliases
+SELECT c.name AS country, l.name AS language
+FROM countries AS c
+INNER JOIN languages AS l
+USING(code)
+-- Order the results by language
+ORDER BY language;
+
+-- Rearrange SELECT statement, keeping aliases
+SELECT c.name AS country, l.name AS language
+FROM countries AS c
+INNER JOIN languages AS l
+USING(code)
+-- Order the results by language
+ORDER BY country;
 ```
 
 ## Multiple joins
