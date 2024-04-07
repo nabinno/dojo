@@ -44,14 +44,17 @@ INNER JOIN languages AS l
 USING(code);
 ```
 
-## Defining relationships
-```sql
-
-```
-
 ## Relationships in our database
 ```sql
+SELECT cities.name, countries.code
+FROM countries
+INNER JOIN cities
+ON cities.country_code = countries.code;
 
+SELECT languages.name, countries.code
+FROM countries
+INNER JOIN languages
+ON languages.code = countries.code;
 ```
 
 ## Inspecting a relationship
