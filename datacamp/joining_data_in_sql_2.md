@@ -118,14 +118,13 @@ ON c.code = e.code
     AND e.year = p.year;
 ```
 
-## LEFT and RIGHT JOINs
-```sql
-
-```
-
 ## Remembering what is LEFT
 ```sql
-
+SELECT c.name AS country, local_name, l.name AS language, percent
+FROM countries AS c
+LEFT JOIN languages AS l
+USING(code)
+ORDER BY country DESC;
 ```
 
 ## This is a LEFT JOIN, right?
