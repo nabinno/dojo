@@ -226,7 +226,18 @@ ORDER BY region;
 
 ## Chaining FULL JOINs
 ```sql
-
+SELECT
+    c1.name AS country,
+    region,
+    l.name AS language,
+    basic_unit,
+    frac_unit
+FROM countries as c1
+-- Full join with languages (alias as l)
+FULL JOIN languages l USING(code)
+-- Full join with currencies (alias as c2)
+FULL JOIN currencies c2 USING(code)
+WHERE region LIKE 'M%esia';
 ```
 
 ## Crossing into CROSS JOIN
