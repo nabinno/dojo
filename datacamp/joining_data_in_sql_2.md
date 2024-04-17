@@ -240,14 +240,21 @@ FULL JOIN currencies c2 USING(code)
 WHERE region LIKE 'M%esia';
 ```
 
-## Crossing into CROSS JOIN
-```sql
-
-```
-
 ## Histories and languages
 ```sql
+SELECT c.name AS country, l.name AS language
+FROM languages l
+-- Inner join countries as c with languages as l on code
+INNER JOIN countries c USING(code)
+WHERE c.code IN ('PAK','IND')
+    AND l.code in ('PAK','IND');
 
+SELECT c.name AS country, l.name AS language
+FROM countries AS c
+-- Perform a cross join to languages (alias as l)
+CROSS JOIN languages AS l
+WHERE c.code in ('PAK','IND')
+    AND l.code in ('PAK','IND');```
 ```
 
 ## Choosing your join
