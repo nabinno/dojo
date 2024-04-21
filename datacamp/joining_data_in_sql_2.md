@@ -297,7 +297,14 @@ WHERE p1.year = 2010
 
 ## All joins on deck
 ```sql
+INNER JOIN:
+You sell houses and have two tables, `listing_prices` and `price_solid`. You want a table with sale prices and listing prices, only if you know both.
 
+LEFT JOIN:
+You run a pizza delivery service with loyal clients. You want a table of clients and their weekly orders, with nulls if here are not orders.
+
+FULL JOIN:
+You want a report of whether your patients have reached out to you, or you have reached out to them. You are fine with nulls for either condition.
 ```
 
 
