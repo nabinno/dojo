@@ -310,19 +310,14 @@ You want a report of whether your patients have reached out to you, or you have 
 
 
 
-## # 3. Set Theory for SQL Joins
-```sql
-
-```
-
-## Set theory for SQL Joins
-```sql
-
-```
-
+# 3. Set Theory for SQL Joins
 ## UNION vs. UNION ALL
 ```sql
-
+SELECT code
+FROM languages
+UNION
+SELECT curr_id
+FROM currencies;
 ```
 
 ## Comparing global economies
