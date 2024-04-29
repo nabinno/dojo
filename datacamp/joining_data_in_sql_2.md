@@ -359,19 +359,13 @@ SELECT countries.name
 FROM countries;
 ```
 
-## Review UNION and INTERSECT
-```sql
-
-```
-
-## EXCEPT
-```sql
-
-```
-
 ## You've got it, EXCEPT...
 ```sql
-
+-- Return all cities that do not have the same name as a country
+SELECT name FROM cities
+EXCEPT
+SELECT name FROM countries
+ORDER BY name;
 ```
 
 ## Calling all set operators
