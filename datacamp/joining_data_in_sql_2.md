@@ -349,14 +349,14 @@ FROM populations
 ORDER BY code, year;
 ```
 
-## At the INTERSECT
-```sql
-
-```
-
 ## INTERSECT
 ```sql
-
+-- Return all cities with the same name as a country
+SELECT cities.name
+FROM cities
+INTERSECT
+SELECT countries.name
+FROM countries;
 ```
 
 ## Review UNION and INTERSECT
