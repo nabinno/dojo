@@ -370,18 +370,21 @@ ORDER BY name;
 
 ## Calling all set operators
 ```sql
+UNION or UNION ALL:
+- You are a school teacher teaching multiple classes. You would like to comibe the grades of all students into are consolidated sheet.
 
+INTERSECT:
+- A residence hall has asked students to rank their preferences to be assigned a room. Tehy now want to pair students based on common preferences.
+
+EXCEPT:
+- You run a music streaming service and have a list of songs a user has listened to. You want to show them new songs they haven't heard before.
 ```
 
 
 
 
 
-## # 4. Subqueries
-```sql
-
-```
-
+# 4. Subqueries
 ## Subquerying with semi joins and anti joins
 ```sql
 
