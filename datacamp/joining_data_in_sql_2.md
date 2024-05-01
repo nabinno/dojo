@@ -382,17 +382,16 @@ EXCEPT:
 
 
 
-
-
 # 4. Subqueries
-## Subquerying with semi joins and anti joins
-```sql
-
-```
-
 ## Multiple WHERE clauses
 ```sql
-
+SELECT *
+FROM economiies2019
+WHERE code in (
+    SELECT code
+    FROM economies2015
+    WHERE gross_savings < 22.5
+);
 ```
 
 ## Semi join
