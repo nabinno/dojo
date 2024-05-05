@@ -433,14 +433,16 @@ WHERE continent = 'Oceania'
        FROM currencies);
 ```
 
-## Subqueries inside WHERE and SELECT
-```sql
-
-```
-
 ## Subquery inside WHERE
 ```sql
-
+SELECT *
+FROM populations
+-- Filter for only those populations where life expectancy is 1.15 times higher than average
+WHERE life_expectancy > 1.15 *
+  (SELECT AVG(life_expectancy)
+   FROM populations
+   WHERE year = 2015)
+  AND year = 2015;
 ```
 
 ## WHERE do people live?
