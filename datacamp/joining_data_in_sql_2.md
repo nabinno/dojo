@@ -447,7 +447,15 @@ WHERE life_expectancy > 1.15 *
 
 ## WHERE do people live?
 ```sql
-
+-- Select relevant fields from cities table
+SELECT name, country_code, urbanarea_pop
+FROM cities
+-- Filter using a subquery on the countries table
+WHERE name IN (
+    SELECT capital
+    FROM countries
+)
+ORDER BY urbanarea_pop DESC;
 ```
 
 ## Subquery inside SELECT
