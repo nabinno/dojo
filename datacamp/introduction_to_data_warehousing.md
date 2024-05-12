@@ -17,7 +17,13 @@ In the last video, we discussed what is a data warehouse, what it does, and why 
 
 ## Possible use cases for a data warehouse for Zynga
 ```
+Companies are willing to invest a large amount of money into developing a data warehouse for the potential insights they can bring. For example, Zynga, the social video game company, said the following when submitting to become a publicly traded company.
 
+Let's imagine how Zynga might use its data warehouse. Select the answer that is not a use case for how Zynga may have used its data warehouse.
+
+[x]For new game development, by allowing employees to store, track, and collaborate on the code for their latest game
+[ ]For Marketing and measuring its sales campaign effectiveness by connecting data from internal and external systems such as web analytics platforms and advertising channels.
+[ ]For team performance evaluations using metrics derived from the data warehouse to create customized dashboards or reports showing team performance.
 ```
 
 ## What's the difference between data warehouses and data lakes?
