@@ -26,14 +26,17 @@ Let's imagine how Zynga might use its data warehouse. Select the answer that is 
 [ ]For team performance evaluations using metrics derived from the data warehouse to create customized dashboards or reports showing team performance.
 ```
 
-## What's the difference between data warehouses and data lakes?
-```
-
-```
-
 ## Data warehouses vs. data lakes
 ```
+Data Lake:
+Holds data the purpose of which is not yet determined
+Is less organized
+Can include unstructured data
 
+Data Warehouse:
+Contains only structured data
+Is relatively more complicated to change because of upstream and downstream impacts
+Holds data only where the purpose is known
 ```
 
 ## Data warehouses vs. data marts
