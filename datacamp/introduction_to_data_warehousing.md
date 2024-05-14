@@ -41,7 +41,12 @@ Holds data only where the purpose is known
 
 ## Data warehouses vs. data marts
 ```
+In the last video you learned about some of the similarities and differences between a data warehouse and a data mart.
+Select the statement that is true.
 
+[ ]A data mart is an organization-wide repository of disparate data sources, while a data warehouse is a subset of data focused on one area.
+[ ]A data mart typically stores data from multiple sources, compared to a data warehouse that typically stores data from just a few sources.
+[x]A data mart size is typically less than 100 GB compared to a data warehouse that is often 100 GB or more.
 ```
 
 ## Deciding between a data lake, warehouse, and mart
