@@ -51,7 +51,13 @@ Select the statement that is true.
 
 ## Deciding between a data lake, warehouse, and mart
 ```
+You are performing some initial assessment for the hypothetical home office furniture company Bravo. The company is looking to invest in its data infrastructure.
+From your initial interviews, you have learned that the company has multiple databases but no single data repository for analysis. Additionally, Bravo has confirmed that they are interested in storing unstructured data in this system, such as audio and video files. They expect many users of this data will have experience using sophisticated data tools to interface with the system. Finally, they estimate their current and future data needs will be about two terabytes (i.e.,>100 GB).
+Based on this information, choose if Bravo should invest in a data warehouse, data mart, or data lake.
 
+[x]Select a data lake since they need to integrate over a terabyte of structured and unstructured data covering many different departments.
+[ ]Select a data mart since they need to integrate over a terabyte of structured and unstructured data covering many different departments.
+[ ]Select a data warehouse since they need to integrate over a terabyte of structured and unstructured data covering many different departments.
 ```
 
 ## Data warehouses support organizational analysis
