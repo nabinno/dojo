@@ -60,14 +60,13 @@ Based on this information, choose if Bravo should invest in a data warehouse, da
 [ ]Select a data warehouse since they need to integrate over a terabyte of structured and unstructured data covering many different departments.
 ```
 
-## Data warehouses support organizational analysis
-```
-
-```
-
 ## Data warehouse life cycle
 ```
-
+Business Requirements
+Data Modeling
+ETL Design & Development
+BI Application Development
+Test & Deploy
 ```
 
 ## Support where needed
