@@ -71,7 +71,13 @@ Test & Deploy
 
 ## Support where needed
 ```
+Different personas are needed to support the creation and deployment of a data warehouse. Select the true statement about a persona and their involvement in the data warehouse life cycle.
 
+[ ]Data Scientists support the ETL Design and Development step using machine learning modeling skills.
+[x]Data Analysts are needed in the Business Requirements step to help gather the organizational requirements of the data warehouse
+[ ]Database Administrators are needed during the BI Application Development step to coordinate access to the transactional databases.
+
+Data Analysts are close to the data and often perform different business analyses. Therefore, they are needed to assist with gathering the business requirements.
 ```
 
 ## Who does what?
