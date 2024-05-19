@@ -82,7 +82,16 @@ Data Analysts are close to the data and often perform different business analyse
 
 ## Who does what?
 ```
+Analyst:
+Assist with collecting business requirements as they understand the organization's needs
+Consult and help with the setup of BI reports during the BI Application Development step
 
+Data Engineer:
+Make changes to pipelines if needed during the Maintenance step
+Assist with creating the data pipelines during the ETL Design and Development step
+
+Both:
+Are needed during the Data Modeling step
 ```
 
 
