@@ -96,16 +96,28 @@ Are needed during the Data Modeling step
 
 
 
-
 # 2. Warehouse Architectures and Properties
-## What are the different layers of a data warehouse?
-```
-
-```
-
 ## Ordering data warehouse layers
 ```
+1. Source Layer
+- Overview: This is the origin of the data. The source layer includes transactional systems, IoT devices, APIs, and external data sources.
+- Role: It generates and provides data. The data collected here is raw and usually not suitable for analysis in its initial form.
+- Challenges: Ensuring data quality, handling diverse data formats, and maintaining data collection frequency or real-time capabilities are the main challenges.
 
+2. Staging Layer
+- Overview: The staging layer temporarily stores raw data collected from the source layer.
+- Role: It performs data cleaning, transformation, and integration before the data moves to the storage layer.
+- Challenges: Efficiently transforming and integrating data, detecting and correcting errors, and ensuring scalable processing are critical.
+
+3. Storage Layer
+- Overview: The storage layer is where cleaned data is stored long-term.
+- Role: It stores data in a structured format, making it accessible for querying and analysis. Storage methods include databases, data lakes, and data warehouses.
+- Challenges: Ensuring data scalability, optimizing performance, and maintaining data security and privacy are essential.
+
+4. Presentation Layer
+- Overview: The presentation layer is where data is delivered to the end consumers.
+- Role: It provides data visualization, reporting, and business intelligence tools for users. Through this layer, users can access data for analysis and decision-making.
+- Challenges: Ensuring accuracy and usability of data visualizations, designing user-friendly interfaces, and maintaining data access performance are important.
 ```
 
 ## Understanding ETL
