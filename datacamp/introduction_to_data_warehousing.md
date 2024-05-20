@@ -122,7 +122,9 @@ Are needed during the Data Modeling step
 
 ## Understanding ETL
 ```
-
+[ ]The transformation process in ETL can only handle sorting data and no mathematical operations.
+[x]Deduplication, or removing duplicate values, can be done in the ETL process.
+[ ]The data warehouse ETL process can only work with structured data sources.
 ```
 
 ## Pick the correct layer
