@@ -129,7 +129,17 @@ Are needed during the Data Modeling step
 
 ## Pick the correct layer
 ```
+Source layer:
+Might include JSON files
+Comprises all of the input data sources used in the data  warehouse
 
+Staging layer:
+Includes on ETL process that transforms the input data into a structured form
+Contains a database to store data temporarily during the ETL process
+Includes the data warehosue
+
+Storage layer:
+Contains data marts
 ```
 
 ## The presentation layer
