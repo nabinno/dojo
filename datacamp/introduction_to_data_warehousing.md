@@ -142,14 +142,11 @@ Storage layer:
 Contains data marts
 ```
 
-## The presentation layer
-```
-
-```
-
 ## Stepping into a consultant's shoes
 ```
-
+[x]You suggest an automated reporting or dashboarding tool because the graphical interface is easier for those without a strong coding background. The automation capabilities can save significant time since it will be needed monthly.
+[ ]You suggest a data mining tool because of their ability to explore the data and no coding experience.
+[ ]You suggest the sales team learn SQL and run queries against the data warehouse.- The sales team lacks coding experience and needs a tool that makes it easy to use on a monthly basis.
 ```
 
 ## Supporting analysts and data scientist users
