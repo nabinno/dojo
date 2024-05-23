@@ -151,7 +151,11 @@ Contains data marts
 
 ## Supporting analysts and data scientist users
 ```
+In this exercise, select the false statement.
 
+] Support sophisticated tools such as R and Python to query the data warehouse directly.
+]xSupport automated reporting by exporting business reports during the ETL process.
+] Support data exploration and pattern discovery by making the data within the warehouse available to BI or business intelligence tools.
 ```
 
 ## Data warehouse architectures
