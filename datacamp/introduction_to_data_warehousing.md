@@ -158,14 +158,11 @@ In this exercise, select the false statement.
 ] Support data exploration and pattern discovery by making the data within the warehouse available to BI or business intelligence tools.
 ```
 
-## Data warehouse architectures
-```
-
-```
-
 ## Top-down vs bottom-up
 ```
-
+[x]The top-down approach has longer upfront development time before users can deliver reports compared to the bottom-up approach due to aligning the organization on all data definitions and cleaning rules.
+[ ]The top-down approach moves data into the data marts first compared to the bottom-up approach because this approach is focused on delivering organizational value as quickly as possible.
+[ ]The top-down approach has a higher chance of duplicate data compared to the bottom-up approach because the data is modeled for each departmental data mart.
 ```
 
 ## Characteristics of top-down and bottom-up
