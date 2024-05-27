@@ -167,7 +167,15 @@ In this exercise, select the false statement.
 
 ## Characteristics of top-down and bottom-up
 ```
+Top-down
+- Uses normalization to store data
+- Has data flowing into the data warehouse and then to the data marts
+- It was popularized by Bill Inmon and is often also called the Inmon approach
 
+Bottom-up
+- It has the disadvantage of increased ETL processing time because it uses denormalization
+- Has the data flowing into the data marts and then to the data warehouse
+- It was popularized by Ralph Kimball and is often also called the Kimmball approach
 ```
 
 ## Choosing a top-down approach
