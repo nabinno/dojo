@@ -180,7 +180,9 @@ Bottom-up
 
 ## Choosing a top-down approach
 ```
-
+[x]The top-down approach requires the organization to create the data definitions first, allowing them to connect the data with different parts of the organization and avoid duplicate data.
+[ ]Since they are building the data marts first, they can deliver reporting and business value quickly.
+[ ]Due to the data being stored in a denormalized form, it will minimize the data storage size.
 ```
 
 ## OLAP and OLTP systems
