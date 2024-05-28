@@ -185,14 +185,14 @@ Bottom-up
 [ ]Due to the data being stored in a denormalized form, it will minimize the data storage size.
 ```
 
-## OLAP and OLTP systems
-```
-
-```
-
 ## The OLAP data cube
 ```
+Select the true statement about the OLAP system data cube.
 
+[ ]The OLAP data cube only stores data in two dimensions, in rows and columns, for fast processing.
+[x]An OLAP data cube with user data within the New York Times newspaper could process a metric like the number of users by country, subscription type, and year.
+[ ]The OLAP data cube only allows users to drill down on different data dimensions and not aggregate the values.
+[ ]The OLAP data cube is limited to only three dimensions.
 ```
 
 ## OLAP vs. OLTP scenarios
