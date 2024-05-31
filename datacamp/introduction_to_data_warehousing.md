@@ -197,7 +197,15 @@ Select the true statement about the OLAP system data cube.
 
 ## OLAP vs. OLTP scenarios
 ```
+OLAP:
+Determining the total sales of the North-western sales department in the previous year
+Finding which salesperson had the highest total sales last month
+Summarizing each day last month,  what was the last order number shipped that day
 
+OLTP:
+Recording when an order has been picked up for a food delivery service
+Tracking in the database when a customer places a new order
+Updating a row of data in the database when a passenger wants to be picked up for a ride-sharing service
 ```
 
 ## Understanding OLTP
