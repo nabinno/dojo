@@ -210,7 +210,9 @@ Updating a row of data in the database when a passenger wants to be picked up fo
 
 ## Understanding OLTP
 ```
-
+[ ]OLTP systems process data in multidimensional cubes to update the database quickly
+[ ]Analysts often use OLTP systems to analyze vast amounts of data
+[x]OLTP systems are designed to process large volumes of simple queries quickly
 ```
 
 
