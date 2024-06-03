@@ -220,14 +220,12 @@ Updating a row of data in the database when a passenger wants to be picked up fo
 
 
 # 3.
-## Data warehouse data modeling
-```
-
-```
-
 ## Understanding facts and dimensional tables
 ```
-
+[ ]A fact table holds additional attributes/characteristics about an organizational process.
+[ ]A dimensional table contains measurements and metrics for the organization.
+[x]A fact table used within the Apple music service to track artist albums might include columns like ArtistID, GenreID, SongLength, and UnitPrice.
+[ ]An example of a fact table used by a food manufacturer to track production is a table that only contains the manufacturing plant's ID, location, name, and size.
 ```
 
 ## One starry and snowy night
