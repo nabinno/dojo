@@ -230,7 +230,9 @@ Updating a row of data in the database when a passenger wants to be picked up fo
 
 ## One starry and snowy night
 ```
-
+[ ]The relatively few joins for a star schema make queries easy to use by organizational users.
+[x]When you must join the dimensional department table via the employee dimensional table to analyze an organization's total sales through the sales fact table, this is an example of a star schema.
+[ ]In a snowflake schema, at least one-dimensional table cannot be joined directly to the fact table.
 ```
 
 ## Fact or dimension?
