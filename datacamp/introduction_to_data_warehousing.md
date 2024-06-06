@@ -242,14 +242,12 @@ Updating a row of data in the database when a passenger wants to be picked up fo
 [x]Table A is a dimension table because it provides data characteristics, and table B is a fact table because it has metrics and references to other dimension tables.
 ```
 
-## Kimball's four step process
-```
-
-```
-
 ## Ordering Kimball's steps
 ```
-
+Select the organizational process
+Declar the grain
+Identify the dimensions
+Identify the facts
 ```
 
 ## Deciding on the grain
