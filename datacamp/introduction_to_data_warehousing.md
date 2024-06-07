@@ -252,7 +252,9 @@ Identify the facts
 
 ## Deciding on the grain
 ```
-
+[ ]The term grain in this step refers to the small, hard-to-see data in the warehouse.
+[ ]Selecting the grain at the highest, or most aggregate, level of detail is important because it will allow organizational users to drill into the facts.
+[x]It is crucial to select the proper grain level because selecting the wrong grain may make it impossible for organizational users to use the data to answer questions.
 ```
 
 ## Selecting reasonable facts
