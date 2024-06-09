@@ -259,7 +259,9 @@ Identify the facts
 
 ## Selecting reasonable facts
 ```
-
+[ ]For a fact table focused on bank transactions at the individual transaction grain, storing the facts of how much the transaction was and the length of the transaction is reasonable.
+[x]For a fact table focused on doctor visits with patients at the individual patient/doctor grain, storing the facts of the total number of patients a doctor has ever seen and the total doctor visits by the patient is reasonable.
+[ ]For a fact table focused on an online digital advertising campaign at the advertiser/campaign grain, storing the facts of the number of clicks and impressions of the campaign is reasonable.
 ```
 
 ## Slowly changing dimensions
