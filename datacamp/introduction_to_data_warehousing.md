@@ -266,7 +266,9 @@ Identify the facts
 
 ## Slowly changing dimensions
 ```
-
+[ ]Understanding how an approach will affect historical reporting should be an important consideration in choosing an approach to slowly changing dimensions.
+[ ]A slowly changing dimension is a dimension that contains relatively static data which can change slowly but unpredictably.
+[x]An example of a slowly changing dimension scenario is when you need to update a value in the fact table.
 ```
 
 ## Pop-quiz on slow changes
