@@ -271,14 +271,11 @@ Identify the facts
 [x]An example of a slowly changing dimension scenario is when you need to update a value in the fact table.
 ```
 
-## Pop-quiz on slow changes
-```
-
-```
-
 ## Difference between type I, II, and III
 ```
-
+[x]A Type II approach maintains historical reporting because all references to historical facts point to the old row within the dimension table.
+[ ]A Type III approach only updates the value in the dimension table row, making it quick and easy to use.
+[ ]Using a Type I approach has no impact on historical reporting.
 ```
 
 ## Row vs. column data store
