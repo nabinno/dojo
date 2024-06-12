@@ -278,14 +278,17 @@ Identify the facts
 [ ]Using a Type I approach has no impact on historical reporting.
 ```
 
-## Row vs. column data store
-```
-
-```
-
 ## Categorizing row and column store scenarios
 ```
+Row store:
+- Organizes the blocks of storage by storing rows of data
+- Is optimized for transactional queries
+- Is best for operational systems that need to update and insert rows of data
 
+Column store:
+- Is best for a query such as "what was the sum of sales for the South American region for the last two years?"
+- Optimized for analytical queries
+- Organizes the blocks of storage by storing table columns of data
 ```
 
 ## Why is column store faster?
