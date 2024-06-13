@@ -293,7 +293,10 @@ Column store:
 
 ## Why is column store faster?
 ```
-
+[ ]Column store is optimized for transactional and analytical queries compared to the row store.
+[x]Column store allows the system to read in blocks that contain only the data needed for the query, versus row store, where the blocks may include data from columns not required for the query. This results in more blocks needing to be read and a longer query time.
+[ ]Row store allows the system to better compress the data compared to column store, and it takes time to decompress the data resulting in slower query speeds.
+[ ]Column store can read the data from all the columns of a row at the same time, allowing it to return the answer faster.
 ```
 
 ## Which queries are faster?
