@@ -301,7 +301,11 @@ Column store:
 
 ## Which queries are faster?
 ```
+Select the false statement.
 
+[ ]Table 2 is likely set up in a column store format because the query times are faster for analytical queries.
+[ ]Table 1 is likely set up in a row store format because the query times are slower for analytical queries.
+[x]Table 1 is likely set up in a column store format because the query times are slower for analytical queries.
 ```
 
 
