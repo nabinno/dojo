@@ -312,14 +312,18 @@ Select the false statement.
 
 
 # 4. Implementation and Data Prep
-## ETL and ELT
-```
-
-```
-
 ## ETL compared to ELT
 ```
+ETL:
+- Can make it easier to comply with PII security regulations becaquses sensitive data can be excluded in the data loaded into the warehouse.
+- Uses a separate system computer system for transforming data.
+- Stores only the transformed data in the data warehouse leading to lower storage costs.
 
+
+ELT:
+- It is often used for near real-time processes
+- Saves a copy of the raw data from the input systems in the data warehouse too.
+- Erros/changes in the transformation process do not require new data pull.
 ```
 
 ## Differences between ETL and ELT
