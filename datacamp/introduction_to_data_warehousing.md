@@ -328,7 +328,12 @@ ELT:
 
 ## Differences between ETL and ELT
 ```
+ETL and ELT sound very similar, but how they integrate and transform data is very different. Select the statement that is false about ETL and ELT processes.
 
+[ ]The ELT process moves the data first before it is transformed.
+[ ]The data transformation process happens as the data moves from the input sources to the data warehouse in the ETL process.
+[x]The ELT process uses a separate computer system to complete the data transformations.
+[ ]The ETL and ELT processes extract data from input sources but differ in where and when the data is transformed and moved into the data warehouse.
 ```
 
 ## Selecting ELT
