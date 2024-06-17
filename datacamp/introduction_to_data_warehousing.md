@@ -338,7 +338,11 @@ ETL and ELT sound very similar, but how they integrate and transform data is ver
 
 ## Selecting ELT
 ```
+Select which answer is not a justification for using the ELT process.
 
+[ ]The ELT process works well when needing to change/update data transformation processes because a copy of the original raw data from the source systems is stored.
+[ ]The ELT process works well for near real-time data processing requirements because complex data transformations do not slow down the data movement process.
+[x]The ELT process reduces the amount of computing and storage needed because the data transformations are done as the data moves, and the process only stores the transformed data.
 ```
 
 ## Data cleaning
