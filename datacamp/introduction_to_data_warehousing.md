@@ -347,7 +347,9 @@ Select which answer is not a justification for using the ELT process.
 
 ## Data cleaning
 ```
-
+[x]A combination of data de-duplication and format revision was used to clean the data.
+[ ]A combination of data range check and format revision was used to clean the data.
+[ ]Only data format revision was used to clean the data.
 ```
 
 ## Cleaning operations
