@@ -352,14 +352,11 @@ Select which answer is not a justification for using the ELT process.
 [ ]Only data format revision was used to clean the data.
 ```
 
-## Cleaning operations
-```
-
-```
-
 ## Finding truth in data transformations
 ```
-
+[ ]You can use data format revisions to remove rows of matching data.
+[x]It is best to fix the source system's data range check and data type check issues.
+[ ]Address parsing combines the different components of an address in one long text string.
 ```
 
 ## Understanding data governance
