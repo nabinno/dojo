@@ -361,7 +361,9 @@ Select which answer is not a justification for using the ELT process.
 
 ## Understanding data governance
 ```
-
+[x]Data governance will validate addresses for you.
+[ ]Data governance develops definitions around the data and corrects the data when it deviates from its definition.
+[ ]A solid organizational data governance program will require less data cleaning within the ETL or ELT process.
 ```
 
 ## On premise and cloud data warehouses
