@@ -366,14 +366,18 @@ Select which answer is not a justification for using the ELT process.
 [ ]A solid organizational data governance program will require less data cleaning within the ETL or ELT process.
 ```
 
-## On premise and cloud data warehouses
-```
-
-```
-
 ## Knowing the differences between on-premise and cloud
 ```
+An on-premise data warehouse
+- It is used when you need complete control of the entire system
+- It can be used to implement a custom data governance/regulator approach
+- Can leverage local network speeds for increment data transfers
 
+
+A cloud data warehouse
+- It does not require an upfront investment in computers of software
+- Allows the warehouse to scale storage and computing resources as needed without purchasing upfront computing and memory resources
+- Frees personnel to complete other high-value tasks besides maintaining systems
 ```
 
 ## Matching implementation to justification
