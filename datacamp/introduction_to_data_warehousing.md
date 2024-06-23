@@ -389,14 +389,11 @@ Choose the scenario that is not a reasonable justification for the implementatio
 [x]On-premise - your organization is unsure of the future demands of the warehouse and will need to scale it over time.
 ```
 
-## Data warehouse design example
-```
-
-```
-
 ## Connecting it all
 ```
-
+[x]Decisions in one area of your design can have impacts in other areas
+[ ]Choosing a bottom-up approach meant we are forced to create a snowflake data model.
+[ ]You must decide on on-premise or cloud implementation before choosing your dimension in step three of Kimball's process.
 ```
 
 ## Selecting bottom-up
