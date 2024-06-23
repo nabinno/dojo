@@ -382,7 +382,11 @@ A cloud data warehouse
 
 ## Matching implementation to justification
 ```
+Choose the scenario that is not a reasonable justification for the implementation.
 
+[ ]Cloud - your workload requires massive computing, and you want to avoid the upfront costs.
+[ ]On-premise - your data warehouse contains sensitive information, and you need to implement a stringent security and data governance procedure to comply.
+[x]On-premise - your organization is unsure of the future demands of the warehouse and will need to scale it over time.
 ```
 
 ## Data warehouse design example
