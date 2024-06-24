@@ -398,7 +398,11 @@ Choose the scenario that is not a reasonable justification for the implementatio
 
 ## Selecting bottom-up
 ```
+You are a leader in a new startup focused on food delivery. One of your main priorities is to report on customer and delivery driver satisfaction. As a new startup, you have limited financial resources. You want to create a bottom-up data warehouse; select which of the below answers is not a good justification for using the bottom-up approach.
 
+[ ]The time taken in design is shorter, and therefore the initial costs are lower, in a bottom-up design compared to a top-down design.
+[ ]Since the data marts are created first, you can start reporting quicker than in a bottom-up design compared to a top-down design.
+[x]The time taken in design is longer , and therefore the initial costs are higher, in a bottom-up design compared to a top-down design.
 ```
 
 ## Do you know it all?
