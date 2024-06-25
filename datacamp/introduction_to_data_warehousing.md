@@ -407,10 +407,13 @@ You are a leader in a new startup focused on food delivery. One of your main pri
 
 ## Do you know it all?
 ```
+True statement
+- Data governance programs work to keep the data in the source systems cleaned, reducing the need for many cleaning steps within the ETL/ELT process.
+- Kimball's four-step process will help you design your fact and dimension tables.
+- Top-down implementations tend to have a longer initial setup time/cost than a bottom-up approach.
 
-```
-
-## Wrap-up
-```
-
+False statement
+- The main difference between an ETL and an ELT process is when the data is extracted.
+- Dimension tables tend to be longer than fact tables.
+- In a cloud warehouse implementation, you can true it to fit your workload because you have control over all aspects of the implementation.
 ```
