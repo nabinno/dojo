@@ -20,7 +20,14 @@ Cloud data warehouse
 
 ## Row versus column oriented database
 ```
+Row-oriented database
+- Recording and processing individual sales transactions in an online retail system.
+- Updating and managing inventory lvels for individual products.
 
+Column-oriented database
+- Running complex queries to track inventory levels and sales performance in a retail system.
+- Creating real-time reports for website traffic and user interactions on an e-commerce platform.
+- Analyzing and summarizing large volumes of historical sales data for trend analysis and forecasting in a retail chain.
 ```
 
 ## Snowflake use cases
