@@ -32,7 +32,10 @@ Column-oriented database
 
 ## Snowflake use cases
 ```
-
+[x]Data analytics
+[ ]Content creation for online platforms.
+[x]To gain insights through advanced analytics
+[ ]To increase social media followers
 ```
 
 ## Introduction to Snowflake SQL
