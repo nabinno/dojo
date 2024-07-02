@@ -45,14 +45,11 @@ SELECT pizza_type_id, pizza_size, price
 FROM pizzas;
 ```
 
-## Snowflake Architecture
-```
-
-```
-
 ## Decoupling Compute & Storage
 ```
-
+[ ]Combining compute and storage resources to optimize performance.
+[ ]Storing data and compute resources on separate servers but linked closely.
+[x]Separating the compute resources from the data storage allows to scale them independently.
 ```
 
 ## Snowflake Architecture Layers
