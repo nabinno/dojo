@@ -54,7 +54,18 @@ FROM pizzas;
 
 ## Snowflake Architecture Layers
 ```
+Storage Layer
+- Data comperession
+- Cloud Storage
+- Columnar Storage
 
+Compute Layer
+- Virtual Warehouse
+- Query Processing
+
+Cloud Services Layer
+- Authentication
+- Optimizer
 ```
 
 ## Virtual Warehouse
