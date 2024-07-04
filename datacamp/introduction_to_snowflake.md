@@ -70,7 +70,12 @@ Cloud Services Layer
 
 ## Virtual Warehouse
 ```
+What is the role of the "Virtual Warehouse" in Snowflake's architecture?
 
+[x]Handling query processing.
+[ ]Storing and organizing data in Snowflake.
+[x]Managing compute resources.
+[ ]Managing metadata and access control.
 ```
 
 ## Snowflake Competitors and why use Snowflake
