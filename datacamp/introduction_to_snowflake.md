@@ -88,7 +88,15 @@ What is the role of the "Virtual Warehouse" in Snowflake's architecture?
 
 ## Features: Snowflake & its competitors
 ```
+True
+- SnowflakeSQL has many similarities with PostgreSQL
+- Databricks provides autoscaling
+- Postgres can be hosted on Cloud Platforms
 
+False
+- Snowflake uses a single pricing model that charges for bath compute and storage.
+- Snowflake doesn't support JSON
+- Snowflake offers coupled Storage and Compute
 ```
 
 ## Snowflake SQL: Using SELECT and WHERE in Snowflake
