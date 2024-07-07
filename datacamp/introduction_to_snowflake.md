@@ -78,14 +78,12 @@ What is the role of the "Virtual Warehouse" in Snowflake's architecture?
 [ ]Managing metadata and access control.
 ```
 
-## Snowflake Competitors and why use Snowflake
-```
-
-```
-
 ## Data warehousing platforms
 ```
-
+[x]Amazon Redshift
+[x]Google BigQuery
+[ ]Postgres
+[ ]Azure Data Lake Storage
 ```
 
 ## Features: Snowflake & its competitors
