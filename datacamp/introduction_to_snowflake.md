@@ -101,7 +101,13 @@ False
 
 ## Snowflake SQL: Using SELECT and WHERE in Snowflake
 ```
-
+-- Count all pizza entries
+SELECT COUNT(*) AS count_all_pizzas
+FROM pizza_type
+-- Apply filter on category for Classic pizza types
+WHERE category = 'Classic'
+    -- Additional condition to filter where name has Cheese in it
+    AND name LIKE '%Cheese%';
 ```
 
 
