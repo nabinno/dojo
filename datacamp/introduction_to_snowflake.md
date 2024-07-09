@@ -114,14 +114,17 @@ WHERE category = 'Classic'
 
 
 # 2. Snowflake SQL and key concepts
-## Connecting to Snowflake and DDL commands
-```
-
-```
-
 ## Snowflake connections and DDL commands
 ```
+True
+- SnowSQL is a command-line client that provides a direct way to interact with Snowflake
+- Snowflake offers worksheets to write and execute queries in Snowflake Web Interface
+- `DROP TABLE` command deleted the data and table structure
 
+False
+- We can't connect to Snowflake through JDBC/ODBC drivers
+- There is no difference in adding comments in Snowflake versus Postgres
+- In Snowflake, you can use 'VALIDATE TABLE' to ensure an operation proceeds if a specific table exists
 ```
 
 ## Snowflake Staging
