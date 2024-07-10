@@ -129,7 +129,9 @@ False
 
 ## Snowflake Staging
 ```
-
+[ ]Snowflake Staging is an area where data transformations occur before they're loaded into Snowflake tables.
+[x]Snowflake Staging is an intermediary storage area used for storing data files before they are loaded into Snowflake tables.
+[ ]Snowflake Staging is the Snowflake's backup mechanism for saving database states in case of system failures.
 ```
 
 ## Snowflake database structures and DML
