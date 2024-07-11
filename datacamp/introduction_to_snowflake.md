@@ -134,14 +134,12 @@ False
 [ ]Snowflake Staging is the Snowflake's backup mechanism for saving database states in case of system failures.
 ```
 
-## Snowflake database structures and DML
-```
-
-```
-
 ## Loading data
 ```
-
+[ ]LOAD DATA INTO pizza_type FROM <//your/local/file/path>
+[ ]INSERT INTO pizza_type from @my_local_stage
+[ ]UPLOAD DATA INTO pizza_type from @my_local_stage
+[x]COPY INTO pizza_type FROM @my_local_stage
 ```
 
 ## DESCRIBE & SHOW
