@@ -144,17 +144,27 @@ False
 
 ## DESCRIBE & SHOW
 ```
+Correct Syntax:
+- DESCRIBE TABLE orders
+- DESCRIBE DATABASE pizza
+- SHOW TABLES LIKE '%ORDERS%' IN DATABASE pizza
 
-```
-
-## Snowflake data type and data type conversion
-```
-
+Incorrect Syntax:
+- SHOW TABLES FOR DATABASE pizza
+- SHOW COLUMNS OF TABLE orders
+- DESCRIBE IN VIEW ORDERS_VIEW
 ```
 
 ## Data types
 ```
+True:
+- `TIMESTAMP` is a combination of `DATE` and `TIME`.
+- The default `DATE` format in Snowflake is `YYYY-MM-DD`.
+- The default format for `TIME` is `HH:MI:SS`.
 
+False:
+- Postgres `VARCHAR` can store more characters than Snowflake `VARCHAR`.
+- `TIMESTAMP` in Snowflake doesn't store information about the minutes in Time.
 ```
 
 ## Datatype conversion
