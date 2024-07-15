@@ -182,24 +182,23 @@ WHERE request_date > '2016-06-01'
     AND drop_time < '06:00';
 ```
 
-## Functions, sorting, and grouping
-```
-
-```
-
 ## String functions
 ```
+-- Convert status to lowercase
+SELECT LOWER(status) FROM uber_request_data;
 
+-- Convert pickup_point to uppercase
+SELECT UPPER(pickup_point) FROM uber_request_data;
+
+-- Complete the CONCAT function for columns pickup_point and status
+SELECT CONCAT('Trip from ', pickup_point, ' was completed with status: ', status) AS trip_comment
+FROM uber_request_data;
 ```
 
 ## Functions & Grouping
 ```
 
 ```
-
-DATE & TIME
-100 XPanalytics
-
 
 
 # 3. Advance Snowflake SQL Concepts
