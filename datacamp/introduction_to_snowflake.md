@@ -209,7 +209,14 @@ ORDER BY order_id, total_quantity DESC;
 
 ## DATE & TIME
 ```
-
+-- Select the current date, current time
+-- Concatenate and convert it to TIMESTAMP
+SELECT *,
+    -- Extract month and alias to concat_month
+    EXTRACT(month FROM CONCAT(CURRENT_DATE, ' ', CURRENT_TIME)::TIMESTAMP) AS concat_month
+-- Use table uber_request_data where request_timestamp's month is greater than concat_month
+FROM uber_request_data
+WHERE EXTRACT(month FROM request_timestamp) >= concat_month;
 ```
 
 
