@@ -318,7 +318,21 @@ ORDER BY total_quantity ASC
 
 ## Understanding CTE
 ```
-
+WITH size_sales_cte AS (
+    SELECT
+        p.pizza_size AS size,
+        COUNT(*) AS total_sales
+    FROM pizzas AS p
+        JOIN order_details AS od
+            ON p.pizza_id = od.pizza_id
+    GROUP BY p.pizza_size
+)
+SELECT
+    size,
+    total_sales
+FROM size_sales_cte
+ORDER BY total_sales DESC
+LIMIT 1;
 ```
 
 ## CTEs
