@@ -359,14 +359,17 @@ SELECT pizza_id, 'Cheapest' AS Description, price AS metric
 FROM cheapest_pizza
 ```
 
-## Snowflake Query Optimization
-```
-
-```
-
 ## Essentials of query optimization
 ```
+True
+- In Snowflake, the more time a query takes, the more resources are consumed, which can lead to higher costs.
+- Using the `TOP` or `LIMIT` clause can make your query more efficient by restricting the number of rows returned.
+- Using `UNION ALL` instead of `UNION` can speed up your query if you are sure there are no duplicate records.
 
+False
+- Filtering data using the `WHERE` clause should be done after performing joins for optimized performance.
+- Joining tables without precise conditions, often called 'exploding join,' is a recommended practice for efficient querying.
+- It's a good practice to use `SELECT *` to fetch all columns for large tables.
 ```
 
 ## Early filtering
