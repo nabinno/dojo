@@ -394,7 +394,10 @@ JOIN filtered_pizza_type AS pt ON p.pizza_type_id = pt.pizza_type_id
 
 ## Query history
 ```
-
+[ ]SELECT query_id, start_time, query_text, warehouse_name FROM snowflake.information_schema.query_history
+[ ]SELECT query_id, start_time, query_text, warehouse_name FROM snowflake.account.query_history
+[x]SELECT query_id, start_time, end_time, query_text FROM snowflake.account_usage.query_history
+[ ]SELECT query_id, start_time, query_text, warehouse_name FROM snowflake.account_usage.access_history
 ```
 
 ## Handling semi-structured data
