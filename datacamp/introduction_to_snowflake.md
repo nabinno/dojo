@@ -400,14 +400,25 @@ JOIN filtered_pizza_type AS pt ON p.pizza_type_id = pt.pizza_type_id
 [ ]SELECT query_id, start_time, query_text, warehouse_name FROM snowflake.account_usage.access_history
 ```
 
-## Handling semi-structured data
+## `PARSE_JSON` & `OBJECT_CONSTRUCT`
 ```
+True:
+- This is a valid syntax:
+    PARSE_JSON('{
+        "business_id": 10,
+        "name": "restaurant"
+    }')
+- `PARSE_JSON(<expr>) returns a valid JSON object.
+- `OBJECT_CONSTRUCT` returns a JSON object.
 
-```
-
-## PARSE_JSON & OBJECT_CONSTRUCT
-```
-
+False:
+- This is a valid syntax:
+    OBJECT_CONSTRUCT('{
+        "business_id": 8,
+        "name": "restaurant"
+    }')
+- `PARSE_JSON` returns key-value pairs separated by commas.
+- The input to `PARSE_JSON()` is key-value pairs data separated by commas.
 ```
 
 ## Querying JSON data
