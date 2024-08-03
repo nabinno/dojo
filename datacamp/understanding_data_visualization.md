@@ -21,14 +21,17 @@ categorical
 - Job title of employees
 ```
 
-## Histograms
-```
-
-```
-
 ## Interpreting histograms
 ```
+0True
+- The histogram is unimodal.
+- The histogram is right-skewed.
+- The histogram is bimodal.
 
+False
+- The most popular salary bracket is $560k to $580k.
+- The histogram is left-skewed.
+- The most popular salary bracket is $40k to $60k.
 ```
 
 ## Adjusting bin width
