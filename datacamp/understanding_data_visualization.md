@@ -36,7 +36,10 @@ False
 
 ## Adjusting bin width
 ```
-
+[ ]The agouti had a high level of activity from 4am to 12pm, then moderate activity from 12pm to 8pm.
+[x]The agouti were most active for a couple of hours after sunrise (6:30am to 8:30am), and before sunset (4pm to 6m).
+[ ]The agouti showed a constant level of activity throughout sunlight hours.
+[ ]The agouti activity was highly variable, with over a dozen peaks in activity throughout the day
 ```
 
 ## Box plots
