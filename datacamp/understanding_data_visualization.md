@@ -42,14 +42,17 @@ False
 [ ]The agouti activity was highly variable, with over a dozen peaks in activity throughout the day
 ```
 
-## Box plots
-```
-
-```
-
 ## Interpreting box plots
 ```
+True
+- In 1990, three states were considered to have extreme values in the number of packets of cigarettes smoked per capita.
+- The inter-quartile range of the number of packets of cigarettes smoked per capita decreased every year from 1985 to 1995.
+- The median number of packets of cigarettes smoked per capita was below 100 from 1991 onwards.
 
+False
+- The lower quartile number of packets of cigarettes smoked per capita decreased every year from 1985 to 1995.
+- The upper quartile number of packets of cigarettes smoked per capita decreased every year from 1985 to 1995.
+- The inter-quartile range of the number of packets of cigarettes smoked per capita was smallest in 1992.
 ```
 
 ## Ordering box plots
