@@ -55,20 +55,9 @@ False
 - The inter-quartile range of the number of packets of cigarettes smoked per capita was smallest in 1992.
 ```
 
-## Ordering box plots
-```
-
-```
-
-
 
 
 # 2. Visualizing two variables
-## Scatter plots
-```
-
-```
-
 ## Interpreting scatter plots
 ```
 
