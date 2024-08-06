@@ -60,7 +60,17 @@ False
 # 2. Visualizing two variables
 ## Interpreting scatter plots
 ```
+True
+- There is a positive correlation between the life expectancy and the length of schooling.
+- Exactly one country averages more than 14 years schooling.
+- As the average length of schooling increases, the average life expectancy typically increases too.
+- Every country with an average life expectancy of less than 60 years has an average length of schooling less than 7 years.
 
+False
+- There is a negative correlation between the life expectancy and the length of schooling.
+- No countries have an average length of schooling less than 6 years and an average life expectancy of more than 75 years.
+- No countries have an average life expectancy of less than 55 years.
+- If one country has a longer average length of schooling than another country, that country will also have a greater average life expectancy.
 ```
 
 ## Trends with scatter plots
