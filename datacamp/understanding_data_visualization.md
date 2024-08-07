@@ -73,16 +73,6 @@ False
 - If one country has a longer average length of schooling than another country, that country will also have a greater average life expectancy.
 ```
 
-## Trends with scatter plots
-```
-
-```
-
-## Line plots
-```
-
-```
-
 ## Interpreting line plots
 ```
 
