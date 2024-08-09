@@ -75,7 +75,15 @@ False
 
 ## Interpreting line plots
 ```
+True
+- In 1930, adoption of automobiles was greater than 50%.
+- In 1945, two out of the four technologies had lower adoption than in 1940.
+- After 1940, adoption of refrigerators was always higher than adoption of stoves.
 
+False
+- It took longer for refrigerators to go from 50% adoption to 75% adoption than it took vacuums.
+- In 1940, adoption of stoves was greater than adoption of automobiles.
+- After 1940, adoption of automobiles was always higher than adoption of vacuums.
 ```
 
 ## Logarithmic scales for line plots
