@@ -88,7 +88,10 @@ False
 
 ## Logarithmic scales for line plots
 ```
-
+[ ]On Feb 3, excluding mainland China, US had the most cumulative confirmed cases of COVID-19.
+[x]On Feb 17, Germany had more cumulative confirmed cases of COVID-19 than France.
+[ ]On Mar 02, Iran had less than 1000 cumulative confirmed cases of COVID-19.
+[ ]On Mar 16, US had less than 4000 cumulative confirmed cases of COVID-19.
 ```
 
 ## Line plots without dates on the x-axis
