@@ -102,14 +102,12 @@ False
 [ ]2012
 ```
 
-## Bar plots
-```
-
-```
-
 ## Interpreting bar plots
 ```
-
+[ ]Germany had the third most famous athletes.
+[ ]Five sports had more than five famous athletes.
+[x]Soccer players from the USA had more famous athletes than any other country/sport combination.
+[ ]There were more famous cricketers on the list than famous French athletes.
 ```
 
 ## Interpreting stacked bar plots
