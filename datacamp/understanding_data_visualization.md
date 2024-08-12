@@ -96,7 +96,10 @@ False
 
 ## Line plots without dates on the x-axis
 ```
-
+[ ]2009
+[ ]2010
+[x]2011
+[ ]2012
 ```
 
 ## Bar plots
