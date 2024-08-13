@@ -112,7 +112,12 @@ False
 
 ## Interpreting stacked bar plots
 ```
+R> show_plot
 
+[ ]Less than half the women aged 80+ needed assistance for two or more activities.
+[ ]The group with the smallest percentage of people needing assistance for exactly one activity was men aged 75-79.
+[x]The group with the largest percentage of people needing no assistance was men aged 70-74.
+[ ]More than half the men aged 80+ needed assistance for at least one activity.
 ```
 
 ## Dot plots
