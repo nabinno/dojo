@@ -120,14 +120,13 @@ R> show_plot
 [ ]More than half the men aged 80+ needed assistance for at least one activity.
 ```
 
-## Dot plots
-```
-
-```
-
 ## Interpreting dot plots
 ```
-
+Which statement is false?
+[ ]Basketball: Russell Westbrook has more Instagram followers than Carmelo Anthony.
+[ ]Cricket: Virat Kohli has more followers on Facebook than the other platforms.
+[x]Soccer: Cristiano Ronaldo has more Twitter followers than Marcelo Viera.
+[ ]Tennis: Maria Sharapova has more Facebook followers than Roger Federer.
 ```
 
 ## Sorting dot plots
