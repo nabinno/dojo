@@ -131,7 +131,10 @@ Which statement is false?
 
 ## Sorting dot plots
 ```
-
+[ ]Ukraine has the fifth most expensive Big Macs by actual price.
+[x]Two countries have Big Macs that cost over 100 USD after adjusting for GDP.
+[ ]After adjusting for GDP, South Africa has the cheapest Big Macs.
+[ ]Azerbaijan has the fifth most expensive Big Macs by actual price.
 ```
 
 
