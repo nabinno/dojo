@@ -153,7 +153,12 @@ Explore different options for distinguishing points from the four cities, then d
 
 ## Another dimension for line plots
 ```
+Explore different options for distinguishing lines from the five companies, then determine which statement is false.
 
+[ ]All five companies began 2018 with a higher price than they began 2017.
+[ ]In 2018, Facebook's stock price decreased by a greater fraction than any of the other companies.
+[ ]From the start of 2019 to the start of 2020, Apple's stock price more than doubled.
+[x]All five companies began 2020 with a higher price than they had half way through 2019.
 ```
 
 ## Using color
