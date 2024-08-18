@@ -141,14 +141,14 @@ Which statement is false?
 
 
 # 3. The color and the shape
-## Higher dimensions
-```
-
-```
-
 ## Another dimension for scatter plots
 ```
+Explore different options for distinguishing points from the four cities, then determine which statement is false.
 
+[ ]Using different sizes or transparencies makes it hard to distinguish points that overlap.
+[ ]Using separate panels provides the best way to distinguish points from each city, but makes it harder to see if there is a single trend across the whole dataset.
+[x]Using different shapes provides the best way to distinguish points from each city, but makes it harder to see if there is a single trend across the whole dataset.
+[ ]Using different color provides a good way to distinguish points from each city, but lighter colors can be hard to see against a white background.
 ```
 
 ## Another dimension for line plots
