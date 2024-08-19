@@ -161,14 +161,15 @@ Explore different options for distinguishing lines from the five companies, then
 [x]All five companies began 2020 with a higher price than they had half way through 2019.
 ```
 
-## Using color
-```
-
-```
-
 ## Eye-catching colors
 ```
+Which statement is true?
 
+[ ]To ensure that all data points are equally perceivable, they should all have the same color.
+[ ]To ensure that all data points are equally perceivable, they should all have the same chroma.
+[ ]To ensure that all data points are equally perceivable, they should all have the same luminance.
+[x]To ensure that all data points are equally perceivable, choose a qualitative, sequential, or diverging scale in hue-chroma-luminance colorspace.
+[ ]To ensure that all data points are equally perceivable, they should all have the same hue.
 ```
 
 ## Qualitative, sequential, diverging
