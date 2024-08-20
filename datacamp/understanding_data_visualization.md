@@ -174,7 +174,10 @@ Which statement is true?
 
 ## Qualitative, sequential, diverging
 ```
-
+[ ]None
+[ ]Qualitative: Distinguish unordered categories
+[ ]Sequential: Show ordering
+[x]Diverging: Show above or below a midpoint```
 ```
 
 ## Highlighting data
