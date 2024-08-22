@@ -191,14 +191,17 @@ How many songs for each artist made it onto the critics' list?
 [ ]The Notorious B.I.G. has 9 and 2Pac has 7.
 ```
 
-## Plotting many variables at once
-```
-
-```
-
 ## Interpreting pair plots
 ```
+True
+- Paca is the only nocturnal animal in the dataset.
+- There are more than 250 sightings of peccary in the dataset.
+- Most animals were travelling at less than 1 m/s when caught on camera.
 
+False
+- All species were caught on camera most often around down (6am) and dusk (6pm).
+- The animal with the fastest 75th percentile speed on camera was an agouti.
+- There is a strong negative correlation between time of sighting and speed of the animal.
 ```
 
 ## Interpreting correlation heatmaps
