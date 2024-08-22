@@ -182,7 +182,13 @@ Which statement is true?
 
 ## Highlighting data
 ```
+How many songs for each artist made it onto the critics' list?
 
+[x]The Notorious B.I.G. has 9 and 2Pac has 8.
+[ ]The Notorious B.I.G. has 7 and 2Pac has 7.
+[ ]The Notorious B.I.G. has 8 and 2Pac has 7.
+[ ]The Notorious B.I.G. has 7 and 2Pac has 8.
+[ ]The Notorious B.I.G. has 9 and 2Pac has 7.
 ```
 
 ## Plotting many variables at once
