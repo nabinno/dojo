@@ -206,7 +206,15 @@ False
 
 ## Interpreting correlation heatmaps
 ```
+True
+- People who drank The Singleton were unlikely to drink Chivas Regal.
+- There was no correlation between drinkers of Clan Macgregor and drinkers of Chivas Regal.
+- People who drank Knockando were unlikely to drink Macallan.
 
+False
+- There was no correlation between drinkers of Johnnie Walker Red Label and drinkers of Johnnie Walker Black Label.
+- People who drank Glenfiddich were also likely to drink Glenlivet.
+- People who drank Glenlivet were also likely to drink J & B.
 ```
 
 ## Interpreting parallel coordinates plots
