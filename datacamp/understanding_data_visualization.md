@@ -219,7 +219,15 @@ False
 
 ## Interpreting parallel coordinates plots
 ```
+True
+- Oils from both regions in Sardinia have low levels of eicosenoic acid and high levels of linoleic acid.
+- Oils from both regions in the North have high levels of eleic acid.
+- Oils from Calabria in the South have a wide variety of levels of eicosenoic acid and stearic acid.
 
+False
+- Oils from Inland-Sarrdinia in Sardinia have a wide variety of levels of oleic acid.
+- Oils from South-Apulia in the South are more consistent in fatty acid levels than other regions.
+- Oils from West-Liguria in the North have high levels of linolenic acid.
 ```
 
 
