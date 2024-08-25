@@ -234,14 +234,14 @@ False
 
 
 # 4. 99 problems but a plot ain't one of them
-## Polar coordinates
-```
-
-```
-
 ## Pie plots
 ```
+Look at the pie plot and the bar plot and determine which statement is true.
 
+[ ]Only the 75+ age group had more non-drinkers than people drinking 14 to 35 units per week.
+[ ]Three age groups had more than 30% of people drinking 14 to 35 units per week.
+[ ]All age groups had less than 20% non-drinkers.
+[x]All age groups had at least 50% of people drinking up to 14 units per week.
 ```
 
 ## Rose plots
