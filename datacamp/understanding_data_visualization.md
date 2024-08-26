@@ -246,7 +246,12 @@ Look at the pie plot and the bar plot and determine which statement is true.
 
 ## Rose plots
 ```
+Look at the histogram and rose plot, then determine which statement is true.
 
+[ ]The distribution of the wind directions has three peaks.
+[x]The predominant wind directions were N and SW.
+[ ]The distribution of the wind directions has one peak.
+[ ]The predominant wind directions were E and NW.
 ```
 
 ## Axes of evil
