@@ -254,14 +254,14 @@ Look at the histogram and rose plot, then determine which statement is true.
 [ ]The predominant wind directions were E and NW.
 ```
 
-## Axes of evil
-```
-
-```
-
 ## Bar plot axes
 ```
+Compare version of the plot with each y-axis, and determine which statement is true.
 
+[x]The percentage of asthmatics is less than 15% for every age group.
+[ ]16-24 years olds have more than twice the percentage of non-asthmatics than 45-54 year olds.
+[ ]The majority of people aged 35-74 are asthmatic.
+[ ]The percentage of asthmatics ranges from about 40% to about 80%, depending upon the age group.
 ```
 
 ## Dual axes
