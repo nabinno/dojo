@@ -272,14 +272,14 @@ Compare version of the plot with each y-axis, and determine which statement is t
 [x]You can't make a conclusion about the correlation of MSFT and AMZN from this plot.
 ```
 
-## Sensory overload
-```
-
-```
-
 ## Chartjunk
 ```
-
+Which element of the plot is not chartjunk?
+[ ]Bold, italic text
+[ ]Chunky grid lines
+[ ]Dollar signs for points
+[ ]Golden panel background
+[x]Axis labels
 ```
 
 ## Multiple plots
