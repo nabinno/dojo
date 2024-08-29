@@ -266,7 +266,10 @@ Compare version of the plot with each y-axis, and determine which statement is t
 
 ## Dual axes
 ```
-
+[ ]MSFT and AMZN are strongly positively correlated.
+[ ]MSFT and AMZN are strongly negatively correlated.
+[ ]MSFT and AMZN have no correlation.
+[x]You can't make a conclusion about the correlation of MSFT and AMZN from this plot.
 ```
 
 ## Sensory overload
