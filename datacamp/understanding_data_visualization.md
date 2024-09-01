@@ -284,10 +284,11 @@ Which element of the plot is not chartjunk?
 
 ## Multiple plots
 ```
+Explore the dashboard and determine which statement is false.
 
-```
-
-## Congratulations
-```
-
+[ ]The coalition with the most seats is `SPD+CDU`.
+[ ]The Grüne party have more seats as the secondary party in a coalition than any other party.
+[x]The SPD have more seats as the tertiary party in a coalition than any other party.
+[ ]The FDP only have seats in the Western states.
+[ ]Bavaria (the large state in the South East) has different political parties to those found in power in other states.
 ```
