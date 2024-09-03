@@ -16,7 +16,16 @@ Which of the following is an appropriate definition of modern data architecture?
 
 ## Modern vs traditional architectures
 ```
+Modern data architecture;
+- Self-service analytics tools
+- Serverless architecture minimizing infrastructure management
+- Auto-scaling capabilities to handle dynamic workloads
+- Real-time processing
 
+Traditional data architecture:
+- Scheduled batch processing
+- Data is primarily sourced from structured databases
+- Heavy Reliance on In-House Infrastructure
 ```
 
 ## Examples of the modern data architecture
