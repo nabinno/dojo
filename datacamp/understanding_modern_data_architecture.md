@@ -28,14 +28,11 @@ Traditional data architecture:
 - Heavy Reliance on In-House Infrastructure
 ```
 
-## Examples of the modern data architecture
-```
-
-```
-
 ## Lambda architecture
 ```
-
+[ ]A traditional batch processing system that handles data in large, periodic batches.
+[x]A processing approach for batch and streaming data independently that merges them to provide a unified view of data.
+[ ]A processing approach that separates data into two paths: batch and real-time.
 ```
 
 ## Lambda architecture layers
