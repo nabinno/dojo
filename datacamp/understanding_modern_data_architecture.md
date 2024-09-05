@@ -37,7 +37,17 @@ Traditional data architecture:
 
 ## Lambda architecture layers
 ```
+Batch layer:
+- Master dataset
+- Batch processing
 
+Speed layer:
+- Stream processing
+- Stream views
+
+Serving layer:
+- Unified views
+- Query interface
 ```
 
 ## Kappa architecture
