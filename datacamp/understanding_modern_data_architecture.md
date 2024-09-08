@@ -52,7 +52,9 @@ Serving layer:
 
 ## Kappa architecture
 ```
-
+[ ]An architecture that separates batch and real-time processing paths to handle high-velocity data streams.
+[x]An architecture that treats all data as one stream, enabling a single stack for batch and streaming processing.
+[ ]An architecture that processes only streaming data and does not handle history.
 ```
 
 ## Kappa: What about the batch layer?
