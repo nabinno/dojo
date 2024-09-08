@@ -59,7 +59,9 @@ Serving layer:
 
 ## Kappa: What about the batch layer?
 ```
-
+[ ]Change your current architecture to Lambda, as you need to process historical data.
+[ ]Create a new flow for extracting the new data, and wait a couple of months to collect enough history.
+[x]Create a new flow for extracting the new data, and re-process the source of events to get the whole history.
 ```
 
 ## Data Mesh and Data Fabric
