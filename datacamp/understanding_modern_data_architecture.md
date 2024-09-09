@@ -64,14 +64,12 @@ Serving layer:
 [x]Create a new flow for extracting the new data, and re-process the source of events to get the whole history.
 ```
 
-## Data Mesh and Data Fabric
-```
-
-```
-
 ## Data Mesh
 ```
-
+[ ]A decentralized data processing approach.
+[ ]A decentralized data storage system.
+[x]A decentralized approach to data management.
+[ ]A centralized approach to data management.
 ```
 
 ## Data Fabric
