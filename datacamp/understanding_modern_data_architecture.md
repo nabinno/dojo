@@ -74,7 +74,9 @@ Serving layer:
 
 ## Data Fabric
 ```
-
+[ ]A data architecture that focuses on visualization to integrate diverse datasets.
+[ ]A centralized data architecture with a great focus on metadata analysis.
+[x]A data architecture with a great focus on metadata analysis.
 ```
 
 ## Data architecture & its use cases
