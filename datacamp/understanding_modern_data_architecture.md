@@ -81,7 +81,13 @@ Serving layer:
 
 ## Data architecture & its use cases
 ```
+Data mesh:
+- A company with multiple business units needs to share data while maintaining their own data management and enabling self-service consumption.
+- Decentralized datqa ownership and management for autonomous product teams.
 
+Data fabric:
+- Building a data platform leveraging metadata analysis to improve data management.
+- Integrate disparate systems and data sources to provide an unified view of data assets.
 ```
 
 
