@@ -94,14 +94,11 @@ Data fabric:
 
 
 # 2. Modern Data Architecture Components
-## Data Storage: Storage types
-```
-
-```
-
 ## What are blob storages?
 ```
-
+[ ]A data lake.
+[x]A distributed storage with support of all types of data.
+[ ]A single physical device used to store data in a blob format.
 ```
 
 ## When should you use blob storage?
