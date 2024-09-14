@@ -103,7 +103,10 @@ Data fabric:
 
 ## When should you use blob storage?
 ```
-
+[ ]Primarily work with structured data, and need to execute complex queries over it.
+[x]Archive data for compliance purposes, but you won't access it normally.
+[x]Implement a data lake, which will receive multiple types of data; including unstructured.
+[ ]Store and serve semi-structured data with high demand.
 ```
 
 ## SQL vs. NoSQL
