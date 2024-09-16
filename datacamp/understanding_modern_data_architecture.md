@@ -111,7 +111,9 @@ Data fabric:
 
 ## SQL vs. NoSQL
 ```
-
+[ ]RDBMS. You could scale servers horizontally, and query with SQL.
+[x]NoSQL. You could scale horizontally and be eventually consistent across the system.
+[ ]NoSQL. You could scale vertically to meet the demand.
 ```
 
 ## Storage use cases
