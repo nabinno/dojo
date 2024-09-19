@@ -118,7 +118,16 @@ Data fabric:
 
 ## Storage use cases
 ```
+Blob storage:
+- Archive data for the long-term
+- Store large media files
 
+NoSQL DB:
+- Serve applications with high demand, and not necessarily a strong consistency
+- Store semi-structured data
+
+Data warehouse:
+- Analyze huge amount of structured data, using SQL.
 ```
 
 ## Data Ingestion
