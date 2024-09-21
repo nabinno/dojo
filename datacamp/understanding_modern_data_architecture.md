@@ -132,7 +132,14 @@ Data warehouse:
 
 ## Data Ingestion
 ```
+Ingestion is:
+- Collecting and importing data from various sources
+- A continuous and ongoing activity
+- Necessary for data analysis and decision-making
 
+Ingestion is not:
+- Limited to a specific type of data source or format.
+- Responsible for data interpretation or drawing insights
 ```
 
 ## What is ingestion?
