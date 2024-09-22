@@ -142,14 +142,12 @@ Ingestion is not:
 - Responsible for data interpretation or drawing insights
 ```
 
-## What is ingestion?
-```
-
-```
-
 ## What is the landing zone?
 ```
-
+[ ]The final storage location for processed data.
+[ ]A dedicated area for data quality checks and cleansing.
+[ ]A component that analyzes data patterns and generates insights.
+[x]The initial storage area for incoming data.
 ```
 
 ## Ingesting new data
