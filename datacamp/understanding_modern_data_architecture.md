@@ -152,7 +152,14 @@ Ingestion is not:
 
 ## Ingesting new data
 ```
+Your company plans to build a cloud-based data platform. For this purpose, they want to replicate data from various sources, including cloud-native apps and on-premises SQL databases. The data science team requested a copy of the data in the cloud for analytical purposes. Once the data is in the cloud, your company wants to also be able to consume it directly from its serving data warehouse. It is acceptable for the data to have a delay of up to 24 hours if it reduces costs.
 
+How would you design your data platform ingestion to fulfill your company’s requirements?
+
+[ ]Batch job to ingest from databases and store in the serving data warehouse.
+[ ]Streaming job to listen to changes and replicate to the serving data warehouse.
+[x]Batch job to ingest from databases and store in the landing zone.
+[ ]Streaming job to listen to changes and replicate to the landing zone.
 ```
 
 ## Data Processing
