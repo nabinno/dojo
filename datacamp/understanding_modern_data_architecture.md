@@ -162,14 +162,16 @@ How would you design your data platform ingestion to fulfill your company’s re
 [ ]Streaming job to listen to changes and replicate to the landing zone.
 ```
 
-## Data Processing
-```
-
-```
-
 ## Batch vs. Streaming
 ```
+Batch:
+- Schedule
+- Fixed amount of data
 
+Streaming:
+- Runs 24/7
+- Real-time insights
+- Windows are needed to perform aggregations
 ```
 
 ## What is a window in streaming?
