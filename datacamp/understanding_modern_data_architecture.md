@@ -176,7 +176,9 @@ Streaming:
 
 ## What is a window in streaming?
 ```
-
+[ ]Temporary storage areas where real-time data is buffered before processing.
+[x]Time-based or size-based partitions of the continuous data stream for performing computations and aggregations.
+[ ]Divisions of data into fixed intervals for efficient data transmission.
 ```
 
 ## Processing paradigms
