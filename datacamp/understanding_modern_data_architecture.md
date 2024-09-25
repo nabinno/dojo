@@ -183,7 +183,13 @@ Streaming:
 
 ## Processing paradigms
 ```
+You are an engineer working for a data processing company that receives files from an external provider. These files contain critical data that needs to be validated for integrity before being accepted into the system. The challenge you are facing is that the arrival pattern of these files is unpredictable. They could either arrive in large batches during the morning or night, or sporadically throughout the day. Additionally, the file sizes are relatively small, and you won't get more than a couple of thousand per day.
 
+Which processing strategy would you choose that minimizes costs?
+
+[ ]Streaming in a cluster
+[ ]Streaming in a serverless service
+[x]Function computing
 ```
 
 ## Data serving
