@@ -192,14 +192,18 @@ Which processing strategy would you choose that minimizes costs?
 [x]Function computing
 ```
 
-## Data serving
-```
-
-```
-
 ## Serving technologies
 ```
+Data Warehouse:
+- You have structured data, and need to create dashboards.
+- You have structured and semi-structured data, and need to perform analytical querying.
 
+Blob Storage:
+- You have structured data, and need to archive it to the long term without much querying.
+- You have unstructured data, and would like to train machine learning models.
+
+RDBMS:
+- You have structured data, and need to expose it via an API with single record lookup capability.
 ```
 
 ## Sort the layers
