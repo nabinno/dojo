@@ -208,7 +208,11 @@ RDBMS:
 
 ## Sort the layers
 ```
-
+1. Ingestion
+2. Landing zone
+3. Processing
+4. Serving
+5. Consume
 ```
 
 
