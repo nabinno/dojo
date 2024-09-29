@@ -219,14 +219,11 @@ RDBMS:
 
 
 # 3. Transversal Components of Data Architectures
-## Data governance
-```
-
-```
-
 ## What is data governance?
 ```
-
+[ ]The process of analyzing and interpreting data to make informed business decisions.
+[ ]A technique used to secure data from unauthorized access and protect it from cyber threats.
+[x]A set of rules and policies that dictate the creation, collection, storage, usage, and disposal of an organization's data.
 ```
 
 ## Data governance roles
