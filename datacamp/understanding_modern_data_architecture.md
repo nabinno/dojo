@@ -228,7 +228,17 @@ RDBMS:
 
 ## Data governance roles
 ```
+Governors:
+- Classify data into categories like PII
+- Provide or restrict access to the data
 
+Users:
+- Create machine learning models from data
+- Use dashboards to make informed decisions
+
+Ancillary:
+- Userstand and inform legal requirements from industry regulations
+- Funding the data governance strategy
 ```
 
 ## Metadata Management
