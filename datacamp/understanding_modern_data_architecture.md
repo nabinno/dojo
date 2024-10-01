@@ -241,14 +241,12 @@ Ancillary:
 - Funding the data governance strategy
 ```
 
-## Metadata Management
-```
-
-```
-
 ## The role of metadata
 ```
-
+[ ]Metadata enables data encryption and security.
+[ ]Metadata is crucial for the development of machine learning models.
+[ ]Metadata is primarily used to increase data storage capacity.
+[x]Metadata assists in organizing, accessing, and understanding data.
 ```
 
 ## Metadata types
