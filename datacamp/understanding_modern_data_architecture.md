@@ -251,7 +251,17 @@ Ancillary:
 
 ## Metadata types
 ```
+Technical:
+- Movies dataset schema
+- Tables foreign keys
 
+Business:
+- Owner for moviews dataset
+- Meaning of each column in movies dataset
+
+Operational:
+- Last time moviews dataset was processed
+- Percentage of null values in the movie's genre
 ```
 
 ## The business glossary is composed of...
