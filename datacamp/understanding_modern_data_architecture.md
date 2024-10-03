@@ -266,7 +266,10 @@ Operational:
 
 ## The business glossary is composed of...
 ```
-
+[x]Data owner
+[ ]Tables relationships
+[x]Business definitions
+[ ]Timestamps of data processing
 ```
 
 ## Data Security
