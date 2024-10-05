@@ -272,14 +272,12 @@ Operational:
 [ ]Timestamps of data processing
 ```
 
-## Data Security
-```
-
-```
-
 ## What is a data breach?
 ```
-
+[ ]A data analyst can't access the necessary data due to insufficient permissions.
+[ ]A sales representative can't see customer names in a report because of data masking.
+[x]An unauthorized user obtains sensitive customer information.
+[ ]Data is inaccessible due to a network outage caused by a malicious actor.
 ```
 
 ## Virtual Private Clouds (VPC)
