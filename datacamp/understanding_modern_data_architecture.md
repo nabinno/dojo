@@ -282,7 +282,10 @@ Operational:
 
 ## Virtual Private Clouds (VPC)
 ```
-
+[ ]VPCs encrypt your data at rest.
+[ ]VPCs are used to manage user access permissions.
+[ ]VPCs manage the lifecycle of your cryptographic keys.
+[x]VPCs allow you to create isolated networks, thus restricting access if needed.
 ```
 
 ## Effective data security
