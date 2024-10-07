@@ -290,7 +290,11 @@ Operational:
 
 ## Effective data security
 ```
-
+[x]Implementing strong access controls
+[x]Using data encryption at rest
+[x]Regularly updating firewall rules
+[ ]Keeping all data in a single location for ease of access
+[x]Applying data masking to sensitive fields
 ```
 
 ## Classifying Data Security Measures
