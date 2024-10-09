@@ -312,14 +312,13 @@ Network security:
 - Defining firewall rules
 ```
 
-## Observability
-```
-
-```
-
 ## Troubleshooting the source of a problem
 ```
+You've noted a particular transaction that's been unusually slow and want to analyze it. Which aspect of observability would help you understand exactly where the slowdown is happening in the transaction's path?
 
+[ ]Monitoring to keep track of the system's overall performance.
+[ ]Logging to keep a record of when the transaction occurred.
+[x]Tracing to follow the transaction's journey through the system.
 ```
 
 ## Data security measures
