@@ -299,7 +299,17 @@ Operational:
 
 ## Classifying Data Security Measures
 ```
+Cloud services:
+- VPC
+- IAM services
 
+Data protection:
+- Masking sensitive data
+- Encrypting data in transit
+- Using a Customer Managed Key
+
+Network security:
+- Defining firewall rules
 ```
 
 ## Observability
