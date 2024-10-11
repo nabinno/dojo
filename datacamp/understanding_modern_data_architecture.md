@@ -323,7 +323,14 @@ You've noted a particular transaction that's been unusually slow and want to ana
 
 ## Data security measures
 ```
+Easier to implement:
+- Data encryption
+- Access control
+- Audit -logging and monitoring
 
+Harder to implement:
+- Security testing and validation
+- Network security
 ```
 
 
