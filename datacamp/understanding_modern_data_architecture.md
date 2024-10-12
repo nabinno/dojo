@@ -337,14 +337,16 @@ Harder to implement:
 
 
 # 4. Putting it All Together
-## Orchestration
-```
-
-```
-
 ## Orchestration vs. Scheduling
 ```
+Orchestration:
+- Managing a complex machine learning pipeline with conditional executions.
+- Coordinating a multi-step ETL process with dependencies between them
 
+Scheduling:
+- Running a nightly backup of a database.
+- Launching a series of independent tasks at various intervals throughout the day.
+- Triggering on email report to be sent every Monday morning.
 ```
 
 ## Orchestration sensors
