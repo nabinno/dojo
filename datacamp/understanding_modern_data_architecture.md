@@ -351,7 +351,11 @@ Scheduling:
 
 ## Orchestration sensors
 ```
-
+Within the context of Apache Airflow, which of the following best describes a scenario where the use of a sensor operator would be appropriate?
+[ ]Executing a SQL query.
+[ ]Triggering an email notification once a particular task within a DAG has been completed.
+[ ]Running a Bash command to copy files from one directory to another.
+[x]Pausing a workflow until a particular file lands in a specific location, and then continuing the subsequent tasks.
 ```
 
 ## Storage & processing costs best practices
