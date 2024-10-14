@@ -358,14 +358,12 @@ Within the context of Apache Airflow, which of the following best describes a sc
 [x]Pausing a workflow until a particular file lands in a specific location, and then continuing the subsequent tasks.
 ```
 
-## Storage & processing costs best practices
-```
-
-```
-
 ## Reserved capacity in cloud services
 ```
-
+[ ]Reduced costs for unexpected spikes in usage.
+[ ]Flexibility to change the resources without any commitments.
+[x]Discounts for committing to certain usage levels over an extended period.
+[ ]No charges for networking or data transfer between regions.
 ```
 
 ## Storage classes
