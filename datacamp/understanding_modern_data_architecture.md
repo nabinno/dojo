@@ -368,7 +368,13 @@ Within the context of Apache Airflow, which of the following best describes a sc
 
 ## Storage classes
 ```
+Standard:
+- Storing financial reports that are accessed daily.
+- Storing real-time analytics data for immediate processing.
 
+Glacier/Coldline:
+- Keeping backups of old project files that are rarely accessed.
+- Archiving emails that are over 5 years old.
 ```
 
 ## Designing a modern data architecture
