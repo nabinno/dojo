@@ -387,7 +387,10 @@ Select which question would be better to ask based on the business case reviewed
 
 ## Ingesting the application data
 ```
-
+[ ]Load it directly to BigQuery from the app database.
+[ ]Export deltas of the data during low load traffic periods to the landing zone.
+[ ]Use a message queue like Pub/Sub to replicate each event in the application, and read the data from the queue.
+[x]All of the above
 ```
 
 ## Evaluating modern data architecture solutions
