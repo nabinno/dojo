@@ -393,14 +393,11 @@ Select which question would be better to ask based on the business case reviewed
 [x]All of the above
 ```
 
-## Evaluating modern data architecture solutions
-```
-
-```
-
 ## Why a quarantine zone?
 ```
-
+[ ]To reduce the amount of data to be processed by further stages.
+[ ]To discard corrupted records.
+[x]To later analyze the errors and reprocess them after fixing them.
 ```
 
 ## Designing a modern data platform
