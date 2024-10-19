@@ -404,8 +404,3 @@ Select which question would be better to ask based on the business case reviewed
 ```
 
 ```
-
-## Wrap-up
-```
-
-```
