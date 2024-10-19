@@ -402,5 +402,13 @@ Select which question would be better to ask based on the business case reviewed
 
 ## Designing a modern data platform
 ```
+Appropriate for this use case:
+- Use a cloud-based identity and access management (IAM) solution to manage user access to the data platform.
+- Ingest data into a landing zone using a data lake to allow flexibility on data inputs.
+- Use a distributed data processing framework for real-time processing of data streams from various sources.
+- Utilize a scalable data storage solution, such as a cloud-based object storage, to store new incoming data.
 
+Inappropriate for this use case:
+- Use only one type of database for all data storage needs in serving layer to reduce complexity.
+- Run analytics directly on live production data to avoid duplicating data.
 ```
