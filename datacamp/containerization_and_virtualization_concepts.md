@@ -15,7 +15,9 @@ url: https://campus.datacamp.com/courses/containerization-and-virtualization-con
 
 ## Defining virtual machine
 ```
-
+[ ]A physical computer inside another physical computer.
+[x]A simulated computer inside another computer.
+[ ]A program that creates a visual representation of a computer screen within the display of another computer.
 ```
 
 ## Benefits of virtualization
