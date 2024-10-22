@@ -22,7 +22,14 @@ url: https://campus.datacamp.com/courses/containerization-and-virtualization-con
 
 ## Benefits of virtualization
 ```
+True:
+- VMs are platform-independent, and different operating systems can run seamlessly on the same host machine.
+- Virtual machines offer greater scalability and flexibility than physical machines.
+- Virtualization maximizes resource utilization, resulting in cost efficiencies and sustainable usage
 
+False:
+- Applications running in different virtual machines are less isolated than applications running on the same physical machine.
+- Virtual machines typically cause more downtime than physical machines.
 ```
 
 ## Introduction to containerization
