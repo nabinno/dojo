@@ -32,14 +32,11 @@ False:
 - Virtual machines typically cause more downtime than physical machines.
 ```
 
-## Introduction to containerization
-```
-
-```
-
 ## Definition of containerization
 ```
-
+[x]The process of packaging an application and its dependencies into a container, allowing it to be deployed and executed consistently across different environments.
+[ ]The process of creating a virtual version of computers or hardware components, such as a server, storage device, or network resource, that can be accessed and utilized remotely.
+[x]Containerization is virtualization at the operating system level.
 ```
 
 ## Benefits of containers
