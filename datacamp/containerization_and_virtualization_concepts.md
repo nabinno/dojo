@@ -41,7 +41,14 @@ False:
 
 ## Benefits of containers
 ```
+True:
+- Containers start up quickly because there is no need to load the entire operating system.
+- Applications are easily portable and reproducible in different environments because containers contain everything needed to run the application.
+- Containers on the same host are isolated, so a crash in one container will not cause a crash in another.
 
+False:
+- Applications with different hardware requirements can run on the same host machine because the hardware can be customized for each container.
+- Applications can run on different operating systems on the same host machine because containerization is virtualization at the OS-level.
 ```
 
 ## Virtualization and containerization
