@@ -66,7 +66,10 @@ Virtual machines:
 
 ## Use cases of containerization & virtualization
 ```
-
+[x]Microservices architecture: Break down large applications into smaller services that can be deployed independently.
+[ ]Legacy application support: Maintain compatibility with older operating systems or hardware dependencies.
+[x]Orchestration: Automate the deployment, scaling, and management of applications.
+[ ]Server consolidation: Run multiple virtual machines on a single physical server to improve resource utilization and reduce hardware costs.
 ```
 
 ## Benefits of containers vs. virtual machines
