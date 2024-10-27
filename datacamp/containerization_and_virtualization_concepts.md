@@ -51,14 +51,17 @@ False:
 - Applications can run on different operating systems on the same host machine because containerization is virtualization at the OS-level.
 ```
 
-## Virtualization and containerization
-```
-
-```
-
 ## Virtual machines vs. containers
 ```
+Containers:
+- Run applications in virtualized, isolated user spaces (OS-level virtualization).
+- Use software tools such as Docker and Kubernetes.
+- Share the host systems OS kernel.
 
+Virtual machines:
+- Virtualize on entire computer (full virtualization).
+- Managed by software tools such as VMware and VirtualBox.
+- Have their own operating system that they do not have to share.
 ```
 
 ## Use cases of containerization & virtualization
