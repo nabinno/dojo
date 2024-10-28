@@ -74,7 +74,15 @@ Virtual machines:
 
 ## Benefits of containers vs. virtual machines
 ```
+Containers:
+- Rapid scalability: Quickly scale applications up and down based on demand.
+- Reduced over head costs: Reduce the need for expensive IT infrastructure and resources.
+- Portability: Move seamlessly between different environments with minimal configuration changes.
 
+Virtual machines:
+- Multiple environments: Multiple, different operating systems can run on the same host machine.
+- Legacy application support: Provision of legacy applications by emulating older hardware/software.
+- Strong & secure isolation: High level of security with a completely isolated environment.
 ```
 
 
