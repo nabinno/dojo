@@ -89,14 +89,12 @@ Virtual machines:
 
 
 # 2. Applications of Containerization
-## Containerization with Docker
-```
-
-```
-
 ## The Docker platform
 ```
-
+[ ]Tools for building virtual machines
+[x]Tools for building, distributing, and running containers
+[ ]Tools for developing mobile applications
+[ ]Tools for creating graphical user interfaces
 ```
 
 ## Actions with Docker objects
