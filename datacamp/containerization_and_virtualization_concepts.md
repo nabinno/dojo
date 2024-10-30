@@ -99,7 +99,9 @@ Virtual machines:
 
 ## Actions with Docker objects
 ```
-
+Writing a Dockerfile.
+Building a Docker image.
+Running a Docker container.
 ```
 
 ## Docker's client-server architecture
