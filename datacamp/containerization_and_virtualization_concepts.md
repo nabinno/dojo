@@ -106,7 +106,10 @@ Running a Docker container.
 
 ## Docker's client-server architecture
 ```
-
+[x]The Docker client sends commands to the Docker daemon to perform container- and image-related tasks.
+[ ]Images and containers are managed through the Docker Registry.
+[x]The Docker client can trigger certain Docker actions through both a GUI and a CLI.
+[ ]The Docker daemon hosts Docker images for distribution.
 ```
 
 ## Container orchestration
