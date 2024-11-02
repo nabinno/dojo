@@ -112,14 +112,12 @@ Running a Docker container.
 [ ]The Docker daemon hosts Docker images for distribution.
 ```
 
-## Container orchestration
-```
-
-```
-
 ## Definition of container orchestration
 ```
-
+[ ]Container orchestration is the virtualization of containers.
+[x]Container orchestration is the orchestration of containers.
+[x]Container orchestration simplifies the scaling of hundreds/thousands of containers.
+[ ]Container orchestration is the manual management of containers.
 ```
 
 ## Benefits of container orchestration
