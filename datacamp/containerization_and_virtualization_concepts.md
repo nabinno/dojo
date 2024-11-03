@@ -122,7 +122,15 @@ Running a Docker container.
 
 ## Benefits of container orchestration
 ```
+True:
+- Automation through container orchestration increases developer productivity.
+- Container orchestration can reduce infrastructure costs for large-scale applications
+- Container orchestration can improve application performance by increasing reliability and reducing downtime.
+- Container orchestration makes it easy to scale applications on demand.
 
+False:
+- Container orchestration offers more customization than the manual management of containers.
+- Container orchestration saves time when applied to small-scale applications.
 ```
 
 ## Application of container orchestration
