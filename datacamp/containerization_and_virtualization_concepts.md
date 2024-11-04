@@ -141,14 +141,12 @@ False:
 [ ]None of the above
 ```
 
-## Container orchestration with Kubernetes
-```
-
-```
-
 ## The Kubernetes platform
 ```
-
+Who currently maintains Kubernetes? Choose the correct answer.
+[ ]Docker
+[ ]Google
+[x]Cloud Native Computing Foundation
 ```
 
 ## Important Kubernetes components
