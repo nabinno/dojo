@@ -135,7 +135,10 @@ False:
 
 ## Application of container orchestration
 ```
-
+[ ]On a developer's local machine
+[ ]In a small team working on a prototype project
+[x]In a large organization deploying production applications at scale
+[ ]None of the above
 ```
 
 ## Container orchestration with Kubernetes
