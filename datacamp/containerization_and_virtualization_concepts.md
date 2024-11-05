@@ -151,7 +151,17 @@ Who currently maintains Kubernetes? Choose the correct answer.
 
 ## Important Kubernetes components
 ```
+Pod:
+- Is the smallest deployable unit in Kubernetes.
+- Consists of one or more containers.
 
+Node:
+- Is a group of one or more pods.
+- Is the smallest unit of computing hardware in Kubernetes.
+
+Control Plane:
+- Manages nodes and pods.
+- Also known as the brain of a Kubernetes cluster.
 ```
 
 ## Docker and Kubernetes
