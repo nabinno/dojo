@@ -166,7 +166,10 @@ Control Plane:
 
 ## Docker and Kubernetes
 ```
-
+[ ]While Docker is optimized for ease of use, Kubernetes is optimized for scalability.
+[ ]While Docker is optimized for user experience, Kubernetes is optimized for efficiency.
+[ ]While Docker is optimized for handling one or few containers, Kubernetes is optimized for handling many containers.
+[x]All of the above.
 ```
 
 ## Reading Dockerfiles and running containers
