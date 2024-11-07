@@ -172,14 +172,17 @@ Control Plane:
 [x]All of the above.
 ```
 
-## Reading Dockerfiles and running containers
-```
-
-```
-
 ## Understanding a Dockerfile
 ```
+True:
+- The `COPY` instruction copies files or directories int othe container.
+- The `FROM` instruction defines the image on which the new image is to be built.
+- The `RUN` instruction runs a command inside the container.
+- The `ENTRYPOINT` instruction defines the main command of the container, which serves as its main purpose.
 
+False:
+- The `ENTRYPOINT` defines the image you are building on.
+- The `RUN` instruction runs the Docker container.
 ```
 
 ## Building and running a Docker container
