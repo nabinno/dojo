@@ -1,0 +1,308 @@
+---
+title: Introduction to dbt
+tags: dbt, data-engineering
+url: https://campus.datacamp.com/courses/introduction-to-dbt/welcome-to-dbt
+---
+
+# 1 Welcome to dbt
+## What is dbt?
+```
+
+```
+
+## Users of dbt
+```
+
+```
+
+## Version of dbt
+```
+
+```
+
+## dbt subcommands
+```
+
+```
+
+## Creating a dbt project
+```
+
+```
+
+## Initializing a dbt project
+```
+
+```
+
+## Creating a project profile
+```
+
+```
+
+## Working with a first project
+```
+
+```
+
+## dbt project workflow
+```
+
+```
+
+## Running a project
+```
+
+```
+
+## Modifying a model
+```
+
+```
+
+
+
+
+# 2 dbt models
+## What is a dbt model?
+```
+
+```
+
+## Features of a data model
+```
+
+```
+
+## dbt model statements
+```
+
+```
+
+## Creating a dbt model
+```
+
+```
+
+## Updating dbt models
+```
+
+```
+
+## Config files
+```
+
+```
+
+## Updating a dbt model
+```
+
+```
+
+## Hierarchical models in dbt
+```
+
+```
+
+## No hierarchy model creation
+```
+
+```
+
+## Hierarchical model creation
+```
+
+```
+
+## Updating model hierarchies
+```
+
+```
+
+## Model troubleshooting
+```
+
+```
+
+## Error classification
+```
+
+```
+
+## Process of troubleshooting
+```
+
+```
+
+## Troubleshooting model errors
+```
+
+```
+
+
+
+
+# 3 Testing & Documentation
+## Introduction to testing in dbt
+```
+
+```
+
+## Built-in tests
+```
+
+```
+
+## Defining tests on a model
+```
+
+```
+
+## Finding bad data
+```
+
+```
+
+## Creating singular tests
+```
+
+```
+
+## Steps to develop a singular test
+```
+
+```
+
+## Verifying trip duration
+```
+
+```
+
+## Verifying test queries
+```
+
+```
+
+## Creating custom reusable tests
+```
+
+```
+
+## Testing, testing, testing
+```
+
+```
+
+## Implementing a reusable test
+```
+
+```
+
+## Updating from singular to reusable test
+```
+
+```
+
+## Creating and generating dbt documentation
+```
+
+```
+
+## dbt docs Command Options
+```
+
+```
+
+## dbt documentation flow
+```
+
+```
+
+## Creating dbt documentation
+```
+
+```
+
+
+
+
+# 4 Implementing dbt in production
+## dbt sources
+```
+
+```
+
+## Orderly YML
+```
+
+```
+
+## Models, sources, or both?
+```
+
+```
+
+## Adding a source
+```
+
+```
+
+## dbt seeds
+```
+
+```
+
+## Kernels of truth
+```
+
+```
+
+## ZIP is the code
+```
+
+```
+
+## SCD2 with dbt snapshots
+```
+
+```
+
+## Snapshot process
+```
+
+```
+
+## Snapshot issue
+```
+
+```
+
+## Adding a snapshot
+```
+
+```
+
+## Automating with dbt build
+```
+
+```
+
+## What can't dbt build do?
+```
+
+```
+
+## Helping the intern!
+```
+
+```
+
+## Putting it all together
+```
+
+```
+
+## Course review
+```
+
+```
