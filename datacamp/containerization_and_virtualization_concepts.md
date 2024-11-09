@@ -187,10 +187,6 @@ False:
 
 ## Building and running a Docker container
 ```
-
-```
-
-## Wrap-up
-```
-
+docker build
+docker run test-image
 ```
