@@ -20,12 +20,17 @@ Unlikely to use dbt:
 
 ## Version of dbt
 ```
-
+dbt
 ```
 
 ## dbt subcommands
 ```
-
+Which of the following is not a valid dbt subcommand?
+[ ]docs
+[ ]init
+[x]reeset
+[ ]run
+[ ]build
 ```
 
 ## Creating a dbt project
