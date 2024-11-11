@@ -5,14 +5,17 @@ url: https://campus.datacamp.com/courses/introduction-to-dbt/welcome-to-dbt
 ---
 
 # 1 Welcome to dbt
-## What is dbt?
-```
-
-```
-
 ## Users of dbt
 ```
+Likely to use dbt:
+- Data Engineer
+- Analytics Engineer
+- Data Analyst
 
+Unlikely to use dbt:
+- Data Scientist
+- CIO
+- ML Engineer
 ```
 
 ## Version of dbt
