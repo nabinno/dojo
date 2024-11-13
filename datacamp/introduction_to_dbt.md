@@ -47,7 +47,15 @@ $ ls
 
 ## Creating a project profile
 ```
+$ cat profiles.yml
+nyc_yellow_taxi:
+  outputs:
+    dev:
+      type: duckdb
+      path: dbt.duckdb
+    target: dev
 
+$ dbt debug
 ```
 
 ## Working with a first project
