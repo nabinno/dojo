@@ -33,14 +33,16 @@ Which of the following is not a valid dbt subcommand?
 [ ]build
 ```
 
-## Creating a dbt project
-```
-
-```
-
 ## Initializing a dbt project
 ```
+Run the following commands in the terminal window:
+$ dbt init
 
+Note: You will need to specify the project name (nyc_yellow_taxi) and select the database type ([1] duckdb)
+
+Once complete run:
+$ cd nyc_yellow_taxi
+$ ls
 ```
 
 ## Creating a project profile
