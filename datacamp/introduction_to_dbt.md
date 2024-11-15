@@ -58,19 +58,13 @@ nyc_yellow_taxi:
 $ dbt debug
 ```
 
-## Working with a first project
-```
-
-```
-
-## dbt project workflow
-```
-
-```
-
 ## Running a project
 ```
-
+1. `dbt init`
+2. Create data destinations in the `profiles.yml` file
+3. Define the models
+4. `dbt run`
+5. Verify contents in the data warehouse
 ```
 
 ## Modifying a model
