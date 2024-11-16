@@ -58,13 +58,29 @@ nyc_yellow_taxi:
 $ dbt debug
 ```
 
-## Running a project
+## dbt project workflow
 ```
 1. `dbt init`
 2. Create data destinations in the `profiles.yml` file
 3. Define the models
 4. `dbt run`
 5. Verify contents in the data warehouse
+```
+
+## Running a project
+```
+$ dbt run
+
+$ cat models/taxi_rides/taxi_rides_raw.sql
+-- Modify the following line to change the materialization type
+with source_data as (
+    -- Add the query as described to generate the data model
+    select * from read_parquet('yellow_tripdata_2023-01-partial.parquet')
+)
+
+select * from source_data
+
+$ ./datacheck
 ```
 
 ## Modifying a model
