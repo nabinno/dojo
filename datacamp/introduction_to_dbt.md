@@ -83,23 +83,19 @@ select * from source_data
 $ ./datacheck
 ```
 
-## Modifying a model
-```
-
-```
-
-
 
 
 # 2 dbt models
-## What is a dbt model?
-```
-
-```
-
 ## Features of a data model
 ```
+True of a data model:
+- Classifies common attributes about data
+- Facilitates collaboration
+- Is conceptual
 
+False of a data model:
+- Is the same as a data structure.
+- Are always written in SQL
 ```
 
 ## dbt model statements
