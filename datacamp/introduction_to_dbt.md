@@ -98,14 +98,13 @@ False of a data model:
 - Are always written in SQL
 ```
 
-## dbt model statements
-```
-
-```
-
 ## Creating a dbt model
 ```
-
+$ cd nyc_yellow_taxi
+$ touch models/taxi_rides/taxxi_rides_raw.sql
+$ cat $_
+select * from 'yellow_tripdata_2023-01-partial.parquet'
+$ dbt run
 ```
 
 ## Updating dbt models
