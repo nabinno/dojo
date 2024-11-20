@@ -107,14 +107,16 @@ select * from 'yellow_tripdata_2023-01-partial.parquet'
 $ dbt run
 ```
 
-## Updating dbt models
-```
-
-```
-
 ## Config files
 ```
+Project:
+- profiles.yml
+- dbt_project.yml
 
+Model only:
+- test_model.ql
+- models/test_model.yml
+- model_properties.yml
 ```
 
 ## Updating a dbt model
