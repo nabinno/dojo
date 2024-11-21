@@ -119,14 +119,30 @@ Model only:
 - model_properties.yml
 ```
 
-## Updating a dbt model
-```
-
-```
-
 ## Hierarchical models in dbt
 ```
+$ dbt run
 
+$ cat models/taxi_rides/total_creditcard_riders_by_day.sql
+-- Update with SQL to return requested information
+select
+   date_part('day', tpep_pickup_datetime) as day,
+   count(*) as total_rides
+from taxi_rides_raw
+where Payment_type = 1
+group by day
+
+$ tail -9 dbt_project.yml
+# In this example config, we tell dbt to build all models in the example/
+# directory as views. These settings can be overridden in the individual model
+# files using the `{{ config(...) }}` macro.
+models:
+  nyc_yellow_taxi:
+  # Config indicated by + and applies to all files under models/example/
+    taxi_rides:
+    +materialized: view
+
+$ ./datacheck
 ```
 
 ## No hierarchy model creation
