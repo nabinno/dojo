@@ -147,7 +147,10 @@ $ ./datacheck
 
 ## No hierarchy model creation
 ```
-
+1. all_weekend_sales
+2. new_products_purchased_this_week
+3. sales_raw
+4. total_sales_by_rep
 ```
 
 ## Hierarchical model creation
