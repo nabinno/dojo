@@ -155,7 +155,10 @@ $ ./datacheck
 
 ## Hierarchical model creation
 ```
-
+1. sales_raw
+2. all_weekend_sales
+3. new_products_purchased_this_week
+4. total_sales_by_rep
 ```
 
 ## Updating model hierarchies
