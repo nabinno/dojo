@@ -163,7 +163,28 @@ $ ./datacheck
 
 ## Updating model hierarchies
 ```
+$ dbt run -f
+[..]
+23:02:58  Runtime Error in model creditcard_riders_by_day (models/taxi_rides/creditcard_riders_by_day.sql)
+23:02:58    Catalog Error: Table with name taxi_rides_raw does not exist!
+23:02:58    Did you mean "temp.information_schema.tables"?
+23:02:58
+23:02:58  Done. PASS=1 WARN=0 ERROR=1 SKIP=0 TOTAL=2
 
+$ cat models/taxi_rides/creditcard_riders_by_day.sql
+-- Update SQL to use Jinja reference
+select
+   date_part('day', tpep_pickup_datetime) as day,
+   count(*) as total_riders
+from {{ref('taxi_rides_raw')}}
+where payment_type = 1
+group by day
+
+$ dbt run -f
+[..]
+23:08:41  Completed successfully
+23:08:41
+23:08:41  Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
 ```
 
 ## Model troubleshooting
