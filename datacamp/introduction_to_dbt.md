@@ -187,14 +187,27 @@ $ dbt run -f
 23:08:41  Done. PASS=2 WARN=0 ERROR=0 SKIP=0 TOTAL=2
 ```
 
-## Model troubleshooting
-```
-
-```
-
 ## Error classification
 ```
+Query syntax error:
+SELECT * WHERE
+start_date > 2023-05-01;
+SELECT first_name
+last_name date_of_birth
+FROM users;
 
+Query logic error:
+-- Generate the Average transaction
+-- per user purchase
+SELECT user_id, SUM(transaction_total)
+FROM users
+GROUP BY user_id;
+SELECT * FROM users
+WHERE last_login > 2023-05-01 and last_login < 2023-04-30;
+
+Invalid reference:
+The message:
+Compilation Error Model 'model.taxi.fare' (models/taxi/fare.sql) depends on a node named 'taxi_rw' which was not found
 ```
 
 ## Process of troubleshooting
