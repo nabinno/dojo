@@ -212,7 +212,11 @@ Compilation Error Model 'model.taxi.fare' (models/taxi/fare.sql) depends on a no
 
 ## Process of troubleshooting
 ```
-
+1. `dbt run`
+2. Review `logs/dbt.log` or `run_results.json`
+3. View generated SQL
+4. Running generated SQL manually
+5. Verify fix
 ```
 
 ## Troubleshooting model errors
