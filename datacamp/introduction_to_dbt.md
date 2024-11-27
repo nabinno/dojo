@@ -221,7 +221,24 @@ Compilation Error Model 'model.taxi.fare' (models/taxi/fare.sql) depends on a no
 
 ## Troubleshooting model errors
 ```
+$ dbt run
+23:29:47  Completed with 1 error and 0 warnings:
+23:29:47
+23:29:47  Runtime Error in model taxi_rides_raw (models/taxi_rides/taxi_rides_raw.sql)
+23:29:47    Catalog Error: Table with name source_data does not exist!
+23:29:47    Did you mean "temp.information_schema.schemata"?
+23:29:47
+23:29:47  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
 
+$ dbt run
+23:32:02  Completed with 1 error and 0 warnings:
+23:32:02
+23:32:02  Runtime Error in model taxi_rides_raw (models/taxi_rides/taxi_rides_raw.sql)
+23:32:02    IO Error: No files found that match the pattern "yellow_tripdata_2023-01-partial.parquet"
+23:32:02
+23:32:02  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+
+$ dbt run -f
 ```
 
 
