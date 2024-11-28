@@ -245,14 +245,18 @@ $ dbt run -f
 
 
 # 3 Testing & Documentation
-## Introduction to testing in dbt
-```
-
-```
-
 ## Built-in tests
 ```
+Built-in:
+- `not_null`
+- `unique`
+- `relationships`
+- `accepted_values`
 
+Not built-in:
+- `is_upper`
+- `less_than`
+- `not_in`
 ```
 
 ## Defining tests on a model
