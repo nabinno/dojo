@@ -261,7 +261,22 @@ Not built-in:
 
 ## Defining tests on a model
 ```
+$ cat models/taxi_rides/model_properties.yml
+version: 2
 
+models:
+- name: taxi_rides_raw
+  columns:
+    - name: fare_amount
+      tests:
+        - not_null
+    - name: payment_type
+      tests:
+        - not_null
+        - accepted_values:
+            values: [1, 2, 3, 4, 5, 6]
+
+$ dbt run
 ```
 
 ## Finding bad data
