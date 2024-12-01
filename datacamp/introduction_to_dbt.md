@@ -277,11 +277,40 @@ models:
             values: [1, 2, 3, 4, 5, 6]
 
 $ dbt run
+
+$ dbt test
 ```
 
 ## Finding bad data
 ```
+$ dbt run
+$ dbt test
+[..]
+23:19:36  Completed with 1 error and 0 warnings:
+23:19:36
+23:19:36  Failure in test accepted_values_taxi_rides_raw_payment_type__1__2__3__4__5__6 (models/taxi_rides/model_properties.yml)
+23:19:36    Got 1 result, configured to fail if != 0
+23:19:36
+23:19:36    compiled Code at target/compiled/taxi_project/models/taxi_rides/model_properties.yml/accepted_values_taxi_rides_raw_payment_type__1__2__3__4__5__6.sql
+23:19:36
+23:19:36  Done. PASS=2 WARN=0 ERROR=1 SKIP=0 TOTAL=3
 
+$ cat taxi_rides_raw.sql
+{{ config(materialized='view')}}
+
+with source_data as (
+select * from read_parquet('yellow_tripdata_2023-01-partial.parquet') where payment_type != 0
+)
+
+-- Add a filter / WHERE clause to the line below
+select * from source_data
+
+$ dbt run
+$ dbt test
+[..]
+23:20:19  Completed successfully
+23:20:19
+23:20:19  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
 ```
 
 ## Creating singular tests
