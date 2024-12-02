@@ -313,14 +313,13 @@ $ dbt test
 23:20:19  Done. PASS=3 WARN=0 ERROR=0 SKIP=0 TOTAL=3
 ```
 
-## Creating singular tests
-```
-
-```
-
 ## Steps to develop a singular test
 ```
-
+1. Determine the validation required
+2. Create the SQL query
+3. Save the query in a test `.sql` file
+4. `dbt run`
+5. `dbt test`
 ```
 
 ## Verifying trip duration
