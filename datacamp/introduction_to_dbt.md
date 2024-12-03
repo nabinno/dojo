@@ -322,14 +322,15 @@ $ dbt test
 5. `dbt test`
 ```
 
-## Verifying trip duration
-```
-
-```
-
 ## Verifying test queries
 ```
+$ cat tests/assert_trip_duration_gt_0.sql
+select *
+from taxi_rides_raw
+-- Complete the test on the following line
+where tpep_pickup_datetime = tpep_dropoff_datetime
 
+$ dbt test --select assert_trip_duration_gt_0.sql
 ```
 
 ## Creating custom reusable tests
