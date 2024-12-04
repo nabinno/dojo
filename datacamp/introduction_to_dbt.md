@@ -344,14 +344,16 @@ Invalid test query:
 - SELECT * FROM taxi_rides_raw WHERE tpep_dropoff_datetime - tpep_pickup_datetime >= 0
 ```
 
-## Creating custom reusable tests
-```
-
-```
-
 ## Testing, testing, testing
 ```
+Reusable:
+- accepted_values
+- `tests/generic/check_columns_equal.sql`
+- `select * from {{ ref('order') }}` where fulfilled = 1`
 
+Singular:
+- `tests/assert_orderdate_aft`
+- A test file with `{% enttest %}` as the last line.
 ```
 
 ## Implementing a reusable test
