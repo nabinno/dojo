@@ -322,7 +322,7 @@ $ dbt test
 5. `dbt test`
 ```
 
-## Verifying test queries
+## Verifying trip duration
 ```
 $ cat tests/assert_trip_duration_gt_0.sql
 select *
@@ -331,6 +331,17 @@ from taxi_rides_raw
 where tpep_pickup_datetime = tpep_dropoff_datetime
 
 $ dbt test --select assert_trip_duration_gt_0.sql
+```
+
+## Verifying test queries
+```
+Valid test query:
+- SELECT * FROM taxi_rides_raw WHERE tpep_pickup_datetime = tpep_dropoff_datetime
+- SELECT * FROM taxi_rides_raw WHERE tpep_dropoff_datetime - tpep_pickup_datetime = 0
+
+Invalid test query:
+- SELECT * FROM taxi_rides_raw WHERE tpep_dropoff_datetime > tpep_pickup_datetime
+- SELECT * FROM taxi_rides_raw WHERE tpep_dropoff_datetime - tpep_pickup_datetime >= 0
 ```
 
 ## Creating custom reusable tests
