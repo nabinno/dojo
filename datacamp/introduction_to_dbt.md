@@ -358,7 +358,30 @@ Singular:
 
 ## Implementing a reusable test
 ```
+$ cat models/taxi_rides/model_properties.yml
+version: 2
 
+# Replace any entry of ____ with the appropriate content
+models:
+- name: taxi_rides_raw
+  columns:
+    - name: fare_amount
+      tests:
+        - not_null
+    - name: total_amount
+      tests:
+        - check_gt_0
+
+$ cat tests/generic/check_gt_0.sql
+{% test check_gt_0(model, column_name) %}
+select *
+from {{ model }}
+where {{ column_name }} <= 0
+{% endtest %}
+
+$ dbt clear
+$ dbt run
+$ dbt test --select taxi_rides_raw.sql
 ```
 
 ## Updating from singular to reusable test
