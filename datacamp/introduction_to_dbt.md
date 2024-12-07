@@ -386,7 +386,26 @@ $ dbt test --select taxi_rides_raw.sql
 
 ## Updating from singular to reusable test
 ```
+$ cat tests/generic/columns_equal.sql
+{% test columns_equal(model, column_name, column_name2) %}
+select *
+from {{ model }}
+where {{ column_name }} = {{ column_name2 }}
+{% endtest %}
 
+$ cat models/taxi_rides/model_properties.yml
+version: 2
+
+models:
+- name: taxi_rides_raw
+  columns:
+    - name: tpep_pickup_datetime
+      tests:
+        - columns_equal:
+            column_name2: tpep_dropoff_datetime
+
+$ dbt run
+$ dbt test --select taxi_ride_raw.sql
 ```
 
 ## Creating and generating dbt documentation
