@@ -408,14 +408,12 @@ $ dbt run
 $ dbt test --select taxi_ride_raw.sql
 ```
 
-## Creating and generating dbt documentation
-```
-
-```
-
 ## dbt docs Command Options
 ```
-
+[ ]dbt docs generate
+[ ]dbt docs -h
+[ ]dbt docs serve
+[x]dbt docs create
 ```
 
 ## dbt documentation flow
