@@ -418,7 +418,11 @@ $ dbt test --select taxi_ride_raw.sql
 
 ## dbt documentation flow
 ```
-
+Add documentation to models, test, etc
+Use `dbt run` to generate models
+Use `dbt docs generate` to generate the documentation files
+Copy content to hosting service
+Access documentation via web browser
 ```
 
 ## Creating dbt documentation
