@@ -427,7 +427,16 @@ Access documentation via web browser
 
 ## Creating dbt documentation
 ```
+$ cat mdels/model_properties.yml
+version: 2
 
+models:
+- name: taxi_rides_raw
+  description: Initial import of the NYC Yellow Taxi trip data from Parquet source
+  access: public
+
+$ dbt docs generate
+$ dbt docs serve
 ```
 
 
