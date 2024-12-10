@@ -443,14 +443,16 @@ $ dbt docs serve
 
 
 # 4 Implementing dbt in production
-## dbt sources
-```
-
-```
-
 ## Orderly YML
 ```
-
+sources:
+- name: raw
+  tables:
+    - name: phone_orders
+      columns:
+        - name: id
+          tests:
+            - unique
 ```
 
 ## Models, sources, or both?
