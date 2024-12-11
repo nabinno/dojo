@@ -457,7 +457,18 @@ sources:
 
 ## Models, sources, or both?
 ```
+Only dbt models:
+- Uses a `models:` section
+- Uses the `{{ ref() }}` function
 
+Common to models and sources:
+- Could be defined in `models/model_properties.yml`
+- Data lineage is applied
+- Can run tests
+
+Only dbt sources:
+- Uses the `sources:` key
+- Called via `{{ source(source_name, table_name) }}`
 ```
 
 ## Adding a source
