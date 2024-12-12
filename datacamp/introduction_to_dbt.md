@@ -473,7 +473,38 @@ Only dbt sources:
 
 ## Adding a source
 ```
+$ cat datacheck
+#!/usr/bin/env python3
+import duckdb
+con = duckdb.connect('dbt.duckdb', read_only=True)
+print(con.sql('select * from taxi_rides_raw'))
+print(con.sql('select count(*) from taxi_rides_raw'))
+if (con.execute('select count(*) from taxi_rides_raw').fetchall()[0][0] == 300000):
+  with open('/home/repl/workspace/successful_data_check', 'w') as f:
+    f.write('300000')
 
+$ cat models/model_properties.yml
+version: 2
+
+sources:
+- name: raw
+  tables:
+    - name: taxi_rides
+
+$ cat models/taxi_rides/taxi_rides_raw.sql
+{{ config(materialized='view')}}
+
+select * from {{ source('raw', 'taxi_rides') }}
+
+$ dbt run
+$ ./datacheck
+[..]
+┌──────────────┐
+│ count_star() │
+│    int64     │
+├──────────────┤
+│       300000 │
+└──────────────┘
 ```
 
 ## dbt seeds
