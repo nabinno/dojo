@@ -507,14 +507,12 @@ $ ./datacheck
 └──────────────┘
 ```
 
-## dbt seeds
-```
-
-```
-
 ## Kernels of truth
 ```
-
+[x]Seeds are (mostly) CSV files
+[x]A user can manually define column datatypes on a seed
+[ ]Seeds are accessed via the `source()` function
+[ ]Seeds should contain regularly updated information
 ```
 
 ## ZIP is the code
