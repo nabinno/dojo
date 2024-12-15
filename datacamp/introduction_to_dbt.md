@@ -517,7 +517,70 @@ $ ./datacheck
 
 ## ZIP is the code
 ```
+$ mv nynj_zipcodes.csv seeds/
 
+$ cat seeds/properties.yml
+version: 2
+
+seeds:
+  - name: nynj_zipcodes.csv
+    config:
+      column_types:
+        zipcode: varchar(5)
+
+$ dbt seed
+
+$ cat datacheck
+#!/usr/bin/env python3
+import duckdb
+import os.path
+
+try:
+  con = duckdb.connect('dbt.duckdb', read_only=True)
+  print(con.sql('select * from nynj_zipcodes'))
+  if (con.execute('select count(*) as total_zipcodes from nynj_zipcodes').fetchall()[0][0] == 2877):
+    print("Your data counts are correct!")
+    with open('/home/repl/workspace/successful_data_check', 'w') as f:
+      f.write('2877')
+  else:
+    print("There appears to be an issue with your data counts.")
+except duckdb.CatalogException:
+  if not os.path.isfile('/home/repl/workspace/nyc_yellow_taxi/seeds/nynj_zipcodes.csv'):
+    print("It looks like the nynj_zipcodes.csv file is\n not present in the seeds/ directory.\n\nPlease move the file and try again.\n")
+  else:
+    print("It looks like your data warehouse doesn't exist yet\n\n Please run the dbt seed command and try again.\n")
+
+$ ./datacheck
+┌─────────┬─────────────────┬────────────┐
+│ zipcode │      place      │   state    │
+│  int32  │     varchar     │  varchar   │
+├─────────┼─────────────────┼────────────┤
+│    8037 │ Hammonton       │ New Jersey │
+│    8201 │ Absecon         │ New Jersey │
+│    8203 │ Brigantine      │ New Jersey │
+│    8205 │ Absecon         │ New Jersey │
+│    8213 │ Cologne         │ New Jersey │
+│    8215 │ Egg Harbor City │ New Jersey │
+│    8217 │ Elwood          │ New Jersey │
+│    8220 │ Leeds Point     │ New Jersey │
+│    8221 │ Linwood         │ New Jersey │
+│    8225 │ Northfield      │ New Jersey │
+│      ·  │     ·           │    ·       │
+│      ·  │     ·           │    ·       │
+│      ·  │     ·           │    ·       │
+│   14418 │ Branchport      │ New York   │
+│   14441 │ Dresden         │ New York   │
+│   14478 │ Keuka Park      │ New York   │
+│   14507 │ Middlesex       │ New York   │
+│   14527 │ Penn Yan        │ New York   │
+│   14544 │ Rushville       │ New York   │
+│   14837 │ Dundee          │ New York   │
+│   14842 │ Himrod          │ New York   │
+│   14857 │ Lakemont        │ New York   │
+│   14878 │ Rock Stream     │ New York   │
+├─────────┴─────────────────┴────────────┤
+│ 2877 rows (20 shown)         3 columns │
+└────────────────────────────────────────┘
 ```
 
 ## SCD2 with dbt snapshots
