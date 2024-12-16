@@ -583,19 +583,21 @@ $ ./datacheck
 └────────────────────────────────────────┘
 ```
 
-## SCD2 with dbt snapshots
-```
-
-```
-
 ## Snapshot process
 ```
-
+1. Create a `.sql` file named for the snapshot
+2. Add a `{% snapshot %}` directive
+3. Select the `unique_key` column
+4. Specify the `updated_at` column
+5. Write the query
+6. Run `dbt snapshot` on a regular basis
 ```
 
 ## Snapshot issue
 ```
-
+[ ]Tehy should split the update into smaller chunks.
+[ ]Your colleague did not provide a `refresh:` option to the `snapshot` YAML.
+[x]The snapshot should be run hourly, after the update process completes.
 ```
 
 ## Adding a snapshot
