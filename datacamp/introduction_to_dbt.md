@@ -620,14 +620,17 @@ select * from {{ source('raw', 'vehicle_list') }}
 $ dbt snapshot
 ```
 
-## Automating with dbt build
-```
-
-```
-
 ## What can't dbt build do?
 ```
+dbt build executes this step:
+- dbt seed
+- dbt snapshot
+- dbt run
+- dbt test
 
+dbt build does *not* run this step:
+- dbt docs
+- dbt compile
 ```
 
 ## Helping the intern!
