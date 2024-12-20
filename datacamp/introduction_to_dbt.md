@@ -635,7 +635,30 @@ dbt build does *not* run this step:
 
 ## Helping the intern!
 ```
+$ dbt run
+repl:~/workspace/nyc_yellow_taxi$ dbt run
+[..]
+00:00:12  Running with dbt=1.5.1
+00:00:12  Unable to do partial parsing because saved manifest not found. Starting full parse.
+00:00:13  Encountered an error:
+Compilation Error
+  Snapshot 'snapshot.nyc_yellow_taxi.vehicle_list_snapshot' (snapshots/vehicle_list_snapshot.sql) depends on a source named 'new.vehicles_list' which was not found
 
+$ cat models/taxi_rides/model_properties.yml
+[..]
+sources:
+  - name: raw
+    tables:
+      - name: taxi_rides
+        - name: vehicle_list
+
+$ cat snapshots/vehicle_list_snapshot.sql
+[..]
+select * from {{ source('raw', 'vehicles_list') }}  # change `new` to `raw`
+{% endsnapshot %}
+
+$ dbt clean
+$ dbt build
 ```
 
 ## Putting it all together
