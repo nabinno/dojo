@@ -663,10 +663,7 @@ $ dbt build
 
 ## Putting it all together
 ```
-
-```
-
-## Course review
-```
-
+$ dbt build
+$ dbt docs generate
+$ dbt docs serve
 ```
