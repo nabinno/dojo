@@ -6,7 +6,7 @@ url: https://campus.datacamp.com/courses/introduction-to-object-oriented-program
 
 # 1. OOP Fundamentals
 ## OOP terminology
-```python
+```
 True:
 - Methods encode the behavior of an object and are represented by funcitons.
 - Attributes encode the state of an object.
@@ -20,7 +20,13 @@ False:
 
 ## Exploring objects and classes
 ```python
+ratio = 12 / 8
 
+# List all attributes and methods for the ratio object
+print(dir(ratio))
+
+# List all attributes and methods for the float class
+print(dir(float))
 ```
 
 ## Class anatomy: attributes and methods
