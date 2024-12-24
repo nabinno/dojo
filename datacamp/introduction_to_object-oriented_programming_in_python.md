@@ -5,14 +5,17 @@ url: https://campus.datacamp.com/courses/introduction-to-object-oriented-program
 ---
 
 # 1. OOP Fundamentals
-## What is OOP?
-```python
-
-```
-
 ## OOP terminology
 ```python
+True:
+- Methods encode the behavior of an object and are represented by funcitons.
+- Attributes encode the state of an object.
+- A key benefit of OOP is the bundling of data and methods.
 
+False:
+- `.head()` is an example of an attribute of a DataFrame object.
+- Object is an obstract template describing the general states and behaviors.
+- A class is an instance of an object.
 ```
 
 ## Exploring objects and classes
