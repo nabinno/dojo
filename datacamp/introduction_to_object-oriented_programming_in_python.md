@@ -29,14 +29,15 @@ print(dir(ratio))
 print(dir(float))
 ```
 
-## Class anatomy: attributes and methods
-```python
-
-```
-
 ## Understanding class definitions
 ```python
+class MyCounter:
+  def set_count(self, n):
+      self.n = n
 
+mc = MyCounter()
+mc.set_count(5)
+print(mc.n)
 ```
 
 ## Create your first class
