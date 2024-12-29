@@ -107,14 +107,15 @@ emp.give_raise(1500)
 print(emp.salary)
 ```
 
-## Class anatomy: the __init__ constructor
-```python
-
-```
-
 ## Correct use of __init__
 ```python
+class Counter:
+    def __init__(self, count, name):
+      self.count = count
+      self.name = name
 
+c = Counter(0, "My counter")
+print(c.count)
 ```
 
 ## Add a class constructor
