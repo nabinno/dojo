@@ -120,7 +120,43 @@ print(c.count)
 
 ## Add a class constructor
 ```python
+class Employee:
+  def __init__(self, name, salary=0):
+    self.name = name
+    # Check if salary is positive
+    if salary >= 0:
+      self.salary = salary
+    else:
+      self.salary = 0
+      print("Invalid salary!")
 
+  def give_raise(self, amount):
+    self.salary += amount
+
+  def monthly_salary(self):
+    return self.salary / 12
+
+emp = Employee("Korel Rossi", -1000)
+print(emp.name)
+print(emp.salary)
+
+# Define and initialize the Calculator class
+class Calculator:
+  def __init__(self, num_one, num_two):
+    self.num_one = num_one
+    self.num_two = num_two
+
+  # Create the addition method
+  def addition(self):
+    return self.num_one + self.num_two
+
+  # Create the subtraction method
+  def subtraction(self):
+    return self.num_one - self.num_two
+
+  # Create the multiplication method
+  def multiplication(self):
+    return self.num_one * self.num_two
 ```
 
 ## Building a class from scratch
