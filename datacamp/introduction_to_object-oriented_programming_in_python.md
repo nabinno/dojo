@@ -159,23 +159,24 @@ class Calculator:
     return self.num_one * self.num_two
 ```
 
-## Building a class from scratch
-```python
-
-```
-
 
 
 
 # 2. Inheritance and Polymorphism
-## Class vs. instance attributes
-```python
-
-```
-
 ## Class-level attributes
 ```python
+# Create a Player class
+class Player:
+  # Create MAX_POSITION class attribute
+  MAX_POSITION = 10
 
+  # Add a constructor, setting position to zero
+  def __init__(self):
+    self.position = 0
+
+# Create a player p and print its MAX_POSITION
+p = Player()
+print(p.MAX_POSITION)
 ```
 
 ## Implementing logic for attributes
