@@ -291,7 +291,15 @@ print(mng.name)
 
 ## Understanding inheritance
 ```python
+True:
+- If `ind` is an `Indexxer` object, then `isinstance(ind, Counter)` will return `True`.
+- Running `ind = Indexer()` will cause an error.
 
+False:
+- If `ind` is an `Indexer` object,  then `ind.and_counts(5)` will cause an error.
+- Inheritance can be used to add some of the parts of one class to another class.
+- Class `Indexer` inherits from `Counter`.
+- Every `Counter` object is an `Indexxer` object.
 ```
 
 ## Customizing functionality via inheritance
