@@ -356,7 +356,37 @@ class Manager(Employee):
 
 ## Inheritance of class attributes
 ```python
+class Player:
+  MAX_POSITION = 10
 
+  def __init__(self):
+    self.position = 0
+
+  def move(self, steps):
+    if self.position + steps < Player.MAX_POSITION:
+      self.position += steps
+    else:
+      self.position = Player.MAX_POSITION
+
+# Create a Racer class inheriting from Player
+class Racer(Player):
+  # Create MAX_POSITION with a value of 15
+  MAX_POSITION = 15
+
+# Create a Player and a Racer objects
+p = Player()
+r = Racer()
+
+print("p.MAX_POSITION = ", p.MAX_POSITION)
+print("r.MAX_POSITION = ", r.MAX_POSITION)
+# => <script.py> output:
+#     p.MAX_POSITION =  10
+#     r.MAX_POSITION =  15
+
+# [ ] Class attributes CANNOT be inherited, but new class attributes of the same name CAN be created in a child class.
+# [ ] Class attributes CANNOT be inherited, and new class attributes of the same name CANNOT be created in a child class.
+# [x] Class attributes CAN be inherited, and the value of class attributes CAN be overwritten in the child class
+# [ ] Class attributes CAN be inherited,  and the value of class attributes CANNOT be overwritten in the child class
 ```
 
 
