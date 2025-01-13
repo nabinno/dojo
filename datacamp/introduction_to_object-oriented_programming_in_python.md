@@ -443,14 +443,15 @@ pn = Phone(873555333)
 print(acct == pn)
 ```
 
-## Inheritance comparison and string representation
-```python
-
-```
-
 ## Object representation
 ```python
+__str__():
+- Informal, mostly used by end-users
+- Returns an object in string format
 
+__repr__():
+- Shows the object in a format representing how it was made
+- Formal, mostly for use by developers
 ```
 
 ## Comparison and inheritance
