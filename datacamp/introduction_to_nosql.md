@@ -50,14 +50,12 @@ print(name)
   Sarah
 ```
 
-## Exploring document data
-```
-
-```
-
 ## NoSQL use-cases and applications
 ```
-
+[x]Persisting and accessing large, analytical datasets containing census data
+[ ]Storing student information with a  high-degree of structure and constraints
+[x] Storing and querying loosely structured user-generated data whose schema changes frequently
+[x]Capturing and delivering data in-memory, which a mobile ordering application
 ```
 
 ## Tabular NoSQL data stores
