@@ -564,8 +564,3 @@ class Employee:
 
       self.salary += amount
 ```
-
-## Custom exceptions
-```python
-
-```
