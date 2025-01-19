@@ -58,14 +58,12 @@ print(name)
 [x]Capturing and delivering data in-memory, which a mobile ordering application
 ```
 
-## Tabular NoSQL data stores
-```
-
-```
-
 ## Column-oriented databases
 ```
-
+[x]Column-oriented databases allow for selective column read and retrieval, which reduces the amount of data that needs to be read from disk
+[x]It's easier for column-oriented database to handle schema changes than traditional row-oriented databases
+[ ]Column-oriented databases cannot be queried with SQL-like syntax, and require an entirely different query language to interact with
+[x]Column-oriented database design allows for more efficient data storage, which enhances query performance
 ```
 
 ## Querying a column-oriented database
