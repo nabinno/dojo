@@ -61,14 +61,27 @@ print(name)
 ## Column-oriented databases
 ```
 [x]Column-oriented databases allow for selective column read and retrieval, which reduces the amount of data that needs to be read from disk
-[x]It's easier for column-oriented database to handle schema changes than traditional row-oriented databases
+[x]Its easier for column-oriented database to handle schema changes than traditional row-oriented databases
 [ ]Column-oriented databases cannot be queried with SQL-like syntax, and require an entirely different query language to interact with
 [x]Column-oriented database design allows for more efficient data storage, which enhances query performance
 ```
 
 ## Querying a column-oriented database
 ```
+# Write a query to return all columns, limiting to 10 rows
+query = "SELECT * FROM olympic_medals LIMIT 10;"
 
+# Execute the query
+results = conn.cursor().execute(query).fetch_pandas_all()
+
+# Print the results of the query
+print(results)
+<script.py> output:
+       ID                      NAME SEX  AGE  HEIGHT  ...  SEASON         CITY          SPORT                              EVENT  MEDAL
+    0   1                 A Dijiang   M   24   180.0  ...  Summer    Barcelona     Basketball         Basketball Mens Basketball   None
+    1   2                  A Lamusi   M   23   170.0  ...  Summer       London           Judo        Judo Mens Extra-Lightweight   None
+    [..]
+    [10 rows x 15 columns]
 ```
 
 ## Filtering a column-oriented database
