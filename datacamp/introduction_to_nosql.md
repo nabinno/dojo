@@ -101,14 +101,15 @@ results = conn.cursor().execute(query).fetch_pandas_all()
 print(results)
 ```
 
-## Non-tabular NoSQL data stores
-```
-
-```
-
 ## Identifying tabular and non-tabular NoSQL data stores
 ```
+Tabular:
+- Column-oriented databases
 
+Non-tabular:
+- Key-value databases
+- Graph databases
+- Document databases
 ```
 
 ## Querying document databases
