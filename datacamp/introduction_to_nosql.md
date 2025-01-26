@@ -130,7 +130,26 @@ print(data.iloc[0, 0])
 
 ## Querying nested documents with Postgres JSON
 ```
+# Build the query to select the statement and location fields
+query = """
+SELECT
+    review -> 'statement' AS statement,
+    review -> 'location' AS location
+FROM nested_reviews;
+"""
 
+# Execute the query, render results
+data = pd.read_sql(query, db_engine)
+print(data)
+# <script.py> output:
+# statement                                           location
+#     0     If you've ever been to Disneyland anywhere you...  {'branch': 'Disneyland_HongKong', 'reviewer': ...
+#     1     Its been a while since d last time we visit HK...  {'branch': 'Disneyland_HongKong', 'reviewer': ...
+#     2     Thanks God it wasn   t too hot or too humid wh...  {'branch': 'Disneyland_HongKong', 'reviewer': ...
+#     3     HK Disneyland is a great compact park. Unfortu...  {'branch': 'Disneyland_HongKong', 'reviewer': ...
+#     4     the location is not in the city, took around 1...  {'branch': 'Disneyland_HongKong', 'reviewer': ...
+#     [..]
+#     [10000 rows x 2 columns]
 ```
 
 
