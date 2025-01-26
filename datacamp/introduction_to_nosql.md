@@ -156,14 +156,14 @@ print(data)
 
 
 # 2. Column-oriented Databases
-## Populating column-oriented databases
-```
-
-```
-
 ## CREATE TABLE with Snowflake
-```
-
+```sql
+CREATE TABLE olympic_athletes (
+  age INT,
+  country VARCHAR(64),
+  is_first_games BOOLEAN
+  last_name VARCHAR(64),
+);
 ```
 
 ## Populating Snowflake tables
