@@ -168,7 +168,10 @@ CREATE TABLE olympic_athletes (
 
 ## Populating Snowflake tables
 ```
-
+[ ]CREATE  TABLE ... AS: best-used when loading the very first data into a Snowflake data warehouse, where no other tables currently exist.
+[ ]COPY INTO: typically used when writing the results of a Snowflake query to a new table.
+[x]CREATE TABLE ... AS: Snowflake's syntax that allows for a table to be created from the results of another query, against existing tables or views.
+[x]COPY INTO: used when loading data from a file to a Snowflake table.
 ```
 
 ## COPY INTO and CREATE TABLE ... AS with Snowflake
