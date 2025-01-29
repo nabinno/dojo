@@ -176,7 +176,13 @@ CREATE TABLE olympic_athletes (
 
 ## COPY INTO and CREATE TABLE ... AS with Snowflake
 ```
+Correct:
+- `COPY INTO Olympic_medals FROM "file://raw_olympic" FILE_FORMAT = (TYPE = 'CSV' FIELD_DELIMITER = ',');`
+- `CREATE TABLE gold_medal_winners AS SELECT team, year, sport, event FROM olympic_medals WHERE medal = 'Gold';`
 
+Incorrect:
+- `CREATE TABLE olympic_medals_analysis USING FROM Olympic_medals FILE_FORMAT = (TYPE = 'CSV' FIELD_DELIMITER = ',');`
+- `COPY INTO silver_meal_winners AS SELECT team, year, sport, event FROM olympic_medals WHERE medal = 'Silver';`
 ```
 
 ## Advanced column-oriented database techniques
