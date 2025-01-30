@@ -195,7 +195,9 @@ Incorrect:
 
 ## Query pruning with micro-partitioning
 ```
-
+[ ]By only returning the first 100 records of the result set rather than all of the records.
+[ ]By compressing the data specified by the query above as it is returned.
+[x]By scanning the metadata for each partition and using that metadata to determine if the data in the micro-partition can be pruned.
 ```
 
 ## Leveraging micro-partitions and data clustering
