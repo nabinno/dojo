@@ -185,14 +185,12 @@ Incorrect:
 - `COPY INTO silver_meal_winners AS SELECT team, year, sport, event FROM olympic_medals WHERE medal = 'Silver';`
 ```
 
-## Advanced column-oriented database techniques
-```
-
-```
-
 ## Micro-partitioning and data clustering with Snowflake
 ```
-
+[ ]Micro-partition: a small amount of data that a Data Analyst uses to source a dashboard.
+[x]Micro-partition: a group of rows from a larger Snowflake table, stored in columnar format, containing metadata about the data it is storing.
+[x]Data clustering: the grouping and sorting of data within a micro-partition that decreases the data read via query pruning.
+[ ]Data clustering: Using the `GROUP BY` keywords to create a dataset later used for clustering.
 ```
 
 ## Query pruning with micro-partitioning
