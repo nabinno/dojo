@@ -143,7 +143,7 @@ data = pd.read_sql(query, db_engine)
 print(data)
 # <script.py> output:
 # statement                                           location
-#     0     If you've ever been to Disneyland anywhere you...  {'branch': 'Disneyland_HongKong', 'reviewer': ...
+#     0     If youve ever been to Disneyland anywhere you...  {'branch': 'Disneyland_HongKong', 'reviewer': ...
 #     1     Its been a while since d last time we visit HK...  {'branch': 'Disneyland_HongKong', 'reviewer': ...
 #     2     Thanks God it wasn   t too hot or too humid wh...  {'branch': 'Disneyland_HongKong', 'reviewer': ...
 #     3     HK Disneyland is a great compact park. Unfortu...  {'branch': 'Disneyland_HongKong', 'reviewer': ...
@@ -219,14 +219,19 @@ results = conn.cursor().execute(query).fetch_pandas_all()
 print(results)
 ```
 
-## Analytics workflows for column-oriented databases
-```
-
-```
-
 ## Common table expressions with Snowflake
-```
-
+```sql
+WITH summer_metals AS (
+  -- Return only summer results
+  SELECT
+    year,
+    team,
+    event,
+    medal
+  FROM olympic_medals
+  WHWRE season = 'Summer'
+)
+SELECT * FROM summer_medals;'
 ```
 
 ## Building an analytics workflow with Snowflake
