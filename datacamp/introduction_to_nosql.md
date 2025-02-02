@@ -170,7 +170,7 @@ CREATE TABLE olympic_athletes (
 ```
 [ ]CREATE  TABLE ... AS: best-used when loading the very first data into a Snowflake data warehouse, where no other tables currently exist.
 [ ]COPY INTO: typically used when writing the results of a Snowflake query to a new table.
-[x]CREATE TABLE ... AS: Snowflake's syntax that allows for a table to be created from the results of another query, against existing tables or views.
+[x]CREATE TABLE ... AS: Snowflakes syntax that allows for a table to be created from the results of another query, against existing tables or views.
 [x]COPY INTO: used when loading data from a file to a Snowflake table.
 ```
 
@@ -201,8 +201,22 @@ Incorrect:
 ```
 
 ## Leveraging micro-partitions and data clustering
-```
+```python
+# Leverage the existing micro-partitions and data clustering
+query = """
+  SELECT
+    team,
+    year,
+    sport,
+    event,
+    medal
+  FROM olympic_medals
+  WHERE year >= 2000;
+  """
 
+# Execute the query, print the results
+results = conn.cursor().execute(query).fetch_pandas_all()
+print(results)
 ```
 
 ## Analytics workflows for column-oriented databases
