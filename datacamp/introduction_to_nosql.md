@@ -236,7 +236,10 @@ SELECT * FROM summer_medals;'
 
 ## Building an analytics workflow with Snowflake
 ```
-
+[x]Common table expressions are used to temporarily store the result of a query in a named object, for later use in a query.
+[x]When executed, a statement starting with CREATE OR REPLACE MATERIALIZED VIEW stores the results of a query as a table, to be queried later using the name provided.
+[ ]Common table expressions group common tables together into a single schema in Snowflake.
+[ ]Materialized and non-materialized VIEWs both store the results of a query in a table, to be later queried or referenced.
 ```
 
 ## Materialized vs. non-materialized VIEWs
