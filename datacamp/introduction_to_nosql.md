@@ -244,7 +244,15 @@ SELECT * FROM summer_medals;'
 
 ## Materialized vs. non-materialized VIEWs
 ```
+Non-materialized VIEW:
+- Does not store data in a table when defined, rather, stores a "named definition" or a query.
+- Defined using the `CREATE [OR REPLACE] VIEW` keywords.
+- Help more with query organization, rather than performance.
 
+Materialized VIEW:
+- Stores the results of a query in a table upon definition of the `VIEW`, at the cost of data recency.
+- Defined using the `CREATE [OR REPLACE] MATERIALIZED VIEW` keywords.
+- Help with both query performance, as well as modularity and maintainability.
 ```
 
 ## Working with semi-structured data in Snowflake
