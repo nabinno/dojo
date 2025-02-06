@@ -231,7 +231,7 @@ WITH summer_metals AS (
   FROM olympic_medals
   WHWRE season = 'Summer'
 )
-SELECT * FROM summer_medals;'
+SELECT * FROM summer_medals;
 ```
 
 ## Building an analytics workflow with Snowflake
@@ -264,8 +264,18 @@ Materialized VIEW:
 ```
 
 ## Querying semi-structured data in Snowflake
-```
+```python
+# Build a query to pull city and country names
+query = """
+  SELECT
+    city_meta:city,
+    city_meta:country
+  FROM host_cities;
+  """
 
+# Execute query and output results
+results = conn.cursor().execute(query).fetch_pandas_all()
+print(results)
 ```
 
 ## Querying nested semi-structured data
