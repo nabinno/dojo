@@ -255,14 +255,12 @@ Materialized VIEW:
 - Help with both query performance, as well as modularity and maintainability.
 ```
 
-## Working with semi-structured data in Snowflake
-```
-
-```
-
 ## Semi-structured Snowflake data types
 ```
-
+[x]ARRAY
+[x]OBJECT
+[ ]JSON
+[x]VARIANT
 ```
 
 ## Querying semi-structured data in Snowflake
