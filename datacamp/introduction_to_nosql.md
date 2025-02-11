@@ -298,19 +298,17 @@ print(results)
 
 
 # 3. Document Databases
-## Understanding JSON data in Postgres
-```
-
-```
-
-## JSON and JSONB data in Postgres
-```
-
-```
-
 ## Executing queries with sqlalchemy and pandas
-```
+```python
+import pandas as pd
+import sqlalchemy
 
+# Create a connection to the reviews database
+db_engine = sqlalchemy.create_engine("postgresql+psycopg2://repl:password@localhost:5432/disneyland")
+
+# Execute a query against the nested_reviews table
+results = pd.read_sql("SELECT * FROM nested_reviews;", db_engine)
+print(results)
 ```
 
 ## Querying JSON and JSONB data from Postgres
