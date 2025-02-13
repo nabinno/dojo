@@ -328,14 +328,12 @@ results = pd.read_sql(query, db_engine)
 print(results["review"])
 ```
 
-## Storing JSON data in Postgres
-```
-
-```
-
 ## Loading Postgres with semi-structured data
 ```
-
+[ ]INSERT INTO and COPY ... FROM can be used interchangeably to transfer data from a semi-structured database to Postgres.
+[ ]INSERT INTO loads the records from a file to a table, while COPY ... FROM inserts an individual record, or set of records, into a table in Postgres.
+[ ]COPY ... FROM can only duplicate data from an existing Postgres table, while INSERT INTO can pull data from any semi-structured data store into Postgres.
+[x]INSERT INTO is used to add rows to a Postgres table, while COPY ... FROM allows for all records in a file to populate a table.
 ```
 
 ## Converting tabular data to JSON
