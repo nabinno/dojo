@@ -351,8 +351,17 @@ print(results.head(10))
 ```
 
 ## Extracting keys from JSON objects with Postgres
-```
+```python
+# Build a query to find the unique keys in the review column
+query = """
+SELECT
+  DISTINCT json_object_keys(review)
+FROM nested_reviews;
+"""
 
+# Execute the query, show the results
+unique_keys = pd.read_sql(query, db_engine)
+print(unique_keys)
 ```
 
 ## Querying JSON data using Postgres
