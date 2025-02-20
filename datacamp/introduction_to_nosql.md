@@ -423,14 +423,12 @@ data = pd.read_sql(query, db_engine)
 print(data)
 ```
 
-## Advanced Postgres JSON query techniques
-```
-
-```
-
 ## Arrow and hash arrow operators
-```
-
+```txt
+[x]The arrow operators can be chained together to query nested data, but the resulting statement can become long.
+[x]Using the hash arrow operators, a column is provided along with a string array, specifying the field to be queried.
+[ ]Neither the arrow or hash arrow operators can be used to query nested document data.
+[ ]The arrow operators can take a string array of fields, while the hash arrow operators can only take a single field, as a string.
 ```
 
 ## #> and #>>
