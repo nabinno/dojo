@@ -497,7 +497,14 @@ print(data)
 
 ## Key-value vs. document databases
 ```
+Key-value databases:
+- Commonly used when for caching or session management in web applications.
+- Typically stores data in-memory, rather than on disk.
+- Values can only be retrieved by querying keys, leading to fast read and write operations.
 
+Document database:
+- Data is stored on disk, rather than being stored in memory.
+- Values stored within documents can be queried directly.
 ```
 
 ## Connecting to a Redis cluster
