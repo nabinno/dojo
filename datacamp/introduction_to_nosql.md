@@ -492,7 +492,7 @@ print(data)
 [x]Key-value database can only be queried by key, not by value.
 [x]Redis is a popular tool to use when configuring a key-value database.
 [ ]Key-value databases can be used to store large amounts of relational data to source dashboard.
-[x]It's common to use key-value databases for caching or session management, especially in web applications.
+[x]Its common to use key-value databases for caching or session management, especially in web applications.
 ```
 
 ## Key-value vs. document databases
@@ -508,8 +508,15 @@ Document database:
 ```
 
 ## Connecting to a Redis cluster
-```
+```python
+import redis
 
+# Create a connection to Redis cluster
+r = redis.Redis(
+host="localhost",
+    port=6379,
+    decode_responses=True
+)
 ```
 
 ## Storing and retrieving key-value data
