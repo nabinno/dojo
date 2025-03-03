@@ -571,14 +571,12 @@ redis_conn.hset(
 print(redis_conn.hgetall("london_weather"))
 ```
 
-## Graph databases
-```
-
-```
-
 ## Understanding graph databases
 ```
-
+[ ]Databases used to represent KPIs such as item sales or inventory in tools such as Tableau.
+[x]NoSQL data stores that persist data in a network of nodes and edges, where each node represents an entity, and each edge represents a relationship between those entities.
+[ ]Data stores that are created and maintained by data visualization engineers to store metadata about graphs built for executive dashboards.
+[ ]A tool used in graph theory to store information about all the different ways to traverse a graph.
 ```
 
 ## Graph database providers
