@@ -581,7 +581,11 @@ print(redis_conn.hgetall("london_weather"))
 
 ## Graph database providers
 ```
-
+[x]Neo4j
+[x]Amazon (AWS) Neptune
+[ ]Snowflake
+[x]ArangoDB
+[ ]Postgres JSON
 ```
 
 ## Using graph databases
