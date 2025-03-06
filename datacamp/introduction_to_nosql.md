@@ -590,10 +590,12 @@ print(redis_conn.hgetall("london_weather"))
 
 ## Using graph databases
 ```
+Appropriate use-case for graph database:
+- Identifying fraudulent employee activity
+- Creating a data model for a dating app
+- Building a data storage architecture for a homegrown search engine
 
-```
-
-## Wrapping up!
-```
-
+Inappropriate use-case for graph abs:
+- Working with large, analytics datasets
+- Storing simple, key-value data in a web application
 ```
