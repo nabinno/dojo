@@ -18,7 +18,17 @@ False:
 
 ## Which engineer?
 ```
+Infra Engineering:
+- You want your engineers to setup an access management policy that ensure only the authorized personnel can access your databases
+- You want to use a cloud solution for your website and you need engineers to do the configuration
 
+Product Engineering:
+- You want to add functionality to your website that allows people to book their hotels directly from your website
+- You want to integrate a car rental agency's webpage to allow users to book car rentals through your website
+
+Data & ML Engineering:
+- You want to create intelligent systems to provide suggestions to your customers using their post behaviour
+- You want to capture user data on your website and record that into a database in real-time
 ```
 
 ## Employing the correct model
