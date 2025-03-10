@@ -33,7 +33,9 @@ Data & ML Engineering:
 
 ## Employing the correct model
 ```
-
+1. DevOps
+2. DataOps
+3. MLOps
 ```
 
 ## DevOps implementations
