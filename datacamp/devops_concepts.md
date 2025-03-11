@@ -40,7 +40,12 @@ Data & ML Engineering:
 
 ## DevOps implementations
 ```
+Your engineering organization is growing, and now you have Data Engineers, Machine Learning Engineers, and Software Developers. You want all of the teams to work closely and collaboratively. Also, you want your teams to use the MVP approach (building the basic functionality first, adding functionality later). Which of the below methodologies should you employ?
 
+[ ]DataOps
+[ ]MLOps
+[ ]DevOps
+[x]All three: DataOps, MLOps, and DevOps
 ```
 
 ## Project Management Methodologies for DevOps
