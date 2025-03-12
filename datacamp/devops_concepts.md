@@ -48,14 +48,16 @@ Your engineering organization is growing, and now you have Data Engineers, Machi
 [x]All three: DataOps, MLOps, and DevOps
 ```
 
-## Project Management Methodologies for DevOps
-```
-
-```
-
 ## Project management frameworks
 ```
+True:
+- Waterfall could be a viable option for small tasks that does not have much complexity
+- Kanban is all about continuous improvement and using visualizations
+- Scrum and Kanban are both great implementations of the Agile philosophy
 
+False:
+- Scrum does not define specific roles but ensures collective responsibility
+- Agile is a definitive project management methodology with set practices
 ```
 
 ## Factors to decide the best project management framework
