@@ -62,7 +62,14 @@ False:
 
 ## Factors to decide the best project management framework
 ```
+Important Factors:
+- The size of the team
+- The budget of the project
+- The complexity of the project
 
+Unimportant / Irrelevant Factors:
+- Using cloud infrastructure
+- The age of the organization
 ```
 
 ## Choosing the best project management model
