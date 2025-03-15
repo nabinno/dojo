@@ -74,7 +74,12 @@ Unimportant / Irrelevant Factors:
 
 ## Choosing the best project management model
 ```
+You have decided to use DevOps for developing the minimum viable product (MVP) for the proposed new feature, it is time to choose the best project management framework for this. The product expert in your team suggests using a mind-mapping tool to visualize the tasks and ensure collaboration within your team. You agree with his suggestion. Which project management framework below could be the most suited for this purpose?
 
+[ ]Waterfall
+[ ]Agile
+[x]Scrum
+[ ]Kanban
 ```
 
 
