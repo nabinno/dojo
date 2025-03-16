@@ -86,14 +86,14 @@ You have decided to use DevOps for developing the minimum viable product (MVP) f
 
 
 # 2 DevOps Architecture
-## The DevOps Change Management Model
-```
-
-```
-
 ## DevOps cycle components
 ```
-
+Defining the deliverables and goals related to the product, the software components, their functionality and relation to each other
+Writing the code for the software components of the product
+Check if the product functions as planned
+Release the product for a limited set of users
+Review the product one last time before the launch
+Release the product for all of the users
 ```
 
 ## Data Engineering in the DevOps cycle
