@@ -98,7 +98,14 @@ Release the product for all of the users
 
 ## Data Engineering in the DevOps cycle
 ```
+Design:
+- Working with the product engineering teams to plan how data should flow between systems
 
+Development:
+- Implement the data pipelines that allows the data flow between systems
+
+Testing:
+- Provide mock data to the product to see if it behaves as planned
 ```
 
 ## Main Software Architecture Systems
