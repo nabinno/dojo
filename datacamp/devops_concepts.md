@@ -108,14 +108,13 @@ Testing:
 - Provide mock data to the product to see if it behaves as planned
 ```
 
-## Main Software Architecture Systems
-```
-
-```
-
 ## Data in motion
 ```
+Like a door is essential for a building to allow for people (and pets!) to go through, most software need incoming data to operate on and pass to its users. Which software component below is used to send and receive data between systems?
 
+[ ]Microservices
+[ ]Databases
+[x]Application Programming Interfaces (APIs)
 ```
 
 ## Making architectural decisions
