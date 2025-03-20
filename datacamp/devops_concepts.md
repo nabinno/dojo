@@ -119,7 +119,15 @@ Like a door is essential for a building to allow for people (and pets!) to go th
 
 ## Making architectural decisions
 ```
+Relevant:
+- Size of the team
+- The complexity of the software
+- The platform that the software is interacting with the users: mobile or web
 
+Irrelevant:
+- The sector of the organization
+- The geolocation of software users
+- The technology used for the data pipelines
 ```
 
 ## Modern IT Infrastructure Concepts
