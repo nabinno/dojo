@@ -130,14 +130,18 @@ Irrelevant:
 - The technology used for the data pipelines
 ```
 
-## Modern IT Infrastructure Concepts
-```
-
-```
-
 ## IT infrastructure components
 ```
+Hardware:
+- Running the online products on servers with significant computing power
 
+Network:
+- Making sure the product and infrastructure components are communicating with each other when necessary
+- Allow customers to connect to your systems
+
+Software:
+- Developing APIs to exchange data
+- Employing DevOps best practices
 ```
 
 ## Change management components
