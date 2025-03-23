@@ -146,7 +146,15 @@ Software:
 
 ## Change management components
 ```
+Developer Platform:
+- Developing the tools that the developers need
 
+DevOps:
+- Continuously integrating the code changes witgh the version control software
+- Arranging the software to start serving the users
+
+Deployment:
+- Automating software build, test, and deploy activities
 ```
 
 ## Elements of DevOps
