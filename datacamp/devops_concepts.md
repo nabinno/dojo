@@ -157,14 +157,17 @@ Deployment:
 - Automating software build, test, and deploy activities
 ```
 
-## Elements of DevOps
-```
-
-```
-
 ## CI/CD pipelines
 ```
+True:
+- Data Engineers can use CI/CD pipeline to change the source code for their data tables
+- Building the code is a part of CI/CD pipelines, and it means turning the code into machine executable files
+- CI/CD pipelines use automation to increase the pace of software development
 
+False:
+- Continuous Delivery happens in the Design phase of the DevOps cycle
+- Data Engineers can use CI/CD pipelines to configure their data pipelines
+- Version control software works after the CI/CD pipelines
 ```
 
 ## DevOps concepts vs. generic infra concepts
