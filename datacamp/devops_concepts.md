@@ -172,7 +172,15 @@ False:
 
 ## DevOps concepts vs. generic infra concepts
 ```
+The Infrastructure Concepts:
+- Network
+- Security
+- Deployment
 
+DevOps Concepts:
+- CI/CD Pipelines
+- Experimentation
+- Minimum Viable Product
 ```
 
 
