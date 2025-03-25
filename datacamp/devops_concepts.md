@@ -187,14 +187,15 @@ DevOps Concepts:
 
 
 # 3 Implementation of DevOps for Data Engineering
-## Data Engineering Implications of the DevOps Architecture
-```
-
-```
-
 ## Microservices vs. monolithic architecture
 ```
+Microservices:
+- Software piece are deployed independently from each other
+- Defferent teams specialize in different parts of the software
 
+Monolithic:
+- It can be a viable option for small scale backend systems
+- There are only a few databases for the whole software
 ```
 
 ## Data Engineering for microservices
