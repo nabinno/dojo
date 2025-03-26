@@ -200,7 +200,13 @@ Monolithic:
 
 ## Data Engineering for microservices
 ```
+True:
+- There are no central database in a microservices architecture
+- Microservices have their own databases
 
+False:
+- Microservcies send data to each other via data pipelines
+- Monolithic architecture has central databases that is used by the whole system
 ```
 
 ## Data Pipelines
