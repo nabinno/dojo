@@ -209,14 +209,11 @@ False:
 - Monolithic architecture has central databases that is used by the whole system
 ```
 
-## Data Pipelines
-```
-
-```
-
 ## Main data operations
 ```
-
+1. Access the data contained within the microservices databases
+2. Prepare the data for analytical purposes
+3. Send the data to analytical database
 ```
 
 ## Batch vs. stream processing
