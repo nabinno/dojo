@@ -218,7 +218,13 @@ False:
 
 ## Batch vs. stream processing
 ```
+Stream processing:
+- For processing user payments
+- For signing up users
 
+Batch processing:
+- For analytics and reporting
+- Setting up a data pipeline that needs to be executed every day at midnight
 ```
 
 ## Analytics & Reporting with DevOps
