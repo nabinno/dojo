@@ -227,14 +227,18 @@ Batch processing:
 - Setting up a data pipeline that needs to be executed every day at midnight
 ```
 
-## Analytics & Reporting with DevOps
-```
-
-```
-
 ## Change management metrics
 ```
+Requirements:
+- Number of new products and features
 
+Design Develop, and Test:
+- Time spent in development of the new products
+- Pass rate of the DevOps tests
+
+Deploy, Review, Launch:
+- Amount of the time the product is unavailable to the users
+- User satification rates
 ```
 
 ## Reporting architecture for DevOps
