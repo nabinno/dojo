@@ -250,14 +250,15 @@ Deploy, Review, Launch:
 5. Communicate and visualize the results, track the pace of innovation and other metrics
 ```
 
-## Tools: Ecosystem
-```
-
-```
-
 ## Architecture systems and tools
 ```
+Architecture systems and tools
+You are developing a microservice that will provide data to ten other systems. However, the other systems will use your microservices outputs occasionally. Which architecture system and tool combination below could be a good option for your needs?
 
+[ ]Monolithic Architecture | Analytical database
+[ ]Microservices Architecture | Airflow
+[ ]Monolithic Architecture | Kafka
+[x]Microservices Architecture | Kafka
 ```
 
 ## Tools in DevOps cycle
