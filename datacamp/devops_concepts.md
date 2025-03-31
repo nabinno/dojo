@@ -243,7 +243,11 @@ Deploy, Review, Launch:
 
 ## Reporting architecture for DevOps
 ```
-
+1. Identify the data sources within the CI/CD pipelines that have relevant information for your metrics
+2. Ingest the data in the CI/CD pipelines into a data pipeline
+3. Prepare the data for reporting
+4. Move the data into an analytical database
+5. Communicate and visualize the results, track the pace of innovation and other metrics
 ```
 
 ## Tools: Ecosystem
