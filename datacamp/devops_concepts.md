@@ -263,7 +263,16 @@ You are developing a microservice that will provide data to ten other systems. H
 
 ## Tools in DevOps cycle
 ```
+Requirements:
+- JIRA
 
+Design Development, and Testing:
+- GitHub
+- Jenkins
+
+Deploy, Review, and Launch:
+- Docker
+- Kubernetes
 ```
 
 ## Automating data pipelines
