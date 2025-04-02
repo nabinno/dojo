@@ -277,7 +277,17 @@ Deploy, Review, and Launch:
 
 ## Automating data pipelines
 ```
+You want to...
 
+1. establish data pipelines that will record the results of the API
+2. automatically transform and record the data every night to another database
+
+Which tool and what pipeline method can you use for these steps?
+
+[ ]1. Jenkins: Batch; 2. Airflow: Batch
+[ ]1. Airflow: Streaming; 2. Analytical databases: Batch
+[x]1. Kafka: Streaming; 2. Airflow: Batch
+[ ]1. Jenkins: Batch; 2. Kafka: Streaming
 ```
 
 
