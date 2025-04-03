@@ -294,7 +294,7 @@ Which tool and what pipeline method can you use for these steps?
 
 
 # 4 Accurate, Predictive, and Unbiased Data With DevOps
-## Data quality elements
+## Data quality
 ```
 True:
 - DevOps helps us have high data quality because it automates and ensures software testing
@@ -303,6 +303,11 @@ True:
 False:
 - All data in an organization must be high quality
 - Completeness and accuracy refers to the some elements of data quality
+```
+
+## Data quality elements
+```
+
 ```
 
 ## Observability and Reliability
