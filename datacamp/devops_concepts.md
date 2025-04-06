@@ -307,7 +307,16 @@ False:
 
 ## Data quality elements
 ```
+Accuracy or Timeliness:
+- How recent and up to date the informaiton is
+- Correctness of data in every detail
 
+Consistency or Relevance:
+- Holding and storing only the necessary information
+- The reliability of the information; data should not contradict with other data
+
+Completeness:
+- Ensuring comprehensiveness of data to prove no part of the data was lost
 ```
 
 ## Observability and Reliability
