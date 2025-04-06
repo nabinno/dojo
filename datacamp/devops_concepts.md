@@ -319,14 +319,15 @@ Completeness:
 - Ensuring comprehensiveness of data to prove no part of the data was lost
 ```
 
-## Observability and Reliability
-```
-
-```
-
 ## Observability vs. testing
 ```
+Testing:
+- Sending mock data to the software and checking how it behaves
+- Sending an unexpected amount of data to check how it behaves under pressure
 
+Observability:
+- Monitoring how inner components of software behave when it interacts with the users
+- CHecking how software interacts with users from different geolocations
 ```
 
 ## Increasing reliability
