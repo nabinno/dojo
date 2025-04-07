@@ -332,7 +332,13 @@ Observability:
 
 ## Increasing reliability
 ```
+True:
+- Observability is important to understand what is going on within software components
+- DevOps helps increase reliability by automating testing
 
+False:
+- Microservices architecture is not reliable
+- Observability is not necessary for increasing reliability
 ```
 
 ## DevOps Cultural Concepts
