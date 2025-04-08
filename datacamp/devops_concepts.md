@@ -341,14 +341,15 @@ False:
 - Observability is not necessary for increasing reliability
 ```
 
-## DevOps Cultural Concepts
-```
-
-```
-
 ## Cultural concepts
 ```
+True:
+- When problems arise with the software, first solve it, then arrange a meeting to discuss and learn lessons
+- DevOps teams should have representatives with different specialities
 
+False:
+- When developing a new product, a team member should wait for testing to finish, to put it into deployment
+- DevOps teams should develop and then hand the product to another team for deploy and operate
 ```
 
 ## Reacting to an incident
