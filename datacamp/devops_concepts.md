@@ -354,7 +354,11 @@ False:
 
 ## Reacting to an incident
 ```
-
+1. Notice the alarm that your product is not working
+2. Look at the observability results to identify the root cause of the problem
+3. Solve the root cause of the problem and run the product again
+4. Conduct a post mortem to see what went wrong and how it could have been prevented
+5. Develop more testing so issues like this are more likely to be prevented
 ```
 
 ## Tying it all together
