@@ -361,14 +361,12 @@ False:
 5. Develop more testing so issues like this are more likely to be prevented
 ```
 
-## Tying it all together
-```
-
-```
-
 ## Benefits of DevOps
 ```
-
+[ ]Increasing reliability and quality of softwaere
+[ ]AUtomate change management
+[ ]Manage the costs when developing software products
+[x]All of the above
 ```
 
 ## DevOps cycle
