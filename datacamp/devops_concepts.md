@@ -371,10 +371,9 @@ False:
 
 ## DevOps cycle
 ```
-
-```
-
-## CONGRATS!
-```
-
+1. You collaborate with the business team to discuss requirements on JIRA.
+2. You plan the product's appearance after the change and outline the necessary steps to implement it.
+3. You develop the new version of the (software) product.
+4. You test the new version and deploy it for your users through the CI/CD pipelines on Jenkins.
+5. Lanunch the latest version of your product and monitor its performance.
 ```
