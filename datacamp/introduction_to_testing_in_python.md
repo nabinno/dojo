@@ -5,14 +5,17 @@ url: https://campus.datacamp.com/courses/introduction-to-testing-in-python
 ---
 
 # 1 1Creating Tests with pytest
-## Introduction to Testing in Python
-```
-
-```
-
 ## The first test suite
-```
+```python
+def multiple_of_two(num):
+    if num == 0:
+    raise(ValueError)
+    return num % 2 == 0
 
+def test_numbers():
+    assert multiple_of_two(2) is True
+    # Write the "False" test below
+    assert multiple_of_two(3) is False
 ```
 
 ## pytest.raises
