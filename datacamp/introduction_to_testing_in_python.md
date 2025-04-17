@@ -76,14 +76,19 @@ def test_zero():
 $ pytest run_the_test.py "numbers"
 ```
 
-## Applying test markers
-```
-
-```
-
 ## Markers use cases
 ```
+@pytest.mark.skip:
+- Skip the test no matter what.
+- A test should be skipped indenfinitely until the mark is removed.
 
+@pytest.mark.xfail:
+- To verify that the test fail.
+- To verify that the test checking 'a' + 'b' != 'ab' will fail.
+
+@pytest.mark.skipif:
+- To skip the test if Python version is less than `3.4.x`.
+- To check the condition and skip the test if it is `True`.
 ```
 
 ## Failed tests with xfail
