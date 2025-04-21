@@ -126,14 +126,16 @@ def test_function():
 
 
 # 2 Pytest Fixtures
-## Introduction to fixtures
-```
-
-```
-
 ## Getting familiar with fixtures
 ```
+True:
+- Fixtures help to make the test setup more modular.
+- One has to declare the `@pytest.fixture` decorator along with a custom fixture function to implement a `pytest` fixture.
+- A fixture is a prepared environment that is used in tests.
 
+False:
+- A fixture is a testing type.
+- A `pytest` fixture can be implemented as a regular function without decorators.
 ```
 
 ## Data preparation
