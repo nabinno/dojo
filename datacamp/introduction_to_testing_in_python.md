@@ -156,8 +156,19 @@ def test_elements(prepare_data):
 ```
 
 ## Run with a fixture
-```
+```sh
+$ cd /home/repl/workspace
+$ echo run_with_fixtures.py
+import pytest
 
+@pytest.fixture
+def prepare_data():
+    return [i for i in range(10)]
+
+def test_elements(prepare_data):
+    assert 9 in prepare_data
+    assert 10 not in prepare_data
+    $ pytest run_with_fixtures.py
 ```
 
 ## Chain Fixtures Requests
