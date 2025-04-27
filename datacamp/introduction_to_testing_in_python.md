@@ -209,14 +209,17 @@ def test_9(prepare_list):
 $ pytest list_custom_len.py
 ```
 
-## Fixtures autouse
-```
-
-```
-
 ## autouse statements
 ```
+Select true statements about the autouse argument.
 
+[ ]`autouse` is an argument of a test function.
+[x]`autouse` helps to simplify the code.
+[x]`autouse` is an argument of a fixture decorator.
+[x]It might be convinient to apply `autouse` to use the same data for all tests.
+[ ]`autouse` can make the code faster.
+[x]It might be convenient to apply `autouse` to set the same parameters for all tests.
+[ ]One can use variables declared inside of the `autouse` fixture and use it outside of it by default.
 ```
 
 ## Auto add numbers
