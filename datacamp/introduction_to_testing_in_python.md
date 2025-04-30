@@ -293,14 +293,16 @@ $ pytest read_df_teardown.py
 
 
 # 3 Basic Testing Types
-## Unit testing with pytest
-```
-
-```
-
 ## Unit testing terms
 ```
+True:
+- Creating test case is creative task.
+- A test case is a set of unit inputs and expected outputs summarizing a partifcular problem.
+- Unit test is a type of test that verifies a software unit.
 
+False:
+- Unit test is a type of test that verifies software as a whole.
+- A test case is an implemented test.
 ```
 
 ## Cover more test cases
