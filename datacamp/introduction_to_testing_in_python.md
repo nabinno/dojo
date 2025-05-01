@@ -307,7 +307,10 @@ False:
 
 ## Cover more test cases
 ```
-
+What is the best set of tests (that covers more test cases) to validate the following division function?
+[ ]division(47,-100), division(0, 16), division(740, 512), division(-345, -10), division(-10, 589)
+[ ]division(10,0), division(0, 55), division(0, 0), division(740, 512), division(10, 10), division(100, 5)
+[x]division(11,0), division(0, 60), division(0, 0), division(876, 34), division(-10, -10), division(-10, 5)
 ```
 
 ## Factorial of number
