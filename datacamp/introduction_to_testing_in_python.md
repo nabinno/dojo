@@ -358,14 +358,16 @@ def test_str():
     assert factorial('5') == -1
 ```
 
-## Feature testing with pytest
-```
-
-```
-
 ## Feature or unit testing
 ```
+Feature test:
+- Verifying that a browser can open a website on a computer.
+- Ensuring maps navigation app can build a route from A to B.
+- Testing that a user can log in to your website.
 
+Unit test:
+- Checking a function of sorting an array in a relational database.
+- Checking that Python properly decodes a symbol from ASCII.
 ```
 
 ## Aggregate with sum
