@@ -403,14 +403,17 @@ def test_agg_feature(get_df):
 $ pytest agg_with_sum.py
 ```
 
-## Integration testing with pytest
-```
-
-```
-
 ## Integration test or not
 ```
+Integration test:
+- Checking that ping requests can reach the destination and return.
+- Ensuring that the power cable is connected to the device.
+- Verifying the connection between a cloud server and a database.
 
+Not an integration test:
+- Ensuring the tires of your car have sufficient pressure.
+- Confirmaing that the "addition" button of a calculator works properly.
+- Checking that the dataset concatenation works.
 ```
 
 ## Read the file
