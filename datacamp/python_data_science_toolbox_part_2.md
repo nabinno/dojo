@@ -538,7 +538,7 @@ for df_urb_pop in urb_pop_reader:
     df_pop_ceb['Total Urban Population'] = [int(tup[0] * tup[1] * 0.01) for tup in pops_list]
     
     # Append DataFrame chunk to data: data
-    data = data.append(df_pop_ceb)
+    data = pd.concat([data, df_pop_ceb])
 
 # Plot urban population data
 data.plot(kind='scatter', x='Year', y='Total Urban Population')
@@ -572,7 +572,7 @@ def plot_pop(filename, country_code):
         df_pop_ceb['Total Urban Population'] = [int(tup[0] * tup[1] * 0.01) for tup in pops_list]
     
         # Append DataFrame chunk to data: data
-        data = data.append(df_pop_ceb)
+        data = pd.concat([data, df_pop_ceb])
 
     # Plot urban population data
     data.plot(kind='scatter', x='Year', y='Total Urban Population')
