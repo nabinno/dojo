@@ -437,14 +437,11 @@ def test_get_df(get_df):
 $ pytest reading_test.py
 ```
 
-## Performance testing with pytest
-```
-
-```
-
 ## What is performance testing?
 ```
-
+[ ]To scrutinize the correctness of a unit
+[ ]To verify the interactions between different modules of a system
+[x]To measure software performance
 ```
 
 ## Finding an element
