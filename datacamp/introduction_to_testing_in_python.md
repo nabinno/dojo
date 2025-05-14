@@ -535,14 +535,9 @@ class TestSuite(unittest.TestCase):
         self.assertFalse(is_prime(1))
 ```
 
-## CLI Interface
-```
-
-```
-
 ## Run factorial with unittest
-```
-
+```sh
+$ python3 -m unittest factorial_unittest.py
 ```
 
 ## Erroneouos factorial
