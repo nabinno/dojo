@@ -563,7 +563,33 @@ class TestFactorial(unittest.TestCase):
 
 ## Unittest options
 ```
+## Code
+import unittest
 
+def err_func_factorial(number):
+    if number < 0:
+        raise ValueError('Factorial is not defined for negative values')
+    factorial = 1
+    while number > 2:
+        factorial = factorial * number
+        number = number - 1
+    return factorial
+
+class TestFactorial(unittest.TestCase):
+    def test_err_func_1(self):
+        self.assertEqual(err_func_factorial(3), 6)
+    def test_err_func_2(self):
+        self.assertEqual(err_func_factorial(4), 24)
+
+## Shell
+- Run this command to run the testing script with the verbose flag:
+  python3 -m unittest -v err_factorial_unittest.py
+
+- Run this command to run the testing script with the fail fast flag:
+  python3 -m unittest -f err_factorial_unittest.py
+
+- Run this command to run the testing script with the keyword flag:
+  python3 -m unittest -k "err_func_1" err_factorial_unittest.py
 ```
 
 ## Fixtures in unittest
