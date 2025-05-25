@@ -7,12 +7,13 @@ url: https://campus.datacamp.com/courses/introduction-to-docker
 # 1 Using Docker Containers
 ## Running your first container
 ```sh
-docker run hello-world
+$ docker run hello-world
 ```
 
 ## Running a container in the background
-```
-
+```sh
+$ docker run -d postgres
+$ docker ps
 ```
 
 ## An interactive container
