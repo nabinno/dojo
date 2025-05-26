@@ -17,8 +17,9 @@ $ docker ps
 ```
 
 ## An interactive container
-```
-
+```sh
+$ docker run -it ubuntu
+ubuntu> exit
 ```
 
 ## Working with Docker containers
