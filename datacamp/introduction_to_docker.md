@@ -22,14 +22,11 @@ $ docker run -it ubuntu
 ubuntu> exit
 ```
 
-## Working with Docker containers
-```
-
-```
-
 ## Helping a colleague
-```
-
+```sh
+$ docker run --name colleague_project -d my_project
+$ docker ps -f name=colleague_project
+$ docker logs colleague_project
 ```
 
 ## Cleaning up containers
