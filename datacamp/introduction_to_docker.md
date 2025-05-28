@@ -31,7 +31,8 @@ $ docker logs colleague_project
 
 ## Cleaning up containers
 ```
-
+$ docker stop colleague_project
+$ docker rm colleague_project
 ```
 
 ## Managing local docker images
