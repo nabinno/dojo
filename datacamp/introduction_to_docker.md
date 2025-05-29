@@ -35,14 +35,9 @@ $ docker stop colleague_project
 $ docker rm colleague_project
 ```
 
-## Managing local docker images
-```
-
-```
-
 ## Pulling your first image
 ```
-
+$ docker pull hello-world
 ```
 
 ## Pulling a specific tag
