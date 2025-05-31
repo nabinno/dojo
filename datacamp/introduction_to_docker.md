@@ -42,7 +42,8 @@ $ docker pull hello-world
 
 ## Pulling a specific tag
 ```
-
+$ docker images ubuntu
+$ docker pull ubuntu:22.04
 ```
 
 ## Cleaning up images
