@@ -48,7 +48,9 @@ $ docker pull ubuntu:22.04
 
 ## Cleaning up images
 ```
-
+$ docker rmi ubuntu
+$ docker container prune -f ubuntu
+$ docker image prune -a -f
 ```
 
 
