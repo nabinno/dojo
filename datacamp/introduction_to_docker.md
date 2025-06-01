@@ -58,14 +58,10 @@ $ docker image prune -a -f
 
 
 # 2 Writing Your Own Docker Images
-## Distributing Docker Images
-```
-
-```
-
 ## Sharing your work using a Docker registry
 ```
-
+$ docker tag spam:v1 docker.mycompany.com/spam:v1
+$ docker push docker.mycompany.com/spam:v1
 ```
 
 ## Saving an image to a file
