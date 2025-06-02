@@ -66,7 +66,7 @@ $ docker push docker.mycompany.com/spam:v1
 
 ## Saving an image to a file
 ```
-
+docker save -o spam_updated.tar spam:v2
 ```
 
 ## Receiving Docker Images
