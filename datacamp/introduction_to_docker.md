@@ -77,14 +77,13 @@ $ docker load -i spam_bob.tar
 $ docker run spam_bob:v3
 ```
 
-## Creating your own Docker images
-```
-
-```
-
 ## Building your first image
 ```
+$ cat Dockerfile
+FROM ubuntu:22.04
 
+$ docker build .
+$ docker build . -t my_first_image
 ```
 
 ## Working in the command-line
