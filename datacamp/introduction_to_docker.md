@@ -88,7 +88,11 @@ $ docker build . -t my_first_image
 
 ## Working in the command-line
 ```
-
+$ touch Dockerfile
+$ nano Dockerfile
+FROM ubuntu
+$ echo "RUN apt-get update" >>Dockerfile
+$ cat Dockerfile
 ```
 
 ## Editing a Dockerfile
