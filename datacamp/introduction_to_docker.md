@@ -97,7 +97,11 @@ $ cat Dockerfile
 
 ## Editing a Dockerfile
 ```
+$ nano Dockerfile
+FROM ubuntu:22.04
+RUN mkdir my_app
 
+$ docker build --tag my_app .
 ```
 
 ## Creating your own Dockerfile
