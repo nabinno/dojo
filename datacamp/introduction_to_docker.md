@@ -106,7 +106,14 @@ $ docker build --tag my_app .
 
 ## Creating your own Dockerfile
 ```
+$ touch Dockerfile
 
+$ nano Dockerfile
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install -y python3
+
+$ docker build . --tag my_python_image
 ```
 
 ## Managing files in your image
