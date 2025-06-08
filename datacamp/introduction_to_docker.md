@@ -116,14 +116,13 @@ RUN apt-get install -y python3
 $ docker build . --tag my_python_image
 ```
 
-## Managing files in your image
-```
-
-```
-
 ## Copying files into an image
 ```
-
+$ nano Dockerfile
+FROM ubuntu:22.04
+RUN apt-get update
+RUN apt-get -y install python3
+COPY ./pipeline.py /app/pipeline.py
 ```
 
 ## Copying folders
