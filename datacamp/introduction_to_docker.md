@@ -127,7 +127,13 @@ COPY ./pipeline.py /app/pipeline.py
 
 ## Copying folders
 ```
+$ nano Dockerfile
+FROM ubuntu:22.04
+RUN apt-get update
+RUN apt-get -y install python3
+COPY ./pipeline_v3/ /app/
 
+$ docker build . --tag pipeline_v3
 ```
 
 ## Working with downloaded files
