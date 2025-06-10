@@ -138,7 +138,17 @@ $ docker build . --tag pipeline_v3
 
 ## Working with downloaded files
 ```
+$ touch Dockerfile
+$ nano Dockerfile
+FROM ubuntu
+RUN apt-get update
+RUN apt-get install -y python3 curl unzip
 
+RUN curl https://assets.datacamp.com/production/repositories/6082/datasets/31a5052c6a5424cbb8d939a7a6eff9311957e7d0/pipeline_final.zip -o /pipeline_final.zip
+RUN unzip /pipeline_final.zip
+RUN rm /pipeline_final.zip
+
+$ docker build . --tag pipeline
 ```
 
 ## Choosing a start command for your Docker image
