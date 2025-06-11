@@ -151,14 +151,9 @@ RUN rm /pipeline_final.zip
 $ docker build . --tag pipeline
 ```
 
-## Choosing a start command for your Docker image
-```
-
-```
-
 ## Overriding the default command
 ```
-
+$ docker run -it postgres bash
 ```
 
 ## Pulling a specific tag
