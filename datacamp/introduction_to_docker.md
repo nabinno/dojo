@@ -158,7 +158,8 @@ $ docker run -it postgres bash
 
 ## Pulling a specific tag
 ```
-
+$ docker images
+$ docker pull ubuntu:22.04
 ```
 
 ## Adding a CMD
