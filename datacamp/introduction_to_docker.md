@@ -164,7 +164,15 @@ $ docker pull ubuntu:22.04
 
 ## Adding a CMD
 ```
+$ nano Dockerfile
+FROM ubuntu:22.04
+RUN apt-get update
+RUN apt-get -y install python3
+CMD python3
 
+$ docker build . --tag pipeline_debug
+
+$ docker run pipeline_debug
 ```
 
 
