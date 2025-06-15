@@ -180,14 +180,12 @@ $ docker run pipeline_debug
 
 
 # 3 Creating Secure Docker Images
-## Introduction to Docker caching
-```
-
-```
-
 ## Docker caching
 ```
-
+[ ]Docker builds Dockerfiles into images; an image is composed of layers that correspond to specific Dockerfile instructions. A layer can be re-used for Dockerfiles with identical instructions.
+[ ]When we build an image from a Dockerfile, every Dockerfile instruction is run, and the changes it makes to the file system are saved. The bundle of these changes to the file system is called a layer.
+[ ]Image layer caching can be complex, but it allows us to understand how to greatly increase the speed with which we can iterate on, i.e., improve or fix bugs in our images.
+[x]All of the above.
 ```
 
 ## Ordering Dockerfile instructions
