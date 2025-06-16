@@ -197,14 +197,12 @@ COPY /app/requirements.txt /app/requirements.txt
 COPY /app/pipeline.py /app/pipeline.py
 ```
 
-## Changing users and working directory
-```
-
-```
-
 ## WORKDIR and USER
 ```
-
+[ ]After using `WORKDIR` in our Dockerfile, no instructions after `WORKDIR` can use any other path than the one we set with `WORKDIR`, until the workdir is changed again.
+[x]`WORKDIR` allows us to change the path in which the command of the `CMD` instruction is run.
+[x]After using `USER` in our Dockerfile, no instructions after `USER` can use any other user than the one we set with `USER`, until the user is changed again.
+[x]`USER` allows us to change the user with which the command of the `CMD` instruction is run.
 ```
 
 ## Setting the user
