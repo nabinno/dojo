@@ -207,7 +207,11 @@ COPY /app/pipeline.py /app/pipeline.py
 
 ## Setting the user
 ```
-
+$ nano DockerfileFROM ubuntu:22.04
+RUN useradd -m repl
+USER repl
+RUN mkdir /home/repl/projects/pipeline_final
+COPY /home/repl/project /home/repl/projects/pipeline_final
 ```
 
 ## Setting the working directory
