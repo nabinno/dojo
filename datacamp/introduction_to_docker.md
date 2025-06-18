@@ -216,7 +216,11 @@ COPY /home/repl/project /home/repl/projects/pipeline_final
 
 ## Setting the working directory
 ```
-
+FROM ubuntu:22.04
+RUN useradd -m replUSER repl
+WORKDIR /home/repl
+RUN mkdir projects/pipeline_final
+COPY /home/repl/project projects/pipeline_final
 ```
 
 ## Variables in Dockerfiles
