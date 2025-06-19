@@ -223,14 +223,12 @@ RUN mkdir projects/pipeline_final
 COPY /home/repl/project projects/pipeline_final
 ```
 
-## Variables in Dockerfiles
-```
-
-```
-
 ## Understanding ARG and ENV
 ```
-
+[ ]Variables set in a Dockerfile using the ARG instruction are not accessible after the image is built. This means it is safe to use ARG to store secrets in a Dockerfile.
+[x]Variables set using ENV can be used in containers starting from your image, making it a good way to set configuration using a runtime.
+[x]It is possible to override variables set with ARG during the build, allowing us to configure images at build-time.
+[x]Every user starting a container from our image can select a different value for any ENV variables we set in our image.
 ```
 
 ## Overriding ARG in a build
