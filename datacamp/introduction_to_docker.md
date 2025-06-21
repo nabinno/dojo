@@ -233,7 +233,13 @@ COPY /home/repl/project projects/pipeline_final
 
 ## Overriding ARG in a build
 ```
+$ cat Dockerfile
+FROM ubuntu:22.04
+ARG WELCOME_TEXT=Hello!
+RUN echo $WELCOME_TEXT
+CMD echo $WELCOME_TEXT
 
+$ docker build . --build-arg WELCOME_TEXT=Welcome!
 ```
 
 ## Changing behavior when starting a container
