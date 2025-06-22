@@ -254,14 +254,13 @@ $ docker build . -t hello_image
 $ docker run -e NAME=nabinno hello_image
 ```
 
-## Creating Secure Docker Images
-```
-
-```
-
 ## Security best practices
 ```
-
+[x]Using a container is a good way to run an executable or open an archive from an untrusted source because you greatly decrease the chance of a malicious actor accessing your computer.
+[ ]If I don't follow all security precautions, I might as well not follow any.
+[ ]Because of isolation between a container and the host OS, nothing in the container can ever affect the host environment.
+[x]There is no safer application than one we haven't installed.
+[x]When creating an image ourselves, we can increase the security by changing the Linux user to something other than the root user.
 ```
 
 ## Keeping packages up-to-date
