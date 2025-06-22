@@ -244,7 +244,14 @@ $ docker build . --build-arg WELCOME_TEXT=Welcome!
 
 ## Changing behavior when starting a container
 ```
+$ cat Dockerfile
+FROM ubuntu:22.04
+ENV NAME=Tim
+CMD echo "Hello, my name is $NAME"
 
+$ docker build . -t hello_image
+
+$ docker run -e NAME=nabinno hello_image
 ```
 
 ## Creating Secure Docker Images
