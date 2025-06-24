@@ -1,7 +1,7 @@
 ---
 title: Introduction to Snowflake
 tags: snowflake,analytics,data-engineering
-url: https://campus.datacamp.com/courses/introduction-to-snowflake/introduction-to-snowflake-architecture-competitors-and-snowflakesql
+url: https://campus.datacamp.com/courses/introduction-to-snowflake/
 ---
 
 # 1. Introduction to Snowflake: Architecture, Competitors, and SnowflakeSQL
@@ -464,4 +464,99 @@ SELECT
 FROM dogs_allowed d
     JOIN touristy_places t
         ON d.business_id = t.business_id
+```
+
+---
+
+# 1 Introduction to Snowflake UI
+## Navigating to a database and schema
+```
+What are the schemas in the `COURSE_39090` database?
+[ ]INFORM_SCHEME, STUDENT_DB
+[x]INFORMATION_SCHEMA, NOTEBOOKS, STUDENT_STORE
+[ ]INFORMATION_SCHEMA, DATACAMP_DB
+```
+
+## Navigate to a table
+```
+
+```
+
+## Executing a query and viewing the results
+```
+
+```
+
+## Analyzing the sales amount
+```
+
+```
+
+## Investigating product categories
+```
+
+```
+
+## Monitoring Query and Copy History
+```
+
+```
+
+## Viewing query Details
+```
+
+```
+
+## Exploring Python Worksheets
+```
+
+```
+
+
+
+
+# 2 Snowsight in Action: Managing Data & Access
+## Loading Data from Snowflake Marketplace
+```
+
+```
+
+## Exploring the Snowflake marketplace
+```
+
+```
+
+## Uploading CSV Data
+```
+
+```
+
+## Loading Data from a cloud provider
+```
+
+```
+
+## Creating a table from an external stage
+```
+
+```
+
+## Creating new roles, users, and warehouses
+```
+
+```
+
+## Exploring user roles
+```
+
+```
+
+## Creating your first notebook
+```
+
+```
+
+## Course Wrap-Up
+```
+
 ```
