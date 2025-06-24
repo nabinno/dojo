@@ -262,13 +262,13 @@ $ docker run -e NAME=nabinno hello_image
 [x]There is no safer application than one we haven't installed.
 [x]When creating an image ourselves, we can increase the security by changing the Linux user to something other than the root user.
 ```
-
-## Keeping packages up-to-date
-```
-
-```
-
 ## Be safe, don't use root
 ```
+$ cat Dockerfile
+FROM ubuntu:22.04
+RUN useradd -m repl
+USER repl
+CMD apt-get install python3
 
+$ docker run repl_try_install
 ```
