@@ -479,7 +479,11 @@ What are the schemas in the `COURSE_39090` database?
 
 ## Navigate to a table
 ```
-
+Snowflake > Data > Databases > COURSE_39090_DB > STUDENT_STORE
+Tables:
+- SALES_TRANSACTIONS
+    - data type of TRANSACTION_ID column: Number
+- VIDEO_DATASET
 ```
 
 ## Executing a query and viewing the results
