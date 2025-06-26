@@ -486,14 +486,20 @@ Tables:
 - VIDEO_DATASET
 ```
 
-## Executing a query and viewing the results
-```
-
-```
-
 ## Analyzing the sales amount
 ```
+1. Click button [+ Create > SQL Worksheet] in Snowflake
 
+2. Select STUDENT_STORE schema:
+select *
+from COURSE_39090_DB_E6831F36335248DFBAE60ECC4F554BC7.STUDENT_STORE.SALES_TRANSACTIONS
+limit 5;
+
+3. Calculate the total sales using the `AMOUNT` column
+select sum(AMOUNT)
+from COURSE_39090_DB_E6831F36335248DFBAE60ECC4F554BC7.STUDENT_STORE.SALES_TRANSACTIONS
+limit 5;
+-- => 15326.00
 ```
 
 ## Investigating product categories
