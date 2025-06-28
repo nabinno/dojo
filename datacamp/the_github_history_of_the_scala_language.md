@@ -138,8 +138,21 @@ counts_wide.plot(kind='bar')
 
 # 10. Visualizing the contributions of each developer
 ``python`
+authors = ['xeno-by', 'soc']
+file = 'src/compiler/scala/reflect/reify/phases/Calculate.scala'
 
+# Select the pull requests submitted by the authors, from the `data` DataFrame
+by_author = data[data['user'].isin(authors)]
+
+# Select the pull requests that affect the file
+by_file = by_author[by_author['file'] == file]
+
+# Group and count the number of PRs done by each user each year
+grouped = by_file.groupby(['user', by_file['date'].dt.year]).count()['pid'].reset_index()
+
+# Transform the data into a wide format
+by_file_wide = grouped.pivot_table(index='date', columns='user', values='pid', fill_value=0)
+
+# Plot the results
+by_file_wide.plot(kind='bar')
 ```
-
-
-
