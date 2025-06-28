@@ -232,144 +232,290 @@ plt.show()
 
 ## Comparing PDFs
 ```python
+# Evaluate the normal PDF
+xs = np.linspace(2, 5.5)
+ys = dist.pdf(xs)
 
+# Plot the model PDF
+plt.clf()
+plt.plot(xs, ys, color='gray')
+
+# Plot the data KDE
+sns.kdeplot(log_income)
+
+# Label the axes
+plt.xlabel('log10 of realinc')
+plt.ylabel('PDF')
+plt.show()
 ```
 
 
 
 
 # 3. Relationships
-## Exploring relationships
-```python
-
-```
-
 ## PMF of age
 ```python
+# Extract AGE
+age = brfss['AGE']
 
+# Plot the PMF
+pmf_age = Pmf(age)
+pmf_age.bar()
+
+# Label the axes
+plt.xlabel('Age in years')
+plt.ylabel('PMF')
+plt.show()
 ```
 
 ## Scatter plot
 ```python
+# Select the first 1000 respondents
+brfss = brfss[:1000]
 
+# Extract age and weight
+age = brfss['AGE']
+weight = brfss['WTKG3']
+
+# Make a scatter plot
+plt.plot(age, weight, 'o', alpha=0.1)
+
+plt.xlabel('Age in years')
+plt.ylabel('Weight in kg')
+
+plt.show()
 ```
 
 ## Jittering
 ```python
+# Select the first 1000 respondents
+brfss = brfss[:1000]
 
-```
+# Add jittering to age
+age = brfss['AGE'] + +np.random.normal(0, 2.5, size=len(brfss))
+# Extract weight
+weight = brfss['WTKG3']
 
-## Visualizing relationships
-```python
+# Make a scatter plot
+plt.plot(age, weight, 'o', markersize=5, alpha=0.2)
 
+plt.xlabel('Age in years')
+plt.ylabel('Weight in kg')
+plt.show()
 ```
 
 ## Height and weight
 ```python
+# Drop rows with missing data
+data = brfss.dropna(subset=['_HTMG10', 'WTKG3'])
 
+# Make a box plot
+sns.boxplot(x='_HTMG10', y='WTKG3', data=data, whis=10)
+
+# Plot the y-axis on a log scale
+plt.yscale('log')
+
+# Remove unneeded lines and label axes
+sns.despine(left=True, bottom=True)
+plt.xlabel('Height in cm')
+plt.ylabel('Weight in kg')
+plt.show()
 ```
 
 ## Distribution of income
 ```python
+# Extract income
+income = brfss['INCOME2']
 
+# Plot the PMF
+Pmf(income).bar()
+
+# Label the axes
+plt.xlabel('Income level')
+plt.ylabel('PMF')
+plt.show()
 ```
 
 ## Income and height
 ```python
+# Drop rows with missing data
+data = brfss.dropna(subset=['INCOME2', 'HTM4'])
 
-```
+# Make a violin plot
+sns.violinplot(x='INCOME2', y='HTM4', data=data, inner=None)
 
-## Correlation
-```python
-
+# Remove unneeded lines and label axes
+sns.despine(left=True, bottom=True)
+plt.xlabel('Income level')
+plt.ylabel('Height in cm')
+plt.show()
 ```
 
 ## Computing correlations
 ```python
+# Select columns
+columns = ['AGE', 'INCOME2', '_VEGESU1']
+subset = brfss[columns]
 
-```
-
-## Interpreting correlations
-```python
-
-```
-
-## Simple regression
-```python
-
+# Compute the correlation matrix
+print(subset.corr())
 ```
 
 ## Income and vegetables
 ```python
+from scipy.stats import linregress
 
+# Extract the variables
+subset = brfss.dropna(subset=['INCOME2', '_VEGESU1'])
+xs = subset['INCOME2']
+ys = subset['_VEGESU1']
+
+# Compute the linear regression
+res = linregress(xs, ys)
+print(res)
 ```
 
 ## Fit a line
 ```python
+# Plot the scatter plot
+plt.clf()
+x_jitter = xs + np.random.normal(0, 0.15, len(xs))
+plt.plot(x_jitter, ys, 'o', alpha=0.2)
 
+# Plot the line of best fit
+fx = np.array([xs.min(), xs.max()])
+fy = res.intercept + res.slope * fx
+plt.plot(fx, fy, '-', alpha=0.7)
+
+plt.xlabel('Income code')
+plt.ylabel('Vegetable servings per day')
+plt.ylim([0, 6])
+plt.show()
 ```
 
 
 
 
 # 4. Multivariate Thinking
-## Limits of simple regression
-```python
-
-```
-
-## Regression and causation
-```python
-
-```
-
 ## Using StatsModels
 ```python
+from scipy.stats import linregress
+import statsmodels.formula.api as smf
 
-```
+# Run regression with linregress
+subset = brfss.dropna(subset=['INCOME2', '_VEGESU1'])
+xs = subset['INCOME2']
+ys = subset['_VEGESU1']
+res = linregress(xs, ys)
+print(res)
 
-## Multiple regression
-```python
-
+# Run regression with StatsModels
+results = smf.ols('_VEGESU1 ~ INCOME2', data = brfss).fit()
+print(results.params)
 ```
 
 ## Plot income and education
 ```python
+# Group by educ
+grouped = gss.groupby('educ')
 
+# Compute mean income in each group
+mean_income_by_educ = grouped['realinc'].mean()
+
+# Plot mean income as a scatter plot
+plt.plot(mean_income_by_educ, 'o', alpha=0.5)
+
+# Label the axes
+plt.xlabel('Education (years)')
+plt.ylabel('Income (1986 $)')
+plt.show()
 ```
 
 ## Non-linear model of education
 ```python
+import statsmodels.formula.api as smf
 
-```
+# Add a new column with educ squared
+gss['educ2'] = gss['educ']**2
 
-## Visualizing regression results
-```python
+# Run a regression model with educ, educ2, age, and age2
+results = smf.ols('realinc ~ educ + educ2 + age + age2', data=gss).fit()
 
+# Print the estimated parameters
+print(results.params)
 ```
 
 ## Making predictions
 ```python
+# Run a regression model with educ, educ2, age, and age2
+results = smf.ols('realinc ~ educ + educ2 + age + age2', data=gss).fit()
 
+# Make the DataFrame
+df = pd.DataFrame()
+df['educ'] = np.linspace(0, 20)
+df['age'] = 30
+df['educ2'] = df['educ']**2
+df['age2'] = df['age']**2
+
+# Generate and plot the predictions
+pred = results.predict(df)
+print(pred.head())
 ```
 
 ## Visualizing predictions
 ```python
+# Plot mean income in each age group
+plt.clf()
+grouped = gss.groupby('educ')
+mean_income_by_educ = grouped['realinc'].mean()
+plt.plot(mean_income_by_educ, 'o', alpha=0.5)
 
-```
+# Plot the predictions
+pred = results.predict(df)
+plt.plot(df['educ'], pred, label='Age 30')
 
-## Logistic regression
-```python
-
+# Label axes
+plt.xlabel('Education (years)')
+plt.ylabel('Income (1986 $)')
+plt.legend()
+plt.show()
 ```
 
 ## Predicting a binary variable
 ```python
+# Recode grass
+gss['grass'].replace(2, 0, inplace=True)
 
+# Run logistic regression
+results = smf.logit('grass ~ age + age2 + educ + educ2 + C(sex)', data=gss).fit()
+results.params
+
+# Make a DataFrame with a range of ages
+df = pd.DataFrame()
+df['age'] = np.linspace(18, 89)
+df['age2'] = df['age']**2
+
+# Set the education level to 12
+df['educ'] = 12
+df['educ2'] = df['educ']**2
+
+# Generate predictions for men and women
+df['sex'] = 1
+pred1 = results.predict(df)
+
+df['sex'] = 2
+pred2 = results.predict(df)
+
+plt.clf()
+grouped = gss.groupby('age')
+favor_by_age = grouped['gunlaw'].mean()
+plt.plot(favor_by_age, 'o', alpha=0.5)
+
+plt.plot(df['age'], pred1, label='Male')
+plt.plot(df['age'], pred2, label='Female')
+
+plt.xlabel('Age')
+plt.ylabel('Probability of favoring legalization')
+plt.legend()
+plt.show()
 ```
-
-## Next steps
-```python
-
-```
-
