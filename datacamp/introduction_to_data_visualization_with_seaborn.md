@@ -132,171 +132,339 @@ sns.relplot(x="G1", y="G3",
 plt.show()
 ```
 
-## Customizing scatter plots
-```python
-
-```
-
 ## Changing the size of scatter plot points
 ```python
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+# Create scatter plot of horsepower vs. mpg
+sns.relplot(x="horsepower", y="mpg", 
+            data=mpg, kind="scatter", 
+            size="cylinders", hue="cylinders")
+
+# Show plot
+plt.show()
 ```
 
 ## Changing the style of scatter plot points
 ```python
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-```
+# Create a scatter plot of acceleration vs. mpg
+sns.relplot(x="acceleration", y="mpg", data=mpg, kind="scatter", style="origin", hue="origin")
 
-## Introduction to line plots
-```python
-
+# Show plot
+plt.show()
 ```
 
 ## Interpreting line plots
 ```python
+##
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+# Create line plot
+sns.relplot(x="model_year", y="mpg", data=mpg, kind="line")
+
+# Show plot
+plt.show()
 ```
 
 ## Visualizing standard deviation with line plots
 ```python
+# Make the shaded area show the standard deviation
+sns.relplot(x="model_year", y="mpg",
+            data=mpg, kind="line", ci="sd")
 
+# Show plot
+plt.show()
 ```
 
 ## Plotting subgroups in line plots
 ```python
+# Import Matplotlib and Seaborn
+import matplotlib.pyplot as plt
+import seaborn as sns
 
+# Add markers and make each line have the same style
+sns.relplot(x="model_year", y="horsepower", 
+            data=mpg, kind="line", 
+            ci=None, style="origin", 
+            hue="origin", dashes=False, markers=True)
+
+# Show plot
+plt.show()
 ```
 
 
 
 
 # 3. Visualizing a Categorical and a Quantitative Variable
-## Count plots and bar plots
-```python
-
-```
-
 ## Count plots
 ```python
+# Separate into column subplots based on age category
+sns.catplot(y="Internet usage", data=survey_data,
+            kind="count", col="Age Category")
 
+# Show plot
+plt.show()
 ```
 
 ## Bar plots with percentages
 ```python
+# Create a bar plot of interest in math, separated by gender
+sns.catplot(x="Gender", y="Interested in Math", data=survey_data, kind="bar")
 
+# Show plot
+plt.show()
 ```
 
 ## Customizing bar plots
 ```python
+# List of categories from lowest to highest
+category_order = ["<2 hours", 
+                  "2 to 5 hours", 
+                  "5 to 10 hours", 
+                  ">10 hours"]
 
+# Turn off the confidence intervals
+sns.catplot(x="study_time", y="G3",
+            data=student_data,
+            kind="bar",
+            order=category_order, ci=None)
+
+# Show plot
+plt.show()
 ```
 
 ## Box plots
 ```python
+# Specify the category ordering
+study_time_order = ["<2 hours", "2 to 5 hours", 
+                    "5 to 10 hours", ">10 hours"]
 
-```
+# Create a box plot and set the order of the categories
+sns.catplot(x="study_time", y="G3", data=student_data, order=study_time_order, kind="box")
 
-## Create and interpret a box plot
-```python
-
-```
-
-## Omitting outliers
-```python
-
+# Show plot
+plt.show()
 ```
 
 ## Adjusting the whiskers
 ```python
+##
+# Set the whiskers to 0.5 * IQR
+sns.catplot(x="romantic", y="G3",
+            data=student_data,
+            kind="box", whis=0.5)
 
-```
+# Show plot
+plt.show()
 
-## Point plots
-```python
+##
+# Extend the whiskers to the 5th and 95th percentile
+sns.catplot(x="romantic", y="G3",
+            data=student_data,
+            kind="box",
+            whis=[5,95])
 
+# Show plot
+plt.show()
+
+##
+# Set the whiskers at the min and max values
+sns.catplot(x="romantic", y="G3",
+            data=student_data,
+            kind="box",
+            whis=[0, 100])
+
+# Show plot
+plt.show()
 ```
 
 ## Customizing point plots
 ```python
-
+# Remove the lines joining the points
+sns.catplot(x="famrel", y="absences",
+			data=student_data,
+            kind="point",
+            capsize=0.2, join=False)
+            
+# Show plot
+plt.show()
 ```
 
 ## Point plots with subgroups
 ```python
+# Import median function from numpy
+from numpy import median
 
+# Plot the median number of absences instead of the mean
+sns.catplot(x="romantic", y="absences",
+			data=student_data,
+            kind="point",
+            hue="school",
+            ci=None, estimator=median)
+
+# Show plot
+plt.show()
 ```
 
 
 
 
 # 4. Customizing Seaborn Plots
-## Changing plot style and color
-```python
-
-```
-
 ## Changing style and palette
 ```python
+# Change the color palette to "RdBu"
+sns.set_style("whitegrid")
+sns.set_palette("RdBu")
 
+# Create a count plot of survey responses
+category_order = ["Never", "Rarely", "Sometimes", 
+                  "Often", "Always"]
+
+sns.catplot(x="Parents Advice", 
+            data=survey_data, 
+            kind="count", 
+            order=category_order)
+
+# Show plot
+plt.show()
 ```
 
 ## Changing the scale
 ```python
+# Change the context to "poster"
+sns.set_context("poster")
 
+# Create bar plot
+sns.catplot(x="Number of Siblings", y="Feels Lonely",
+            data=survey_data, kind="bar")
+
+# Show plot
+plt.show()
 ```
 
 ## Using a custom palette
 ```python
+# Set the style to "darkgrid"
+sns.set_style("darkgrid")
 
-```
+# Set a custom color palette
+sns.set_palette(["#39A7D0", "#36ADA4"])
 
-## Adding titles and labels: Part 1
-```python
+# Create the box plot of age distribution by gender
+sns.catplot(x="Gender", y="Age", 
+            data=survey_data, kind="box")
 
+# Show plot
+plt.show()
 ```
 
 ## FacetGrids vs. AxesSubplots
 ```python
+# Create scatter plot
+g = sns.relplot(x="weight", 
+                y="horsepower", 
+                data=mpg,
+                kind="scatter")
 
+# Identify plot type
+type_of_g = type(g)
+
+# Print type
+print(type_of_g)
+
+# <script.py> output:
+#     <class 'seaborn.axisgrid.FacetGrid'>
 ```
 
 ## Adding a title to a FacetGrid object
 ```python
+# Create scatter plot
+g = sns.relplot(x="weight", 
+                y="horsepower", 
+                data=mpg,
+                kind="scatter")
 
-```
+# Add a title "Car Weight vs. Horsepower"
+g.fig.suptitle("Car Weight vs. Horsepower")
 
-## Adding titles and labels: Part 2
-```python
-
+# Show plot
+plt.show()
 ```
 
 ## Adding a title and axis labels
 ```python
+# Create line plot
+g = sns.lineplot(x="model_year", y="mpg_mean", 
+                 data=mpg_mean,
+                 hue="origin")
 
+# Add a title "Average MPG Over Time"
+g.set_title("Average MPG Over Time")
+
+# Add x-axis and y-axis labels
+g.set(xlabel="Car Model Year", ylabel="Average MPG")
+
+# Show plot
+plt.show()
 ```
 
 ## Rotating x-tick labels
 ```python
+# Create point plot
+sns.catplot(x="origin", 
+            y="acceleration", 
+            data=mpg, 
+            kind="point", 
+            join=False, 
+            capsize=0.1)
 
-```
+# Rotate x-tick labels
+plt.xticks(rotation=90)
 
-## Putting it all together
-```python
-
+# Show plot
+plt.show()
 ```
 
 ## Box plot with subgroups
 ```python
+# Set palette to "Blues"
+sns.set_palette("Blues")
 
+# Adjust to add subgroups based on "Interested in Pets"
+g = sns.catplot(x="Gender",
+                y="Age", data=survey_data, 
+                kind="box", hue="Interested in Pets")
+
+# Set title to "Age of Those Interested in Pets vs. Not"
+g.fig.suptitle("Age of Those Interested in Pets vs. Not")
+
+# Show plot
+plt.show()
 ```
 
 ## Bar plot with subgroups and subplots
 ```python
+# Set the figure style to "dark"
+sns.set_style("dark")
 
+# Adjust to add subplots per gender
+g = sns.catplot(x="Village - town", y="Likes Techno", 
+                data=survey_data, kind="bar",
+                col="Gender")
+
+# Add title and axis labels
+g.fig.suptitle("Percentage of Young People Who Like Techno", y=1.02)
+g.set(xlabel="Location of Residence", 
+       ylabel="% Who Like Techno")
+
+# Show plotfffadasdkjiewa;jfows
+plt.show()
 ```
-
-## Well done! What's next?
-```python
-
-```
-
