@@ -502,14 +502,22 @@ limit 5;
 -- => 15326.00
 ```
 
-## Investigating product categories
-```
-
-```
-
 ## Monitoring Query and Copy History
 ```
-
+1. Create SQL worksheet "Exploratory Analysis" in [Snowflakes > Worksheets]
+2. Create SQL worksheet "Product Category Analysis" in [Snowflakes > Worksheets]
+3. Calculate the total sales by PRODUCT_CATEGORY.
+select
+    t.PRODUCT_CATEGORY,
+    SUM(t.AMOUNT)
+from COURSE_39090_DB_65386DDFBC424F698A2B798C914A8446.STUDENT_STORE.SALES_TRANSACTIONS t
+GROUP BY t.PRODUCT_CATEGORY;
+-- Result:
+PRODUCT_CATEGORY	SUM(T.AMOUNT)
+Books	8670.00
+Paper	318.00
+Electronics	5208.00
+Utilities	1130.00
 ```
 
 ## Viewing query Details
