@@ -425,34 +425,44 @@ tfidf_matrix = tfidf_vectorizer.fit_transform(plots)
 
 ## Top terms in movie clusters
 ```python
+num_clusters = 2
 
-```
+# Generate cluster centers through the kmeans function
+cluster_centers, distortion = kmeans(tfidf_matrix.todense(), num_clusters)
 
-## Clustering with multiple features
-```python
+# Generate terms from the tfidf_vectorizer object
+terms = tfidf_vectorizer.get_feature_names_out()
 
-```
-
-## Clustering with many features
-```python
-
+for i in range(num_clusters):
+    # Sort the terms and print top 3 terms
+    center_terms = dict(zip(terms, list(cluster_centers[i])))
+    sorted_terms = sorted(center_terms, key=center_terms.get, reverse=True)
+    print(sorted_terms[:3])
 ```
 
 ## Basic checks on clusters
 ```python
+# Print the size of the clusters
+print(fifa.groupby('cluster_labels')['ID'].count())
 
+# Print the mean value of wages in each cluster
+print(fifa.groupby('cluster_labels')['eur_wage'].mean())
 ```
 
 ## FIFA 18: what makes a complete player?
 ```python
+# Create centroids with kmeans for 2 clusters
+cluster_centers,_ = kmeans(fifa[scaled_features], 2)
 
+# Assign cluster labels and print cluster centers
+fifa['cluster_labels'], _ = vq(fifa[scaled_features], cluster_centers)
+print(fifa.groupby('cluster_labels')[scaled_features].mean())
+
+# Plot cluster centers to visualize clusters
+fifa.groupby('cluster_labels')[scaled_features].mean().plot(legend=True, kind='bar')
+plt.show()
+
+# Get the name column of first 5 players in each cluster
+for cluster in fifa['cluster_labels'].unique():
+    print(cluster, fifa[fifa['cluster_labels'] == cluster]['name'].values[:5])
 ```
-
-## Farewell!
-```python
-
-```
-
-
-
-
