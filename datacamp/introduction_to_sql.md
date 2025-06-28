@@ -537,3 +537,191 @@ JOIN reviews
 ON films.id = reviews.film_id
 WHERE title = 'To Kill a Mockingbird';
 ```
+
+----------------------------------------------------------------------
+
+# 1. Relational Databases
+## What are the advantages of databases?
+```
+[ ]More storage
+[ ]Many people can use at once
+[ ]Can be secured with encryption
+[x]All of the above
+
+NOTE: Advantages of storing data in a database, rather than using traditional formats like spreadsheets, include:
+- More storage: Databases can typically handle much larger volumes of data compared to spreadsheets, making them suitable for storing large datasets efficiently.
+- Many people can use at once: Databases support concurrent access by multiple users, allowing for collaborative work and simultaneous data retrieval and manipulation without conflicts.
+- Can be secured with encryption: Databases offer features for securing data through encryption techniques, ensuring that sensitive information remains protected from unauthorized access or breaches.
+```
+
+## Data organization
+```
+[ ]This is a table containing three relational databases: employees, job_levels, and departments.
+[x]This is a relational database containing three tables: employees, job_levels, and departments.
+[ ]This is a database, but it is not relational, because no relationship exists between job levels and departments.
+[ ]This is not a database because there is no SQL code shown.
+```
+
+## Picking a unique ID
+```
+[ ]name
+[ ]dept_id
+[ ]year_hired
+[x]id
+```
+
+## Setting the table in style
+```
+customer:
+| id  | customer | phone_num    | zip_code |
+| --- | -------- | ------------ | -------- |
+| 567 | Jele     | 781-765-2395 | 02476    |
+| 568 | Raushon  | 617-356-7772 | 01132    |
+```
+
+## Our very own table
+```
+SELECT *
+FROM books;
+```
+
+## At your service
+```
+[ ]Servers can be used for storing website information as well as databases.
+[ ]A server can handle requests from many computers at once.
+[x]Servers are usually personal computers such as laptops.
+[ ]Data from a database is physically stored on a server.
+
+NOTE: Servers are not usually personal computers such as laptops. Servers are typically powerful computers specifically designed to handle requests and store data for multiple clients or users. They often have specialized hardware configurations optimized for performance, reliability, and scalability.
+```
+
+## Finding data types
+```
+[ ]You can find this information by looking at each table in the database.
+[ ]You can find this information by looking at a diagram of relationships between tables.
+[ ]You can find this information by looking at the values in each field for each table.
+[s]You can find this information by looking at a database schema.
+```
+
+## Choice of type
+```
+VARCHAR
+- Phone numbers such as 321-123-5555
+- Product reviews written by customers
+
+INT
+- Model year such as 2004
+- Number of mailing list subscribers such as 9782
+
+NUMERIC
+- Product prices in dollars such as 65.75
+- Weight in tons such as 5.57
+```
+
+
+
+
+# 2. Querying
+## SQL strengths
+```
+[ ]All data needed to answer the business question is presented in a spreadsheet, and no complicated relationships exist between different data points.
+[x]Large amounts of data about many different but related areas of a business are housed in a relational database.
+[ ]The data needed to answer the business question doesn't exist yet.
+
+NOTE: SQL (Structured Query Language) is particularly well-suited for querying and manipulating data stored in relational databases, where data is organized into tables with defined relationships between them. Therefore, when dealing with large amounts of data stored in a structured manner within a relational database, SQL provides an efficient and effective means to retrieve and analyze the required information.
+```
+
+## Developing SQL style
+```
+Make suggestion:
+- Make `CARD_NUM` and `TOTAL_FINE` lowercase
+- Add a `;` at the end of the query
+- Capitalize `from`
+
+Don't make suggestion:
+- Capitalize `patrons`
+- All code should be on just one line
+- Make `SELECT` lowercase
+```
+
+## Querying the books table
+```
+-- Return all titles from the books table
+SELECT title FROM books;
+
+-- Select title and author from the books table
+SELECT title, author
+FROM books;
+
+-- Select all fields from the books table
+SELECT *
+FROM books;
+```
+
+## Writing queries
+```
+
+```
+
+## Making queries DISTINCT
+```
+-- Select unique authors from the books table
+SELECT DISTINCT author FROM books;
+
+-- Select unique authors and genre combinations from the books table
+SELECT DISTINCT author, genre
+FROM books;
+```
+
+## Aliasing
+```
+-- Alias author so that it becomes unique_author
+SELECT DISTINCT author unique_author
+FROM books;
+```
+
+## VIEWing your query
+```
+-- Your code to create the view:
+CREATE VIEW library_authors AS
+SELECT DISTINCT author AS unique_author
+FROM books;
+
+-- Select all columns from library_authors
+SELECT * FROM library_authors;
+```
+
+## Comparing flavors
+```
+PostgreSQL:
+- Research funds provided by DARPA
+- Free and open source
+- Developed at the University of California, Berkeley
+
+SQL Server:
+- Has both free and enterprise versions
+- Queried using T-SQL
+- Created by Microsoft
+```
+
+## Limiting results
+```
+-- Select the first 10 genres from books using PostgreSQL
+SELECT genre
+FROM books
+LIMIT 10
+```
+
+## Translating between flavors
+```
+[ ]Replace FROM with TABLE
+[ ]Replace SELECT, FROM, and LIMIT with the corresponding SQL Server keywords
+[x]Remove LIMIT statement and add TOP(10) after SELECT
+[ ]Replace LIMIT with TOP and remove the ; at the end of the query
+```
+
+## Congratulations!
+```
+
+```
+
