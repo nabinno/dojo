@@ -10,5 +10,5 @@ require (
 	github.com/gin-gonic/gin v1.4.0
 	github.com/google/uuid v1.1.1
 	github.com/guregu/dynamo v1.4.1
-	golang.org/x/sys v0.0.0-20190422165155-953cdadca894 // indirect
+	golang.org/x/sys v0.1.0 // indirect
 )
