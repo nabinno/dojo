@@ -24,7 +24,8 @@
     "extends": "react-app"
   },
   "overrides": {
-    "nth-check": "^2.0.1"
+    "nth-check": "^2.0.1",
+    "resolve-url-loader": "^5.0.0"
   },
   "browserslist": {
     "production": [
