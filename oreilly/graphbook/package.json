@@ -60,6 +60,7 @@
     "webpack-dev-server": "^5.2.1"
   },
   "overrides": {
-    "busboy": "^1.6.0"
+    "busboy": "^1.6.0",
+    "braces": "^3.0.3"
   }
 }
