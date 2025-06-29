@@ -3,8 +3,20 @@
     "allow": [
       "Bash(ls:*)",
       "Bash(find:*)",
-      "Bash(git commit:*)"
+      "Bash(npm install)",
+      "Bash(npm view:*)",
+      "Bash(rg:*)",
+      "Bash(npm audit:*)",
+      "Bash(grep:*)",
+      "Bash(pip index versions:*)",
+      "Bash(bundle update:*)",
+      "Bash(rbenv versions:*)",
+      "Bash(grep:*)",
+      "Bash(govulncheck:*)",
+      "Bash(go install:*)"
     ],
-    "deny": []
+    "deny": [
+      "Bash(git commit:*)"
+    ]
   }
 }
