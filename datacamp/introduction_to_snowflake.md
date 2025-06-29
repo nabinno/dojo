@@ -522,7 +522,15 @@ Utilities	1130.00
 
 ## Viewing query Details
 ```
+1. Create new worksheet in [Snowflake > Worksheets]
 
+2. Execute the following query:
+SELECT product, amount
+FROM COURSE_39090_DB_BAF2B903E9F84297BA8BCD37D8D6BDCE.STUDENT_STORE.SALES_TRANSACTIONS
+GROUP BY product, amount
+ORDER BY amount DESC;
+
+3. Check the query history in [Snowflake > Monitoring > Query History]
 ```
 
 ## Exploring Python Worksheets
