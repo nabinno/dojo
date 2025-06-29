@@ -534,8 +534,23 @@ ORDER BY amount DESC;
 ```
 
 ## Exploring Python Worksheets
-```
+```python
+# 1. Navigate to Worksheets in the Projects section to create a Python worksheet.
 
+# 2. Execute the Python code and investigate the results.
+import snowflake.snowpark as snowpark
+from snowflake.snowpark.functions import col
+
+def main(session: snowpark.Session):
+    # Your code goes here, inside the "main" handler.
+    tableName = 'COURSE_39090_DB_508DF5A8C30E4D88AB9B0031A6DB2EB7.information_schema.packages'
+    dataframe = session.table(tableName).filter(col("language") == 'python')
+
+    # Print a sample of the dataframe to standard output.
+    dataframe.show()
+
+    # Return value will appear in the Results tab.
+    return dataframe
 ```
 
 
