@@ -43,8 +43,12 @@ export class UserPoolConstruct extends cdk.Construct {
   private setUserPool(scope: AwsLambdaApigatewayStack, uid: string) {
     const userPool = new cognito.UserPool(scope, `userPool`, {
       userPoolName: `${scope.stackName}-UserPool`,
-      signInType: cognito.SignInType.EMAIL,
-      autoVerifiedAttributes: [cognito.UserPoolAttribute.EMAIL],
+      signInAliases: {
+        email: true
+      },
+      autoVerify: {
+        email: true
+      },
       lambdaTriggers: {
         // @note
         //   Purpose: map from a custom attribute mapped from SAML, e.g. {..., "custom:groups":"[a,b,c]", ...}
