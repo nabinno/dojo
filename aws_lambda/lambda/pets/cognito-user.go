@@ -7,7 +7,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	cIDP "github.com/aws/aws-sdk-go/service/cognitoidentityprovider"
-	"github.com/dgrijalva/jwt-go"
+	"github.com/form3tech-oss/jwt-go"
 	"github.com/gin-gonic/gin"
 )
 
@@ -33,7 +33,7 @@ func getCurrentUserDisplayNames(c *gin.Context) string {
 		}
 	}
 
-	return fmt.Sprint("%v %v", firstName, lastName)
+	return fmt.Sprintf("%v %v", firstName, lastName)
 }
 
 func getCurrentUserName(c *gin.Context) (username interface{}, ok bool) {

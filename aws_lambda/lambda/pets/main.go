@@ -133,7 +133,7 @@ func createPet(c *gin.Context) {
 
 	err := c.BindJSON(&newPet)
 	if err != nil {
-		c.AbortWithStatusJSON(http.StatusBadRequest, SimpleResponse{Message: fmt.Sprint("Params are not valid: %v", err)})
+		c.AbortWithStatusJSON(http.StatusBadRequest, SimpleResponse{Message: fmt.Sprintf("Params are not valid: %v", err)})
 		return
 	}
 
@@ -145,7 +145,7 @@ func createPet(c *gin.Context) {
 		Put(newPet).
 		Run()
 	if err != nil {
-		c.AbortWithStatusJSON(http.StatusBadRequest, SimpleResponse{Message: fmt.Sprint("Does not save pet: %v", err)})
+		c.AbortWithStatusJSON(http.StatusBadRequest, SimpleResponse{Message: fmt.Sprintf("Does not save pet: %v", err)})
 		return
 	}
 
