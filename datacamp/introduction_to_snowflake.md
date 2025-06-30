@@ -557,14 +557,11 @@ def main(session: snowpark.Session):
 
 
 # 2 Snowsight in Action: Managing Data & Access
-## Loading Data from Snowflake Marketplace
-```
-
-```
-
 ## Exploring the Snowflake marketplace
 ```
+1. Navigate to [Snowflake > Data Products] and open the Snowflake Marketplace
 
+2. Select some options such as `Asset Valuation` and `Blockchain Analysis` in [> All data products]
 ```
 
 ## Uploading CSV Data
