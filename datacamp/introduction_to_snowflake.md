@@ -566,7 +566,19 @@ def main(session: snowpark.Session):
 
 ## Uploading CSV Data
 ```
+1. Navigate to the Home page to upload the local file online_bookstore.csv data from the Datasets folder on the Desktop.
 
+2. Upload the data with the following settings:
+    -  Dataset and schema: COURSE_39090_DB_*.STUDENT_STORE
+    - Table: SALES_TRANSACTIONS
+    - File format: Delimited Files (CSV or TSV)
+    - Table loading methods: Append (default)
+    - Match by column names: File order
+
+3. Calculated the total sales amount.
+SELECT SUM(amount)
+FROM "COURSE_39090_DB_86B59A7EECBE458FAC88753999E2DD27"."STUDENT_STORE"."SALES_TRANSACTIONS";
+-- 29436.00
 ```
 
 ## Loading Data from a cloud provider
