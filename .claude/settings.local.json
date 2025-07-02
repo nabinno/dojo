@@ -13,7 +13,9 @@
       "Bash(rbenv versions:*)",
       "Bash(grep:*)",
       "Bash(govulncheck:*)",
-      "Bash(go install:*)"
+      "Bash(go install:*)",
+      "Bash(poetry show:*)",
+      "Bash(poetry:*)"
     ],
     "deny": [
       "Bash(git commit:*)"
