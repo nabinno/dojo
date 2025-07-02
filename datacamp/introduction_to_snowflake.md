@@ -583,7 +583,11 @@ FROM "COURSE_39090_DB_86B59A7EECBE458FAC88753999E2DD27"."STUDENT_STORE"."SALES_T
 
 ## Loading Data from a cloud provider
 ```
-
+Create storage integration
+Create the stage
+Refresh the stage
+Reference the stage in table creation
+Load data into a table
 ```
 
 ## Creating a table from an external stage
