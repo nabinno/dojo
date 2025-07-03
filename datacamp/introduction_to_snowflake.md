@@ -592,7 +592,11 @@ Load data into a table
 
 ## Creating a table from an external stage
 ```
+1. Open the menu and change the Appearance to Dark in [Snowflake > USER_COURSE (bottom left corner) > Appearance].
 
+2. Find out which role(s) your user has been granted by navigating to [Admin > Users & Roles].
+
+3. Investigate the permission granted to yourself and all other learners taking this course in [Users & Roles > Roles].
 ```
 
 ## Creating new roles, users, and warehouses
