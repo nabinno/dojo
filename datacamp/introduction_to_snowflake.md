@@ -599,22 +599,7 @@ Load data into a table
 3. Investigate the permission granted to yourself and all other learners taking this course in [Users & Roles > Roles].
 ```
 
-## Creating new roles, users, and warehouses
-```
-
-```
-
-## Exploring user roles
-```
-
-```
-
 ## Creating your first notebook
 ```
-
-```
-
-## Course Wrap-Up
-```
-
+Create notebook in [Snowflake > Home > Create notebook > Run on warehouse]
 ```
