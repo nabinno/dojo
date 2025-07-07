@@ -5,14 +5,13 @@ url: https://campus.datacamp.com/courses/data-manipulation-in-snowflake/
 ---
 
 # 1 Conditional Logic
-## Data manipulation in Snowflake
-```
-
-```
-
 ## Explore the Store data
 ```
+1. Take a peek in [Snowflake > Data > Databases COURSE_40931* > Schema Store].
 
+2. Take a closer look at each of these tables, the columns, and the data types in  [schema STORE > tables].
+
+3. Check the data type of [table TRACK > column track_id].
 ```
 
 ## Is this a premium song?
