@@ -15,8 +15,18 @@ url: https://campus.datacamp.com/courses/data-manipulation-in-snowflake/
 ```
 
 ## Is this a premium song?
-```
-
+```sql
+SELECT
+    name,
+    composer,
+    -- Begin a CASE statement
+    CASE
+        -- A song priced at 0.99 should be a 'Standard Song'
+        WHEN unit_price = 0.99 THEN 'Standard Song'
+        -- Songs costing 1.99 should be denoted as 'Premium Song'
+        WHEN unit_price = 1.99 THEN 'Premium Song'
+    END AS song_description
+FROM store.track;
 ```
 
 ## Conditional logic with CASE statements
