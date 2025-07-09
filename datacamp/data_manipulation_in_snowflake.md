@@ -29,14 +29,19 @@ SELECT
 FROM store.track;
 ```
 
-## Conditional logic with CASE statements
-```
-
-```
-
 ## Inferring purchase quantity
-```
-
+```sql
+SELECT
+    customer_id,
+    total,
+    CASE
+        -- Check if total is either 0.99 or 1.99 using IN
+        WHEN total IN (0.99, 1.99) THEN '1 Song'
+        -- Catch the scenarios when the above is not true
+        ELSE '2+ Songs'
+    -- End the CASE statement and name the new column
+    END AS number_of_songs
+FROM store.invoice;
 ```
 
 ## Is this a long song?
