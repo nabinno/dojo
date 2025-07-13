@@ -73,14 +73,28 @@ SELECT
 FROM store.track;
 ```
 
-## Applying conditional logic in Snowflake
-```
-
-```
-
 ## Comparing invoice totals
-```
+```sql
+-- Run this query without editing it.
+SELECT
+    customer_id,
+    total,
+    CASE
+        WHEN total IN (0.99, 1.99) THEN '1 Song'
+        ELSE '2+ Songs'
+    END as number_of_songs
+FROM store.invoice;
 
+SELECT
+    CASE
+        WHEN total IN (0.99, 1.99) THEN '1 Song'
+        ELSE '2+ Songs'
+    END as number_of_songs,
+    -- Find the average value of the total field
+    AVG(total) AS average_total
+FROM store.invoice
+-- Group by the field you built using CASE
+GROUP BY number_of_songs;
 ```
 
 ## Validating data quality
