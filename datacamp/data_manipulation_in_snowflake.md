@@ -58,8 +58,19 @@ FROM store.track;
 ```
 
 ## Determining buyer intent
-```
-
+```sql
+SELECT
+    name,
+    unit_price,
+    CASE
+        -- Inexpensive Rock and Pop songs are always high-intent
+        WHEN unit_price = 0.99 AND genre_id IN (5, 9) THEN 'High'
+        -- Shorter, non-EDM tracks have neutral buyer intent
+        WHEN milliseconds < 300000 AND genre_id != 15 THEN 'Neutral'
+        -- Everything else is low
+        ELSE 'Low'
+    END AS buyer_intent
+FROM store.track;
 ```
 
 ## Applying conditional logic in Snowflake
