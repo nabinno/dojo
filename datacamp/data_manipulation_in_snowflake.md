@@ -98,8 +98,22 @@ GROUP BY number_of_songs;
 ```
 
 ## Validating data quality
-```
-
+```sql
+SELECT
+    track.name,
+    track.composer,
+    artist.name,
+    CASE
+        -- A 'Track Lacks Detail' if the composer field is NULL
+        WHEN track.composer IS NULL THEN 'Track Lacks Detail'
+        -- Use the composer and artist name to determine if a match exists
+        WHEN track.composer = artist.name THEN 'Matching Artist'
+        ELSE 'Inconsistent Data'
+    END AS data_quality
+FROM store.track AS track
+LEFT JOIN store.album AS album ON track.album_id = album.album_id
+-- Join the album table to artist using the artist_id field
+LEFT JOIN store.artist AS artist ON album.artist_id = artist.artist_id;
 ```
 
 ## How many protected files?
