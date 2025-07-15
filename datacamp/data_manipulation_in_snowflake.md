@@ -117,8 +117,10 @@ LEFT JOIN store.artist AS artist ON album.artist_id = artist.artist_id;
 ```
 
 ## How many protected files?
-```
-
+```sql
+SELECT count(*)
+FROM track
+WHERE media_type IN (2, 3);
 ```
 
 
