@@ -127,14 +127,15 @@ WHERE media_type IN (2, 3);
 
 
 # 2 Manipulating Data with Subqueries and Common Table Expressions
-## Subqueries
-```
-
-```
-
 ## Building subqueries
-```
-
+```sql
+SELECT
+    invoice_id,
+    SUM(quantity * unit_price)
+FROM (
+    SELECT invoice_id, quantity, unit_price FROM store.invoiceline
+)
+GROUP BY invoice_id;
 ```
 
 ## Are jazz songs long?
