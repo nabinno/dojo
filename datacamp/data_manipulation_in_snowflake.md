@@ -139,8 +139,22 @@ GROUP BY invoice_id;
 ```
 
 ## Are jazz songs long?
-```
-
+```sql
+SELECT
+    -- Find the genre name and average milliseconds
+    genre_name,
+    AVG(milliseconds) AS average_milliseconds
+-- Retrieve records from the result of the subquery
+FROM (
+    SELECT
+        genre.name AS genre_name,
+        track.genre_id,
+        track.milliseconds
+    FROM store.track
+    JOIN store.genre ON track.genre_id = genre.genre_id
+)
+-- Group the results by the genre name
+GROUP BY genre_name;
 ```
 
 ## Identifying large transactions
