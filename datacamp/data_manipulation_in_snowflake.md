@@ -158,8 +158,27 @@ GROUP BY genre_name;
 ```
 
 ## Identifying large transactions
-```
+```sql
+SELECT
+    invoice_id,
+    COUNT(invoice_id) AS total_invoice_lines
+FROM store.invoiceline
+GROUP BY invoice_id
+-- Only pull records with more than 10 total invoice lines
+HAVING total_invoice_lines > 10;
 
+SELECT
+  billing_country,
+  SUM(total) AS total_invoice_amount
+FROM store.invoice
+WHERE invoice_id IN (
+  SELECT
+      invoice_id,
+  FROM store.invoiceline
+  GROUP BY invoice_id
+  HAVING COUNT(invoice_id) > 10
+)
+GROUP BY billing_country;
 ```
 
 ## Common Table Expressions
