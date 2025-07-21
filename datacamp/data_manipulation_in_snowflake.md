@@ -181,14 +181,26 @@ WHERE invoice_id IN (
 GROUP BY billing_country;
 ```
 
-## Common Table Expressions
-```
-
-```
-
 ## Analyzing track length
-```
+```sql
+-- Create a CTE named track_lengths
+WITH track_lengths AS (
+    SELECT
+        genre.name,
+        track.genre_id,
+        track.milliseconds / 1000 AS num_seconds
+    FROM store.track
+    JOIN store.genre ON track.genre_id = genre.genre_id
+)
 
+SELECT
+    track_lengths.name,
+    -- Find the average length of each track in seconds
+    AVG(track_lengths.num_seconds) AS avg_track_length
+FROM track_lengths
+GROUP BY track_lengths.name
+-- Sort the results by average track_length
+ORDER BY avg_track_length DESC;
 ```
 
 ## Finding the most efficient composer
