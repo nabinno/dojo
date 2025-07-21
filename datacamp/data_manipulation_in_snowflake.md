@@ -204,8 +204,25 @@ ORDER BY avg_track_length DESC;
 ```
 
 ## Finding the most efficient composer
-```
+```sql
+-- Create a CTE called track_metrics, convert milliseconds to seconds
+WITH track_metrics AS (
+    SELECT
+        composer,
+        milliseconds / 1000 AS num_seconds,
+        unit_price
+    FROM store.track
+    -- Retrieve records where composer is not NULL
+    WHERE composer IS NOT NULL
+)
 
+SELECT
+    composer,
+    -- Find the average price-per-second
+    AVG(unit_price / num_seconds) AS cost_per_second
+FROM track_metrics
+GROUP BY composer
+ORDER BY cost_per_second DESC;
 ```
 
 ## Where are customers buying?
