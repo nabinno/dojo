@@ -226,8 +226,21 @@ ORDER BY cost_per_second DESC;
 ```
 
 ## Where are customers buying?
-```
+```sql
+WITH usa_invoices AS (
+  SELECT
+    invoice_id,
+    billing_state
+  FROM invoice
+  WHERE billing_country = 'USA'
+)
 
+SELECT
+  COUNT(quantity)
+FROM usa_invoices
+JOIN invoiceline
+GROUP BY billing_state
+ORDER BY COUNT(quantity) DESC;
 ```
 
 ## Advanced Common Table Expressions
