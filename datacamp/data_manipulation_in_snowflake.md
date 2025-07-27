@@ -343,6 +343,17 @@ ORDER BY total_sales_driven DESC;
 ```
 
 ## Hot genres
-```
-
+```sql
+select
+    genre.name,
+    sum(track.track_id) as track_num,
+    case
+        when track_num <= 50 then 'Unpopular'
+        when track_num between 51 and 100 then 'Popular'
+        when track_num > 100 then 'Very Popular'
+    end as genre_type
+from track
+join genre on genre.genre_id = track.genre_id
+group by genre.name
+order by track_num desc;
 ```
