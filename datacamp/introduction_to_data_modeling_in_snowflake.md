@@ -5,14 +5,18 @@ url: https://campus.datacamp.com/courses/introduction-to-data-modeling-in-snowfl
 ---
 
 # 1 Fundamentals of Data Modeling
-## Introduction to Data Modeling
-```
-
-```
-
 ## Components of data modeling
 ```
+Entity:
+- Data about an object, concept, or place
 
+Attribute:
+- They help distinguish one entity from another
+- Property or characteristic
+
+Relationship:
+- Describes how two or more things one connected
+- Shows the association between multiple entities
 ```
 
 ## Describing an entity
