@@ -20,8 +20,8 @@ Relationship:
 ```
 
 ## Describing an entity
-```
-
+```sql
+DESC TABLE ecommerceonlineretail;
 ```
 
 ## Exploring Conceptual and Logical Data Models
