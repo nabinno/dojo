@@ -24,14 +24,24 @@ Relationship:
 DESC TABLE ecommerceonlineretail;
 ```
 
-## Exploring Conceptual and Logical Data Models
-```
-
-```
-
 ## Implementing conceptual data model
-```
+```sql
+-- Create a new products entity
+CREATE OR REPLACE TABLE products(
+	-- List the entity's attributes
+	stockcode VARCHAR(255),
+    description VARCHAR(255)
+);
 
+-- Create a new orders entity
+CREATE OR REPLACE TABLE orders (
+	-- List the invoice attributes
+	invoiceno VARCHAR(10),
+  	invoicedate TIMESTAMP_NTZ(9),
+  	-- List the attributes related to price and quantity
+  	unitprice NUMBER(10, 2),
+  	quantity NUMBER(38, 0)
+);
 ```
 
 ## Exploring Physical Data Models
