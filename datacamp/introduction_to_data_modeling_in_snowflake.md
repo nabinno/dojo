@@ -44,14 +44,14 @@ CREATE OR REPLACE TABLE orders (
 );
 ```
 
-## Exploring Physical Data Models
-```
-
-```
-
 ## Creating an entity
-```
-
+```sql
+-- Create customers table
+CREATE OR REPLACE TABLE customers (
+  -- Define unique identifier
+  customerid NUMBER(38) PRIMARY KEY,
+  country VARCHAR(255)
+);
 ```
 
 ## Building the physical data model
