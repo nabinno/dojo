@@ -55,8 +55,18 @@ CREATE OR REPLACE TABLE customers (
 ```
 
 ## Building the physical data model
-```
-
+```sql
+CREATE OR REPLACE TABLE orders (
+  	invoiceno VARCHAR(10) PRIMARY KEY,
+  	invoicedate TIMESTAMP_NTZ(9),
+  	unitprice NUMBER(10,2),
+  	quantity NUMBER(38,0),
+  	customerid NUMBER(38,0),
+  	stockcode VARCHAR(255),
+  	-- Add foreign key refering to the foreign tables
+	FOREIGN KEY (customerid) REFERENCES customers(customerid),
+  	FOREIGN KEY (stockcode) REFERENCES products(stockcode)
+);
 ```
 
 
