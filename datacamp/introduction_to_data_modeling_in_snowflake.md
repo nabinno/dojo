@@ -109,14 +109,16 @@ ALTER TABLE productqualityrating
 ADD COLUMN IF NOT EXISTS batch_id NUMBER(10,0);
 ```
 
-## Normalizing Relational Data
-```
-
-```
-
 ## Identifying Data Redundancy
-```
-
+```sql
+SELECT manufacturer,
+	company_location,
+	COUNT(*) AS product_count
+FROM productqualityrating
+GROUP BY manufacturer,
+	company_location
+-- Add a filter for occurrence count greater than 1
+HAVING product_count > 1;
 ```
 
 ## Spotting Anomalies
