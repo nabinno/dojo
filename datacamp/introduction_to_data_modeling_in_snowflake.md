@@ -91,8 +91,22 @@ ADD PRIMARY KEY (supplier_id);
 ```
 
 ## Adjusting the model
-```
+```sql
+-- Create entity
+CREATE OR REPLACE TABLE batchdetails (
+	-- Add numerical attribute
+	batch_id NUMBER(10,0),
+	-- Add characters attributes
+    batch_number VARCHAR(255),
+    production_notes VARCHAR(255)
+);
 
+ALTER TABLE batchdetails ADD PRIMARY KEY (batch_id);
+
+-- Modify the entity
+ALTER TABLE productqualityrating
+-- Add new column
+ADD COLUMN IF NOT EXISTS batch_id NUMBER(10,0);
 ```
 
 ## Normalizing Relational Data
