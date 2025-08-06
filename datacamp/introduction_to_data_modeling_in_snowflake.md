@@ -133,14 +133,23 @@ GROUP BY manufacturer
 HAVING distinct_combinations > 1;
 ```
 
-## The First Norm
-```
-
-```
-
 ## Creating 1NF entities
-```
+```sql
+-- Create a new entity
+CREATE OR REPLACE TABLE ingredients (
+	-- Add unique identifier
+    ingredient_id NUMBER(10,0) PRIMARY KEY,
+  	-- Add other attributes
+    ingredient VARCHAR(255)
+);
 
+-- Create a new entity
+CREATE OR REPLACE TABLE reviews (
+	-- Add unique identifier
+    review_id NUMBER(10,0) PRIMARY KEY,
+  	-- Add other attributes
+    review VARCHAR(255)
+);
 ```
 
 ## Applying 1NF
