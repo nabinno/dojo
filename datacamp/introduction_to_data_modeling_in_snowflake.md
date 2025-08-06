@@ -122,8 +122,15 @@ HAVING product_count > 1;
 ```
 
 ## Spotting Anomalies
-```
-
+```sql
+SELECT manufacturer,
+	COUNT(DISTINCT cocoa_percent, ingredients) AS distinct_combinations
+FROM productqualityrating
+WHERE bar_name = 'Arriba'
+    AND year_reviewed > 2006
+GROUP BY manufacturer
+-- Add the clause to filter
+HAVING distinct_combinations > 1;
 ```
 
 ## The First Norm
