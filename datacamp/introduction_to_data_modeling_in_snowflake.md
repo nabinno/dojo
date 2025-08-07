@@ -153,8 +153,24 @@ CREATE OR REPLACE TABLE reviews (
 ```
 
 ## Applying 1NF
-```
+```sql
+-- Add command to insert data
+INSERT INTO ingredients(ingredient_id, ingredient)
+SELECT
+	ROW_NUMBER() OVER (ORDER BY TRIM(f.value)),
+	TRIM(f.value)
+FROM productqualityrating,
+LATERAL FLATTEN(INPUT => SPLIT(productqualityrating.ingredients, ';')) f
+GROUP BY TRIM(f.value);
 
+-- Modify script for review
+INSERT INTO reviews(review_id, review)
+SELECT
+	ROW_NUMBER() OVER (ORDER BY TRIM(f.value)),
+	TRIM(f.value)
+FROM productqualityrating,
+LATERAL FLATTEN(INPUT => SPLIT(productqualityrating.review, ';')) f
+GROUP BY TRIM(f.value);
 ```
 
 ## 2NF and 3NF
