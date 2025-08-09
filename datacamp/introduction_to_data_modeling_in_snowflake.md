@@ -174,8 +174,27 @@ GROUP BY TRIM(f.value);
 ```
 
 ## 2NF and 3NF
-```
+```sql
+-- Add new entity
+CREATE OR REPLACE TABLE manufacturers (
+  	-- Assign unique identifier
+  	manufacturer_id NUMBER(10,0) PRIMARY KEY,
+  	--Add other attributes
+  	manufacturer VARCHAR(255),
+  	company_location VARCHAR(255)
+);
 
+-- Add values to manufacturers
+INSERT INTO manufacturers (manufacturer_id, manufacturer, company_location)
+SELECT
+	-- Generate a sequential number
+	ROW_NUMBER() OVER (ORDER BY manufacturer, company_location),
+	manufacturer,
+	company_location
+FROM productqualityrating
+-- Aggregate data by the other attributes
+GROUP BY manufacturer,
+	company_location;
 ```
 
 ## Applying 2NF
