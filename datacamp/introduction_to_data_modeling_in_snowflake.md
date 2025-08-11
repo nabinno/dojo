@@ -245,8 +245,20 @@ CREATE OR REPLACE TABLE employee_training_details (
 ```
 
 ## Retrieving data from ER model
-```
-
+```sql
+SELECT
+	employees.employee_id,
+    trainings.avg_training_score
+FROM employees
+	JOIN trainings
+	ON employees.employee_id = trainings.employee_id
+    -- Merge new entity
+    JOIN departments
+    ON employees.department_id = departments.department_id
+WHERE trainings.avg_training_score > 65
+	-- Add extra filter
+	AND departments.department_name = 'Operations'
+LIMIT 50;
 ```
 
 ## Dimensional Modeling
