@@ -228,14 +228,20 @@ DROP COLUMN IF EXISTS company_location;
 
 
 # 3 Data Modeling Techniques for Data Warehouse
-## Entity–relationship model
-```
-
-```
-
 ## Creating entities for ER model
-```
-
+```sql
+-- Create new entity
+CREATE OR REPLACE TABLE employee_training_details (
+  	-- Assign a unique identifier for the entity
+	employee_training_id NUMBER(10,0) PRIMARY KEY,
+  	-- Add new attribute
+    year NUMBER(4,0),
+  	-- Add new attributes to reference foreign entities
+  	employee_id NUMBER(38,0),
+    training_id NUMBER(38,0),
+    FOREIGN KEY (employee_id) REFERENCES employees(employee_id),
+    FOREIGN KEY (training_id) REFERENCES trainings(training_id)
+);
 ```
 
 ## Retrieving data from ER model
