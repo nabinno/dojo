@@ -261,14 +261,17 @@ WHERE trainings.avg_training_score > 65
 LIMIT 50;
 ```
 
-## Dimensional Modeling
-```
-
-```
-
 ## Preparing dimensions
-```
+```sql
+--Modify entity
+ALTER TABLE IF EXISTS employees
+RENAME TO dim_employees;
 
+ALTER TABLE IF EXISTS departments
+RENAME TO dim_departments;
+
+ALTER TABLE IF EXISTS trainings
+RENAME TO dim_trainings;
 ```
 
 ## Creating dimensions
