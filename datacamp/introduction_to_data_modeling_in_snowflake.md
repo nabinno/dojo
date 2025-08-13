@@ -275,8 +275,15 @@ RENAME TO dim_trainings;
 ```
 
 ## Creating dimensions
-```
-
+```sql
+-- Create new entity
+CREATE OR REPLACE TABLE dim_date (
+  	-- Add unique identifier
+    date_id NUMBER(10,0) PRIMARY KEY,
+  	-- Add new attributes to register date
+    year NUMBER(4,0),
+    month NUMBER(2,0)
+);
 ```
 
 ## Retrieving data from dimensional model
