@@ -287,8 +287,24 @@ CREATE OR REPLACE TABLE dim_date (
 ```
 
 ## Retrieving data from dimensional model
-```
-
+```sql
+SELECT
+	dim_employees.*,
+    dim_trainings.avg_training_score,
+    dim_departments.department_name
+FROM fact_employee_trainings
+	JOIN dim_employees
+    ON fact_employee_trainings.employee_id = dim_employees.employee_id
+    JOIN dim_trainings
+    ON fact_employee_trainings.training_id = dim_trainings.training_id
+    JOIN dim_departments
+    ON fact_employee_trainings.department_id = dim_departments.department_id
+    -- Add dimension needed
+    JOIN dim_date
+    ON fact_employee_trainings.date_id = dim_date.date_id
+WHERE dim_trainings.avg_training_score < 100
+    -- Add extra filter
+    AND dim_date.year = 2023;
 ```
 
 ## Data Vault
