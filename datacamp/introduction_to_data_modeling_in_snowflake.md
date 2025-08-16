@@ -307,13 +307,38 @@ WHERE dim_trainings.avg_training_score < 100
     AND dim_date.year = 2023;
 ```
 
-## Data Vault
-```
-
-```
-
 ## Creating hubs
-```
+```sql
+-- Create a new hub entity
+CREATE OR REPLACE TABLE hub_employee (
+	-- Assign automated values to the hub key
+	hub_employee_key NUMBER(10,0) AUTOINCREMENT PRIMARY KEY,
+	employee_id NUMBER(38,0),
+	-- Add attributes for historical tracking
+	load_date TIMESTAMP,
+	record_source VARCHAR(255)
+);
+
+CREATE OR REPLACE TABLE hub_department (
+	-- Assign automated values to the hub key
+	hub_department_id NUMBER(10,0) AUTOINCREMENT PRIMARY KEY,
+  	-- Add hubs key reference
+	department_id NUMBER(38,0),
+	-- Add attributes for historical tracking
+	load_date TIMESTAMP,
+	record_source VARCHAR(255)
+);
+
+CREATE OR REPLACE TABLE hub_training (
+	-- Add hub key
+	hub_training_key NUMBER(10,0) AUTOINCREMENT PRIMARY KEY,
+    -- Add the key attribute of trainings
+	training_id NUMBER(38,0),
+	-- Add history tracking attributes
+	load_date TIMESTAMP,
+	record_source VARCHAR(255)
+);
+
 
 ```
 
