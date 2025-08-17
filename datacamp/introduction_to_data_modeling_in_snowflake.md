@@ -385,8 +385,20 @@ CREATE OR REPLACE TABLE sat_training (
 ```
 
 ## Creating links
-```
-
+```sql
+CREATE OR REPLACE TABLE link_all (
+	link_key NUMBER(10,0) AUTOINCREMENT PRIMARY KEY,
+	hub_employee_key NUMBER(10,0),
+  	-- Add the hub's key attributes
+  	hub_training_key NUMBER(10,0),
+  	hub_department_key NUMBER(10,0),
+  	load_date TIMESTAMP,
+    record_source VARCHAR(255),
+	FOREIGN KEY (hub_employee_key) REFERENCES hub_employee(hub_employee_key),
+  	-- Add a relationship with the foreign hubs
+  	FOREIGN KEY (hub_training_key) REFERENCES hub_training(hub_training_key),
+  	FOREIGN KEY (hub_department_key) REFERENCES hub_department(hub_department_key)
+);
 ```
 
 ## Choosing the Right Approach
