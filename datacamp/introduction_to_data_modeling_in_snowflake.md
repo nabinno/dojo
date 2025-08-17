@@ -338,13 +338,50 @@ CREATE OR REPLACE TABLE hub_training (
 	load_date TIMESTAMP,
 	record_source VARCHAR(255)
 );
-
-
 ```
 
 ## Creating satellites
-```
+```sql
+-- Create a new satellite
+CREATE OR REPLACE TABLE sat_employee (
+	sat_employee_key NUMBER(10,0) AUTOINCREMENT PRIMARY KEY,
+	hub_employee_key NUMBER(10,0),
+   	employee_name VARCHAR(255),
+    gender CHAR(1),
+    age NUMBER(3,0),
+	-- Add history tracking attributes
+	load_date TIMESTAMP,
+    record_source VARCHAR(255),
+	-- Add a reference to foreign hub
+    FOREIGN KEY (hub_employee_key) REFERENCES hub_employee(hub_employee_key)
+);
 
+CREATE OR REPLACE TABLE sat_department (
+	-- Add the satellite's unique identifier
+	sat_department_key NUMBER(10,0) AUTOINCREMENT PRIMARY KEY,
+	-- Add the hub's key attribute
+	hub_department_key NUMBER(10,0),
+	department_name VARCHAR(255),
+	region VARCHAR(255),
+    -- Add history tracking attributes
+    load_date TIMESTAMP,
+    record_source VARCHAR(255),
+	-- Add a reference to foreign hub
+	FOREIGN KEY (hub_department_key) REFERENCES hub_department(hub_department_key)
+);
+
+CREATE OR REPLACE TABLE sat_training (
+	sat_training_key NUMBER(10,0) AUTOINCREMENT PRIMARY KEY,
+	-- Add the hub's key reference
+	hub_training_key NUMBER(10,0),
+	training_type VARCHAR(255),
+    duration NUMBER(4,0),
+    trainer_name VARCHAR(255),
+    load_date TIMESTAMP,
+    record_source VARCHAR(255),
+	-- Add a reference to foreign hub
+	FOREIGN KEY (hub_training_key) REFERENCES hub_training(hub_training_key)
+);
 ```
 
 ## Creating links
