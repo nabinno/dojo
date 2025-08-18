@@ -401,14 +401,19 @@ CREATE OR REPLACE TABLE link_all (
 );
 ```
 
-## Choosing the Right Approach
-```
-
-```
-
 ## Classifying data modeling techniques
 ```
+Entity-relationship:
+Daily routine business data
 
+Dimensional:
+Two major component: dimensions and facts.
+Easy for analysis and reporting
+
+Data vault:
+Keeps long-term historical data tracking
+Require managing multiple elements.
+Components are hubs, links and satelites.
 ```
 
 ## Mastering data retrieval
