@@ -417,8 +417,22 @@ Components are hubs, links and satelites.
 ```
 
 ## Mastering data retrieval
-```
-
+```sql
+SELECT
+    hub_e.hub_employee_key,
+    sat_d.department_name,
+    -- Aggregate the attribute
+    MAX(sat_t.avg_training_score) AS average_training
+FROM hub_employee hub_e
+	JOIN link_all AS li
+    ON hub_e.hub_employee_key = li.hub_employee_key
+    JOIN sat_department AS sat_d
+    ON li.hub_department_key = sat_d.hub_department_key
+    LEFT JOIN sat_training AS sat_t
+    ON li.hub_training_key = sat_t.hub_training_key
+WHERE sat_t.awards_won = 1
+-- Group the results
+GROUP BY hub_e.hub_employee_key, sat_d.department_name;
 ```
 
 
