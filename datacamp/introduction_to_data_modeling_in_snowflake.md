@@ -439,14 +439,17 @@ GROUP BY hub_e.hub_employee_key, sat_d.department_name;
 
 
 # 4 Snowflake Components
-## Query Performance in Snowflake
-```
-
-```
-
 ## Snowflake's storage method
 ```
+Row-Based Storage:
+Scans a list from top to bottom for details.
+Time-consuming to search specific data if the dataset is large.
+PostgreSQL is a databases system that use this storage method.
+Optimized for analytical queries targeting specific data
 
+Columnar Storage:
+columns.
+Fetches needed data quickly by going straight down the relevant column.
 ```
 
 ## Snowflake's advantages
