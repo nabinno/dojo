@@ -454,7 +454,10 @@ Fetches needed data quickly by going straight down the relevant column.
 
 ## Snowflake's advantages
 ```
-
+[x]Snowflake uses micro-partitions to enable efficient large-volume processing.
+[x]Snowflake's MPP system operates on a single server to process queries.
+[ ]Snowflake accesses only necessary micro-partitions for queries using an organized index.
+[x]Traditional systems like PostgreSQL may scan larger data sections even for small subsets.
 ```
 
 ## Snowflake Data Objects
