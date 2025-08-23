@@ -470,7 +470,16 @@ Fetches needed data quickly by going straight down the relevant column.
 
 ## Snowflake components
 ```
+Tables:
+- There are made up of rows and columns.
 
+Schemas:
+- It defines containers for database objects.
+- They act like folders for better arganization and data retrieval.
+- They can group multiple tables.
+
+Databases:
+- They can provides administrative boundaries far access control, resource allocation, and usage management.
 ```
 
 ## Implementing views
