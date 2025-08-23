@@ -460,14 +460,12 @@ Fetches needed data quickly by going straight down the relevant column.
 [x]Traditional systems like PostgreSQL may scan larger data sections even for small subsets.
 ```
 
-## Snowflake Data Objects
-```
-
-```
-
 ## Virtual data warehouses
 ```
-
+[x]Virtual warehouses in Snowflake allow for dynamic allocation of computing resources for data processing tasks.
+[ ]In Snowflake, the data warehouse is a physical location where databases are stored.
+[x]Snowflake's virtual warehouse is like having multiple dedicated rooms, each handling different tasks simultaneously without interference.
+[ ]Virtual warehouses in Snowflake require manual intervention to scale resources based on the query load.
 ```
 
 ## Snowflake components
