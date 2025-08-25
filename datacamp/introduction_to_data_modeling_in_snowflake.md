@@ -512,14 +512,13 @@ FROM customers AS c
 GROUP BY c.customerid;
 ```
 
-## Query Optimization
-```
-
-```
-
 ## Order of execution
 ```
-
+FROM
+WHERE
+GROUP BY
+HAVING
+ORDER BY
 ```
 
 ## Subquery mastery
