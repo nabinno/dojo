@@ -17,14 +17,17 @@ Other:
 - Runs forever
 ```
 
-## Scaling batch processing
-```
-
-```
-
 ## On the scale
 ```
+Vertical scaling:
+- Faster CPU
+- Faster memory
+- Better networking
 
+Horizontal scaling:
+- More SSDs (Solid State Drive)
+- More computers
+- More CPUs
 ```
 
 ## Horizontally opposed
