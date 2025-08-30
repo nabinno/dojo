@@ -32,7 +32,10 @@ Horizontal scaling:
 
 ## Horizontally opposed
 ```
-
+[x]Horizontal scaling is always more cost effective than vertical scaling.
+[ ]Horizontal scaling is often managed with a processing framework.
+[ ]Horizontal scaling requires connectivity between the processing systems.
+[ ]Horizontal scaling is more complex than vertical scaling.
 ```
 
 ## Batch issues
