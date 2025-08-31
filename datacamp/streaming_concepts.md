@@ -48,7 +48,14 @@ Horizontal scaling:
 
 ## Batch scenarios
 ```
+Appropriate for batching:
+- Order processing
+- Software compilation
+- Machine learning training
 
+Not appropriate for batching:
+- Internet audio
+- Fraud detection
 ```
 
 
