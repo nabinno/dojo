@@ -38,14 +38,12 @@ Horizontal scaling:
 [ ]Horizontal scaling is more complex than vertical scaling.
 ```
 
-## Batch issues
-```
-
-```
-
 ## Batch problems
 ```
-
+[ ]There can be a noticeable delay between when data is delivered and when it is processed.
+[ ]Given a large enough batch of data, it is possible to run out of storage space prior to processing.
+[x]Batches of data cannot be processed in parallel.
+[ ]Batches can take longer than the interval of time between processing instances.
 ```
 
 ## Batch scenarios
