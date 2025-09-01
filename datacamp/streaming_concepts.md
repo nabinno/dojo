@@ -62,19 +62,15 @@ Not appropriate for batching:
 
 
 # 2 Intro to Streaming
-## Intro to event-based computing
-```
-
-```
-
-## In the event of...
-```
-
-```
-
 ## Welcome to the event!
 ```
+True:
+- Event-based processes what for something to occur.
+- Event-based programs can contain batch components.
 
+False:
+- Event-based processes wait until all data is present.
+- Event-based processes always run at a certain time or date.
 ```
 
 ## Queuing
