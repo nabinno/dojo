@@ -62,7 +62,7 @@ Not appropriate for batching:
 
 
 # 2 Intro to Streaming
-## Welcome to the event!
+## In the event of...
 ```
 True:
 - Event-based processes what for something to occur.
@@ -71,6 +71,17 @@ True:
 False:
 - Event-based processes wait until all data is present.
 - Event-based processes always run at a certain time or date.
+```
+
+## Welcome to the event!
+```
+Event:
+- Button or link click
+- File upload
+- New user created
+- The clock roled to 12:00am Tuesday
+
+Not an event:
 ```
 
 ## Queuing
