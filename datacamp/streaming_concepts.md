@@ -84,19 +84,17 @@ Event:
 Not an event:
 ```
 
-## Queuing
-```
-
-```
-
-## Queue characteristics
-```
-
-```
-
 ## To queue or not to queue
 ```
+Describes a queue:
+- First-In First-Out
+- Similar to a line
+- Sometimes called a buffer
+- Can be disconnected from a data pipeline
 
+Does not describe a queue:
+- Last-In First-Out
+- Can retrieve items in any order
 ```
 
 ## Single system data streaming
