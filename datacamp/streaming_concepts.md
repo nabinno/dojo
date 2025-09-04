@@ -97,14 +97,12 @@ Does not describe a queue:
 - Can retrieve items in any order
 ```
 
-## Single system data streaming
-```
-
-```
-
 ## Log stream order
 ```
-
+1 Listener waits for events.
+2 Parser reads the information in the event.
+3 The process logic determines what to do with the data.
+4 THe log writer stores the information in a file as required.
 ```
 
 ## Log options
