@@ -107,7 +107,13 @@ Does not describe a queue:
 
 ## Log options
 ```
+Logging:
+- A list of read queries run against a database.
+- A list of database updates and deletions.
+- Debugging information about the tasks performed in a program.
+- Web page requests.
 
+Something else:
 ```
 
 ## Batching vs. streaming
