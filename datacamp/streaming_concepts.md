@@ -132,7 +132,11 @@ Stream:
 
 ## Log stream processor
 ```
-
+An event occurs that enters the logging system.
+Parse the information in the event.
+Classify the type of event.
+Send alerts out for appropriate event types.
+Write the event to storage for later processing / review.
 ```
 
 
