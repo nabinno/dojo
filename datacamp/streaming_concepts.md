@@ -116,14 +116,18 @@ Logging:
 Something else:
 ```
 
-## Batching vs. streaming
-```
-
-```
-
 ## Batch, queue, or stream?
 ```
+Batch:
+- Processing all items received by 1pm daily.
+- Creating groups of 10 random images every 2 hours.
 
+Queue:
+- Processing user comments in the order they're received, but only when the system has spare processing capacity.
+
+Stream:
+- Processing user song requests as soon as possible, without delay.
+- Storing user clicks on a web application as they arrive.
 ```
 
 ## Log stream processor
