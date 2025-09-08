@@ -143,14 +143,16 @@ Write the event to storage for later processing / review.
 
 
 # 3 Streaming Systems
-## Intro to real-time streaming
-```
-
-```
-
 ## Real-time?
 ```
+Real-time:
+- Guarantee transport time
+- Higher cost
+- Defined latency
 
+Non-realtime:
+- Best effort delivery
+- Lowest cost
 ```
 
 ## Is it real this time?
