@@ -1,7 +1,7 @@
 ---
-title: Introduction to Data Modeling in Snowflake
+title: Streaming Concepts
 tags: snowflake,analytics,data-modeling,data-engineering
-url: https://campus.datacamp.com/courses/introduction-to-data-modeling-in-snowflake
+url: https://campus.datacamp.com/courses/streaming-concepts
 ---
 
 # 1 Methods for Processing Data
@@ -157,7 +157,14 @@ Non-realtime:
 
 ## Is it real this time?
 ```
+Real-time:
+- Vehicle ABS system must update within 30ms continuously.
+- User website orders should be accepted within 10 seconds, otherwise display an error.
+- System security logs must be written to permanent storage within 15s of receipt.
 
+Non-real time:
+- Customer data should be converted to various image sizes as cheaply as possible.
+- Files should be replicated between multiple systems, based on availability.
 ```
 
 ## Vertically scaling streaming systems
