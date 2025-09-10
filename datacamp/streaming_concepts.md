@@ -167,14 +167,12 @@ Non-real time:
 - Files should be replicated between multiple systems, based on availability.
 ```
 
-## Vertically scaling streaming systems
-```
-
-```
-
 ## Scaling reasons
 ```
-
+[x]Your streaming system currently meets all SLAs with at least a 20% time window to spare.
+[ ]A processing pipeline needs to process 30% more data by next year.
+[ ]You expect to add 15 new customers to the same system within 3 months.
+[ ]The sales team has sold new stringent SLA agreements on a near fully loaded processing system.
 ```
 
 ## To vertically scale...?
