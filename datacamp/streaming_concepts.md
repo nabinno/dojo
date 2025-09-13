@@ -177,22 +177,25 @@ Non-real time:
 
 ## To vertically scale...?
 ```
+Would improve:
+- Swap solid-state drives in place of spinning hard disks
+- Install faster CPUs
+- Lower SLA expectation at a cheaper maintenance cost
 
-```
-
-## Horizontally scaling streaming systems
-```
-
-```
-
-## Upscaled out
-```
-
+Would not improve:
+- Move to a batch process
+- Ignore the SLA
 ```
 
 ## SLA guarantees
 ```
+Vertical:
+- Replacing hard disks with solid store drives
+- Swapping the CPU for a faster model
 
+Horizontal:
+- Purchasing 4 more systems for a total of 13 processing systems
+- Adding more CPUs to add more processing lines
 ```
 
 ## Streaming roadblocks
