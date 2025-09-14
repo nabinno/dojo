@@ -212,7 +212,16 @@ False:
 
 ## Streaming challenges
 ```
+Options:
 
+Issues for streaming:
+- Repeat messages
+- Delayed messages
+- Out of order messages
+
+Issues for batching:
+- Data received after cutoff interval
+- Not finishing within processing interval
 ```
 
 
