@@ -198,19 +198,16 @@ Horizontal:
 - Adding more CPUs to add more processing lines
 ```
 
-## Streaming roadblocks
-```
-
-```
-
-## Streaming attributes
-```
-
-```
-
 ## Issue types
 ```
+True:
+- Streaming data usaually represents events that have completed
+- Streaming processes often require extra memory to maintain state
+- Streaming processes are often implemented as immutable logs
 
+False:
+- Streaming data has a known ending point
+- Streaming processes must store data on disk prior to processing
 ```
 
 ## Streaming challenges
