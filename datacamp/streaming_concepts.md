@@ -228,14 +228,19 @@ Issues for batching:
 
 
 # 4 Real-World Use Cases
-## Popular streaming systems
-```
-
-```
-
 ## Streaming truths
 ```
+Statements:
 
+True:
+- Kafka can store messages indefinitely, assuming there is space to do so
+- Spark streaming can be used to transition from batch workloads
+- Celery is a queue-based system
+
+False:
+- Spark streaming can store messages indefinitely
+- Celery only works on a single system
+- Kafka is useful for batch processing
 ```
 
 ## Crossing the streams...
