@@ -245,7 +245,17 @@ False:
 
 ## Crossing the streams...
 ```
+Celery:
+- Resizing a user's profile image to the common sizes
+- Sending a welcome email when a user signs up for a new class
 
+Kafka:
+- Storing user interactions indefinitely
+- Passing emails to a group of systems all requiring a copy
+
+Spark streaming:
+- Converting a large quantity of messages from one format to another
+- Processing a large quantity of messages quickly and predicting if the content is positive or negative
 ```
 
 ## Real-world use case: streaming music service
