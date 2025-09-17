@@ -258,19 +258,17 @@ Spark streaming:
 - Processing a large quantity of messages quickly and predicting if the content is positive or negative
 ```
 
-## Real-world use case: streaming music service
-```
-
-```
-
-## Message components
-```
-
-```
-
 ## Answer me this...
 ```
+Required:
+- Timestamp
+- Button pressed
+- Client identifier
 
+Not required:
+- Background color of user's profile
+- Video being played by a friend at the some time as event
+- Application version
 ```
 
 ## Real-world use case: sensor data
