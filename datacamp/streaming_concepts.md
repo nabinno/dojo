@@ -271,14 +271,12 @@ Not required:
 - Application version
 ```
 
-## Real-world use case: sensor data
-```
-
-```
-
 ## Great order of the SLAs
 ```
-
+Doorbell button is pressed
+The onboard sensor detects movement
+The video data is uploaded for further analysis
+Current temperature data is provided
 ```
 
 ## Sensor scaling considerations
