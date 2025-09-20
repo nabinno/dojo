@@ -281,7 +281,13 @@ Current temperature data is provided
 
 ## Sensor scaling considerations
 ```
+Vertical:
+- A group of traffic sensors, doubling in quantity, but should process data within the same SLA. For budget reasons, only a single server can be used.
+- A set of temperature sensors for a single data center, where the data should be processed more quickly
 
+Horizontal:
+- A worldwide set of connected doorbells, which should be balanced based on location.
+- Power utilization sensors across a large metro area which should have no more than 10 sensors per central server.
 ```
 
 ## Real-world use case: vaccination clinic
