@@ -290,22 +290,16 @@ Horizontal:
 - Power utilization sensors across a large metro area which should have no more than 10 sensors per central server.
 ```
 
-## Real-world use case: vaccination clinic
-```
-
-```
-
-## Vaccination clinic - classify areas
-```
-
-```
-
 ## A new problem...
 ```
+Batch process:
+- Monitoring
 
-```
+Queued process:
+- Arrival / entrance
 
-## Congratulations!
-```
-
+Streaming process:
+- Departure
+- Vaccine administration
+- Registration
 ```
