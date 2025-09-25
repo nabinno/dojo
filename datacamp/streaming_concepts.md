@@ -84,7 +84,7 @@ Event:
 Not an event:
 ```
 
-## To queue or not to queue
+## Queue characteristics
 ```
 Describes a queue:
 - First-In First-Out
@@ -95,6 +95,17 @@ Describes a queue:
 Does not describe a queue:
 - Last-In First-Out
 - Can retrieve items in any order
+```
+
+## To queue or not to queue
+```
+Use a queue:
+- A client requires an order handling system for digital items that are always instock. They want each sale fulfilled in the order it was received.
+- An online game that can only support a single user, but your manager asks to allow each user to click a `I ant to play` button and wait their turn.
+
+Don't use a queue:
+- Develop an image processing system, where you must process as many items as possible at a time. Ordering does not matter in this case.
+- A client wants to run a raffle where user usere information is centrally stored. Once the raffle starts, they want to abtain the winner info on demand.
 ```
 
 ## Log stream order
