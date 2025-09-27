@@ -198,7 +198,7 @@ Would not improve:
 - Ignore the SLA
 ```
 
-## SLA guarantees
+## Upscaled out
 ```
 Vertical:
 - Replacing hard disks with solid store drives
@@ -207,6 +207,17 @@ Vertical:
 Horizontal:
 - Purchasing 4 more systems for a total of 13 processing systems
 - Adding more CPUs to add more processing lines
+```
+
+## SLA guarantees
+```
+Would help meet SLA:
+- A customer needs to reduce the time required to process a given item. You swap in a faster CPU.
+- A client would like to improve a CPU bound process. This system already has the fastest CPU available. You add an SSD.
+
+Would not help meet SLA:
+- A client needs to process more events simultaneously. You double the number of systems being used.
+- A coworker needs to reduce the processing time for a single event. You add 3 systems to the cluster.
 ```
 
 ## Issue types
