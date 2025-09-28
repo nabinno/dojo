@@ -220,7 +220,7 @@ Would not help meet SLA:
 - A coworker needs to reduce the processing time for a single event. You add 3 systems to the cluster.
 ```
 
-## Issue types
+## Streaming attributes
 ```
 True:
 - Streaming data usaually represents events that have completed
@@ -231,6 +231,22 @@ False:
 - Streaming data has a known ending point
 - Streaming processes must store data on disk prior to processing
 ```
+
+## Issue types
+```
+Missing:
+- 1,2,-,4,5
+- Meesage A,-,Message C,Message D,Message E
+
+Out of order:
+- Msg1,Msg2,Msg3,Msg5,Msg4
+- A,B,D,C,E
+
+Delayed:
+- 1,2,-,-,3
+- A,B,C,-<D
+```
+
 
 ## Streaming challenges
 ```
