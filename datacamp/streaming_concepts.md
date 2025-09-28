@@ -296,7 +296,7 @@ Spark streaming:
 - Processing a large quantity of messages quickly and predicting if the content is positive or negative
 ```
 
-## Answer me this...
+## Message components
 ```
 Required:
 - Timestamp
@@ -307,6 +307,25 @@ Not required:
 - Background color of user's profile
 - Video being played by a friend at the some time as event
 - Application version
+```
+
+## Answer me this...
+```
+Table columns:
+- client_id
+- timestamp
+- action_taken: Video liked, Video skipped, Video rewatched, Genre liked
+- action_details
+
+Can answer:
+- How many times has a user skipped a given video?
+- What are the three most active times for all users?
+- How many games does the user like?
+
+Cannot answer:
+- Did a user skip a video because they don't like it?
+- Does a user like the same videos as his first friend?
+- Does a user like all videos from a given creator?
 ```
 
 ## Great order of the SLAs
