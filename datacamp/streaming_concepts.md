@@ -347,7 +347,7 @@ Horizontal:
 - Power utilization sensors across a large metro area which should have no more than 10 sensors per central server.
 ```
 
-## A new problem...
+## Vaccination clinic - classify areas
 ```
 Batch process:
 - Monitoring
@@ -359,4 +359,19 @@ Streaming process:
 - Departure
 - Vaccine administration
 - Registration
+```
+
+## A new problem...
+```
+Batch:
+- Process all data from the past hour for analytic consolidation.
+- Generate customer billing statements monthly.
+
+Queue:
+- Contact customer directly to verify purchase attempts.
+- Alert the customer to any issue via email / text message.
+
+Stream:
+- Write all transaction information to a log upon receipt.
+- Run transactions for fraud prediction against a machine learning model.
 ```
