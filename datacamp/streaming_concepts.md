@@ -19,7 +19,12 @@ Other:
 
 ## Batch ordering
 ```
-
+Start the process
+Read the first 10 files
+Store the first set of results and finish this round
+Start the next batch process
+Read the remaining files
+Store the remaining result and complete the process
 ```
 
 ## On the scale
