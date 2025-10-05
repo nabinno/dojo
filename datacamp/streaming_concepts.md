@@ -5,7 +5,7 @@ url: https://campus.datacamp.com/courses/streaming-concepts
 ---
 
 # 1 Methods for Processing Data
-## Batch ordering
+## Batch characteristics
 ```
 Batch Process:
 - Is run to completion
@@ -15,6 +15,11 @@ Batch Process:
 Other:
 - Always listens for new data
 - Runs forever
+```
+
+## Batch ordering
+```
+
 ```
 
 ## On the scale
