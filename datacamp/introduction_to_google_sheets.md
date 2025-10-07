@@ -5,14 +5,12 @@ url: https://campus.datacamp.com/courses/introduction-to-google-sheets/cells-and
 ---
 
 # 1 Cells and Formulas
-## Navigating Google Sheets
-```
-
-```
-
 ## Importing data into Google Sheets
 ```
-
+[ ]Data can only be imported from other spreadsheet files, such as .xlsx files.
+[ ]To import data into a spreadsheet, navigate to File > Open.
+[ ]When importing data, you have to create a new spreadsheet.
+[x]Data from .csv, .txt, .tsv, and .xlsx files can all be imported into Google Sheets.
 ```
 
 ## Changing cell contents
