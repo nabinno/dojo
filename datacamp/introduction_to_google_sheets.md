@@ -15,7 +15,12 @@ url: https://campus.datacamp.com/courses/introduction-to-google-sheets/cells-and
 
 ## Changing cell contents
 ```
-
+Name	Weight (g)	KCal	Expires on	Price
+Eggs	121	200	2018-01-21	$0.40
+Sugar	125	484	2020-01-01	$2.50
+Butter	65	466	2018-01-20	$2.50
+Flour	190	692	2018-09-01	$0.30
+Baking powder	30	10	2018-12-31	$0.10
 ```
 
 ## Cell ranges
