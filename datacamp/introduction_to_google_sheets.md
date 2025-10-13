@@ -32,14 +32,13 @@ Butter	65	466	2018-01-20	$2.50
 Flour	190	692	2018-09-01	$0.25
 ```
 
-## Cell mathematics!
-```
-
-```
-
 ## Formulas
 ```
-
+Name	Weight (g)	KCal	Expires on	Price	Quantity	Total Price
+Eggs	121	186	2018-01-21	$0.40	2	0.8
+Sugar	125	484	2020-01-01	$0.20	3	0.6
+Butter	65	466	2018-01-20	$2.00	2	4
+Flour	190	692	2018-09-01	$0.30	4	1.2
 ```
 
 ## Exponents and parentheses
