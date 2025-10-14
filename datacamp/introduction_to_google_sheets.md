@@ -43,7 +43,11 @@ Flour	190	692	2018-09-01	$0.30	4	1.2
 
 ## Exponents and parentheses
 ```
-
+Name	Weight (g)	KCal	Expires on	Price	New Price
+Eggs	121	186	2018-01-21	$0.40	0.36
+Sugar	125	484	2020-01-01	$0.20	0.16
+Butter	65	466	2018-01-20	$2.00	4.84
+Flour	190	692	2018-09-01	$0.30	0.25
 ```
 
 ## Percentages
