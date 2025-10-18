@@ -68,14 +68,13 @@ Butter	65	466	2018-01-20	$2.00
 Flour	190	692	2018-09-01	$0.30
 ```
 
-## Working with text and numbers
-```
-
-```
-
 ## Working with currencies and dates
 ```
-
+Name	Weight (g)	KCal	Expires on	Price
+Eggs	121	186	1/21/2018	$0
+Sugar	125	484	1/1/2020	$0
+Butter	65	466	1/20/2018	$2
+Flour	190	692	9/1/2018	$0
 ```
 
 ## Comparison operators and logicals
