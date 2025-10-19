@@ -79,7 +79,11 @@ Flour	190	692	9/1/2018	$0
 
 ## Comparison operators and logicals
 ```
-
+Name	Weight (g)	KCal	Expires on	Price	Less than $1	Energy dense
+Eggs	121	186	2018-01-21	$0.40	TRUE	FALSE
+Sugar	125	484	2020-01-01	$0.20	TRUE	TRUE
+Butter	65	466	2018-01-20	$2.00	FALSE	TRUE
+Flour	190	692	2018-09-01	$0.30	TRUE	TRUE
 ```
 
 
