@@ -91,14 +91,19 @@ Flour	190	692	2018-09-01	$0.30	TRUE	TRUE
 
 
 # 2 Cell References
-## Introduction to cell references
-```
-
-```
-
 ## Using cell references
 ```
-
+Country	Continent	Population	Land Area (km2)
+China	Europe	1,409,517,397	9,326,410
+India	Asia	1,339,180,127	2,973,190
+United States	North America	324,459,463	9,147,593
+Indonesia	Asia	263,991,379	1,811,569
+Brazil	South America	209,288,278	8,460,415
+Pakistan	Asia	197,015,955	881,912
+Nigeria	Africa	190,886,311	910,768
+Bangladesh	Asia	164,669,751	130,168
+Russia	Europe	143,989,754	16,377,742
+Mexico	North America	129,163,276	1,943,945
 ```
 
 ## Circular references
