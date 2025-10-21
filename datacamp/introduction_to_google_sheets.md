@@ -106,16 +106,6 @@ Russia	Europe	143,989,754	16,377,742
 Mexico	North America	129,163,276	1,943,945
 ```
 
-## Circular references
-```
-
-```
-
-## Copying references
-```
-
-```
-
 ## Calculations with cell references
 ```
 
