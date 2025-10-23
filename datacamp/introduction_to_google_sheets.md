@@ -106,24 +106,34 @@ Russia	Europe	143,989,754	16,377,742
 Mexico	North America	129,163,276	1,943,945
 ```
 
-## Calculations with cell references
-```
-
-```
-
 ## Mathematical operators and references
 ```
-
-```
-
-## Percentages and references
-```
-
+Country	Population	Land Area (km2)	Land Area (mi2)
+China	1409517397	9,326,410	3,600,931
+India	1339180127	2,973,190	1,147,950
+United States	324459463	9,147,593	3,531,889
+Indonesia	263991379	1,811,569	699,447
+Brazil	209288278	8,460,415	3,266,569
+Pakistan	197015955	881,912	340,507
+Nigeria	190886311	910,768	351,648
+Bangladesh	164669751	130,168	50,258
+Russia	143989754	16,377,742	6,323,453
+Mexico	129163276	1,943,945	750,558
 ```
 
 ## Comparison operators and references
 ```
-
+Country	Population	Land Area (km2)	Growth	Density
+China	1,409,517,397	9,326,410	15,786,595	151
+India	1,339,180,127	2,973,190	14,998,817	450
+United States	324,459,463	9,147,593	3,633,946	35
+Indonesia	263,991,379	1,811,569	2,956,703	146
+Brazil	209,288,278	8,460,415	2,344,029	25
+Pakistan	197,015,955	881,912	2,206,579	223
+Nigeria	190,886,311	910,768	2,137,927	210
+Bangladesh	164,669,751	130,168	1,844,301	1,265
+Russia	143,989,754	16,377,742	1,612,685	9
+Mexico	129,163,276	1,943,945	1,446,629	66
 ```
 
 ## Absolute references
