@@ -136,6 +136,21 @@ Russia	143,989,754	16,377,742	1,612,685	9
 Mexico	129,163,276	1,943,945	1,446,629	66
 ```
 
+## Comparison operators and references
+```
+Country	Continent	Population	Land Area (km2)	Density	Over Avg	North American
+China	Asia	1,409,517,397	9,326,410	151	TRUE	FALSE
+India	Asia	1,339,180,127	2,973,190	450	TRUE	FALSE
+United States	North America	324,459,463	9,147,593	35	FALSE	TRUE
+Indonesia	Asia	263,991,379	1,811,569	146	TRUE	FALSE
+Brazil	South America	209,288,278	8,460,415	25	FALSE	FALSE
+Pakistan	Asia	197,015,955	881,912	223	TRUE	FALSE
+Nigeria	Africa	190,886,311	910,768	210	TRUE	FALSE
+Bangladesh	Asia	164,669,751	130,168	1,265	TRUE	FALSE
+Russia	Europe/Asia	143,989,754	16,377,742	9	FALSE	FALSE
+Mexico	North America	129,163,276	1,943,945	66	TRUE	TRUE
+```
+
 ## Absolute references
 ```
 
