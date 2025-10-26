@@ -151,14 +151,20 @@ Russia	Europe/Asia	143,989,754	16,377,742	9	FALSE	FALSE
 Mexico	North America	129,163,276	1,943,945	66	TRUE	TRUE
 ```
 
-## Absolute references
-```
-
-```
-
 ## Using absolute references
 ```
-
+Country	Population	Land Area (km2)	Relative population
+China	1,409,517,397	9,326,410	100
+India	1,339,180,127	2,973,190	95
+United States	324,459,463	9,147,593	23
+Indonesia	263,991,379	1,811,569	19
+Brazil	209,288,278	8,460,415	15
+Pakistan	197,015,955	881,912	14
+Nigeria	190,886,311	910,768	14
+Bangladesh	164,669,751	130,168	12
+Russia	143,989,754	16,377,742	10
+Mexico	129,163,276	1,943,945	9
+World	7,550,262,101	148,940,000	536
 ```
 
 ## Absolute references: fixing rows
