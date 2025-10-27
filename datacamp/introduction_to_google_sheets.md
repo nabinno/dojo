@@ -169,7 +169,18 @@ World	7,550,262,101	148,940,000	536
 
 ## Absolute references: fixing rows
 ```
-
+Country	Population	Land Area (km2)	Relative population	Relative area
+China	1,409,517,397	9,326,410	19	6
+India	1,339,180,127	2,973,190	18	2
+United States	324,459,463	9,147,593	4	6
+Indonesia	263,991,379	1,811,569	3	1
+Brazil	209,288,278	8,460,415	3	6
+Pakistan	197,015,955	881,912	3	1
+Nigeria	190,886,311	910,768	3	1
+Bangladesh	164,669,751	130,168	2	0
+Russia	143,989,754	16,377,742	2	11
+Mexico	129,163,276	1,943,945	2	1
+World	7,550,262,101	148,940,000
 ```
 
 ## Absolute references: fixing columns
