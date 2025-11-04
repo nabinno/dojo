@@ -61,14 +61,18 @@ WHERE
         END IS NOT NULL;
 ```
 
-## CASE WHEN with aggregate functions
-```
-
-```
-
 ## COUNT using CASE WHEN
 ```
-
+SELECT
+    c.name AS country,
+    -- Count matches in 2012/13
+    COUNT(CASE WHEN m.season = '2012/2013' THEN m.id END) AS matches_2012_2013,
+    -- Count matches in 2013/14
+    COUNT(CASE WHEN m.season = '2013/2014' THEN m.id END) AS matches_2013_2014
+FROM country AS c
+LEFT JOIN match AS m
+ON c.id = m.country_id
+GROUP BY country;
 ```
 
 ## Filtering and totaling using CASE WHEN
