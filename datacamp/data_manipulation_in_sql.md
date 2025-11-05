@@ -77,7 +77,14 @@ GROUP BY country;
 
 ## Filtering and totaling using CASE WHEN
 ```
-
+SELECT season,
+    -- SUM the home goals
+    SUM(CASE WHEN hometeam_id = 8560 THEN home_goal END) AS home_goals,
+    -- SUM the away goals
+    SUM(CASE WHEN awayteam_id = 8560 THEN away_goal END) AS away_goals
+FROM match
+-- Group the results by season
+GROUP BY season
 ```
 
 ## Calculating percent with CASE and AVG
