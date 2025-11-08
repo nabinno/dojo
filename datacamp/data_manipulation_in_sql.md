@@ -108,14 +108,18 @@ GROUP BY country;
 
 
 # 2 Short and Simple Subqueries
-## WHERE are the Subqueries?
-```
-
-```
-
 ## Filtering using scalar subqueries
-```
-
+```sql
+SELECT
+    -- Select the date, home goals, and away goals scored
+    date,
+    home_goal,
+    away_goal
+FROM matches_2013_2014
+-- Filter for matches where total goals exceeds 3x the average
+WHERE (home_goal + away_goal) >
+       (SELECT 3 * AVG(home_goal + away_goal)
+        FROM matches_2013_2014);
 ```
 
 ## Filtering using a subquery with a list
