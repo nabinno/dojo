@@ -123,8 +123,15 @@ WHERE (home_goal + away_goal) >
 ```
 
 ## Filtering using a subquery with a list
-```
-
+```sql
+SELECT
+    -- Select the team long and short names
+    team_long_name,
+    team_short_name
+FROM team
+-- Exclude all values from the subquery
+WHERE team_api_id NOT IN
+     (SELECT DISTINCT awayteam_id FROM match);
 ```
 
 ## Filtering with more complex subquery conditions
