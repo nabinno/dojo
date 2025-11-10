@@ -148,14 +148,29 @@ WHERE team_api_id IN
        WHERE home_goal >= 8);
 ```
 
-## Subqueries in FROM
-```
-
-```
-
 ## Joining Subqueries in FROM
-```
+```sql
+SELECT
+    -- Select the country ID and match ID
+    country_id,
+    id
+FROM match
+-- Filter for matches with 10 or more goals in total
+WHERE (home_goal + away_goal) >= 10;
 
+SELECT
+    -- Select country name and the count match IDs
+    name AS country_name,
+    COUNT(*) AS matches
+FROM country AS c
+-- Inner join the subquery onto country
+-- Select the country id and match id columns
+INNER JOIN (SELECT id, country_id
+           FROM match
+           -- Filter the subquery by matches with 10+ goals
+           WHERE (home_goal + away_goal) >= 10) AS sub
+ON c.id = sub.country_id
+GROUP BY country_name;
 ```
 
 ## Building on Subqueries in FROM
