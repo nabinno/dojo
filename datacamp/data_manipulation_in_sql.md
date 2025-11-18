@@ -295,14 +295,21 @@ WHERE
 
 
 # 3 Correlated Queries, Nested Queries, and Common Table Expressions
-## Correlated subqueries
-```
-
-```
-
 ## Getting started with correlated subqueries
-```
-
+```sql
+SELECT
+    main.country_id,
+    main.date,
+    main.home_goal,
+    main.away_goal
+FROM match AS main
+WHERE
+    -- Filter the main query by the subquery
+    (home_goal + away_goal) >
+        (SELECT AVG((sub.home_goal + sub.away_goal) * 3)
+         FROM match AS sub
+         -- Join the main query to the subquery with country_id in WHERE
+         WHERE main.country_id = sub.country_id);
 ```
 
 ## Correlated subquery with multiple conditions
