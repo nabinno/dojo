@@ -330,14 +330,19 @@ WHERE
                AND main.season = sub.season);
 ```
 
-## Nested subqueries
-```
-
-```
-
 ## Getting started with nested subqueries
-```
-
+```sql
+SELECT
+    season,
+    MAX(home_goal + away_goal) AS max_goals,
+    (SELECT MAX(home_goal + away_goal)
+     FROM match
+     WHERE season = main.season
+     -- Subquery to get the max goals in an 'England Premier League' match for the same season
+     AND country_id IN (1729)
+    ) AS pl_max_goals
+FROM match AS main
+GROUP BY season;
 ```
 
 ## Nest a subquery in FROM
