@@ -562,8 +562,13 @@ ON home.id = away.id;
 ```
 
 ## Which technique to use?
-```
+```sql
+Which of the following statements is false regarding differences in the use and performance of multiple/nested subqueries, correlated subqueries, and common table expressions?
 
+[ ]Correlated subqueries can allow you to circumvent multiple, complex joins.
+[ ]Common table expressions are declared first, improving query run time.
+[x]Correlated subqueries can reduce the length of your query, which improves query run time.
+[ ]Multiple or nested subqueries are processed first, before your main query.
 ```
 
 
