@@ -54,7 +54,28 @@ ORDER BY Year;
 
 ## Numbering Olympic athletes by medals earned
 ```sql
+SELECT
+  -- Count the number of medals each athlete has earned
+  Athlete,
+  COUNT(*) AS Medals
+FROM Summer_Medals
+GROUP BY Athlete
+ORDER BY Medals DESC;
 
+WITH Athlete_Medals AS (
+  SELECT
+    -- Count the number of medals each athlete has earned
+    Athlete,
+    COUNT(*) AS Medals
+  FROM Summer_Medals
+  GROUP BY Athlete)
+
+SELECT
+  -- Number each athlete by how many medals they've earned
+  Athlete,
+  ROW_NUMBER() OVER (ORDER BY Medals DESC) AS Row_N
+FROM Athlete_Medals
+ORDER BY Medals DESC;
 ```
 
 ## Reigning weightlifting champions
