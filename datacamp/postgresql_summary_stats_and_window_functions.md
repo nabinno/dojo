@@ -155,20 +155,9 @@ FROM Athletics_Gold
 ORDER BY Event ASC, Gender ASC, Year ASC;
 ```
 
-## Row numbers with partitioning
-```sql
-
-```
-
-
 
 
 # 2 Fetching, ranking, and paging
-## Fetching
-```sql
-
-```
-
 ## Future gold medalists
 ```sql
 
