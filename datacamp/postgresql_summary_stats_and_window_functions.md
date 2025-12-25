@@ -160,7 +160,23 @@ ORDER BY Event ASC, Gender ASC, Year ASC;
 # 2 Fetching, ranking, and paging
 ## Future gold medalists
 ```sql
+WITH Discus_Medalists AS (
+  SELECT DISTINCT
+    Year,
+    Athlete
+  FROM Summer_Medals
+  WHERE Medal = 'Gold'
+    AND Event = 'Discus Throw'
+    AND Gender = 'Women'
+    AND Year >= 2000)
 
+SELECT
+  -- For each year, fetch the current and future medalists
+  Year,
+  Athlete,
+  LEAD(Athlete, 3) OVER (ORDER BY Year ASC) AS Future_Champion
+FROM Discus_Medalists
+ORDER BY Year ASC;
 ```
 
 ## First athlete by name
