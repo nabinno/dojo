@@ -257,19 +257,18 @@ FROM Athlete_Medals
 ORDER BY Country ASC, RANK_N ASC;
 ```
 
-## DENSE_RANK's output
-```sql
-
-```
-
-## Paging
-```sql
-
-```
-
 ## Paging events
 ```sql
+WITH Events AS (
+  SELECT DISTINCT Event
+  FROM Summer_Medals)
 
+SELECT
+  --- Split up the distinct events into 111 unique groups
+  Event,
+  NTILE(111) OVER (ORDER BY Event ASC) AS Page
+FROM Events
+ORDER BY Event ASC;
 ```
 
 ## Top, middle, and bottom thirds
