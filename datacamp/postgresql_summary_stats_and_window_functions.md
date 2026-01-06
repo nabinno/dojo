@@ -315,14 +315,24 @@ ORDER BY Third ASC;
 
 
 # 3 Aggregate window functions and frames
-## Aggregate window functions
-```sql
-
-```
-
 ## Running totals of athlete medals
 ```sql
+WITH Athlete_Medals AS (
+  SELECT
+    Athlete, COUNT(*) AS Medals
+  FROM Summer_Medals
+  WHERE
+    Country = 'USA' AND Medal = 'Gold'
+    AND Year >= 2000
+  GROUP BY Athlete)
 
+SELECT
+  -- Calculate the running total of athlete medals
+  Athlete,
+  Medals,
+  SUM(Medals) OVER (ORDER BY Athlete ASC) AS Max_Medals
+FROM Athlete_Medals
+ORDER BY Athlete ASC;
 ```
 
 ## Maximum country medals by year
