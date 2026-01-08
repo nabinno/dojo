@@ -376,14 +376,15 @@ FROM France_Medals
 ORDER BY Year ASC;
 ```
 
-## Frames
-```sql
-
-```
-
 ## Number of rows in a frame
-```sql
+```
+How many rows does the following frame span?
 
+ROWS BETWEEN 3 PRECEDING AND 2 FOLLOWING
+
+[ ]5
+[x]6
+[ ]4
 ```
 
 ## Moving maximum of Scandinavian athletes' medals
