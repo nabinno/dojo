@@ -433,14 +433,12 @@ FROM Chinese_Medals
 ORDER BY Athlete ASC;
 ```
 
-## Moving averages and totals
-```sql
-
-```
-
 ## Moving average's frame
-```sql
-
+```
+If you want your moving average to cover the last 3 and current Olympic games, how would you define its frame?
+[ ]ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING
+[ ]ROWS BETWEEN 3 PRECEDING AND 1 PRECEDING
+[x]ROWS BETWEEN 3 PRECEDING AND CURRENT ROW
 ```
 
 ## Moving average of Russian medals
