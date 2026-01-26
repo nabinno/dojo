@@ -15,8 +15,17 @@ Which of the following is not a valid text data type in PostgreSQL?
 ```
 
 ## Getting information about your database
-```
+```sql
+-- Select all columns from the TABLES system database
+SELECT *
+FROM INFORMATION_SCHEMA.TABLES
+-- Filter by schema
+WHERE table_schema = 'public';
 
+-- Select all columns from the COLUMNS system database
+SELECT *
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE table_name = 'actor';
 ```
 
 ## Determining data types
