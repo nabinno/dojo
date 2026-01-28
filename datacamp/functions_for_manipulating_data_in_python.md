@@ -40,14 +40,14 @@ FROM INFORMATION_SCHEMA.COLUMNS
 WHERE table_name = 'customer';
 ```
 
-## Date and time data types
-```
-
-```
-
 ## Properties of date and time data types
 ```
+Which of the following is NOT correct?
 
+[ ]TIMESTAMP data types contain both date and time values.
+[ ]DATE data types use an yyyy-mm-dd format.
+[ ]INTERVAL types are representations of periods of time.
+[x]TIME data types are stored with a timezone by default.
 ```
 
 ## Interval data types
