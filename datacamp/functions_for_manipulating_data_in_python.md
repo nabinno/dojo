@@ -61,14 +61,29 @@ SELECT
 FROM rental;
 ```
 
-## Working with ARRAYs
-```
-
-```
-
 ## Accessing data in an ARRAY
-```
+```sql
+-- 1) Select the title and special features column
+SELECT
+  title,
+  special_features
+FROM film;
 
+-- 2) Select the title and special features column
+SELECT
+  title,
+  special_features
+FROM film
+-- Use the array index of the special_features column
+WHERE special_features[1] = 'Trailers';
+
+-- 3) Select the title and special features column
+SELECT
+  title,
+  special_features
+FROM film
+-- Use the array index of the special_features column
+WHERE special_features[2] = 'Deleted Scenes';
 ```
 
 ## Searching an ARRAY with ANY
