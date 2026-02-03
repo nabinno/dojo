@@ -87,8 +87,13 @@ WHERE special_features[2] = 'Deleted Scenes';
 ```
 
 ## Searching an ARRAY with ANY
-```
-
+```sql
+SELECT
+  title,
+  special_features
+FROM film
+-- Modify the query to use the ANY function
+WHERE 'Trailers' = ANY (special_features);
 ```
 
 ## Searching an ARRAY with @>
