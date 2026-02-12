@@ -162,14 +162,13 @@ FROM film AS f
 ORDER BY f.title;
 ```
 
-## Functions for retrieving current date/time
-```
-
-```
-
 ## Current timestamp functions
 ```
-
+Use the console to explore the NOW(), CURRENT_TIMESTAMP, CURRENT_DATE and CURRENT_TIME functions and their outputs to determine which of the following is NOT correct?
+[ ]NOW() returns the current date and time as a timestamp with timezone.
+[x]CURRENT_TIMESTAMP returns the current timestamp without timezone.
+[ ]CURRENT_DATE returns the current date value without a time value.
+[ ]CURRENT_TIME returns the current time value without a date value.
 ```
 
 ## Working with the current date and time
