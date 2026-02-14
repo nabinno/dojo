@@ -172,8 +172,22 @@ Use the console to explore the NOW(), CURRENT_TIMESTAMP, CURRENT_DATE and CURREN
 ```
 
 ## Working with the current date and time
-```
+```sql
+-- 1) Select the current timestamp
+SELECT NOW();
 
+-- 2) Select the current date
+SELECT CURRENT_DATE;
+
+-- 3) Select the current timestamp without a timezone
+SELECT CAST( NOW() AS timestamp )
+
+-- 4)
+SELECT
+    -- Select the current date
+    CURRENT_DATE,
+    -- CAST the result of the NOW() function to a date
+    CAST( NOW() AS date )
 ```
 
 ## Manipulating the current date and time
