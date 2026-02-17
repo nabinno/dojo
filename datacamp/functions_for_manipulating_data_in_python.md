@@ -206,14 +206,22 @@ SELECT
     interval '5 days' + CURRENT_TIMESTAMP(0) AS five_days_from_now;
 ```
 
-## Extracting and transforming date/ time data
-```
-
-```
-
 ## Using EXTRACT
-```
+```sql
+-- 1)
+SELECT
+  -- Extract day of week from rental_date
+  EXTRACT(dow from rental_date) AS dayofweek
+FROM rental
+LIMIT 100;
 
+-- 2) Extract day of week from rental_date
+SELECT
+  EXTRACT(dow FROM rental_date) AS dayofweek,
+  -- Count the number of rentals
+  COUNT(*) as rentals
+FROM rental
+GROUP BY 1;
 ```
 
 ## Using DATE_TRUNC
