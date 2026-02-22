@@ -292,14 +292,15 @@ WHERE
 
 
 # 3 Parsing and Manipulating Text
-## Reformatting string and character data
-```
-
-```
-
 ## Concatenating strings
-```
+```sql
+-- 1) Concatenate the first_name and last_name and email
+SELECT first_name || ' ' || last_name || ' <' || email || '>' AS full_email
+FROM customer;
 
+-- 2) Concatenate the first_name and last_name and email
+SELECT CONCAT(first_name, ' ', last_name,  ' <', email, '>') AS full_email
+FROM customer
 ```
 
 ## Changing the case of string data
