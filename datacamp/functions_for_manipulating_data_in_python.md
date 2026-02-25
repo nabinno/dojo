@@ -320,8 +320,11 @@ FROM
 ```
 
 ## Replacing string data
-```
-
+```sql
+SELECT
+  -- Replace whitespace in the film title with an underscore
+  REPLACE(title, ' ', '_') AS title
+FROM film;
 ```
 
 ## Parsing string and character data
