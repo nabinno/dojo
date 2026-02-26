@@ -327,14 +327,15 @@ SELECT
 FROM film;
 ```
 
-## Parsing string and character data
-```
-
-```
-
 ## Determining the length of strings
-```
-
+```sql
+SELECT
+  -- Select the title and description columns
+  title,
+  description,
+  -- Determine the length of the description column
+  LENGTH(description) AS desc_len
+FROM film;
 ```
 
 ## Truncating strings
