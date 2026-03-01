@@ -339,8 +339,12 @@ FROM film;
 ```
 
 ## Truncating strings
-```
-
+```sql
+SELECT
+  -- Select the first 50 characters of description
+  LEFT(f.description, 50) AS short_desc
+FROM
+  film AS f;
 ```
 
 ## Extracting substrings from text data
