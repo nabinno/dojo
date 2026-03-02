@@ -348,8 +348,16 @@ FROM
 ```
 
 ## Extracting substrings from text data
-```
-
+```sql
+SELECT
+  -- Select only the street name from the address table
+  SUBSTRING(address FROM POSITION(' ' IN address)+1 FOR LENGTH(address))
+FROM
+  address;SELECT
+  -- Select only the street name from the address table
+  SUBSTRING(address FROM POSITION(' ' IN address)+1 FOR LENGTH(address))
+FROM
+  address;
 ```
 
 ## Combining functions for string manipulation
