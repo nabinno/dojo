@@ -370,14 +370,24 @@ SELECT
 FROM customer;
 ```
 
-## Truncating and padding string data
-```
-
-```
-
 ## Padding
-```
+```sql
+-- 1) Concatenate the padded first_name and last_name
+SELECT
+    RPAD(first_name, LENGTH(first_name)+1) || last_name AS full_name
+FROM customer;
 
+-- 2) Concatenate the first_name and last_name
+SELECT
+    first_name || LPAD(last_name, LENGTH(last_name)+1) AS full_name
+FROM customer;
+
+-- 3) Concatenate the first_name and last_name
+SELECT
+    RPAD(first_name, LENGTH(first_name)+1)
+    || RPAD(last_name, LENGTH(last_name)+2, ' <')
+    || RPAD(email, LENGTH(email)+1, '>') AS full_email
+FROM customer;
 ```
 
 ## The TRIM function
