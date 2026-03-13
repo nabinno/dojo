@@ -428,19 +428,11 @@ FROM
 
 
 # 4 Full-text Search and PostgresSQL Extensions
-## Introduction to full-text search
-```
-
-```
-
-## A review of the LIKE operator
-```
-
-```
-
 ## What is a tsvector?
-```
-
+```sql
+-- Select the film description as a tsvector
+SELECT to_tsvector(description)
+FROM film;
 ```
 
 ## Basic full-text search
