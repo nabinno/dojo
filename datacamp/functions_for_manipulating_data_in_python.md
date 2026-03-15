@@ -444,14 +444,29 @@ FROM film
 WHERE to_tsvector(title) @@ to_tsquery('elf');
 ```
 
-## Extending PostgreSQL
-```
-
-```
-
 ## User-defined data types
-```
+```sql
+-- 1) Create an enumerated data type, compass_position
+CREATE TYPE compass_position AS ENUM (
+    -- Use the four cardinal directions
+    'North',
+    'South',
+    'East',
+    'West'
+);
 
+-- 2) Create an enumerated data type, compass_position
+CREATE TYPE compass_position AS ENUM (
+    -- Use the four cardinal directions
+    'North',
+    'South',
+    'East',
+    'West'
+);
+-- Confirm the new data type is in the pg_type system table
+SELECT *
+FROM pg_type
+WHERE typname='compass_position';
 ```
 
 ## Getting info about user-defined data types
