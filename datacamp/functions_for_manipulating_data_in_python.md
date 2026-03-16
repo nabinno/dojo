@@ -469,14 +469,18 @@ FROM pg_type
 WHERE typname='compass_position';
 ```
 
-## Getting info about user-defined data types
-```
-
-```
-
 ## User-defined functions in Sakila
-```
+```sql
+-- 1) Select the column name, data type and udt name columns
+SELECT column_name, data_type, udt_name
+FROM INFORMATION_SCHEMA.COLUMNS
+-- Filter by the rating column in the film table
+WHERE table_name ='film' AND column_name='rating';
 
+-- 2)
+SELECT *
+FROM pg_type
+WHERE typname='mpaa_rating';
 ```
 
 ## Intro to PostgreSQL extensions
