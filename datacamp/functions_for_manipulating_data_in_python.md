@@ -516,14 +516,14 @@ WHERE
     inventory_held_by_customer(i.inventory_id) IS NOT NULL
 ```
 
-## Intro to PostgreSQL extensions
-```
-
-```
-
 ## Enabling extensions
-```
+```sql
+-- 1) Enable the pg_trgm extension
+CREATE EXTENSION IF NOT EXISTS pg_trgm;
 
+-- 2) Select all rows extensions
+SELECT *
+FROM pg_extension;
 ```
 
 ## Measuring similarity between two strings
