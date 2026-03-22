@@ -527,8 +527,15 @@ FROM pg_extension;
 ```
 
 ## Measuring similarity between two strings
-```
-
+```sql
+-- Select the title and description columns
+SELECT
+  title,
+  description,
+  -- Calculate the similarity
+  similarity(title, description)
+FROM
+  film
 ```
 
 ## Levenshtein distance examples
