@@ -552,11 +552,29 @@ ORDER BY 3
 ```
 
 ## Putting it all together
-```
+```sql
+-- 1) Select the title and description columns
+SELECT
+  title,
+  description
+FROM
+  film
+WHERE
+  -- Match "Astounding Drama" in the description
+  to_tsvector(description) @@
+  to_tsquery('Astounding & Drama');
 
-```
-
-## Wrap Up
-```
-
+-- 2)
+SELECT
+  title,
+  description,
+  -- Calculate the similarity
+  similarity(description, 'Astounding & Drama')
+FROM
+  film
+WHERE
+  to_tsvector(description) @@
+  to_tsquery('Astounding & Drama')
+ORDER BY
+    similarity(description, 'Astounding & Drama') DESC;
 ```
