@@ -18,8 +18,18 @@ In this exercise, you have been provided with several real-world scenarios and n
 ```
 
 ## Identifying data types
-```
+```txt
+Continuous:
+- Race car lap time
+- Height in centimeters
 
+Nominal:
+- Soccer player position
+- Employment status
+
+Ordinal:
+- Customer satisfaction - unsatified, neutral, satisfied
+- Income status - Low, middle, high
 ```
 
 ## Descriptive vs. Inferential statistics
