@@ -33,8 +33,14 @@ Ordinal:
 ```
 
 ## Descriptive vs. Inferential statistics
-```
+```txt
+Descriptive:
+- Given data on all purchases, what is the averge amount spent per customer?
+- Given data on all projects completed, what percentage were delivered on time?
 
+Inferential:
+- Given test scores for 50 students at one high school, what is the average score for all students in that school?
+- After surveying 100 adults on how many hours of sleep they get per night, what percentage of all adults sleep for at least 6 hours per night?
 ```
 
 ## Measures of center
