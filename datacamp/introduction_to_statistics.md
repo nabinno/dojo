@@ -43,11 +43,6 @@ Inferential:
 - After surveying 100 adults on how many hours of sleep they get per night, what percentage of all adults sleep for at least 6 hours per night?
 ```
 
-## Measures of center
-```
-
-```
-
 ## Typical number of robberies per London Borough
 ```
 
