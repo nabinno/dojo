@@ -44,8 +44,16 @@ Inferential:
 ```
 
 ## Typical number of robberies per London Borough
-```
+```txt
+Here are three definitions representing the mode, median, and mean, along with their respective values for robberies in the London crimes dataset:
+- Add all values and divide by the number of observations: 1496.16
+- The London Borough where Robbery occurs most frequently: Westminster
+- Sort all the data and take the middle value: 1354.5
 
+[ ]Mean: 1496.16 ; Median: Westminster
+[ ]Mean: 1354.50 ; Median: 1496.16
+[x]Mean: 1496.16 ; Median: 1354.50
+[ ]Mean: Westminster ; Median: 1354.50
 ```
 
 ## Choosing a measure
