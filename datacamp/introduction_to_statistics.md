@@ -57,8 +57,47 @@ Here are three definitions representing the mode, median, and mean, along with t
 ```
 
 ## Choosing a measure
-```
+```txt
+Selecting the correct measure of center is essential when describing a typical value of the data being observed.
 
+An app has been displayed, which shows a histogram of robberies in London. You can use the app to change which type of crime is displayed, and whether to include a dotted line for the mean or median.
+
+Your task is to decide which type of crime has a symmetrical histogram and can be accurately described by both the mean and median.
+
+[ ]Robbery
+[ ]Drug Offenses
+[ ]Arson and Criminal Damage
+[ ]Public Order Offenses
+[x]None of these crimes
+
+---
+
+Key Insight:
+None of the crime types have a symmetrical distribution, so both the mean and median cannot be used together to describe a typical value.
+
+Why?
+* Crime data across London boroughs is unevenly distributed
+* A few central areas (e.g., Westminster) have very high values
+* Most other areas have relatively low values
+
+=> This creates a right-skewed (positively skewed) distribution
+
+Impact on Measures of Center:
+Mean (average)
+=> Pulled upward by extreme high values
+=> Overestimates the “typical” value
+
+Median (middle value)
+=> Less affected by outliers
+=> More representative of the typical borough
+
+Conclusion:
+* Mean ≠ Median
+* Distribution is not symmetrical
+* Therefore, none of the crime types can be accurately described using both measures
+
+Takeaway:
+=> In skewed distributions, the median is usually the more reliable measure of center.
 ```
 
 ## London Boroughs with most frequent crimes
