@@ -101,8 +101,19 @@ Takeaway:
 ```
 
 ## London Boroughs with most frequent crimes
-```
+```txt
+London Boroughs with most frequent crimes
+The mean and median are great for summarizing numeric data, but if you want to understand the typical value of a categorical variable then these measures can't be applied.
 
+An app containing the count of various crimes for each London Borough has been provided. You can use the arrows next to the column names to sort the data from smallest to largest and vice versa.
+
+Using this, your task is to find out which London Boroughs are the mode for Vehicle Offenses and Burglary.
+
+Instructions
+[ ]Vehicle Offenses: Kingston upon Thames ; Burglary: Tower Hamlets
+[ ]Vehicle Offenses: Hackney ; Burglary: Kingston upon Thames
+[ ]Vehicle Offenses: Enfield ; Burglary: Greenwich
+[x]Vehicle Offenses: Enfield ; Burglary: Tower Hamlets
 ```
 
 ## Measures of spread
