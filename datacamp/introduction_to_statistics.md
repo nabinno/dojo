@@ -116,14 +116,19 @@ Instructions
 [x]Vehicle Offenses: Enfield ; Burglary: Tower Hamlets
 ```
 
-## Measures of spread
-```
-
-```
-
 ## Defining measures of spread
-```
+```txt
+Range:
+- This measure shows how spread out the data is between the smallest and largest values
+- This measure is calculated by finding the difference between the minimum and the maximum values of a variable
 
+Variance:
+- This measure uses squared units of a variable, so it is generally used as an intermediate step when calculating the standard deviation
+- To calculate this measure, square the distances of each data point from the mean and add up the results
+
+Standard Deviation:
+- This emasure uses the variables units to show the distribution of data points from the mean
+- This measure is found by taking the square root of the sum of squared distances from each data point to the mean
 ```
 
 ## Box plots for measuring spread
