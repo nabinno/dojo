@@ -132,8 +132,28 @@ Standard Deviation:
 ```
 
 ## Box plots for measuring spread
-```
+```txt
+Data visualization can be useful in highlighting measures of spread, such as the interquartile range (IQR).
 
+Below is a box plot displaying the number of crimes across all London Boroughs in February 2021, grouped by the type of crime.
+
+Your task is to use the plot to determine which type of crime had the largest interquartile range for this month.
+
+# Select one answer
+[ ]Possession of Weapons
+[ ]Vehicle offenses
+[ ]Drug offenses
+[x]Theft
+
+---
+
+Look at the length of the box for each category. The box shows the interquartile range, which represents how spread out the middle values are.
+
+The category with the longest box has the largest interquartile range.
+
+In this plot, Theft has the longest box.
+
+So the answer is Theft.
 ```
 
 ## Which crime has the larger standard deviation
