@@ -157,8 +157,10 @@ So the answer is Theft.
 ```
 
 ## Which crime has the larger standard deviation
-```
-
+```txt
+[ ]It's not possible to determine which has the larger standard deviation based on the plots.
+[ ]Miscellaneous Crimes Against Society
+[x]Public Order Offenses
 ```
 
 
