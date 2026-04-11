@@ -167,14 +167,14 @@ So the answer is Theft.
 
 
 # 2 Probability and distributions
-## What are the chances?
-```
-
-```
-
 ## What is more likely?
 ```
+Four scenarios have been provided; your task is to choose which one is most likely to occur.
 
+[ ]Scoring 90% or more in an exam, when only 5% of students score this highly.
+[ ]A restaurant receiving an order for a steak, where steak orders have made up 100 out of 1000 total orders to date.
+[x]Picking a red card out of a standard pack of 52 playing cards, where half of the cards are red and the other half are black.
+[ ]Drawing a person's name out of a hat that also contains 19 other names.
 ```
 
 ## Chances of the next sale being more than the mean
