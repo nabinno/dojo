@@ -178,8 +178,22 @@ Four scenarios have been provided; your task is to choose which one is most like
 ```
 
 ## Chances of the next sale being more than the mean
-```
+```txt
+[ ]50.37%
+[x]22.98%
+[ ]198.54%
 
+The key is to use the count of orders above the mean, not the median. The table shows:
+
+- Orders ≥ median: 890 (this gives about 50.37%, which is incorrect here)
+- Orders ≥ mean ($188.50): 406
+- Total orders: 1767
+
+The required probability is: 406 ÷ 1767 ≈ 22.98%
+
+The confusion arises because the median splits data roughly in half, while the mean is higher due to a few large orders (right-skewed distribution). Therefore, fewer orders exceed the mean.
+
+Answer: 22.98%
 ```
 
 ## Conditional probability
