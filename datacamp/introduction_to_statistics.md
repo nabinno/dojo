@@ -196,14 +196,17 @@ The confusion arises because the median splits data roughly in half, while the m
 Answer: 22.98%
 ```
 
-## Conditional probability
-```
-
-```
-
 ## Dependent vs. Independent events
-```
+```txt
+Dependent:
+- The probability of being offered a job, having mode it to the final interview stage.
+- The probability of a sports team winning a championship, given they are at the top of the league currently.
+- The probability of more than 100mm of rainfall, given it is currently July.
 
+Independent:
+- The probability of winning the lottery.
+- The probability of flipping a acoin and getting heads, given today is Tuesday.
+- The probability of rolling a six within two attempts using a fair dice.
 ```
 
 ## Orders of more than 10 basket products
