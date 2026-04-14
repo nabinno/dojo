@@ -210,8 +210,29 @@ Independent:
 ```
 
 ## Orders of more than 10 basket products
-```
+```txt
+Orders of more than 10 basket products
+Recall that the order in which dependent events occur affects conditional probability.
 
+In this exercise, you will need to use the image to calculate the conditional probability that an order from the online retail dataset will be for more than 10 items, given the order is for Basket products.
+
+Venn diagram of 125 orders for more than 10 items and 551 orders for basket products and 19 orders for more than 10 basket items
+
+[ ]19/144
+[x]19/570
+[ ]144/1767
+[ ]19/1767
+
+---
+
+Look only at Basket orders, not all orders.
+
+* Among Basket orders, 19 have more than 10 items
+* Total Basket orders ≈ 570
+
+So the probability is:
+
+19 out of 570 → 19/570
 ```
 
 ## Discrete distributions
