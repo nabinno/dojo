@@ -235,14 +235,14 @@ So the probability is:
 19 out of 570 → 19/570
 ```
 
-## Discrete distributions
-```
-
-```
-
 ## Identifying distributions
-```
+```txt
+You have been provided with an image containing three probability distributions drawn from samples of different sets of data. Your task is to choose which sample is most likely to have been taken from a uniform distribution?
 
+Three plots:
+[ ]A: First showing a distribution with a large peak on the left ... Skewed (peak on the left) → not uniform
+[x]B: Second showing a uniform distribution ... Flat across → uniform
+[ ]C: Third showing a symmetrical distribution peaking in the middle ... Bell-shaped → normal distribution
 ```
 
 ## Sample mean vs. Theoretical mean
