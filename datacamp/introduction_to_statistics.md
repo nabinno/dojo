@@ -246,8 +246,27 @@ Three plots:
 ```
 
 ## Sample mean vs. Theoretical mean
-```
+```txt
+The app will take a sample from a discrete uniform distribution, which includes the numbers one through nine, and calculate the sample's mean. You can adjust the size of the sample using the slider. Note that the expected value of this distribution is five.
 
+A sample is taken, and you win twenty dollars if the sample's mean is less than four. There's a catch: you get to pick the sample's size.
+
+Which sample size is most likely to win you the twenty dollars?
+
+[x]10
+[ ]100
+[ ]1000
+[ ]5000
+[ ]10000
+
+---
+
+A discrete uniform distribution from 1 to 9 has a theoretical mean of 5.
+
+* With a  small sample size , the sample mean has  high variability , so it can fall below 4 by chance.
+* With a  large sample size , the mean  converges to 5  (by the  Law of Large Numbers ), making it very unlikely to be below 4.
+
+Therefore, choosing the  smallest sample size (10)  gives you the highest chance to win.
 ```
 
 ## Continuous distributions
