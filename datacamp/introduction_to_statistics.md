@@ -269,14 +269,19 @@ A discrete uniform distribution from 1 to 9 has a theoretical mean of 5.
 Therefore, choosing the  smallest sample size (10)  gives you the highest chance to win.
 ```
 
-## Continuous distributions
-```
-
-```
-
 ## Discrete vs. Continuous distributions
-```
+```txt
+Discrete Uniform:
+- The outcome of drawing a playing card at random
+- The ticket number of a raffle winner, assuming there is one ticket for each number from 1 to 100
 
+Continuous uniform:
+- The amount of time you will spend waiting for an elevator to arrive on
+- The time of day that a baby will be born
+
+Bimodal:
+- The time of day that a city's public transport network will be busy
+- The height of adult men and women
 ```
 
 ## Finding the normal distribution
