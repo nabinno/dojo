@@ -285,8 +285,25 @@ Bimodal:
 ```
 
 ## Finding the normal distribution
-```
+```txt
+Which of the following represents a normal distribution?
 
+Four plots showing distributions by London borough:
+- gross sales
+- net quantity of products
+- weapons offenses
+- public order offenses
+
+[ ]A
+[x]B
+[ ]C
+[ ]D
+
+Key features:
+* The peak is in the center (mean)
+* Left and right sides are mirror images
+* Values taper off smoothly toward both ends
+Choose the plot that looks like a  single, symmetric bell curve.
 ```
 
 ## Probability with a uniform distribution
