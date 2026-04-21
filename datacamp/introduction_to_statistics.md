@@ -307,8 +307,20 @@ Choose the plot that looks like a  single, symmetric bell curve.
 ```
 
 ## Probability with a uniform distribution
-```
+```txt
+Here is a distribution displaying the probability of waiting anywhere from zero to 20 minutes for a train to arrive.
+Your task is to calculate the probability of the next train arriving between five and 13 minutes.
+[ ]5%
+[x]40%
+[ ]80%
+[ ]30%
 
+---
+
+For a continuous uniform distribution, probability equals the proportion of the interval length.
+* Total range: 0 to 20 → length = 20
+* Target range: 5 to 13 → length = 8
+Probability = 8 / 20 = 0.4 (40%)
 ```
 
 
