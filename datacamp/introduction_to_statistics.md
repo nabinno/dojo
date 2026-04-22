@@ -327,14 +327,17 @@ Probability = 8 / 20 = 0.4 (40%)
 
 
 # 3 More Distributions and the Central Limit Theorem
-## The binomial distribution
-```
-
-```
-
 ## Recognizing a binomial distribution
-```
+```txt
+Four scenarios are provided below; your task is to choose which one describes a binomial distribution based on the type of data described.
 
+Answer the question
+[ ]The probability of a train arriving in under 10 minutes.
+[ ]The probability of a man's height being 175 centimeters or less.
+[x]The probability of matching four numbers in the lottery.
+[ ]The probability of the temperature being more than 80 degrees Celsius.
+
+Why: Binomial = repeated independent trials with success/failure, counting successes. Only the lottery case fits.
 ```
 
 ## How probability affects the binomial distribution
