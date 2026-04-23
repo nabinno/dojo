@@ -341,8 +341,18 @@ Why: Binomial = repeated independent trials with success/failure, counting succe
 ```
 
 ## How probability affects the binomial distribution
-```
+```txt
+Recall that the binomial distribution can be described by two parameters, n and p.
+To examine how these parameters affect the distribution, three plots have been provided representing the probability of closing between one and 12 sales per week for three sales people. The probability, p, is different for each individual.
+Your task is to select which sales person has the highest probability of closing nine or more sales per week.
+Three bar plots showing different probabilities for number of sales per week
 
+[ ]George
+[ ]Izzy
+[x]James
+
+Choose the person whose distribution is shifted furthest right.
+Higher ( p ) → more mass at 9–12 → highest probability of ≥9 sales.
 ```
 
 ## Identifying n and p
