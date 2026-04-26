@@ -356,8 +356,20 @@ Higher ( p ) → more mass at 9–12 → highest probability of ≥9 sales.
 ```
 
 ## Identifying n and p
-```
+```txt
+James sales distribution peaking between eight and nine successes
 
+[ ]n = 8, p = 12
+[ ]n = 12, p = 0.23
+[ ]n = 8, p = 0.23
+[x]n = 12, p = 0.67
+
+---
+
+Peak ≈ expected value of a binomial distribution, which is ( n times p ).
+
+Since the distribution peaks around 8–9:
+[n times p approx 8]
 ```
 
 ## The normal distribution
