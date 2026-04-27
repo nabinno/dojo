@@ -372,14 +372,18 @@ Since the distribution peaks around 8–9:
 [n times p approx 8]
 ```
 
-## The normal distribution
-```
-
-```
-
 ## Recognizing the normal distribution
-```
+```txt
+Your task is to identify which of these plots does not represent a normal distribution.
 
+Select one answer
+[ ]Plot A
+[ ]Plot B
+[x]Plot C
+[ ]Plot D
+
+A normal distribution is symmetric and bell-shaped around the mean.
+Plots A, B, and D are roughly symmetric, but Plot C is left-skewed (not symmetric), so it is not normally distributed.
 ```
 
 ## What makes the normal distribution special?
