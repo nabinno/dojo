@@ -387,8 +387,16 @@ Plots A, B, and D are roughly symmetric, but Plot C is left-skewed (not symmetri
 ```
 
 ## What makes the normal distribution special?
-```
+```txt
+Normal Distribution:
+- Required for many statistical tests to be performed
+- Symmetrical
+- Described by the mean and standard deviation
 
+All distributions:
+- The total area of the distribution equals one
+- Displays the probability of possible outcomes for numeric values
+- Probabilities of specific events occuring can be calculated using the area under the curve
 ```
 
 ## Identifying skewness
