@@ -400,8 +400,18 @@ All distributions:
 ```
 
 ## Identifying skewness
-```
+```txt
+True:
+- A small number of schools have over 6000 students.
+- Distribution of School Size is right-skewed.
+- A large number of schools achieve 100% pass grades among their students.
 
+False:
+- The majority of schools have over 4000 students.
+- The majority of schools have less than 50% of their students achieving pass grades.
+- The distribution of School Pass Grades is right-skewed.
+
+Key idea: Right-skewed distributions mean most values are lower/mid-range, with a long tail to higher values.
 ```
 
 ## Describing distributions using kurtosis
