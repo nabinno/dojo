@@ -414,14 +414,18 @@ False:
 Key idea: Right-skewed distributions mean most values are lower/mid-range, with a long tail to higher values.
 ```
 
-## Describing distributions using kurtosis
-```
-
-```
-
 ## The central limit theorem
-```
+```txt
+Another means of describing the shape of a distribution is by its kurtosis, which can represent the size of its central peak and how spread out the tails are.
+Kurtosis allows you to summarize whether values are bunched up close to the mean, and how far out any extreme values may lie.
+Three definitions have been provided. Your task is to select which one accurately represents a normal distribution with negative kurtosis.
 
+Select one answer
+[ ]A distribution with the same kurtosis as a normal distribution.
+[ ]A distribution with a larger central peak and smaller tails compared to a typical normal distribution.
+[x]A distribution with a smaller peak and wider tails compared to a typical normal distribution.
+
+Why: Negative kurtosis = flatter, more spread out than a normal distribution.
 ```
 
 ## Visualizing sampling distributions
