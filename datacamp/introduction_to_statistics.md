@@ -429,8 +429,15 @@ Why: Negative kurtosis = flatter, more spread out than a normal distribution.
 ```
 
 ## Visualizing sampling distributions
-```
+```txt
+Which distribution does the central limit theorem apply to?
 
+[ ]Discrete uniform distribution
+[ ]Continuous uniform distribution
+[ ]Binomial distribution
+[x]All of the above
+
+The Central Limit Theorem says: regardless of the original distribution, the sampling distribution of the mean approaches a normal distribution as sample size increases (given independence and finite variance).
 ```
 
 ## The CLT vs. The law of large numbers
