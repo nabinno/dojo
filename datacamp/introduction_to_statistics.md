@@ -441,8 +441,16 @@ The Central Limit Theorem says: regardless of the original distribution, the sam
 ```
 
 ## The CLT vs. The law of large numbers
-```
+```txt
+The law of large numbers (LLN):
+- This cencept does not always result in a sample taking the form of a normal distribution as sample size increases.
+- As the sample increases, the sample mean gets closer to the value of the population mean.
+=> As sample size increases, the sample mean converges to the population mean (accuracy improves, not the shape).
 
+The central limit theorem (CLT):
+- This concept generally applies once the sample size is 30 or more.
+- As the number of sample summary statistics calculated increases, the distribution will more closely resemble a normal distribution.
+=> As sample size grows (≈30+), the distribution of sample means approaches a normal distribution (shape becomes bell-shaped), regardless of the original distribution.
 ```
 
 ## When to use the central limit theorem
