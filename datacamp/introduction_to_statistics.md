@@ -453,14 +453,15 @@ The central limit theorem (CLT):
 => As sample size grows (≈30+), the distribution of sample means approaches a normal distribution (shape becomes bell-shaped), regardless of the original distribution.
 ```
 
-## When to use the central limit theorem
-```
-
-```
-
 ## The Poisson distribution
-```
+```txt
+In this exercise, four scenarios have been provided. Your task is to choose which scenario would require the use of the central limit theorem to produce summary statistics that are normally distributed.
 
+Select one answer
+[ ]Finding the mean IQ of all 100 students in a high school.
+[ ]Measuring the standard deviation of household income in a road with 20 houses.
+[x]Determining the percentage of adults in the USA that have been diagnosed with Type 2 Diabetes. ... Because CLT is commonly used to approximate the distribution of a sample proportion as normal when the sample size is large.
+[ ]Counting the number of babies born with blue eyes in a hospital within one day.
 ```
 
 ## Identifying Poisson processes
