@@ -465,8 +465,16 @@ Select one answer
 ```
 
 ## Identifying Poisson processes
-```
+```txt
+Poisson distribution:
+- Volume of mortgage applications received per month
+- Number of earthquakes in the state of California in a yuear
+- Number of books sold per week
 
+Other distribution:
+- Number of side effects from  a range of medications
+- Probability of a mobile phone being broken
+- Probability of vating for a political candidate
 ```
 
 ## Recognizing lambda in the Poisson distribution
