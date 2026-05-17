@@ -478,8 +478,20 @@ Other distribution:
 ```
 
 ## Recognizing lambda in the Poisson distribution
-```
+```txt
+Now that you've learned about the Poisson distribution, you know that its shape is described by a value called lambda (
+). In this exercise, you'll select which of these plots represents a Poisson distribution with lambda equal to two.
 
+Three poisson distributions with different lambda values. Select one answer:
+[ ]A
+[x]B
+[ ]C
+
+In a Poisson distribution, λ is the average and roughly the center of the distribution.
+* A is centered around 10 → λ ≈ 10
+* C is centered around 5 → λ ≈ 5
+* B is centered around 2 → λ ≈ 2
+=> Therefore, the correct answer is B.
 ```
 
 
