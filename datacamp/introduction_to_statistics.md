@@ -498,14 +498,17 @@ In a Poisson distribution, λ is the average and roughly the center of the distr
 
 
 # 4 Correlation and Hypothesis Testing
-## Hypothesis testing
-```
-
-```
-
 ## Sunshine and sleep
-```
+```txt
+Null hypothesis:
+- The amount of exercise performed each week has no effect on blood pressure in elderly men.
+- No difference exists between the number of hours London residents sleep and the amount of sunshine received per day.
 
+Alternative hypothesis:
+- A relationship exists between the number of hours of sunshine received in London per day and the number of hours its residents sleep.
+- Move exercise is associated with lower blood pressure levels in elderly men.
+
+The null hypothesis says there is no effect or relationship. The alternative hypothesis says there is an effect or relationship.
 ```
 
 ## The hypothesis testing workflow
