@@ -512,8 +512,15 @@ The null hypothesis says there is no effect or relationship. The alternative hyp
 ```
 
 ## The hypothesis testing workflow
-```
+```txt
+1. Define the population: adults aged 18 to 30 who eat meat or are vegetarian
+2. Define the null hypothesis: there is no difference in the frequency of colds among meat-eaters and vegetarians
+3. Define the alternative hypothesis: young adults who eat meat experience more colds
+4. Collect the data: diet status and number of colds in the last six months
+5. Perform statistical tests on the sample data: difference in mean number of colds between the two populations
+6. Draw conclusions about the population: are the frequency of colds differenct for young adults who consume meat
 
+Define population → define hypotheses → collect data → perform statistical tests → draw conclusions.
 ```
 
 ## Independent and dependent variables
