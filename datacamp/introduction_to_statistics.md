@@ -524,8 +524,19 @@ Define population → define hypotheses → collect data → perform statistical
 ```
 
 ## Independent and dependent variables
-```
+```txt
+Your task is to decide what would be considered the dependent variable in this hypothesis test.
 
+[ ]City
+[x]Hours worked annually
+[ ]Amount of sunshine
+
+The dependent variable is the  outcome  being affected.
+
+ Sunshine → Hours worked
+
+* Independent: Amount of sunshine
+* Dependent: Hours worked annually
 ```
 
 ## Experiments
