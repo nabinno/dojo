@@ -539,14 +539,27 @@ The dependent variable is the  outcome  being affected.
 * Dependent: Hours worked annually
 ```
 
-## Experiments
-```
-
-```
-
 ## Recognizing controlled trials
-```
+```txt
+Gontrolled Trial:
+- Randomly assigning people to a specific diet or to continue eating their normal diet and analyzing differences in blood sugar levels
+- Performing crash safety tests on current and upgraded versions of a car and analyzing how much damage is sustained by each version
+- Displaying one of two versions of a company website to visitors and monitoring time spent on the site for each version
 
+Other type of experiment:
+- Collecting survey data from 500 people to find out their snmoking status and whether they have had cancer
+- Investigating what proportion of people aged 20 to 35 like strawberry ice cream
+- Tracking the diets of 1000 people over 10 years and monitoring how many of the group develop heart disease
+
+---
+
+Controlled Trial: Researcher  assigns conditions  and compares outcomes → tests  cause and effect .
+Example: Diet test, crash test, A/B test.
+
+Observational Study: Researcher  only observes  without intervention → finds  patterns/associations .
+Example: Survey, preference study, long-term tracking.
+
+Assign = Experiment / Observe = Observation
 ```
 
 ## Why use randomization?
