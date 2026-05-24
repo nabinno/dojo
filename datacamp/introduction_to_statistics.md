@@ -563,8 +563,14 @@ Assign = Experiment / Observe = Observation
 ```
 
 ## Why use randomization?
-```
+```txt
+[ ]To reduce bias caused by assigning to groups based on specific characteristics.
+[ ]To ensure groups are comparable.
+[ ]To maximize the chance of the results being normally distributed.
+[x]To reduce bias, ensure groups are comparable, and increase the chances that results will be representative of the target population.
+[ ]To prevent participants from knowing whether they are in the treatment or control group.
 
+Randomization reduces bias, creates comparable groups, and improves how representative the results are.
 ```
 
 ## Correlation
