@@ -573,14 +573,22 @@ Assign = Experiment / Observe = Observation
 Randomization reduces bias, creates comparable groups, and improves how representative the results are.
 ```
 
-## Correlation
-```
-
-```
-
 ## Identifying correlation between variables
-```
+```txt
+Given:
+*  Dependent variable (y-axis):  Cost of a bottle of water (£)
+*  Independent variable (x-axis):  Annual hours worked
 
+Observation:
+* The trendline slopes  downward (left → right)  → negative correlation.
+* The points are  fairly spread out , not tightly clustered → relationship is not strong.
+
+[ ]Weak-to-moderate positive relationship
+[ ]Strong negative relationship
+[x]Weak-to-moderate negative relationship
+[ ]Weak positive relationship
+
+Cities with more annual working hours tend to have  slightly lower water prices, but the relationship is not very strong.
 ```
 
 ## What can correlation tell you?
