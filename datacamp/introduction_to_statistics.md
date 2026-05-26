@@ -592,8 +592,13 @@ Cities with more annual working hours tend to have  slightly lower water prices,
 ```
 
 ## What can correlation tell you?
-```
+```txt
+[ ]An increase in the number of hours worked annually causes a decrease in the cost of a bottle of water.
+[ ]An increase in the number of hours worked annually is related to an increase in the cost of a bottle of water.
+[ ]A decrease in the cost of a bottle of water causes a decrease in the number of hours worked annually.
+[x]An increase in the number of hours worked annually is related to a decrease in the cost of a bottle of water.
 
+Why: Negative correlation → one variable increases while the other decreases. Correlation shows  association, not causation .
 ```
 
 ## Confounding variables
