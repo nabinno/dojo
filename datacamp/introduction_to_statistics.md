@@ -602,8 +602,15 @@ Why: Negative correlation → one variable increases while the other decreases. 
 ```
 
 ## Confounding variables
-```
+```txt
+Which of the following could be a confounding variable in this experiment?
+[ ]Lung capacity
+[ ]Neighborhood
+[x]Air pollution
+[ ]Smoking status
+[ ]Gender
 
+Air pollution is the confounding variable because it is related to both the neighborhood location (near the highway) and lung capacity. This makes it difficult to determine whether reduced lung capacity is caused by the neighborhood itself or by pollution exposure.
 ```
 
 ## Interpreting hypothesis test results
