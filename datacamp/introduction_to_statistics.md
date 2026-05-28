@@ -613,14 +613,23 @@ Which of the following could be a confounding variable in this experiment?
 Air pollution is the confounding variable because it is related to both the neighborhood location (near the highway) and lung capacity. This makes it difficult to determine whether reduced lung capacity is caused by the neighborhood itself or by pollution exposure.
 ```
 
-## Interpreting hypothesis test results
-```
-
-```
-
 ## Significance levels vs. p-values
-```
+```txt
+Significance level:
+- This is set before data collection.
+- Also known as alpha.
+- This is a threshold assigned to represent the probability of falsely rejecting the null hypothesis.
 
+p-value:
+- To reject the null hypothesis this value must be less than or equal to alpha.
+- This describes the probability of obtaining results at least as extreme as those observed.
+- This metric is calculated after data has been collected.
+
+---
+
+- Significance level (α): The threshold set before data collection.
+- p-value: The probability calculated from the observed data.
+=> Decision rule:  Reject the null hypothesis if  p-value ≤ α.
 ```
 
 ## Type I and type II errors
