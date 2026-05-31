@@ -633,8 +633,17 @@ p-value:
 ```
 
 ## Type I and type II errors
-```
+```txt
+Are men in Berlin heavier than men in Madrid?
+α has been set to 0.05, and the weights of 100 adult male residents from each city have been collected. Sampling with replacement has been performed to produce 10000 sample means of both cities. What conclusion can you draw based on the sample mean distributions?
 
+Select one answer:
+[ ]Reject the null hypothesis, men in Berlin are heavier than men in Madrid
+[x]Don't reject the null hypothesis: there is not enough evidence for significant differences between men's weight in Berlin and Madrid
+[ ]It is impossible to determine this from the plot
+[ ]Reject the null hypothesis, men in Madrid are heavier than men in Berlin
+
+Why: The sample mean distributions overlap substantially, so there is not enough evidence that men in Berlin are heavier than men in Madrid at α = 0.05.
 ```
 
 ## Congratulations!
