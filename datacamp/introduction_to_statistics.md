@@ -645,8 +645,3 @@ Select one answer:
 
 Why: The sample mean distributions overlap substantially, so there is not enough evidence that men in Berlin are heavier than men in Madrid at α = 0.05.
 ```
-
-## Congratulations!
-```
-
-```
