@@ -16,8 +16,14 @@ Which table has the most rows?
 ```
 
 ## Count missing values
-```
+```sql
+-- Count the number of null values in the ticker column
+SELECT count(*) - count(ticker) AS missing
+  FROM fortune500;
 
+-- Count the number of null values in the industry column
+SELECT COUNT(*) - COUNT(industry) AS missing
+FROM fortune500;
 ```
 
 ## Join tables
