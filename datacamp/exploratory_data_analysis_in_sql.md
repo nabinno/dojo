@@ -34,15 +34,14 @@ SELECT company.name
        INNER JOIN fortune500
        ON company.ticker=fortune500.ticker;
 ```
-
-## The keys to the database
-```
-
-```
-
 ## Foreign keys
 ```
+[ ]stackoverflow.tag is not a primary key
+[ ]tag_type.tag contains NULL values
+[x]stackoverflow.tag contains duplicate values
+[ ]tag_type.tag does not contain all the values in stackoverflow.tag
 
+A foreign key must reference a unique column. Since `stackoverflow.tag` has duplicate values, it cannot be a foreign key target.
 ```
 
 ## Read an entity relationship diagram
