@@ -153,8 +153,25 @@ SELECT unanswered_count/question_count::numeric AS computed_pct,
 ```
 
 ## Summarize numeric columns
-```
+```sql
+-- Select min, avg, max, and stddev of fortune500 profits
+SELECT min(profits),
+       avg(profits),
+       max(profits),
+       stddev(profits)
+  FROM fortune500;
 
+-- Select sector and summary measures of fortune500 profits
+SELECT sector,
+       min(profits),
+       avg(profits),
+       max(profits),
+       stddev(profits)
+  FROM fortune500
+ -- What to group by?
+ GROUP BY sector
+ -- Order by the average profits
+ ORDER BY avg
 ```
 
 ## Summarize group statistics
