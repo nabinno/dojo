@@ -191,14 +191,29 @@ SELECT stddev(maxval),
          GROUP BY tag) AS max_results; -- alias for subquery
 ```
 
-## Exploring distributions
-```
-
-```
-
 ## Truncate
-```
+```sql
+-- Truncate employees
+SELECT trunc(employees, -5) AS employee_bin,
+       -- Count number of companies with each truncated value
+       count(*)
+  FROM fortune500
+ -- Use alias to group
+ GROUP BY employee_bin
+ -- Use alias to order
+ ORDER BY employee_bin;
 
+-- Truncate employees
+SELECT trunc(employees, -4) AS employee_bin,
+       -- Count number of companies with each truncated value
+       count(*)
+  FROM fortune500
+ -- Limit to which companies?
+ WHERE employees < 100000
+ -- Use alias to group
+ GROUP BY employee_bin
+ -- Use alias to order
+ ORDER BY employee_bin;
 ```
 
 ## Generate series
