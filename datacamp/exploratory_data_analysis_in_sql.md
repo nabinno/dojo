@@ -448,14 +448,37 @@ FROM correlations;
 
 
 # 3 Exploring Categorical Data and Unstructured Text
-## Character data types and common issues
-```
-
-```
-
 ## Count the categories
-```
+```sql
+-- 1)
+-- Select the count of each level of priority
+SELECT priority, COUNT(*)
+  FROM evanston311
+ GROUP BY priority;
 
+-- 2)
+-- Find values of zip that appear in at least 100 rows
+-- Also get the count of each value
+SELECT zip, COUNT(*)
+  FROM evanston311
+ GROUP BY zip
+HAVING COUNT(*) >= 100;
+
+-- 3)
+-- Find values of source that appear in at least 100 rows
+-- Also get the count of each value
+SELECT source, COUNT(*)
+  FROM evanston311
+ GROUP BY source
+HAVING COUNT(*) >= 100;
+
+-- 4)
+-- Find the 5 most common values of street and the count of each
+SELECT street, COUNT(*)
+  FROM evanston311
+ GROUP BY street
+ ORDER BY COUNT(*) DESC
+ LIMIT 5;
 ```
 
 ## Spotting character data problems
