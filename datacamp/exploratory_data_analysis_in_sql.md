@@ -483,7 +483,35 @@ SELECT street, COUNT(*)
 
 ## Spotting character data problems
 ```
+Spotting character data problems
+Explore the distinct values of the street column. Select each street value and the count of the number of rows with that value. Sort the results by street to see similar values near each other.
 
+Which of the following is NOT an issue you see with the values of street?
+[ ]The street suffix (e.g. Street, Avenue) is sometimes abbreviated
+[x]There are sometimes extra spaces at the beginning and end of values
+[ ]House/street numbers sometimes appear in the column
+[ ]Capitalization is not consistent across values
+[ ]All of the above are potential problems
+
+---
+
+1. Display unique street values.
+SELECT street, COUNT(*)
+FROM evanston311
+GROUP BY street
+ORDER BY street;
+
+2. Look for data quality issues:
+* Abbreviations (`St` vs `Street`)
+* Inconsistent capitalization (`MAIN ST` vs `Main St`)
+* House numbers mistakenly included in `street` (e.g. `12A DODGE AVE`, `8 1/2 ASBURY AVE`)
+* Extra leading/trailing spaces
+
+3. In this dataset:
+* ✔ Abbreviations exist.
+* ✔ Capitalization is inconsistent.
+* ✔ Some house numbers are incorrectly stored in `street`.
+* ✘ No leading/trailing spaces were found.
 ```
 
 ## Cases and spaces
