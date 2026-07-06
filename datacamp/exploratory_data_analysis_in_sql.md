@@ -514,14 +514,13 @@ ORDER BY street;
 * ✘ No leading/trailing spaces were found.
 ```
 
-## Cases and spaces
-```
-
-```
-
 ## Trimming
-```
-
+```sql
+SELECT distinct street,
+       -- Trim off unwanted characters from street
+       TRIM(street, '0123456789#/. ') AS cleaned_street
+  FROM evanston311
+ ORDER BY street;
 ```
 
 ## Exploring unstructured text
