@@ -566,14 +566,11 @@ SELECT category, COUNT(*)
  LIMIT 10;
 ```
 
-## Splitting and concatenating text
-```
-
-```
-
 ## Concatenate strings
-```
-
+```sql
+-- Concatenate house_num, a space, and street and trim spaces from the start of the result
+SELECT TRIM(LEADING FROM CONCAT(house_num, ' ', street)) AS address
+FROM evanston311;
 ```
 
 ## Split strings on a delimiter
