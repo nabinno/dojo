@@ -574,8 +574,14 @@ FROM evanston311;
 ```
 
 ## Split strings on a delimiter
-```
-
+```sql
+-- Select the first word of the street value
+SELECT split_part(street, ' ', 1) AS street_name,
+       count(*)
+FROM evanston311
+GROUP BY split_part(street, ' ', 1)
+ORDER BY count DESC
+LIMIT 20;
 ```
 
 ## Shorten long strings
