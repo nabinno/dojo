@@ -598,14 +598,37 @@ SELECT CASE WHEN length(description) > 50
  ORDER BY description;
 ```
 
-## Strategies for multiple transformations
-```
-
-```
-
 ## Create an "other" category
 ```
+Create an "other" category
+If we want to summarize Evanston 311 requests by zip code, it would be useful to group all of the low frequency zip codes together in an "other" category.
 
+Which of the following values, when substituted for ??? in the query, would give the result below?
+
+Query:
+SELECT CASE WHEN zipcount < ??? THEN 'other'
+       ELSE zip
+       END AS zip_recoded,
+       sum(zipcount) AS zipsum
+  FROM (SELECT zip, count(*) AS zipcount
+          FROM evanston311
+         GROUP BY zip) AS fullcounts
+ GROUP BY zip_recoded
+ ORDER BY zipsum DESC;
+
+
+Result:
+zip_recoded    zipsum
+60201          19054
+60202          11165
+null           5528
+other          429
+60208          255
+
+[ ]256
+[ ]1000
+[x]100
+[ ]60201
 ```
 
 ## Group and recode values
