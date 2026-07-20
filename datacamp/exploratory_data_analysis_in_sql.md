@@ -801,14 +801,12 @@ SELECT priority,
 
 
 # 4 Working with Dates and Timestamps
-## Date/time types and formats
-```
-
-```
-
 ## ISO 8601
 ```
-
+[ ]June 15, 2018 3:30pm
+[x]2018-06-15 15:30:00
+[ ]6/15/18 13:00
+[ ]2018-6-15 3:30:00
 ```
 
 ## Date comparisons
