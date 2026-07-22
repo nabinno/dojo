@@ -833,8 +833,25 @@ SELECT count(*)
 ```
 
 ## Date arithmetic
-```
+```sql
+-- 1)
+-- Subtract the min date_created from the max
+SELECT MAX(date_created) - MIN(date_created)
+  FROM evanston311;
 
+-- 2)
+-- How old is the most recent request?
+SELECT now() - MAX(date_created)
+  FROM evanston311;
+
+-- 3)
+-- Add 100 days to the current timestamp
+SELECT now() + '100 days'::interval;
+
+-- 4)
+-- Select the current timestamp,
+-- and the current timestamp + 5 minutes
+SELECT now(), now() + '5 minutes'::interval;
 ```
 
 ## Completion time by category
