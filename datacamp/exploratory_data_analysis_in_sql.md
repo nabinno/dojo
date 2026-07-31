@@ -855,8 +855,14 @@ SELECT now(), now() + '5 minutes'::interval;
 ```
 
 ## Completion time by category
-```
-
+```sql
+-- Select the category and the average completion time by category
+SELECT category,
+       AVG(date_completed - date_created) AS completion_time
+FROM evanston311
+GROUP BY category
+-- Order the results
+ORDER BY completion_time DESC;
 ```
 
 ## Date/time components and aggregation
