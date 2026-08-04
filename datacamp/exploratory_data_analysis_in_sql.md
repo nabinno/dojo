@@ -913,8 +913,19 @@ ORDER BY EXTRACT(DOW FROM date_created);
 ```
 
 ## Date truncation
-```
-
+```sql
+-- Aggregate daily counts by month
+SELECT date_trunc('month', day) AS month,
+       AVG(count)
+  -- Subquery to compute daily counts
+  FROM (
+        SELECT date_trunc('day', date_created) AS day,
+               COUNT(*) AS count
+          FROM evanston311
+         GROUP BY day
+       ) AS daily_count
+ GROUP BY month
+ ORDER BY month;
 ```
 
 ## Aggregating with date/time series
