@@ -5,14 +5,14 @@ url: https://campus.datacamp.com/courses/data-driven-decision-making-in-sql
 ---
 
 # 1 Introduction to business intelligence for a online movie rental database
-## Introduction to data driven decision making
-```sql
-
-```
-
 ## Exploring the database
-```sql
+```
+Explore the tables and its columns. Which of the following quantities can't be computed?
 
+[ ]The number of customers from each country.
+[x]The number of movies with an international award.
+[ ]The average rating of a movie.
+[ ]The number of movies with the actor Daniel Radcliffe.
 ```
 
 ## Exploring the table renting
