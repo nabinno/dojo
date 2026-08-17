@@ -17,7 +17,14 @@ Explore the tables and its columns. Which of the following quantities can't be c
 
 ## Exploring the table renting
 ```sql
+-- 1)
+SELECT *  -- Select all
+FROM renting;        -- From table renting
 
+-- 2)
+SELECT movie_id,  -- Select all columns needed to compute the average rating per movie
+       rating
+FROM renting;
 ```
 
 ## Filtering and ordering
