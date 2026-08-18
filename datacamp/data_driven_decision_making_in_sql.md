@@ -27,14 +27,23 @@ SELECT movie_id,  -- Select all columns needed to compute the average rating per
 FROM renting;
 ```
 
-## Filtering and ordering
-```sql
-
-```
-
 ## Working with dates
 ```sql
+-- 1)
+SELECT *
+FROM renting
+WHERE date_renting = '2018-10-09'; -- Movies rented on October 9th, 2018
 
+-- 2)
+SELECT *
+FROM renting
+WHERE date_renting BETWEEN '2018-04-01' AND '2018-08-31'; -- from beginning April 2018 to end August 2018
+
+-- 3)
+SELECT *
+FROM renting
+WHERE date_renting BETWEEN '2018-04-01' AND '2018-08-31'
+ORDER BY date_renting ASC; -- Order by recency in decreasing order
 ```
 
 ## Selecting movies
