@@ -48,7 +48,20 @@ ORDER BY date_renting ASC; -- Order by recency in decreasing order
 
 ## Selecting movies
 ```sql
+-- 1)
+SELECT *
+FROM movies
+WHERE genre <> 'Drama'; -- All genres except drama
 
+-- 2)
+SELECT *
+FROM movies
+WHERE title IN ('Showtime', 'Love Actually', 'The Fighter'); -- Select all movies with the given titles
+
+-- 3)
+SELECT *
+FROM movies
+ORDER BY renting_price ASC ; -- Order the movies by increasing renting price
 ```
 
 ## Select from renting
