@@ -91,7 +91,12 @@ FROM customers;
 
 ## Ratings of movie 25
 ```sql
-
+SELECT MIN(rating) min_rating, -- Calculate the minimum rating and use alias min_rating
+       MAX(rating) max_rating, -- Calculate the maximum rating and use alias max_rating
+       AVG(rating) avg_rating, -- Calculate the average rating and use alias avg_rating
+       COUNT(rating) number_ratings -- Count the number of ratings and use alias number_ratings
+FROM renting
+WHERE movie_id = 25; -- Select all records of the movie with ID 25
 ```
 
 ## Examining annual rentals
