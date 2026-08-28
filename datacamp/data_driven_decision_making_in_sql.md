@@ -101,7 +101,32 @@ WHERE movie_id = 25; -- Select all records of the movie with ID 25
 
 ## Examining annual rentals
 ```sql
+-- 1)
+SELECT * -- Select all records of movie rentals since January 1st 2019
+FROM renting
+WHERE date_renting >= '2019-01-01';
 
+-- 2)
+SELECT
+    COUNT(*), -- Count the total number of rented movies
+    AVG(rating) -- Add the average rating
+FROM renting
+WHERE date_renting >= '2019-01-01';
+
+-- 3)
+SELECT
+    COUNT(*) AS number_renting, -- Give it the column name number_renting
+    AVG(rating) AS average_rating  -- Give it the column name average_rating
+FROM renting
+WHERE date_renting >= '2019-01-01';
+
+-- 4)
+SELECT
+    COUNT(*) AS number_renting,
+    AVG(rating) AS average_rating,
+    COUNT(rating) AS number_ratings -- Add the total number of ratings here.
+FROM renting
+WHERE date_renting >= '2019-01-01';
 ```
 
 
