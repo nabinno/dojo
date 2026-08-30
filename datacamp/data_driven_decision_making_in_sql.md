@@ -133,14 +133,13 @@ WHERE date_renting >= '2019-01-01';
 
 
 # 2 Decision Making with simple SQL queries
-## Grouping movies
-```sql
-
-```
-
 ## First account for each country.
 ```sql
-
+SELECT country, -- For each country report the earliest date when an account was created
+    MIN(date_account_start) AS first_account
+FROM customers
+GROUP BY country
+ORDER BY first_account;
 ```
 
 ## Average movie ratings
