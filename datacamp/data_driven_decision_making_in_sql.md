@@ -144,7 +144,28 @@ ORDER BY first_account;
 
 ## Average movie ratings
 ```sql
+-- 1)
+SELECT movie_id,
+       AVG(rating)    -- Calculate average rating per movie
+FROM renting
+GROUP BY movie_id;
 
+-- 2)
+SELECT movie_id,
+       AVG(rating) AS avg_rating, -- Use as alias avg_rating
+       COUNT(rating) AS number_rating,                -- Add column for number of ratings with alias number_rating
+       COUNT(*) AS number_renting                 -- Add column for number of movie rentals with alias number_renting
+FROM renting
+GROUP BY movie_id;
+
+-- 3)
+SELECT movie_id,
+       AVG(rating) AS avg_rating,
+       COUNT(rating) AS number_ratings,
+       COUNT(*) AS number_renting
+FROM renting
+GROUP BY movie_id
+ORDER BY avg_rating DESC; -- Order by average rating in decreasing order
 ```
 
 ## Average rating per customer
