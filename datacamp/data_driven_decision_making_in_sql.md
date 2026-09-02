@@ -170,12 +170,14 @@ ORDER BY avg_rating DESC; -- Order by average rating in decreasing order
 
 ## Average rating per customer
 ```sql
-
-```
-
-## Joining movie ratings with customer data
-```sql
-
+SELECT customer_id,  -- Report the customer_id
+       AVG(rating), -- Report the average rating per customer
+       COUNT(rating), -- Report the number of ratings per customer
+       COUNT(*) -- Report the number of movie rentals per customer
+FROM renting
+GROUP BY customer_id
+HAVING COUNT(*) > 7 -- Select only customers with more than 7 movie rentals
+ORDER BY AVG(rating); -- Order by the average rating in ascending order
 ```
 
 ## Join renting and customers
