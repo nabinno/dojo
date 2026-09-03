@@ -182,7 +182,25 @@ ORDER BY AVG(rating); -- Order by the average rating in ascending order
 
 ## Join renting and customers
 ```sql
+-- 1)
+SELECT * -- Join renting with customers
+FROM renting AS r
+LEFT JOIN customers AS c
+ON r.customer_id = c.customer_id;
 
+-- 2)
+SELECT *
+FROM renting AS r
+LEFT JOIN customers AS c
+ON r.customer_id = c.customer_id
+WHERE c.country = 'Belgium'; -- Select only records from customers coming from Belgium
+
+-- 3)
+SELECT AVG(r.rating) -- Average ratings of customers from Belgium
+FROM renting AS r
+LEFT JOIN customers AS c
+ON r.customer_id = c.customer_id
+WHERE c.country = 'Belgium';
 ```
 
 ## Aggregating revenue, rentals and active customers
