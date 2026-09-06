@@ -205,7 +205,31 @@ WHERE c.country = 'Belgium';
 
 ## Aggregating revenue, rentals and active customers
 ```sql
+-- 1)
+SELECT *
+FROM renting AS r
+LEFT JOIN movies AS m -- Choose the correct join statment
+ON r.movie_id = m.movie_id;
 
+-- 2)
+SELECT
+    SUM(m.renting_price), -- Get the revenue from movie rentals
+    COUNT(*), -- Count the number of rentals
+    COUNT(DISTINCT r.customer_id)  -- Count the number of customers
+FROM renting AS r
+LEFT JOIN movies AS m
+ON r.movie_id = m.movie_id;
+
+-- 3)
+SELECT
+    SUM(m.renting_price),
+    COUNT(*),
+    COUNT(DISTINCT r.customer_id)
+FROM renting AS r
+LEFT JOIN movies AS m
+ON r.movie_id = m.movie_id
+-- Only look at movie rentals in 2018
+WHERE date_renting BETWEEN '2018-01-01' AND '2018-12-31';
 ```
 
 ## Movies and actors
