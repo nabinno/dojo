@@ -234,7 +234,13 @@ WHERE date_renting BETWEEN '2018-01-01' AND '2018-12-31';
 
 ## Movies and actors
 ```sql
-
+SELECT DISTINCT m.title, -- Create a list of movie titles and actor names
+                a.name
+FROM actsin AS ai
+LEFT JOIN movies AS m
+ON m.movie_id = ai.movie_id
+LEFT JOIN actors AS a
+ON a.actor_id = ai.actor_id;
 ```
 
 ## Money spent per customer with sub-queries
