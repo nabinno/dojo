@@ -243,14 +243,26 @@ LEFT JOIN actors AS a
 ON a.actor_id = ai.actor_id;
 ```
 
-## Money spent per customer with sub-queries
-```sql
-
-```
-
 ## Income from movies
 ```sql
+-- 1)
+SELECT m.title, -- Use a join to get the movie title and price for each movie rental
+       m.renting_price
+FROM renting AS r
+LEFT JOIN movies AS m
+ON r.movie_id = m.movie_id;
 
+-- 2)
+SELECT title, -- Report the income from movie rentals for each movie
+       SUM(renting_price) AS income_movie
+FROM
+       (SELECT m.title,
+               m.renting_price
+       FROM renting AS r
+       LEFT JOIN movies AS m
+       ON r.movie_id = m.movie_id) AS rm
+GROUP BY title
+ORDER BY income_movie DESC; -- Order the result by decreasing income
 ```
 
 ## Age of actors from the USA
