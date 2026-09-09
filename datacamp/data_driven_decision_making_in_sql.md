@@ -267,7 +267,15 @@ ORDER BY income_movie DESC; -- Order the result by decreasing income
 
 ## Age of actors from the USA
 ```sql
-
+SELECT gender, -- Report for male and female actors from the USA
+       MIN(year_of_birth), -- The year of birth of the oldest actor
+       MAX(year_of_birth) -- The year of birth of the youngest actor
+FROM
+   (SELECT *
+    FROM actors
+    WHERE nationality = 'USA') -- Use a subsequent SELECT to get all information about actors from the USA
+   AS a -- Give the table the name a
+GROUP BY gender;
 ```
 
 ## Identify favorite actors of customer groups
