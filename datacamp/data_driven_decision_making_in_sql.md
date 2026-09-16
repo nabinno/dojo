@@ -315,7 +315,28 @@ ORDER BY avg_rating DESC, number_views DESC;
 
 ## KPIs per country
 ```sql
+-- 1)
+SELECT *
+FROM renting r -- Augment the table renting with information about customers
+LEFT JOIN customers c
+ON r.customer_id = c.customer_id
+LEFT JOIN movies m -- Augment the table renting with information about movies
+ON r.movie_id = m.movie_id
+WHERE r.date_renting >= '2019-01-01'; -- Select only records about rentals since the beginning of 2019
 
+-- 2)
+SELECT
+    c.country,                     -- For each country report
+    COUNT(*) AS number_renting,    -- The number of movie rentals
+    AVG(r.rating) AS average_rating, -- The average rating
+    SUM(m.renting_price) AS revenue  -- The revenue from movie rentals
+FROM renting AS r
+LEFT JOIN customers AS c
+ON c.customer_id = r.customer_id
+LEFT JOIN movies AS m
+ON m.movie_id = r.movie_id
+WHERE date_renting >= '2019-01-01'
+GROUP BY c.country;
 ```
 
 
