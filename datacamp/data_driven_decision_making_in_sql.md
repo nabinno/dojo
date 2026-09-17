@@ -344,14 +344,22 @@ GROUP BY c.country;
 
 
 # 3 Data Driven Decision Making with advanced SQL queries
-## Nested query
-```sql
-
-```
-
 ## Often rented movies
 ```sql
+-- 1)
+SELECT movie_id -- Select movie IDs with more than 5 views
+FROM renting
+GROUP BY movie_id
+HAVING COUNT(*) > 5;
 
+-- 2)
+SELECT *
+FROM movies
+WHERE movie_id IN  -- Select movie IDs from the inner query
+    (SELECT movie_id
+    FROM renting
+    GROUP BY movie_id
+    HAVING COUNT(*) > 5);
 ```
 
 ## Frequent customers
