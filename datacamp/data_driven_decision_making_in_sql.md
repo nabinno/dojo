@@ -364,7 +364,13 @@ WHERE movie_id IN  -- Select movie IDs from the inner query
 
 ## Frequent customers
 ```sql
-
+SELECT *
+FROM customers
+WHERE customer_id IN            -- Select all customers with more than 10 movie rentals
+    (SELECT customer_id
+    FROM renting
+    GROUP BY customer_id
+    HAVING COUNT(*) > 10);
 ```
 
 ## Movies with rating above average
