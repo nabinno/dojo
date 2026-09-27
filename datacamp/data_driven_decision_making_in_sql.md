@@ -400,14 +400,22 @@ WHERE movie_id IN
          FROM renting));
 ```
 
-## Correlated nested queries
-```sql
-
-```
-
 ## Analyzing customer behavior
 ```sql
+-- 1)
+-- Count movie rentals of customer 45
+SELECT COUNT(*)
+FROM renting AS r
+WHERE r.customer_id = 45;
 
+-- 2)
+-- Select customers with less than 5 movie rentals
+SELECT *
+FROM customers as c
+WHERE 5 >
+    (SELECT count(*)
+    FROM renting as r
+    WHERE r.customer_id = c.customer_id);
 ```
 
 ## Customers who gave low ratings
