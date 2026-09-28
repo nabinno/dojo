@@ -420,7 +420,19 @@ WHERE 5 >
 
 ## Customers who gave low ratings
 ```sql
+-- 1)
+-- Calculate the minimum rating of customer with ID 7
+SELECT MIN(rating)
+FROM renting
+WHERE customer_id = 7;
 
+-- 2)
+SELECT *
+FROM customers AS c
+WHERE 4 >  -- Select all customers with a minimum rating smaller than 4
+    (SELECT MIN(rating)
+     FROM renting AS r
+     WHERE r.customer_id = c.customer_id);
 ```
 
 ## Movies and ratings with correlated queries
