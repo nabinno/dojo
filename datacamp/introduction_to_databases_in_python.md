@@ -126,7 +126,7 @@ print(engine.table_names())
 stmt = select([census])
 
 # Add a where clause to filter the results to only those for New York : stmt_filtered
-stmt = stmt.where('state = "New York"')
+stmt = stmt.where(census.columns.state == 'New York')
 
 # Execute the query to retrieve all the data returned: results
 results = connection.execute(stmt).fetchall()
