@@ -437,7 +437,21 @@ WHERE 4 >  -- Select all customers with a minimum rating smaller than 4
 
 ## Movies and ratings with correlated queries
 ```sql
+-- 1)
+SELECT *
+FROM movies AS m
+WHERE 5 <
+    (SELECT COUNT(rating)
+     FROM renting AS r
+     WHERE r.movie_id = m.movie_id);
 
+-- 2)
+SELECT *
+FROM movies AS m
+WHERE 8 < -- Select all movies with an average rating higher than 8
+    (SELECT AVG(rating)
+    FROM renting AS r
+    WHERE r.movie_id = m.movie_id);
 ```
 
 ## Queries with EXISTS
