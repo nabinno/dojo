@@ -454,14 +454,34 @@ WHERE 8 < -- Select all movies with an average rating higher than 8
     WHERE r.movie_id = m.movie_id);
 ```
 
-## Queries with EXISTS
-```sql
-
-```
-
 ## Customers with at least one rating
 ```sql
+-- 1)
+-- Select all records of movie rentals from customer with ID 115
+SELECT *
+FROM renting
+WHERE customer_id = 115;
 
+-- 2)
+SELECT *
+FROM renting
+WHERE rating IS NOT NULL -- Exclude those with null ratings
+AND customer_id = 115;
+
+-- 3)
+SELECT *
+FROM renting
+WHERE rating IS NOT NULL -- Exclude null ratings
+AND customer_id = 1; -- Select all ratings from customer with ID 1
+
+-- 4)
+SELECT *
+FROM customers AS c -- Select all customers with at least one rating
+WHERE EXISTS
+    (SELECT *
+    FROM renting AS r
+    WHERE rating IS NOT NULL
+    AND r.customer_id = c.customer_id);
 ```
 
 ## Actors in comedies
