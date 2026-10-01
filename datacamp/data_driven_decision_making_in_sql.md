@@ -486,12 +486,43 @@ WHERE EXISTS
 
 ## Actors in comedies
 ```sql
+ｰｰ 1)
+SELECT *  -- Select the records from the table `actsin` of all actors who play in a Comedy
+FROM actsin AS ai
+LEFT JOIN movies AS m
+ON ai.movie_id = m.movie_id
+WHERE m.genre = 'Comedy';
 
-```
+ｰｰ 2)
+SELECT *
+FROM actsin AS ai
+LEFT JOIN movies AS m
+ON m.movie_id = ai.movie_id
+WHERE m.genre = 'Comedy'
+AND ai.actor_id = 1; -- Select only the actor with ID 1
 
-## Queries with UNION and INTERSECT
-```sql
+ｰｰ 3)
+SELECT *
+FROM actors AS a
+WHERE EXISTS
+    (SELECT *
+     FROM actsin AS ai
+     LEFT JOIN movies AS m
+     ON m.movie_id = ai.movie_id
+     WHERE m.genre = 'Comedy'
+     AND ai.actor_id = a.actor_id);
 
+-- 4)
+SELECT a.nationality, COUNT(a.*)  -- Report the nationality and the number of actors for each nationality
+FROM actors AS a
+WHERE EXISTS
+    (SELECT ai.actor_id
+     FROM actsin AS ai
+     LEFT JOIN movies AS m
+     ON m.movie_id = ai.movie_id
+     WHERE m.genre = 'Comedy'
+     AND ai.actor_id = a.actor_id)
+GROUP BY nationality;
 ```
 
 ## Young actors not coming from the USA
