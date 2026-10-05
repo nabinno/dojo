@@ -570,7 +570,41 @@ WHERE year_of_birth > 1990;
 
 ## Dramas with high ratings
 ```sql
+ｰｰ 1)
+SELECT movie_id -- Select the IDs of all dramas
+FROM movies
+WHERE genre = 'Drama';
 
+-- 2)
+SELECT movie_id -- Select the IDs of all movies with average rating higher than 9
+FROM renting
+GROUP BY movie_id
+HAVING AVG(rating) > 9;
+
+-- 3)
+SELECT movie_id
+FROM movies
+WHERE genre = 'Drama'
+
+INTERSECT  -- Select the IDs of all dramas with average rating higher than 9
+
+SELECT movie_id
+FROM renting
+GROUP BY movie_id
+HAVING AVG(rating) > 9;
+
+-- 4)
+SELECT *
+FROM movies
+WHERE movie_id IN -- Select all movies of genre drama with average rating higher than 9
+   (SELECT movie_id
+    FROM movies
+    WHERE genre = 'Drama'
+    INTERSECT
+    SELECT movie_id
+    FROM renting
+    GROUP BY movie_id
+    HAVING AVG(rating) > 9);
 ```
 
 
