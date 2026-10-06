@@ -611,14 +611,14 @@ WHERE movie_id IN -- Select all movies of genre drama with average rating higher
 
 
 # 4 Data Driven Decision Making with OLAP SQL queries
-## OLAP: CUBE operator
-```sql
-
-```
-
 ## Groups of customers
 ```sql
-
+SELECT country, -- Extract information of a pivot table of gender and country for the number of customers
+       gender,
+       COUNT(gender)
+FROM customers
+GROUP BY CUBE (country, gender)
+ORDER BY country;
 ```
 
 ## Categories of movies
