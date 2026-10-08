@@ -623,7 +623,12 @@ ORDER BY country;
 
 ## Categories of movies
 ```sql
-
+SELECT year_of_release,
+       genre,
+       COUNT(*)
+FROM movies
+GROUP BY CUBE (year_of_release, genre)
+ORDER BY year_of_release;
 ```
 
 ## Analyzing average ratings
