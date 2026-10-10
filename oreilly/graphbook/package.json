@@ -28,6 +28,7 @@
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
     "sequelize": "^6.29.0",
+    "sha.js": "^2.4.12",
     "winston": "^3.1.0"
   },
   "devDependencies": {
@@ -61,6 +62,7 @@
   },
   "overrides": {
     "busboy": "^1.6.0",
-    "braces": "^3.0.3"
+    "braces": "^3.0.3",
+    "sha.js": "2.4.12"
   }
 }
