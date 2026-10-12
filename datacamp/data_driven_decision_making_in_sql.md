@@ -667,14 +667,15 @@ ON r.customer_id = c.customer_id
 GROUP BY CUBE (c.country, m.genre); -- For all aggregation levels of country and genre
 ```
 
-## ROLLUP
-```sql
-
-```
-
 ## Number of customers
 ```sql
-
+-- Count the total number of customers, the number of customers for each country, and the number of female and male customers for each country
+SELECT country,
+       gender,
+       COUNT(*)
+FROM customers
+GROUP BY ROLLUP (country, gender)
+ORDER BY country, gender; -- Order the result by country and gender
 ```
 
 ## Analyzing preferences of genres across countries
