@@ -719,14 +719,22 @@ GROUP BY ROLLUP (c.country, m.genre)
 ORDER BY c.country, m.genre;
 ```
 
-## GROUPING SETS
-```sql
-
-```
-
 ## Queries with GROUPING SETS
 ```sql
-
+SELECT
+    r.customer_id,
+    m.genre,
+    AVG(r.rating),
+    COUNT(*)
+FROM renting AS r
+LEFT JOIN movies AS m
+    ON r.movie_id = m.movie_id
+GROUP BY GROUPING SETS (
+    (r.customer_id, m.genre),
+    (r.customer_id),
+    (m.genre),
+    ()
+);
 ```
 
 ## Exploring nationality and gender of actors
