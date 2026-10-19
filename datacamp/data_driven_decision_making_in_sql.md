@@ -749,7 +749,46 @@ GROUP BY GROUPING SETS ((nationality), (gender), ()); -- Use the correct GROUPIN
 
 ## Exploring rating by country and gender
 ```sql
+-- 1)
+SELECT
+    c.country, -- Select country, gender and rating
+    c.gender,
+    r.rating
+FROM renting AS r
+LEFT JOIN customers AS c -- Use the correct join
+ON r.customer_id = c.customer_id;
 
+-- 2)
+SELECT
+    c.country,
+    c.gender,
+    AVG(r.rating) -- Calculate average rating
+FROM renting AS r
+LEFT JOIN customers AS c
+ON r.customer_id = c.customer_id
+GROUP BY c.country, c.gender -- Order and group by country and gender
+ORDER BY c.country, c.gender;
+
+-- 3)
+SELECT
+    c.country,
+    c.gender,
+    AVG(r.rating)
+FROM renting AS r
+LEFT JOIN customers AS c
+ON r.customer_id = c.customer_id
+GROUP BY GROUPING SETS ((country, gender)); -- Group by country and gender with GROUPING SETS
+
+-- 4)
+SELECT
+    c.country,
+    c.gender,
+    AVG(r.rating)
+FROM renting AS r
+LEFT JOIN customers AS c
+ON r.customer_id = c.customer_id
+-- Report all info from a Pivot table for country and gender
+GROUP BY GROUPING SETS ((country, gender), (country), (gender), ());
 ```
 
 ## Bringing it all together
