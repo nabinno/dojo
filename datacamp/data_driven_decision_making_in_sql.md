@@ -793,7 +793,60 @@ GROUP BY GROUPING SETS ((country, gender), (country), (gender), ());
 
 ## Bringing it all together
 ```sql
+-- 1)
+SELECT *
+FROM renting AS r
+LEFT JOIN movies AS m -- Augment the table with information about movies
+ON r.movie_id = m.movie_id;
 
+-- 2)
+SELECT *
+FROM renting AS r
+LEFT JOIN movies AS m
+ON m.movie_id = r.movie_id
+WHERE m.movie_id IN ( -- Select records of movies with at least 4 ratings
+    SELECT movie_id
+    FROM renting
+    GROUP BY movie_id
+    HAVING COUNT(rating) >= 4
+)
+AND date_renting >= '2018-04-01'; -- Select records of movie rentals since 2018-04-01
+
+-- 3)
+SELECT m.genre, -- For each genre, calculate:
+       AVG(r.rating) AS avg_rating, -- The average rating
+       COUNT(r.rating) AS n_rating, -- The number of ratings
+       COUNT(*) AS n_rentals, -- The number of movie rentals
+       COUNT(DISTINCT m.movie_id) AS n_movies -- The number of distinct movies
+FROM renting AS r
+LEFT JOIN movies AS m
+ON m.movie_id = r.movie_id
+WHERE r.movie_id IN (
+    SELECT movie_id
+    FROM renting
+    GROUP BY movie_id
+    HAVING COUNT(rating) >= 3
+)
+AND r.date_renting >= '2018-01-01'
+GROUP BY m.genre;
+
+-- 4)
+SELECT genre,
+       AVG(rating) AS avg_rating,
+       COUNT(rating) AS n_rating,
+       COUNT(*) AS n_rentals,
+       COUNT(DISTINCT m.movie_id) AS n_movies
+FROM renting AS r
+LEFT JOIN movies AS m
+ON m.movie_id = r.movie_id
+WHERE r.movie_id IN (
+    SELECT movie_id
+    FROM renting
+    GROUP BY movie_id
+    HAVING COUNT(rating) >= 3 )
+AND r.date_renting >= '2018-01-01'
+GROUP BY genre
+ORDER BY avg_rating DESC; -- Order the table by decreasing average rating
 ```
 
 ## Customer preference for genres
