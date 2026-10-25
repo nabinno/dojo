@@ -17,7 +17,21 @@ One of the statements you wrote is False. Can you select which one it is?
 
 ## Diagnose the data story
 ```
+The draft reads:
+"Customers on month-to-month contracts churn at a rate of about 95%, far higher than customers on longer contracts. We should focus our retention budget on this group."
 
+Use the app to review the actual churn data and the six storytelling principles. Then decide which principle the draft most clearly violates.
+
+Customer churn rate by contract type
+43%: Month-to-month
+11%: One-year
+3%: Two-year
+Source: Communicatb customer dataset, n = 7,043
+
+[ ]Central insight: the draft jumps between too many disconnected claims with no clear focus
+[x]Accuracy: the 95% churn figure does not match the actual rate in the customer data
+[ ]Audience-fit: the technical wording is too dense for the marketing team to follow
+[ ]Visuals: the chart used to illustrate this finding is misleading and unclear
 ```
 
 ## Translating technical results
