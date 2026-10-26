@@ -34,14 +34,22 @@ Source: Communicatb customer dataset, n = 7,043
 [ ]Visuals: the chart used to illustrate this finding is misleading and unclear
 ```
 
-## Translating technical results
-```
-
-```
-
 ## Translate for the marketing director
 ```
+Translate for the marketing director
+Communicatb is taking the churn project to stakeholders. The app shows how a clustering finding was rewritten for the marketing team, using four translation strategies.
 
+A colleague drafts this summary of the churn model for Friday's meeting with the marketing director:
+
+"Our XGBoost model achieved a precision of 0.79 and recall of 0.84 on the holdout set after grid-search hyperparameter tuning."
+
+Which strategy would help the marketing director most with this draft?
+
+Answer the question
+[ ]Define the term: explain precision, recall, and holdout set the first time they appear
+[ ]Plain English: rewrite the technical metrics in everyday language any reader can follow
+[x]Focus on impact: tell the marketing director what action the predictions enable
+[ ]Add an analogy: compare the model to something familiar like spam filtering or credit scoring
 ```
 
 ## Be aware
