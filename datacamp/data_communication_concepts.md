@@ -54,7 +54,22 @@ Answer the question
 
 ## Be aware
 ```
+Be aware
+The meeting was a success! The program director asks you to send your results to the business specialists. You need to write a report and send it by email by the end of the week. You have never met them, so you ask for their background and goals.
 
+After you gather data, you realize you will be communicating your results to a different audience. You want them to understand your results.
+
+Can you select which of the following examples are best practices to translate your results?
+
+Best practice:
+- Explain business benefits: Explain that the predictions you made will help target specifically some customers. It will save money for the company in marketing campaigns.
+
+- Include a glossary: At the end of the report, include a page with all the terminology definitions and the acronyms you could not avoid.
+
+Bad practice:
+- Anticipate questions: When sending the report, anticipate any questions the business team will have. Answer them thoroughly so they know you are willing to help.
+- Explain variable selection: Adjust your content to include some explanation on why you chose your variables for analysis, from a business perspective.
+- Avoid analogies: Do not include analogies to explain a concept with simple terms as it could be confusing and disengaging.
 ```
 
 ## Impacting the decision-making process
