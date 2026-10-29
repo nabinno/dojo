@@ -72,14 +72,17 @@ Bad practice:
 - Avoid analogies: Do not include analogies to explain a concept with simple terms as it could be confusing and disengaging.
 ```
 
-## Impacting the decision-making process
-```
-
-```
-
 ## Is it a true story?
 ```
+You have done an amazing job explaining your exploratory data analysis on the churn project. Now, it's time to run the model to predict customer churn. You know that you will have to craft an effective story to present these results.
 
+You want to be prepared. So you read your notes on how to build a compelling narrative. But you realized that one of your notes is not accurate.
+
+Which of the following statements is false?
+
+[ ]A compelling narrative is key to presenting relevant insights to your target audience in a meaningful and impactful way.
+[ ]Because you should shape the narrative to your target audience, showing only key points or findings is a good practice.
+[x]Unless you have a great data groundwork to support your central insight, your findings will need a well-formed and compelling narrative to drive action and change.
 ```
 
 ## Structured to impact
