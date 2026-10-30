@@ -87,7 +87,18 @@ Which of the following statements is false?
 
 ## Structured to impact
 ```
+Structured to impact
+Your project on customer churn is done. You analyzed the data and built your model. You followed the steps for storytelling. Now, it's time to structure your story to have an impact at the decision-making level. You want stakeholders to follow your recommendations.
 
+You like to write things down. So you take a pen and paper, and write down the different things you want to say in order on sticky notes. The window suddenly opens, throwing all of your notes on the floor.
+
+Can you organize the steps for telling a story with data that is solid enough to influence the decision-makers?
+
+- Explain with a line plot that the company usually has a churn rate of 5%, but last year that rate suddenly increased to 15%.
+- Using boxplots, show that the percentage of churn customers with more than one dependent in their household has increased, affecting the total rate.
+- Add further evidence by showing that, among customers with more than one dependent in their household, those with DSL service churn at a higher rate.
+- Show a barplot that reveals that monthly charges are the most important predictor of customer churn.
+- Recommend implementing promotional prices to churn-intending customers and show that this will result in 10% more earnings with a barplot.
 ```
 
 ## Choose the right chart
