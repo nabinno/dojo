@@ -103,7 +103,11 @@ Can you organize the steps for telling a story with data that is solid enough to
 
 ## Choose the right chart
 ```
-
+Which chart type would best tell this story?
+[ ]Comparison: a bar chart of average tenure for low-paying versus high-paying customer groups
+[ ]Change over time: a line chart of how average monthly charges have shifted over the past year
+[ ]Clustering: a scatter plot of customer segments based on usage patterns and engagement
+[x]Correlation: a scatter plot with monthly charges on one axis and tenure on the other
 ```
 
 
