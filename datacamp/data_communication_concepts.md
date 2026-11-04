@@ -114,19 +114,37 @@ Which chart type would best tell this story?
 
 
 # 2 Preparing to Communicate the Data
-## Selecting the right data
-```
-
-```
-
 ## The truth about salaries
 ```
+Your predictive model for customer churn, which you worked on in Chapter 1, has been deployed. Your project manager asks you to work on a new internal project. The goal is to analyze a database with employee salaries in San Francisco, USA.
 
+After doing an exhaustive exploratory data analysis, you have to present your findings to the human resources team. They want to compare San Francisco salary growth to the one at the company; they need to understand how to forecast salaries for the next year. You are about to copy the graphs from your analysis. Your manager reminds you to select the right data for your stakeholders.
+
+You start by writing down what you believe can help you choose the proper findings.
+
+One of the statements you wrote is false. Can you select which one it is?
+
+[ ]The human resources team would likely be interested in knowing how the average salary has been increasing in the last 10 years in San Francisco.
+[ ]The human resources team has no knowledge of data analysis techniques, so code shouldn't be included when listing the top 5 job titles.
+[ ]Include relevant contextual data, such as how the cost of living in San Francisco has risen over the same period, to support the idea of increasing salaries.
+[x]Select all collected numerical data about San Francisco salaries and show them in a big dashboard so it helps understand in detail why salaries have been increasing.
 ```
 
 ## Earning interests
 ```
+Can you classify your notes into the following audience personas?
 
+Human Resources Director:
+- Basic technical knowledge of data analysis. Wants to raise the salary of the company employees based on actual data.
+- Select data comparing employee satisfaction in best-paying companies compared to others to support employees' salary increase.
+
+Technical supervisor:
+- Expert knowledge of statistical methods. Wants to analyze the salaries of different European countries.
+- Show the variance, mean, and distribution of numerical variables, such as base pay and total benefits.
+
+Marketing staff:
+- General knowledge of data analysis. Wants to understand how salary impacts work-life balance to advertise it on the career page.
+- Select data demonstrating that better company benefits impact the employee performance to help attract talent on the career page.
 ```
 
 ## Showing relevant statistics
