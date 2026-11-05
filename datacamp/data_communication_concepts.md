@@ -147,14 +147,15 @@ Marketing staff:
 - Select data demonstrating that better company benefits impact the employee performance to help attract talent on the career page.
 ```
 
-## Showing relevant statistics
-```
-
-```
-
 ## Salary variation
 ```
+Percentage change makes it easier to compare salary increases and decreases across job titles than absolute values.
 
+Key Takeaway
+- Absolute Value： Compare salary levels
+- Percentage Change： Compare relative salary changes
+
+Principle: Choose metrics that best communicate your message.
 ```
 
 ## Show the right numbers
