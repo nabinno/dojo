@@ -160,7 +160,16 @@ Principle: Choose metrics that best communicate your message.
 
 ## Show the right numbers
 ```
+Communicatb's San Francisco salaries project is ready for review.
 
+The HR director wants to compare pay levels across six city departments. Headcount varies widely: Public Health has 7,500 employees, the Library only 750.
+
+Which metric would best support a fair comparison?
+
+[ ]Total values: total annual payroll per department, shown as a bar chart in dollars
+[x]Ratio: average salary per employee, calculated as the total department payroll divided by headcount
+[ ]Change: percentage change in payroll from last year, shown per department
+[ ]Distribution: a histogram of every city employee's salary, with mean and median marked
 ```
 
 ## It's not significant
