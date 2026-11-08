@@ -174,7 +174,18 @@ Which metric would best support a fair comparison?
 
 ## It's not significant
 ```
+You have a big deadline ahead. You need to submit a report on the data analysis for the project on San Francisco salaries to your technical lead. He will read it and report your results to the senior management team.
+You have a strong story, and you select only data to support it. You want to show comparisons of average pay for people with different job titles.
+You can classify these statements as good use or misuse of the p-value.
 
+Good use:
+- The mean overtime pay shows higher values (p-value: 0.04) for a department head than for a medical examiner. You don't consider this strong evidence.
+- The base pay salary is higher (p-value: 0.03) for a physician than for a special nurse. You will report it, but interpret this result with caution.
+
+Misuse:
+- The mean total pay is lower (p-value: 0.002) for firefighters than for department chiefs. It's a bigger difference than for captain (p-value: 0.01).
+- From evaluating the p-value, you consider that there is enough proof that a nurse and a doctor have the same base pay.
+- The mean base pay is higher for an accountant than for a lawyer. P-value is the strongest evidence. There is no other interesting alternative to check.
 ```
 
 ## Visualizations for different audiences
