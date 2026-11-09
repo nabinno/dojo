@@ -195,7 +195,29 @@ Misuse:
 
 ## Spot the redesign gap
 ```
+Communicatb's SF salaries chart is heading to the business development team. A junior colleague was asked to revise the first draft.
+You look at their revised version, and something still feels missing.
+Which best practice is still missing from the revised chart?
 
+Both charts show the same SF private-sector salary data (14 sectors, 4-year growth in $K):
+Software 140, Biotech 120, Finance 90, Consulting 80, Banking 75, Marketing 70,
+Insurance 65, Tech support 65, Real estate 60, Fashion 55, Retail 55,
+Hospitality 50, Manufacturing 50, Restaurants 45.
+Source: SF salaries dataset, 2017 to 2021.
+
+First draft
+- Title: Salary Data
+- Y-axis: CAGR (%)
+
+Revised version
+- Title: Private-sector salaries grew $100K from 2017 to 2021
+- Y-axis: 4-year salary growth ($K)
+- Same 14 bars, no aggregation
+
+[ ]Linked to message: a bar shows data unrelated to the central message
+[ ]Approachable wording: the axis label would confuse business stakeholders
+[x]Pareto / aggregate: 14 separate bars still overwhelm the viewer
+[ ]Clear headline: the title fails to set up the chart's main insight
 ```
 
 ## Salary on demand
