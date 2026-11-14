@@ -40,7 +40,7 @@ npm run build:go
 # Build only TypeScript
 npm run build:ts
 
-# Run tests
+# Jest is not installed. The suite still imports CDK v1.
 npm test
 
 # Deploy infrastructure
@@ -60,7 +60,7 @@ npm run build
 # Watch mode
 npm run watch
 
-# Run tests
+# Jest is not installed. The suite still imports CDK v1.
 npm test
 
 # CDK commands
