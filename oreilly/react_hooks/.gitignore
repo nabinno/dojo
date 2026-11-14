@@ -44,3 +44,7 @@ yarn-error.log*
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Archived exercise: do not commit a dependency tree.
+package-lock.json
+yarn.lock

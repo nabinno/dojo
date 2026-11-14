@@ -1,4 +1,8 @@
-import * as aws from "aws-sdk";
+import {
+  CloudFormationClient,
+  DescribeStacksCommand,
+  Output,
+} from "@aws-sdk/client-cloudformation";
 import apigateway = require("@aws-cdk/aws-apigateway");
 import { URL } from "url";
 
@@ -6,11 +10,12 @@ export class Utils {
   static async getStackOutputs(
     stackName: string,
     stackRegion: string
-  ): Promise<aws.CloudFormation.Output[]> {
-    aws.config.region = stackRegion;
-    const cfn = new aws.CloudFormation();
-    const result = await cfn.describeStacks({ StackName: stackName }).promise();
-    return result.Stacks![0].Outputs!;
+  ): Promise<Output[]> {
+    const client = new CloudFormationClient({ region: stackRegion });
+    const result = await client.send(
+      new DescribeStacksCommand({ StackName: stackName })
+    );
+    return result.Stacks?.[0]?.Outputs ?? [];
   }
 
   static getEnv(variableName: string, defaultValue?: string) {

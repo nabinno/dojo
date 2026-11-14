@@ -69,7 +69,7 @@ npm run cdk deploy
 ```
 
 ### DataCamp Python Projects
-Uses Poetry for dependency management:
+Uses Poetry for dependency management. Requires Python 3.11 or newer, because Pillow 13 does.
 
 ```bash
 cd datacamp
@@ -120,10 +120,8 @@ Multi-language serverless application with:
 - **Build System**: Custom scripts for Go compilation and TypeScript compilation
 
 ### React Applications (O'Reilly Projects)
-- Modern React with hooks and functional components
-- Standard Create React App structure
-- Uses yarn for dependency management
-- Implements real-world patterns (forms, routing, state management)
+- Exercise source under `oreilly/`. See `oreilly/SAMPLES.md`.
+- Dependencies and lockfiles are intentionally absent. Do not run npm or yarn there, and do not commit a lockfile.
 
 ### Testing Patterns
 1. **Go**: Ginkgo BDD framework with descriptive test suites
@@ -134,9 +132,9 @@ Multi-language serverless application with:
 
 - **Go**: Version 1.12 across all projects
 - **Node.js**: Various projects using npm/yarn
-- **Python**: 3.6+ with data science stack (numpy, pandas, scikit-learn)
-- **AWS CDK**: Version 1.x (legacy version)
-- **React**: Modern functional components with hooks
+- **Python**: 3.11+ with data science stack (numpy, pandas, scikit-learn)
+- **AWS CDK**: aws-cdk-lib 2.x
+- **React**: Exercise source only. The O'Reilly apps are not installed.
 
 ## Development Patterns
 

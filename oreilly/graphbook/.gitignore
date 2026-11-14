@@ -117,3 +117,7 @@ dist
 .pnp.*
 
 
+
+# Archived exercise: do not commit a dependency tree.
+package-lock.json
+yarn.lock

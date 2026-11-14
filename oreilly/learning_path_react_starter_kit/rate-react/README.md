@@ -1,3 +1,5 @@
+> Archived exercise. Dependencies and lockfiles were removed. See [SAMPLES.md](../../SAMPLES.md). Do not run `npm install` or `yarn`.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
